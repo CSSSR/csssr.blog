@@ -37,6 +37,7 @@ export default function Meta() {
         content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
     </Head>
   )
 }
