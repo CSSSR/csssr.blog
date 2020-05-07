@@ -1,7 +1,6 @@
 import { Global } from '@emotion/core'
 
 import Alert from '../alert'
-import Footer from '../footer'
 import Meta from '../meta'
 import styles from './Layout.styles'
 
@@ -14,7 +13,6 @@ export default function Layout({ preview, children }) {
         <Alert preview={preview} />
         <main>{children}</main>
       </div>
-      <Footer />
     </>
   )
 }
