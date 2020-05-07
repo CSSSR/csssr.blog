@@ -1,12 +1,14 @@
-import markdownStyles from './markdown-styles.module.css'
+import styled from '@emotion/styled'
+import styles from './post-body.styles'
 
-export default function PostBody({ content }) {
+const PostBody = ({ content, className }) => {
   return (
-    <div className="max-w-2xl mx-auto">
-      <div
-        className={markdownStyles['markdown']}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+    <div className={className}>
+      <div className="markdown" dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   )
 }
+
+export default styled(PostBody)`
+  ${styles}
+`
