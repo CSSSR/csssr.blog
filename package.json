@@ -16,6 +16,7 @@
     "emotion-theming": "^10.0.27",
     "gray-matter": "4.0.2",
     "isomorphic-unfetch": "3.0.0",
+    "markdown-to-jsx": "^6.11.1",
     "next": "latest",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
