@@ -3,6 +3,8 @@ import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
 
+import PostTitle from '../PostTitle'
+
 const PostBody = ({ content, className }) => {
   return (
     <div className={className}>
@@ -85,6 +87,9 @@ const PostBody = ({ content, className }) => {
               className: 'list_item_s',
               size: 'm',
             },
+          },
+          PostTitle: {
+            component: PostTitle, // Это для привера возможностей markdown-to-jsx
           },
         },
       })}
