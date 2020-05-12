@@ -1,0 +1,41 @@
+name: Деплой блога
+on:
+  push:
+    branches: [stable]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deploy:
+    name: Сборка
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download CSSSR actions
+        uses: actions/checkout@v2
+        with:
+          repository: CSSSR/actions
+          token: ${{ secrets.DOWNLOAD_ACTIONS_TOKEN }}
+          path: actions
+
+      - uses: actions/checkout@v2
+        with:
+          path: new_blog
+
+      - name: Install dependencies
+        working-directory: new_blog
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        working-directory: new_blog
+        run: yarn build
+
+      - name: Деплой на тестинг
+        uses: ./actions/deploy-static-site/v1beta1
+        with:
+          auth: ${{ secrets.CSSSR_AUTH }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          site-type: mpa
+          project-id: csssr-new-blog
+          files: ./new_blog/out
+          no-previous-files: "true"

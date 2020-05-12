@@ -1,6 +1,7 @@
 # dependencies
 /node_modules
 /.next
+/out
 
 # IDEs and editors
 .idea/*
