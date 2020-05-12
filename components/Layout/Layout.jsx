@@ -1,5 +1,5 @@
 import { Global } from '@emotion/core'
-import Meta from '../meta'
+import Meta from '../Meta'
 import styles from './Layout.styles'
 
 export default function Layout({ children }) {
