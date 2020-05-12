@@ -4,7 +4,6 @@ export default css`
   .markdown {
     margin: 0 auto;
     width: 50%;
-    color: powderblue;
   }
 
   .markdown p,
