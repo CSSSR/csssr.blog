@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { ThemeProvider } from 'emotion-theming'
 import { Root, defaultTheme } from '@csssr/core-design'
-import 'prismjs'
+import Prism from 'prismjs'
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -14,6 +14,7 @@ const MyApp = ({ Component, pageProps }) => {
     window.addEventListener('click', function () {
       document.body.classList.remove('outline')
     })
+    Prism.highlightAll()
   })
 
   return (
