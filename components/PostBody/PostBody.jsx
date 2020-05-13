@@ -4,6 +4,7 @@ import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
+import Comments from '../Comments'
 
 const PostBody = ({ content, className }) => {
   return (
@@ -93,6 +94,8 @@ const PostBody = ({ content, className }) => {
           },
         },
       })}
+
+      <Comments />
     </div>
   )
 }
