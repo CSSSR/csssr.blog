@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { ThemeProvider } from 'emotion-theming'
 import { Root, defaultTheme } from '@csssr/core-design'
+import 'prismjs'
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {

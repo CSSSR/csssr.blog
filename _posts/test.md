@@ -29,3 +29,31 @@ Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidu
 * list item
 
 <PostTitle>LALALALALALA</PostTitle>
+
+```css
+  /* css */
+
+  .class {
+    color: green;
+    border: 1px solid red;
+  }
+```
+
+```js
+  // js
+
+  const func = () => {
+    console.log('test');
+  }
+```
+
+
+```html
+  // html
+
+  <html>
+    <body>
+      <title>Test</title>
+    </body>
+  </html>
+```
