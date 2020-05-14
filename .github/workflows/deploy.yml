@@ -1,7 +1,8 @@
 name: Деплой блога
 on:
   push:
-    branches: [stable]
+    branches:
+      - '**'
   pull_request:
     types: [opened, synchronize, reopened]
 
