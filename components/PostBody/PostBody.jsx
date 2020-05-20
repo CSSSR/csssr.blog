@@ -92,6 +92,11 @@ const PostBody = ({ content, className }) => {
           PostTitle: {
             component: PostTitle, // Это для привера возможностей markdown-to-jsx
           },
+          code: {
+            props: {
+              className: 'line-numbers',
+            },
+          },
           Note: {
             component: Note,
             props: {
