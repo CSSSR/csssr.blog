@@ -37,3 +37,31 @@ AR adds digital elements to the surrounding reality, which means that users can 
 Advertising and digital marketing will benefit most from the augmented reality since AR  provides boundless opportunities to showcase products and their advantages to users. Marketers can build a simulated web (or mobile) environment stimulating customers to experience the product themselves and thus drive greater engagement.
 
 There’s a perfect example. In 2017, Wayfair (online furniture retailer) launched an application that included AR software that shows how furniture looks in a customer’s home. The app debuted as a featured app on ASUS ZenFone AR and used Tango (Google’s AR technology), to let consumers see and manipulate virtual furniture and décor at full scale.
+
+```css
+  /* css */
+
+  .class {
+    color: green;
+    border: 1px solid red;
+  }
+```
+
+```js
+  // js
+
+  const func = () => {
+    console.log('test');
+  }
+```
+
+
+```html
+  // html
+
+  <html>
+    <body>
+      <title>Test</title>
+    </body>
+  </html>
+```
