@@ -4,6 +4,7 @@ import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
+import Note from '../Note'
 
 const PostBody = ({ content, className }) => {
   return (
@@ -90,6 +91,12 @@ const PostBody = ({ content, className }) => {
           },
           PostTitle: {
             component: PostTitle, // Это для привера возможностей markdown-to-jsx
+          },
+          Note: {
+            component: Note,
+            props: {
+              className: 'note'
+            } // Это для привера возможностей markdown-to-jsx
           },
         },
       })}
