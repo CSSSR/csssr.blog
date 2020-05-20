@@ -66,6 +66,28 @@ export const base = css`
     border: 0.125rem solid black;
   }
 
+  ul.list_s {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .text_regular_m + .text_regular_m {
+    margin-top: 1rem;
+  }
+
+  .heading_regular_l {
+    margin-bottom: 4.375rem;
+  }
+
+  .heading_regular_m {
+    margin-bottom: 1.5rem;
+  }
+
+  .heading_regular_s {
+    margin-bottom: 1rem;
+  }
+
+
   @media (min-width: 1360px) and (max-width: 1919px) {
     body {
       min-width: 1328px;
@@ -105,6 +127,18 @@ export const base = css`
     .grid-container {
       grid-template-columns: repeat(12, 64px);
       grid-gap: 0 16px;
+    }
+
+    .heading_regular_m {
+      margin-bottom: 1rem;
+    }
+
+    .heading_regular_l {
+      margin-bottom: 1.25rem;
+    }
+
+    .heading_regular_s {
+      margin-bottom: 1rem;
     }
   }
 
