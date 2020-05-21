@@ -30,4 +30,31 @@ Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidu
 
 <PostTitle>LALALALALALA</PostTitle>
 
+```css
+  /* css */
+
+  .class {
+    color: green;
+    border: 1px solid red;
+  }
+```
+
+```js
+  // js
+
+  const func = () => {
+    console.log('test');
+  }
+```
+
+```html
+  // html
+
+  <html>
+    <body>
+      <title>Test</title>
+    </body>
+  </html>
+```
+
 <Img imgName="post" alt="post"/>

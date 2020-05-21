@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Grid } from '@csssr/core-design'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
@@ -8,7 +9,7 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const PostBody = ({ content, className }) => {
   return (
-    <div className={className}>
+    <Grid className={className}>
       {compiler(content, {
         overrides: {
           h1: {
@@ -92,12 +93,17 @@ const PostBody = ({ content, className }) => {
           PostTitle: {
             component: PostTitle, // Это для привера возможностей markdown-to-jsx
           },
+          code: {
+            props: {
+              className: 'line-numbers',
+            },
+          },
           Img: {
             component: PictureForAllResolutions,
           },
         },
       })}
-    </div>
+    </Grid>
   )
 }
 
