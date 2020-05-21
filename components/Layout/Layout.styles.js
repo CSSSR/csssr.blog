@@ -66,6 +66,11 @@ export const base = css`
     border: 0.125rem solid black;
   }
 
+  pre {
+    grid-column: 3 / span 8;
+    margin-top: 50px;
+  }
+
   @media (min-width: 1360px) and (max-width: 1919px) {
     body {
       min-width: 1328px;
@@ -106,6 +111,11 @@ export const base = css`
       grid-template-columns: repeat(12, 64px);
       grid-gap: 0 16px;
     }
+
+    pre {
+      grid-column: 2 / span 10;
+      margin-top: 2.5rem;
+    }
   }
 
   @media (min-width: 768px) and  (max-width: 1023px) {
@@ -126,6 +136,11 @@ export const base = css`
       grid-template-columns: repeat(12, 4rem);
       grid-gap: 0 1rem;
     }
+
+    pre {
+      grid-column: 2 / span 10;
+      margin-top: 2.5rem;
+    }
   }
 
   @media (max-width: 767px) {
@@ -141,6 +156,11 @@ export const base = css`
     .grid-container {
       grid-template-columns: repeat(6, 3rem);
       grid-gap: 0 0.5rem;
+    }
+
+    pre {
+      grid-column: 1 / span 6;
+      margin-top: 3.125rem;
     }
   }
 
