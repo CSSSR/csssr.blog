@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Grid } from '@csssr/core-design'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
@@ -7,7 +8,7 @@ import PostTitle from '../PostTitle'
 
 const PostBody = ({ content, className }) => {
   return (
-    <div className={className}>
+    <Grid className={className}>
       {compiler(content, {
         overrides: {
           h1: {
@@ -98,7 +99,7 @@ const PostBody = ({ content, className }) => {
           },
         },
       })}
-    </div>
+    </Grid>
   )
 }
 
