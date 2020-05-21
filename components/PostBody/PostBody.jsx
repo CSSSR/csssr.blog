@@ -6,6 +6,7 @@ import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
+import Separator from '../Separator'
 
 const PostBody = ({ content, className }) =>
   compiler(content, {
@@ -106,6 +107,9 @@ const PostBody = ({ content, className }) =>
         props: {
           className: 'line-numbers',
         },
+      },
+      Separator: {
+        component: Separator,
       },
     },
   })

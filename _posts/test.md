@@ -65,3 +65,11 @@ There’s a perfect example. In 2017, Wayfair (online furniture retailer) launch
     </body>
   </html>
 ```
+
+<Separator type="man-with-cafe"/>
+
+<Separator type="people-with-basket"/>
+
+<Separator type="people-with-dog"/>
+
+<Separator type="people-with-gramophone"/>
