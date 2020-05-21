@@ -1,3 +1,5 @@
+// TODO: подставить медиавыражения из пропса theme
+
 import { css } from '@emotion/core'
 
 export const base = css`
