@@ -5,6 +5,8 @@ import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
 
+import Quote from '../Quote'
+
 const PostBody = ({ content, className }) => {
   return (
     <div className={className}>
@@ -91,6 +93,15 @@ const PostBody = ({ content, className }) => {
           PostTitle: {
             component: PostTitle, // Это для привера возможностей markdown-to-jsx
           },
+
+          Quote: {
+            component: Quote,
+            props: {
+              className: 'quote-wrapper',
+              imgName: 'quote'
+            } // Это для привера возможностей markdown-to-jsx
+          },
+
           code: {
             props: {
               className: 'line-numbers',
