@@ -5,6 +5,7 @@ const base = ({ breakpoints: { mobile, tablet } }) => css`
   & {
     margin-top: ${calcRem(30)};
     margin-bottom: ${calcRem(30)};
+    grid-column: 4 / span 6;
   }
 
   .img-wrap {
@@ -20,6 +21,10 @@ const base = ({ breakpoints: { mobile, tablet } }) => css`
   }
 
   ${tablet.all} {
+    & {
+      grid-column: 3 / span 8;
+    }
+
     .img-wrap {
       width: ${calcRem(184)};
       margin-right: ${calcRem(40)};
@@ -28,6 +33,10 @@ const base = ({ breakpoints: { mobile, tablet } }) => css`
   }
 
   ${mobile.all} {
+    & {
+      grid-column: 1 / span 6;
+    }
+
     .img-wrap {
       width: ${calcRem(104)};
       margin-right: ${calcRem(8)};
