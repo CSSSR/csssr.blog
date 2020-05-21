@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import PostBody from '../../components/PostBody'
 import Layout from '../../components/Layout'
+import { Grid } from '@csssr/core-design'
 import { useTheme } from 'emotion-theming'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/PostTitle'
@@ -20,36 +21,34 @@ export default function Post({ post /* morePosts, */ }) {
       {router.isFallback ? (
         <PostTitle>Loading…</PostTitle>
       ) : (
-        <>
-          <article>
-            <Head>
-              <title>{post.title} | CSSSR blog</title>
-              <meta property="og:image" content={post.ogImage.url} />
-            </Head>
+        <Grid as="article">
+          <Head>
+            <title>{post.title} | CSSSR blog</title>
+            <meta property="og:image" content={post.ogImage.url} />
+          </Head>
 
-            <picture style={{ display: 'block', width: '100%' }}>
-              <source
-                media={theme.breakpoints.desktop.all.slice(7)}
-                type="image/png"
-                srcSet={post.coverImage['desktop.all']}
-              />
+          <picture style={{ display: 'block', width: '100%' }}>
+            <source
+              media={theme.breakpoints.desktop.all.slice(7)}
+              type="image/png"
+              srcSet={post.coverImage['desktop.all']}
+            />
 
-              <source
-                media={theme.breakpoints.mobile.all.slice(7)}
-                type="image/png"
-                srcSet={post.coverImage['mobile.all']}
-              />
+            <source
+              media={theme.breakpoints.mobile.all.slice(7)}
+              type="image/png"
+              srcSet={post.coverImage['mobile.all']}
+            />
 
-              <img
-                src={post.coverImage['desktop.all']}
-                alt={post.coverImage.alt}
-                style={{ display: 'block', width: '50%', margin: '40px auto' }}
-              />
-            </picture>
+            <img
+              src={post.coverImage['desktop.all']}
+              alt={post.coverImage.alt}
+              style={{ display: 'block', width: '50%', margin: '40px auto' }}
+            />
+          </picture>
 
-            <PostBody content={post.content} />
-          </article>
-        </>
+          <PostBody content={post.content} />
+        </Grid>
       )}
       {/* TODO: добавить Footer из csssr.com */}
       {/* <Footer /> */}
