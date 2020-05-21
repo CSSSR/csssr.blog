@@ -1,62 +1,176 @@
 import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
   & {
     margin-top: ${calcRem(85)};
   }
 
-  & .quote {
+  .quote {
     position: relative;
+
+    ${withImage ? 
+      `&::before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 4px;
+        background-color: #0254D8;
+      }`
+    :
+    `&::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: ${calcRem(48)};
+        height: ${calcRem(32)};
+        background-image: url(../../static/icons/quote/quotes.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }`
+    }
+  }
+
+  .image-wrapper {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .quote-text {
+    color: ${withImage ? '#18191B' : '#0254D8'};
+  }
+
+  .author,
+  .autor-post  {
+    display: block;
+  }
+
+  .autor-post  {
+    padding-bottom: 0;
 
     &::before {
       content: '';
       position: absolute;
-      display: block;
-      height: 100%;
-      background-image: url(../../static/icons/quote/quote-line.svg);
+      background-image: url(../../static/icons/quote/angle.svg);
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
   }
 
-  & .image-wrapper {
-    width: ${calcRem(108)};
-    height: ${calcRem(199)};
-  }
-
   ${desktop.all} {
-    & .quote {
-      max-width: ${calcRem(430)};
+    .quote {
+      grid-column: 6 / span 4;
 
       &::before {
-        width: 31px;
         right: calc(100% + 40px);
       }
+    }
+
+    .author {
+      margin-top: ${calcRem(30)};
+    }
+
+    .autor-post {
+      margin-top: ${calcRem(10)};
+
+      &::before {
+        right: calc(100% + 40px);
+        width: ${calcRem(31)};
+        height: ${calcRem(37)};
+      }
+    }
+
+    .image-wrapper {
+      grid-column: 4 / span 1;
+      width: ${calcRem(108)};
+      margin-top: ${calcRem(94)};
+    }
+  }
+
+  ${desktop.l} {
+    .image-wrapper {
+      margin-left: ${calcRem(100)};
     }
   }
 
   ${tablet.all} {
-    &.quote {
-      margin-top: ${calcRem(60)};
+    & {
+      margin-top: ${calcRem(65)};
+    }
 
+    .quote {
+      grid-column: 6 / span 5;
+    
       &::before {
-        top: ${calcRem(-40)};
-        right: calc(100% +  ${calcRem(30)});
-        width: ${calcRem(21)};
+        top: ${withImage ? calcRem(-5) : '0'};
+        right: calc(100% +  ${calcRem(28)});
+        width: ${withImage ? 'auto' : calcRem(48)};
+        height: ${withImage ? 'auto' : calcRem(32)};
       }
+    }
+
+    .image-wrapper {
+      grid-column: 4 / span 2;
+      max-width: ${calcRem(108)};
+      margin-top: ${calcRem(88)};
+      margin-left: ${calcRem(-23)};
+    }
+
+    .quote-text {
+      margin: 0;
+      padding: 0;
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
+    }
+
+    .author {
+      margin-top: ${calcRem(30)};
+    }
+
+    .autor-post {
+      margin-top: ${calcRem(5)};
     }
   }
 
   ${mobile.all} {
-    &.quote {
+    & {
       margin-top: ${calcRem(55)};
+    }
+
+    .image-wrapper {
+      grid-column: 1 / span 2;
+      max-width: ${calcRem(91)};
+      margin-top: ${calcRem(88)};
+      margin-left: ${calcRem(-13)};
+    }
+
+    .quote {
+      grid-column: 3 / span 4;
 
       &::before {
-        top: ${calcRem(-272)};
+        top: ${withImage ? calcRem(-6) : '0'};
         right: calc(100% + ${calcRem(15)});
-        width: ${calcRem(23)};
+        width: ${withImage ? calcRem(2) : calcRem(36)};
+        height: ${withImage ? '100%' : calcRem(24)};
       }
+    }
+
+    .quote-text {
+      margin: 0;
+      padding: 0;
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
+    }
+
+    .author {
+      margin-top: ${calcRem(20)};
+    }
+
+    .autor-post {
+      margin-top: ${calcRem(5)};
     }
 
     .picture {
@@ -69,8 +183,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const withImage = props.withImage
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, withImage })}
   `
 }
