@@ -6,6 +6,7 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
     display: block;
     margin-top: ${calcRem(30)};
     margin-bottom: ${calcRem(30)};
+    grid-column: 4 / span 6;
   }
 
   img {
@@ -18,6 +19,7 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
     & {
       margin-top: ${calcRem(15)};
       margin-bottom: ${calcRem(15)};
+      grid-column: 3 / span 8;
     }
   }
 
@@ -25,6 +27,7 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
     & {
       margin-top: ${calcRem(20)};
       margin-bottom: ${calcRem(20)};
+      grid-column: 1 / span 6;
     }
   }
 `

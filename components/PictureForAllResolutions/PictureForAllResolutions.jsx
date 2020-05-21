@@ -2,8 +2,11 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { string } from 'prop-types'
 import styles from './PictureForAllResolutions.styles'
+import { useTheme } from 'emotion-theming'
 
 const PictureForAllResolutions = ({ className, imgName, alt }) => {
+  const theme = useTheme()
+
   const images = {
     mobile: {
       '1x': `/assets/blog/posts/mobile.all/${imgName}`,
@@ -28,23 +31,35 @@ const PictureForAllResolutions = ({ className, imgName, alt }) => {
 
   return (
     <picture className={className}>
-      <source media="(max-width: 767px)" type="image/webp" srcSet={getSrcSet('mobile', 'webp')} />
+      <source
+        media={theme.breakpoints.mobile.all.slice(7)}
+        type="image/webp"
+        srcSet={getSrcSet('mobile', 'webp')}
+      />
 
       <source
-        media="(min-width: 768px) and (max-width: 1279px)"
+        media={theme.breakpoints.tablet.all.slice(7)}
         type="image/png"
         srcSet={getSrcSet('tablet', 'png')}
       />
 
       <source
-        media="(min-width: 768px) and (max-width: 1279px)"
+        media={theme.breakpoints.tablet.all.slice(7)}
         type="image/webp"
         srcSet={getSrcSet('tablet', 'webp')}
       />
 
-      <source media="(min-width: 1280px)" type="image/png" srcSet={getSrcSet('desktop', 'png')} />
+      <source
+        media={theme.breakpoints.desktop.all.slice(7)}
+        type="image/png"
+        srcSet={getSrcSet('desktop', 'png')}
+      />
 
-      <source media="(min-width: 1280px)" type="image/png" srcSet={getSrcSet('desktop', 'webp')} />
+      <source
+        media={theme.breakpoints.desktop.all.slice(7)}
+        type="image/png"
+        srcSet={getSrcSet('desktop', 'webp')}
+      />
 
       <img srcSet={getSrcSet('mobile', 'png')} src={`${images.mobile['1x']}@1x.png`} alt={alt} />
     </picture>
