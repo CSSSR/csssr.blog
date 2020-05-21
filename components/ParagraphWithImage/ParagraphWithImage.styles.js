@@ -3,8 +3,8 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile, tablet } }) => css`
   & {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: ${calcRem(30)};
+    margin-bottom: ${calcRem(30)};
   }
 
   .img-wrap {
@@ -22,26 +22,26 @@ const base = ({ breakpoints: { mobile, tablet } }) => css`
   ${tablet.all} {
     .img-wrap {
       width: ${calcRem(184)};
-      margin-right: 40px;
-      margin-bottom: 7px
+      margin-right: ${calcRem(40)};
+      margin-bottom: ${calcRem(7)};
     }
   }
 
   ${mobile.all} {
     .img-wrap {
       width: ${calcRem(104)};
-      margin-right: 8px;
-      margin-bottom: 7px
+      margin-right: ${calcRem(8)};
+      margin-bottom: ${calcRem(7)};
     }
   }
 `
 
 export default (props) => {
   const {
-    theme: { breakpoints, colors },
+    theme: { breakpoints},
   } = props
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints })}
   `
 }

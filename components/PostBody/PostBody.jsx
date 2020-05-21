@@ -4,7 +4,7 @@ import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
-import ImgLeftSide from '../ImgLeftSide'
+import ParagraphWithImage from '../ParagraphWithImage'
 
 const PostBody = ({ content, className }) => {
   return (
@@ -97,8 +97,8 @@ const PostBody = ({ content, className }) => {
               className: 'line-numbers',
             },
           },
-          ImgLeftSide: {
-            component: ImgLeftSide,
+          ParagraphWithImage: {
+            component: ParagraphWithImage,
           },
         },
       })}

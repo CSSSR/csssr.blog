@@ -59,12 +59,12 @@ Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidu
 ```
 
 
-<ImgLeftSide imgName="test">
+<ParagraphWithImage imgName="test">
   ## HTML
   <p>Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for e-commerce. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.</p>
-</ImgLeftSide>
+</ParagraphWithImage>
 
-<ImgLeftSide imgName="test">
+<ParagraphWithImage imgName="test">
   ## HTML
   <p>Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for e-commerce. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.</p>
-</ImgLeftSide>
+</ParagraphWithImage>

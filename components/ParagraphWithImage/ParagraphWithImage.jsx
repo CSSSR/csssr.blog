@@ -1,20 +1,23 @@
 import React from 'react'
 import { string, node } from 'prop-types'
 import styled from '@emotion/styled'
-import styles from './ImgLeftSide.styles'
+import { useTheme } from 'emotion-theming'
+import styles from './ParagraphWithImage.styles'
 
-const ImgLeftSide = ({ children, className, imgName }) => {
+const ParagraphWithImage = ({ children, className, imgName }) => {
+  const theme = useTheme()
+
   return (
     <div className={className}>
       <picture className="img-wrap">
         <source
-          media="min-width: 1280px"
+          media={theme.breakpoints.desktop.all.slice(7)}
           type="image/png"
           srcSet={`/assets/blog/test/desktop.all/${imgName}.png`}
         />
 
         <source
-          media="max-width: 767px"
+          media={theme.breakpoints.tablet.all.slice(7)}
           type="image/png"
           srcSet={`/assets/blog/test/tablet.all/${imgName}.png`}
         />
@@ -26,12 +29,12 @@ const ImgLeftSide = ({ children, className, imgName }) => {
   )
 }
 
-ImgLeftSide.propTypes = {
+ParagraphWithImage.propTypes = {
   className: string,
   imgName: string,
   children: node,
 }
 
-export default styled(ImgLeftSide)`
+export default styled(ParagraphWithImage)`
   ${styles}
 `
