@@ -29,3 +29,5 @@ Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidu
 * list item
 
 <PostTitle>LALALALALALA</PostTitle>
+
+<Img imgName="post" alt="post"/>
