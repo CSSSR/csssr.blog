@@ -30,6 +30,14 @@ Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidu
 
 <PostTitle>LALALALALALA</PostTitle>
 
+## AR for the Web
+
+AR adds digital elements to the surrounding reality, which means that users can see the physical world around with a smartphone or web camera, but they would also see additional fabricated images and elements layered over the real objects. Thus, AR builds a sort of bridge between users and virtual reality allowing them to take up activities based on their current location. Multiple web applications based on AR have stepped in due to the creation of compatible solutions (React-360 among them) that let web developers upload panoramic images and videos to their websites. With the increasing availability of AR, the technology will be broadly used in mobile UIs, as web development turns more and more towards mobile.
+
+Advertising and digital marketing will benefit most from the augmented reality since AR  provides boundless opportunities to showcase products and their advantages to users. Marketers can build a simulated web (or mobile) environment stimulating customers to experience the product themselves and thus drive greater engagement.
+
+There’s a perfect example. In 2017, Wayfair (online furniture retailer) launched an application that included AR software that shows how furniture looks in a customer’s home. The app debuted as a featured app on ASUS ZenFone AR and used Tango (Google’s AR technology), to let consumers see and manipulate virtual furniture and décor at full scale.
+
 ```css
   /* css */
 
