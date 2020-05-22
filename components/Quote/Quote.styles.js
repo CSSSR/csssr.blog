@@ -30,14 +30,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
         background-size: cover;
       }`
     }
-
-    &::after {
-      content: '';
-      position: absolute;
-      background-image: url(../../static/icons/quote/angle.svg);
-      background-repeat: no-repeat;
-      background-size: contain;
+    ${withImage &&
+      `&::after {
+        content: '';
+        position: absolute;
+        background-image: url(../../static/icons/quote/angle.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }`
     }
+    
   }
 
   .image-wrapper {
@@ -199,7 +201,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     }
 
     .quote {
-      grid-column: 3 / span 4;
+      grid-column: ${withImage ? '3 / span 4' : '2 / span 5'};
 
       &::before {
         top: ${withImage ? calcRem(-6) : '0'};
