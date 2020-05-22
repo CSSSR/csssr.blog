@@ -1,22 +1,20 @@
 import { css } from "@emotion/core";
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile }}) => css`
- & {
-    width: ${calcRem(880)};
-    margin-left: 50%;
-    transform: translateX(-50%);
-    margin-top: ${calcRem(50)};
-    padding-top: ${calcRem(50)};
-    padding-right: ${calcRem(111)};
-    padding-bottom: ${calcRem(54)};
-    padding-left: ${calcRem(112)};
-    background-color: #F1F2F7;
- }
+const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+  & {
+      margin-top: ${calcRem(50)};
+      padding: ${calcRem(50)} ${calcRem(112)};
+      background-color: #F1F2F7;
+  }
+
+  ${desktop.all} {
+    grid-column: 3 / span 8;
+  }
 
   ${tablet.all} {
     & {
-      width: ${calcRem(784)};
+      grid-column: 2 / span 10;
       margin-top: ${calcRem(30)};
       padding-top: ${calcRem(40)};
       padding-right: ${calcRem(80)};
@@ -27,11 +25,12 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
 
   ${mobile.all} {
     & {
+      grid-column: 1 / span 6;
+      width: 100vw;
       margin-top: ${calcRem(50)};
-      padding-top: ${calcRem(24)};
-      padding-right: ${calcRem(16)};
-      padding-bottom: ${calcRem(16)};
-      padding-left: ${calcRem(16)};
+      padding: ${calcRem(24)} ${calcRem(16)};
+      margin-left: 50%;
+      transform: translateX(-50%);
     }
   }
 

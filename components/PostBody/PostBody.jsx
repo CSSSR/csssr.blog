@@ -113,7 +113,7 @@ const PostBody = ({ content, className }) =>
         props: {
             className: 'note'
         }
-    },
+      },
     },
   })
 
