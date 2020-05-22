@@ -2,7 +2,6 @@ import { css } from "@emotion/core";
 
 export default css`
   margin: 0 auto;
-  width: 50%;
 
   div:only-child > .text_regular_m:first-of-type::first-letter {
     font-family: 'Amita';

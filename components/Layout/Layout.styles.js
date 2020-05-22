@@ -69,7 +69,7 @@ export const base = css`
   }
 
   pre {
-    grid-column: 3 / span 8;
+    grid-column: 4 / span 6;
     margin-top: 50px;
   }
 
@@ -87,11 +87,26 @@ export const base = css`
   }
 
   .heading_regular_m {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
     margin-bottom: 1.5rem;
   }
 
   .heading_regular_s {
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 24px;
     margin-bottom: 1rem;
+  }
+
+  .text_regular_m,
+  .heading_regular_l,
+  .heading_regular_m,
+  .heading_regular_s,
+  ul.list_s
+  {
+    grid-column: 4 / span 6;
   }
 
 
@@ -142,6 +157,8 @@ export const base = css`
     }
 
     .heading_regular_m {
+      font-size: 18px;
+      line-height: 24px;
       margin-bottom: 1rem;
     }
 
@@ -150,7 +167,17 @@ export const base = css`
     }
 
     .heading_regular_s {
+      font-size: 14px;
+      line-height: 24px;
       margin-bottom: 1rem;
+    }
+
+    .text_regular_m,
+    .heading_regular_l,
+    .heading_regular_m,
+    .heading_regular_s,
+    ul.list_s {
+      grid-column: 3 / span 8;
     }
   }
 
@@ -197,6 +224,24 @@ export const base = css`
     pre {
       grid-column: 1 / span 6;
       margin-top: 3.125rem;
+    }
+
+    .heading_regular_m {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .heading_regular_s {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .text_regular_m,
+    .heading_regular_l,
+    .heading_regular_m,
+    .heading_regular_s,
+    ul.list_s {
+      grid-column: 1 / span 6;
     }
   }
 
