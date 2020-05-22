@@ -8,6 +8,7 @@ import styles from './PostBody.styles'
 import PostTitle from '../PostTitle'
 import ParagraphWithImage from '../ParagraphWithImage'
 import Img from '../Img'
+import Note from '../Note'
 
 const PostBody = ({ content, className }) =>
   compiler(content, {
@@ -114,6 +115,12 @@ const PostBody = ({ content, className }) =>
       },
       ParagraphWithImage: {
         component: ParagraphWithImage,
+      },
+      Note: {
+        component: Note,
+        props: {
+            className: 'note'
+        }
       },
     },
   })
