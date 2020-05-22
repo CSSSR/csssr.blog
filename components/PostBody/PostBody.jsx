@@ -6,6 +6,7 @@ import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
+import Comments from '../Comments'
 import ParagraphWithImage from '../ParagraphWithImage'
 import Img from '../Img'
 import Note from '../Note'
@@ -17,6 +18,7 @@ const PostBody = ({ content, className }) =>
         return (
           <Grid className={className}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
+            <Comments />
           </Grid>
         )
       }
@@ -119,8 +121,8 @@ const PostBody = ({ content, className }) =>
       Note: {
         component: Note,
         props: {
-            className: 'note'
-        }
+          className: 'note',
+        },
       },
     },
   })
