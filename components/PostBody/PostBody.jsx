@@ -6,6 +6,9 @@ import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
+import ParagraphWithImage from '../ParagraphWithImage'
+import Img from '../Img'
+import Note from '../Note'
 import Quote from '../Quote'
 
 const PostBody = ({ content, className }) =>
@@ -115,6 +118,18 @@ const PostBody = ({ content, className }) =>
         props: {
           className: 'line-numbers',
         },
+      },
+      Img: {
+        component: Img,
+      },
+      ParagraphWithImage: {
+        component: ParagraphWithImage,
+      },
+      Note: {
+        component: Note,
+        props: {
+            className: 'note'
+        }
       },
     },
   })
