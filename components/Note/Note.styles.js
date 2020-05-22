@@ -3,9 +3,13 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
-      margin-top: ${calcRem(50)};
-      padding: ${calcRem(50)} ${calcRem(112)};
-      background-color: #F1F2F7;
+    margin-top: ${calcRem(50)};
+    padding: ${calcRem(50)} ${calcRem(112)};
+    background-color: #F1F2F7;
+
+    & * {
+      color: #18191B !important;
+    }
   }
 
   ${desktop.all} {
