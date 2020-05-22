@@ -1,8 +1,9 @@
 import { css } from '@emotion/core'
 
-export default css`
+const base = ({ breakpoints: { mobile, tablet } }) => css`
   & {
     margin-top: 32px;
+    grid-column: 4 / span 6;
   }
 
   &.commento-root {
@@ -11,4 +12,26 @@ export default css`
       border: 1px solid red;
     }
   }
+
+  ${tablet.all} {
+    & {
+      grid-column: 3 / span 8;
+    }
+  }
+
+  ${mobile.all} {
+    & {
+      grid-column: 1 / span 6;
+    }
+  }
 `
+
+export default (props) => {
+  const {
+    theme: { breakpoints },
+  } = props
+
+  return css`
+    ${base({ breakpoints })}
+  `
+}
