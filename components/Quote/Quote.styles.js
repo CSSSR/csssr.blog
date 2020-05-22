@@ -30,6 +30,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
         background-size: cover;
       }`
     }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url(../../static/icons/quote/angle.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
   }
 
   .image-wrapper {
@@ -50,14 +58,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
 
   .autor-post  {
     padding-bottom: 0;
-
-    &::before {
-      content: '';
-      position: absolute;
-      background-image: url(../../static/icons/quote/angle.svg);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
   }
 
   ${desktop.all} {
@@ -67,6 +67,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
       &::before {
         right: calc(100% + 40px);
       }
+
+      &::after {
+        right: calc(100% + 40px);
+        bottom: 47px;
+        width: ${calcRem(34)};
+        height: ${calcRem(37)};
+      }
     }
 
     .author {
@@ -75,12 +82,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
 
     .autor-post {
       margin-top: ${calcRem(10)};
-
-      &::before {
-        right: calc(100% + 40px);
-        width: ${calcRem(31)};
-        height: ${calcRem(37)};
-      }
     }
 
     .image-wrapper {
@@ -93,6 +94,49 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
   ${desktop.l} {
     .image-wrapper {
       margin-left: ${calcRem(100)};
+    }
+
+    .quote {
+      &::after {
+        right: calc(100% + 37px);
+        width: ${calcRem(32)};
+      }
+    }
+  }
+
+  ${desktop.m} {
+    .quote {
+
+      &::after {
+        right: calc(100% + 36px);
+        bottom: 44px;
+        width: ${calcRem(35)};
+      }
+    }
+
+    .image-wrapper {
+      margin-top: ${calcRem(89)};
+      margin-left: ${calcRem(21)};
+    } 
+  }
+
+  ${desktop.s} {
+    .quote {
+
+      &::before {
+        right: calc(100% + 38px);
+      }
+
+      &::after {
+        right: calc(100% + 36px);
+        bottom: 41px;
+        width: ${calcRem(31)};
+      }
+    }
+
+    .image-wrapper {
+      margin-top: ${calcRem(90)};
+      margin-left: ${calcRem(6)};
     }
   }
 
@@ -107,8 +151,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
       &::before {
         top: ${withImage ? calcRem(-5) : '0'};
         right: calc(100% +  ${calcRem(28)});
-        width: ${withImage ? 'auto' : calcRem(48)};
-        height: ${withImage ? 'auto' : calcRem(32)};
+        width: ${withImage ? calcRem(4) : calcRem(48)};
+        height: ${withImage ? '100%' : calcRem(32)};
+      }
+
+      &::after {
+        right: calc(100% + 23px);
+        bottom: 43px;
+        width: ${calcRem(38)};
+        height: ${calcRem(37)};
       }
     }
 
@@ -155,6 +206,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
         right: calc(100% + ${calcRem(15)});
         width: ${withImage ? calcRem(2) : calcRem(36)};
         height: ${withImage ? '100%' : calcRem(24)};
+      }
+
+      &::after {
+        right: calc(100% - 2px);
+        bottom: ${calcRem(126)};
+        width: ${calcRem(39)};
+        height: ${calcRem(36)};
+        background-image: url(../../static/icons/quote/mobile.all/angle.svg);
       }
     }
 

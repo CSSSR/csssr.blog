@@ -36,8 +36,8 @@ const Quote = ({ className, imgName, children, author, position, withImage }) =>
       
       <blockquote className="quote">
         <p className="quote-text font_p16-regular">{children}</p>
-        <span class="author font_h3-regular ">{author}</span>
-        <span class="autor-post font_perforator-10-regular">{position}</span>
+        <span className="author font_h3-regular ">{author}</span>
+        <span className="autor-post font_perforator-10-regular">{position}</span>
       </blockquote>
     </Grid>
   )
