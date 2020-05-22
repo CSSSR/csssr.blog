@@ -10,12 +10,10 @@ date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
 
-# Lorem Ipsum
-## Lorem Ipsum
-### Lorem Ipsum
-#### Lorem Ipsum
-##### Lorem Ipsum
-###### Lorem Ipsum
+<Note text>
+  Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+
+</Note>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
@@ -76,3 +74,7 @@ There’s a perfect example. In 2017, Wayfair (online furniture retailer) launch
   ## HTML
   <p>Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for e-commerce. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.</p>
 </ParagraphWithImage>
+
+<Note>
+  Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+</Note>
