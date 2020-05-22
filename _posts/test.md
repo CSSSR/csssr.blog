@@ -30,6 +30,14 @@ Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidu
 
 <PostTitle>LALALALALALA</PostTitle>
 
+## AR for the Web
+
+AR adds digital elements to the surrounding reality, which means that users can see the physical world around with a smartphone or web camera, but they would also see additional fabricated images and elements layered over the real objects. Thus, AR builds a sort of bridge between users and virtual reality allowing them to take up activities based on their current location. Multiple web applications based on AR have stepped in due to the creation of compatible solutions (React-360 among them) that let web developers upload panoramic images and videos to their websites. With the increasing availability of AR, the technology will be broadly used in mobile UIs, as web development turns more and more towards mobile.
+
+Advertising and digital marketing will benefit most from the augmented reality since AR  provides boundless opportunities to showcase products and their advantages to users. Marketers can build a simulated web (or mobile) environment stimulating customers to experience the product themselves and thus drive greater engagement.
+
+There’s a perfect example. In 2017, Wayfair (online furniture retailer) launched an application that included AR software that shows how furniture looks in a customer’s home. The app debuted as a featured app on ASUS ZenFone AR and used Tango (Google’s AR technology), to let consumers see and manipulate virtual furniture and décor at full scale.
+
 ```css
   /* css */
 
@@ -57,3 +65,14 @@ Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidu
     </body>
   </html>
 ```
+
+
+<ParagraphWithImage imgName="test">
+  ## HTML
+  <p>Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for e-commerce. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.</p>
+</ParagraphWithImage>
+
+<ParagraphWithImage imgName="test">
+  ## HTML
+  <p>Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for e-commerce. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.</p>
+</ParagraphWithImage>

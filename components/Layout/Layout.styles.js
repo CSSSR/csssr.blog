@@ -1,3 +1,5 @@
+// TODO: подставить медиавыражения из пропса theme
+
 import { css } from '@emotion/core'
 
 export const base = css`
@@ -71,6 +73,28 @@ export const base = css`
     margin-top: 50px;
   }
 
+  ul.list_s {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .text_regular_m + .text_regular_m {
+    margin-top: 1rem;
+  }
+
+  .heading_regular_l {
+    margin-bottom: 4.375rem;
+  }
+
+  .heading_regular_m {
+    margin-bottom: 1.5rem;
+  }
+
+  .heading_regular_s {
+    margin-bottom: 1rem;
+  }
+
+
   @media (min-width: 1360px) and (max-width: 1919px) {
     body {
       min-width: 1328px;
@@ -115,6 +139,18 @@ export const base = css`
     pre {
       grid-column: 2 / span 10;
       margin-top: 2.5rem;
+    }
+
+    .heading_regular_m {
+      margin-bottom: 1rem;
+    }
+
+    .heading_regular_l {
+      margin-bottom: 1.25rem;
+    }
+
+    .heading_regular_s {
+      margin-bottom: 1rem;
     }
   }
 
