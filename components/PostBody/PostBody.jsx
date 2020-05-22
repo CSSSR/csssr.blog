@@ -109,10 +109,6 @@ const PostBody = ({ content, className }) =>
         props: {
           className: 'quote-wrapper',
           imgName: 'quote',
-          quoteText: 'There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.',
-          quoteAuthor: 'Daria Skatova',
-          authorPost: 'Project Manager, Gazprom Neft',
-          withImage: true
         }
       },
       code: {

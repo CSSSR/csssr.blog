@@ -10,6 +10,8 @@ date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
 
-<Quote />
+<Quote withImage author="Daria Skatova" position="Project Manager, Gazprom Neft">
+  kofos;of;sfk;eskf;esk;fe
+</Quote>
 
 

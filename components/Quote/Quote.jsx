@@ -5,7 +5,7 @@ import { Grid } from '@csssr/core-design'
 import { useTheme } from 'emotion-theming'
 
 
-const Quote = ({ className, imgName, quoteText, quoteAuthor, authorPost, withImage }) => {
+const Quote = ({ className, imgName, children, author, position, withImage }) => {
   const theme = useTheme()
 
   return (
@@ -35,9 +35,9 @@ const Quote = ({ className, imgName, quoteText, quoteAuthor, authorPost, withIma
       }
       
       <blockquote className="quote">
-        <p className="quote-text font_p16-regular">{quoteText}</p>
-        <span class="author font_h3-regular ">{quoteAuthor}</span>
-        <span class="autor-post font_perforator-10-regular">{authorPost}</span>
+        <p className="quote-text font_p16-regular">{children}</p>
+        <span class="author font_h3-regular ">{author}</span>
+        <span class="autor-post font_perforator-10-regular">{position}</span>
       </blockquote>
     </Grid>
   )
