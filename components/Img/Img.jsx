@@ -1,27 +1,27 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { string } from 'prop-types'
-import styles from './PictureForAllResolutions.styles'
+import styles from './Img.styles'
 import { useTheme } from 'emotion-theming'
 
-const PictureForAllResolutions = ({ className, imgName, alt }) => {
+const Img = ({ className, name, alt }) => {
   const theme = useTheme()
 
   const images = {
     mobile: {
-      '1x': `/assets/blog/posts/mobile.all/${imgName}`,
-      '2x': `/assets/blog/posts/mobile.all/${imgName}`,
-      '3x': `/assets/blog/posts/mobile.all/${imgName}`,
+      '1x': `/assets/blog/posts/mobile.all/${name}`,
+      '2x': `/assets/blog/posts/mobile.all/${name}`,
+      '3x': `/assets/blog/posts/mobile.all/${name}`,
     },
     tablet: {
-      '1x': `/assets/blog/posts/tablet.all/${imgName}`,
-      '2x': `/assets/blog/posts/tablet.all/${imgName}`,
-      '3x': `/assets/blog/posts/tablet.all/${imgName}`,
+      '1x': `/assets/blog/posts/tablet.all/${name}`,
+      '2x': `/assets/blog/posts/tablet.all/${name}`,
+      '3x': `/assets/blog/posts/tablet.all/${name}`,
     },
     desktop: {
-      '1x': `/assets/blog/posts/desktop.all/${imgName}`,
-      '2x': `/assets/blog/posts/desktop.all/${imgName}`,
-      '3x': `/assets/blog/posts/desktop.all/${imgName}`,
+      '1x': `/assets/blog/posts/desktop.all/${name}`,
+      '2x': `/assets/blog/posts/desktop.all/${name}`,
+      '3x': `/assets/blog/posts/desktop.all/${name}`,
     },
   }
 
@@ -66,12 +66,12 @@ const PictureForAllResolutions = ({ className, imgName, alt }) => {
   )
 }
 
-PictureForAllResolutions.propTypes = {
+Img.propTypes = {
   className: string,
   imgName: string,
   alt: string,
 }
 
-export default styled(PictureForAllResolutions)`
+export default styled(Img)`
   ${styles}
 `

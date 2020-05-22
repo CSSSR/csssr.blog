@@ -6,8 +6,8 @@ import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
-import PictureForAllResolutions from '../PictureForAllResolutions'
 import ParagraphWithImage from '../ParagraphWithImage'
+import Img from '../Img'
 
 const PostBody = ({ content, className }) =>
   compiler(content, {
@@ -110,7 +110,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       Img: {
-        component: PictureForAllResolutions,
+        component: Img,
       },
       ParagraphWithImage: {
         component: ParagraphWithImage,
