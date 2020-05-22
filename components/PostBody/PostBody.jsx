@@ -7,6 +7,7 @@ import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
 import PictureForAllResolutions from '../PictureForAllResolutions'
+import ParagraphWithImage from '../ParagraphWithImage'
 
 const PostBody = ({ content, className }) =>
   compiler(content, {
@@ -110,6 +111,9 @@ const PostBody = ({ content, className }) =>
       },
       Img: {
         component: PictureForAllResolutions,
+      },
+      ParagraphWithImage: {
+        component: ParagraphWithImage,
       },
     },
   })
