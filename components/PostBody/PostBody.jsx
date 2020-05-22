@@ -7,6 +7,7 @@ import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
 import Separator from '../Separator'
+import ParagraphWithImage from '../ParagraphWithImage'
 
 const PostBody = ({ content, className }) =>
   compiler(content, {
@@ -107,6 +108,9 @@ const PostBody = ({ content, className }) =>
         props: {
           className: 'line-numbers',
         },
+      },
+      ParagraphWithImage: {
+        component: ParagraphWithImage,
       },
       Separator: {
         component: Separator,
