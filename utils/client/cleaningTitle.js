@@ -1,1 +1,1 @@
-export default (title) => title.replace('<span>', '').replace('</span>', '')
+export default (title) => title.replace('<i>', '').replace('</i>', '')

@@ -13,7 +13,7 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
     grid-column: 4 / span 4;
     grid-row: 1;
 
-    & > span {
+    & > i {
       font-family: 'Amita';
       font-style: normal;
       font-weight: normal;
