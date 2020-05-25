@@ -11,6 +11,7 @@ import Comments from '../Comments'
 import ParagraphWithImage from '../ParagraphWithImage'
 import Img from '../Img'
 import Note from '../Note'
+import Quote from '../Quote'
 
 const PostBody = ({ content, className }) =>
   compiler(content, {
@@ -107,6 +108,14 @@ const PostBody = ({ content, className }) =>
       },
       PostTitle: {
         component: PostTitle, // Это для привера возможностей markdown-to-jsx
+      },
+
+      Quote: {
+        component: Quote,
+        props: {
+          className: 'quote-wrapper',
+          imgName: 'quote',
+        },
       },
       code: {
         props: {
