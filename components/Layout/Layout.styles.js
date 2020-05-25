@@ -78,6 +78,11 @@ export const base = css`
     margin-bottom: 1rem;
   }
 
+  .text_regular_m {
+    color: #18191B;
+    grid-column: 4 / span 6;
+  }
+
   .text_regular_m + .text_regular_m {
     margin-top: 1rem;
   }
@@ -152,6 +157,10 @@ export const base = css`
     .heading_regular_s {
       margin-bottom: 1rem;
     }
+
+    .text_regular_m {
+      grid-column: 3 / span 8;
+    }
   }
 
   @media (min-width: 768px) and  (max-width: 1023px) {
@@ -197,6 +206,10 @@ export const base = css`
     pre {
       grid-column: 1 / span 6;
       margin-top: 3.125rem;
+    }
+
+    .text_regular_m {
+      grid-column: 1 / span 6;
     }
   }
 
