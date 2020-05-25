@@ -37,7 +37,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       h2: {
-        component: Heading,
+        component: Heading.H2,
         props: {
           className: 'heading_regular_m',
           type: 'regular',
@@ -45,7 +45,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       h3: {
-        component: Heading,
+        component: Heading.H3,
         props: {
           className: 'heading_regular_s',
           type: 'regular',
@@ -53,7 +53,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       h4: {
-        component: Heading,
+        component: Heading.H4,
         props: {
           className: 'heading_regular_s',
           type: 'regular',
@@ -61,7 +61,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       h5: {
-        component: Heading,
+        component: Heading.H5,
         props: {
           className: 'heading_regular_s',
           type: 'regular',
@@ -69,7 +69,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       h6: {
-        component: Heading,
+        component: Heading.H6,
         props: {
           className: 'heading_regular_s',
           type: 'regular',
