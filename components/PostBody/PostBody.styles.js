@@ -6,7 +6,7 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
     margin: 0 auto;
   }
 
-  & > p:first-child strong:first-child {
+  & > p:first-of-type strong:first-of-type {
     font-family: "Amita";
     font-style: normal;
     font-weight: normal;
@@ -18,13 +18,13 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
   }
 
   ${tablet.all} {
-    & > p:first-child strong:first-child {
+    & > p:first-of-type strong:first-of-type {
       padding-right: ${calcRem(11)};
     }
   }
 
   ${mobile.all} {
-    & > p:first-child strong:first-child {
+    & > p:first-of-type strong:first-of-type {
       padding-right: ${calcRem(11)};
     }
   }

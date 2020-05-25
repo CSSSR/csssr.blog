@@ -67,15 +67,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     border: 0.125rem solid black;
   }
 
-  pre {
-    grid-column: 4 / span 6;
-    margin-top: 50px;
-  }
-
-  ul.list_s {
-    grid-column: 4 / span 6;
-  }
-
   li.list_item_s {
     padding-left: ${calcRem(9)};
     color: #18191B;
@@ -95,7 +86,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   .text_regular_m {
     color: #18191B;
-    grid-column: 4 / span 6;
   }
 
   .text_regular_m + .text_regular_m {
@@ -124,9 +114,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .heading_regular_l,
   .heading_regular_m,
   .heading_regular_s,
-  ul.list_s
-  {
+  ul.list_s {
     grid-column: 4 / span 6;
+  }
+
+  pre {
+    margin-top: 50px !important;
+    grid-column: 3 / span 8;
+
+    &::after,
+    &::before {
+      content: none !important;
+    }
   }
 
 
@@ -157,17 +156,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       min-width: ${calcRem(944)};
     }
 
-    ul.list_s {
-      grid-column: 3 / span 8;
-    }
-
     li.list_item_s {
       padding-left: ${calcRem(9)};
-  
+
       &:not(:first-of-type) {
         margin-top: ${calcRem(8)};
       }
-  
+
       &::before {
         top: calc(50% - ${calcRem(2)});
       }
@@ -187,10 +182,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-gap: 0 16px;
     }
 
-    pre {
-      grid-column: 2 / span 10;
-      margin-top: 2.5rem;
-    }
 
     .heading_regular_m {
       font-size: ${calcRem(18)};
@@ -215,6 +206,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     ul.list_s {
       grid-column: 3 / span 8;
     }
+
+    pre {
+      margin-top: 2.5rem !important;
+      grid-column: 2 / span 10;
+    }
   }
 
   ${tablet.s} {
@@ -235,11 +231,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-template-columns: repeat(12, 4rem);
       grid-gap: 0 1rem;
     }
-
-    pre {
-      grid-column: 2 / span 10;
-      margin-top: 2.5rem;
-    }
   }
 
   ${mobile.all} {
@@ -257,25 +248,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-gap: 0 0.5rem;
     }
 
-    ul.list_s {
-      grid-column: 1 / span 6;
-    }
-
     li.list_item_s {
       padding-left: ${calcRem(9)};
-  
+
       &:not(:first-of-type) {
         margin-top: ${calcRem(8)};
       }
-  
+
       &::before {
         top: calc(50% - ${calcRem(2)});
       }
     }
 
     pre {
-      grid-column: 1 / span 6;
-      margin-top: 3.125rem;
+      margin-top: 3.125rem !important;
     }
 
     .heading_regular_m {
@@ -292,7 +278,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_l,
     .heading_regular_m,
     .heading_regular_s,
-    ul.list_s {
+    ul.list_s,
+    pre {
       grid-column: 1 / span 6;
     }
   }
