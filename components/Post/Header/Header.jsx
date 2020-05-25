@@ -4,14 +4,20 @@ import { string, object } from 'prop-types'
 import { Grid } from '@csssr/core-design'
 import { Heading } from '@csssr/core-design'
 import { useTheme } from 'emotion-theming'
+import DateFormater from '../../DateFormater'
 
-import styles from './PostHeader.styles'
+import styles from './Header.styles'
 
-const PostHeader = ({ className, title, coverImage }) => {
+const Header = ({ className, title, tag, date, coverImage }) => {
   const theme = useTheme()
 
   return (
-    <Grid className={className}>
+    <Grid as="header" className={className}>
+      <div className="post-meta">
+        <a className="tag">{tag}</a>
+        <DateFormater className="date">{date}</DateFormater>
+      </div>
+
       <Heading
         type="regular"
         size="l"
@@ -23,27 +29,29 @@ const PostHeader = ({ className, title, coverImage }) => {
         <source
           media={theme.breakpoints.desktop.all.slice(7)}
           type="image/png"
-          srcSet={coverImage['desktop.all']}
+          srcSet={coverImage.postPage['desktop.all']}
         />
 
         <source
           media={theme.breakpoints.mobile.all.slice(7)}
           type="image/png"
-          srcSet={coverImage['mobile.all']}
+          srcSet={coverImage.postPage['mobile.all']}
         />
 
-        <img className="img" src={coverImage['desktop.all']} alt={coverImage.alt} />
+        <img className="img" src={coverImage.postPage['desktop.all']} alt={coverImage.alt} />
       </picture>
     </Grid>
   )
 }
 
-PostHeader.propTypes = {
+Header.propTypes = {
   className: string,
   title: string,
+  tag: string,
+  date: string,
   coverImage: object,
 }
 
-export default styled(PostHeader)`
+export default styled(Header)`
   ${styles}
 `
