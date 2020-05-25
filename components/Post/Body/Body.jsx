@@ -11,13 +11,14 @@ import ParagraphWithImage from './ParagraphWithImage'
 import Img from './Img'
 import Note from './Note'
 import Quote from './Quote'
+import Subtitle from './Subtitle'
 
-const Body = ({ content, className }) =>
+const Body = ({ content, slug, className }) =>
   compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
         return (
-          <Grid className={className}>
+          <Grid className={`post-body ${className}`}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
             <Comments />
           </Grid>
@@ -122,6 +123,9 @@ const Body = ({ content, className }) =>
       },
       ParagraphWithImage: {
         component: ParagraphWithImage,
+        props: {
+          slug,
+        },
       },
       Separator: {
         component: Separator,
@@ -131,6 +135,9 @@ const Body = ({ content, className }) =>
         props: {
           className: 'note',
         },
+      },
+      Subtitle: {
+        component: Subtitle,
       },
     },
   })

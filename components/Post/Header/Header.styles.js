@@ -2,10 +2,6 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
-  & {
-    margin-bottom: 66px;
-  }
-
   .post-meta {
     grid-column: 4 / span 4;
     grid-row: 1;
@@ -39,6 +35,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     z-index: 2;
     grid-column: 4 / span 4;
     grid-row: 2;
+    color: #18191B;
 
     & > i {
       font-family: 'Amita';
@@ -98,10 +95,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${mobile.all} {
-    & {
-      margin-bottom: ${calcRem(20)};
-    }
-
     .picture {
       grid-column: 1 / span 6;
       grid-row: 1;
