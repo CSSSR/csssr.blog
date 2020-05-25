@@ -96,7 +96,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     .image-wrapper {
       grid-column: 4 / span 1;
       width: ${calcRem(108)};
-      margin-top: ${calcRem(94)};
     }
   }
 
@@ -122,7 +121,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     }
 
     .image-wrapper {
-      margin-top: ${calcRem(89)};
       margin-left: ${calcRem(21)};
     }
   }
@@ -142,7 +140,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     }
 
     .image-wrapper {
-      margin-top: ${calcRem(90)};
       margin-left: ${calcRem(6)};
     }
   }
@@ -173,7 +170,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     .image-wrapper {
       grid-column: 4 / span 2;
       max-width: ${calcRem(108)};
-      margin-top: ${calcRem(88)};
       margin-left: ${calcRem(-23)};
     }
 
@@ -200,10 +196,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     }
 
     .image-wrapper {
-      margin-top: ${calcRem(55)};
       grid-column: 1 / span 2;
       max-width: ${calcRem(91)};
-      margin-top: ${calcRem(88)};
       margin-left: ${calcRem(-13)};
 
       img {
