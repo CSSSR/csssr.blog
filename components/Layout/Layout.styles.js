@@ -92,6 +92,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: 1rem;
   }
 
+  .text_regular_m + .heading_regular_m {
+    margin-top: ${calcRem(50)};
+  }
+
   .heading_regular_l {
     margin-bottom: 4.375rem;
   }
