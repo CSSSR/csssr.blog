@@ -2,8 +2,12 @@
 title: 'HTML, CMS or Custom Development: Which is Better?'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
-  'desktop.all': '/assets/blog/html-or-cms-or-custom-development/desktop.all/cover.png'
-  'mobile.all': '/assets/blog/html-or-cms-or-custom-development/mobile.all/cover.png'
+  mainPage:
+    'desktop.all': '/assets/blog/html-or-cms-or-custom-development/desktop.all/cover.png'
+    'mobile.all': '/assets/blog/html-or-cms-or-custom-development/mobile.all/cover.png'
+  postPage:
+    'desktop.all': '/assets/blog/html-or-cms-or-custom-development/desktop.all/cover.png'
+    'mobile.all': '/assets/blog/html-or-cms-or-custom-development/mobile.all/cover.png'
 ogImage:
   url: '/assets/blog/html-or-cms-or-custom-development/desktop.all/cover.png'
 date: '2019-03-16T05:35:07.322Z'

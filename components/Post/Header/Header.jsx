@@ -29,16 +29,16 @@ const Header = ({ className, title, tag, date, coverImage }) => {
         <source
           media={theme.breakpoints.desktop.all.slice(7)}
           type="image/png"
-          srcSet={coverImage['desktop.all']}
+          srcSet={coverImage.postPage['desktop.all']}
         />
 
         <source
           media={theme.breakpoints.mobile.all.slice(7)}
           type="image/png"
-          srcSet={coverImage['mobile.all']}
+          srcSet={coverImage.postPage['mobile.all']}
         />
 
-        <img className="img" src={coverImage['desktop.all']} alt={coverImage.alt} />
+        <img className="img" src={coverImage.postPage['desktop.all']} alt={coverImage.alt} />
       </picture>
     </Grid>
   )
