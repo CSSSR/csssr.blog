@@ -4,6 +4,9 @@ excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. A
 coverImage:
   'desktop.all': '/assets/blog/augmented-and-virtual-reality/desktop.all/cover.png'
   'mobile.all': '/assets/blog/augmented-and-virtual-reality/mobile.all/cover.png'
+pageImage:
+  'desktop.all': '/assets/blog/augmented-and-virtual-reality/desktop.all/cover.png'
+  'mobile.all': '/assets/blog/augmented-and-virtual-reality/mobile.all/cover.png'
 ogImage:
   url: '/assets/blog/augmented-and-virtual-reality/desktop.all/cover.png'
 date: '2019-03-16T05:35:07.322Z'
