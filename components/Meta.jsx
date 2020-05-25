@@ -23,6 +23,23 @@ export default function Meta() {
         href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Roboto+Slab:wght@300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap"
         rel="stylesheet"
       />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+        // https://stackoverflow.com/a/27232658
+        function canUseWebP() {
+            const canvas = document.createElement('canvas')
+            canvas.width = canvas.height = 1;
+            return canvas.toDataURL &&
+              canvas.toDataURL('image/webp') &&
+              canvas.toDataURL('image/webp').indexOf('image/webp') === 5
+        }
+        if (canUseWebP()) {
+            document.documentElement.classList.add('webp')
+        }
+      `,
+        }}
+      />
     </Head>
   )
 }

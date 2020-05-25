@@ -6,10 +6,12 @@ import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
+import Separator from '../Separator'
 import Comments from '../Comments'
 import ParagraphWithImage from '../ParagraphWithImage'
 import Img from '../Img'
 import Note from '../Note'
+import Quote from '../Quote'
 
 const PostBody = ({ content, className }) =>
   compiler(content, {
@@ -107,6 +109,14 @@ const PostBody = ({ content, className }) =>
       PostTitle: {
         component: PostTitle, // Это для привера возможностей markdown-to-jsx
       },
+
+      Quote: {
+        component: Quote,
+        props: {
+          className: 'quote-wrapper',
+          imgName: 'quote',
+        },
+      },
       code: {
         props: {
           className: 'line-numbers',
@@ -117,6 +127,9 @@ const PostBody = ({ content, className }) =>
       },
       ParagraphWithImage: {
         component: ParagraphWithImage,
+      },
+      Separator: {
+        component: Separator,
       },
       Note: {
         component: Note,
