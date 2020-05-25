@@ -4,13 +4,12 @@ import styles from './Quote.styles'
 import { Grid } from '@csssr/core-design'
 import { useTheme } from 'emotion-theming'
 
-
 const Quote = ({ className, imgName, children, author, position, withImage }) => {
   const theme = useTheme()
 
   return (
     <Grid className={className}>
-      {withImage && 
+      {withImage && (
         <picture className="image-wrapper">
           <source
             media={theme.breakpoints.desktop.all.slice(7)}
@@ -32,8 +31,8 @@ const Quote = ({ className, imgName, children, author, position, withImage }) =>
 
           <img src={`/static/images/quote/mobile.all/${imgName}.png`} alt="lady"></img>
         </picture>
-      }
-      
+      )}
+
       <blockquote className="quote">
         <p className="quote-text font_p16-regular">{children}</p>
         <span className="author font_h3-regular ">{author}</span>
@@ -49,10 +48,9 @@ Quote.propTypes = {
   quoteText: string,
   quoteAuthor: string,
   authorPost: string,
-  withImage: bool
+  withImage: bool,
 }
 
 export default styled(Quote)`
   ${styles}
 `
-

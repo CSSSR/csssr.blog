@@ -6,6 +6,8 @@ import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './PostBody.styles'
 
 import PostTitle from '../PostTitle'
+import Separator from '../Separator'
+import Comments from '../Comments'
 import ParagraphWithImage from '../ParagraphWithImage'
 import Img from '../Img'
 import Note from '../Note'
@@ -18,6 +20,7 @@ const PostBody = ({ content, className }) =>
         return (
           <Grid className={className}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
+            <Comments />
           </Grid>
         )
       }
@@ -34,7 +37,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       h2: {
-        component: Heading,
+        component: Heading.H2,
         props: {
           className: 'heading_regular_m',
           type: 'regular',
@@ -42,7 +45,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       h3: {
-        component: Heading,
+        component: Heading.H3,
         props: {
           className: 'heading_regular_s',
           type: 'regular',
@@ -50,7 +53,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       h4: {
-        component: Heading,
+        component: Heading.H4,
         props: {
           className: 'heading_regular_s',
           type: 'regular',
@@ -58,7 +61,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       h5: {
-        component: Heading,
+        component: Heading.H5,
         props: {
           className: 'heading_regular_s',
           type: 'regular',
@@ -66,7 +69,7 @@ const PostBody = ({ content, className }) =>
         },
       },
       h6: {
-        component: Heading,
+        component: Heading.H6,
         props: {
           className: 'heading_regular_s',
           type: 'regular',
@@ -112,7 +115,7 @@ const PostBody = ({ content, className }) =>
         props: {
           className: 'quote-wrapper',
           imgName: 'quote',
-        }
+        },
       },
       code: {
         props: {
@@ -125,11 +128,14 @@ const PostBody = ({ content, className }) =>
       ParagraphWithImage: {
         component: ParagraphWithImage,
       },
+      Separator: {
+        component: Separator,
+      },
       Note: {
         component: Note,
         props: {
-            className: 'note'
-        }
+          className: 'note',
+        },
       },
     },
   })
