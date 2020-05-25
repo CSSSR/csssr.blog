@@ -112,7 +112,7 @@ const PostBody = ({ content, className }) =>
         props: {
           className: 'quote-wrapper',
           imgName: 'quote',
-        }
+        },
       },
       code: {
         props: {
@@ -128,8 +128,8 @@ const PostBody = ({ content, className }) =>
       Note: {
         component: Note,
         props: {
-            className: 'note'
-        }
+          className: 'note',
+        },
       },
     },
   })

@@ -4,12 +4,13 @@ import calcRem from '../../utils/style/calcRem'
 const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
   & {
     margin-top: ${calcRem(85)};
+    grid-column: 1 / span 12;
   }
 
   .quote {
     position: relative;
 
-    ${withImage ? 
+    ${withImage ?
       `&::before {
         content: '';
         position: absolute;
@@ -28,6 +29,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
         background-image: url(../../static/icons/quote/quotes.svg);
         background-repeat: no-repeat;
         background-size: cover;
+
       }`
     }
     ${withImage &&
@@ -37,15 +39,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
         background-image: url(../../static/icons/quote/angle.svg);
         background-repeat: no-repeat;
         background-size: contain;
+        background-position: ${calcRem(7)} 100%;
       }`
     }
-    
+
   }
 
   .image-wrapper {
+    display: flex;
+
     img {
+      margin-top: auto;
       width: 100%;
       height: auto;
+      object-fit: contain;
     }
   }
 
@@ -100,7 +107,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
 
     .quote {
       &::after {
-        right: calc(100% + 37px);
         width: ${calcRem(32)};
       }
     }
@@ -110,7 +116,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     .quote {
 
       &::after {
-        right: calc(100% + 36px);
         bottom: 44px;
         width: ${calcRem(35)};
       }
@@ -119,7 +124,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     .image-wrapper {
       margin-top: ${calcRem(89)};
       margin-left: ${calcRem(21)};
-    } 
+    }
   }
 
   ${desktop.s} {
@@ -130,7 +135,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
       }
 
       &::after {
-        right: calc(100% + 36px);
+        right: calc(100% + 38px);
         bottom: 41px;
         width: ${calcRem(31)};
       }
@@ -149,7 +154,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
 
     .quote {
       grid-column: 6 / span 5;
-    
+
       &::before {
         top: ${withImage ? calcRem(-5) : '0'};
         right: calc(100% +  ${calcRem(28)});
@@ -158,7 +163,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
       }
 
       &::after {
-        right: calc(100% + 23px);
+        right: calc(100% + ${calcRem(28)});
         bottom: 43px;
         width: ${calcRem(38)};
         height: ${calcRem(37)};
@@ -191,13 +196,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
   ${mobile.all} {
     & {
       margin-top: ${calcRem(55)};
+      grid-column: 1 / span 6;
     }
 
     .image-wrapper {
+      margin-top: ${calcRem(55)};
       grid-column: 1 / span 2;
       max-width: ${calcRem(91)};
       margin-top: ${calcRem(88)};
       margin-left: ${calcRem(-13)};
+
+      img {
+        margin-bottom: ${calcRem(112)};
+      }
     }
 
     .quote {
@@ -211,7 +222,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
       }
 
       &::after {
-        right: calc(100% - 2px);
+        right: calc(100% + ${calcRem(4)});
         bottom: ${calcRem(126)};
         width: ${calcRem(39)};
         height: ${calcRem(36)};
@@ -232,10 +243,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
 
     .autor-post {
       margin-top: ${calcRem(5)};
-    }
-
-    .picture {
-      margin-top: ${calcRem(55)};
     }
   }
 `
