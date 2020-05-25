@@ -5,10 +5,10 @@ import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import styles, { backgroundImagesStyles } from './Separator.styles'
 
-const Separator = ({ className, type, imgName, lineColor }) => {
+const Separator = ({ className, type, imgName }) => {
   return (
     <>
-      <hr className={cn(className, imgName, type)} lineColor={lineColor} />
+      <hr className={cn(className, imgName, type)} />
       <Global styles={backgroundImagesStyles(imgName)} />
     </>
   )
