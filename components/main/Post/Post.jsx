@@ -6,6 +6,7 @@ import styled from '@emotion/styled'
 import styles from './Post.styles'
 import DateFormater from '../../DateFormater'
 import Link from 'next/link'
+import cleaningTitle from '../../../utils/client/cleaningTitle'
 
 const Post = ({ className, post, size }) => {
   const theme = useTheme()
@@ -31,7 +32,7 @@ const Post = ({ className, post, size }) => {
           </picture>
 
           <h2 className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}>
-            {post.title}
+            {cleaningTitle(post.title)}
           </h2>
 
           <a className="tag">{post.tag}</a>

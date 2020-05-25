@@ -1,6 +1,7 @@
 import { css } from '@emotion/core'
+import calcRem from '../../utils/style/calcRem'
 
-export const base = css`
+const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   * {
     box-sizing: border-box;
     margin: 0;
@@ -66,7 +67,69 @@ export const base = css`
     border: 0.125rem solid black;
   }
 
-  @media (min-width: 1360px) and (max-width: 1919px) {
+  li.list_item_s {
+    padding-left: ${calcRem(9)};
+    color: #18191B;
+
+    &:not(:first-of-type) {
+      margin-top: ${calcRem(16)};
+    }
+
+    &::before {
+      width: ${calcRem(4)};
+      height: ${calcRem(4)};
+      top: 50%;
+      background-color: #18191B;
+      border: none;
+    }
+  }
+
+  .text_regular_m {
+    color: #18191B;
+  }
+
+  .text_regular_m + .text_regular_m {
+    margin-top: 1rem;
+  }
+
+  .heading_regular_l {
+    margin-bottom: 4.375rem;
+  }
+
+  .heading_regular_m {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 1.5rem;
+  }
+
+  .heading_regular_s {
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 1rem;
+  }
+
+  .text_regular_m,
+  .heading_regular_l,
+  .heading_regular_m,
+  .heading_regular_s,
+  ul.list_s {
+    grid-column: 4 / span 6;
+  }
+
+  pre {
+    margin-top: 50px !important;
+    grid-column: 3 / span 8;
+
+    &::after,
+    &::before {
+      content: none !important;
+    }
+  }
+
+
+  ${desktop.m} {
     body {
       min-width: 1328px;
     }
@@ -77,7 +140,7 @@ export const base = css`
     }
   }
 
-  @media (min-width: 1280px) and (max-width: 1359px) {
+  ${desktop.s} {
     body {
       min-width: 1232px;
     }
@@ -88,9 +151,21 @@ export const base = css`
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  ${tablet.all} {
     body {
-      min-width: 944px;
+      min-width: ${calcRem(944)};
+    }
+
+    li.list_item_s {
+      padding-left: ${calcRem(9)};
+
+      &:not(:first-of-type) {
+        margin-top: ${calcRem(8)};
+      }
+
+      &::before {
+        top: calc(50% - ${calcRem(2)});
+      }
     }
 
     ul.have-square-bullets li:before {
@@ -106,9 +181,39 @@ export const base = css`
       grid-template-columns: repeat(12, 64px);
       grid-gap: 0 16px;
     }
+
+
+    .heading_regular_m {
+      font-size: ${calcRem(18)};
+      line-height: ${calcRem(24)};
+      margin-bottom: 1rem;
+    }
+
+    .heading_regular_l {
+      margin-bottom: 1.25rem;
+    }
+
+    .heading_regular_s {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
+      margin-bottom: 1rem;
+    }
+
+    .text_regular_m,
+    .heading_regular_l,
+    .heading_regular_m,
+    .heading_regular_s,
+    ul.list_s {
+      grid-column: 3 / span 8;
+    }
+
+    pre {
+      margin-top: 2.5rem !important;
+      grid-column: 2 / span 10;
+    }
   }
 
-  @media (min-width: 768px) and  (max-width: 1023px) {
+  ${tablet.s} {
     html {
       font-size: 1.5625vw;
     }
@@ -119,7 +224,7 @@ export const base = css`
 
     ul.have-square-bullets li:before {
       top: 0.25rem;
-      border-width: 2px;
+      border-width: ${calcRem(2)};
     }
 
     .grid-container {
@@ -128,7 +233,7 @@ export const base = css`
     }
   }
 
-  @media (max-width: 767px) {
+  ${mobile.all} {
     html {
       font-size: 4.44444444444444444444444444444444vw;
       scroll-behavior: auto;
@@ -141,6 +246,41 @@ export const base = css`
     .grid-container {
       grid-template-columns: repeat(6, 3rem);
       grid-gap: 0 0.5rem;
+    }
+
+    li.list_item_s {
+      padding-left: ${calcRem(9)};
+
+      &:not(:first-of-type) {
+        margin-top: ${calcRem(8)};
+      }
+
+      &::before {
+        top: calc(50% - ${calcRem(2)});
+      }
+    }
+
+    pre {
+      margin-top: 3.125rem !important;
+    }
+
+    .heading_regular_m {
+      font-size: ${calcRem(18)};
+      line-height: ${calcRem(24)};
+    }
+
+    .heading_regular_s {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
+    }
+
+    .text_regular_m,
+    .heading_regular_l,
+    .heading_regular_m,
+    .heading_regular_s,
+    ul.list_s,
+    pre {
+      grid-column: 1 / span 6;
     }
   }
 
@@ -739,7 +879,11 @@ export const fonts =  css`
     }
   }
 `
-export default css`
-  ${base}
-  ${fonts}
-`
+export default theme => {
+  const { breakpoints } = theme
+
+  return css`
+    ${base({breakpoints})}
+    ${fonts}
+  `
+}
