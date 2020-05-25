@@ -1,6 +1,7 @@
 // TODO: подставить медиавыражения из пропса theme
 
 import { css } from '@emotion/core'
+import calcRem from '../../utils/style/calcRem'
 
 export const base = css`
   * {
@@ -74,8 +75,24 @@ export const base = css`
   }
 
   ul.list_s {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    grid-column: 4 / span 6;
+  }
+
+  li.list_item_s {
+    padding-left: 9px;
+    color: #18191B;
+
+    &:not(:first-of-type) {
+      margin-top: 16px;
+    }
+
+    &::before {
+      width: 4px;
+      height: 4px;
+      top: 50%;
+      background-color: #18191B;
+      border: none;
+    }
   }
 
   .text_regular_m + .text_regular_m {
@@ -120,6 +137,23 @@ export const base = css`
   @media (min-width: 768px) and (max-width: 1279px) {
     body {
       min-width: 944px;
+    }
+
+    ul.list_s {
+      grid-column: 3 / span 8;
+    }
+
+    li.list_item_s {
+      padding-left: 9px;
+      color: #18191B;
+  
+      &:not(:first-of-type) {
+        margin-top: ${calcRem(8)};
+      }
+  
+      &::before {
+        top: calc(50% - 2px);
+      }
     }
 
     ul.have-square-bullets li:before {
@@ -192,6 +226,23 @@ export const base = css`
     .grid-container {
       grid-template-columns: repeat(6, 3rem);
       grid-gap: 0 0.5rem;
+    }
+
+    ul.list_s {
+      grid-column: 1 / span 6;
+    }
+
+    li.list_item_s {
+      padding-left: 9px;
+      color: #18191B;
+  
+      &:not(:first-of-type) {
+        margin-top: ${calcRem(8)};
+      }
+  
+      &::before {
+        top: calc(50% - 2px);
+      }
     }
 
     pre {
