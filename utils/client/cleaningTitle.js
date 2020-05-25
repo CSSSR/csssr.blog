@@ -1,1 +1,1 @@
-export default (title) => title.replace('<i>', '').replace('</i>', '')
+export default (title) => title.replace(/<\/?i>/g, '')
