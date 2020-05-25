@@ -1,6 +1,6 @@
-import { css } from "@emotion/core";
-import calcRem from '../../utils/style/calcRem'
-import getBackgroundImageSrcSet from '../../utils/style/getBackgroundImageSrcSet';
+import { css } from '@emotion/core';
+import calcRem from '../../../../utils/style/calcRem'
+import getBackgroundImageSrcSet from '../../../../utils/style/getBackgroundImageSrcSet';
 
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`

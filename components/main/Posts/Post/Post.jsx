@@ -4,9 +4,9 @@ import cn from 'classnames'
 import { useTheme } from 'emotion-theming'
 import styled from '@emotion/styled'
 import styles from './Post.styles'
-import DateFormater from '../../DateFormater'
+import DateFormater from '../../../DateFormater'
 import Link from 'next/link'
-import cleaningTitle from '../../../utils/client/cleaningTitle'
+import cleaningTitle from '../../../../utils/client/cleaningTitle'
 
 const Post = ({ className, post, size }) => {
   const theme = useTheme()

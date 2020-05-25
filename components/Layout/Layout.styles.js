@@ -128,6 +128,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  ${desktop.l} {
+    .footer {
+      margin-top: 149px;
+    }
+  }
 
   ${desktop.m} {
     body {
@@ -137,6 +142,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .grid-container {
       grid-template-columns: repeat(12, 96px);
       grid-gap: 0 16px;
+    }
+
+    .footer {
+      margin-top: 267px;
     }
   }
 
@@ -148,6 +157,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .grid-container {
       grid-template-columns: repeat(12, 88px);
       grid-gap: 0 16px;
+    }
+
+    .footer {
+      margin-top: 267px;
     }
   }
 
@@ -210,6 +223,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     pre {
       margin-top: 2.5rem !important;
       grid-column: 2 / span 10;
+    }
+
+    .footer {
+      margin-top: ${calcRem(140)};
     }
   }
 
@@ -281,6 +298,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     ul.list_s,
     pre {
       grid-column: 1 / span 6;
+    }
+
+    .footer {
+      margin-top: ${calcRem(70)};
     }
   }
 

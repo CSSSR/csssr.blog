@@ -4,14 +4,20 @@ import { string, object } from 'prop-types'
 import { Grid } from '@csssr/core-design'
 import { Heading } from '@csssr/core-design'
 import { useTheme } from 'emotion-theming'
+import DateFormater from '../../DateFormater'
 
-import styles from './PostHeader.styles'
+import styles from './Header.styles'
 
-const PostHeader = ({ className, title, coverImage }) => {
+const Header = ({ className, title, tag, date, coverImage }) => {
   const theme = useTheme()
 
   return (
-    <Grid className={className}>
+    <Grid as="header" className={className}>
+      <div className="post-meta">
+        <a className="tag">{tag}</a>
+        <DateFormater className="date">{date}</DateFormater>
+      </div>
+
       <Heading
         type="regular"
         size="l"
@@ -38,12 +44,14 @@ const PostHeader = ({ className, title, coverImage }) => {
   )
 }
 
-PostHeader.propTypes = {
+Header.propTypes = {
   className: string,
   title: string,
+  tag: string,
+  date: string,
   coverImage: object,
 }
 
-export default styled(PostHeader)`
+export default styled(Header)`
   ${styles}
 `

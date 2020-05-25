@@ -3,17 +3,16 @@ import styled from '@emotion/styled'
 import { Grid } from '@csssr/core-design'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
-import styles from './PostBody.styles'
+import styles from './Body.styles'
 
-import PostTitle from '../PostTitle'
-import Separator from '../Separator'
-import Comments from '../Comments'
-import ParagraphWithImage from '../ParagraphWithImage'
-import Img from '../Img'
-import Note from '../Note'
-import Quote from '../Quote'
+import Separator from './Separator'
+import Comments from './Comments'
+import ParagraphWithImage from './ParagraphWithImage'
+import Img from './Img'
+import Note from './Note'
+import Quote from './Quote'
 
-const PostBody = ({ content, className }) =>
+const Body = ({ content, className }) =>
   compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
@@ -106,10 +105,6 @@ const PostBody = ({ content, className }) =>
           size: 'm',
         },
       },
-      PostTitle: {
-        component: PostTitle, // Это для привера возможностей markdown-to-jsx
-      },
-
       Quote: {
         component: Quote,
         props: {
@@ -140,6 +135,6 @@ const PostBody = ({ content, className }) =>
     },
   })
 
-export default styled(PostBody)`
+export default styled(Body)`
   ${styles}
 `

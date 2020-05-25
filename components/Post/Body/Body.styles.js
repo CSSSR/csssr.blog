@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import calcRem from '../../utils/style/calcRem'
+import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { tablet, mobile }}) => css`
   & {
