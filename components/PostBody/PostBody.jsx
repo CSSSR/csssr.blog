@@ -99,6 +99,13 @@ const PostBody = ({ content, className }) =>
           size: 'm',
         },
       },
+      ol: {
+        component: List,
+        props: {
+          className: 'list_s',
+          size: 'm',
+        },
+      },
       li: {
         component: ListItem,
         props: {

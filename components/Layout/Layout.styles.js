@@ -108,6 +108,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 1rem;
+    margin-top: ${calcRem(30)};
   }
 
   .text_regular_m,
