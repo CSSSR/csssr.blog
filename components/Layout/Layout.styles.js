@@ -79,16 +79,16 @@ export const base = css`
   }
 
   li.list_item_s {
-    padding-left: 9px;
+    padding-left: ${calcRem(9)};
     color: #18191B;
 
     &:not(:first-of-type) {
-      margin-top: 16px;
+      margin-top: ${calcRem(16)};
     }
 
     &::before {
-      width: 4px;
-      height: 4px;
+      width: ${calcRem(4)};
+      height: ${calcRem(4)};
       top: 50%;
       background-color: #18191B;
       border: none;
@@ -144,15 +144,14 @@ export const base = css`
     }
 
     li.list_item_s {
-      padding-left: 9px;
-      color: #18191B;
+      padding-left: ${calcRem(9)};
   
       &:not(:first-of-type) {
         margin-top: ${calcRem(8)};
       }
   
       &::before {
-        top: calc(50% - 2px);
+        top: calc(50% - ${calcRem(2)});
       }
     }
 
@@ -233,15 +232,14 @@ export const base = css`
     }
 
     li.list_item_s {
-      padding-left: 9px;
-      color: #18191B;
+      padding-left: ${calcRem(9)};
   
       &:not(:first-of-type) {
         margin-top: ${calcRem(8)};
       }
   
       &::before {
-        top: calc(50% - 2px);
+        top: calc(50% - ${calcRem(2)});
       }
     }
 
