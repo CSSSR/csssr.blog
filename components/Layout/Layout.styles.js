@@ -73,8 +73,29 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ul.list_s {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    grid-column: 4 / span 6;
+  }
+
+  li.list_item_s {
+    padding-left: ${calcRem(9)};
+    color: #18191B;
+
+    &:not(:first-of-type) {
+      margin-top: ${calcRem(16)};
+    }
+
+    &::before {
+      width: ${calcRem(4)};
+      height: ${calcRem(4)};
+      top: 50%;
+      background-color: #18191B;
+      border: none;
+    }
+  }
+
+  .text_regular_m {
+    color: #18191B;
+    grid-column: 4 / span 6;
   }
 
   .text_regular_m + .text_regular_m {
@@ -134,6 +155,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${tablet.all} {
     body {
       min-width: ${calcRem(944)};
+    }
+
+    ul.list_s {
+      grid-column: 3 / span 8;
+    }
+
+    li.list_item_s {
+      padding-left: ${calcRem(9)};
+  
+      &:not(:first-of-type) {
+        margin-top: ${calcRem(8)};
+      }
+  
+      &::before {
+        top: calc(50% - ${calcRem(2)});
+      }
     }
 
     ul.have-square-bullets li:before {
@@ -218,6 +255,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .grid-container {
       grid-template-columns: repeat(6, 3rem);
       grid-gap: 0 0.5rem;
+    }
+
+    ul.list_s {
+      grid-column: 1 / span 6;
+    }
+
+    li.list_item_s {
+      padding-left: ${calcRem(9)};
+  
+      &:not(:first-of-type) {
+        margin-top: ${calcRem(8)};
+      }
+  
+      &::before {
+        top: calc(50% - ${calcRem(2)});
+      }
     }
 
     pre {
