@@ -3,13 +3,13 @@ title: '<i>Augmented &amp;&nbsp;Virtual Reality</i> to&nbsp;Shape the Future of&
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
-    'desktop.all': '/assets/blog/augmented-and-virtual-reality/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/augmented-and-virtual-reality/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/augmented-and-virtual-reality/desktop.all/cover.png'
+    'mobile.all': '/assets/blog/posts/augmented-and-virtual-reality/mobile.all/cover.png'
   postPage:
-    'desktop.all': '/assets/blog/augmented-and-virtual-reality/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/augmented-and-virtual-reality/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/augmented-and-virtual-reality/desktop.all/cover.png'
+    'mobile.all': '/assets/blog/posts/augmented-and-virtual-reality/mobile.all/cover.png'
 ogImage:
-  url: '/assets/blog/augmented-and-virtual-reality/desktop.all/cover.png'
+  url: '/assets/blog/posts/augmented-and-virtual-reality/desktop.all/cover.png'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---

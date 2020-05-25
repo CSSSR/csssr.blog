@@ -3,13 +3,13 @@ title: 'How to Integrate Creative and Web Development'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
-    'desktop.all': '/assets/blog/creative-and-web-development/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/creative-and-web-development/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/creative-and-web-development/desktop.all/cover.png'
+    'mobile.all': '/assets/blog/posts/creative-and-web-development/mobile.all/cover.png'
   postPage:
-    'desktop.all': '/assets/blog/creative-and-web-development/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/creative-and-web-development/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/creative-and-web-development/desktop.all/cover.png'
+    'mobile.all': '/assets/blog/posts/creative-and-web-development/mobile.all/cover.png'
 ogImage:
-  url: '/assets/blog/creative-and-web-development/desktop.all/cover.png'
+  url: '/assets/blog/posts/creative-and-web-development/desktop.all/cover.png'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---

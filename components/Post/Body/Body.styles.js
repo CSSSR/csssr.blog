@@ -41,10 +41,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${desktop.all} {
-    .text_regular_m {
-      margin-top: 25px;
-    }
-
     & > .text_regular_m:first-of-type {
       margin-top: 50px;
     }
@@ -60,6 +56,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       font-weight: 900;
       font-size: 16px;
       line-height: 24px;
+    }
+
+    .text_regular_m {
+      margin-top: 25px;
+    }
+
+    .picture + .text_regular_m {
+      margin-top: 30px;
     }
 
     .list_item_s {
@@ -107,6 +111,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: ${calcRem(24)};
     }
 
+    .picture + .heading_regular_m {
+      margin-top: ${calcRem(50)};
+    }
+
     .heading_regular_s {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
@@ -114,6 +122,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .text_regular_m {
       margin-top: ${calcRem(15)};
+    }
+
+    .picture + .text_regular_m {
+      margin-top: ${calcRem(40)};
     }
 
     .list_item_s {
@@ -164,6 +176,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .text_regular_m {
       margin-top: ${calcRem(15)};
+    }
+
+    .picture + .text_regular_m {
+      margin-top: ${calcRem(20)};
     }
 
     .list_item_s {

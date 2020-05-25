@@ -120,6 +120,10 @@ const Body = ({ content, slug, className }) =>
       },
       Img: {
         component: Img,
+        props: {
+          className: 'picture',
+          slug,
+        },
       },
       ParagraphWithImage: {
         component: ParagraphWithImage,

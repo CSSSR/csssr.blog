@@ -13,16 +13,16 @@ const ParagraphWithImage = ({ children, className, slug, imgName }) => {
         <source
           media={theme.breakpoints.desktop.all.slice(7)}
           type="image/png"
-          srcSet={`/assets/blog/${slug}/desktop.all/${imgName}.png`}
+          srcSet={`/assets/blog/posts/${slug}/desktop.all/${imgName}.png`}
         />
 
         <source
           media={theme.breakpoints.tablet.all.slice(7)}
           type="image/png"
-          srcSet={`/assets/blog/${slug}/tablet.all/${imgName}.png`}
+          srcSet={`/assets/blog/posts/${slug}/tablet.all/${imgName}.png`}
         />
 
-        <img src={`/assets/blog/${slug}/mobile.all/${imgName}.png`} alt={imgName} />
+        <img src={`/assets/blog/posts/${slug}/mobile.all/${imgName}.png`} alt={imgName} />
       </picture>
       {children}
     </div>

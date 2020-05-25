@@ -3,13 +3,13 @@ title: '<i>Offshore Web Development</i>: Top Destinations For Singapore'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
-    'desktop.all': '/assets/blog/offshore-web-development/desktop.all/coverMainPage.png'
-    'mobile.all': '/assets/blog/offshore-web-development/mobile.all/coverMainPage.png'
+    'desktop.all': '/assets/blog/posts/offshore-web-development/desktop.all/coverMainPage.png'
+    'mobile.all': '/assets/blog/posts/offshore-web-development/mobile.all/coverMainPage.png'
   postPage:
-    'desktop.all': '/assets/blog/offshore-web-development/desktop.all/coverPostPage.png'
-    'mobile.all': '/assets/blog/offshore-web-development/mobile.all/coverMainPage.png'
+    'desktop.all': '/assets/blog/posts/offshore-web-development/desktop.all/coverPostPage.png'
+    'mobile.all': '/assets/blog/posts/offshore-web-development/mobile.all/coverMainPage.png'
 ogImage:
-  url: '/assets/blog/offshore-web-development/desktop.all/cover.png'
+  url: '/assets/blog/posts/offshore-web-development/desktop.all/coverMainPage.png'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---

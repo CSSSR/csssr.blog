@@ -3,13 +3,13 @@ title: 'The Baltic E-Success: A Brief Introduction to the Estonian IT Industry'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
-    'desktop.all': '/assets/blog/tips-for-task-estimating/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/tips-for-task-estimating/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/tips-for-task-estimating/desktop.all/cover.png'
+    'mobile.all': '/assets/blog/posts/tips-for-task-estimating/mobile.all/cover.png'
   postPage:
-    'desktop.all': '/assets/blog/tips-for-task-estimating/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/tips-for-task-estimating/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/tips-for-task-estimating/desktop.all/cover.png'
+    'mobile.all': '/assets/blog/posts/tips-for-task-estimating/mobile.all/cover.png'
 ogImage:
-  url: '/assets/blog/tips-for-task-estimating/desktop.all/cover.png'
+  url: '/assets/blog/posts/stips-for-task-estimating/desktop.all/cover.png'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---

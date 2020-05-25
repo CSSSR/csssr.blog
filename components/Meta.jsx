@@ -17,7 +17,7 @@ export default function Meta() {
       <meta name="description" content="Super cool blog from CSSSR" />
       <meta
         property="og:image"
-        content="/assets/blog/offshore-web-development/desktop.all/cover.png"
+        content="/assets/blog/posts/offshore-web-development/desktop.all/cover.png"
       />
       <link
         href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Roboto+Slab:wght@300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap"
