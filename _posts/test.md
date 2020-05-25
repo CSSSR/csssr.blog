@@ -9,15 +9,16 @@ ogImage:
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
+**In**this digital era, a **website** comprising various UI/UX elements and features can reveal the ocean of opportunities and become even more effective and engaging. UI/UX  components and technologies not only make a website look great but also secure the brand’s marketing goals.
+
+**c**omprising various UI/UX elements and features can reveal the ocean of opportunities and become even more effective and engaging. UI/UX  components and technologies not only make a website look great but also secure the brand’s marketing goals.
 
 <Note>
   Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
-
 </Note>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+*Lorem* ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
-[Lorem ipsum](https://www.youtube.com/watch?v=qd2hX721Wjg)
 
 Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
 
@@ -73,8 +74,26 @@ There’s a perfect example. In 2017, Wayfair (online furniture retailer) launch
   <p>Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for e-commerce. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.</p>
 </ParagraphWithImage>
 
+<Separator type="color-line" lineColor="#d3d3ff" imgName="manWithCafeBg"/>
+
+<Separator type="color-line" lineColor="#d3d3ff" imgName="peopleWithBasket"/>
+
+<Separator type="bg-repeat" imgName="peopleWithGramophone"/>
+
+<Separator type="bg-repeat" imgName="peopleWithDogBg"/>
+
 <Img name="post" alt="post"/>
 
 <Note>
   Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
 </Note>
+
+<Quote author="Daria Skatova" position="Project Manager, Gazprom Neft">
+  There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.
+</Quote>
+
+<Quote author="Artyom Skatov" position="Project Manager, Gazprom Neft" withImage>
+  There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.
+
+  There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.
+</Quote>

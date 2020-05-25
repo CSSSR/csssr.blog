@@ -1,13 +1,39 @@
-import { css } from "@emotion/core";
+import { css } from '@emotion/core'
+import calcRem from '../../utils/style/calcRem'
 
-export default css`
-  margin: 0 auto;
+const base = ({ breakpoints: { tablet, mobile }}) => css`
+  & {
+    margin: 0 auto;
+  }
 
-  div:only-child > .text_regular_m:first-of-type::first-letter {
-    font-family: 'Amita';
+  & > p:first-child strong:first-child {
+    font-family: "Amita";
     font-style: normal;
     font-weight: normal;
     font-size: 76px;
     line-height: 32px;
+    padding-top: ${calcRem(20)};
+    padding-right: ${calcRem(7)};
+    float: left;
   }
-`;
+
+  ${tablet.all} {
+    & > p:first-child strong:first-child {
+      padding-right: ${calcRem(11)};
+    }
+  }
+
+  ${mobile.all} {
+    & > p:first-child strong:first-child {
+      padding-right: ${calcRem(11)};
+    }
+  }
+`
+
+export default props => {
+  const { theme: { breakpoints } } = props
+
+  return css`
+    ${base({ breakpoints })}
+  `
+}
