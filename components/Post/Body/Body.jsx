@@ -101,6 +101,7 @@ const Body = ({ content, className }) =>
       ol: {
         component: List,
         props: {
+          as: 'ol',
           className: 'list_s',
           size: 'm',
         },

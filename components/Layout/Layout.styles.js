@@ -88,8 +88,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     color: #18191B;
   }
 
-  .text_regular_m + .text_regular_m {
-    margin-top: 1rem;
+  .text_regular_m {
+    margin-bottom: ${calcRem(30)};
   }
 
   .heading_regular_l {
@@ -108,7 +108,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 1rem;
-    margin-top: ${calcRem(30)};
   }
 
   .text_regular_m,

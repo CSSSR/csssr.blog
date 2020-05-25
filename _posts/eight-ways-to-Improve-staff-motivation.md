@@ -1,12 +1,12 @@
 ---
-title: 'Eight Ways to&nbsp;Improve <i>Staff Motivation</i> or&nbsp;How to&nbsp;Mend Broken Morale'
+title: 'Eight Ways to Improve <i>Staff Motivation</i> or How to Mend Broken Morale'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
     'desktop.all': '/assets/blog/eight-ways-to-Improve-staff-motivation/desktop.all/cover.png'
     'mobile.all': '/assets/blog/eight-ways-to-Improve-staff-motivation/mobile.all/cover.png'
   postPage:
-    'desktop.all': '/assets/blog/eight-ways-to-Improve-staff-motivation/desktop.all/cover.png'
+    'desktop.all': '/assets/blog/eight-ways-to-Improve-staff-motivation/desktop.all/pageImg.png'
     'mobile.all': '/assets/blog/eight-ways-to-Improve-staff-motivation/mobile.all/cover.png'
 ogImage:
   url: '/assets/blog/eight-ways-to-Improve-staff-motivation/desktop.all/cover.png'
