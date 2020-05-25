@@ -26,7 +26,7 @@ export default function Post({ post /* morePosts, */ }) {
             <meta property="og:image" content={post.ogImage.url} />
           </Head>
 
-          <PostHeader title={post.title} coverImage={post.coverImage} />
+          <PostHeader title={post.title} coverImage={post.pageImage} />
 
           <PostBody content={post.content} />
         </article>
@@ -46,6 +46,7 @@ export async function getStaticProps({ params }) {
     'content',
     'ogImage',
     'coverImage',
+    'pageImage',
   ])
 
   return {
