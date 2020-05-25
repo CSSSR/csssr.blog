@@ -6,6 +6,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     & {
       margin-top: 66px;
       grid-column: 4 / span 6;
+      color: #18191B;
     }
   }
 
