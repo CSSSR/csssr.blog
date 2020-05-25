@@ -10,7 +10,7 @@ export default function Layout({ children }) {
 
       <Header />
       <main id="main">{children}</main>
-      <Footer />
+      <Footer className="footer" />
 
       <Global styles={styles} />
     </>

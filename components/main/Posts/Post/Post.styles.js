@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import calcRem from '../../../utils/style/calcRem'
+import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   li > a {
@@ -37,8 +37,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     display: inline-block;
     font-family: Roboto;
     font-style: normal;
-    font-size: 10px;
-    line-height: 16px;
+    font-size: ${calcRem(10)};
+    line-height: ${calcRem(16)};
   }
 
   .tag {

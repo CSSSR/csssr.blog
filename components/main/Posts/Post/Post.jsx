@@ -4,9 +4,9 @@ import cn from 'classnames'
 import { useTheme } from 'emotion-theming'
 import styled from '@emotion/styled'
 import styles from './Post.styles'
-import DateFormater from '../../DateFormater'
+import DateFormater from '../../../DateFormater'
 import Link from 'next/link'
-import cleaningTitle from '../../../utils/client/cleaningTitle'
+import cleaningTitle from '../../../../utils/client/cleaningTitle'
 
 const Post = ({ className, post, size }) => {
   const theme = useTheme()
@@ -19,16 +19,16 @@ const Post = ({ className, post, size }) => {
             <source
               media={theme.breakpoints.desktop.all.slice(7)}
               type="image/png"
-              srcSet={post.coverImage['desktop.all']}
+              srcSet={post.coverImage.mainPage['desktop.all']}
             />
 
             <source
               media={theme.breakpoints.mobile.all.slice(7)}
               type="image/png"
-              srcSet={post.coverImage['mobile.all']}
+              srcSet={post.coverImage.mainPage['mobile.all']}
             />
 
-            <img src={post.coverImage['desktop.all']} alt={post.coverImage.alt}></img>
+            <img src={post.coverImage.mainPage['desktop.all']} alt={post.coverImage.alt}></img>
           </picture>
 
           <h2 className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}>
