@@ -19,7 +19,7 @@ tag: 'Web-development'
 
 **E**stonia enjoys the reputation of&nbsp;a&nbsp;genuinely digital society. Today, it&nbsp;is&nbsp;Europe’s most ambitious country in&nbsp;terms of&nbsp;technological and&nbsp;IT development. Most of&nbsp;government services are delivered 24/7 and have been digitally linked across one platform, while blockchain technology is&nbsp;often used to&nbsp;secure data integrity. Estonia has the largest number of&nbsp;IT startups per capita, while the alumni of&nbsp;two leading Universities are behind the world-famous tech companies that have changed the market. Let’s have a&nbsp;look at&nbsp;the numbers that make the country claim it&nbsp;is&nbsp;the real E-success and&nbsp;IT leader.
 
-<Img name="flag" alt="flag"/>
+<Img name="flag" alt="flag" withBigMargin/>
 
 ## Europe’s most developed IT sector
 
