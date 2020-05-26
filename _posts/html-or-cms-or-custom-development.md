@@ -1,19 +1,69 @@
 ---
-title: 'HTML, CMS or Custom Development: Which is Better?'
+title: '<i>HTML, CMS</i> or <i>Custom Development</i>: Which is Better?'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
-  'desktop.all': '/assets/blog/html-or-cms-or-custom-development/desktop.all/cover.png'
-  'mobile.all': '/assets/blog/html-or-cms-or-custom-development/mobile.all/cover.png'
+  mainPage:
+    'desktop.all': '/assets/blog/posts/html-or-cms-or-custom-development/desktop.all/coverMainPage.png'
+    'mobile.all': '/assets/blog/posts/html-or-cms-or-custom-development/mobile.all/coverMainPage.png'
+  postPage:
+    'desktop.all': '/assets/blog/posts/html-or-cms-or-custom-development/desktop.all/coverPostPage.png'
+    'mobile.all': '/assets/blog/posts/html-or-cms-or-custom-development/mobile.all/coverMainPage.png'
 ogImage:
-  url: '/assets/blog/html-or-cms-or-custom-development/desktop.all/cover.png'
+  url: '/assets/blog/posts/html-or-cms-or-custom-development/desktop.all/cover.png'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+**F**irst and foremost, you should know that there’s no one right way to build a website. What you use in the end all depends on your needs and business demands. Sometimes a basic HTML site is all you need, other times you may need to develop a completely bespoke site to appeal to your customer base, while standard CMS sites allow you to make basic updates easily.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+To help you decide which web development strategy is best for you, let’s look at the advantages and disadvantages of each.
 
-## Lorem Ipsum
+<ParagraphWithImage imgName="html">
+  ## HTML
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+  Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for e-commerce. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.
+
+  Pros: cheap, quick to build, low level programming skills to update
+
+  Cons: static website that requires programming skills to update, can’t be used for e-commerce, difficult to use for complex sites.
+
+  Who it’s best for: companies looking for a basic online presence with company description and contact details.
+</ParagraphWithImage>
+
+<ParagraphWithImage imgName="cms">
+  ## Standard CMS
+
+  Description: A Content Management System (CMS) website is quite simple to set up. There are standard site layouts that you can purchase and you can buy a design to fill it in. You can hire a company to do this for you, but they’ll charge quite a high premium to develop them for you. However, CMS sites can be good for standard e-commerce sites, and it can be useful to hire a developer to help you with this. You should also remember that because most e-commerce sites have some custom elements, CMS is usually best for MVPs, while you’d have to hire a developer to build your final product from scratch.
+
+  Another key advantage to CMS sites is that once you’ve set them up, you can change content relatively simply, although if you want to make major changes, you’ll need a custom site. Standard CMS can also be useful for blogs, because the content can be so easily updated
+
+  Pros: some adaptable content with no developer, can build MVPs for e-commerce, cheaper than custom sites
+
+  Cons: more expensive than HTML, no customization, often need to build new site from scratch as company grows, mostly only suitable for MVPs
+
+  Who it’s best for: companies building MVPs to be rebuilt once bigger investment is secured, basic e-commerce, blogs
+</ParagraphWithImage>
+
+<ParagraphWithImage imgName="custom-development">
+  ## Custom Development
+
+  Description: custom web development is the most useful way of building a website if you want to build a long-term business through an internet presence – basically everyone these days. For some businesses, like a local car dealership, this may be too much, because you sell most of your cars in person. However, if you want to make sales over the internet, you need at least a CMS website.
+
+  One of the advantages of developing a custom site as opposed to a basic CMS design is that there are no limitations based on the standard layout. You can build whatever elements you want to help increase your sales and build elements that give your company a real unique selling point. You can also update parts of your website, like a standard CMS site.
+
+  Another major benefit of building your own custom website is that they can be easily scaled. It’s important to note that how well the site can scale is largely dependent on the quality of the code. Standard CMS sites or low-quality code custom sites can get buggy and have delays as users increase. If you’re building a site to handle a large load of clients, it’s best to find a skilled team of developers to do it for you.
+
+  However, skilled developers can be quite expensive, which is difficult for some newer and smaller businesses to handle. If you’re just starting out and don’t have much funding, it might be expensive for you to build the site you want from the beginning, but it will save you time and money down the road.
+
+  Pros: completely customizable, scalable, can update content, better presentation of unique selling points,
+
+  Cons: can be pricey, requires experienced professional team, major updates more complex
+
+  Who it’s best for: established companies looking to build an online store, aggregators, startups looking to build an online company, news sites
+</ParagraphWithImage>
+
+<Separator type="color-line" lineColor="#D3D3FF" imgName="peopleWithBasket"/>
+
+## Conclusion
+
+If you’re looking to build a new website, you have several options to choose from, and the one that’s right for you depends on many factors. As you grow your business, you may decide to change what you originally built. Choosing the right model to start with can save you time and money and help you grow faster.
