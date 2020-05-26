@@ -1,38 +1,20 @@
-import { useRouter } from 'next/router'
-import PostBody from '../../components/PostBody'
 import Layout from '../../components/Layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
-import PostTitle from '../../components/PostTitle'
-import PostHeader from '../../components/PostHeader'
-import Head from 'next/head'
-import cleaningTitle from '../../utils/client/cleaningTitle'
+import Post from '../../components/Post'
 
-export default function Post({ post /* morePosts, */ }) {
-  const router = useRouter()
+export default function PostPage({ post /* morePosts, */ }) {
+  // const router = useRouter()
   // TODO: добавить ErrorPage из csssr.com
   // if (!router.isFallback && !post?.slug) {
   //   return <ErrorPage statusCode={404} />
   // }
   return (
     <Layout>
-      {/* TODO: добавить Header из csssr.com */}
-      {/* <Header /> */}
-      {router.isFallback ? (
-        <PostTitle>Loading…</PostTitle>
-      ) : (
-        <article>
-          <Head>
-            <title>{cleaningTitle(post.title)} | CSSSR blog</title>
-            <meta property="og:image" content={post.ogImage.url} />
-          </Head>
-
-          <PostHeader title={post.title} coverImage={post.coverImage} />
-
-          <PostBody content={post.content} />
-        </article>
-      )}
-      {/* TODO: добавить Footer из csssr.com */}
-      {/* <Footer /> */}
+      {/*
+        не дмаю что нам это пока нужно, но оставлю как пример создания фолбека
+        router.isFallback ? <PostTitle>Loading…</PostTitle> : <Post post={post} />
+      */}
+      <Post post={post} />
     </Layout>
   )
 }
@@ -44,6 +26,7 @@ export async function getStaticProps({ params }) {
     'slug',
     'author',
     'content',
+    'tag',
     'ogImage',
     'coverImage',
   ])

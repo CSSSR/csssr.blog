@@ -51,84 +51,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-gap: 0 32px;
   }
 
-  ul.have-square-bullets li {
-    position: relative;
-    padding-left: 1rem;
-  }
-
-  ul.have-square-bullets li:before {
-    content: '';
-    position: absolute;
-    top: 0.5625rem;
-    left: 0;
-    box-sizing: border-box;
-    width: 0.5rem;
-    height: 0.5rem;
-    border: 0.125rem solid black;
-  }
-
-  pre {
-    grid-column: 4 / span 6;
-    margin-top: 50px;
-  }
-
-  ul.list_s {
-    grid-column: 4 / span 6;
-  }
-
-  li.list_item_s {
-    padding-left: ${calcRem(9)};
-    color: #18191B;
-
-    &:not(:first-of-type) {
-      margin-top: ${calcRem(16)};
-    }
-
-    &::before {
-      width: ${calcRem(4)};
-      height: ${calcRem(4)};
-      top: 50%;
-      background-color: #18191B;
-      border: none;
+  ${desktop.l} {
+    .footer {
+      margin-top: 149px;
     }
   }
-
-  .text_regular_m {
-    color: #18191B;
-    grid-column: 4 / span 6;
-  }
-
-  .text_regular_m + .text_regular_m {
-    margin-top: 1rem;
-  }
-
-  .heading_regular_l {
-    margin-bottom: 4.375rem;
-  }
-
-  .heading_regular_m {
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 32px;
-    margin-bottom: 1.5rem;
-  }
-
-  .heading_regular_s {
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 1rem;
-  }
-
-  .text_regular_m,
-  .heading_regular_l,
-  .heading_regular_m,
-  .heading_regular_s,
-  ul.list_s
-  {
-    grid-column: 4 / span 6;
-  }
-
 
   ${desktop.m} {
     body {
@@ -138,6 +65,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .grid-container {
       grid-template-columns: repeat(12, 96px);
       grid-gap: 0 16px;
+    }
+
+    .footer {
+      margin-top: 267px;
     }
   }
 
@@ -150,6 +81,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-template-columns: repeat(12, 88px);
       grid-gap: 0 16px;
     }
+
+    .footer {
+      margin-top: 267px;
+    }
   }
 
   ${tablet.all} {
@@ -157,63 +92,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       min-width: ${calcRem(944)};
     }
 
-    ul.list_s {
-      grid-column: 3 / span 8;
-    }
-
-    li.list_item_s {
-      padding-left: ${calcRem(9)};
-  
-      &:not(:first-of-type) {
-        margin-top: ${calcRem(8)};
-      }
-  
-      &::before {
-        top: calc(50% - ${calcRem(2)});
-      }
-    }
-
-    ul.have-square-bullets li:before {
-      top: 0.25rem;
-      left: 0;
-      box-sizing: border-box;
-      width: 0.5rem;
-      height: 0.5rem;
-      border: 0.125rem solid black;
-    }
-
     .grid-container {
       grid-template-columns: repeat(12, 64px);
       grid-gap: 0 16px;
     }
 
-    pre {
-      grid-column: 2 / span 10;
-      margin-top: 2.5rem;
-    }
-
-    .heading_regular_m {
-      font-size: ${calcRem(18)};
-      line-height: ${calcRem(24)};
-      margin-bottom: 1rem;
-    }
-
-    .heading_regular_l {
-      margin-bottom: 1.25rem;
-    }
-
-    .heading_regular_s {
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
-      margin-bottom: 1rem;
-    }
-
-    .text_regular_m,
-    .heading_regular_l,
-    .heading_regular_m,
-    .heading_regular_s,
-    ul.list_s {
-      grid-column: 3 / span 8;
+    .footer {
+      margin-top: ${calcRem(140)};
     }
   }
 
@@ -226,19 +111,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       min-width: 59rem;
     }
 
-    ul.have-square-bullets li:before {
-      top: 0.25rem;
-      border-width: ${calcRem(2)};
-    }
-
     .grid-container {
       grid-template-columns: repeat(12, 4rem);
       grid-gap: 0 1rem;
-    }
-
-    pre {
-      grid-column: 2 / span 10;
-      margin-top: 2.5rem;
     }
   }
 
@@ -257,43 +132,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-gap: 0 0.5rem;
     }
 
-    ul.list_s {
-      grid-column: 1 / span 6;
-    }
-
-    li.list_item_s {
-      padding-left: ${calcRem(9)};
-  
-      &:not(:first-of-type) {
-        margin-top: ${calcRem(8)};
-      }
-  
-      &::before {
-        top: calc(50% - ${calcRem(2)});
-      }
-    }
-
-    pre {
-      grid-column: 1 / span 6;
-      margin-top: 3.125rem;
-    }
-
-    .heading_regular_m {
-      font-size: ${calcRem(18)};
-      line-height: ${calcRem(24)};
-    }
-
-    .heading_regular_s {
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
-    }
-
-    .text_regular_m,
-    .heading_regular_l,
-    .heading_regular_m,
-    .heading_regular_s,
-    ul.list_s {
-      grid-column: 1 / span 6;
+    .footer {
+      margin-top: ${calcRem(70)};
     }
   }
 
