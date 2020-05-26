@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
 import styles from './ParagraphWithImage.styles'
 
-const ParagraphWithImage = ({ children, className, imgName }) => {
+const ParagraphWithImage = ({ children, className, slug, imgName }) => {
   const theme = useTheme()
 
   return (
@@ -13,16 +13,16 @@ const ParagraphWithImage = ({ children, className, imgName }) => {
         <source
           media={theme.breakpoints.desktop.all.slice(7)}
           type="image/png"
-          srcSet={`/assets/blog/posts/desktop.all/${imgName}.png`}
+          srcSet={`/assets/blog/posts/${slug}/desktop.all/${imgName}.png`}
         />
 
         <source
           media={theme.breakpoints.tablet.all.slice(7)}
           type="image/png"
-          srcSet={`/assets/blog/posts/tablet.all/${imgName}.png`}
+          srcSet={`/assets/blog/posts/${slug}/tablet.all/${imgName}.png`}
         />
 
-        <img src={`/assets/blog/posts/mobile.all/${imgName}.png`} alt={imgName} />
+        <img src={`/assets/blog/posts/${slug}/mobile.all/${imgName}.png`} alt={imgName} />
       </picture>
       {children}
     </div>

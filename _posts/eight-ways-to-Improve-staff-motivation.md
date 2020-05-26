@@ -3,13 +3,13 @@ title: 'Eight Ways to Improve <i>Staff Motivation</i> or How to Mend Broken Mora
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
-    'desktop.all': '/assets/blog/eight-ways-to-Improve-staff-motivation/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/eight-ways-to-Improve-staff-motivation/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/desktop.all/cover.png'
+    'mobile.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/mobile.all/cover.png'
   postPage:
-    'desktop.all': '/assets/blog/eight-ways-to-Improve-staff-motivation/desktop.all/pageImg.png'
-    'mobile.all': '/assets/blog/eight-ways-to-Improve-staff-motivation/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/desktop.all/pageImg.png'
+    'mobile.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/mobile.all/cover.png'
 ogImage:
-  url: '/assets/blog/eight-ways-to-Improve-staff-motivation/desktop.all/cover.png'
+  url: '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/desktop.all/cover.png'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---

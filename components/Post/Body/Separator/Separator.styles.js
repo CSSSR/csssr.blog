@@ -7,7 +7,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
   & {
     position: relative;
     margin-top: ${calcRem(80)};
-    margin-bottom: ${calcRem(40)};
     height: ${calcRem(111)};
     width: 100vw;
     grid-column: 1 / span 12;
@@ -59,7 +58,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
         background-repeat: repeat-x;
         background-color: #f4f7f6;
       }
-
     }
   }
 
@@ -77,21 +75,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
 
   ${tablet.all} {
     --width-container: ${calcRem(944)};
+
+    & {
+      margin-top: ${calcRem(60)};
+    }
   }
 
   ${mobile.all} {
     --width-container: 20.5rem;
     grid-column: 1 / span 6;
     margin-top: ${calcRem(60)};
-    margin-bottom: ${calcRem(30)};
   }
 `
 
 const getSrcObject = (imgName, extension) => {
   return {
-    '1x': `/assets/blog/separator/${imgName}@1x.${extension}`,
-    '2x': `/assets/blog/separator/${imgName}@2x.${extension}`,
-    '3x': `/assets/blog/separator/${imgName}@3x.${extension}`
+    '1x': `/assets/blog/components/separator/${imgName}@1x.${extension}`,
+    '2x': `/assets/blog/components/separator/${imgName}@2x.${extension}`,
+    '3x': `/assets/blog/components/separator/${imgName}@3x.${extension}`
   }
 }
 

@@ -15,7 +15,7 @@ const Post = ({ post, className }) => (
 
     <Header title={post.title} coverImage={post.coverImage} tag={post.tag} date={post.date} />
 
-    <Body content={post.content} />
+    <Body content={post.content} slug={post.slug} />
   </article>
 )
 
