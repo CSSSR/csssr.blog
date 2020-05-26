@@ -7,15 +7,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     grid-column: 4 / span 6;
   }
 
-  .heading_regular_m {
+  .heading_regular_m,
+  .heading_regular_s,
+  .text_regular_m {
     margin-top: 0;
   }
 
+  .text_regular_m + .text_regular_m {
+    margin-top: 25px;
+  }
+
   .img-wrap {
-    width: ${calcRem(270)};
+    display: block;
     float: left;
+    margin-top: 0;
     margin-right: 17px;
     margin-bottom: 4px;
+    grid-column: none;
 
     img {
       width: 100%;
@@ -36,9 +44,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .img-wrap {
+      /* TODO: убрать фиксированную ширину когда появятся адаптивные изображения */
       width: ${calcRem(184)};
       margin-right: ${calcRem(40)};
       margin-bottom: ${calcRem(7)};
+    }
+
+    .text_regular_m + .text_regular_m {
+      margin-top: 0.9375rem;
     }
 
     .heading_regular_m + .text_regular_m {
@@ -53,6 +66,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .img-wrap {
+      /* TODO: убрать фиксированную ширину когда появятся адаптивные изображения */
       width: ${calcRem(104)};
       margin-right: ${calcRem(8)};
       margin-bottom: ${calcRem(7)};
