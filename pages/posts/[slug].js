@@ -29,6 +29,7 @@ export async function getStaticProps({ params }) {
     'tag',
     'ogImage',
     'coverImage',
+    'pageImage',
   ])
 
   return {

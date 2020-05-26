@@ -2,6 +2,10 @@ import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+  & {
+    overflow-x: hidden;
+  }
+
   ${desktop.all} {
     & {
       padding-top: 192px;

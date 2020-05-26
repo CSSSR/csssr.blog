@@ -2,7 +2,7 @@ import { string } from 'prop-types'
 import { Grid } from '@csssr/core-design'
 import styled from '@emotion/styled'
 import styles from './Posts.styles'
-import Post from './Post'
+import PostCard from './PostCard'
 
 const postsOrder = [
   ['offshore-web-development', 'augmented-and-virtual-reality'],
@@ -28,7 +28,7 @@ const Posts = ({ posts, className }) => {
           const size = (isOddRow && isOddPost) || (!isOddRow && !isOddPost) ? 'm' : 's'
           const side = isOddPost ? 'l' : 'r'
 
-          return <Post key={postSlug} post={post} size={size} side={side} />
+          return <PostCard key={postSlug} post={post} size={size} side={side} />
         }),
       )}
     </Grid>
