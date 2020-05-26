@@ -10,9 +10,6 @@ coverImage:
     'mobile.all': '/assets/blog/posts/the-baltic-e-success/mobile.all/cover.png'
 ogImage:
   url: '/assets/blog/posts/the-baltic-e-succes/desktop.all/cover.png'
-pageImage:
-  'desktop.all': '/assets/blog/the-baltic-e-success/desktop.all/cover.png'
-  'mobile.all': '/assets/blog/the-baltic-e-success/mobile.all/cover.png'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---

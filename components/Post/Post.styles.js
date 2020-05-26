@@ -2,13 +2,16 @@ import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+  & {
+    overflow-x: hidden;
+  }
+
   ${desktop.all} {
     & {
       padding-top: 192px;
       background-image: linear-gradient(to right, white, white), url(${require('../../static/images/post-header-bg.svg').default});
       background-repeat: no-repeat, repeat-x;
       background-position: center 192px, center top;
-      overflow-x: hidden;
     }
   }
 

@@ -11,7 +11,6 @@ export async function getStaticProps() {
     'slug',
     'author',
     'coverImage',
-    'pageImage',
     'excerpt',
     'tag',
   ])
