@@ -18,7 +18,7 @@ tag: 'Web-development'
 
 In recent years, we have witnessed a dramatic shift in website development. The innovative and futuristic technologies of augmented (AR) and virtual reality (VR) are transforming the internet and are capable of changing the way websites address users’ demands. Today, both technologies are considered as the most important trends in the IT sector, and with the help of desktops, tablets and smartphones have become more accessible, allowing millions of people to experience AR/VR applications across numerous business verticals. According to Goldman Sachs estimates, the AR/VR is projected to grow into a $95 billion market by 2025.
 
-<Img name='profit-chart' alt='Profit chart'/>
+<Img name='profit-chart' alt='Profit chart' withBigMargin />
 
 Many web developers have started creating plugins to put AR/VR into action and make them work for the web. Some alternatives where AR/VR can add value include:
 
@@ -46,7 +46,7 @@ Speaking from the technology side, we should say, that since a lot of AR develop
 
 Google’s also bringing AR technology to its Chrome browser. An immersive WebXR Device API first came to Chrome 79, and, according to Google Chromium blog, now it supports augmented reality and will arrive in the upcoming stable version of Chrome 81 which is in beta testing at the moment. Google also added support for the WebXR Hit Test API, an API for placing digital objects in a physical real-world view.
 
-<Img name='digital-flowers' alt='Digital flowers in a physical real-world view'/>
+<Img name='digital-flowers' alt='Digital flowers in a physical real-world view' withBigMargin />
 
 ## VR for the Web
 

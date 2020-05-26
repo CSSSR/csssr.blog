@@ -8,7 +8,7 @@ export default function Layout({ children }) {
     <>
       <Meta />
 
-      <Header />
+      <Header actionButton={{ isVisible: false }} />
       <main id="main">{children}</main>
       <Footer className="footer" />
 

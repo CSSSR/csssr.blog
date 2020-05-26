@@ -2,9 +2,10 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { string } from 'prop-types'
 import styles from './Img.styles'
+import cn from 'classnames'
 import { useTheme } from 'emotion-theming'
 
-const Img = ({ className, name, slug, alt }) => {
+const Img = ({ className, name, slug, withBigMargin, alt }) => {
   const theme = useTheme()
 
   const images = {
@@ -30,7 +31,7 @@ const Img = ({ className, name, slug, alt }) => {
   }
 
   return (
-    <picture className={className}>
+    <picture className={cn(className, { with_big_margin: withBigMargin })}>
       {/* TODO раскомментить webp после того как Андрей закончить работу с картинками */}
       {/* <source
         media={theme.breakpoints.mobile.all.slice(7)}
