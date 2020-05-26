@@ -23,11 +23,16 @@ jobs:
         with:
           path: new_blog
 
+      - uses: actions/setup-node@v2-beta
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@csssr'
+
       - name: Install dependencies
         working-directory: new_blog
         run: yarn install --frozen-lockfile
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_REGISTRY_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
         working-directory: new_blog
