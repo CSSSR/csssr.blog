@@ -26,6 +26,8 @@ jobs:
       - name: Install dependencies
         working-directory: new_blog
         run: yarn install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Build
         working-directory: new_blog
