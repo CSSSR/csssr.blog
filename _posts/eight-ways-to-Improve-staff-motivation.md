@@ -108,13 +108,13 @@ Finally, implement various morale-building programs or spirit-lifting team initi
 
   <p>Even the best employees become demotivated but it is necessary to get back their drive to push forward. These 8 points above will help you to find the reasons behind your lack of motivation and the next steps you need to take to recover that drive and passion. Follow  simple rules to handle the demotivation problem and never forget to:</p>
 
-  <p>1\. Identify and evaluate the reasons</p>
+  1\. Identify and evaluate the reasons
 
-  <p>2\. Talk, discuss and get a feedback to find the best solution</p>
+  2\. Talk, discuss and get a feedback to find the best solution
 
-  <p>3\. Introduce new methods, techniques, technologies, tools and solutions</p>
+  3\. Introduce new methods, techniques, technologies, tools and solutions
 
-  <p>4\. Pay attention and monitor morale levels to prevent demotivation problem</p>
+  4\. Pay attention and monitor morale levels to prevent demotivation problem
 
   <p>Keep this in mind and don’t forget to subscribe to our social media to get more tips on the project management and human resources.</p>
 
