@@ -99,14 +99,6 @@ const Body = ({ content, slug, className }) =>
           size: 'm',
         },
       },
-      ol: {
-        component: List,
-        props: {
-          as: 'ol',
-          className: 'list_s',
-          size: 'm',
-        },
-      },
       li: {
         component: ListItem,
         props: {

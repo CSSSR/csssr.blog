@@ -3,19 +3,19 @@ title: 'How to Integrate <i>Creative</i> and <i>Web Development</i>'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
-    'desktop.all': '/assets/blog/posts/creative-and-web-development/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/posts/creative-and-web-development/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/creative-and-web-development/desktop.all/mainPageСover.png'
+    'mobile.all': '/assets/blog/posts/creative-and-web-development/mobile.all/mainPageСover.png'
   postPage:
-    'desktop.all': '/assets/blog/posts/creative-and-web-development/desktop.all/pageImg.png'
-    'mobile.all': '/assets/blog/posts/creative-and-web-development/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/creative-and-web-development/desktop.all/postPageCover.png'
+    'mobile.all': '/assets/blog/posts/creative-and-web-development/mobile.all/mainPageСover.png'
 ogImage:
-  url: '/assets/blog/posts/creative-and-web-development/desktop.all/cover.png'
+  url: '/assets/blog/posts/creative-and-web-development/desktop.all/mainPageСover.png'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
 
 
-..and why partnerships are better than IT departments or subcontracting.
+<Subtitle>..and why partnerships are better than IT departments or subcontracting.</Subtitle>
 
 **W**eb development and creative design have always gone hand-in-hand. In the beginning, websites and internet traffic were relatively simple, with only basic code and designs, and limited specialization. Simply put, there wasn’t much thought putinto making websites truly high performance. However, times have changed, and each field has become increasingly competitive. As budgets for web development have swelled, the challenge of bringing together creative agencies and web developers has become more important.
 

@@ -3,13 +3,13 @@ title: 'Eight Ways to Improve <i>Staff Motivation</i> or How to Mend Broken Mora
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
-    'desktop.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/desktop.all/mainPageСover.png'
+    'mobile.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/mobile.all/mainPageСover.png'
   postPage:
-    'desktop.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/desktop.all/pageImg.png'
-    'mobile.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/mobile.all/cover.png'
+    'desktop.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/desktop.all/postPageCover.png'
+    'mobile.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/mobile.all/mainPageСover.png'
 ogImage:
-  url: '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/desktop.all/cover.png'
+  url: '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/desktop.all/mainPageСover.png'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
@@ -108,14 +108,14 @@ Finally, implement various morale-building programs or spirit-lifting team initi
 
   <p>Even the best employees become demotivated but it is necessary to get back their drive to push forward. These 8 points above will help you to find the reasons behind your lack of motivation and the next steps you need to take to recover that drive and passion. Follow  simple rules to handle the demotivation problem and never forget to:</p>
 
-  <ol>
-    <li>Identify and evaluate the reasons</li>
-    <li>Talk, discuss and get a feedback to find the best solution</li>
-    <li>Introduce new methods, techniques, technologies, tools and solutions</li>
-    <li>Pay attention and monitor morale levels to prevent demotivation problem</li>
-  </ol>
+  <p>1\. Identify and evaluate the reasons</p>
 
+  <p>2\. Talk, discuss and get a feedback to find the best solution</p>
 
-<p>Keep this in mind and don’t forget to subscribe to our social media to get more tips on the project management and human resources.</p>
+  <p>3\. Introduce new methods, techniques, technologies, tools and solutions</p>
+
+  <p>4\. Pay attention and monitor morale levels to prevent demotivation problem</p>
+
+  <p>Keep this in mind and don’t forget to subscribe to our social media to get more tips on the project management and human resources.</p>
 
 </ParagraphWithImage>
