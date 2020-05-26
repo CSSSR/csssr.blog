@@ -33,7 +33,7 @@ const PostСard = ({ className, post, size }) => {
 
           <h2 
             className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}
-            dangerouslySetInnerHTML={{__html: post.title}}
+            dangerouslySetInnerHTML={{__html: cleaningTitle(post.title)}}
           />
 
 
