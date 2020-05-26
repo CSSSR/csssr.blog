@@ -8,6 +8,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       background-image: linear-gradient(to right, white, white), url(${require('../../static/images/post-header-bg.svg').default});
       background-repeat: no-repeat, repeat-x;
       background-position: center 192px, center top;
+      overflow-x: hidden;
     }
   }
 
