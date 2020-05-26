@@ -3,12 +3,12 @@ import { string, shape, object, oneOf } from 'prop-types'
 import cn from 'classnames'
 import { useTheme } from 'emotion-theming'
 import styled from '@emotion/styled'
-import styles from './Post.styles'
+import styles from './PostСard.styles'
 import DateFormater from '../../../DateFormater'
 import Link from 'next/link'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
 
-const Post = ({ className, post, size }) => {
+const PostСard = ({ className, post, size }) => {
   const theme = useTheme()
 
   return (
@@ -31,9 +31,11 @@ const Post = ({ className, post, size }) => {
             <img src={post.coverImage.mainPage['desktop.all']} alt={post.coverImage.alt}></img>
           </picture>
 
-          <h2 className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}>
-            {cleaningTitle(post.title)}
-          </h2>
+          <h2 
+            className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}
+            dangerouslySetInnerHTML={{__html: post.title}}
+          />
+
 
           <a className="tag">{post.tag}</a>
           <DateFormater className="date">{post.date}</DateFormater>
@@ -43,7 +45,7 @@ const Post = ({ className, post, size }) => {
   )
 }
 
-Post.propTypes = {
+PostСard.propTypes = {
   className: string,
   post: shape({
     title: string,
@@ -62,6 +64,6 @@ Post.propTypes = {
   side: oneOf(['l', 'r']),
 }
 
-export default styled(Post)`
+export default styled(PostСard)`
   ${styles}
 `
