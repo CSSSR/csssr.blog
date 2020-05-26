@@ -26,7 +26,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
         top: 0;
         width: ${calcRem(48)};
         height: ${calcRem(32)};
-        background-image: url(../../static/icons/quote/quotes.svg);
+        background-image: url(../../public/icons/quote/quotes.svg);
         background-repeat: no-repeat;
         background-size: cover;
 
@@ -36,7 +36,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
       `&::after {
         content: '';
         position: absolute;
-        background-image: url(../../static/icons/quote/angle.svg);
+        background-image: url(../../public/icons/quote/angle.svg);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: ${calcRem(7)} 100%;
@@ -220,7 +220,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
         bottom: ${calcRem(126)};
         width: ${calcRem(39)};
         height: ${calcRem(36)};
-        background-image: url(../../static/icons/quote/mobile.all/angle.svg);
+        background-image: url(../../public/icons/quote/mobile.all/angle.svg);
       }
     }
 

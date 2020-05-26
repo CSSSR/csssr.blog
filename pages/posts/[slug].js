@@ -13,6 +13,7 @@ export default function Post({ post /* morePosts, */ }) {
   // if (!router.isFallback && !post?.slug) {
   //   return <ErrorPage statusCode={404} />
   // }
+
   return (
     <Layout>
       {/* TODO: добавить Header из csssr.com */}
@@ -26,9 +27,8 @@ export default function Post({ post /* morePosts, */ }) {
             <meta property="og:image" content={post.ogImage.url} />
           </Head>
 
-          <PostHeader title={post.title} coverImage={post.coverImage} />
-
-          <PostBody content={post.content} />
+          <PostHeader title={post.title} coverImage={post.images.cover} alt={post.coverImageAlt} />
+          <PostBody content={post.content} images={post.images} />
         </article>
       )}
       {/* TODO: добавить Footer из csssr.com */}
@@ -45,7 +45,8 @@ export async function getStaticProps({ params }) {
     'author',
     'content',
     'ogImage',
-    'coverImage',
+    'coverImageAlt',
+    'images',
   ])
 
   return {

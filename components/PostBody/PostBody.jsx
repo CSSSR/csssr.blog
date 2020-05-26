@@ -13,7 +13,7 @@ import Img from '../Img'
 import Note from '../Note'
 import Quote from '../Quote'
 
-const PostBody = ({ content, className }) =>
+const PostBody = ({ content, className, images }) =>
   compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
@@ -107,14 +107,12 @@ const PostBody = ({ content, className }) =>
         },
       },
       PostTitle: {
-        component: PostTitle, // Это для привера возможностей markdown-to-jsx
+        component: PostTitle, // Это для примера возможностей markdown-to-jsx
       },
-
       Quote: {
         component: Quote,
         props: {
           className: 'quote-wrapper',
-          imgName: 'quote',
         },
       },
       code: {
@@ -123,10 +121,10 @@ const PostBody = ({ content, className }) =>
         },
       },
       Img: {
-        component: Img,
+        component: ({ imageName, ...rest }) => <Img pictureData={images[imageName]} {...rest} />
       },
       ParagraphWithImage: {
-        component: ParagraphWithImage,
+        component: ({ imageName, ...rest }) => <ParagraphWithImage pictureData={images[imageName]} {...rest} />
       },
       Separator: {
         component: Separator,

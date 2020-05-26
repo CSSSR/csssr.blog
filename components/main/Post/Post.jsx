@@ -1,35 +1,19 @@
 import React from 'react'
 import { string, shape, object, oneOf } from 'prop-types'
 import cn from 'classnames'
-import { useTheme } from 'emotion-theming'
 import styled from '@emotion/styled'
 import styles from './Post.styles'
 import DateFormater from '../../DateFormater'
 import Link from 'next/link'
 import cleaningTitle from '../../../utils/client/cleaningTitle'
+import { Picture } from '@csssr/csssr.images/dist/react/Picture';
 
 const Post = ({ className, post, size }) => {
-  const theme = useTheme()
-
   return (
     <li className={className}>
       <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
         <a>
-          <picture>
-            <source
-              media={theme.breakpoints.desktop.all.slice(7)}
-              type="image/png"
-              srcSet={post.coverImage['desktop.all']}
-            />
-
-            <source
-              media={theme.breakpoints.mobile.all.slice(7)}
-              type="image/png"
-              srcSet={post.coverImage['mobile.all']}
-            />
-
-            <img src={post.coverImage['desktop.all']} alt={post.coverImage.alt}></img>
-          </picture>
+          <Picture pictureData={post.images.cover} alt={post.coverImageAlt} />
 
           <h2 className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}>
             {cleaningTitle(post.title)}
@@ -48,7 +32,8 @@ Post.propTypes = {
   post: shape({
     title: string,
     excerpt: string,
-    coverImage: object,
+    coverImageAlt: string,
+    images: object,
     date: string,
     author: shape({
       name: string,

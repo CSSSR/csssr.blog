@@ -1,9 +1,7 @@
 ---
 title: 'Offshore Web Development: Top Destinations For Singapore'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
-coverImage:
-  'desktop.all': '/assets/blog/offshore-web-development/desktop.all/cover.png'
-  'mobile.all': '/assets/blog/offshore-web-development/mobile.all/cover.png'
+coverImageAlt: 'alt me'
 ogImage:
   url: '/assets/blog/offshore-web-development/desktop.all/cover.png'
 date: '2019-03-16T05:35:07.322Z'

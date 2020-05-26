@@ -1,38 +1,23 @@
 import React from 'react'
-import { string, node } from 'prop-types'
+import { string, node, object } from 'prop-types'
 import styled from '@emotion/styled'
-import { useTheme } from 'emotion-theming'
 import styles from './ParagraphWithImage.styles'
+import { Picture } from '@csssr/csssr.images'
 
-const ParagraphWithImage = ({ children, className, imgName }) => {
-  const theme = useTheme()
-
+const ParagraphWithImage = ({ children, className, pictureData, alt }) => {
   return (
     <div className={className}>
-      <picture className="img-wrap">
-        <source
-          media={theme.breakpoints.desktop.all.slice(7)}
-          type="image/png"
-          srcSet={`/assets/blog/test/desktop.all/${imgName}.png`}
-        />
-
-        <source
-          media={theme.breakpoints.tablet.all.slice(7)}
-          type="image/png"
-          srcSet={`/assets/blog/test/tablet.all/${imgName}.png`}
-        />
-
-        <img src={`/assets/blog/test/mobile.all/${imgName}.png`} alt={imgName} />
-      </picture>
+      <Picture pictureData={pictureData} className="img-wrap" alt={alt} />
       {children}
     </div>
   )
 }
 
 ParagraphWithImage.propTypes = {
-  className: string,
-  imgName: string,
   children: node,
+  className: string,
+  pictureData: object,
+  alt: string,
 }
 
 export default styled(ParagraphWithImage)`
