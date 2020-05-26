@@ -17,12 +17,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: 30px;
       grid-column: 4 / span 6;
     }
+
+    &.with_big_margin {
+      margin-top: 80px;
+    }
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(30)};
       grid-column: 3 / span 8;
+    }
+
+    &.with_big_margin {
+      margin-top: ${calcRem(60)};
     }
   }
 
@@ -30,6 +38,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     & {
       margin-top: ${calcRem(20)};
       grid-column: 1 / span 6;
+    }
+
+    &.with_big_margin {
+      margin-top: ${calcRem(50)};
     }
   }
 `

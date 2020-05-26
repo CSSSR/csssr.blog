@@ -66,6 +66,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: 30px;
     }
 
+    .picture.with_big_margin + .heading_regular_s,
+    .picture.with_big_margin + .heading_regular_m,
+    .picture.with_big_margin + .text_regular_m {
+      margin-top: 50px;
+    }
+
     .list_item_s {
       padding-left: ${calcRem(9)};
 
@@ -111,10 +117,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: ${calcRem(24)};
     }
 
-    .picture + .heading_regular_m {
-      margin-top: ${calcRem(50)};
-    }
-
     .heading_regular_s {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
@@ -125,6 +127,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .picture + .text_regular_m {
+      margin-top: ${calcRem(30)};
+    }
+
+    .picture.with_big_margin + .heading_regular_s,
+    .picture.with_big_margin + .heading_regular_m,
+    .picture.with_big_margin + .text_regular_m {
       margin-top: ${calcRem(40)};
     }
 
@@ -180,6 +188,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture + .text_regular_m {
       margin-top: ${calcRem(20)};
+    }
+
+    .picture.with_big_margin + .heading_regular_s,
+    .picture.with_big_margin + .heading_regular_m,
+    .picture.with_big_margin + .text_regular_m {
+      margin-top: ${calcRem(30)};
     }
 
     .list_item_s {
