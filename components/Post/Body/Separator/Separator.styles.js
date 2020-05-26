@@ -39,7 +39,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
         width: 100%;
         height: 100%;
         background-repeat: no-repeat;
-        background-size: 721px;
+        background-size: contain;
         background-position: center 100%;
       }
     }
@@ -54,7 +54,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
         content: '';
         width: 100%;
         height: 100%;
-        background-size: ${calcRem(618)};
+        background-size: contain;
         background-repeat: repeat-x;
         background-color: #f4f7f6;
       }
