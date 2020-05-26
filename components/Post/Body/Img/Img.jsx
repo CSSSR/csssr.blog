@@ -4,24 +4,24 @@ import { string } from 'prop-types'
 import styles from './Img.styles'
 import { useTheme } from 'emotion-theming'
 
-const Img = ({ className, name, alt }) => {
+const Img = ({ className, name, slug, alt }) => {
   const theme = useTheme()
 
   const images = {
     mobile: {
-      '1x': `/assets/blog/posts/mobile.all/${name}`,
-      '2x': `/assets/blog/posts/mobile.all/${name}`,
-      '3x': `/assets/blog/posts/mobile.all/${name}`,
+      '1x': `/assets/blog/posts/${slug}/mobile.all/${name}`,
+      '2x': `/assets/blog/posts/${slug}/mobile.all/${name}`,
+      '3x': `/assets/blog/posts/${slug}/mobile.all/${name}`,
     },
     tablet: {
-      '1x': `/assets/blog/posts/tablet.all/${name}`,
-      '2x': `/assets/blog/posts/tablet.all/${name}`,
-      '3x': `/assets/blog/posts/tablet.all/${name}`,
+      '1x': `/assets/blog/posts/${slug}/tablet.all/${name}`,
+      '2x': `/assets/blog/posts/${slug}/tablet.all/${name}`,
+      '3x': `/assets/blog/posts/${slug}/tablet.all/${name}`,
     },
     desktop: {
-      '1x': `/assets/blog/posts/desktop.all/${name}`,
-      '2x': `/assets/blog/posts/desktop.all/${name}`,
-      '3x': `/assets/blog/posts/desktop.all/${name}`,
+      '1x': `/assets/blog/posts/${slug}/desktop.all/${name}`,
+      '2x': `/assets/blog/posts/${slug}/desktop.all/${name}`,
+      '3x': `/assets/blog/posts/${slug}/desktop.all/${name}`,
     },
   }
 
@@ -31,11 +31,12 @@ const Img = ({ className, name, alt }) => {
 
   return (
     <picture className={className}>
-      <source
+      {/* TODO раскомментить webp после того как Андрей закончить работу с картинками */}
+      {/* <source
         media={theme.breakpoints.mobile.all.slice(7)}
         type="image/webp"
         srcSet={getSrcSet('mobile', 'webp')}
-      />
+      /> */}
 
       <source
         media={theme.breakpoints.tablet.all.slice(7)}
@@ -43,11 +44,11 @@ const Img = ({ className, name, alt }) => {
         srcSet={getSrcSet('tablet', 'png')}
       />
 
-      <source
+      {/* <source
         media={theme.breakpoints.tablet.all.slice(7)}
         type="image/webp"
         srcSet={getSrcSet('tablet', 'webp')}
-      />
+      /> */}
 
       <source
         media={theme.breakpoints.desktop.all.slice(7)}
@@ -55,11 +56,11 @@ const Img = ({ className, name, alt }) => {
         srcSet={getSrcSet('desktop', 'png')}
       />
 
-      <source
+      {/* <source
         media={theme.breakpoints.desktop.all.slice(7)}
-        type="image/png"
+        type="image/webp"
         srcSet={getSrcSet('desktop', 'webp')}
-      />
+      /> */}
 
       <img srcSet={getSrcSet('mobile', 'png')} src={`${images.mobile['1x']}@1x.png`} alt={alt} />
     </picture>
