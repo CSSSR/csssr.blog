@@ -14,22 +14,22 @@ const Quote = ({ className, imgName, children, author, position, withImage }) =>
           <source
             media={theme.breakpoints.desktop.all.slice(7)}
             type="image/png"
-            srcSet={`/static/images/quote/desktop.all/${imgName}.png`}
+            srcSet={`/public/assets/blog/components/quote/images/desktop.all/${imgName}.png`}
           />
 
           <source
             media={theme.breakpoints.tablet.all.slice(7)}
             type="image/png"
-            srcSet={`/static/images/quote/tablet.all/${imgName}.png`}
+            srcSet={`/public/assets/blog/components/quote/images/tablet.all/${imgName}.png`}
           />
 
           <source
             media={theme.breakpoints.mobile.all.slice(7)}
             type="image/png"
-            srcSet={`/static/images/quote/mobile.all/${imgName}.png`}
+            srcSet={`/public/assets/blog/components/quote/images/mobile.all/${imgName}.png`}
           />
 
-          <img src={`/static/images/quote/mobile.all/${imgName}.png`} alt="lady"></img>
+          <img src={`/public/assets/blog/components/quote/images/desktop.all/${imgName}.png`} alt="lady"></img>
         </picture>
       )}
 
