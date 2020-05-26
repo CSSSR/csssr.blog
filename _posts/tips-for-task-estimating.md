@@ -19,7 +19,7 @@ tag: 'Web-development'
 Let’s face it – you can’t avoid task estimating, and if you do not estimate the tasks within a given project, then most likely someone else is doing it instead of you. At the same time, the developer able to estimate adequately and precisely is a sort of a godsend for his employer. Such specialists are valuable, they grow faster than those with poor estimating skills.
 Our team has travelled a lengthy and bumpy path dealing with poor-quality estimates. These prevented us from staying within budget limits, spoiled our relations with customers, and made us look not that smart. By trial and error, we have come up with a set of rules (tips) that helped to enhance the accuracy of our estimates. Hope you’ll find them useful as well.
 
-<Img name="man-on-unicorn" alt="man-on-unicorn"/>
+<Img name="man-on-unicorn" alt="man-on-unicorn" withBigMargin/>
 
 ## Secure the Conditions
 

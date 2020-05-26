@@ -18,7 +18,7 @@ tag: 'Web-development'
 
 Yes, from time to time, employees become demotivated, and you have to find ways to raise their morale. In this blog post, we explore the signs, causes and dangers of demotivation, and 8 easy ways to improve the team spirit.
 
-<Img name="sherlock" alt="sherlock"/>
+<Img name="sherlock" alt="sherlock" withBigMargin/>
 
 ##Know your enemy: what causes demotivation?
 
@@ -61,7 +61,7 @@ Absence of career opportunities shadows the motivation and profession goals of y
 There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.
 </Note>
 
-<Img name="man-with-butterfly" alt="man with butterfly"/>
+<Img name="man-with-butterfly" alt="man with butterfly" withBigMargin/>
 
 ## “Fixing the bugs”: 8 steps to motivate your employees
 
