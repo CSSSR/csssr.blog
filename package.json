@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@csssr/core-design": "^5.3.0",
-    "@csssr/csssr.images": "^1.6.0",
+    "@csssr/csssr.images": "^1.8.0",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
     "babel-plugin-prismjs": "^2.0.1",

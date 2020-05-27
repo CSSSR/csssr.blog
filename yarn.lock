@@ -1202,10 +1202,10 @@
     react-reveal "^1.2.2"
     scroll-lock "^2.1.4"
 
-"@csssr/csssr.images@^1.6.0":
-  version "1.6.0"
-  resolved "https://npm.pkg.github.com/download/@csssr/csssr.images/1.6.0/3ab41309be7e300fd0ea4a23437f517f35e5dcf63aa76c87d2d6505ad6aba0c8#adbce78229d1e0845e605d7ac388bc9c086cdd6f"
-  integrity sha512-BHDoHN5UqQfUTR3wXbV/kOHaiQZb2qySUQRzmJuZc33hoZxSvhHoLrbCyYEud6bZopQAVqWtAGjh9ACamolUIg==
+"@csssr/csssr.images@^1.8.0":
+  version "1.8.0"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr.images/1.8.0/6185342da64ee97e3241b9cec4e1c74dc4d2e65c2ccd5fd752f65139bda41a6c#6a1b377e075bcddf030c71dff25677db832abb8b"
+  integrity sha512-RxQhQYEDTA53dg/z/NakBvxw1jRnfjd+dVY4/sUrUQIFqcR7l/JEnMvxSQH1iCa/G0UhmhhYH5BY/gG04LrMdQ==
   dependencies:
     imgproxy "^0.1.2"
     react "^16.13.1"
