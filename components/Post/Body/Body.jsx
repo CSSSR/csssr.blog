@@ -13,7 +13,7 @@ import Note from './Note'
 import Quote from './Quote'
 import Subtitle from './Subtitle'
 
-const Body = ({ content, slug, className }) =>
+const Body = ({ content, className, images }) =>
   compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
@@ -110,7 +110,6 @@ const Body = ({ content, slug, className }) =>
         component: Quote,
         props: {
           className: 'quote-wrapper',
-          imgName: 'quote',
         },
       },
       code: {
@@ -119,17 +118,10 @@ const Body = ({ content, slug, className }) =>
         },
       },
       Img: {
-        component: Img,
-        props: {
-          className: 'picture',
-          slug,
-        },
+        component: ({ imageName, ...rest }) => <Img className='picture' pictureData={images[imageName]} {...rest} />
       },
       ParagraphWithImage: {
-        component: ParagraphWithImage,
-        props: {
-          slug,
-        },
+        component: ({ imageName, ...rest }) => <ParagraphWithImage pictureData={images[imageName]} {...rest} />
       },
       Separator: {
         component: Separator,

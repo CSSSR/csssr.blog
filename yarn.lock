@@ -1189,10 +1189,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@csssr/core-design@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.2.0.tgz#f0d36fc6054808348e1119a8ffadb87b2629e7b8"
-  integrity sha512-SL+v7y0gF5VBOT87TJWygyVee+fQ/sm+oYo5IAeaq/fVUCSHT5eLTGqukSH1vchsnblNihwhiRfZVKVN61y69w==
+"@csssr/core-design@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.3.0.tgz#3cf2a42df30fde998e6c5a5d31dbbb8c5e2e1890"
+  integrity sha512-eZyy6y4h6+cmbCaaE+CP+Nnz90mqxsgrwzh+C4QXAnYDoKC8X1EfNYN8s+4du9YiyAl2OU30KlEw94w7L5k1cw==
   dependencies:
     "@emotion/styled-base" "^10.0.31"
     classnames "^2.2.6"
@@ -1201,6 +1201,15 @@
     ramda "^0.26.1"
     react-reveal "^1.2.2"
     scroll-lock "^2.1.4"
+
+"@csssr/csssr.images@^1.8.0":
+  version "1.8.0"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr.images/1.8.0/6185342da64ee97e3241b9cec4e1c74dc4d2e65c2ccd5fd752f65139bda41a6c#6a1b377e075bcddf030c71dff25677db832abb8b"
+  integrity sha512-RxQhQYEDTA53dg/z/NakBvxw1jRnfjd+dVY4/sUrUQIFqcR7l/JEnMvxSQH1iCa/G0UhmhhYH5BY/gG04LrMdQ==
+  dependencies:
+    imgproxy "^0.1.2"
+    react "^16.13.1"
+    react-dom "^16.13.1"
 
 "@csssr/eslint-config-core@^1.0.2":
   version "1.0.2"
@@ -3836,6 +3845,13 @@ ignore@^4.0.6:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
   integrity sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==
 
+imgproxy@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/imgproxy/-/imgproxy-0.1.2.tgz#5b9737c2a311e075ec8e2379cd43984cb8140497"
+  integrity sha512-h7ywQ7U+6uyNbDorMZah9Ho1yQxmqDqHNvpK2CZASDae5IZZrKZrM2A51zpsd4rmQrOuSSztC6MhRFn00gbF9Q==
+  dependencies:
+    url-join "^4.0.0"
+
 import-fresh@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-2.0.0.tgz#d81355c15612d386c61f9ddd3922d4304822a546"
@@ -3924,6 +3940,11 @@ invariant@^2.2.2, invariant@^2.2.4:
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
   dependencies:
     loose-envify "^1.0.0"
+
+ip@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
+  integrity sha1-vd7XARQpCCjAoDnnLvJfWq7ENUo=
 
 is-absolute-url@^2.0.0:
   version "2.1.0"
@@ -5778,7 +5799,7 @@ randomfill@^1.0.3:
     randombytes "^2.0.5"
     safe-buffer "^5.1.0"
 
-react-dom@^16.13.0:
+react-dom@^16.13.0, react-dom@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
   integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
@@ -5810,7 +5831,7 @@ react-reveal@^1.2.2:
   dependencies:
     prop-types "^15.5.10"
 
-react@^16.13.0:
+react@^16.13.0, react@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
@@ -7060,6 +7081,11 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
+
+url-join@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/url-join/-/url-join-4.0.1.tgz#b642e21a2646808ffa178c4c5fda39844e12cde7"
+  integrity sha512-jk1+QP6ZJqyOiuEI9AEWQfju/nB2Pw466kbA0LEZljHwKeMgd9WrAEgEGxjPDD2+TNbbb37rTyhEfrCXfuKXnA==
 
 url-loader@^1.1.1:
   version "1.1.2"

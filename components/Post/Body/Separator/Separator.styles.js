@@ -88,16 +88,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
   }
 `
 
-const getSrcObject = (imgName, extension) => {
+const getSrcObject = (imageName, extension) => {
   return {
-    '1x': `/assets/blog/components/separator/${imgName}@1x.${extension}`,
-    '2x': `/assets/blog/components/separator/${imgName}@2x.${extension}`,
-    '3x': `/assets/blog/components/separator/${imgName}@3x.${extension}`
+    '1x': `/assets/blog/components/separator/${imageName}@1x.${extension}`,
+    '2x': `/assets/blog/components/separator/${imageName}@2x.${extension}`,
+    '3x': `/assets/blog/components/separator/${imageName}@3x.${extension}`
   }
 }
 
-export const backgroundImagesStyles = (imgName) => css`
-  ${getBackgroundImageSrcSet({png: getSrcObject(imgName,'png'), webp: getSrcObject(imgName,'webp')}, `.${imgName}::after`)}
+export const backgroundImagesStyles = (imageName) => css`
+  ${getBackgroundImageSrcSet({png: getSrcObject(imageName,'png'), webp: getSrcObject(imageName,'webp')}, `.${imageName}::after`)}
 `
 
 export default props =>{

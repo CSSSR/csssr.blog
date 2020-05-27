@@ -10,12 +10,12 @@ const Post = ({ post, className }) => (
   <article className={className}>
     <Head>
       <title>{cleaningTitle(post.title)} | CSSSR blog</title>
-      <meta property="og:image" content={post.ogImage.url} />
+      <meta property="og:image" content={post.images.mainCover.fallbackSrcSet['3x']} />
     </Head>
 
-    <Header title={post.title} coverImage={post.coverImage} tag={post.tag} date={post.date} />
+    <Header title={post.title} coverImage={post.images.postCover} alt={post.coverImageAlt} tag={post.tag} date={post.date} />
 
-    <Body content={post.content} slug={post.slug} />
+    <Body content={post.content} images={post.images} />
   </article>
 )
 

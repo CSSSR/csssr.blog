@@ -1,15 +1,7 @@
 ---
 title: '<i>HTML, CMS</i> or <i>Custom Development</i>: Which is Better?'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
-coverImage:
-  mainPage:
-    'desktop.all': '/assets/blog/posts/html-or-cms-or-custom-development/desktop.all/coverMainPage.png'
-    'mobile.all': '/assets/blog/posts/html-or-cms-or-custom-development/mobile.all/coverMainPage.png'
-  postPage:
-    'desktop.all': '/assets/blog/posts/html-or-cms-or-custom-development/desktop.all/coverPostPage.png'
-    'mobile.all': '/assets/blog/posts/html-or-cms-or-custom-development/mobile.all/coverMainPage.png'
-ogImage:
-  url: '/assets/blog/posts/html-or-cms-or-custom-development/desktop.all/cover.png'
+coverImageAlt: 'alt me'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
@@ -18,7 +10,7 @@ tag: 'Web-development'
 
 To help you decide which web development strategy is best for you, let’s look at the advantages and disadvantages of each.
 
-<ParagraphWithImage imgName="html">
+<ParagraphWithImage imageName="html">
   ## HTML
 
   Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for e-commerce. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.
@@ -30,7 +22,7 @@ To help you decide which web development strategy is best for you, let’s look 
   Who it’s best for: companies looking for a basic online presence with company description and contact details.
 </ParagraphWithImage>
 
-<ParagraphWithImage imgName="cms">
+<ParagraphWithImage imageName="cms">
   ## Standard CMS
 
   Description: A Content Management System (CMS) website is quite simple to set up. There are standard site layouts that you can purchase and you can buy a design to fill it in. You can hire a company to do this for you, but they’ll charge quite a high premium to develop them for you. However, CMS sites can be good for standard e-commerce sites, and it can be useful to hire a developer to help you with this. You should also remember that because most e-commerce sites have some custom elements, CMS is usually best for MVPs, while you’d have to hire a developer to build your final product from scratch.
@@ -44,7 +36,7 @@ To help you decide which web development strategy is best for you, let’s look 
   Who it’s best for: companies building MVPs to be rebuilt once bigger investment is secured, basic e-commerce, blogs
 </ParagraphWithImage>
 
-<ParagraphWithImage imgName="custom-development">
+<ParagraphWithImage imageName="custom-development">
   ## Custom Development
 
   Description: custom web development is the most useful way of building a website if you want to build a long-term business through an internet presence – basically everyone these days. For some businesses, like a local car dealership, this may be too much, because you sell most of your cars in person. However, if you want to make sales over the internet, you need at least a CMS website.
@@ -62,7 +54,7 @@ To help you decide which web development strategy is best for you, let’s look 
   Who it’s best for: established companies looking to build an online store, aggregators, startups looking to build an online company, news sites
 </ParagraphWithImage>
 
-<Separator type="color-line" lineColor="#D3D3FF" imgName="peopleWithBasket"/>
+<Separator type="color-line" lineColor="#D3D3FF" imageName="peopleWithBasket"/>
 
 ## Conclusion
 

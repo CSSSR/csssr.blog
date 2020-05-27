@@ -1,15 +1,7 @@
 ---
 title: '<i>Augmented & Virtual Reality</i> to Shape the Future of Web Development'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
-coverImage:
-  mainPage:
-    'desktop.all': '/assets/blog/posts/augmented-and-virtual-reality/desktop.all/mainPageCover.png'
-    'mobile.all': '/assets/blog/posts/augmented-and-virtual-reality/mobile.all/mainPageCover.png'
-  postPage:
-    'desktop.all': '/assets/blog/posts/augmented-and-virtual-reality/desktop.all/postPageCover.png'
-    'mobile.all': '/assets/blog/posts/augmented-and-virtual-reality/mobile.all/mainPageCover.png'
-ogImage:
-  url: '/assets/blog/posts/augmented-and-virtual-reality/desktop.all/mainPageCover.png'
+coverImageAlt: 'alt me'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
@@ -18,7 +10,7 @@ tag: 'Web-development'
 
 In recent years, we have witnessed a dramatic shift in website development. The innovative and futuristic technologies of augmented (AR) and virtual reality (VR) are transforming the internet and are capable of changing the way websites address users’ demands. Today, both technologies are considered as the most important trends in the IT sector, and with the help of desktops, tablets and smartphones have become more accessible, allowing millions of people to experience AR/VR applications across numerous business verticals. According to Goldman Sachs estimates, the AR/VR is projected to grow into a $95 billion market by 2025.
 
-<Img name='profit-chart' alt='Profit chart' withBigMargin />
+<Img imageName='profit-chart' alt='Profit chart' withBigMargin />
 
 Many web developers have started creating plugins to put AR/VR into action and make them work for the web. Some alternatives where AR/VR can add value include:
 
@@ -30,7 +22,7 @@ Playing to consumers’ emotions. This one is becoming a popular marketing tool 
 
 We have made an overview of each technology use case, including why they are helpful in building high-end websites/apps with high-end experience.
 
-<Separator type="bg-repeat" imgName="peopleWithDogBg"/>
+<Separator type="bg-repeat" imageName="peopleWithDogBg"/>
 
 ## AR for the Web
 
@@ -40,13 +32,13 @@ Advertising and digital marketing will benefit most from the augmented reality s
 
 There’s a perfect example. In 2017, Wayfair (online furniture retailer) launched an application that included AR software that shows how furniture looks in a customer’s home. The app debuted as a featured app on ASUS ZenFone AR and used Tango (Google’s AR technology), to let consumers see and manipulate virtual furniture and décor at full scale.
 
-<Img name='wayfair-app' alt='Wayfair app in action'/>
+<Img imageName='wayfair-app' alt='Wayfair app in action'/>
 
 Speaking from the technology side, we should say, that since a lot of AR development now goes on the web, this is where JavaScript would reign. JavaScript provides a set of features that allow web developers either to create a new AR application or add an AR view to an existing one.
 
 Google’s also bringing AR technology to its Chrome browser. An immersive WebXR Device API first came to Chrome 79, and, according to Google Chromium blog, now it supports augmented reality and will arrive in the upcoming stable version of Chrome 81 which is in beta testing at the moment. Google also added support for the WebXR Hit Test API, an API for placing digital objects in a physical real-world view.
 
-<Img name='digital-flowers' alt='Digital flowers in a physical real-world view' withBigMargin />
+<Img imageName='digital-flowers' alt='Digital flowers in a physical real-world view' withBigMargin />
 
 ## VR for the Web
 
@@ -61,7 +53,7 @@ The ability to try the product considerably reducing shopping time.
 
 VR technology can also be mobile just like AR. Mobile VR (Google’s Cardboard as the simplest example) works by pairing a smartphone with a portable VR device to generate the VR experience.
 
-<Img name='vr-gameplay' alt='Man cooking on VR kitchen'/>
+<Img imageName='vr-gameplay' alt='Man cooking on VR kitchen'/>
 
 The most commonly used framework for building VR websites today is WebVR, which is an industry-standard application programming interface based on JavaScript, providing support for virtual reality devices in a web browser. WebVR mainly uses React 360, Three.js and A-Frame as key technologies providing access to the best VR experiences.
 

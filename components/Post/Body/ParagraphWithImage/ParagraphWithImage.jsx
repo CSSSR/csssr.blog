@@ -1,22 +1,23 @@
 import React from 'react'
-import { string, node } from 'prop-types'
+import { string, node, object } from 'prop-types'
 import styled from '@emotion/styled'
-import Img from '../Img'
 import styles from './ParagraphWithImage.styles'
+import { Picture } from '@csssr/csssr.images/dist/react'
 
-const ParagraphWithImage = ({ children, className, slug, imgName }) => {
+const ParagraphWithImage = ({ children, className, pictureData, alt }) => {
   return (
     <div className={className}>
-      <Img name={imgName} slug={slug} className="img-wrap" />
+      <Picture pictureData={pictureData} className="img-wrap" alt={alt} />
       {children}
     </div>
   )
 }
 
 ParagraphWithImage.propTypes = {
-  className: string,
-  imgName: string,
   children: node,
+  className: string,
+  pictureData: object,
+  alt: string,
 }
 
 export default styled(ParagraphWithImage)`
