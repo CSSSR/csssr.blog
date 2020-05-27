@@ -8,9 +8,9 @@ export default function Layout({ children }) {
     <>
       <Meta />
 
-      <Header />
+      <Header actionButton={{ isVisible: false }} />
       <main id="main">{children}</main>
-      <Footer />
+      <Footer className="footer" />
 
       <Global styles={styles} />
     </>

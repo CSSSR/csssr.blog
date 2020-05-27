@@ -29,19 +29,22 @@ const svgrLoaderConfigWithOutSvgo = {
   },
 }
 
-const fileLoaderConfig = {
-  loader: 'file-loader',
-  options: {
-    publicPath: '/_next',
-    name: '[path][name]-[hash:8].[ext]',
-  },
-}
-
 const withImages = (nextConfig = {}) => ({
   ...nextConfig,
   webpack(config, { dev, isServer }) {
     config.node = {
       fs: 'empty',
+    }
+
+    // TODO сделать короче итоговые пути здесь
+    const fileLoaderConfig = {
+      loader: 'file-loader',
+      options: {
+        publicPath: '/_next/static/images/',
+        outputPath: `${isServer ? '../' : ''}static/images/`,
+        name: '[path][name]-[hash:8].[ext]',
+        esModule: false,
+      },
     }
 
     config.module.rules.push({
@@ -75,21 +78,13 @@ const withImages = (nextConfig = {}) => ({
           options: {
             breakpoints: defaultTheme.breakpointsOrdered,
             imgproxy: {
+              disable: dev,
               imagesHost: host,
               host: imgproxyHost,
             },
           },
         },
-        {
-          // TODO сделать короче итоговые пути здесь
-          loader: 'file-loader',
-          options: {
-            publicPath: '/_next/static/images/',
-            outputPath: `${isServer ? '../' : ''}static/images/`,
-            name: '[path][name]-[hash:8].[ext]',
-            esModule: false,
-          },
-        },
+        fileLoaderConfig
       ],
     })
 
