@@ -84,7 +84,7 @@ const withImages = (nextConfig = {}) => ({
             },
           },
         },
-        fileLoaderConfig
+        fileLoaderConfig,
       ],
     })
 
