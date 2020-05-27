@@ -8,7 +8,7 @@ const postsOrder = [
   ['offshore-web-development', 'augmented-and-virtual-reality'],
   ['html-or-cms-or-custom-development', 'eight-ways-to-Improve-staff-motivation'],
   ['creative-and-web-development', 'tips-for-task-estimating'],
-  ['the-baltic-e-success', 'split-stack-web-development'],
+  ['the-baltic-e-success'],
 ]
 
 const Posts = ({ posts, className }) => {

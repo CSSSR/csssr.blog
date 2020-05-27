@@ -49,7 +49,6 @@ PostСard.propTypes = {
   className: string,
   post: shape({
     title: string,
-    excerpt: string,
     coverImage: object,
     date: string,
     author: shape({

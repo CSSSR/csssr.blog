@@ -1,6 +1,5 @@
 ---
 title: '<i>Offshore Web Development</i>: Top Destinations For Singapore'
-excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
     'desktop.all': '/assets/blog/posts/offshore-web-development/desktop.all/coverMainPage.png'

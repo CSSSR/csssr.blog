@@ -1,6 +1,5 @@
 ---
 title: 'Split-Stack Web Development: Some <i>Advantages</i> of&nbsp;Separating <span style="white-space:nowrap">Front-end</span> from <span style="white-space:nowrap">Back-end</span>'
-excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
     'desktop.all': '/assets/blog/posts/split-stack-web-development/desktop.all/cover.png'
@@ -14,13 +13,13 @@ date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
 
-**W**ebsite (or&nbsp;web application) development strategies have been evolving continuously over the past decade. Today, web development companies fall into two broad groups&nbsp;– full-stack agencies and specialized, or&nbsp;niche, agencies. The first category, still dominating the Asian market, consists of&nbsp;full-service agencies used to&nbsp;offer a&nbsp;wide range of&nbsp;services (from back-end and design, to&nbsp;front-end development and&nbsp;QA), while specialized agencies are offering a&nbsp;limited range of&nbsp;services focusing on&nbsp;specific kind of&nbsp;works. Nowadays, it&nbsp;is&nbsp;a&nbsp;common practice worldwide to&nbsp;divide the development process into two parts. There are several reasons behind&nbsp;it, however, the key question is&nbsp;whether it&nbsp;is&nbsp;a&nbsp;good idea to&nbsp;have front-end part separated for a&nbsp;product. 
+**W**ebsite (or&nbsp;web application) development strategies have been evolving continuously over the past decade. Today, web development companies fall into two broad groups&nbsp;– full-stack agencies and specialized, or&nbsp;niche, agencies. The first category, still dominating the Asian market, consists of&nbsp;full-service agencies used to&nbsp;offer a&nbsp;wide range of&nbsp;services (from back-end and design, to&nbsp;front-end development and&nbsp;QA), while specialized agencies are offering a&nbsp;limited range of&nbsp;services focusing on&nbsp;specific kind of&nbsp;works. Nowadays, it&nbsp;is&nbsp;a&nbsp;common practice worldwide to&nbsp;divide the development process into two parts. There are several reasons behind&nbsp;it, however, the key question is&nbsp;whether it&nbsp;is&nbsp;a&nbsp;good idea to&nbsp;have front-end part separated for a&nbsp;product.
 
 ## Specialize to&nbsp;stand out
 
 When we&nbsp;started our web development business back in&nbsp;2012, we&nbsp;have decided to&nbsp;take on&nbsp;a&nbsp;specific front-end development niche. We&nbsp;narrowed our position to&nbsp;only work within this certain market segment and put all of&nbsp;our resources into the offering of&nbsp;high-end services to&nbsp;help fulfil the specific needs of&nbsp;our customers.
 
-Narrowing the service offerings helped&nbsp;us to&nbsp;be&nbsp;more productive and earn a&nbsp;strong reputation in&nbsp;the industry (Russia and CIS countries). Focusing on&nbsp;a&nbsp;few niches instead of&nbsp;taking on&nbsp;most of&nbsp;them allowed&nbsp;us to&nbsp;specialize and become well-known for being experts in&nbsp;a&nbsp;particular type of&nbsp;web development. 
+Narrowing the service offerings helped&nbsp;us to&nbsp;be&nbsp;more productive and earn a&nbsp;strong reputation in&nbsp;the industry (Russia and CIS countries). Focusing on&nbsp;a&nbsp;few niches instead of&nbsp;taking on&nbsp;most of&nbsp;them allowed&nbsp;us to&nbsp;specialize and become well-known for being experts in&nbsp;a&nbsp;particular type of&nbsp;web development.
 
 Further in&nbsp;this article, we’ll focus on&nbsp;the advantages and some disadvantages of&nbsp;a&nbsp;separate front-end development model. These are based on&nbsp;our expertise in&nbsp;general and our observations made while exploring the Asian market.
 
@@ -30,9 +29,9 @@ Further in&nbsp;this article, we’ll focus on&nbsp;the advantages and some disa
 
 The front-end side of&nbsp;a&nbsp;website or&nbsp;web app is&nbsp;the part that is&nbsp;built to&nbsp;interact with users directly. Front-end developers are responsible for the user interface while full-stack development includes both front-end and back-end programming focusing on&nbsp;business logic, data models among other things. Hence, full-stack development represents the complete web development process.
 
-Full-stack development has become popular across various countries worldwide, including Singapore and other Asian states. This is&nbsp;mainly because frequent problems in&nbsp;development are said to&nbsp;come from the lack of&nbsp;interaction between front-end and back-end development teams. It&nbsp;is&nbsp;believed that front-end developers are not always fully informed about changes in&nbsp;the back-end and API or&nbsp;vice versa. When distributed development teams are working in&nbsp;different time zones, this also becomes an&nbsp;issue. 
+Full-stack development has become popular across various countries worldwide, including Singapore and other Asian states. This is&nbsp;mainly because frequent problems in&nbsp;development are said to&nbsp;come from the lack of&nbsp;interaction between front-end and back-end development teams. It&nbsp;is&nbsp;believed that front-end developers are not always fully informed about changes in&nbsp;the back-end and API or&nbsp;vice versa. When distributed development teams are working in&nbsp;different time zones, this also becomes an&nbsp;issue.
 
-It&nbsp;is&nbsp;also generally believed that a&nbsp;full-stack team, or&nbsp;an&nbsp;agency, addresses a&nbsp;wider range of&nbsp;problems and solves most of&nbsp;them before they even happen. Such agencies have fewer interaction issues and have a&nbsp;team of&nbsp;specialists working well together. 
+It&nbsp;is&nbsp;also generally believed that a&nbsp;full-stack team, or&nbsp;an&nbsp;agency, addresses a&nbsp;wider range of&nbsp;problems and solves most of&nbsp;them before they even happen. Such agencies have fewer interaction issues and have a&nbsp;team of&nbsp;specialists working well together.
 
 A&nbsp;full-stack development approach is&nbsp;something that lots of&nbsp;companies got used to&nbsp;for large and complex projects, and many of&nbsp;them accepted this approach and have been satisfied with&nbsp;it. At&nbsp;the same time, more companies are reluctant to&nbsp;use&nbsp;it. With the emergence of&nbsp;high-performance technologies, more of&nbsp;the processing power can be&nbsp;handled by&nbsp;web browsers, which allows to&nbsp;move away from this “united” (full-stack) model and define a&nbsp;conceptual split of&nbsp;front-end from back-end development and other things.
 
@@ -57,6 +56,6 @@ Cost-effective. Finally, when it&nbsp;comes to&nbsp;hiring a&nbsp;full-stack dev
 
 ## Conclusion
 
-These are only a&nbsp;few of&nbsp;the advantages of&nbsp;a&nbsp;split-stack development model but it&nbsp;can be&nbsp;extended to&nbsp;include a&nbsp;much wider array of&nbsp;benefits. We’re not suggesting that there are no&nbsp;cons of&nbsp;buying front-end development services separately (the above-mentioned project management issues, which may cause bugs or&nbsp;progress and a&nbsp;bit more of&nbsp;paperwork), but they are far and few as&nbsp;compared to&nbsp;the pros. 
+These are only a&nbsp;few of&nbsp;the advantages of&nbsp;a&nbsp;split-stack development model but it&nbsp;can be&nbsp;extended to&nbsp;include a&nbsp;much wider array of&nbsp;benefits. We’re not suggesting that there are no&nbsp;cons of&nbsp;buying front-end development services separately (the above-mentioned project management issues, which may cause bugs or&nbsp;progress and a&nbsp;bit more of&nbsp;paperwork), but they are far and few as&nbsp;compared to&nbsp;the pros.
 
 Niche specialization is&nbsp;simply that good. Just like we&nbsp;prefer a&nbsp;specialized doctor or&nbsp;lawyer for a&nbsp;specific problem you should hire a&nbsp;specialized company for handling each layer of&nbsp;the development. A&nbsp;full-stack model is&nbsp;a&nbsp;common approach for the Asian market, however, a&nbsp;split-stack can be&nbsp;viewed as&nbsp;a&nbsp;rising trend, that will be&nbsp;spreading in&nbsp;the Asian region over the next years.

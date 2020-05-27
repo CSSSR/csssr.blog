@@ -1,6 +1,5 @@
 ---
 title: 'Eight Ways to Improve <i>Staff Motivation</i> or How to Mend Broken Morale'
-excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
     'desktop.all': '/assets/blog/posts/eight-ways-to-Improve-staff-motivation/desktop.all/mainPageСover.png'

@@ -1,6 +1,5 @@
 ---
 title: '<i>Augmented & Virtual Reality</i> to Shape the Future of Web Development'
-excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
     'desktop.all': '/assets/blog/posts/augmented-and-virtual-reality/desktop.all/mainPageCover.png'

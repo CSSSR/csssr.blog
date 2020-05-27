@@ -29,7 +29,10 @@ const Quote = ({ className, imgName, children, author, position, withImage }) =>
             srcSet={`/assets/blog/components/quote/images/mobile.all/${imgName}.png`}
           />
 
-          <img src={`/assets/blog/components/quote/images/desktop.all/${imgName}.png`} alt="lady"></img>
+          <img
+            src={`/assets/blog/components/quote/images/desktop.all/${imgName}.png`}
+            alt="lady"
+          ></img>
         </picture>
       )}
 
@@ -45,9 +48,8 @@ const Quote = ({ className, imgName, children, author, position, withImage }) =>
 Quote.propTypes = {
   className: string,
   imgName: string,
-  quoteText: string,
-  quoteAuthor: string,
-  authorPost: string,
+  author: string,
+  position: string,
   withImage: bool,
 }
 

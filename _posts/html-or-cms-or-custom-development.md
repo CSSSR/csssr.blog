@@ -1,6 +1,5 @@
 ---
 title: '<i>HTML, CMS</i> or <i>Custom Development</i>: Which is Better?'
-excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImage:
   mainPage:
     'desktop.all': '/assets/blog/posts/html-or-cms-or-custom-development/desktop.all/coverMainPage.png'
