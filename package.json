@@ -5,7 +5,8 @@
     "dev": "next",
     "build": "next build && next export",
     "start": "next start",
-    "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0"
+    "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0",
+    "post": "node postTemplate/scaffoldNewPost.js"
   },
   "dependencies": {
     "@csssr/core-design": "^5.3.0",
@@ -36,6 +37,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.0",
     "file-loader": "^6.0.0",
+    "fs-extra": "^9.0.0",
     "husky": "^4.2.5",
     "ip": "^1.1.5",
     "next-compose-plugins": "^2.2.0",
