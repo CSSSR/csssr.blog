@@ -5,9 +5,10 @@ import Layout from '../Layout'
 const MainPage = ({ allPosts }) => (
   <>
     <Head>
-      <title>CSSSR Blog</title>
+      <title>Blog | CSSSR</title>
     </Head>
     <Layout>
+      <h1 className="visual-hidden">Blog CSSSR</h1>
       <Posts posts={allPosts} />
     </Layout>
   </>
