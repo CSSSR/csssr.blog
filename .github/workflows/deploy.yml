@@ -35,7 +35,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
-        working-directory: test_new_blog
+        working-directory: new_blog
         run: INCLUDE_EXAMPLE_POST=true BLOG_HOST=https://$(node githubActionsUtils/getReleaseID.js).csssr-new-blog.csssr.cloud yarn build
 
       - name: Деплой на тестинг
@@ -45,5 +45,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           site-type: mpa
           project-id: csssr-new-blog
-          files: ./test_new_blog/out
+          files: ./new_blog/out
           no-previous-files: "true"
