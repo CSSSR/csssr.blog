@@ -19,11 +19,10 @@ const PostCard = ({ className, post, size }) => {
             className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}
             dangerouslySetInnerHTML={{__html: cleaningTitle(post.title)}}
           />
-
-          <a className="tag">{post.tag}</a>
-          <DateFormatter className="date">{post.date}</DateFormatter>
         </a>
       </Link>
+      <a className="tag">{post.tag}</a>
+      <DateFormatter className="date">{post.date}</DateFormatter>
     </li>
   )
 }
