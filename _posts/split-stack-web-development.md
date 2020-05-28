@@ -1,14 +1,6 @@
 ---
 title: 'Split-Stack Web Development: Some <i>Advantages</i> of&nbsp;Separating <span style="white-space:nowrap">Front-end</span> from <span style="white-space:nowrap">Back-end</span>'
-coverImage:
-  mainPage:
-    'desktop.all': '/assets/blog/posts/split-stack-web-development/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/posts/split-stack-web-development/mobile.all/cover.png'
-  postPage:
-    'desktop.all': '/assets/blog/posts/split-stack-web-development/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/posts/split-stack-web-development/mobile.all/cover.png'
-ogImage:
-  url: '/assets/blog/posts/split-stack-web-development/desktop.all/cover.png'
+coverImageAlt: 'alt me'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
@@ -23,7 +15,7 @@ Narrowing the service offerings helped&nbsp;us to&nbsp;be&nbsp;more productive a
 
 Further in&nbsp;this article, we’ll focus on&nbsp;the advantages and some disadvantages of&nbsp;a&nbsp;separate front-end development model. These are based on&nbsp;our expertise in&nbsp;general and our observations made while exploring the Asian market.
 
-<Img name="process" alt="process" withBigMargin />
+<Img imageName="process" alt="process" withBigMargin />
 
 ## Two main approaches to web development
 
@@ -35,7 +27,7 @@ It&nbsp;is&nbsp;also generally believed that a&nbsp;full-stack team, or&nbsp;an&
 
 A&nbsp;full-stack development approach is&nbsp;something that lots of&nbsp;companies got used to&nbsp;for large and complex projects, and many of&nbsp;them accepted this approach and have been satisfied with&nbsp;it. At&nbsp;the same time, more companies are reluctant to&nbsp;use&nbsp;it. With the emergence of&nbsp;high-performance technologies, more of&nbsp;the processing power can be&nbsp;handled by&nbsp;web browsers, which allows to&nbsp;move away from this “united” (full-stack) model and define a&nbsp;conceptual split of&nbsp;front-end from back-end development and other things.
 
-<Separator type="bg-repeat" lineColor="#D3D3FF" imgName="peopleWithGramophone" />
+<Separator type="bg-repeat" lineColor="#D3D3FF" imageName="peopleWithGramophone" />
 
 ## Benefits of separated front-end development
 

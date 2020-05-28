@@ -1,14 +1,6 @@
 ---
 title: 'How to Integrate <i>Creative</i> and <i>Web Development</i>'
-coverImage:
-  mainPage:
-    'desktop.all': '/assets/blog/posts/creative-and-web-development/desktop.all/mainPageСover.png'
-    'mobile.all': '/assets/blog/posts/creative-and-web-development/mobile.all/mainPageСover.png'
-  postPage:
-    'desktop.all': '/assets/blog/posts/creative-and-web-development/desktop.all/postPageCover.png'
-    'mobile.all': '/assets/blog/posts/creative-and-web-development/mobile.all/mainPageСover.png'
-ogImage:
-  url: '/assets/blog/posts/creative-and-web-development/desktop.all/mainPageСover.png'
+coverImageAlt: 'alt me'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
@@ -22,7 +14,7 @@ The history of digital advertising is a gradual trend towards increased speciali
 
 Web development is also becoming more and more sophisticated and, with it, budgets for digital promotion have been growing. As the field has developed, specialization has increased, with some companies offering specialized creative services and others, web development, because it is no longer efficient for creative agencies to hire internal developers and build a management model for IT teams.
 
-<Img name="swing" alt="swing" withBigMargin />
+<Img imageName="swing" alt="swing" withBigMargin />
 
 ## Web Development Options for Creative Agencies
 
@@ -32,7 +24,7 @@ What are the main challenges of building your own IT department? Well, it takes 
 
 So, often developing internal technical skills is a less-than-appealing idea for creative agencies. However, the good news is that when agencies choose to forgo developing their own IT departments, there are several alternatives, better models for web development services:
 
-<ParagraphWithImage imgName="clockwork-bird">
+<ParagraphWithImage imageName="clockwork-bird">
   ### Option 2: Subcontractor / Freelance
   <p>While a simple solution, subcontracting or hiring freelancers lacks predictability and transparency. To win tenders and avoid losing clients, companies often understate costs, without bothering to understand the actual expenses and labor required. Only after they win the bid do they start thinking about who they could give the project to at the price they negotiated.</p>
 </ParagraphWithImage>
@@ -41,7 +33,7 @@ Reputable agencies refuse to work under these conditions, while freelancers migh
 
 Alternatively, and less pessimistically, an experienced agency might design an appropriate campaign, but make a poor choice of developer, something difficult to avoid if you use a different contractor for each project. As a result, the end-customer gets a strong creative idea, with poor implementation and/or a postponed launch date.
 
-<ParagraphWithImage imgName="horse-man">
+<ParagraphWithImage imageName="horse-man">
   <p>If you, as a client, are offered development work by an agency through a subcontractor, we recommend you instead take on the task of finding a suitable contractor yourself. Try to find a separate contractor for the web development part of the project, compare the expertise levels of different teams and choose the best one for you. Tech recruiters can be helpful for this task, as they have plenty of experience in identifying tech talent. </p>
 </ParagraphWithImage>
 
@@ -55,7 +47,7 @@ Additionally, when working in an alliance, creative agencies do not have to budg
 
 A good alliance can work for nearly any project, with few exceptions is specific cases. For instance, the company requesting the service might have its own internal capabilities in a given field, or want to work with another partner, or some specialized skill or knowledge might be required for a particular project. However, for the most part, well formed alliances have clear advantages over the subcontractor / freelance model.
 
-<Img name="men-in-boat" alt="men-in-boat" withBigMargin/>
+<Img imageName="men-in-boat" alt="men-in-boat" withBigMargin/>
 
 ## The Rules of a Good Alliance
 
@@ -86,6 +78,6 @@ You can build a successful alliance with a partner from any country. What is mor
 Web development agencies, on the other hand, can be based on different continents, with little-to-no specification for local markets, because code is written in the same languages all over the world and differences in mentality have little effect on end results.
 
 
-<Img name="high-five" alt="high-five" withBigMargin/>
+<Img imageName="high-five" alt="high-five" withBigMargin/>
 
 **In conclusion,** when these four rules are followed, alliances between creative agencies and web developers can be the most efficient and effective way for clients to develop their digital presence. Keep them in mind when forming partnerships between web developers and creative design teams, and you will find success in your future projects.

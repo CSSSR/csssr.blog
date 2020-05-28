@@ -1,21 +1,13 @@
 ---
 title: 'The Baltic E-Success: A&nbsp;Brief Introduction <i>to&nbsp;the Estonian IT</i>&nbsp;Industry'
-coverImage:
-  mainPage:
-    'desktop.all': '/assets/blog/posts/the-baltic-e-success/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/posts/the-baltic-e-success/mobile.all/cover.png'
-  postPage:
-    'desktop.all': '/assets/blog/posts/the-baltic-e-success/desktop.all/cover.png'
-    'mobile.all': '/assets/blog/posts/the-baltic-e-success/mobile.all/cover.png'
-ogImage:
-  url: '/assets/blog/posts/the-baltic-e-succes/desktop.all/cover.png'
+coverImageAlt: 'alt me'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
 
 **E**stonia enjoys the reputation of&nbsp;a&nbsp;genuinely digital society. Today, it&nbsp;is&nbsp;Europe’s most ambitious country in&nbsp;terms of&nbsp;technological and&nbsp;IT development. Most of&nbsp;government services are delivered 24/7 and have been digitally linked across one platform, while blockchain technology is&nbsp;often used to&nbsp;secure data integrity. Estonia has the largest number of&nbsp;IT startups per capita, while the alumni of&nbsp;two leading Universities are behind the world-famous tech companies that have changed the market. Let’s have a&nbsp;look at&nbsp;the numbers that make the country claim it&nbsp;is&nbsp;the real E-success and&nbsp;IT leader.
 
-<Img name="flag" alt="flag" withBigMargin/>
+<Img imageName="flag" alt="flag" withBigMargin/>
 
 ## Europe’s most developed IT sector
 
@@ -43,7 +35,7 @@ Another attractive thing about Estonia is&nbsp;the progressive and competitive t
 
 The score in&nbsp;the given index was achieved through a&nbsp;20% corporate profit tax (applied to&nbsp;distributed profits only), a&nbsp;20% tax on&nbsp;individual income (not applying to&nbsp;personal dividend income), and a&nbsp;property tax applied to&nbsp;the land’s value only. Foreign profits earned by&nbsp;local companies are also exempted from the profit taxation.
 
-<Separator type="color-line" lineColor="#D3D3FF" imgName="manWithCafeBg"/>
+<Separator type="color-line" lineColor="#D3D3FF" imageName="manWithCafeBg"/>
 
 ## Homegrown IT minds and scholars
 

@@ -1,1 +1,1 @@
-export { default } from './PostСard'
+export { default } from './PostCard'

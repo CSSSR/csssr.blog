@@ -1,39 +1,15 @@
+import React from 'react'
 import { string, bool } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Quote.styles'
 import { Grid } from '@csssr/core-design'
-import { useTheme } from 'emotion-theming'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-const Quote = ({ className, imgName, children, author, position, withImage }) => {
-  const theme = useTheme()
-
+const Quote = ({ className, children, author, position, withImage }) => {
   return (
     <Grid className={className}>
       {withImage && (
-        <picture className="image-wrapper">
-          <source
-            media={theme.breakpoints.desktop.all.slice(7)}
-            type="image/png"
-            srcSet={`/assets/blog/components/quote/images/desktop.all/${imgName}.png`}
-          />
-
-          <source
-            media={theme.breakpoints.tablet.all.slice(7)}
-            type="image/png"
-            srcSet={`/assets/blog/components/quote/images/tablet.all/${imgName}.png`}
-          />
-
-          <source
-            media={theme.breakpoints.mobile.all.slice(7)}
-            type="image/png"
-            srcSet={`/assets/blog/components/quote/images/mobile.all/${imgName}.png`}
-          />
-
-          <img
-            src={`/assets/blog/components/quote/images/desktop.all/${imgName}.png`}
-            alt="lady"
-          ></img>
-        </picture>
+        <PictureSmart className="image-wrapper" alt="lady" requireImages={require.context('../../../../public/assets/blog/components/quote/images')} />
       )}
 
       <blockquote className="quote">
@@ -47,7 +23,6 @@ const Quote = ({ className, imgName, children, author, position, withImage }) =>
 
 Quote.propTypes = {
   className: string,
-  imgName: string,
   author: string,
   position: string,
   withImage: bool,

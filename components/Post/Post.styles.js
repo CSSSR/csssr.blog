@@ -9,7 +9,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${desktop.all} {
     & {
       padding-top: 192px;
-      background-image: linear-gradient(to right, white, white), url(${require('../../static/images/post-header-bg.svg').default});
+      background-image: linear-gradient(to right, white, white), url(${require('../../public/images/post-header-bg.svg').default});
       background-repeat: no-repeat, repeat-x;
       background-position: center 192px, center top;
     }
@@ -36,7 +36,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${tablet.all} {
     & {
       padding-top: ${calcRem(142)};
-      background-image: linear-gradient(to right, white, white), url(${require('../../static/images/post-header-bg.svg').default});
+      background-image: linear-gradient(to right, white, white), url(${require('../../public/images/post-header-bg.svg').default});
       background-position: center ${calcRem(142)}, center top;
       background-size: ${calcRem(782)} ${calcRem(232)}, auto ${calcRem(307)};
       background-repeat: no-repeat, repeat-x;
@@ -46,7 +46,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${mobile.all} {
     & {
       padding-top: ${calcRem(128)};
-      background-image: url(${require('../../static/images/post-header-bg.svg').default});
+      background-image: url(${require('../../public/images/post-header-bg.svg').default});
       background-size: auto ${calcRem(250)};
       background-repeat: repeat-x;
     }

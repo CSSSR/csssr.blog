@@ -8,6 +8,7 @@ export default function PostPage({ post /* morePosts, */ }) {
   // if (!router.isFallback && !post?.slug) {
   //   return <ErrorPage statusCode={404} />
   // }
+
   return (
     <Layout>
       {/*
@@ -27,9 +28,8 @@ export async function getStaticProps({ params }) {
     'author',
     'content',
     'tag',
-    'ogImage',
-    'coverImage',
-    'pageImage',
+    'coverImageAlt',
+    'images',
   ])
 
   return {

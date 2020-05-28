@@ -12,7 +12,7 @@ const Subtitle = ({ className, children }) => (
 
 Subtitle.propTypes = {
   className: string,
-  imgName: string,
+  imageName: string,
   alt: string,
 }
 

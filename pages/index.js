@@ -5,7 +5,15 @@ const Index = ({ allPosts }) => <MainPage allPosts={allPosts} />
 
 export default Index
 export async function getStaticProps() {
-  const allPosts = getAllPosts(['title', 'date', 'slug', 'author', 'coverImage', 'tag'])
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImageAlt',
+    'tag',
+    'images',
+  ])
 
   return {
     props: { allPosts },
