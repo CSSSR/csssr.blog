@@ -18,10 +18,6 @@ export default function Meta() {
         name="description"
         content="Place where we a sharing our thoughts on different topics such as web development, management and remote work culture."
       />
-      <meta
-        property="og:image"
-        content="/assets/blog/posts/offshore-web-development/mainCover/desktop.all.png"
-      />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <link
