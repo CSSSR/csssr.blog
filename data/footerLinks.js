@@ -100,7 +100,7 @@ export const nav = [
       {
         id: 'blog',
         title: 'Blog',
-        href: 'https://blog.csssr.com',
+        href: '/',
       },
     ],
   },
