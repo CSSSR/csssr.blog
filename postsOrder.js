@@ -6,7 +6,7 @@ const posts = [
 ]
 
 if (process.env.INCLUDE_EXAMPLE_POST) {
-  posts.unshift(['example', 'example'])
+  // posts.unshift(['example', 'example'])
 }
 
 export default posts
