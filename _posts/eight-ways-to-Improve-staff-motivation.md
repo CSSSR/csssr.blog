@@ -1,7 +1,7 @@
 ---
 title: 'Eight Ways to Improve <i>Staff Motivation</i> or How to Mend Broken Morale'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
-coverImageAlt: 'alt me'
+coverImageAlt: 'Eight Ways to Improve Staff Motivation article cover'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
@@ -10,7 +10,7 @@ tag: 'Web-development'
 
 Yes, from time to time, employees become demotivated, and you have to find ways to raise their morale. In this blog post, we explore the signs, causes and dangers of demotivation, and 8 easy ways to improve the team spirit.
 
-<Img imageName="sherlock" alt="sherlock" withBigMargin/>
+<Img imageName="sherlock" alt="Detective looking magnifier" withBigMargin/>
 
 ##Know your enemy: what causes demotivation?
 
@@ -20,7 +20,7 @@ There are multiple factors that cause workplace demotivation. The key reason so 
 
 Your teammates always want to know that their efforts are valued and recognised. When they’re consistently performing and get no appreciation or recognition, employees start wondering, ‘what’s that all about’, nobody cares and notices anyway.
 
-<ParagraphWithImage imageName="mencircle">
+<ParagraphWithImage imageName="mencircle" alt="Man running in a wheel">
   ### Working without purpose
   <p>Living without goals or intent may be the biggest reason to feel demotivated. No purpose means no sense of direction, when things are done just for the sake of doing things, instead of working towards something desirable. This sense of direction often comes from a company vision. If your employees do not connect to the vision, they will not understand how they contribute to reaching it.</p>
 </ParagraphWithImage>
@@ -37,7 +37,7 @@ Your goals can also be a source of your current motivation problem. If they’re
 
 Lack of trust decreases the speed and productivity of the team and increases the costs. Trust level breaks if a manager fails to keep his promises and commitments, which apply to promotion or other promised benefits, including advance of wages. If you are not delegating tasks because you believe only you can do them correctly, communicates a lack of trust as well.
 
-<ParagraphWithImage imageName="menbla">
+<ParagraphWithImage imageName="menbla" alt="People sitting at the table confer">
   <p>Poor time management can cause a wide range of problems such as inefficient time allocation, distraction and procrastination. Employees who don’t have control over their time end up letting tasks sit until the last minute, a lot of stress when they try to play catch up and finally miss the deadlines entirely.</p>
 </ParagraphWithImage>
 
@@ -53,7 +53,7 @@ Absence of career opportunities shadows the motivation and profession goals of y
 There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.
 </Note>
 
-<Img imageName="man-with-butterfly" alt="man with butterfly" withBigMargin/>
+<Img imageName="man-with-butterfly" alt="Man straightens a butterfly" withBigMargin/>
 
 ## “Fixing the bugs”: 8 steps to motivate your employees
 
@@ -95,7 +95,7 @@ Dealing with budgeting is hard. Yet, if there’s a need to increase your team m
 
 Finally, implement various morale-building programs or spirit-lifting team initiatives. These may be employee appreciation plans and company/team awards. Celebrate birthdays, acknowledge even small contributions and encourage staffers to continually submit ideas for how to improve the overall workplace dynamic. Regularly ask for feedback to help maintain morale.
 
-<ParagraphWithImage imageName="red-pants">
+<ParagraphWithImage imageName="red-pants" alt="Man in red leg pants with laptop on his lap">
   ## Keep in mind
 
   <p>Even the best employees become demotivated but it is necessary to get back their drive to push forward. These 8 points above will help you to find the reasons behind your lack of motivation and the next steps you need to take to recover that drive and passion. Follow  simple rules to handle the demotivation problem and never forget to:</p>

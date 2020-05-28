@@ -1,7 +1,7 @@
 ---
 title: 'Ten Tips and Best Practices for <i>Accurately Task Estimating</i>'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
-coverImageAlt: 'alt me'
+coverImageAlt: 'Ten Tips and Best Practices article cover'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
@@ -11,7 +11,7 @@ tag: 'Web-development'
 Let’s face it – you can’t avoid task estimating, and if you do not estimate the tasks within a given project, then most likely someone else is doing it instead of you. At the same time, the developer able to estimate adequately and precisely is a sort of a godsend for his employer. Such specialists are valuable, they grow faster than those with poor estimating skills.
 Our team has travelled a lengthy and bumpy path dealing with poor-quality estimates. These prevented us from staying within budget limits, spoiled our relations with customers, and made us look not that smart. By trial and error, we have come up with a set of rules (tips) that helped to enhance the accuracy of our estimates. Hope you’ll find them useful as well.
 
-<Img imageName="man-on-unicorn" alt="man-on-unicorn" withBigMargin/>
+<Img imageName="man-on-unicorn" alt="Man with laptop riding a unicorn" withBigMargin/>
 
 ## Secure the Conditions
 
@@ -25,7 +25,7 @@ This is an important and painstaking thing, and if a developer has only 15 minut
 
 You will fail to upgrade your estimating skills to a top-level being in the middle of a complete mess: i.e. when tasks are estimated on a case-by-case basis, or you are suddenly forced to estimate one task while working on another, or it is generally unclear whether you should estimate any or not. The first step towards effective task estimating would be fostering the culture of estimation within your team. A high-level team discipline, among other factors, guaranteers efficiency. Having precise regulation of estimation stages can be helpful, and if the developer can draw the conclusions about the quality of his estimate in the end of the project, then the confusion will be minimal resulting in work efficiency increase. In this case, quality improvement will be just a matter of time.
 
-<ParagraphWithImage imageName="man-and-astronauts">
+<ParagraphWithImage imageName="man-and-astronauts" alt="Girl talking with two astronauts">
   ### Tasks are set correctly
   <p>No matter how vast your experience is, you cannot include an estimate into those parts of the functionality that you don’t even have an idea of. To consider the task in detail (both hidden at the initial stage, and those that will emerge later) you need to have a third eye, which is, unfortunately, unrealistic. Nevertheless, you can minimize these risks by preparing reasonable (if not brilliant) Terms of Reference (ToR).</p>
 </ParagraphWithImage>
@@ -50,7 +50,7 @@ And again.
 
 The process can be delayed, however, these time costs will bring more value. By the way, at this stage we often involve testers instead of developers. Mistakes made while stating the problem are expensive, and the more people participate in bugs hunting, the better results you would achieve.
 
-<ParagraphWithImage imageName="man-and-ladder">
+<ParagraphWithImage imageName="man-and-ladder" alt="Man walking up the stairs">
   ## Work on Yourself
   <p>Let’s move on to the estimation rules and focus on what you, personally, can do to improve the team’s performance.</p>
 </ParagraphWithImage>
@@ -63,7 +63,7 @@ Eat an elephant one bite at a time. A good decomposition gives a powerful boost 
 
 To upgrade the estimating skill, you need to receive feedback on how close to reality your previous estimates really were. You can set a special filter in Jira, or at least create a dedicated Google table.
 
-<ParagraphWithImage imageName="man-and-compass">
+<ParagraphWithImage imageName="man-and-compass" alt="Man drew a circle with a big compass">
   ### Mind the risks
   <p>Discuss separately everything that can significantly affect the final estimate. These factors include:<br/> Unfinished task setting (unprepared layouts and ToR, API issues and everything “to be provided later”);</p>
 </ParagraphWithImage>
