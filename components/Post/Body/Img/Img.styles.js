@@ -7,6 +7,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   img {
+    max-width: 656px;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
     height: 100%;
     width: 100%;
