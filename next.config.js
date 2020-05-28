@@ -31,6 +31,9 @@ const svgrLoaderConfigWithOutSvgo = {
 
 const withImages = (nextConfig = {}) => ({
   ...nextConfig,
+  env: {
+    INCLUDE_EXAMPLE_POST: process.env.INCLUDE_EXAMPLE_POST === 'true',
+  },
   webpack(config, { dev, isServer }) {
     config.node = {
       fs: 'empty',
@@ -60,13 +63,13 @@ const withImages = (nextConfig = {}) => ({
       ],
     })
 
-    let host, imgproxyHost
+    let blogHost, imgproxyHost
     if (dev) {
       const ip = require('ip')
-      host = `http://${ip.address()}:3000`
+      blogHost = `http://${ip.address()}:3000`
       imgproxyHost = 'http://localhost:8080'
     } else {
-      host = 'http://feat-com-1969.csssr-new-blog.csssr.cloud/'
+      blogHost = process.env.BLOG_HOST || 'https://blog.csssr.com'
       imgproxyHost = 'https://images.csssr.com'
     }
 
@@ -79,7 +82,7 @@ const withImages = (nextConfig = {}) => ({
             breakpoints: defaultTheme.breakpointsOrdered,
             imgproxy: {
               disable: dev,
-              imagesHost: host,
+              imagesHost: blogHost,
               host: imgproxyHost,
             },
           },
