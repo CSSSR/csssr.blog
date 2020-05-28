@@ -66,7 +66,7 @@ const withImages = (nextConfig = {}) => ({
       host = `http://${ip.address()}:3000`
       imgproxyHost = 'http://localhost:8080'
     } else {
-      host = 'http://master.csssr-new-blog.csssr.cloud/'
+      host = 'http://feat-com-1969.csssr-new-blog.csssr.cloud/'
       imgproxyHost = 'https://images.csssr.com'
     }
 
