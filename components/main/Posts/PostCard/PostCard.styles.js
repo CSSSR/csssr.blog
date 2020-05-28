@@ -2,6 +2,16 @@ import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
+  & a {
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .title {
+        color: ${colors.primary.origin};
+        transition: color 150ms ease-in-out;
+      }
+    }
+  }
+
   li > a {
     display: block;
   }
@@ -51,13 +61,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     display: inline-block;
     font-weight: normal;
     color: #7E8FA4;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    &:hover .title {
-      color: ${colors.primary.origin};
-      transition: color 150ms ease-in-out;
-    }
   }
 
   ${desktop.all} {
