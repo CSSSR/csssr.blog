@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Posts from './Posts'
 import Layout from '../Layout'
-import myImageData from '../../public/assets/blog/posts/augmented-and-virtual-reality/digital-flowers/desktop.all.png'
+import myImageData from '../../public/assets/blog/posts/offshore-web-development/mainCover/desktop.all.png'
 
 const MainPage = ({ allPosts }) => {
   const imageUrlPng3x = myImageData.data[myImageData.data.length - 1].srcSet['3x']
