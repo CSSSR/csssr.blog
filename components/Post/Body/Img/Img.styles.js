@@ -7,6 +7,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   img {
+    /* Максимальная ширина для картинки, вписанной в сетку на 1360px */
     max-width: 656px;
     margin-left: auto;
     margin-right: auto;
