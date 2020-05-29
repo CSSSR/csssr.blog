@@ -36,7 +36,7 @@ jobs:
 
       - name: Build
         working-directory: new_blog
-        run: INCLUDE_EXAMPLE_POST=true BLOG_HOST=http://$(node githubActionsUtils/getReleaseID.js).csssr-new-blog.csssr.cloud yarn build
+        run: IS_PRODUCTION=FALSE BLOG_HOST=http://$(node scripts/getReleaseID.js).csssr-new-blog.csssr.cloud yarn build
 
       - name: Деплой на тестинг
         uses: ./actions/deploy-static-site/v1beta1

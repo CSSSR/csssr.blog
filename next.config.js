@@ -32,7 +32,7 @@ const svgrLoaderConfigWithOutSvgo = {
 const withImages = (nextConfig = {}) => ({
   ...nextConfig,
   env: {
-    INCLUDE_EXAMPLE_POST: process.env.INCLUDE_EXAMPLE_POST === 'true',
+    IS_PRODUCTION: process.env.IS_PRODUCTION === 'TRUE',
   },
   webpack(config, { dev, isServer }) {
     config.node = {
