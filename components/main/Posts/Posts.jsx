@@ -4,14 +4,7 @@ import styled from '@emotion/styled'
 import styles from './Posts.styles'
 import PostCard from './PostCard'
 
-const postsOrder = [
-  ['offshore-web-development', 'augmented-and-virtual-reality'],
-  ['html-or-cms-or-custom-development', 'eight-ways-to-Improve-staff-motivation'],
-  ['creative-and-web-development', 'tips-for-task-estimating'],
-  ['the-baltic-e-success', 'split-stack-web-development'],
-]
-
-const Posts = ({ posts, className }) => {
+const Posts = ({ posts, postsOrder, className }) => {
   const postsBySlug = posts.reduce((acc, post) => {
     acc[post.slug] = post
 

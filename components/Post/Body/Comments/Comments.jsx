@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Heading } from '@csssr/core-design'
 import styled from '@emotion/styled'
 import { string } from 'prop-types'
 
@@ -38,7 +39,15 @@ const Comments = ({ className }) => {
     return () => removeScript('commento-script', document.body)
   })
 
-  return <div id="commento" className={className} />
+  return (
+    <div className={className}>
+      <Heading.H3 type="regular" size="l" className="title">
+        Comments
+      </Heading.H3>
+
+      <div id="commento" />
+    </div>
+  )
 }
 
 Comments.propTypes = {

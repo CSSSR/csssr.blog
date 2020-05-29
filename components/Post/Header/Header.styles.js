@@ -51,11 +51,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     z-index: 1;
     grid-column: 7 / span 3;
     grid-row: 2;
-  }
 
-  .img {
-    width: 100%;
-    height: auto;
+    & img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   ${desktop.all} {

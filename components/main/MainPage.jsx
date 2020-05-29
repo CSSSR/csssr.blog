@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Posts from './Posts'
 import Layout from '../Layout'
+
+import postsOrder from '../../postsOrder'
 import myImageData from '../../public/assets/blog/posts/offshore-web-development/mainCover/desktop.all.png'
 
 const MainPage = ({ allPosts }) => {
@@ -13,7 +15,7 @@ const MainPage = ({ allPosts }) => {
       </Head>
       <Layout>
         <h1 className="visual-hidden">Blog CSSSR</h1>
-        <Posts posts={allPosts} />
+        <Posts posts={allPosts} postsOrder={postsOrder} />
       </Layout>
     </>
   )
