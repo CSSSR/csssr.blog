@@ -22,13 +22,8 @@ const MyApp = ({ Component, pageProps }) => {
     const handleRouteChangeStart = () => {
       document.documentElement.classList.add('disable-smooth-scroll')
     }
-  
+
     const handleRouteChangeComplete = () => {
-      if (window.dataLayer) {
-        // setTimeout для того чтобы страница успела отрендериться и поменялся title
-        setTimeout(() => window.dataLayer.push({ event: 'route_change_complete' }))
-      }
-  
       setTimeout(() => {
         document.documentElement.classList.remove('disable-smooth-scroll')
       })
