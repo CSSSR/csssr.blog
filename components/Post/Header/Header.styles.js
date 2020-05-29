@@ -9,12 +9,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   .tag,
   .date {
-    margin-top: ${calcRem(15)};
     display: inline-block;
     font-family: Roboto;
     font-style: normal;
     font-size: ${calcRem(10)};
     line-height: ${calcRem(16)};
+    letter-spacing: ${calcRem(1.25)};
     text-transform: uppercase;
   }
 
@@ -24,7 +24,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .date {
-    margin-left: ${calcRem(16)};
+    margin-left: ${calcRem(22)};
     display: inline-block;
     font-weight: normal;
     color: #7E8FA4;
@@ -60,7 +60,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     & {
-      padding-top: 37px;
+      padding-top: 34px;
     }
 
     .title {
@@ -74,7 +74,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      padding-top:  ${calcRem(30)};
+      padding-top:  ${calcRem(27)};
     }
 
     .post-meta {
