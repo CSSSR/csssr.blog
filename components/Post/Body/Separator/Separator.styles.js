@@ -6,7 +6,7 @@ import getBackgroundImageSrcSet from '../../../../utils/style/getBackgroundImage
 const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
   & {
     position: relative;
-    margin-top: ${calcRem(80)};
+    margin-top: ${calcRem(94)};
     height: ${calcRem(111)};
     width: 100vw;
     grid-column: 1 / span 12;
@@ -17,7 +17,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
     &.color-line {
       position: relative;
       display: block;
-      height: ${calcRem(153)};
+      height: ${calcRem(139)};
 
       &::before {
         z-index: 1;
