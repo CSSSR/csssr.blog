@@ -16,7 +16,7 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content="Place where we a sharing our thoughts on different topics such as web development, management and remote work culture."
+        content="Place where we are sharing our thoughts on different topics such as web development, management and remote work culture."
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
