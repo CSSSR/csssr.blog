@@ -14,6 +14,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     line-height: ${calcRem(32)};
     padding-top: ${calcRem(20)};
     padding-right: ${calcRem(7)};
+    padding-left: ${calcRem(4)};
     float: left;
   }
 
@@ -109,6 +110,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     & > .text_regular_m:first-of-type strong:first-of-type {
       padding-right: ${calcRem(11)};
+      padding-left: ${calcRem(2)};
     }
 
     .heading_regular_m {
