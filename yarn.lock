@@ -1189,10 +1189,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@csssr/core-design@^5.3.0":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.3.0.tgz#3cf2a42df30fde998e6c5a5d31dbbb8c5e2e1890"
-  integrity sha512-eZyy6y4h6+cmbCaaE+CP+Nnz90mqxsgrwzh+C4QXAnYDoKC8X1EfNYN8s+4du9YiyAl2OU30KlEw94w7L5k1cw==
+"@csssr/core-design@^5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.4.0.tgz#5830dfca110c94466084d17221ad744b0ab32e82"
+  integrity sha512-q7WODXSj4rxlkaz8F2HvzRX92LMicXVVFagijsC3dJ88/yIMKkrU/L9s+ob7aJCb16Q2FJdvlZKeg9UxSzJ3hg==
   dependencies:
     "@emotion/styled-base" "^10.0.31"
     classnames "^2.2.6"
