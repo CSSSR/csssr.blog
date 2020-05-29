@@ -2,7 +2,7 @@
 title: '<i>Augmented & Virtual Reality</i> to Shape the Future of Web Development'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImageAlt: 'alt me'
-date: '2019-03-16T05:35:07.322Z'
+date: '2020-02-06T05:35:07.322Z'
 tag: 'Web-development'
 ---
 

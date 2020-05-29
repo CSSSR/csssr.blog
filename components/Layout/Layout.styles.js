@@ -51,6 +51,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-gap: 0 32px;
   }
 
+  .visual-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+  }
+
   ${desktop.l} {
     .footer {
       margin-top: 149px;
