@@ -7,7 +7,6 @@ import '../utils/sentry'
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     window.addEventListener('keydown', function (event) {
-      a()
       if (event.which === 9) {
         document.body.classList.add('outline')
       }
