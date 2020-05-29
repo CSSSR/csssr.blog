@@ -85,6 +85,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
     --width-container: 20.5rem;
     grid-column: 1 / span 6;
     margin-top: ${calcRem(60)};
+
+    &.bg-repeat {
+      height: ${calcRem(150)};
+
+      &::after {
+        background-size: cover;
+      }
+    }
   }
 `
 
