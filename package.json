@@ -15,7 +15,7 @@
     "@emotion/styled": "^10.0.10",
     "babel-plugin-prismjs": "^2.0.1",
     "classnames": "^2.2.6",
-    "date-fns": "2.10.0",
+    "date-fns": "2.14.0",
     "emotion-theming": "^10.0.27",
     "gray-matter": "4.0.2",
     "isomorphic-unfetch": "3.0.0",
