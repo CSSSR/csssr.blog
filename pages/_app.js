@@ -3,6 +3,7 @@ import { ThemeProvider } from 'emotion-theming'
 import { Root, defaultTheme } from '@csssr/core-design'
 import Router from 'next/router'
 import Prism from 'prismjs'
+import '../utils/sentry'
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
