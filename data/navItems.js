@@ -1,79 +1,79 @@
 export default [
   {
     id: 'services',
-    title: 'common:header.menu.services.title',
+    title: 'SERVICES',
     links: [
       {
         id: 'outsourcing',
-        title: 'common:header.menu.services.outsourcing.title',
+        title: 'OUTSOURCING FRONT-END',
         href: 'service/outsourcing-front-end',
       },
       {
         id: 'express',
-        title: 'common:header.menu.services.express.title',
+        title: 'EXPRESS WEB DEVELOPMENT',
         href: 'service/express-front-end',
       },
       {
         id: 'mvp',
-        title: 'common:header.menu.services.mvp.title',
+        title: 'MVP DEVELOPMENT',
         href: 'service/mvp-development',
       },
     ],
   },
   {
     id: 'industries',
-    title: 'common:header.menu.industries.title',
+    title: 'INDUSTRIES',
     links: [
       {
         id: 'fintech',
-        title: 'common:header.menu.industries.fintech.title',
+        title: 'FINTECH',
         href: 'industry/fintech',
       },
       {
         id: 'eCommerce',
-        title: 'common:header.menu.industries.eCommerce.title',
+        title: 'E-COMMERCE',
         href: 'industry/ecommerce',
       },
       {
         id: 'information',
-        title: 'common:header.menu.industries.information.title',
+        title: 'INFORMATION TECHNOLOGY',
         href: 'industry/information-technology',
       },
       {
         id: 'mediaAndMarketing',
-        title: 'common:header.menu.industries.mediaAndMarketing.title',
+        title: 'MEDIA & MARKETING',
         href: 'industry/media-and-marketing',
       },
     ],
   },
   {
     id: 'howWeWork',
-    title: 'common:header.menu.howWeWork.title',
+    title: 'HOW WE WORK',
     links: [
       {
         id: 'technologies',
-        title: 'common:header.menu.howWeWork.technologies.title',
+        title: 'TECHNOLOGIES',
         href: 'tech-stack',
       },
       {
         id: 'processes',
-        title: 'common:header.menu.howWeWork.processes.title',
+        title: 'OUR PROCESS',
         href: 'way-of-work',
       },
     ],
   },
   {
     id: 'products',
-    title: 'common:header.menu.products.title',
+    title: 'PRODUCTS',
     links: [
       {
         id: 'lms',
-        title: 'common:header.menu.products.lms.title',
+        title: 'MODULAR LMS PLATFORM',
         href: 'products/lms',
       },
       {
         id: 'tracker',
-        title: 'common:header.menu.products.tracker.title',
+        title: 'TIME-TRACKING SOFTWARE',
         href: 'https://tracker.csssr.com',
       },
     ],
