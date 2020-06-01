@@ -41,6 +41,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  .list_item_s {
+    padding-left: ${calcRem(9)};
+
+    &:not(:first-of-type) {
+      margin-top: ${calcRem(16)};
+    }
+
+    &::before {
+      width: ${calcRem(4)};
+      height: ${calcRem(4)};
+      top: 50%;
+      background-color: #18191B;
+      border: none;
+    }
+  }
+
   ${desktop.all} {
     & > .text_regular_m:first-of-type {
       margin-top: 50px;
@@ -71,22 +87,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture.with_big_margin + .heading_regular_m,
     .picture.with_big_margin + .text_regular_m {
       margin-top: 50px;
-    }
-
-    .list_item_s {
-      padding-left: ${calcRem(9)};
-
-      &:not(:first-of-type) {
-        margin-top: ${calcRem(16)};
-      }
-
-      &::before {
-        width: ${calcRem(4)};
-        height: ${calcRem(4)};
-        top: 50%;
-        background-color: #18191B;
-        border: none;
-      }
     }
 
     .text_regular_m,
