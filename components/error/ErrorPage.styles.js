@@ -198,6 +198,12 @@ const pictureStyles = css`
     margin-top: 1.5rem;
     z-index: -1;
     height: 51.5rem;
+
+    & img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
