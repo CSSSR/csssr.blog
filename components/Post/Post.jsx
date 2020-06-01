@@ -5,17 +5,16 @@ import Head from 'next/head'
 import Header from './Header'
 import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
+import getDescription from '../../utils/client/getDescription'
 
 const Post = ({ post, className }) => {
-  const description = post.content.slice(0, post.content.indexOf('\n', 1))
-
   return (
     <article className={className}>
       <Head>
         <title>{cleaningTitle(post.title)} | CSSSR blog</title>
-        <meta name="description" content={description} />
+        <meta name="description" content={getDescription(post.content)} />
         <meta property="og:title" content={`${cleaningTitle(post.title)} | CSSSR blog`} />
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={getDescription(post.content)} />
         <meta property="og:url" content={`https://csssr.com/en/blog/posts/${post.slug}`} />
         <meta property="og:image" content={post.images.mainCover.fallbackSrcSet['3x']} />
       </Head>
