@@ -108,6 +108,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .footer {
       margin-top: ${calcRem(140)};
     }
+
+    .post-body .text_regular_m {
+      font-size: ${calcRem(16)};
+    }
   }
 
   ${tablet.s} {
