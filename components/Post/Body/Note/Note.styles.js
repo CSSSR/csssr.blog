@@ -25,6 +25,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       padding-right: ${calcRem(80)};
       padding-bottom: ${calcRem(40)};
       padding-left: ${calcRem(80)};
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 
@@ -36,6 +38,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       padding: ${calcRem(24)} ${calcRem(16)};
       margin-left: 50%;
       transform: translateX(-50%);
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 
