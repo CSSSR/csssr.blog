@@ -10,7 +10,7 @@ export default function PostPage({ post /* morePosts, */ }) {
   // }
 
   return (
-    <Layout post={post}>
+    <Layout post={!!post}>
       {/*
         не дмаю что нам это пока нужно, но оставлю как пример создания фолбека
         router.isFallback ? <PostTitle>Loading…</PostTitle> : <Post post={post} />

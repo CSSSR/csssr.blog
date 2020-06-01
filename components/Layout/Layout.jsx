@@ -7,13 +7,15 @@ import { nav } from '../../data/footerLinks'
 import { links } from '../../data/headerLinks'
 
 export default function Layout({ children, post }) {
-  links[0].href = post ? '/' : ''
+  const headerLinks = links
+  // Изменяем ссыку на блог если не находимся на главной блога
+  headerLinks[0].href = post ? '/' : ''
 
   return (
     <>
       <Meta />
 
-      <Header actionButton={{ isVisible: false }} links={links} />
+      <Header actionButton={{ isVisible: false }} links={headerLinks} />
       <main id="main">{children}</main>
       <Footer className="footer" nav={nav} />
 
