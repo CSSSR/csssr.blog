@@ -7,7 +7,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-bottom: ${calcRem(50)};
     padding-top: ${calcRem(50)};
     padding-right:${calcRem(112)};
-    padding-bottom: ${calcRem(54)};
+    padding-bottom: ${calcRem(50)};
     padding-left:${calcRem(112)};
     background-color: #F1F2F7;
 
