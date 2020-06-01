@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Posts from './Posts'
 import Layout from '../Layout'
-import { withRouter } from 'next/router'
-import csssrBlogOrigin from '../../utils/csssrBlogOrigin'
 
 import postsOrder from '../../postsOrder'
 import myImageData from '../../public/assets/blog/posts/offshore-web-development/mainCover/desktop.all.png'
@@ -22,7 +20,7 @@ const MainPage = ({ allPosts }) => {
           property="og:description"
           content="Place where we are sharing our thoughts on different topics such as web development, management and remote work culture."
         />
-        <meta property="og:url" content={csssrBlogOrigin} />
+        <meta property="og:url" content="https://csssr.com/en/blog" />
         <meta property="og:image" content={imageUrlPng3x} />
       </Head>
       <Layout>
@@ -33,4 +31,4 @@ const MainPage = ({ allPosts }) => {
   )
 }
 
-export default withRouter(MainPage)
+export default MainPage

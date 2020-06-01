@@ -23,7 +23,6 @@ export default function PostPage({ post /* morePosts, */ }) {
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
     'title',
-    'excerpt',
     'date',
     'slug',
     'author',
