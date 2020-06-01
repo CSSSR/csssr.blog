@@ -3,6 +3,8 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile, tablet } }) => css`
   & {
+    display: block;
+    background-color: #ffffff;
     margin-top: 100px;
     grid-column: 4 / span 6;
   }
