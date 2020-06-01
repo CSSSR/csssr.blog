@@ -14,10 +14,7 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta
-        name="description"
-        content="Place where we are sharing our thoughts on different topics such as web development, management and remote work culture."
-      />
+      <meta property="og:type" content="website" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <link
