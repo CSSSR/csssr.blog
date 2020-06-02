@@ -83,7 +83,7 @@ export const nav = [
       },
       {
         id: 'tracker',
-        title: 'Time-tracking softwarecess',
+        title: 'Time-tracking software',
         href: 'https://tracker.csssr.com/',
       },
     ],
