@@ -18,6 +18,11 @@ export default [
         title: 'MVP DEVELOPMENT',
         href: 'service/mvp-development',
       },
+      {
+        id: 'backend',
+        title: 'BACK-END AND DEVOPS',
+        href: 'service/back-end-and-devops',
+      },
     ],
   },
   {

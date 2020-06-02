@@ -10,29 +10,12 @@ import Meta from '../Meta'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import { ReactComponent as LogoIcon } from '../../public/assets/blog/components/error/icons/csssr_logo.svg'
-import { ReactComponent as ServerError } from '../../public/assets/blog/components/error/icons/serverError.svg'
+import { ReactComponent as LineFromTopToBottomIcon } from '../../public/assets/blog/components/error/icons/lineFromTopToBottom.svg'
+import { ReactComponent as NotFound } from '../../public/assets/blog/components/error/icons/notFound.svg'
+
+import navItems from '../../data/navItems'
 
 import globalStyles from '../Layout/Layout.styles'
-
-const possibleStatusCodes = [500]
-
-const defaultStatusCode = 500
-
-const titleLocalesByStatusCode = {
-  500: 'Server Error',
-}
-
-const subtitleLocalesByStatusCode = {
-  500: 'Something went wrong. Try again or&nbsp;contact&nbsp;us at&nbsp;',
-}
-
-const pictureByStatusCode = {
-  500: require.context('../../public/assets/blog/components/error/images/500')
-}
-
-const codeIconByStatusCode = {
-  500: <ServerError width="auto" height="100%" />,
-}
 
 class ErrorPage extends React.Component {
   renderNav = ({ items: { title, id, links } }) => {
@@ -79,11 +62,6 @@ class ErrorPage extends React.Component {
   render() {
     const { className } = this.props
 
-    const statusCode =
-      possibleStatusCodes.indexOf(this.props.statusCode) !== -1
-        ? this.props.statusCode
-        : defaultStatusCode
-
     return (
       <Fragment>
         <Global styles={globalStyles} />
@@ -98,31 +76,35 @@ class ErrorPage extends React.Component {
           </Link>
         </Grid>
 
-        <Grid as="main" className={cn(className, `error-code_${statusCode}`)}>
+        <Grid as="main" className={cn(className, `error-code_404`)}>
           <h1
             className="font_h1-slab"
-            dangerouslySetInnerHTML={{ __html: `${titleLocalesByStatusCode[statusCode]}`}}
+            dangerouslySetInnerHTML={{ __html: 'Not found'}}
           />
 
           <PictureSmart 
             className="picture"
-            alt={statusCode}
-            requireImages={pictureByStatusCode[statusCode]}
+            alt="404"
+            requireImages={require.context('../../public/assets/blog/components/error/images/404')}
           />
 
-          <div className={'code-wrapper'}>{codeIconByStatusCode[statusCode]}</div>
+          <div className={'code-wrapper'}>
+            <NotFound width="auto" height="100%" />
+          </div>
 
           <h2
             className="font_subhead-slab"
-            dangerouslySetInnerHTML={{
-              __html: [
-                `${subtitleLocalesByStatusCode[statusCode]}`,
-                statusCode === 500
-                  ? '<a style="color: #345eff" href="mailto:sales@csssr.io">sales@csssr.io</a>'
-                  : null,
-              ].join(''),
-            }}
+            dangerouslySetInnerHTML={{ __html: 'Explore other pages'}}
           />
+          <Fragment>
+            <div className="arrow-wrapper">
+              <LineFromTopToBottomIcon width="100%" height="100%" />
+            </div>
+
+            <div className="navList">
+              {navItems.map((items) => this.renderNav({ items }))}
+            </div>
+          </Fragment>
         </Grid>
       </Fragment>
     )
