@@ -3,14 +3,21 @@ import Meta from '../Meta'
 import styles from './Layout.styles'
 import { Header, Footer } from '@csssr/core-design'
 
-export default function Layout({ children }) {
+import { nav } from '../../data/footerLinks'
+import { links } from '../../data/headerLinks'
+
+export default function Layout({ children, isPost }) {
+  const headerLinks = [...links]
+  // Изменяем ссыку на блог если не находимся на главной блога
+  headerLinks[0].href = isPost ? '/' : ''
+
   return (
     <>
       <Meta />
 
-      <Header actionButton={{ isVisible: false }} />
+      <Header actionButton={{ isVisible: false }} links={headerLinks} />
       <main id="main">{children}</main>
-      <Footer className="footer" />
+      <Footer className="footer" nav={nav} />
 
       <Global styles={styles} />
     </>
