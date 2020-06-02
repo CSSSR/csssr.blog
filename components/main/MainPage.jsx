@@ -11,6 +11,16 @@ const MainPage = ({ allPosts }) => {
     <>
       <Head>
         <title>Blog | CSSSR</title>
+        <meta
+          name="description"
+          content="Place where we are sharing our thoughts on different topics such as web development, management and remote work culture."
+        />
+        <meta property="og:title" content="Blog | CSSSR" />
+        <meta
+          property="og:description"
+          content="Place where we are sharing our thoughts on different topics such as web development, management and remote work culture."
+        />
+        <meta property="og:url" content="https://csssr.com/en/blog" />
         <meta property="og:image" content={imageUrlPng3x} />
       </Head>
       <Layout>
