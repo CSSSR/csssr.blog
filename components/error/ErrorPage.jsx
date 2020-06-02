@@ -112,7 +112,6 @@ class ErrorPage extends React.Component {
             dangerouslySetInnerHTML={{ __html: `${titleLocalesByStatusCode[statusCode]}`}}
           />
 
-
           <PictureSmart 
             className="picture"
             alt={statusCode}
