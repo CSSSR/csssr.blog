@@ -1,8 +1,8 @@
 ---
-title: '<i>Offshore Web Development</i>: Top Destinations For Singapore'
+title: '<i>Offshore Web Development:</i> Top Destinations For Singapore'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImageAlt: 'alt me'
-date: '2019-03-16T05:35:07.322Z'
+date: '2020-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---
 
@@ -37,7 +37,7 @@ Aside from geographical location and time differences, outsourcing destinations 
 
   India is one of the top choices for web development outsourcing globally. Nowadays, it is the world’s second-largest English-speaking country with mature IT industry, developed IT infrastructure, educated urban population and a huge number of IT professionals.
 
-  Indian companies offer various solutions and services, ranging from system migration, maintenance and integration, to web and application development, while the biggest advantage associated with web development outsourcing to India is low pricing. An average hourly rate for a web developer in India is extremely low. secured.
+  Indian companies offer various solutions and services, ranging from system migration, maintenance and integration, to web and application development, while the biggest advantage associated with web development outsourcing to India is low pricing. An average hourly rate for a web developer in India is extremely low.
 </ParagraphWithImage>
 
 <ParagraphWithImage imageName="vietnam">
@@ -65,5 +65,5 @@ Aside from geographical location and time differences, outsourcing destinations 
 
   Steadily playing a bigger role in the offshore web development segment, Eastern Europe is turning into a more cost-effective alternative compared to the Asian-Pacific region. Moreover it rightfully boasts a higher quality-price ratio.  Eastern Europe does provide the best IT infrastructure, code and service quality, data protection, at costs competitive to that of Asian countries like India, China, Indonesia and Vietnam.
 
-  The downside of working with Asian (especially Indian or Chinese) companies is that sometimes there are  no guarantees as to the work’s quality provided. Other frequent problems with offshore contractors can include lack of non-local customers’ legal protection, difficulty to get justice in the local courts, bureaucracy, documentation or even tax issues. The best way out of that is to have a Singapore local contractor with an advanced chain of offshore web developers. CSSSR PTE. LTD., being local headquarters of international web developers mostly domiciled in Russia and Eastern Europe, can serve as the best choice  in this regard. The company can address the specific demands of local customers, offer custom-built solutions, and offer at the same time the highest quality combined with highly competitive pricing .
+  The downside of working with Asian (especially Indian or Chinese) companies is that sometimes there are  no guarantees as to the work’s quality provided. Other frequent problems with offshore contractors can include lack of non-local customers’ legal protection, difficulty to get justice in the local courts, bureaucracy, documentation or even tax issues. The best way out of that is to have a Singapore local contractor with an advanced chain of offshore web developers. CSSSR PTE. LTD., being local headquarters of international web developers mostly domiciled in Russia and Eastern Europe, can serve as the best choice  in this regard. The company can address the specific demands of local customers, offer custom-built solutions, and offer at the same time the highest quality combined with highly competitive pricing.
 </ParagraphWithImage>

@@ -17,6 +17,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-top: 25px;
   }
 
+  .heading_regular_s + .text_regular_m {
+    margin-top: 20px;
+  }
+
   .img-wrap {
     display: block;
     float: left;
@@ -54,7 +58,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-top: 0.9375rem;
     }
 
-    .heading_regular_m + .text_regular_m {
+    .heading_regular_s + .text_regular_m {
       margin-top: ${calcRem(15)};
     }
   }
@@ -72,7 +76,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-bottom: ${calcRem(7)};
     }
 
-    .heading_regular_m + .text_regular_m {
+    .heading_regular_s + .text_regular_m {
       margin-top: ${calcRem(15)};
     }
   }

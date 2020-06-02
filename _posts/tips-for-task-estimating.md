@@ -2,7 +2,7 @@
 title: 'Ten Tips and Best Practices for <i>Accurately Task Estimating</i>'
 excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImageAlt: 'alt me'
-date: '2019-03-16T05:35:07.322Z'
+date: '2019-12-02T05:35:07.322Z'
 tag: 'Web-development'
 ---
 
@@ -55,7 +55,7 @@ The process can be delayed, however, these time costs will bring more value. By 
   <p>Let’s move on to the estimation rules and focus on what you, personally, can do to improve the team’s performance.</p>
 </ParagraphWithImage>
 
-## Break the task into sections and do it properly
+### Break the task into sections and do it properly
 
 Eat an elephant one bite at a time. A good decomposition gives a powerful boost to fit into an estimate. This is worth doing, even if you do not plan to distribute tasks between different developers. First, when decomposing, you look at the task a little closer, from either side, you think of an implementation plan, which means you see new features and also those requiring extra time. Secondly, this is an additional possibility of self-control. If you are implementing a monolith task designed for 120 hours, there’s a risk of spending 30 hours on one of its parts instead of 12 that were really worth spending. This works another way with decomposition.
 

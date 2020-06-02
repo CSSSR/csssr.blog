@@ -12,6 +12,7 @@ import Img from './Img'
 import Note from './Note'
 import Quote from './Quote'
 import Subtitle from './Subtitle'
+import Video from './Video'
 
 const Body = ({ content, className, images }) =>
   compiler(content, {
@@ -134,6 +135,9 @@ const Body = ({ content, className, images }) =>
       },
       Subtitle: {
         component: Subtitle,
+      },
+      Video: {
+        component: Video,
       },
     },
   })

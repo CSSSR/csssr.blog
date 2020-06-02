@@ -5,11 +5,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     margin-top: ${calcRem(50)};
     margin-bottom: ${calcRem(50)};
-    padding: ${calcRem(50)} ${calcRem(112)};
+    padding-top: ${calcRem(50)};
+    padding-right:${calcRem(112)};
+    padding-bottom: ${calcRem(50)};
+    padding-left:${calcRem(112)};
     background-color: #F1F2F7;
 
     & * {
       color: #18191B !important;
+    }
+
+    .heading_regular_s {
+      margin-top: 0;
     }
   }
 
@@ -25,6 +32,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       padding-right: ${calcRem(80)};
       padding-bottom: ${calcRem(40)};
       padding-left: ${calcRem(80)};
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 
@@ -33,9 +42,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 1 / span 6;
       width: 100vw;
       margin-top: ${calcRem(50)};
-      padding: ${calcRem(24)} ${calcRem(16)};
+      padding-top: ${calcRem(24)};
+      padding-right: ${calcRem(16)};
+      padding-bottom: ${calcRem(24)};
+      padding-left: ${calcRem(16)};
       margin-left: 50%;
       transform: translateX(-50%);
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 
