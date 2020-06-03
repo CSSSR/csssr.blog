@@ -4,7 +4,6 @@ import calcRem from '../../../../utils/style/calcRem'
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     margin-top: ${calcRem(50)};
-    margin-bottom: ${calcRem(50)};
     padding-top: ${calcRem(50)};
     padding-right:${calcRem(112)};
     padding-bottom: ${calcRem(50)};
@@ -17,6 +16,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .heading_regular_s {
       margin-top: 0;
+    }
+
+    & + .text_regular_m {
+      margin-bottom: ${calcRem(50)};
     }
   }
 
