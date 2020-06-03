@@ -119,13 +119,13 @@ const Body = ({ content, className, images }) =>
         },
       },
       Img: {
-        component: ({ imageName, ...rest }) => <Img className='picture' pictureData={images[imageName]} {...rest} />
+        component: ({ imageName, ...rest }) => <Img className='picture' sources={images[imageName]} {...rest} />
       },
       ParagraphWithImage: {
-        component: ({ imageName, ...rest }) => <ParagraphWithImage pictureData={images[imageName]} {...rest} />
+        component: ({ imageName, ...rest }) => <ParagraphWithImage sources={images[imageName]} {...rest} />
       },
       Separator: {
-        component: Separator,
+        component: ({ imageName, ...rest }) => <Separator sources={images[imageName]} {...rest} />
       },
       Note: {
         component: Note,

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@csssr/core-design": "^5.4.2",
-    "@csssr/csssr.images": "^1.8.0",
+    "@csssr/csssr.images": "^1.10.1",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
     "@sentry/browser": "^5.15.5",

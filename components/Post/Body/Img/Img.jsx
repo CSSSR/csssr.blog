@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { string, object, bool } from 'prop-types'
+import { string, array, bool } from 'prop-types'
 import styles from './Img.styles'
 import cn from 'classnames'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
-const Img = ({ className, pictureData, alt, withBigMargin }) =>
+const Img = ({ className, sources, alt, withBigMargin }) =>
   <Picture className={cn(className, { with_big_margin: withBigMargin })}
-           pictureData={pictureData}
+           sources={sources}
            alt={alt} />
 
 Img.propTypes = {
   className: string,
-  pictureData: object,
+  sources: array,
   alt: string,
   withBigMargin: bool,
 }
