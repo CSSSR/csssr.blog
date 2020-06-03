@@ -14,6 +14,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     line-height: ${calcRem(32)};
     padding-top: ${calcRem(20)};
     padding-right: ${calcRem(7)};
+    padding-left: ${calcRem(4)};
     float: left;
   }
 
@@ -40,6 +41,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  .list_item_s {
+    padding-left: ${calcRem(9)};
+
+    &:not(:first-of-type) {
+      margin-top: ${calcRem(16)};
+    }
+
+    &::before {
+      width: ${calcRem(4)};
+      height: ${calcRem(4)};
+      top: 50%;
+      background-color: #18191B;
+      border: none;
+    }
+  }
+
   ${desktop.all} {
     & > .text_regular_m:first-of-type {
       margin-top: 50px;
@@ -50,6 +67,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       font-weight: 900;
       font-size: 24px;
       line-height: 32px;
+    }
+
+    .text_regular_m + .heading_regular_m {
+      margin-top: 50px;
     }
 
     .heading_regular_s {
@@ -66,26 +87,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: 30px;
     }
 
-    .picture.with_big_margin + .heading_regular_s,
-    .picture.with_big_margin + .heading_regular_m,
-    .picture.with_big_margin + .text_regular_m {
-      margin-top: 50px;
+    .heading_regular_s + .text_regular_m {
+      margin-top: 15px;
     }
 
-    .list_item_s {
-      padding-left: ${calcRem(9)};
-
-      &:not(:first-of-type) {
-        margin-top: ${calcRem(16)};
-      }
-
-      &::before {
-        width: ${calcRem(4)};
-        height: ${calcRem(4)};
-        top: 50%;
-        background-color: #18191B;
-        border: none;
-      }
+    picture.with_big_margin + .heading_regular_s,
+    picture.with_big_margin + .heading_regular_m,
+    picture.with_big_margin + .text_regular_m {
+      margin-top: 50px;
     }
 
     .text_regular_m,
@@ -104,11 +113,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & > .text_regular_m:first-of-type  {
-      margin-top: ${calcRem(50)};
+      margin-top: ${calcRem(62)};
     }
 
     & > .text_regular_m:first-of-type strong:first-of-type {
       padding-right: ${calcRem(11)};
+      padding-left: ${calcRem(2)};
     }
 
     .heading_regular_m {
@@ -126,13 +136,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(15)};
     }
 
+    .text_regular_m + .text_regular_m {
+      margin-top: ${calcRem(9)};
+    }
+
     .picture + .text_regular_m {
       margin-top: ${calcRem(30)};
     }
 
-    .picture.with_big_margin + .heading_regular_s,
-    .picture.with_big_margin + .heading_regular_m,
-    .picture.with_big_margin + .text_regular_m {
+    picture.with_big_margin + .heading_regular_s,
+    picture.with_big_margin + .heading_regular_m,
+    picture.with_big_margin + .text_regular_m {
       margin-top: ${calcRem(40)};
     }
 
@@ -190,9 +204,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(20)};
     }
 
-    .picture.with_big_margin + .heading_regular_s,
-    .picture.with_big_margin + .heading_regular_m,
-    .picture.with_big_margin + .text_regular_m {
+    picture.with_big_margin + .heading_regular_s,
+    picture.with_big_margin + .heading_regular_m,
+    picture.with_big_margin + .text_regular_m {
       margin-top: ${calcRem(30)};
     }
 

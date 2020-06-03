@@ -17,19 +17,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.l} {
     & {
-      background-size: 1184px 232px, 1340px 408px;
+      background-size: 1184px 232px, 1360px 408px;
     }
   }
 
   ${desktop.m} {
     & {
-      background-size: 880px 232px, 1340px 408px;
+      background-size: 880px 232px, 1360px 408px;
     }
   }
 
   ${desktop.s} {
     & {
-      background-size: 816px 232px, 1340px 408px;
+      background-size: 816px 232px, 1360px 408px;
     }
   }
 

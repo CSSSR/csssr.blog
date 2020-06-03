@@ -4,13 +4,17 @@ import calcRem from '../../../../utils/style/calcRem'
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     display: block;
+    /* Максимальная ширина для картинки, вписанной в сетку на 1360px */
+    max-width: 656px;
+    margin-right: auto;
+
+    & img {
+      height: auto;
+      width: 100%;
+    }
   }
 
-  img {
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
+  
 
   ${desktop.all} {
     & {
