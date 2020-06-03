@@ -9,7 +9,7 @@
     "post": "node scripts/postTemplate/scaffoldNewPost.js"
   },
   "dependencies": {
-    "@csssr/core-design": "^5.4.1",
+    "@csssr/core-design": "^5.4.2",
     "@csssr/csssr.images": "^1.8.0",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
