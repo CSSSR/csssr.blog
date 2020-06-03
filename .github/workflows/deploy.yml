@@ -47,4 +47,4 @@ jobs:
           project-id: csssr-new-blog
           files: ./new_blog/out
           no-previous-files: "true"
-          not-found-page: 404.html
+          not-found-page: 404/index.html
