@@ -1,23 +1,29 @@
 const fs = require('fs')
 const path = require('path')
 
-// Главная + посты
+const { SitemapStream, streamToPromise } = require('sitemap')
 
-const { SitemapStream, streamToPromise } = require( 'sitemap' )
+const links = [
+  { url: '/', changefreq: 'weekly', priority: 1 },
+  ...fs
+    .readdirSync(path.resolve(__dirname, '../_posts'))
+    .map((postName) => postName.replace('.md', ''))
+    .filter((slug) => {
+      return !(process.env.IS_PRODUCTION === 'TRUE' && slug === 'example')
+    })
+    .map((slug) => ({
+      url: `/posts/${slug}`,
+      changefreq: 'weekly',
+      priority: 0.8,
+    })),
+]
 
-// An array with your links
-const links = [{ url: '/page-1/',  changefreq: 'daily', priority: 0.3  }]
+const stream = new SitemapStream({ hostname: 'https://blog.csssr.com/' })
 
-// Create a stream to write to
-const stream = new SitemapStream( { hostname: 'https://...' } )
+links.forEach((link) => stream.write(link))
 
-// Loop over your links and add them to your stream
-links.forEach( link => stream.write( link ) )
-
-// End the stream
 stream.end()
 
-// Return a promise that resolves with your XML string
-const sitemapXmlContent = streamToPromise( stream ).then( data => data.toString() )
-
-fs.writeFileSync(path.resolve(__dirname, '../out/sitemap.xml'), sitemapXmlContent)
+streamToPromise(stream).then((data) =>
+  fs.writeFileSync(path.resolve(__dirname, '../out/sitemap.xml'), data.toString()),
+)
