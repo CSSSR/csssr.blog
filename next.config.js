@@ -1,7 +1,7 @@
 const withPlugins = require('next-compose-plugins')
 const withFonts = require('next-fonts')
 const { defaultTheme } = require('@csssr/core-design')
-const { Plugin } = require('@csssr/csssr.images')
+const { Plugin } = require('@csssr/csssr.images/dist/webpack/plugin')
 
 const svgrLoaderConfig = {
   loader: '@svgr/webpack',
