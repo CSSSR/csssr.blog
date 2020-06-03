@@ -17,7 +17,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
     &.color-line {
       position: relative;
       display: block;
-      height: ${calcRem(139)};
+      height: ${calcRem(150)};
 
       &::before {
         z-index: 1;
@@ -39,7 +39,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
         width: 100%;
         height: 100%;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: ${calcRem(656)};
         background-position: center 100%;
       }
     }
@@ -87,10 +87,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
     margin-top: ${calcRem(60)};
 
     &.bg-repeat {
-      height: ${calcRem(150)};
+      height: ${calcRem(100)};
 
       &::after {
         background-size: cover;
+      }
+    }
+
+    &.manWithCafeBg {
+      &::after {
+        background-position: ${calcRem(20)} 100%;
       }
     }
   }
