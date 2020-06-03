@@ -25,7 +25,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     display: block;
     float: left;
     margin-top: 0;
-    margin-right: 17px;
+    margin-right: 16px;
     margin-bottom: 4px;
     grid-column: none;
 
