@@ -17,10 +17,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_s {
       margin-top: 0;
     }
-
-    & + .text_regular_m {
-      margin-bottom: ${calcRem(50)};
-    }
   }
 
   ${desktop.all} {
