@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    name: Сборка
+    name: Сборка тестинга
     runs-on: ubuntu-latest
 
     steps:
@@ -36,7 +36,9 @@ jobs:
 
       - name: Build testing
         working-directory: new_blog
-        run: BLOG_HOST=http://$(node scripts/getReleaseID.js).csssr-new-blog.csssr.cloud yarn build
+        run: yarn build
+        env:
+          BLOG_HOST: http://$(node scripts/getReleaseID.js).csssr-new-blog.csssr.cloud
 
       - name: Деплой на тестинг
         uses: ./actions/deploy-static-site/v1beta1

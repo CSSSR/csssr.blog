@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    name: Сборка
+    name: Сборка прода
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
 
       - uses: actions/checkout@v2
         with:
-          path: new_blog
+          path: new_blog_prod
 
       - uses: actions/setup-node@v2-beta
         with:
@@ -27,14 +27,17 @@ jobs:
           scope: '@csssr'
 
       - name: Install dependencies
-        working-directory: new_blog
+        working-directory: new_blog_prod
         run: yarn install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build prod
-        working-directory: new_blog
-        run: IS_PRODUCTION=TRUE BLOG_HOST=https://blog.csssr.com yarn build
+        working-directory: new_blog_prod
+        run: yarn build
+        env:
+          IS_PRODUCTION: TRUE
+          BLOG_HOST: https://blog.csssr.com
 
       - name: Деплой на продакшен
         uses: ./actions/deploy-static-site/v1beta1
@@ -43,7 +46,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           site-type: mpa
           project-id: csssr-new-blog
-          files: ./new_blog/out
+          files: ./new_blog_prod/out
           no-previous-files: "true"
           not-found-page: 404/index.html
           host: blog.csssr.com
