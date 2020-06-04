@@ -69,11 +69,9 @@ class ErrorPage extends React.Component {
         <Meta />
 
         <Grid as="header" className={className}>
-          <Link href={'/en'}>
-            <a className="logo">
-              <LogoIcon width="100%" height="100%" />
-            </a>
-          </Link>
+          <a className="logo" href="https://csssr.com/en">
+            <LogoIcon width="100%" height="100%" />
+          </a>
         </Grid>
 
         <Grid as="main" className={cn(className, `error-code_404`)}>
