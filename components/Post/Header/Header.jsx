@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { string, object } from 'prop-types'
+import { string, array } from 'prop-types'
 import { Grid } from '@csssr/core-design'
 import { Heading } from '@csssr/core-design'
 import DateFormatter from '../../DateFormatter'
@@ -23,7 +23,7 @@ const Header = ({ className, title, tag, date, coverImage, alt }) => {
         dangerouslySetInnerHTML={{ __html: title }}
       />
 
-      <Picture className="picture" pictureData={coverImage} alt={alt} />
+      <Picture className="picture" sources={coverImage} alt={alt} />
     </Grid>
   )
 }
@@ -33,7 +33,7 @@ Header.propTypes = {
   title: string,
   tag: string,
   date: string,
-  coverImage: object,
+  coverImage: array,
   alt: string,
 }
 

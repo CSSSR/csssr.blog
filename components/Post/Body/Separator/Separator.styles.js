@@ -1,7 +1,5 @@
 import { css } from '@emotion/core';
 import calcRem from '../../../../utils/style/calcRem'
-import getBackgroundImageSrcSet from '../../../../utils/style/getBackgroundImageSrcSet';
-
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
   & {
@@ -100,18 +98,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
       }
     }
   }
-`
-
-const getSrcObject = (imageName, extension) => {
-  return {
-    '1x': `/assets/blog/components/separator/${imageName}@1x.${extension}`,
-    '2x': `/assets/blog/components/separator/${imageName}@2x.${extension}`,
-    '3x': `/assets/blog/components/separator/${imageName}@3x.${extension}`
-  }
-}
-
-export const backgroundImagesStyles = (imageName) => css`
-  ${getBackgroundImageSrcSet({png: getSrcObject(imageName,'png'), webp: getSrcObject(imageName,'webp')}, `.${imageName}::after`)}
 `
 
 export default props =>{

@@ -2,6 +2,7 @@ import { string, object } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Post.styles'
 import Head from 'next/head'
+import { getOriginal } from '@csssr/csssr.images/dist/utils'
 import Header from './Header'
 import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
@@ -16,7 +17,7 @@ const Post = ({ post, className }) => {
         <meta property="og:title" content={`${cleaningTitle(post.title)} | CSSSR blog`} />
         <meta property="og:description" content={getDescription(post.content)} />
         <meta property="og:url" content={`https://csssr.com/en/blog/posts/${post.slug}`} />
-        <meta property="og:image" content={post.images.mainCover.fallbackSrcSet['3x']} />
+        <meta property="og:image" content={getOriginal(post.images.mainCover[post.images.mainCover.length - 1])} />
       </Head>
 
       <Header

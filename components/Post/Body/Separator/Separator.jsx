@@ -1,15 +1,16 @@
 import React from 'react'
 import { string, oneOf } from 'prop-types'
 import cn from 'classnames'
-import { Global } from '@emotion/core'
+import { css, Global } from '@emotion/core'
 import styled from '@emotion/styled'
-import styles, { backgroundImagesStyles } from './Separator.styles'
+import styles from './Separator.styles'
+import { backgroundCss } from '@csssr/csssr.images/dist/utils'
 
-const Separator = ({ className, type, imageName }) => {
+const Separator = ({ className, sources, type }) => {
   return (
     <>
-      <hr className={cn(className, imageName, type)} />
-      <Global styles={backgroundImagesStyles(imageName)} />
+      <hr className={cn(className, type)} />
+      <Global styles={css`${backgroundCss(`.${className}::after`, sources)}`} />
     </>
   )
 }

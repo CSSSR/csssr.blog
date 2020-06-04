@@ -1,7 +1,7 @@
 const withPlugins = require('next-compose-plugins')
 const withFonts = require('next-fonts')
 const { defaultTheme } = require('@csssr/core-design')
-// const { Plugin } = require('@csssr/csssr.images')
+const { Plugin } = require('@csssr/csssr.images/dist/webpack/plugin')
 
 const svgrLoaderConfig = {
   loader: '@svgr/webpack',
@@ -91,8 +91,10 @@ const withImages = (nextConfig = {}) => ({
       ],
     })
 
-    // TODO подключить позже, нужен для обхода всех картинок проекта перед выкладкой на прод
-    // config.plugins.push(new Plugin())
+    if (!dev) {
+      // TODO подключить позже, нужен для обхода всех картинок проекта перед выкладкой на прод
+      config.plugins.push(new Plugin())
+    }
 
     return config
   },
