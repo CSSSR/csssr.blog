@@ -36,7 +36,7 @@ jobs:
         working-directory: new_blog_prod
         run: yarn build
         env:
-          IS_PRODUCTION: TRUE
+          IS_PRODUCTION: 'TRUE'
           BLOG_HOST: https://blog.csssr.com
 
       - name: Деплой на продакшен
