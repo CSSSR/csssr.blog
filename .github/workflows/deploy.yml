@@ -1,4 +1,4 @@
-name: Деплой блога
+name: Деплой блога на тестинг
 on:
   push:
     branches:
