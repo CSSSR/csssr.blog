@@ -52,4 +52,4 @@ jobs:
             ingress:
               annotations:
                 nginx.ingress.kubernetes.io/server-snippet: |
-                  rewrite ^/$ /en;
+                  rewrite ^/$ /en redirect;
