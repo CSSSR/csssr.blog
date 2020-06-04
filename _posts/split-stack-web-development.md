@@ -1,7 +1,7 @@
 ---
 title: 'Split-Stack Web Development: Some <i>Advantages</i> of&nbsp;Separating <span style="white-space:nowrap">Front-end</span> from <span style="white-space:nowrap">Back-end</span>'
 coverImageAlt: 'alt me'
-date: '2019-03-16T05:35:07.322Z'
+date: '2019-11-01T05:35:07.322Z'
 tag: 'Web-development'
 ---
 

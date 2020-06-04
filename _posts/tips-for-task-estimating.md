@@ -1,13 +1,14 @@
 ---
 title: 'Ten Tips and Best Practices for <i>Accurately Task Estimating</i>'
 coverImageAlt: 'alt me'
-date: '2019-03-16T05:35:07.322Z'
+date: '2019-12-02T05:35:07.322Z'
 tag: 'Web-development'
 ---
 
 **T**ask estimating and time planning are both stress and responsibility, and some developers even come up with ideological excuses against them. However, whether they want it or not, it is all about terms and estimates in the IT-world, rather than code quality. Faster development provides certain advantage over competitors, while an adequate task estimation allows to calculate the costs more accurately. The customer is primarily interested in timing and the exact cost of work. Each of these parameters depends directly on the estimation done by a developer who has been digging into the project during presale. No doubt, the manager will include additional risks, but this will be useless if the developer has miscalculated 3 times before.
 
 Let’s face it – you can’t avoid task estimating, and if you do not estimate the tasks within a given project, then most likely someone else is doing it instead of you. At the same time, the developer able to estimate adequately and precisely is a sort of a godsend for his employer. Such specialists are valuable, they grow faster than those with poor estimating skills.
+
 Our team has travelled a lengthy and bumpy path dealing with poor-quality estimates. These prevented us from staying within budget limits, spoiled our relations with customers, and made us look not that smart. By trial and error, we have come up with a set of rules (tips) that helped to enhance the accuracy of our estimates. Hope you’ll find them useful as well.
 
 <Img imageName="man-on-unicorn" alt="man-on-unicorn" withBigMargin/>
@@ -54,7 +55,7 @@ The process can be delayed, however, these time costs will bring more value. By 
   <p>Let’s move on to the estimation rules and focus on what you, personally, can do to improve the team’s performance.</p>
 </ParagraphWithImage>
 
-## Break the task into sections and do it properly
+### Break the task into sections and do it properly
 
 Eat an elephant one bite at a time. A good decomposition gives a powerful boost to fit into an estimate. This is worth doing, even if you do not plan to distribute tasks between different developers. First, when decomposing, you look at the task a little closer, from either side, you think of an implementation plan, which means you see new features and also those requiring extra time. Secondly, this is an additional possibility of self-control. If you are implementing a monolith task designed for 120 hours, there’s a risk of spending 30 hours on one of its parts instead of 12 that were really worth spending. This works another way with decomposition.
 

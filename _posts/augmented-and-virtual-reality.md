@@ -1,7 +1,7 @@
 ---
 title: '<i>Augmented & Virtual Reality</i> to Shape the Future of Web Development'
 coverImageAlt: 'alt me'
-date: '2019-03-16T05:35:07.322Z'
+date: '2020-02-06T05:35:07.322Z'
 tag: 'Web-development'
 ---
 
@@ -44,6 +44,7 @@ Google’s also bringing AR technology to its Chrome browser. An immersive WebXR
 Virtual reality is also pushing the web development industry further. Unlike AR, VR often requires special equipment (like a headset) and can deliver a complete experience of immersion that disconnects users from the physical world. More specifically, they are immersed in a totally fabricated world, interacting with this environment as they would in real life.
 
 Web development gets the best from VR. 3D-style web design looks great and impressive, besides, customers will enjoy observing a product staying at home. Such engagement can have a major impact on customer’s behavior and decision.
+
 Other VR capabilities providing benefits to the website include:
 
 Building virtual showrooms to highlight specific features of the product.

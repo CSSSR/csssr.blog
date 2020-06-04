@@ -14,11 +14,9 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content="Super cool blog from CSSSR" />
-      <meta
-        property="og:image"
-        content="/assets/blog/posts/offshore-web-development/desktop.all/cover.png"
-      />
+      <meta property="og:type" content="website" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <link
         href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Roboto+Slab:wght@300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap"
         rel="stylesheet"
