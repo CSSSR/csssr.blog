@@ -34,6 +34,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: 1rem;
   }
 
+  .note + .text_regular_m {
+    margin-top: ${calcRem(50)};
+  }
+
   .line-numbers {
     &::after,
     &::before {

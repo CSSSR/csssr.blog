@@ -4,7 +4,6 @@ import calcRem from '../../../../utils/style/calcRem'
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     margin-top: ${calcRem(50)};
-    margin-bottom: ${calcRem(50)};
     padding-top: ${calcRem(50)};
     padding-right:${calcRem(112)};
     padding-bottom: ${calcRem(50)};
