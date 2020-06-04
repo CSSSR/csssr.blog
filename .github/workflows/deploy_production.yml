@@ -43,7 +43,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           site-type: mpa
           project-id: csssr-new-blog
-          files: ./new_blog_prod/out
+          files: ./new_blog/out
           no-previous-files: "true"
           not-found-page: 404/index.html
           host: blog.csssr.com
