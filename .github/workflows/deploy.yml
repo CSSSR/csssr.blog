@@ -48,3 +48,8 @@ jobs:
           files: ./new_blog/out
           no-previous-files: "true"
           not-found-page: 404/index.html
+          values: |
+            ingress:
+              annotations:
+                nginx.ingress.kubernetes.io/server-snippet: |
+                  rewrite ^/$ /en redirect;
