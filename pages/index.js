@@ -1,22 +1,11 @@
-import { getAllPosts } from '../lib/api'
-import MainPage from '../components/main/MainPage'
+import Head from 'next/head'
 
-const Index = ({ allPosts }) => <MainPage allPosts={allPosts} />
-
+const Index = () => (
+  <Head>
+    <meta httpEquiv="refresh" content="0; URL='https://blog.csssr.com/en'" />
+    <script
+      dangerouslySetInnerHTML={{ __html: 'window.location.replace("https://blog.csssr.com/en")' }}
+    />
+  </Head>
+)
 export default Index
-export async function getStaticProps() {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImageAlt',
-    'excerpt',
-    'tag',
-    'images',
-  ])
-
-  return {
-    props: { allPosts },
-  }
-}

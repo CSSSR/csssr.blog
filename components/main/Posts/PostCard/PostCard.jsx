@@ -11,7 +11,7 @@ import { Picture } from '@csssr/csssr.images/dist/react';
 const PostCard = ({ className, post, size }) => {
   return (
     <li className={className}>
-      <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
+      <Link as={`/en/posts/${post.slug}`} href="/en/posts/[slug]">
         <a>
           <Picture sources={post.images.mainCover} alt={post.coverImageAlt} />
 
