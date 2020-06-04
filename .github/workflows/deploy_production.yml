@@ -34,10 +34,7 @@ jobs:
 
       - name: Build prod
         working-directory: new_blog_prod
-        run: yarn build
-        env:
-          IS_PRODUCTION: 'TRUE'
-          BLOG_HOST: https://blog.csssr.com
+        run: IS_PRODUCTION=TRUE BLOG_HOST=https://blog.csssr.com yarn build
 
       - name: Деплой на продакшен
         uses: ./actions/deploy-static-site/v1beta1
