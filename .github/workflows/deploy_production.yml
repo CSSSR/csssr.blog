@@ -48,3 +48,8 @@ jobs:
           not-found-page: 404/index.html
           host: blog.csssr.com
           environment: production
+          values: |
+            ingress:
+              annotations:
+                nginx.ingress.kubernetes.io/server-snippet: |
+                  rewrite ^/$ /en;
