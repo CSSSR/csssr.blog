@@ -29,7 +29,6 @@ const svgrLoaderConfigWithOutSvgo = {
   },
 }
 
-console.log('next.config', process.env.IS_PRODUCTION)
 const withImages = (nextConfig = {}) => ({
   ...nextConfig,
   env: {
