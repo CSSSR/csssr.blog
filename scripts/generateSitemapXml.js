@@ -4,7 +4,7 @@ const path = require('path')
 const { SitemapStream, streamToPromise } = require('sitemap')
 
 const links = [
-  { url: '/', changefreq: 'weekly', priority: 1 },
+  { url: '/en', changefreq: 'weekly', priority: 1 },
   ...fs
     .readdirSync(path.resolve(__dirname, '../_posts'))
     .map((postName) => postName.replace('.md', ''))
@@ -12,7 +12,7 @@ const links = [
       return !(process.env.IS_PRODUCTION === 'TRUE' && slug === 'example')
     })
     .map((slug) => ({
-      url: `/posts/${slug}`,
+      url: `/en/posts/${slug}`,
       changefreq: 'weekly',
       priority: 0.8,
     })),

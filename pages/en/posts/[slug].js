@@ -1,6 +1,6 @@
-import Layout from '../../components/Layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
-import Post from '../../components/Post'
+import Layout from '../../../components/Layout'
+import { getPostBySlug, getAllPosts } from '../../../lib/api'
+import Post from '../../../components/Post'
 
 export default function PostPage({ post /* morePosts, */ }) {
   // const router = useRouter()
