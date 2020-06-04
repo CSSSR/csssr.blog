@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 
+console.log('robots', process.env.IS_PRODUCTION)
+
 const robotsTxtContent =
   process.env.IS_PRODUCTION === 'TRUE'
     ? `User-agent: *
