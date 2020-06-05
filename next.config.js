@@ -39,12 +39,11 @@ const withImages = (nextConfig = {}) => ({
       fs: 'empty',
     }
 
-    // TODO сделать короче итоговые пути здесь
     const fileLoaderConfig = {
       loader: 'file-loader',
       options: {
-        publicPath: '/_next/static/images/',
-        outputPath: `${isServer ? '../' : ''}static/images/`,
+        publicPath: '/_next/static/i/',
+        outputPath: `${isServer ? '../' : ''}static/i/`,
         name: '[path][name]-[hash:8].[ext]',
         esModule: false,
       },

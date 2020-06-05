@@ -5,7 +5,7 @@ import Posts from './Posts'
 import Layout from '../Layout'
 
 import postsOrder from '../../postsOrder'
-import myImageData from '../../public/assets/blog/posts/offshore-web-development/mainCover/desktop.all.png'
+import myImageData from '../../public/posts/offshore-web-development/mainCover/desktop.all.png'
 
 const MainPage = ({ allPosts }) => (
   <>

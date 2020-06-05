@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, node, object } from 'prop-types'
+import { string, node, array } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './ParagraphWithImage.styles'
 import { Picture } from '@csssr/csssr.images/dist/react'
@@ -16,7 +16,7 @@ const ParagraphWithImage = ({ children, className, sources, alt }) => {
 ParagraphWithImage.propTypes = {
   children: node,
   className: string,
-  sources: object,
+  sources: array,
   alt: string,
 }
 

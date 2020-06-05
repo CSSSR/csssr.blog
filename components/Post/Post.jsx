@@ -28,7 +28,7 @@ const Post = ({ post, className }) => {
         date={post.date}
       />
 
-      <Body content={post.content} images={post.images} />
+      <Body content={post.content} slug={post.slug} images={post.images} />
     </article>
   )
 }

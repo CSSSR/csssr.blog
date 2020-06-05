@@ -14,7 +14,7 @@ import Quote from './Quote'
 import Subtitle from './Subtitle'
 import Video from './Video'
 
-const Body = ({ content, className, images }) =>
+const Body = ({ content, className, slug, images }) =>
   compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
