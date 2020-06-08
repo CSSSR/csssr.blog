@@ -12,7 +12,7 @@ const links = [
       return !(process.env.IS_PRODUCTION === 'TRUE' && slug === 'example')
     })
     .map((slug) => ({
-      url: `/en/posts/${slug}`,
+      url: `/en/article/${slug}`,
       changefreq: 'weekly',
       priority: 0.8,
     })),
