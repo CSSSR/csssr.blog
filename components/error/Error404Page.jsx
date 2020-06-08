@@ -9,9 +9,9 @@ import { Grid } from '@csssr/core-design'
 import Meta from '../Meta'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-import { ReactComponent as LogoIcon } from '../../public/assets/blog/components/error/icons/csssr_logo.svg'
-import { ReactComponent as LineFromTopToBottomIcon } from '../../public/assets/blog/components/error/icons/lineFromTopToBottom.svg'
-import { ReactComponent as NotFound } from '../../public/assets/blog/components/error/icons/notFound.svg'
+import { ReactComponent as LogoIcon } from '../../public/components/error/icons/csssr_logo.svg'
+import { ReactComponent as LineFromTopToBottomIcon } from '../../public/components/error/icons/lineFromTopToBottom.svg'
+import { ReactComponent as NotFound } from '../../public/components/error/icons/notFound.svg'
 
 import navItems from '../../data/navItems'
 
@@ -31,7 +31,7 @@ class ErrorPage extends React.Component {
         {links && (
           <ul className="menu">
             {links.map(({ id, title, href }) => {
-              
+
               return (
                 <li key={id}>
                   {linkRegExp.test(href) ? (
@@ -69,11 +69,9 @@ class ErrorPage extends React.Component {
         <Meta />
 
         <Grid as="header" className={className}>
-          <Link href={'/en'}>
-            <a className="logo">
-              <LogoIcon width="100%" height="100%" />
-            </a>
-          </Link>
+          <a className="logo" href="https://csssr.com/en">
+            <LogoIcon width="100%" height="100%" />
+          </a>
         </Grid>
 
         <Grid as="main" className={cn(className, `error-code_404`)}>
@@ -82,10 +80,10 @@ class ErrorPage extends React.Component {
             dangerouslySetInnerHTML={{ __html: 'Not found'}}
           />
 
-          <PictureSmart 
+          <PictureSmart
             className="picture"
             alt="404"
-            requireImages={require.context('../../public/assets/blog/components/error/images/404')}
+            requireImages={require.context('../../public/components/error/images/404')}
           />
 
           <div className={'code-wrapper'}>

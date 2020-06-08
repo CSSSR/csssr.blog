@@ -9,7 +9,7 @@ import { links } from '../../data/headerLinks'
 export default function Layout({ children, isPost }) {
   const headerLinks = [...links]
   // Изменяем ссыку на блог если не находимся на главной блога
-  headerLinks[0].href = isPost ? '/' : ''
+  headerLinks[0].href = isPost ? '/en' : ''
 
   return (
     <>

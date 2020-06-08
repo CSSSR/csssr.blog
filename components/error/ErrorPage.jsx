@@ -9,8 +9,8 @@ import { Grid } from '@csssr/core-design'
 import Meta from '../Meta'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-import { ReactComponent as LogoIcon } from '../../public/assets/blog/components/error/icons/csssr_logo.svg'
-import { ReactComponent as ServerError } from '../../public/assets/blog/components/error/icons/serverError.svg'
+import { ReactComponent as LogoIcon } from '../../public/components/error/icons/csssr_logo.svg'
+import { ReactComponent as ServerError } from '../../public/components/error/icons/serverError.svg'
 
 import globalStyles from '../Layout/Layout.styles'
 
@@ -27,7 +27,7 @@ const subtitleLocalesByStatusCode = {
 }
 
 const pictureByStatusCode = {
-  500: require.context('../../public/assets/blog/components/error/images/500')
+  500: require.context('../../public/components/error/images/500')
 }
 
 const codeIconByStatusCode = {
@@ -48,7 +48,7 @@ class ErrorPage extends React.Component {
         {links && (
           <ul className="menu">
             {links.map(({ id, title, href }) => {
-              
+
               return (
                 <li key={id}>
                   {linkRegExp.test(href) ? (
@@ -104,7 +104,7 @@ class ErrorPage extends React.Component {
             dangerouslySetInnerHTML={{ __html: `${titleLocalesByStatusCode[statusCode]}`}}
           />
 
-          <PictureSmart 
+          <PictureSmart
             className="picture"
             alt={statusCode}
             requireImages={pictureByStatusCode[statusCode]}

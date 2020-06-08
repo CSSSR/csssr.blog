@@ -6,22 +6,22 @@ export default [
       {
         id: 'outsourcing',
         title: 'OUTSOURCING FRONT-END',
-        href: 'service/outsourcing-front-end',
+        href: 'https://csssr.com/en/service/outsourcing-front-end',
       },
       {
         id: 'express',
         title: 'EXPRESS WEB DEVELOPMENT',
-        href: 'service/express-front-end',
+        href: 'https://csssr.com/en/service/express-front-end',
       },
       {
         id: 'mvp',
         title: 'MVP DEVELOPMENT',
-        href: 'service/mvp-development',
+        href: 'https://csssr.com/en/service/mvp-development',
       },
       {
         id: 'backend',
         title: 'BACK-END AND DEVOPS',
-        href: 'service/back-end-and-devops',
+        href: 'https://csssr.com/en/service/back-end-and-devops',
       },
     ],
   },
@@ -32,22 +32,22 @@ export default [
       {
         id: 'fintech',
         title: 'FINTECH',
-        href: 'industry/fintech',
+        href: 'https://csssr.com/en/industry/fintech',
       },
       {
         id: 'eCommerce',
         title: 'E-COMMERCE',
-        href: 'industry/ecommerce',
+        href: 'https://csssr.com/en/industry/ecommerce',
       },
       {
         id: 'information',
         title: 'INFORMATION TECHNOLOGY',
-        href: 'industry/information-technology',
+        href: 'https://csssr.com/en/industry/information-technology',
       },
       {
         id: 'mediaAndMarketing',
         title: 'MEDIA & MARKETING',
-        href: 'industry/media-and-marketing',
+        href: 'https://csssr.com/en/industry/media-and-marketing',
       },
     ],
   },
@@ -58,12 +58,12 @@ export default [
       {
         id: 'technologies',
         title: 'TECHNOLOGIES',
-        href: 'tech-stack',
+        href: 'https://csssr.com/en/tech-stack',
       },
       {
         id: 'processes',
         title: 'OUR PROCESS',
-        href: 'way-of-work',
+        href: 'https://csssr.com/en/way-of-work',
       },
     ],
   },
@@ -74,7 +74,7 @@ export default [
       {
         id: 'lms',
         title: 'MODULAR LMS PLATFORM',
-        href: 'products/lms',
+        href: 'https://csssr.com/en/products/lms',
       },
       {
         id: 'tracker',

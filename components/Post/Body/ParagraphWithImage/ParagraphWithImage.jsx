@@ -1,13 +1,13 @@
 import React from 'react'
-import { string, node, object } from 'prop-types'
+import { string, node, array } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './ParagraphWithImage.styles'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
-const ParagraphWithImage = ({ children, className, pictureData, alt }) => {
+const ParagraphWithImage = ({ children, className, sources, alt }) => {
   return (
     <div className={className}>
-      <Picture pictureData={pictureData} className="img-wrap" alt={alt} />
+      <Picture sources={sources} className="img-wrap" alt={alt} />
       {children}
     </div>
   )
@@ -16,7 +16,7 @@ const ParagraphWithImage = ({ children, className, pictureData, alt }) => {
 ParagraphWithImage.propTypes = {
   children: node,
   className: string,
-  pictureData: object,
+  sources: array,
   alt: string,
 }
 

@@ -1,7 +1,7 @@
 const withPlugins = require('next-compose-plugins')
 const withFonts = require('next-fonts')
 const { defaultTheme } = require('@csssr/core-design')
-// const { Plugin } = require('@csssr/csssr.images')
+const { Plugin } = require('@csssr/csssr.images/dist/webpack/plugin')
 
 const svgrLoaderConfig = {
   loader: '@svgr/webpack',
@@ -39,12 +39,11 @@ const withImages = (nextConfig = {}) => ({
       fs: 'empty',
     }
 
-    // TODO сделать короче итоговые пути здесь
     const fileLoaderConfig = {
       loader: 'file-loader',
       options: {
-        publicPath: '/_next/static/images/',
-        outputPath: `${isServer ? '../' : ''}static/images/`,
+        publicPath: '/_next/static/i/',
+        outputPath: `${isServer ? '../' : ''}static/i/`,
         name: '[path][name]-[hash:8].[ext]',
         esModule: false,
       },
@@ -91,8 +90,10 @@ const withImages = (nextConfig = {}) => ({
       ],
     })
 
-    // TODO подключить позже, нужен для обхода всех картинок проекта перед выкладкой на прод
-    // config.plugins.push(new Plugin())
+    if (!dev) {
+      // TODO подключить позже, нужен для обхода всех картинок проекта перед выкладкой на прод
+      config.plugins.push(new Plugin())
+    }
 
     return config
   },

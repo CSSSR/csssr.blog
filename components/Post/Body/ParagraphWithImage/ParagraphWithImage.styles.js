@@ -25,8 +25,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     display: block;
     float: left;
     margin-top: 0;
-    margin-right: 17px;
-    margin-bottom: 4px;
+    margin-right: 16px;
     grid-column: none;
 
     img {
@@ -51,7 +50,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       /* TODO: убрать фиксированную ширину когда появятся адаптивные изображения */
       width: ${calcRem(184)};
       margin-right: ${calcRem(40)};
-      margin-bottom: ${calcRem(7)};
     }
 
     .text_regular_m + .text_regular_m {
@@ -73,7 +71,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       /* TODO: убрать фиксированную ширину когда появятся адаптивные изображения */
       width: ${calcRem(104)};
       margin-right: ${calcRem(8)};
-      margin-bottom: ${calcRem(7)};
     }
 
     .heading_regular_s + .text_regular_m {

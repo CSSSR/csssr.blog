@@ -10,7 +10,7 @@ const newMdFileContent = mdFileTemplate.replace(/{{slug}}/g, slug)
 const outputMdFilePath = path.resolve(__dirname, '../../_posts', `${slug}.md`)
 fs.writeFileSync(outputMdFilePath, newMdFileContent)
 
-const outputImagesDirPath = path.resolve(__dirname, `../../public/assets/blog/posts/${slug}`)
+const outputImagesDirPath = path.resolve(__dirname, `../../public/posts/${slug}`)
 fse.copySync(path.resolve(__dirname, 'images'), outputImagesDirPath)
 
 const postsOrderFilePath = path.resolve(__dirname, '../../postsOrder.json')
