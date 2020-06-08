@@ -6,7 +6,7 @@
     "build": "next build && next export",
     "start": "next start",
     "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0",
-    "post": "node scripts/postTemplate/scaffoldNewPost.js"
+    "article": "node scripts/articleTemplate/scaffoldNewArticle.js"
   },
   "dependencies": {
     "@csssr/core-design": "^5.4.2",
