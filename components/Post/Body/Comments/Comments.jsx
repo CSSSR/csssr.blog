@@ -24,7 +24,7 @@ const removeScript = (id, parentElement) => {
   }
 }
 
-const Comments = ({ className }) => {
+const Comments = ({ id, className }) => {
   useEffect(() => {
     if (!window) {
       return
@@ -32,12 +32,12 @@ const Comments = ({ className }) => {
 
     const document = window.document
 
-    if (document.getElementById('commento')) {
+    if (document.getElementById(id)) {
       insertScript('https://cdn.commento.io/js/commento.js', 'commento-script', document.body)
     }
 
     return () => removeScript('commento-script', document.body)
-  })
+  }, [id])
 
   return (
     <div className={className}>
@@ -45,7 +45,7 @@ const Comments = ({ className }) => {
         Comments
       </Heading.H3>
 
-      <div id="commento" />
+      <div id={id} />
     </div>
   )
 }

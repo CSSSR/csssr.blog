@@ -21,7 +21,7 @@ const Body = ({ content, className, slug, images }) =>
         return (
           <Grid className={`post-body ${className}`}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
-            <Comments />
+            <Comments id={slug} />
           </Grid>
         )
       }
