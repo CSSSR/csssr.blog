@@ -32,7 +32,7 @@ const Comments = ({ id, className }) => {
 
     const document = window.document
 
-    if (document.getElementById(id)) {
+    if (document.getElementById('commento')) {
       insertScript('https://cdn.commento.io/js/commento.js', 'commento-script', document.body)
     }
 
@@ -45,7 +45,7 @@ const Comments = ({ id, className }) => {
         Comments
       </Heading.H3>
 
-      <div id={id} />
+      <div id="commento" />
     </div>
   )
 }
