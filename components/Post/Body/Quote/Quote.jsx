@@ -23,9 +23,8 @@ const Quote = ({ className, children, author, position, withImage }) => {
 
 Quote.propTypes = {
   className: string,
-  quoteText: string,
-  quoteAuthor: string,
-  authorPost: string,
+  author: string,
+  position: string,
   withImage: bool,
 }
 

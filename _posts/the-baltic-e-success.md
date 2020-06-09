@@ -1,6 +1,5 @@
 ---
 title: 'The Baltic E-Success: A&nbsp;Brief Introduction <i>to&nbsp;the Estonian IT</i>&nbsp;Industry'
-excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImageAlt: 'alt me'
 date: '2019-11-14T05:35:07.322Z'
 tag: 'Web-development'

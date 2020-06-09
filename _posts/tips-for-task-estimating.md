@@ -1,6 +1,5 @@
 ---
 title: 'Ten Tips and Best Practices for <i>Accurately Task Estimating</i>'
-excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImageAlt: 'alt me'
 date: '2019-12-02T05:35:07.322Z'
 tag: 'Web-development'

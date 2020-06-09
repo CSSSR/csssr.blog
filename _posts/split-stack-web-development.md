@@ -1,6 +1,5 @@
 ---
 title: 'Split-Stack Web Development: Some <i>Advantages</i> of&nbsp;Separating <span style="white-space:nowrap">Front-end</span> from <span style="white-space:nowrap">Back-end</span>'
-excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImageAlt: 'alt me'
 date: '2019-11-01T05:35:07.322Z'
 tag: 'Web-development'

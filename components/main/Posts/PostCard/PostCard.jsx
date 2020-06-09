@@ -31,7 +31,6 @@ PostCard.propTypes = {
   className: string,
   post: shape({
     title: string,
-    excerpt: string,
     coverImageAlt: string,
     images: object,
     date: string,

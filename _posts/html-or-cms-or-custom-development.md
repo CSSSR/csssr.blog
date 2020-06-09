@@ -1,6 +1,5 @@
 ---
 title: '<i>HTML, CMS</i> or <i>Custom Development</i>: Which is Better?'
-excerpt: 'Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
 coverImageAlt: 'alt me'
 date: '2020-01-30T05:35:07.322Z'
 tag: 'Web-development'
