@@ -1164,10 +1164,10 @@
     react "^16.13.1"
     react-dom "^16.13.1"
 
-"@csssr/eslint-config-core@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@csssr/eslint-config-core/-/eslint-config-core-1.0.2.tgz#a7cada15058f3dd14591ad8b832c1e093837af61"
-  integrity sha512-G3SrHBgTOHesjdhOrZLcrAFjeeTeM7JZY/WJ7SOtmWaK2BROSV5htME9OYIMbWq0bvrFg7o3lQRWBJHa+MDQeg==
+"@csssr/eslint-config-core@^1.1.0":
+  version "1.1.0"
+  resolved "https://npm.pkg.github.com/download/@csssr/eslint-config-core/1.1.0/29de14715726ea0e038c5447a4766694cd314264a7babb7e509e7fa1aac4d959#6485bbd6fc24ce88f3ffcd68cc1ee3bb0c285f0f"
+  integrity sha512-GZUZhd6q0pvWOpf17UhKcGfoduzO1YobHXRziAPklbm7zwtuFhSSbP5sPqlU4F5kZlc03SC+s3TWiL/BCFBxhw==
   dependencies:
     babel-eslint "^10.0.2"
     eslint-config-prettier "^6.0.0"

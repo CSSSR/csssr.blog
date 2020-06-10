@@ -1,6 +1,6 @@
 # Компоненты
 
-Все компоненты можно посмотреть на [тестовом стенде](http://master.csssr-new-blog.csssr.cloud/article/example)
+Все компоненты можно посмотреть на [тестовом стенде](http://master.csssr-new-blog.csssr.cloud/en/article/example)
 
 ---
 #### [`<Img />`](http://s.csssr.ru/U31J879TR/20200527121033.jpg)
