@@ -11,7 +11,7 @@
 Папку вы создаёте сами в `public/posts/`, название папки должно быть таким же как и название файла статьи.
 Компонент принимает следующие пропсы
 
-##### `name`
+##### `imageName`
 Тип данных: `string`\
 Дефолтное значение: `undefined`
 
@@ -31,14 +31,14 @@
 
 ##### Пример кода
 ```jsx
-<Img name='digital-flowers' alt='Digital flowers in a physical real-world view' withBigMargin />
+<Img imageName='digital-flowers' alt='Digital flowers in a physical real-world view' withBigMargin />
 ```
 
 ---
 #### [`<Separator />`](http://s.csssr.ru/U31J879TR/20200527121838.jpg)
 Используется для того, что бы разделять текст на логические составляющие. Может иметь разные изображения и разные цвета бекграунда. Изображения для этого компонента лежат в папке `public/components/separator`. Принимает следующие пропсы
 
-##### `imgName`
+##### `imageName`
 Тип данных: `string`\
 Дефолтное значение: `undefined`
 
@@ -59,14 +59,14 @@
 
 ##### Пример кода
 ```jsx
-<Separator imgName="peopleWithBasket" type="color-line" lineColor="#d3d3ff" />
+<Separator imageName="peopleWithBasket" type="color-line" lineColor="#d3d3ff" />
 ```
 
 ---
 #### [`<ParagraphWithImage />`](http://s.csssr.ru/U31J879TR/20200527123603.jpg)
 Компонент параграфа c изображением в левом углу. Изображения для параграфа должны находится в той же папке, что и для компонента [`<Img />`](#img-). Принимает следующие пропсы
 
-##### `imgName`
+##### `imageName`
 Тип данных: `string`\
 Дефолтное значение: `undefined`
 
@@ -74,7 +74,7 @@
 
 ##### Пример кода
 ```jsx
-<ParagraphWithImage imgName="india">
+<ParagraphWithImage imageName="india">
   ## Lorem Ipsum
 
   Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor.
@@ -96,7 +96,7 @@
 #### [`<Quote />`](http://s.csssr.ru/U31J879TR/20200527125130.jpg)
 Компонент цитаты. Имеет два вида, с изображением слева и с кавычками вместо изображения. Изображения для этого компонента лежат в папке `public/components/quote`. Принимает следующие пропсы
 
-##### `imgName`
+##### `imageName`
 Тип данных: `string`\
 Дефолтное значение: `undefined`
 
