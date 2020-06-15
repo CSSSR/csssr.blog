@@ -67,6 +67,14 @@ jobs:
         run: |
           ls -al
 
+      - name: ls
+        run: |
+          ls -al new_blog
+
+      - name: ls
+        run: |
+          ls -al ../
+
       - name: run Lighthouse CI
         run: |
           npx @lhci/cli@0.4.x autorun --config=new_blog/lighthouserc.js
