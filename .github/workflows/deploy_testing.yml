@@ -63,6 +63,6 @@ jobs:
       - name: Run Lighthouse CI
         working-directory: new_blog
         run: |
-          npx @lhci/cli@0.4.x autorun --collect.url=http://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud/en
+          npx @lhci/cli@0.4.x autorun --collect.url=http://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud/en --collect.url=http://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud/en/article/offshore-web-development
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
