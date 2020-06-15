@@ -63,6 +63,10 @@ jobs:
         run: |
           pwd
 
+      - name: ls
+        run: |
+          pwd
+
       - name: run Lighthouse CI
         run: |
-          npx @lhci/cli@0.4.x autorun --config=../../lighthouserc.js
+          npx @lhci/cli@0.4.x autorun --config=lighthouserc.js
