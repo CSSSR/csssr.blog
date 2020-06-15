@@ -59,6 +59,10 @@ jobs:
                 nginx.ingress.kubernetes.io/server-snippet: |
                   rewrite ^/$ /en redirect;
 
+      - name: pwd
+        run: |
+          pwd
+
       - name: run Lighthouse CI
         run: |
-          npx @lhci/cli@0.4.x autorun
+          npx @lhci/cli@0.4.x autorun --config=../../lighthouserc.js
