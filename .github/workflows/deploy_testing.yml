@@ -63,3 +63,5 @@ jobs:
         working-directory: new_blog
         run: |
           npx @lhci/cli@0.4.x autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
