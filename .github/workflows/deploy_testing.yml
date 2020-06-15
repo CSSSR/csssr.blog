@@ -65,7 +65,7 @@ jobs:
 
       - name: ls
         run: |
-          pwd
+          ls -al
 
       - name: run Lighthouse CI
         run: |
