@@ -53,3 +53,10 @@ jobs:
               annotations:
                 nginx.ingress.kubernetes.io/server-snippet: |
                   rewrite ^/$ /en redirect;
+
+      - name: Run Lighthouse CI
+        working-directory: new_blog_prod
+        run: |
+          npx @lhci/cli@0.4.x autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
