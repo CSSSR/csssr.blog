@@ -6,7 +6,6 @@
     "robots": "node scripts/generateRobotsTxt.js",
     "sitemap": "node scripts/generateSitemapXml.js",
     "build": "next build && next export && yarn robots && yarn sitemap",
-    "start": "next start",
     "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0",
     "article": "node scripts/articleTemplate/scaffoldNewArticle.js"
   },
