@@ -6,7 +6,7 @@ module.exports = {
     upload: {
       target: 'lhci',
       serverBaseUrl: 'https://lhci.csssr.cloud',
-      token: 'd9aff931-87e0-402e-985c-123d5a3bdab2',
+      token: '4f1afffc-7983-4e24-aee7-9c446cb2fe25',
     },
     // assert: {
     //   preset: 'lighthouse:recommended',
