@@ -16,7 +16,9 @@ export default function Layout({ children, isPost }) {
       <Meta />
 
       <Header actionButton={{ isVisible: false }} links={headerLinks} />
-      <main id="main">{children}</main>
+      <main id="main" className="main">
+        {children}
+      </main>
       <Footer className="footer" nav={nav} />
 
       <Global styles={styles} />
