@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, oneOf } from 'prop-types'
+import { string, oneOf, arrayOf, object } from 'prop-types'
 import cn from 'classnames'
 import { css, Global } from '@emotion/core'
 import styled from '@emotion/styled'
@@ -10,7 +10,11 @@ const Separator = ({ className, sources, type }) => {
   return (
     <>
       <hr className={cn(className, type)} />
-      <Global styles={css`${backgroundCss(`.${className}::after`, sources)}`} />
+      <Global
+        styles={css`
+          ${backgroundCss(`.${className}::after`, sources)}
+        `}
+      />
     </>
   )
 }
@@ -18,8 +22,7 @@ const Separator = ({ className, sources, type }) => {
 Separator.propTypes = {
   className: string,
   type: oneOf(['color-line', 'bg-repeat']),
-  imageName: string,
-  lineColor: string,
+  sources: arrayOf(object),
 }
 
 export default styled(Separator)`

@@ -1,4 +1,4 @@
-import { string, object } from 'prop-types'
+import { string, object, shape } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Post.styles'
 import Head from 'next/head'
@@ -17,7 +17,10 @@ const Post = ({ post, className }) => {
         <meta property="og:title" content={`${cleaningTitle(post.title)} | CSSSR blog`} />
         <meta property="og:description" content={getDescription(post.content)} />
         <meta property="og:url" content={`https://blog.csssr.com/en/article/${post.slug}`} />
-        <meta property="og:image" content={getOriginal(post.images.mainCover[post.images.mainCover.length - 1])} />
+        <meta
+          property="og:image"
+          content={getOriginal(post.images.mainCover[post.images.mainCover.length - 1])}
+        />
       </Head>
 
       <Header
@@ -35,7 +38,15 @@ const Post = ({ post, className }) => {
 
 Post.propTypes = {
   className: string,
-  post: object,
+  post: shape({
+    content: string,
+    title: string,
+    coverImageAlt: string,
+    images: object,
+    slug: string,
+    date: string,
+    tag: string,
+  }),
 }
 
 export default styled(Post)`

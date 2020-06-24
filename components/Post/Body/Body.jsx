@@ -1,4 +1,5 @@
 import React from 'react'
+import { string, object } from 'prop-types'
 import styled from '@emotion/styled'
 import { Grid } from '@csssr/core-design'
 import { compiler } from 'markdown-to-jsx'
@@ -119,13 +120,20 @@ const Body = ({ content, className, slug, images }) =>
         },
       },
       Img: {
-        component: ({ imageName, ...rest }) => <Img className='picture' sources={images[imageName]} {...rest} />
+        // eslint-disable-next-line react/display-name
+        component: ({ imageName, ...rest }) => (
+          <Img className="picture" sources={images[imageName]} {...rest} />
+        ),
       },
       ParagraphWithImage: {
-        component: ({ imageName, ...rest }) => <ParagraphWithImage sources={images[imageName]} {...rest} />
+        // eslint-disable-next-line react/display-name
+        component: ({ imageName, ...rest }) => (
+          <ParagraphWithImage sources={images[imageName]} {...rest} />
+        ),
       },
       Separator: {
-        component: ({ imageName, ...rest }) => <Separator sources={images[imageName]} {...rest} />
+        // eslint-disable-next-line react/display-name
+        component: ({ imageName, ...rest }) => <Separator sources={images[imageName]} {...rest} />,
       },
       Note: {
         component: Note,
@@ -141,6 +149,13 @@ const Body = ({ content, className, slug, images }) =>
       },
     },
   })
+
+Body.propTypes = {
+  className: string,
+  content: string,
+  images: object,
+  slug: string,
+}
 
 export default styled(Body)`
   ${styles}

@@ -6,7 +6,7 @@ import styles from './PostCard.styles'
 import DateFormatter from '../../../DateFormatter'
 import Link from 'next/link'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
-import { Picture } from '@csssr/csssr.images/dist/react';
+import { Picture } from '@csssr/csssr.images/dist/react'
 
 const PostCard = ({ className, post, size }) => {
   return (
@@ -17,7 +17,7 @@ const PostCard = ({ className, post, size }) => {
 
           <h2
             className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}
-            dangerouslySetInnerHTML={{__html: cleaningTitle(post.title)}}
+            dangerouslySetInnerHTML={{ __html: cleaningTitle(post.title) }}
           />
         </a>
       </Link>
@@ -34,16 +34,10 @@ PostCard.propTypes = {
     coverImageAlt: string,
     images: object,
     date: string,
-    author: shape({
-      name: string,
-      picture: string,
-    }),
-    ogImage: shape({
-      url: string,
-    }),
+    tag: string,
+    slug: string,
   }),
   size: oneOf(['m', 's']),
-  side: oneOf(['l', 'r']),
 }
 
 export default styled(PostCard)`

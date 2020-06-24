@@ -52,6 +52,7 @@ const Comments = ({ id, className }) => {
 
 Comments.propTypes = {
   className: string,
+  id: string,
 }
 
 export default styled(Comments)`
