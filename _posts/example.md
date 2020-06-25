@@ -93,6 +93,7 @@ There’s a perfect example. In 2017, Wayfair (online furniture retailer) launch
 
 <Quote author="Artyom Skatov" position="Project Manager, Gazprom Neft" withImage>
   There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.
-
+  <br>
+  <br>
   There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.
 </Quote>
