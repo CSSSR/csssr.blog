@@ -9,12 +9,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-right: auto;
 
     & img {
-      height: auto;
       width: 100%;
     }
   }
 
-  
+  &.picture {
+    min-height: ${calcRem(240)};
+  }
 
   ${desktop.all} {
     & {
@@ -33,6 +34,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 3 / span 8;
     }
 
+    &.picture {
+      min-height: ${calcRem(228)};
+    }
+
     &.with_big_margin {
       margin-top: ${calcRem(60)};
     }
@@ -42,6 +47,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     & {
       margin-top: ${calcRem(20)};
       grid-column: 1 / span 6;
+    }
+
+    &.picture {
+      min-height: ${calcRem(120)};
     }
 
     &.with_big_margin {
