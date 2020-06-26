@@ -13,6 +13,7 @@ import Note from './Note'
 import Quote from './Quote'
 import Subtitle from './Subtitle'
 import Video from './Video'
+import Table from './Table'
 
 const Body = ({ content, className, slug, images }) =>
   compiler(content, {
@@ -119,13 +120,17 @@ const Body = ({ content, className, slug, images }) =>
         },
       },
       Img: {
-        component: ({ imageName, ...rest }) => <Img className='picture' sources={images[imageName]} {...rest} />
+        component: ({ imageName, ...rest }) => (
+          <Img className="picture" sources={images[imageName]} {...rest} />
+        ),
       },
       ParagraphWithImage: {
-        component: ({ imageName, ...rest }) => <ParagraphWithImage sources={images[imageName]} {...rest} />
+        component: ({ imageName, ...rest }) => (
+          <ParagraphWithImage sources={images[imageName]} {...rest} />
+        ),
       },
       Separator: {
-        component: ({ imageName, ...rest }) => <Separator sources={images[imageName]} {...rest} />
+        component: ({ imageName, ...rest }) => <Separator sources={images[imageName]} {...rest} />,
       },
       Note: {
         component: Note,
@@ -138,6 +143,9 @@ const Body = ({ content, className, slug, images }) =>
       },
       Video: {
         component: Video,
+      },
+      Table: {
+        component: Table,
       },
     },
   })
