@@ -21,6 +21,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     font-style: normal;
     font-weight: 900;
     color: ${colors.secondary.darken100};
+    margin-bottom: ${calcRem(15)};
 
     &_size_m {
       font-size: 32px;
@@ -42,11 +43,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   .tag,
-  .date {
-    margin-top: ${calcRem(15)};
+  .date,
+  .author {
     display: inline-block;
     font-family: Roboto;
     font-style: normal;
+    text-transform: uppercase;
     font-size: ${calcRem(10)};
     line-height: ${calcRem(16)};
   }
@@ -57,10 +59,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   .date {
-    margin-left: ${calcRem(16)};
+    margin-right: ${calcRem(16)};
     display: inline-block;
     font-weight: normal;
     color: #7E8FA4;
+  }
+
+  .author {
+    display: inline-block;
+    font-weight: normal;
+    color: #7E8FA4;
+
+    &::after {
+      content: "•";
+      margin-left: ${calcRem(8)};
+      margin-right: ${calcRem(8)};
+    }
   }
 
   ${desktop.all} {
@@ -92,11 +106,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       margin-top: ${calcRem(20)};
       font-size: ${calcRem(18)};
       line-height: ${calcRem(24)};
-    }
-
-    .tag,
-    .date {
-      margin-top: ${calcRem(10)};
+      margin-bottom: ${calcRem(10)};
     }
   }
 `
