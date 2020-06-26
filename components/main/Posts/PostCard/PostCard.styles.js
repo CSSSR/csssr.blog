@@ -16,6 +16,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     display: block;
   }
 
+  .picture {
+    display: block;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+
+    &_size_m {
+      min-height: ${calcRem(310)};
+    }
+
+    &_size_s {
+      min-height: ${calcRem(215)};
+    }
+  }
+
   .title {
     font-family: 'Roboto', 'Arial', sans-serif;;
     font-style: normal;
@@ -31,14 +48,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       font-size: 24px;
       line-height: 32px;
     }
-  }
-
-  picture {
-    display: block;
-  }
-
-  img {
-    width: 100%;
   }
 
   .tag,
@@ -78,6 +87,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       margin-top: ${calcRem(60)};
     }
 
+    .picture {
+      &_size_m {
+        min-height: ${calcRem(220)};
+      }
+
+      &_size_s {
+        min-height: ${calcRem(150)};
+      }
+    }
+
     .title {
       margin-top: ${calcRem(20)};
     }
@@ -86,6 +105,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${mobile.all} {
     &:not(:first-of-type) {
       margin-top: ${calcRem(50)};
+    }
+
+    .picture {
+      min-height: ${calcRem(150)};
     }
 
     .title {
