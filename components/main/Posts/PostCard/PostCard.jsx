@@ -6,18 +6,20 @@ import styles from './PostCard.styles'
 import DateFormatter from '../../../DateFormatter'
 import Link from 'next/link'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
-import { Picture } from '@csssr/csssr.images/dist/react';
+import { Picture } from '@csssr/csssr.images/dist/react'
 
 const PostCard = ({ className, post, size }) => {
+  const imgCover = size === 'm' ? post.images.mainCoverM : post.images.mainCoverS
+
   return (
     <li className={className}>
       <Link as={`/en/article/${post.slug}`} href="/en/article/[slug]">
         <a>
-          <Picture sources={post.images.mainCover} alt={post.coverImageAlt} />
+          <Picture sources={imgCover} alt={post.coverImageAlt} />
 
           <h2
             className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}
-            dangerouslySetInnerHTML={{__html: cleaningTitle(post.title)}}
+            dangerouslySetInnerHTML={{ __html: cleaningTitle(post.title) }}
           />
         </a>
       </Link>
