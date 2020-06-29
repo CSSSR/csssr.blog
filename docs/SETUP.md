@@ -4,6 +4,7 @@
 1. Установить [Node.js LTS](https://nodejs.org/en/download/). На момент написания документации это версия 12.18.0
 2. Установить [Yarn](https://yarnpkg.com/lang/en/docs/install/)
 3. Установить [Git](https://git-scm.com/download)
+4. Выполнить [инструкцию](https://confluence.csssr.io/display/DT/Github+packages)
 
 ## Что нужно для работы над блогом
 Если ты опытный верстала, то ты и так всё сам знаешь. Если же ты неофит блогописания, то
