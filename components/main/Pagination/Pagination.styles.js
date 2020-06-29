@@ -47,9 +47,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-right: ${calcRem(28)};
     }
 
+    &:not(.active):hover {
+      color: #0076FF;
+    }
+
     &.active {
       font-weight: normal;
       color: #0076FF;
+
+      &:hover {
+        color: #0254D8;
+      }
     }
   }
 

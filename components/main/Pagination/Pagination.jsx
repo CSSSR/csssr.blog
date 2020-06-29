@@ -13,34 +13,43 @@ const Pagination = ({ className, postsPerPage, totalPosts, paginate, currentPage
     pageNumbers.push(i);
   }
 
+  const [changedPageNumbers, setChangedPageNumbers] = useState(pageNumbers)
   const [prevIsDisable, setPrevDisable] = useState(false)
   const [nextIsDisable, setNextDisable] = useState(false)
-  let currentIndex = pageNumbers.indexOf(currentPage);
-  let lastIndex = pageNumbers.slice(-1) - 1;
+  let currentIndex = pageNumbers.indexOf(currentPage)
+  let lastIndex = pageNumbers.slice(-1) - 1
+
+  const updatePageNumbers = () => {
+    if (currentIndex < 4 && pageNumbers.length >=7 ) {
+      setChangedPageNumbers(pageNumbers.filter(item => pageNumbers.indexOf(item) < 5 || pageNumbers.indexOf(item) === lastIndex ))
+    }
+
+    if (currentIndex > lastIndex - 4) {
+      setChangedPageNumbers(pageNumbers.filter(item => pageNumbers.indexOf(item) < lastIndex - 4 || pageNumbers.indexOf(item) === 0 ))
+    }
+  }
+
+  const updateArrows = () => {
+    currentIndex !== 0 ? setPrevDisable(false) : setPrevDisable(true)
+    currentIndex !== lastIndex ? setNextDisable(false) : setNextDisable(true)
+  }
 
   const handlePrevPaginate = () => {
-    if (pageNumbers.indexOf(currentPage) === 0) {
-      setPrevDisable(true)
-      return
-    }
-    setNextDisable(false)
     paginate(currentPage - 1)
+    updatePageNumbers()
+    updateArrows()
   }
 
   const handleNextPaginate = () => {
-    if (currentIndex === lastIndex) {
-      setNextDisable(true)
-      return
-    }
-
-    setPrevDisable(false)
     paginate(currentPage + 1)
+    updatePageNumbers()
+    updateArrows()
   }
 
   useEffect(() => {
-    currentIndex !== 0 ? setPrevDisable(false) : setPrevDisable(true)
-    currentIndex !== lastIndex ? setNextDisable(false) : setNextDisable(true)
-  })
+    updatePageNumbers()
+    updateArrows()
+  }, [changedPageNumbers])
   
   return (
     <Grid as="div" className={className}>
@@ -49,7 +58,7 @@ const Pagination = ({ className, postsPerPage, totalPosts, paginate, currentPage
           _disabled: prevIsDisable
         })}
         onClick={handlePrevPaginate} />
-      {pageNumbers.map(number => (
+      {changedPageNumbers.map(number => (
         <span 
           key={number}
           className={cn('item',
