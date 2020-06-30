@@ -7,7 +7,7 @@ import { Picture } from '@csssr/csssr.images/dist/react'
 
 const Img = ({ className, sources, alt, withBigMargin }) => (
   <Picture
-    className={cn(className, { picture: true, with_big_margin: withBigMargin })}
+    className={cn(className, { with_big_margin: withBigMargin })}
     sources={sources}
     alt={alt}
   />
