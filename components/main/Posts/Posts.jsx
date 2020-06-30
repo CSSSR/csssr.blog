@@ -1,5 +1,5 @@
 import { string } from 'prop-types'
-import { Grid } from '@csssr/core-design'
+import { Grid } from '../../Grid'
 import styled from '@emotion/styled'
 import styles from './Posts.styles'
 import PostCard from './PostCard'

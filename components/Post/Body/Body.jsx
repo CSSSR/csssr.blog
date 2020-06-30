@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Grid } from '@csssr/core-design'
+import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './Body.styles'
@@ -119,13 +119,17 @@ const Body = ({ content, className, slug, images }) =>
         },
       },
       Img: {
-        component: ({ imageName, ...rest }) => <Img className='picture' sources={images[imageName]} {...rest} />
+        component: ({ imageName, ...rest }) => (
+          <Img className="picture" sources={images[imageName]} {...rest} />
+        ),
       },
       ParagraphWithImage: {
-        component: ({ imageName, ...rest }) => <ParagraphWithImage sources={images[imageName]} {...rest} />
+        component: ({ imageName, ...rest }) => (
+          <ParagraphWithImage sources={images[imageName]} {...rest} />
+        ),
       },
       Separator: {
-        component: ({ imageName, ...rest }) => <Separator sources={images[imageName]} {...rest} />
+        component: ({ imageName, ...rest }) => <Separator sources={images[imageName]} {...rest} />,
       },
       Note: {
         component: Note,
