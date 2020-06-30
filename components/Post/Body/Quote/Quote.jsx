@@ -18,9 +18,7 @@ const Quote = ({ className, children, author, position, withImage }) => {
       )}
 
       <blockquote className="quote">
-        <Text className="quote-text font_p16-regular" as="div">
-          {children}
-        </Text>
+        <div className="quote-text font_p16-regular">{children}</div>
         <span className="author font_h3-regular ">{author}</span>
         <span className="autor-post font_perforator-10-regular">{position}</span>
       </blockquote>
