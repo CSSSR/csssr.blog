@@ -73,7 +73,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${desktop.all} {
-    &:nth-child(n + 3) {
+    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
       margin-top: 75px;
     }
 
@@ -83,7 +83,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${tablet.all} {
-    &:nth-child(n + 3) {
+    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
       margin-top: ${calcRem(60)};
     }
 
