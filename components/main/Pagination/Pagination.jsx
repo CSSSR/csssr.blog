@@ -52,13 +52,13 @@ const Pagination = ({ className, postsPerPage, totalPosts, paginate, currentPage
         pageNumbers.indexOf(item) === lastIndex
       ));
 
-      setChangedPageNumbers([
-        ...pageNumbers.slice(0, 1),
-        '...',
-        ...pageNumbers.slice(currentIndex - 1, currentIndex + 1),
-        '...',
-        ...pageNumbers.slice(lastIndex),
-      ]); // вот здесь работает не правильно, currentIndex, видимо, нужно заменить на что-то другое 
+      // setChangedPageNumbers([
+      //   ...pageNumbers.slice(0, 1),
+      //   '...',
+      //   ...pageNumbers.slice(currentIndex - 1, currentIndex + 1),
+      //   '...',
+      //   ...pageNumbers.slice(lastIndex),
+      // ]); // вот здесь работает не правильно, currentIndex, видимо, нужно заменить на что-то другое 
     }
     
     paginate(number);
