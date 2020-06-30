@@ -21,7 +21,7 @@ const Post = ({ post, className }) => {
         {post.author && <meta property="article:author" content={post.author} />}
         <meta
           property="og:image"
-          content={getOriginal(post.images.mainCover[post.images.mainCover.length - 1])}
+          content={getOriginal(post.images.mainCoverM[post.images.mainCoverM.length - 1])}
         />
       </Head>
 
