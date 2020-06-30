@@ -3,23 +3,23 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${desktop.l} {
-    margin-top: 142px;
+    margin-top: 72px;
   }
 
   ${desktop.m} {
-    margin-top: 120px;
+    margin-top: 50px;
   }
 
   ${desktop.s} {
-    margin-top: 120px;
+    margin-top: 50px;
   }
 
   ${tablet.all} {
-    margin-top: ${calcRem(128)};
+    margin-top: ${calcRem(58)};
   }
 
   ${mobile.all} {
-    margin-top: ${calcRem(111)};
+    margin-top: ${calcRem(44)};
   }
 `
 
