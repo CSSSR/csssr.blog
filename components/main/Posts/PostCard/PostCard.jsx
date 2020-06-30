@@ -23,8 +23,12 @@ const PostCard = ({ className, post, size }) => {
           />
         </a>
       </Link>
-      <a className="tag">{post.tag}</a>
+
+      {post.author && <span className="author">{post.author}</span>}
+
       <DateFormatter className="date">{post.date}</DateFormatter>
+
+      <a className="tag">{post.tag}</a>
     </li>
   )
 }

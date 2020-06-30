@@ -8,7 +8,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .tag,
-  .date {
+  .date,
+  .author {
     display: inline-block;
     font-family: Roboto;
     font-style: normal;
@@ -18,13 +19,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     text-transform: uppercase;
   }
 
+  .author {
+    margin-left: ${calcRem(1)};
+    display: inline-block;
+    font-weight: normal;
+    color: #7E8FA4;
+
+    &::after {
+      content: "•";
+      margin-left: ${calcRem(8)};
+      margin-right: ${calcRem(8)};
+    }
+  }
+
   .tag {
     font-weight: 500;
     color: #5695ED;
   }
 
   .date {
-    margin-left: ${calcRem(22)};
+    margin-right: ${calcRem(22)};
     display: inline-block;
     font-weight: normal;
     color: #7E8FA4;
@@ -60,7 +74,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     & {
-      padding-top: 34px;
+      padding-top: 37px;
     }
 
     .title {
@@ -74,7 +88,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      padding-top:  ${calcRem(27)};
+      padding-top: ${calcRem(25)};
     }
 
     .post-meta {
