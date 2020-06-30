@@ -8,7 +8,7 @@ import Categories from './Categories'
 import postsOrder from '../../postsOrder'
 import myImageData from '../../public/posts/offshore-web-development/mainCover/desktop.all.png'
 
-const MainPage = ({ allPosts }) => {
+const MainPage = ({ posts, activeCategory }) => {
   const categoriesMock = [
     {
       id: 'all',
@@ -54,8 +54,8 @@ const MainPage = ({ allPosts }) => {
       </Head>
       <Layout>
         <h1 className="visual-hidden">Blog CSSSR</h1>
-        <Categories items={categoriesMock} />
-        <Posts posts={allPosts} postsOrder={postsOrder} />
+        <Categories items={categoriesMock} activeCategory={activeCategory} />
+        <Posts posts={posts} postsOrder={postsOrder} />
       </Layout>
     </>
   )
