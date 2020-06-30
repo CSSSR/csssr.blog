@@ -11,10 +11,14 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .inner {
-    display: flex;
-    justify-content: center;
+    position: relative;
     margin-left: ${calcRem(40)};
     margin-right: ${calcRem(40)};
+  }
+
+  .items {
+    display: flex;
+    justify-content: center;
   }
 
  .item + .item {
@@ -29,12 +33,7 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
     letter-spacing: ${calcRem(1.3)};
     text-transform: uppercase;
     color: #0076ff;
-    border-bottom: 2px solid transparent;
     white-space: nowrap;
-
-    &._active {
-      border-bottom-color: #0076ff;
-    }
   }
 
   ${desktop.all} {
@@ -59,8 +58,16 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .item {
-      position: relative;
-      padding-bottom: ${calcRem(10)};
+      padding-bottom: ${calcRem(9)};
+    }
+
+    .item + .item {
+      margin-left:${calcRem(40)};
+    }
+
+    .inner {
+      margin-left: ${calcRem(16)};
+      padding-right: ${calcRem(16)};
 
       &::before {
         position: absolute;
@@ -71,23 +78,6 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
         height: ${calcRem(2)};
         background-color: rgba(86, 149, 237, 0.4);
       }
-    }
-
-    .item + .item {
-      margin-left: 0;
-
-      .link {
-        margin-left: ${calcRem(40)};
-      }
-    }
-
-    .link {
-      padding-bottom: ${calcRem(13)};
-    }
-
-    .inner {
-      margin-left: ${calcRem(16)};
-      padding-right: ${calcRem(16)};
     }
   }
 `
