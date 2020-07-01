@@ -1,7 +1,9 @@
 Картинки были сгенерированы здесь:
 
-[mainCover/desktop.all.png](https://pixteller.com/designs/maincoverdesktopallpng-id1844654)
-[mainCover/mobile.all.png](https://pixteller.com/designs/maincovermobileallpng-id1844658)
+[mainCoverM/desktop.all.png](https://pixteller.com/designs/maincoverdesktopallpng-id1844654)
+[mainCoverM/mobile.all.png](https://pixteller.com/designs/maincovermobileallpng-id1844658)
+[mainCoverS/desktop.all.png](https://pixteller.com/designs/maincoverdesktopallpng-id1844654)
+[mainCoverS/mobile.all.png](https://pixteller.com/designs/maincovermobileallpng-id1844658)
 [postCover/desktop.all.png](https://pixteller.com/designs/postcoverdesktopallpng-id1844662)
 [postCover/mobile.all.png](https://pixteller.com/designs/postcovermobileallpng-id1844668)
 [mySampleImage/all.png](https://pixteller.com/designs/mysampleimageallpng-id1844668)

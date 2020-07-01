@@ -6,7 +6,7 @@ import Layout from '../Layout'
 import Categories from './Categories'
 
 import postsOrder from '../../postsOrder'
-import myImageData from '../../public/posts/offshore-web-development/mainCover/desktop.all.png'
+import myImageData from '../../public/posts/offshore-web-development/mainCoverM/desktop.m.png'
 
 const MainPage = ({ allPosts }) => {
   const categoriesMock = [
