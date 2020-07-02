@@ -5,10 +5,13 @@ import styles from './Img.styles'
 import cn from 'classnames'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
-const Img = ({ className, sources, alt, withBigMargin }) =>
-  <Picture className={cn(className, { with_big_margin: withBigMargin })}
-           sources={sources}
-           alt={alt} />
+const Img = ({ className, sources, alt, withBigMargin }) => (
+  <Picture
+    className={cn(className, { with_big_margin: withBigMargin })}
+    sources={sources}
+    alt={alt}
+  />
+)
 
 Img.propTypes = {
   className: string,

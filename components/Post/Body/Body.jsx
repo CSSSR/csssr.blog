@@ -119,13 +119,19 @@ const Body = ({ content, className, slug, images }) =>
         },
       },
       Img: {
-        component: ({ imageName, ...rest }) => <Img className='picture' sources={images[imageName]} {...rest} />
+        component: function ImgWrapper({ imageName, ...rest }) {
+          return <Img className="picture" sources={images[imageName]} {...rest} />
+        },
       },
       ParagraphWithImage: {
-        component: ({ imageName, ...rest }) => <ParagraphWithImage sources={images[imageName]} {...rest} />
+        component: function ParagraphWithImageWrapper({ imageName, ...rest }) {
+          return <ParagraphWithImage sources={images[imageName]} {...rest} />
+        },
       },
       Separator: {
-        component: ({ imageName, ...rest }) => <Separator sources={images[imageName]} {...rest} />
+        component: function SeparatorWrapper({ imageName, ...rest }) {
+          return <Separator sources={images[imageName]} {...rest} />
+        },
       },
       Note: {
         component: Note,
