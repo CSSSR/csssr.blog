@@ -6,12 +6,21 @@ This repo contains the source code for [blog.csssr.com](https://blog.csssr.com).
 
 ## Description
 
-Blog is built using [Next.js](https://nextjs.org/), [markdown](https://www.markdownguide.org/),
-[imgproxy](https://imgproxy.net/), [emotion](https://emotion.sh/docs/introduction)
-and [github actions](https://github.com/features/actions).
-
-We use [static html export](https://nextjs.org/docs/advanced-features/static-html-export)
-provided by Next.js to achieve optimal performance.
+We chose to build our blog using:
+- [Next.js](https://nextjs.org/)
+because it is evolving quickly, suits both developers and product needs and has an amazing support
+- [markdown](https://www.markdownguide.org/)
+because it is easy to use and widely spread
+- [markdown-to-jsx](https://probablyup.com/markdown-to-jsx/)
+because it adds more flexibility to md allowing us to integrate complex custom React components in it
+- [imgproxy](https://imgproxy.net/)
+because it is fast, reliable and helps us automate tedious image processing work
+- [emotion](https://emotion.sh/docs/introduction)
+because it is the most advanced CSS-in-JS library out there
+- [github actions](https://github.com/features/actions)
+because it is right here on github and CI has never been that easy before
+- [static html export](https://nextjs.org/docs/advanced-features/static-html-export)
+because it helps us to achieve optimal performance and simplify deployment requirements
 
 We hope that this repo will be helpful to anyone building Next.js app and blog in particular.
 
@@ -22,7 +31,8 @@ We hope that this repo will be helpful to anyone building Next.js app and blog i
 1. [Git](https://git-scm.com/download)
 1. [Node.js LTS](https://nodejs.org/en/download/): any 12.x version starting with v12.0.0 or greater
 1. [Yarn](https://yarnpkg.com/lang/en/docs/install/)
-1. TODO [инструкцию](https://confluence.csssr.io/display/DT/Github+packages)
+1. [Set up token for private github packages](https://confluence.csssr.io/display/DT/Github+packages)
+*Currently it is restricted to company employees only, but we are preparing to share our internal npm packages with evebody!*
 
 ### Installation
 
