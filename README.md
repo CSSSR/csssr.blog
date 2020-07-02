@@ -32,7 +32,7 @@ We hope that this repo will be helpful to anyone building Next.js app and blog i
 1. [Node.js LTS](https://nodejs.org/en/download/): any 12.x version starting with v12.0.0 or greater
 1. [Yarn](https://yarnpkg.com/lang/en/docs/install/)
 1. [Set up token for private github packages](https://confluence.csssr.io/display/DT/Github+packages)
-*Currently it is restricted to company employees only, but we are preparing to share our internal npm packages with evebody!*
+*Currently it is restricted to company employees only, but we are preparing to share our internal npm packages with everyone!*
 
 ### Installation
 
