@@ -2,6 +2,7 @@
 title: 'Алгоритм чтения книг по программированию'
 author: 'Boris Vanyushin'
 coverImageAlt: 'Описание изображения'
+date: '2016-10-11'
 tag: 'post'
 ---
 

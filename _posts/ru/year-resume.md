@@ -1,7 +1,7 @@
 ---
 title: 'Итоги 2016 года от CSSSR'
 author: 'Максим'
-date: '-'
+date: '2016-12-26'
 coverImageAlt: 'Описание изображения'
 tag: 'post'
 ---

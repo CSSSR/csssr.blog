@@ -1,8 +1,9 @@
 ---
 title: 'Как быть начинающим разработчиком и не сойти с ума'
+coverImageAlt: 'Описание изображения'
+date: '2016-09-19'
 author: 'Menma26'
 tag: 'post'
-coverImageAlt: 'Описание изображения'
 ---
 
 ![image](/images/fry.jpeg)
