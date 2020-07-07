@@ -2,7 +2,7 @@
 title: 'Eight Ways to Improve <i>Staff Motivation</i> or How&nbsp;to Mend Broken&nbsp;Morale'
 coverImageAlt: 'alt me'
 date: '2020-01-16T05:35:07.322Z'
-tag: 'Web-development'
+tag: 'Managment'
 ---
 
 **B**eing in charge of a team gives you a lot of energy, which originates both from people you work with and challenges you face. However, there comes the day when good vibes, coming from your<br/> teammates (even the best ones), are  replaced by a bitter taste of apathy and indifference. If you’re seeing this, then you’ve most likely run into a wall of demotivation.
