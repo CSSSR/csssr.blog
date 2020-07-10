@@ -10,7 +10,11 @@ const Separator = ({ className, sources, type }) => {
   return (
     <>
       <hr className={cn(className, type)} />
-      <Global styles={css`${backgroundCss(`.${className}::after`, sources)}`} />
+      <Global
+        styles={css`
+          ${backgroundCss(`.${className}::after`, sources)}
+        `}
+      />
     </>
   )
 }
