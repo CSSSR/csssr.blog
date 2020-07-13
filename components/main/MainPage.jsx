@@ -20,6 +20,7 @@ const MainPage = ({ allPosts }) => (
         property="og:description"
         content="Place where we are sharing our thoughts on different topics such as web development, management and remote work culture."
       />
+      <meta property="og:type" content="website" />
       <meta property="og:url" content="https://blog.csssr.com/en" />
       <meta property="og:image" content={getOriginal(myImageData)} />
     </Head>
