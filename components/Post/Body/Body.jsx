@@ -13,6 +13,7 @@ import Note from './Note'
 import Quote from './Quote'
 import Subtitle from './Subtitle'
 import Video from './Video'
+import Table from './Table'
 
 const Body = ({ content, className, slug, images }) =>
   compiler(content, {
@@ -144,6 +145,9 @@ const Body = ({ content, className, slug, images }) =>
       },
       Video: {
         component: Video,
+      },
+      Table: {
+        component: Table,
       },
     },
   })
