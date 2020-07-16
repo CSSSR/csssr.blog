@@ -1155,6 +1155,16 @@
     react-reveal "^1.2.2"
     scroll-lock "^2.1.4"
 
+"@csssr/csssr-shared-header@1.0.52":
+  version "1.0.52"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-shared-header/1.0.52/25bb55fe294535c6ac8f8dd8f30b682fa3b6976d758ed99c5537e7b9585cb002#afea0ad7b8d731eaced54b6b2de5857442b29f63"
+  integrity sha512-KphWd6bFkKXLkwzhR7HRZNW2mCTlhyVbB/sIFVJNQDjUlmj3EE28X2kMqqYtO7KNqpe1q8m03r/FyxdyR9xRnQ==
+  dependencies:
+    classnames "^2.2.6"
+    color "^3.1.2"
+    emotion-theming "^10.0.27"
+    scroll-lock "^2.1.4"
+
 "@csssr/csssr.images@^1.12.0":
   version "1.12.0"
   resolved "https://npm.pkg.github.com/download/@csssr/csssr.images/1.12.0/9f0db8643ff162d1b83702efa11bc3ac99dfcb174047455c4deb4fbaf4d2b214#dccf25884049afa0cb1e97ea6e39637fb5086a76"
@@ -2509,7 +2519,7 @@ color-string@^1.5.2:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
-color@^3.0.0, color@^3.1.1:
+color@^3.0.0, color@^3.1.1, color@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/color/-/color-3.1.2.tgz#68148e7f85d41ad7649c5fa8c8106f098d229e10"
   integrity sha512-vXTJhHebByxZn3lDvDJYw4lR5+uB3vuoHsuYA5AKuxRVn5wzzIfQKGLBmgdVRHKTJYeK5rvJcHnrd0Li49CFpg==

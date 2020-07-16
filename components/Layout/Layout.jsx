@@ -1,25 +1,33 @@
+import Link from 'next/link'
 import { Global } from '@emotion/core'
+import { Footer } from '@csssr/core-design'
+import { Header, getLocaleFromUrl, PageContent, theme } from '@csssr/csssr-shared-header'
 import Meta from '../Meta'
+import { withRouter } from 'next/router'
 import styles from './Layout.styles'
-import { Header, Footer } from '@csssr/core-design'
-
 import { nav } from '../../data/footerLinks'
-import { links } from '../../data/headerLinks'
+import { ThemeProvider } from 'emotion-theming'
 
-export default function Layout({ children, isPost }) {
-  const headerLinks = [...links]
-  // Изменяем ссыку на блог если не находимся на главной блога
-  headerLinks[0].href = isPost ? '/en' : ''
+function Layout({ children, router }) {
+  const appRootElement = typeof window === 'object' ? document.getElementById('__next') : null
+  const lng = getLocaleFromUrl(router.asPath)
 
   return (
     <>
       <Meta />
 
-      <Header actionButton={{ isVisible: false }} links={headerLinks} />
-      <main id="main">{children}</main>
-      <Footer className="footer" nav={nav} />
+      <ThemeProvider theme={theme}>
+        <Header pathname="blog" lng={lng} NextLink={Link} appRootElement={appRootElement} />
+      </ThemeProvider>
+
+      <PageContent>
+        <main id="main">{children}</main>
+        <Footer className="footer" nav={nav} />
+      </PageContent>
 
       <Global styles={styles} />
     </>
   )
 }
+
+export default withRouter(Layout)
