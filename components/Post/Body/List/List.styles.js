@@ -5,42 +5,39 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     list-style: none;
 
-    &.ordered {
+    &.is_ordered {
       counter-reset: counter;
-      & li {
-        counter-increment: counter;
-
-        &::before {
-          content: counter(counter) ". ";
-        }
-      }
     }
 
-    &:not(.ordered) {
-      & li {
-        &::before {
-          top: calc(50% - ${calcRem(1)});
-          left: ${calcRem(5)};
-          width: ${calcRem(4)};
-          height: ${calcRem(4)};
-          background-color: #18191B;
-        }
-      }
+    &.is_ordered li {
+      counter-increment: counter;
+    }
+
+    &.is_ordered li::before {
+      content: counter(counter) ". ";
+    }
+
+    &:not(.is_ordered) li::before {
+      top: calc(50% - ${calcRem(1)});
+      left: ${calcRem(5)};
+      width: ${calcRem(4)};
+      height: ${calcRem(4)};
+      background-color: #18191B;
     }
 
     & li {
       padding-left: ${calcRem(21)};
-      
-      &:first-of-type {
-        margin-top: 0;
-      }
+    }
 
-      &::before {
-        top: 0;
-        font-family: 'Roboto', 'Arial', sans-serif;
-        font-weight: 500;
-        border: none;
-      }
+    & li:first-of-type {
+      margin-top: 0;
+    }
+
+    & li::before {
+      top: 0;
+      font-family: 'Roboto', 'Arial', sans-serif;
+      font-weight: 500;
+      border: none;
     }
   }
 
@@ -57,13 +54,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       & li {
         &:not(:first-of-type).list_item {
           margin-top: ${calcRem(8)};
-        }
-
-        &::before {
-          font-size: ${calcRem(14)};
-          line-height: ${calcRem(24)};
-        }
       }
+
+      & li::before {
+        font-size: ${calcRem(14)};
+        line-height: ${calcRem(24)};
+      }
+
     }
   }
 
@@ -72,15 +69,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 1 / span 6;
       margin-top: ${calcRem(9)};
 
-      & li {
-        &:not(:first-of-type).list_item {
-          margin-top: ${calcRem(8)};
-        }
+      & li:not(:first-of-type).list_item {
+        margin-top: ${calcRem(8)};
+      }
 
-        &::before {
-          font-size: ${calcRem(14)};
-          line-height: ${calcRem(24)};
-        }
+      & li::before {
+        font-size: ${calcRem(14)};
+        line-height: ${calcRem(24)};
       }
     }
   }

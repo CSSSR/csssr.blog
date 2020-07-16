@@ -154,7 +154,7 @@ const Body = ({ content, className, slug, images }) =>
       ol: {
         component: List,
         props: {
-          className: 'list_s ordered',
+          className: 'list_s is_ordered',
           type: 'regular',
           size: 'm',
         },
