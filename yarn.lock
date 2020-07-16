@@ -1320,6 +1320,17 @@
     react-reveal "^1.2.2"
     scroll-lock "^2.1.4"
 
+"@csssr/csssr-shared-header@1.1.13":
+  version "1.1.13"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-shared-header/1.1.13/e6414baa031580f865cceb9d1bdfa265fa2bf95bb0233f9f26783175cfac39c5#79f78c2a5422fe99780010cc4408ff28536639e2"
+  integrity sha512-b8b+ajicxoln918+OKDotmkFBqIKh2L6WkeCh7SYQUBL5JkLlyjRJfYcPqX0DX4ytAargBV9uCgqGjd4/GQ5ZQ==
+  dependencies:
+    classnames "^2.2.6"
+    color "^3.1.2"
+    emotion-theming "^10.0.27"
+    lottie-web "^5.7.3"
+    scroll-lock "^2.1.4"
+
 "@csssr/csssr.images@^1.12.0":
   version "1.12.0"
   resolved "https://npm.pkg.github.com/download/@csssr/csssr.images/1.12.0/9f0db8643ff162d1b83702efa11bc3ac99dfcb174047455c4deb4fbaf4d2b214#dccf25884049afa0cb1e97ea6e39637fb5086a76"
@@ -3121,7 +3132,7 @@ color-string@^1.5.2:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
-color@^3.1.1:
+color@^3.1.1, color@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/color/-/color-3.1.2.tgz#68148e7f85d41ad7649c5fa8c8106f098d229e10"
   integrity sha512-vXTJhHebByxZn3lDvDJYw4lR5+uB3vuoHsuYA5AKuxRVn5wzzIfQKGLBmgdVRHKTJYeK5rvJcHnrd0Li49CFpg==
@@ -5953,6 +5964,11 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
+
+lottie-web@^5.7.3:
+  version "5.7.3"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.7.3.tgz#dbe542270665be5dd5b32deae19e27de6e77728c"
+  integrity sha512-ftN4AdiNmtoVpCfN1doiUIUbhOrDSMikH1Yl64/xO5lzQ31AO0+G82bqrCNHIW5Ec2zE/g7y4iz7zBR1YJwDaA==
 
 lru-cache@6.0.0:
   version "6.0.0"

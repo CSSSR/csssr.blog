@@ -32,8 +32,6 @@ const base = ({ media }) => css`
     position: absolute;
     top: 1rem;
     right: 1rem;
-    width: 1rem;
-    height: 1rem;
     color: #ffffff;
     cursor: pointer;
   }
