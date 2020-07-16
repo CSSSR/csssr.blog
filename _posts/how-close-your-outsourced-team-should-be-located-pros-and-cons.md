@@ -10,11 +10,6 @@ First of all, you should consider from where exactly this team will be working.
 
 If you classify outsourcing by location, you can distinguish three main types:
 
-
-1. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
-2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet. 
-
-
 1\. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
 
 2\. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet. 
