@@ -3,10 +3,11 @@ import styled from '@emotion/styled'
 import styles from './Post.styles'
 import Head from 'next/head'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
-import Header from './Header'
+import PostHeader from './Header'
 import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
+import { withRouter } from 'next/router'
 
 const Post = ({ post, language, className }) => {
   return (
@@ -30,7 +31,7 @@ const Post = ({ post, language, className }) => {
         />
       </Head>
 
-      <Header
+      <PostHeader
         title={post.title}
         coverImage={post.images.postCover}
         alt={post.coverImageAlt}
@@ -58,6 +59,6 @@ Post.propTypes = {
   }),
 }
 
-export default styled(Post)`
+export default withRouter(styled(Post)`
   ${styles}
-`
+`)
