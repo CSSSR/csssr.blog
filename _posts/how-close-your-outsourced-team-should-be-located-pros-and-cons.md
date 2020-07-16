@@ -10,11 +10,9 @@ First of all, you should consider from where exactly this team will be working.
 
 If you classify outsourcing by location, you can distinguish three main types:
 
-1\. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
-
-2\. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet. 
-
-3\. A team is fully distributed, all interaction is remote.
+1. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
+2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet. 
+3. A team is fully distributed, all interaction is remote.
 
 Each type has its own peculiarities. At a contractor’s search stage, your key task is to correctly define the terms of interaction with the future outsourced team and select the most suitable way of working so that these features become advantages.
 
@@ -36,13 +34,13 @@ If one collects opinions about working with outsourced teams from different comp
 
 You would like the outsourced team to follow your internal procedures. The following shall be taken into consideration:
 
-1\. Level of control. If your management keeps a strict record of all your employees’ activities, and this is critical for you, the most convenient option would be an outsourced team working in your office. Alternatively, desktop monitoring systems for employees can be considered, but such solutions are often expensive and greatly reduce motivation. 
+1. Level of control. If your management keeps a strict record of all your employees’ activities, and this is critical for you, the most convenient option would be an outsourced team working in your office. Alternatively, desktop monitoring systems for employees can be considered, but such solutions are often expensive and greatly reduce motivation. 
 
-2\. Well-tuned, clear and structured processes. The clearer the mechanisms within your team work, the less risk of losing time, data and information when working with outsourcers. In small teams, where processes are not yet regulated, outsourcers working close to their office colleagues will be able to handle tasks more efficiently. 
+2. Well-tuned, clear and structured processes. The clearer the mechanisms within your team work, the less risk of losing time, data and information when working with outsourcers. In small teams, where processes are not yet regulated, outsourcers working close to their office colleagues will be able to handle tasks more efficiently. 
 
-3\. Documentation. Although a project coverage with up-to-date and comprehensive documentation is the generally recognized best practice, reality is not ideal. If your project lacks well-functioning documentation support — the farther the developers are from the team, the more painful their work will be.
+3. Documentation. Although a project coverage with up-to-date and comprehensive documentation is the generally recognized best practice, reality is not ideal. If your project lacks well-functioning documentation support — the farther the developers are from the team, the more painful their work will be.
 
-4\. Main communication channels. Take note how your employees communicate. Nowadays, many companies use messengers and video communication inside the office — it is quick, convenient, saves the history of communication, and does not knock out of the "stream" the developers deeply immersed in the problem. If this is your story, then the connection with a distributed team will go seamless. And vice versa, teams that meet three times a day in a meeting room will hardly work smoothly with remote developers or a team from another office.
+4. Main communication channels. Take note how your employees communicate. Nowadays, many companies use messengers and video communication inside the office — it is quick, convenient, saves the history of communication, and does not knock out of the "stream" the developers deeply immersed in the problem. If this is your story, then the connection with a distributed team will go seamless. And vice versa, teams that meet three times a day in a meeting room will hardly work smoothly with remote developers or a team from another office.
 
 
 These points are a "quick test" of your in-house IT department's readiness for expansion through outsourcing. In order to get the full picture you need to analyze a lot more factors and we're ready to help with that. Email us and we will give you free advice on all the particulars of connecting the outsourcing team to your development.
