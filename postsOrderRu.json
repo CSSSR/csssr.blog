@@ -1,74 +1,20 @@
 [
-  [
-    "candidates-mistakes",
-    "day-of-caps"
-  ],
-  [
-    "estimate-like-god",
-    "habits"
-  ],
-  [
-    "how-remote-developers-talk",
-    "how-to-be-a-beginner-developer"
-  ],
-  [
-    "lenses",
-    "lint-your-css"
-  ],
-  [
-    "managers-qualities",
-    "new-react-context"
-  ],
-  [
-    "ng-options",
-    "npm-init"
-  ],
-  [
-    "planes",
-    "property-testing"
-  ],
-  [
-    "qa-codex",
-    "react-map-performance"
-  ],
-  [
-    "react-perfomance",
-    "recursion"
-  ],
-  [
-    "semantics-in-programming",
-    "side-effects"
-  ],
-  [
-    "sitemap-generator",
-    "slack"
-  ],
-  [
-    "slack-groups",
-    "split-blocks-into-groups"
-  ],
-  [
-    "tech-book-reading",
-    "unicorn-busters"
-  ],
-  [
-    "unplug-yourself-csssr-edition",
-    "vpn"
-  ],
-  [
-    "work-better",
-    "work-harder"
-  ],
-  [
-    "work-in-csssr",
-    "work-stronger"
-  ],
-  [
-    "year-resume",
-    "year-resume-2018"
-  ],
-  [
-    "year-resume-2019",
-    "yet-another-template-update"
-  ]
+  ["candidates-mistakes", "day-of-caps"],
+  ["estimate-like-god", "habits"],
+  ["how-remote-developers-talk", "how-to-be-a-beginner-developer"],
+  ["lenses", "lint-your-css"],
+  ["managers-qualities", "new-react-context"],
+  ["ng-options", "npm-init"],
+  ["planes", "property-testing"],
+  ["qa-codex", "react-map-performance"],
+  ["react-perfomance", "recursion"],
+  ["semantics-in-programming", "side-effects"],
+  ["sitemap-generator", "slack"],
+  ["slack-groups", "split-blocks-into-groups"],
+  ["tech-book-reading", "unicorn-busters"],
+  ["unplug-yourself-csssr-edition", "vpn"],
+  ["work-better", "work-harder"],
+  ["work-in-csssr", "work-stronger"],
+  ["year-resume", "year-resume-2018"],
+  ["year-resume-2019", "yet-another-template-update"]
 ]
