@@ -5,6 +5,26 @@ date: '2020-03-16T05:35:07.322Z'
 tag: 'Business'
 ---
 
+<style>
+  .compare {
+    grid-column: 4 / span 6;
+    margin-top: 0.9375rem;
+  }
+  .compare-item {
+    display: block;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .compare-item.pros {
+    color:  #6364D1;
+  }
+  .compare-item.cons {
+    color: #18191B;
+  }
+</style>
+
 <Subtitle>
   Cost-effectiveness, high-quality services and other reasons why so many Singapore entrepreneurs are looking into offshoring web development services
 </Subtitle>
@@ -23,6 +43,11 @@ Aside from geographical location and time differences, outsourcing destinations 
   Still, outsourcing to India is a controversial issue since Indian contractors are very different, and you can never predict what quality level you will get. In certain cases, customers have to re-order services due to code imperfection. The code can contain numerous bugs, which are difficult or even impossible to fix, and cannot be further maintained and developed. Some of the best Indian web development enterprises can deliver good results. Yet, the finest quality always requires the best and the most expensive workforce, which affects the overall pricing.
 </ParagraphWithImage>
 
+<div class="compare">
+  <span class="compare-item pros">pros: low rates, nearshore</span>
+  <span class="compare-item cons">cons: unpredictable quality, future refactoring costs</span>
+</div>
+
 <ParagraphWithImage imageName="china">
   ## China
 
@@ -30,6 +55,11 @@ Aside from geographical location and time differences, outsourcing destinations 
 
   However, the wages of Chinese web developers are increasing, which makes the pricing higher than the rest of Asia. Besides, despite the high overall literacy rate in China, the number of English speaking people is still low which can create a certain communication barrier. Yet another weakness of the local market is China’s discretion on intellectual property. This can lead to code ownership and updating issues if not previously discussed or legally secured.
 </ParagraphWithImage>
+
+<div class="compare">
+  <span class="compare-item pros">pros: lots of&nbsp;good programmers, nearshore</span>
+  <span class="compare-item cons">cons: language barrier, dealing with chinese laws on&nbsp;intellectual property transferring</span>
+</div>
 
 <ParagraphWithImage imageName="indonesia">
   ## Indonesia
@@ -39,6 +69,11 @@ Aside from geographical location and time differences, outsourcing destinations 
   Indian companies offer various solutions and services, ranging from system migration, maintenance and integration, to web and application development, while the biggest advantage associated with web development outsourcing to India is low pricing. An average hourly rate for a web developer in India is extremely low.
 </ParagraphWithImage>
 
+<div class="compare">
+  <span class="compare-item pros">pros: fast growing market</span>
+  <span class="compare-item cons">cons: currently relatively small pool of&nbsp;programmers</span>
+</div>
+
 <ParagraphWithImage imageName="vietnam">
   ## Vietnam
 
@@ -46,6 +81,11 @@ Aside from geographical location and time differences, outsourcing destinations 
 
   As experienced Vietnamese developers came back from abroad, bringing their knowledge back home, the quality of web development services in Vietnam increases. On the other hand, lack of expertise in code reviewing and QA engineering creates a gap, that outsourcers have to cover.
 </ParagraphWithImage>
+
+<div class="compare">
+  <span class="compare-item pros">pros: growing market of&nbsp;good programmers, low costs, nearshore</span>
+  <span class="compare-item cons">cons: undeveloped market , lack of&nbsp;expertise in&nbsp;related areas such as&nbsp;QA</span>
+</div>
 
 <ParagraphWithImage imageName="europe">
   ## Eastern Europe
@@ -56,6 +96,11 @@ Aside from geographical location and time differences, outsourcing destinations 
 
   Countries such as Belarus, and, most commonly, Russia are becoming widely recognized for their sustainable tech growth and adoption of the latest IT technologies. Russian web development companies got used to follow global trends making a strong emphasis on web development: front-end skills, Java, Ruby and PHP programming are well-established areas contributing to the increasing number of successful web projects there. That is why more companies from Asia (China, South Korea, Singapore) and Western Europe tend to export their web development and programming services to Russian enterprises.
 </ParagraphWithImage>
+
+<div class="compare">
+  <span class="compare-item pros">pros: top-ranked programmers, competitive prices</span>
+  <span class="compare-item cons">cons: offshore, language barrier</span>
+</div>
 
 <ParagraphWithImage imageName="summary">
   ## Summary
