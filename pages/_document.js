@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
     const gtmId = getGtmId()
 
     return (
-      <Html lang="en">
+      <Html lang={this.props.dangerousAsPath.includes('ru') ? 'ru' : 'en'}>
         <Head>
           <GtmScript gtmId={gtmId} />
         </Head>

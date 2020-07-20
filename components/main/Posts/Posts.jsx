@@ -3,8 +3,9 @@ import { Grid } from '@csssr/core-design'
 import styled from '@emotion/styled'
 import styles from './Posts.styles'
 import PostCard from './PostCard'
+import postsOrder from '../../../postsOrder'
 
-const Posts = ({ posts, postsOrder, className }) => {
+const Posts = ({ language, posts, className }) => {
   const postsBySlug = posts.reduce((acc, post) => {
     acc[post.slug] = post
 
@@ -13,7 +14,7 @@ const Posts = ({ posts, postsOrder, className }) => {
 
   return (
     <Grid as="ul" className={className}>
-      {postsOrder.map((postsRow, rowIndex) =>
+      {postsOrder[language].map((postsRow, rowIndex) =>
         postsRow.map((postSlug, postIndex) => {
           const post = postsBySlug[postSlug]
           const isOddRow = (rowIndex + 1) % 2
@@ -21,7 +22,7 @@ const Posts = ({ posts, postsOrder, className }) => {
           const size = (isOddRow && isOddPost) || (!isOddRow && !isOddPost) ? 'm' : 's'
           const side = isOddPost ? 'l' : 'r'
 
-          return <PostCard key={postSlug} post={post} size={size} side={side} />
+          return <PostCard key={postSlug} language={language} post={post} size={size} side={side} />
         }),
       )}
     </Grid>

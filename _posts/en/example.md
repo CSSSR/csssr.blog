@@ -1,6 +1,6 @@
 ---
-title: 'Это <i>пример</i> использования компонентов'
-coverImageAlt: 'Описание изображения'
+title: 'This is an <i>example</i> of components usage'
+coverImageAlt: 'Image description'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'Web-development'
 ---

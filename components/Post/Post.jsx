@@ -8,7 +8,7 @@ import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
 
-const Post = ({ post, className }) => {
+const Post = ({ post, language, className }) => {
   return (
     <article className={className}>
       <Head>
@@ -16,7 +16,10 @@ const Post = ({ post, className }) => {
         <meta name="description" content={getDescription(post.content)} />
         <meta property="og:title" content={`${cleaningTitle(post.title)} | CSSSR blog`} />
         <meta property="og:description" content={getDescription(post.content)} />
-        <meta property="og:url" content={`https://blog.csssr.com/en/article/${post.slug}`} />
+        <meta
+          property="og:url"
+          content={`https://blog.csssr.com/${language}/article/${post.slug}`}
+        />
         <meta
           property="og:image"
           content={getOriginal(post.images.mainCover[post.images.mainCover.length - 1])}

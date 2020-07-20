@@ -8,10 +8,10 @@ import Link from 'next/link'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
-const PostCard = ({ className, post, size }) => {
+const PostCard = ({ className, language, post, size }) => {
   return (
     <li className={className}>
-      <Link as={`/en/article/${post.slug}`} href="/en/article/[slug]">
+      <Link as={`/${language}/article/${post.slug}`} href={`/${language}/article/[slug]`}>
         <a>
           <Picture sources={post.images.mainCover} alt={post.coverImageAlt} />
 

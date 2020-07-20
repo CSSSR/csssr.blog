@@ -2,14 +2,14 @@
 
 ## Генератор шаблона статьи
 
-Для создания новой статьи используй команду в терминале `yarn article my-article-name`,
-где my-article-name – это название новой статьи.
+Для создания новой статьи используй команду в терминале `yarn article en my-article-name`,
+где en это язык (возможные варианты en или ru), а my-article-name – это название новой статьи.
 Эта команда создаст новую шаблонную статью, картинки для неё и добавит её на главную.
 
 ## Файлы статьи
 
 Сами статьи находятся в папке [`_posts`](../_posts).
-Название файла соответствует `url` статьи, т.e. если создать файл с именем `new-awesome-post.md`, 
+Название файла соответствует `url` статьи, т.e. если создать файл с именем `new-awesome-post.md` в `_posts/en`, 
 то будьте уверены что сможете найти его по адресу `http://localhost:3000/en/article/new-awesome-post`.
 
 Картинки для статей находятся в папке [public/posts](../public/posts).
@@ -21,14 +21,19 @@ postCover ([изображение в заголовке статьи](http://s.
 
 Порядок статей на главной задаётся в файле [postsOrder.json](../postsOrder.json).
 В этом файле представлено схематическое отображение статей на главной странице.
-Наличие и порядок статей в этом массиве определяет наличие и порядок статей на главной странице.
+Наличие и порядок статей в этом объекте определяет наличие и порядок статей на главной странице.
 Добавьте куда вам нужно название файла с вашей статьей и она отобразится на главной странице.
 ```json
-[
-  ["offshore-web-development", "augmented-and-virtual-reality"],
-  ["html-or-cms-or-custom-development", "eight-ways-to-Improve-staff-motivation"],
-  ["creative-and-web-development", "tips-for-task-estimating"],
-  ["the-baltic-e-success", "split-stack-web-development"],
-  ["new-awesome-post"]
-]
+{
+  "en": [
+    ["offshore-web-development", "augmented-and-virtual-reality"],
+    ["html-or-cms-or-custom-development", "eight-ways-to-Improve-staff-motivation"],
+    ["creative-and-web-development", "tips-for-task-estimating"],
+    ["the-baltic-e-success"]
+  ],
+  "ru": [
+    ["my-russian-article"]
+  ]
+}
+
 ```

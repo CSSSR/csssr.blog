@@ -6,10 +6,10 @@ import { Header, Footer } from '@csssr/core-design'
 import { nav } from '../../data/footerLinks'
 import { links } from '../../data/headerLinks'
 
-export default function Layout({ children, isPost }) {
+export default function Layout({ children, language, isPost }) {
   const headerLinks = [...links]
   // Изменяем ссыку на блог если не находимся на главной блога
-  headerLinks[0].href = isPost ? '/en' : ''
+  headerLinks[0].href = isPost ? `/${language}` : ''
 
   return (
     <>
@@ -17,7 +17,7 @@ export default function Layout({ children, isPost }) {
 
       <Header actionButton={{ isVisible: false }} links={headerLinks} />
       <main id="main">{children}</main>
-      <Footer className="footer" nav={nav} />
+      <Footer className="footer" nav={nav} languageLink={{ href: '/ru', text: 'ru' }} />
 
       <Global styles={styles} />
     </>
