@@ -46,7 +46,6 @@ const MainPage = ({ posts, activeCategory }) => {
   // const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
-
   return (
     <>
       <Head>
