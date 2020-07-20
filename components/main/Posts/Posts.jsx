@@ -21,7 +21,11 @@ const Posts = ({ posts, postsOrder, className }) => {
           const size = (isOddRow && isOddPost) || (!isOddRow && !isOddPost) ? 'm' : 's'
           const side = isOddPost ? 'l' : 'r'
 
-          return <PostCard key={postSlug} post={post} size={size} side={side} />
+          if (post) {
+            return <PostCard key={postSlug} post={post} size={size} side={side} />
+          }
+
+          return
         }),
       )}
     </Grid>
