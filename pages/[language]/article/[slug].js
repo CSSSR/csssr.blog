@@ -11,7 +11,7 @@ export default function PostPage({ post, /* morePosts, */ language }) {
   // }
 
   return (
-    <Layout language={language} isPost={true}>
+    <Layout language={language}>
       {/*
         не думаю что нам это пока нужно, но оставлю как пример создания фолбека
         router.isFallback ? <PostTitle>Loading…</PostTitle> : <Post post={post} />
@@ -43,7 +43,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getPostsByLanguage(['slug', 'language'])
+  const posts = await getPostsByLanguage(['slug'])
 
   return {
     paths: languages.reduce((memo, language) => {

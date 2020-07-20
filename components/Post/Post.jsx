@@ -20,9 +20,11 @@ const Post = ({ post, language, className }) => {
           property="og:url"
           content={`https://blog.csssr.com/${language}/article/${post.slug}`}
         />
+        <meta property="article:published_time" content={post.date} />
+        {post.author && <meta property="article:author" content={post.author} />}
         <meta
           property="og:image"
-          content={getOriginal(post.images.mainCover[post.images.mainCover.length - 1])}
+          content={getOriginal(post.images.mainCoverM[post.images.mainCoverM.length - 1])}
         />
       </Head>
 
@@ -32,6 +34,7 @@ const Post = ({ post, language, className }) => {
         alt={post.coverImageAlt}
         tag={post.tag}
         date={post.date}
+        author={post.author}
       />
 
       <Body content={post.content} slug={post.slug} images={post.images} />

@@ -2,15 +2,12 @@ const path = require('path')
 const fs = require('fs')
 const fse = require('fs-extra')
 const languages = require('../../utils/languages')
+const capitalize = require('../../utils/capitalize')
 
 const language = process.argv[2]
 const slug = process.argv[3]
 if (!languages.includes(language)) {
   throw new Error('Укажите язык, корректное использование: yarn article [en|ru] [article-name]')
-}
-
-const capitalize = (string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 const mdFileTemplate = fs.readFileSync(path.resolve(__dirname, 'new-article-template.md'), 'utf8')

@@ -1,19 +1,22 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { string, array } from 'prop-types'
-import { Grid } from '@csssr/core-design'
+import { Grid } from '../../Grid'
 import { Heading } from '@csssr/core-design'
 import DateFormatter from '../../DateFormatter'
 
 import styles from './Header.styles'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
-const Header = ({ className, title, tag, date, coverImage, alt }) => {
+const Header = ({ className, title, author, tag, date, coverImage, alt }) => {
   return (
     <Grid as="header" className={className}>
       <div className="post-meta">
-        <a className="tag">{tag}</a>
+        {author && <span className="author">{author}</span>}
+
         <DateFormatter className="date">{date}</DateFormatter>
+
+        <a className="tag">{tag}</a>
       </div>
 
       <Heading
@@ -31,6 +34,7 @@ const Header = ({ className, title, tag, date, coverImage, alt }) => {
 Header.propTypes = {
   className: string,
   title: string,
+  author: string,
   tag: string,
   date: string,
   coverImage: array,

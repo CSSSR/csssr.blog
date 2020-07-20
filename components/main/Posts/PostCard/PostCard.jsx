@@ -9,11 +9,13 @@ import cleaningTitle from '../../../../utils/client/cleaningTitle'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
 const PostCard = ({ className, language, post, size }) => {
+  const imgCover = size === 'm' ? post.images.mainCoverM : post.images.mainCoverS
+
   return (
     <li className={className}>
       <Link as={`/${language}/article/${post.slug}`} href={`/${language}/article/[slug]`}>
         <a>
-          <Picture sources={post.images.mainCover} alt={post.coverImageAlt} />
+          <Picture sources={imgCover} alt={post.coverImageAlt} />
 
           <h2
             className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}
@@ -21,8 +23,12 @@ const PostCard = ({ className, language, post, size }) => {
           />
         </a>
       </Link>
-      <a className="tag">{post.tag}</a>
+
+      {post.author && <span className="author">{post.author}</span>}
+
       <DateFormatter className="date">{post.date}</DateFormatter>
+
+      <a className="tag">{post.tag}</a>
     </li>
   )
 }
@@ -34,10 +40,7 @@ PostCard.propTypes = {
     coverImageAlt: string,
     images: object,
     date: string,
-    author: shape({
-      name: string,
-      picture: string,
-    }),
+    author: string,
     ogImage: shape({
       url: string,
     }),

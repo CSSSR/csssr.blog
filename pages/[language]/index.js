@@ -3,7 +3,9 @@ import { getPostsByLanguage } from '../../lib/api'
 import MainPage from '../../components/main/MainPage'
 import languages from '../../utils/languages'
 
-const Index = ({ posts, language }) => <MainPage posts={posts} language={language} />
+const Index = ({ posts, language }) => (
+  <MainPage activeCategory="all" posts={posts} language={language} />
+)
 
 export default Index
 
@@ -14,7 +16,6 @@ export async function getStaticProps({ params }) {
     'slug',
     'author',
     'coverImageAlt',
-    'excerpt',
     'tag',
     'images',
   ])

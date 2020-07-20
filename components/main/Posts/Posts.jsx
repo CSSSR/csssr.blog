@@ -1,5 +1,6 @@
+import React from 'react'
 import { string } from 'prop-types'
-import { Grid } from '@csssr/core-design'
+import { Grid } from '../../Grid'
 import styled from '@emotion/styled'
 import styles from './Posts.styles'
 import PostCard from './PostCard'
@@ -11,6 +12,9 @@ const postsOrder = {
   ru: postsOrderRu,
 }
 
+// В props.posts приходят статьи, которые надо отобразить на странице.
+// В postsOrder перечислены все статьи.
+// Проходим по postsOrder и набираем по этому порядку посты в соответствии с props.posts.
 const Posts = ({ language, posts, className }) => {
   const postsBySlug = posts.reduce((acc, post) => {
     acc[post.slug] = post
@@ -20,17 +24,21 @@ const Posts = ({ language, posts, className }) => {
 
   return (
     <Grid as="ul" className={className}>
-      {postsOrder[language].map((postsRow, rowIndex) =>
-        postsRow.map((postSlug, postIndex) => {
-          const post = postsBySlug[postSlug]
-          const isOddRow = (rowIndex + 1) % 2
-          const isOddPost = (postIndex + 1) % 2
-          const size = (isOddRow && isOddPost) || (!isOddRow && !isOddPost) ? 'm' : 's'
-          const side = isOddPost ? 'l' : 'r'
+      {postsOrder[language].flat().reduce((memo, postSlug) => {
+        const post = postsBySlug[postSlug]
+        if (!post) {
+          return memo
+        }
 
-          return <PostCard key={postSlug} language={language} post={post} size={size} side={side} />
-        }),
-      )}
+        const orderInGroupOfFour = memo.length % 4
+        const size = orderInGroupOfFour === 0 || orderInGroupOfFour === 3 ? 'm' : 's'
+        const side = orderInGroupOfFour === 0 || orderInGroupOfFour === 2 ? 'l' : 'r'
+
+        return [
+          ...memo,
+          <PostCard key={postSlug} language={language} post={post} size={size} side={side} />,
+        ]
+      }, [])}
     </Grid>
   )
 }

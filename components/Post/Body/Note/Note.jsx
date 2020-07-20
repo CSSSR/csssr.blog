@@ -2,7 +2,9 @@ import styled from '@emotion/styled'
 import { Text } from '@csssr/core-design'
 import styles from './Note.styles'
 
-const Note = ({ children, className }) => {
+const Note = (props) => {
+  console.log(props)
+  const { children, className } = props
   if (children.length === 1)
     return (
       <Text as="section" className={className}>

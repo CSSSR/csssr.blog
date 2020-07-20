@@ -2,7 +2,7 @@ import React from 'react'
 import { string, bool } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Quote.styles'
-import { Grid } from '@csssr/core-design'
+import { Grid } from '../../../Grid'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 const Quote = ({ className, children, author, position, withImage }) => {
