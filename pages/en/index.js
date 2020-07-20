@@ -1,7 +1,7 @@
 import { getAllPosts } from '../../lib/api'
 import MainPage from '../../components/main/MainPage'
 
-const Index = ({ allPosts }) => <MainPage allPosts={allPosts} />
+const Index = ({ allPosts }) => <MainPage activeCategory="all" posts={allPosts} />
 
 export default Index
 export async function getStaticProps() {
@@ -11,7 +11,6 @@ export async function getStaticProps() {
     'slug',
     'author',
     'coverImageAlt',
-    'excerpt',
     'tag',
     'images',
   ])
