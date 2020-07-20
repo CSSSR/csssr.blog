@@ -9,6 +9,10 @@ if (!languages.includes(language)) {
   throw new Error('Укажите язык, корректное использование: yarn article [en|ru] [article-name]')
 }
 
+const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
 const mdFileTemplate = fs.readFileSync(path.resolve(__dirname, 'new-article-template.md'), 'utf8')
 const newMdFileContent = mdFileTemplate.replace(/{{slug}}/g, slug)
 
@@ -18,15 +22,14 @@ fs.writeFileSync(outputMdFilePath, newMdFileContent)
 const outputImagesDirPath = path.resolve(__dirname, `../../public/posts`, language, slug)
 fse.copySync(path.resolve(__dirname, 'images'), outputImagesDirPath)
 
-const postsOrderFilePath = path.resolve(__dirname, '../../postsOrder.json')
+const postsOrderFilePath = path.resolve(__dirname, `../../postsOrder${capitalize(language)}.json`)
 const postsOrder = JSON.parse(fs.readFileSync(postsOrderFilePath, 'utf8'))
-postsOrder[language].unshift([slug, slug])
-fs.writeFileSync(postsOrderFilePath, JSON.stringify(postsOrder))
+fs.writeFileSync(postsOrderFilePath, JSON.stringify([[slug, slug]].concat(postsOrder)))
 
 // Используем eslint для форматирования файла с порядком статей на главной
 const { CLIEngine } = require('eslint')
 const cli = new CLIEngine({ fix: true })
-const report = cli.executeOnFiles(['postsOrder.json'])
+const report = cli.executeOnFiles([`postsOrder${capitalize(language)}.json`])
 CLIEngine.outputFixes(report)
 
 console.log(

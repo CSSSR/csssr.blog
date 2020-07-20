@@ -3,7 +3,13 @@ import { Grid } from '@csssr/core-design'
 import styled from '@emotion/styled'
 import styles from './Posts.styles'
 import PostCard from './PostCard'
-import postsOrder from '../../../postsOrder'
+import postsOrderEn from '../../../postsOrderEn'
+import postsOrderRu from '../../../postsOrderRu'
+
+const postsOrder = {
+  en: postsOrderEn,
+  ru: postsOrderRu,
+}
 
 const Posts = ({ language, posts, className }) => {
   const postsBySlug = posts.reduce((acc, post) => {
