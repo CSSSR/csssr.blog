@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Grid } from '@csssr/core-design'
+import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
 import styles from './Body.styles'
