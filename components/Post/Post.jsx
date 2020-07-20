@@ -12,9 +12,9 @@ const Post = ({ post, language, className }) => {
   return (
     <article className={className}>
       <Head>
-        <title>{cleaningTitle(post.title)} | CSSSR blog</title>
+        <title>{cleaningTitle(post.title)}</title>
         <meta name="description" content={getDescription(post.content)} />
-        <meta property="og:title" content={`${cleaningTitle(post.title)} | CSSSR blog`} />
+        <meta property="og:title" content={cleaningTitle(post.title)} />
         <meta property="og:description" content={getDescription(post.content)} />
         <meta
           property="og:url"
