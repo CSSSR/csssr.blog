@@ -2,7 +2,7 @@
 title: '<i>Работа</i> в CSSSR — взгляд изнутри'
 coverImageAlt: 'alt me'
 date: '2014-08-17 10:10:00'
-tag: 'Web-development'
+tag: 'Management'
 ---
 
 <Subtitle>

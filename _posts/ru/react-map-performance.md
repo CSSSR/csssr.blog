@@ -3,7 +3,7 @@ title: 'Повышаем производительность рендера с�
 date: '2016-07-28 23:00:00'
 author: 'Felix Exter'
 coverImageAlt: 'Описание изображения'
-tag: post
+tag: 'Web-development'
 ---
 
 ![image](/images/react.png)

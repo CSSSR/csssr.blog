@@ -3,7 +3,7 @@ title: 'Безболезненный линтинг CSS с помощью stylel
 coverImageAlt: 'Как настроить линтинг стилей на проекте так, чтобы не было больно ни при разработке, ни на code review'
 author: 'v1z'
 date: '2018-12-05'
-tag: 'post'
+tag: 'Web-development'
 ---
 
 **Н**екоторые приемы, описанные в&nbsp;статье, ориентированы на&nbsp;использование PostCSS (в&nbsp;связке с&nbsp;<nobr>css-modules</nobr> и&nbsp;webpack), однако они с&nbsp;легкостью адаптируются под LESS / SASS / ванильный CSS.

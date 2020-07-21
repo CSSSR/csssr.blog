@@ -3,7 +3,7 @@ title: 'Как быть начинающим разработчиком и не 
 coverImageAlt: 'Описание изображения'
 date: '2016-09-19'
 author: 'Menma26'
-tag: 'post'
+tag: 'Culture'
 ---
 
 ![image](/images/fry.jpeg)

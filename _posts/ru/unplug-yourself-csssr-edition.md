@@ -2,8 +2,8 @@
 title: 'Unplug yourself — опыт CSSSR'
 coverImageAlt: 'alt me'
 date: '2015-03-07 16:20:00'
-tag: 'Web-development'
 author: 'Анастасия, Алек, Елизавета'
+tag: 'Culture'
 ---
 
 **Э**тот пост посвящается акции [Unplug yourself](http://bit.ly/18ZOvSk).

@@ -3,7 +3,7 @@ title: 'Рекурсия для неискушённых'
 coverImageAlt: 'Учим ФП, не отходя от столярного станка.'
 author: 'vislogurov'
 date: '2018-09-06'
-tag: 'post'
+tag: 'Web-development'
 ---
 <Subtitle>
  Вместо предисловия

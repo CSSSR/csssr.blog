@@ -2,8 +2,8 @@
 title: 'Ускорьте свою разработку с помощью команды `npm init`'
 coverImageAlt: 'alt me'
 date: '2015-03-14 13:30:00'
-tag: 'Web-development'
 author: 'Владимир Старков'
+tag: 'Web-development'
 ---
 
 **У** npm есть превосходная команда `npm init`, которая поможет вам создавать

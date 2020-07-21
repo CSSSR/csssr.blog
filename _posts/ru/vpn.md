@@ -3,7 +3,7 @@ title: 'Космический VPN для сурового фронтенда'
 date: '2015-11-21 14:32:00'
 coverImageAlt: 'Или как поднять и настроить свой VPN сервер'
 author: 'Паша'
-tag: 'post'
+tag: 'Web-development'
 ---
 
 ![](/images/pazanov.png)

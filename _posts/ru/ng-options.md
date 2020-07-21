@@ -2,8 +2,8 @@
 title: 'Записки начинающего Angular-онавта:ng-options'
 coverImageAlt: 'alt me'
 date: '2015-11-24 15:07:00'
-tag: 'Web-development'
 author: 'Islam Vindizhev'
+tag: 'Web-development'
 ---
 
 **М**еня зовут Ислам, и недавно я присоединился к CSSSR. Так получилось, что теперь я изучаю и одновременно применяю AngularJS. Эта статья об одной из задач, вариантах её решения и граблях, на которые я наступил.

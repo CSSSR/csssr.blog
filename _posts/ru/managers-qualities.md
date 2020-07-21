@@ -2,8 +2,8 @@
 title: 'Я менеджер, если...'
 coverImageAlt: 'alt me'
 date: '2015-03-05 14:55:00'
-tag: 'Web-development'
 author: 'Елизавета Яновская'
+tag: 'Management'
 ---
 
 ![EYanovskaya](/images/eyanovskaya.png)
