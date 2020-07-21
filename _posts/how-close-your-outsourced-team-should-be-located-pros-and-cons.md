@@ -1,6 +1,6 @@
 ---
 title: 'How Close Your <i>Outsourced Team</i> Should Be Located? Pros and Cons'
-coverImageAlt: 'alt me'
+coverImageAlt: 'alt image'
 date: '2020-07-22T05:35:07.322Z'
 tag: 'Business'
 ---
