@@ -9,7 +9,11 @@ const Quote = ({ className, children, author, position, withImage }) => {
   return (
     <Grid className={className}>
       {withImage && (
-        <PictureSmart className="image-wrapper" alt="lady" requireImages={require.context('../../../../public/components/quote/images')} />
+        <PictureSmart
+          className="image-wrapper"
+          alt="lady"
+          requireImages={require.context('../../../../public/components/quote/images')}
+        />
       )}
 
       <blockquote className="quote">

@@ -17,7 +17,10 @@ const Post = ({ post, className }) => {
         <meta property="og:title" content={`${cleaningTitle(post.title)} | CSSSR blog`} />
         <meta property="og:description" content={getDescription(post.content)} />
         <meta property="og:url" content={`https://blog.csssr.com/en/article/${post.slug}`} />
-        <meta property="og:image" content={getOriginal(post.images.mainCover[post.images.mainCover.length - 1])} />
+        <meta
+          property="og:image"
+          content={getOriginal(post.images.mainCover[post.images.mainCover.length - 1])}
+        />
       </Head>
 
       <Header

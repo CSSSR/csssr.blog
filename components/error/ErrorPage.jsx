@@ -27,7 +27,7 @@ const subtitleLocalesByStatusCode = {
 }
 
 const pictureByStatusCode = {
-  500: require.context('../../public/components/error/images/500')
+  500: require.context('../../public/components/error/images/500'),
 }
 
 const codeIconByStatusCode = {
@@ -40,31 +40,24 @@ class ErrorPage extends React.Component {
 
     return (
       <span key={id}>
-        <h3
-          className="font_burger-menu"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
+        <h3 className="font_burger-menu" dangerouslySetInnerHTML={{ __html: title }} />
 
         {links && (
           <ul className="menu">
             {links.map(({ id, title, href }) => {
-
               return (
                 <li key={id}>
                   {linkRegExp.test(href) ? (
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="menu-item"
-                        href={href}
-                        dangerouslySetInnerHTML={{ __html: title }}
-                      />
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="menu-item"
+                      href={href}
+                      dangerouslySetInnerHTML={{ __html: title }}
+                    />
                   ) : (
                     <Link href={`/${href}`}>
-                      <a
-                        className="menu-item"
-                        dangerouslySetInnerHTML={{ __html: title }}
-                      />
+                      <a className="menu-item" dangerouslySetInnerHTML={{ __html: title }} />
                     </Link>
                   )}
                 </li>
@@ -101,7 +94,7 @@ class ErrorPage extends React.Component {
         <Grid as="main" className={cn(className, `error-code_${statusCode}`)}>
           <h1
             className="font_h1-slab"
-            dangerouslySetInnerHTML={{ __html: `${titleLocalesByStatusCode[statusCode]}`}}
+            dangerouslySetInnerHTML={{ __html: `${titleLocalesByStatusCode[statusCode]}` }}
           />
 
           <PictureSmart

@@ -54,6 +54,7 @@ jobs:
           files: ./new_blog/out
           no-previous-files: "true"
           not-found-page: 404/index.html
+          tls-secret: csssr-new-blog-tls
           values: |
             ingress:
               annotations:

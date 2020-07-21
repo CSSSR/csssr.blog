@@ -23,31 +23,24 @@ class ErrorPage extends React.Component {
 
     return (
       <span key={id}>
-        <h3
-          className="font_burger-menu"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
+        <h3 className="font_burger-menu" dangerouslySetInnerHTML={{ __html: title }} />
 
         {links && (
           <ul className="menu">
             {links.map(({ id, title, href }) => {
-
               return (
                 <li key={id}>
                   {linkRegExp.test(href) ? (
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="menu-item"
-                        href={href}
-                        dangerouslySetInnerHTML={{ __html: title }}
-                      />
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="menu-item"
+                      href={href}
+                      dangerouslySetInnerHTML={{ __html: title }}
+                    />
                   ) : (
                     <Link href={`/${href}`}>
-                      <a
-                        className="menu-item"
-                        dangerouslySetInnerHTML={{ __html: title }}
-                      />
+                      <a className="menu-item" dangerouslySetInnerHTML={{ __html: title }} />
                     </Link>
                   )}
                 </li>
@@ -75,10 +68,7 @@ class ErrorPage extends React.Component {
         </Grid>
 
         <Grid as="main" className={cn(className, `error-code_404`)}>
-          <h1
-            className="font_h1-slab"
-            dangerouslySetInnerHTML={{ __html: 'Not found'}}
-          />
+          <h1 className="font_h1-slab" dangerouslySetInnerHTML={{ __html: 'Not found' }} />
 
           <PictureSmart
             className="picture"
@@ -92,16 +82,14 @@ class ErrorPage extends React.Component {
 
           <h2
             className="font_subhead-slab"
-            dangerouslySetInnerHTML={{ __html: 'Explore other pages'}}
+            dangerouslySetInnerHTML={{ __html: 'Explore other pages' }}
           />
           <Fragment>
             <div className="arrow-wrapper">
               <LineFromTopToBottomIcon width="100%" height="100%" />
             </div>
 
-            <div className="navList">
-              {navItems.map((items) => this.renderNav({ items }))}
-            </div>
+            <div className="navList">{navItems.map((items) => this.renderNav({ items }))}</div>
           </Fragment>
         </Grid>
       </Fragment>

@@ -2,7 +2,7 @@
 title: 'How to Integrate <i>Creative</i> and <i>Web Development</i>'
 coverImageAlt: 'alt me'
 date: '2019-12-18T05:35:07.322Z'
-tag: 'Web-development'
+tag: 'Business'
 ---
 
 
