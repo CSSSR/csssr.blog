@@ -18,7 +18,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     &:not(.is_ordered) li::before {
-      top: calc(50% - ${calcRem(1)});
+      top: ${calcRem(10)};
       left: ${calcRem(5)};
       width: ${calcRem(4)};
       height: ${calcRem(4)};
@@ -27,6 +27,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     & li {
       padding-left: ${calcRem(21)};
+    }
+
+    li.list_item:not(:first-of-type) {
+      margin-top: ${calcRem(24)};
     }
 
     & li:first-of-type {
@@ -39,11 +43,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       font-weight: 500;
       border: none;
     }
+
+    & li p:first-of-type {
+      margin-top: 0;
+    }
   }
 
   ${desktop.all} {
     grid-column: 4 / span 6;
     margin-top: ${calcRem(16)};
+
+    & + .paragraph {
+      margin-top: ${calcRem(30)};
+    }
   }
 
   ${tablet.all} {

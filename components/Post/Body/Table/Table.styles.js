@@ -105,9 +105,20 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       line-height: 20px;
     }
 
-    tbody th,
+    tbody th[colspan] {
+      padding: 0;
+    }
+
+    tbody th {
+      padding: 16px 16px 16px 10px;
+    }
+
     tbody td {
       padding: 16px;
+    }
+
+    & + p.paragraph {
+      margin-top: 50px;
     }
   }
 
@@ -145,17 +156,12 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       overflow-x: auto;
     }
 
-    &.with_borders {
-      tbody td {
-        text-align: left;
-      }
-    }
-
     thead th {
       padding-top: ${calcRem(16)};
       padding-right: ${calcRem(32)};
-      padding-left: ${calcRem(32)};
+      padding-left: ${calcRem(16)};
       padding-bottom: ${calcRem(16)};
+      vertical-align: middle;
     }
 
     tbody th {
@@ -207,7 +213,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
         width: 100%;
         border-top: ${calcRem(1)} solid #e2e7ef;
         border-bottom: ${calcRem(1)} solid #e2e7ef;
-        background-color: inherit;
+        background-color: #D3D3FF;
       }
     }
   }
