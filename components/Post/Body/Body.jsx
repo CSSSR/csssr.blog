@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Grid } from '@csssr/core-design'
 import { compiler } from 'markdown-to-jsx'
-import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
+import { Heading, Text, Link, ListItem } from '@csssr/core-design'
 import styles from './Body.styles'
 
 import Separator from './Separator'
@@ -14,6 +14,7 @@ import Quote from './Quote'
 import Subtitle from './Subtitle'
 import Video from './Video'
 import Table from './Table'
+import List from './List'
 
 const Body = ({ content, className, slug, images }) =>
   compiler(content, {
@@ -104,7 +105,8 @@ const Body = ({ content, className, slug, images }) =>
       li: {
         component: ListItem,
         props: {
-          className: 'list_item_s',
+          className: 'text_regular_m list_item',
+          type: 'regular',
           size: 'm',
         },
       },
@@ -148,6 +150,14 @@ const Body = ({ content, className, slug, images }) =>
       },
       Table: {
         component: Table,
+      },
+      ol: {
+        component: List,
+        props: {
+          className: 'list_s is_ordered',
+          type: 'regular',
+          size: 'm',
+        },
       },
     },
   })
