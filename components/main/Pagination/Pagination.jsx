@@ -25,6 +25,7 @@ const Pagination = ({ className, postsPerPage, totalPosts, paginate, currentPage
     updatePageNumbers(currentIndex, pageNumbers, currentPage)
     currentIndex !== 0 ? setPrevDisable(false) : setPrevDisable(true)
     currentIndex !== lastIndex ? setNextDisable(false) : setNextDisable(true)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex])
 
   const updatePageNumbers = (currentIndex, pageNumbers, number) => {

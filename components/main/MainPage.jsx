@@ -6,11 +6,23 @@ import Posts from './Posts'
 import Layout from '../Layout'
 import Categories from './Categories'
 
-import postsOrder from '../../postsOrder'
-import myImageData from '../../public/posts/offshore-web-development/mainCoverM/desktop.m.png'
+import myImageData from '../../public/posts/en/offshore-web-development/mainCoverM/desktop.m.png'
 import Pagination from './Pagination/Pagination'
 
-const MainPage = ({ posts, activeCategory }) => {
+const meta = {
+  en: {
+    title: 'Blog | CSSSR',
+    description:
+      'Place where we are sharing our thoughts on different topics such as web development, management and remote work culture.',
+  },
+  ru: {
+    title: 'Блог | CSSSR',
+    description:
+      'Место, где мы делимся своими мыслями на разные темы: веб разработка, менеджмент и культура удаленной работы. ',
+  },
+}
+
+const MainPage = ({ posts, language, activeCategory }) => {
   const categoriesMock = [
     {
       id: 'all',
@@ -21,8 +33,8 @@ const MainPage = ({ posts, activeCategory }) => {
       title: 'Business',
     },
     {
-      id: 'managment',
-      title: 'Managment',
+      id: 'management',
+      title: 'Management',
     },
     {
       id: 'web-development',
@@ -49,20 +61,18 @@ const MainPage = ({ posts, activeCategory }) => {
   return (
     <>
       <Head>
-        <title>Blog | CSSSR</title>
-        <meta
-          name="description"
-          content="Place where we are sharing our thoughts on different topics such as web development, management and remote work culture."
-        />
-        <meta property="og:title" content="Blog | CSSSR" />
-        <meta property="og:url" content="https://blog.csssr.com/en" />
+        <title>{meta[language].title}</title>
+        <meta name="description" content={meta[language].description} />
+        <meta property="og:title" content={meta[language].title} />
+        <meta property="og:description" content={meta[language].description} />
+        <meta property="og:url" content={`https://blog.csssr.com/${language}`} />
         <meta property="og:image" content={getOriginal(myImageData)} />
       </Head>
-      <Layout>
-        <h1 className="visual-hidden">Blog CSSSR</h1>
+      <Layout language={language}>
+        <h1 className="visual-hidden">{meta[language].title}</h1>
         <Categories items={categoriesMock} activeCategory={activeCategory} />
 
-        <Posts posts={posts} postsOrder={postsOrder} />
+        <Posts language={language} posts={posts} />
 
         <Pagination
           postsPerPage={postsPerPage}
