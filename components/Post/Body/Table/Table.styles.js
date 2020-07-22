@@ -190,6 +190,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       text-align: left;
     }
 
+    tbody th[colspan] {
+      position: sticky;
+    }
+
     th:first-child {
       position: sticky;
       background-color: white;
