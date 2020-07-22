@@ -1,7 +1,7 @@
 ---
 title: 'Записки начинающего Angular-онавта:ng-options'
 coverImageAlt: 'alt me'
-date: '2015-11-24 15:07:00'
+date: '2015-11-24T12:07:00.000Z'
 tag: 'Web-development'
 author: 'Islam Vindizhev'
 ---

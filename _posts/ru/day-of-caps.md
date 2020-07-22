@@ -1,7 +1,7 @@
 ---
 title: 'ДЕНЬ КАПСА'
 coverImageAlt: 'alt me'
-date: '2014-09-24 09:34:00'
+date: '2014-09-24T05:34:00.000Z'
 tag: 'Web-development'
 ---
 

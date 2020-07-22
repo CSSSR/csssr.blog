@@ -2,7 +2,7 @@
 title: 'Итоги 2018 от CSSSR'
 coverImageAlt: 'О чём молчал фронтенд в 2018'
 author: 'vislogurov'
-date: '2018-12-16'
+date: '2018-12-16T00:00:00.000Z'
 tag: 'post'
 ---
 

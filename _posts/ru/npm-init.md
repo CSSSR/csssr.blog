@@ -1,7 +1,7 @@
 ---
 title: 'Ускорьте свою разработку с помощью команды `npm init`'
 coverImageAlt: 'alt me'
-date: '2015-03-14 13:30:00'
+date: '2015-03-14T10:30:00.000Z'
 tag: 'Web-development'
 author: 'Владимир Старков'
 ---
