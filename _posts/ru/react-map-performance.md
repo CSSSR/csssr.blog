@@ -6,9 +6,9 @@ coverImageAlt: 'Описание изображения'
 tag: post
 ---
 
-![image](/images/react.png)
-
 **Ч**асто при написании компонентов приходится использовать мапы для рендера списков.
+
+![image](/images/react.png)
 
 ```js
 items.map(({ value }, i) =>
