@@ -34,7 +34,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   .tag {
     font-weight: 500;
-    color: #5695ED;
+    color: #5695ed;
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: #0254d8;
+    }
   }
 
   .date {

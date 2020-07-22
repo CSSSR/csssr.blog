@@ -44,10 +44,10 @@ const MainPage = ({ posts, language, activeCategory }) => {
       id: 'culture',
       title: 'Culture',
     },
-    {
-      id: 'news',
-      title: '🔥 Новости',
-    },
+    // {
+    //   id: 'news',
+    //   title: '🔥 Новости',
+    // },
   ]
 
   const [currentPage, setCurrentPage] = useState(1)

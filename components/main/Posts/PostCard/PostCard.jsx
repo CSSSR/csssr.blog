@@ -28,7 +28,9 @@ const PostCard = ({ className, language, post, size }) => {
 
       <DateFormatter className="date">{post.date}</DateFormatter>
 
-      <a className="tag">{post.tag}</a>
+      <Link href={`/${language}/category/${post.tag.toLowerCase()}/page/1`}>
+        <a className="tag">{post.tag}</a>
+      </Link>
     </li>
   )
 }
