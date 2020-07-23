@@ -1,6 +1,6 @@
 ---
 title: 'How Close Your <i>Outsourced Team</i> Should Be Located? Pros and Cons'
-coverImageAlt: 'alt me'
+coverImageAlt: 'alt image'
 date: '2020-07-22T05:35:07.322Z'
 tag: 'Business'
 ---
@@ -22,7 +22,7 @@ If one collects opinions about working with outsourced teams from different comp
   ## Team Goals
   <p>The correctly defined goals are 90% of success. Make your mind what you would like to achieve outsourcing some job from your in-house IT department: to speed up on-going development, to launch a new one, or to ease the pressure on the supporting team of an already operating product.</p>
 
-  In any case, it is important to remember that it will take time for a new team to adapt to your processes and get familiar with the context. The more "legacy" there is in the tasks they will have to perform, the longer this period will be. In critical situations, it can be greatly reduced by placing the developers in the epicenter of events right in the office. This is especially true for a pre-release stage products or those at support, i.e. in all cases when information exchange between yours and the outsourced team should be as fast as possible. However, if you are only planning to launch development, this option may bring no benefits, as new information will be distributed as it generated, but the office costs will certainly increase. 
+  In any case, it is important to remember that it will take time for a new team to adapt to your processes and get familiar with the context. The more "legacy" there is in the tasks they will have to perform, the longer this period will be. In critical situations, it can be greatly reduced by placing the developers in the epicenter of events right in the office. This is especially true for a pre-release stage products or those at support, i.e. in all cases when information exchange between yours and the outsourced team should be as fast as possible. However, if you are only planning to launch development, this option may bring no benefits, as new information will be distributed as it generated, but the office costs will certainly increase.
 </ParagraphWithImage>
 
 <ParagraphWithImage imageName="skydiving-man">
@@ -73,7 +73,7 @@ So, to sum it up.
   </thead>
   <tbody>
     <tr>
-      <th colspan="4">Aim</th>
+      <th colspan="4" data-text="Aim">Aim</th>
     </tr>
     <tr>
       <th>Emergency help to your project</th>
@@ -94,7 +94,7 @@ So, to sum it up.
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Specialists Qualification</th>
+      <th colspan="4" data-text="Specialists Qualification">Specialists Qualification</th>
     </tr>
     <tr>
       <th>Regular specialists</th>
@@ -109,7 +109,7 @@ So, to sum it up.
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Processes</th>
+      <th colspan="4" data-text="Processes">Processes</th>
     </tr>
     <tr>
       <th>Firm control</th>
@@ -148,7 +148,7 @@ So, to sum it up.
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Miscellaneous</th>
+      <th colspan="4" data-text="Miscellaneous">Miscellaneous</th>
     </tr>
     <tr>
       <th>Project completion</th>
