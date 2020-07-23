@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { string, array } from 'prop-types'
+import { string, arrayOf, object } from 'prop-types'
 import { Grid } from '@csssr/core-design'
 import { Heading } from '@csssr/core-design'
 import DateFormatter from '../../DateFormatter'
@@ -33,7 +33,7 @@ Header.propTypes = {
   title: string,
   tag: string,
   date: string,
-  coverImage: array,
+  coverImage: arrayOf(object),
   alt: string,
 }
 

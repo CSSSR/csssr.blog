@@ -41,16 +41,10 @@ PostCard.propTypes = {
     coverImageAlt: string,
     images: object,
     date: string,
-    author: shape({
-      name: string,
-      picture: string,
-    }),
-    ogImage: shape({
-      url: string,
-    }),
+    tag: string,
+    slug: string,
   }),
   size: oneOf(['m', 's']),
-  side: oneOf(['l', 'r']),
 }
 
 export default styled(PostCard)`

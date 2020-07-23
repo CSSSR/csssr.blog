@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, bool } from 'prop-types'
+import { string, node, bool } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Quote.styles'
 import { Grid } from '@csssr/core-design'
@@ -27,6 +27,7 @@ const Quote = ({ className, children, author, position, withImage }) => {
 
 Quote.propTypes = {
   className: string,
+  children: node,
   author: string,
   position: string,
   withImage: bool,
