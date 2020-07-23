@@ -72,8 +72,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       font-size: 24px;
       line-height: 32px;
     }
-
-    .text_regular_m + .heading_regular_m {
+  
+    .text_regular_m + .heading_regular_m,
+    div +  .heading_regular_m {
       margin-top: 50px;
     }
 
