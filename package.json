@@ -6,7 +6,7 @@
     "robots": "node scripts/generateRobotsTxt.js",
     "sitemap": "node scripts/generateSitemapXml.js",
     "build": "next build && next export && yarn robots && yarn sitemap",
-    "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0",
+    "lint:js": "eslint --ext .js,.jsx --fix --max-warnings=0 .",
     "article": "node scripts/articleTemplate/scaffoldNewArticle.js"
   },
   "dependencies": {
@@ -20,7 +20,7 @@
     "date-fns": "2.14.0",
     "emotion-theming": "^10.0.27",
     "gray-matter": "4.0.2",
-    "isomorphic-unfetch": "3.0.0",
+    "lint-staged": "^10.2.11",
     "markdown-to-jsx": "^6.11.4",
     "next": "latest",
     "prismjs": "^1.20.0",
@@ -50,7 +50,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:js"
+      "pre-commit": "lint-staged"
     }
   }
 }

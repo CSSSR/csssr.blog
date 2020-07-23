@@ -2,7 +2,7 @@
 title: 'How to Integrate <i>Creative</i> and <i>Web Development</i>'
 coverImageAlt: 'alt me'
 date: '2019-12-18T05:35:07.322Z'
-tag: 'Web-development'
+tag: 'Business'
 ---
 
 
@@ -34,7 +34,7 @@ Reputable agencies refuse to work under these conditions, while freelancers migh
 Alternatively, and less pessimistically, an experienced agency might design an appropriate campaign, but make a poor choice of developer, something difficult to avoid if you use a different contractor for each project. As a result, the end-customer gets a strong creative idea, with poor implementation and/or a postponed launch date.
 
 <ParagraphWithImage imageName="horse-man">
-  <p>If you, as a client, are offered development work by an agency through a subcontractor, we recommend you instead take on the task of finding a suitable contractor yourself. Try to find a separate contractor for the web development part of the project, compare the expertise levels of different teams and choose the best one for you. Tech recruiters can be helpful for this task, as they have plenty of experience in identifying tech talent. </p>
+  <p>If you, as a client, are offered development work by an agency through a subcontractor, we recommend you instead take on the task of finding a suitable contractor yourself. Try to find a separate contractor for the web development part of the project, compare the expertise levels of different teams and choose the best one for you. Tech recruiters can be helpful for this task, as they have plenty of experience in identifying tech talent.</p>
 </ParagraphWithImage>
 
 The same advice rings true for creative agencies as well: whenever possible don’t work with subcontractors. By hiding the real provider, you’re signing yourself up for all the risk if something goes wrong. Even if your creativity is excellent, you run the risk of damaging your reputation with low-quality development that you can’t control.
