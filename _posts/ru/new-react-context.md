@@ -2,7 +2,7 @@
 title: 'Новый контекст React в деталях'
 coverImageAlt: "Детальный разбор React.createContext и его неанонсированных API"
 author: "artalar"
-date: '2018-04-06'
+date: '2018-04-06T00:00:00.000Z'
 tag: "post"
 ---
 

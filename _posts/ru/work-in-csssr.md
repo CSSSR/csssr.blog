@@ -1,7 +1,7 @@
 ---
 title: '<i>Работа</i> в CSSSR — взгляд изнутри'
 coverImageAlt: 'alt me'
-date: '2014-08-17 10:10:00'
+date: '2014-08-17T06:10:00.000Z'
 tag: 'Web-development'
 ---
 
