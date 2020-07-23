@@ -11,7 +11,7 @@ First of all, you should consider from where exactly this team will be working.
 If you classify outsourcing by location, you can distinguish three main types:
 
 1. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
-2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet. 
+2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet.
 3. A team is fully distributed, all interaction is remote.
 
 Each type has its own peculiarities. At a contractor’s search stage, your key task is to correctly define the terms of interaction with the future outsourced team and select the most suitable way of working so that these features become advantages.
@@ -22,7 +22,7 @@ If one collects opinions about working with outsourced teams from different comp
   ### Team Goals
   <p>The correctly defined goals are 90% of success. Make your mind what you would like to achieve outsourcing some job from your in-house IT department: to speed up on-going development, to launch a new one, or to ease the pressure on the supporting team of an already operating product.</p>
 
-  In any case, it is important to remember that it will take time for a new team to adapt to your processes and get familiar with the context. The more "legacy" there is in the tasks they will have to perform, the longer this period will be. In critical situations, it can be greatly reduced by placing the developers in the epicenter of events right in the office. This is especially true for a pre-release stage products or those at support, i.e. in all cases when information exchange between yours and the outsourced team should be as fast as possible. However, if you are only planning to launch development, this option may bring no benefits, as new information will be distributed as it generated, but the office costs will certainly increase. 
+  In any case, it is important to remember that it will take time for a new team to adapt to your processes and get familiar with the context. The more "legacy" there is in the tasks they will have to perform, the longer this period will be. In critical situations, it can be greatly reduced by placing the developers in the epicenter of events right in the office. This is especially true for a pre-release stage products or those at support, i.e. in all cases when information exchange between yours and the outsourced team should be as fast as possible. However, if you are only planning to launch development, this option may bring no benefits, as new information will be distributed as it generated, but the office costs will certainly increase.
 </ParagraphWithImage>
 
 <ParagraphWithImage imageName="skydiving-man">
@@ -34,9 +34,9 @@ If one collects opinions about working with outsourced teams from different comp
 
 You would like the outsourced team to follow your internal procedures. The following shall be taken into consideration:
 
-1. Level of control. If your management keeps a strict record of all your employees’ activities, and this is critical for you, the most convenient option would be an outsourced team working in your office. Alternatively, desktop monitoring systems for employees can be considered, but such solutions are often expensive and greatly reduce motivation. 
+1. Level of control. If your management keeps a strict record of all your employees’ activities, and this is critical for you, the most convenient option would be an outsourced team working in your office. Alternatively, desktop monitoring systems for employees can be considered, but such solutions are often expensive and greatly reduce motivation.
 
-2. Well-tuned, clear and structured processes. The clearer the mechanisms within your team work, the less risk of losing time, data and information when working with outsourcers. In small teams, where processes are not yet regulated, outsourcers working close to their office colleagues will be able to handle tasks more efficiently. 
+2. Well-tuned, clear and structured processes. The clearer the mechanisms within your team work, the less risk of losing time, data and information when working with outsourcers. In small teams, where processes are not yet regulated, outsourcers working close to their office colleagues will be able to handle tasks more efficiently.
 
 3. Documentation. Although a project coverage with up-to-date and comprehensive documentation is the generally recognized best practice, reality is not ideal. If your project lacks well-functioning documentation support — the farther the developers are from the team, the more painful their work will be.
 
@@ -72,7 +72,7 @@ So, to sum it up.
   </thead>
   <tbody>
     <tr>
-      <th colspan="4">Aim</th>
+      <th colspan="4" data-text="Aim">Aim</th>
     </tr>
     <tr>
       <th>Emergency help to your project</th>
@@ -93,7 +93,7 @@ So, to sum it up.
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Specialists Qualification</th>
+      <th colspan="4" data-text="Specialists Qualification">Specialists Qualification</th>
     </tr>
     <tr>
       <th>Regular specialists</th>
@@ -108,7 +108,7 @@ So, to sum it up.
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Processes</th>
+      <th colspan="4" data-text="Processes">Processes</th>
     </tr>
     <tr>
       <th>Firm control</th>
@@ -147,7 +147,7 @@ So, to sum it up.
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Miscellaneous</th>
+      <th colspan="4" data-text="Miscellaneous">Miscellaneous</th>
     </tr>
     <tr>
       <th>Project completion</th>
