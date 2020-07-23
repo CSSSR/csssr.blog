@@ -12,6 +12,7 @@ const Video = ({ className, src }) => (
 )
 
 Video.propTypes = {
+  className: string,
   src: string,
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { string, object } from 'prop-types'
 import styled from '@emotion/styled'
 import { Grid } from '@csssr/core-design'
 import { compiler } from 'markdown-to-jsx'
@@ -147,6 +148,13 @@ const Body = ({ content, className, slug, images }) =>
       },
     },
   })
+
+Body.propTypes = {
+  className: string,
+  content: string,
+  images: object,
+  slug: string,
+}
 
 export default styled(Body)`
   ${styles}
