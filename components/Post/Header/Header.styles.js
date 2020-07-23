@@ -47,6 +47,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .picture {
     display: block;
     width: 100%;
+    min-height: ${calcRem(230)};
     position: relative;
     z-index: 1;
     grid-column: 7 / span 3;
@@ -89,6 +90,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .picture {
+      min-height: ${calcRem(235)};
       margin-top: ${calcRem(12)};
       grid-column: 7 / span 4;
     }
@@ -96,6 +98,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
     .picture {
+      min-height: ${calcRem(150)};
       grid-column: 1 / span 6;
       grid-row: 1;
     }

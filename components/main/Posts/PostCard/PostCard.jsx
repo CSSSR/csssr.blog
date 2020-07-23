@@ -13,7 +13,14 @@ const PostCard = ({ className, post, size }) => {
     <li className={className}>
       <Link as={`/en/article/${post.slug}`} href="/en/article/[slug]">
         <a>
-          <Picture sources={post.images.mainCover} alt={post.coverImageAlt} />
+          <Picture
+            className={cn('picture', {
+              picture_size_m: size === 'm',
+              picture_size_s: size === 's',
+            })}
+            sources={post.images.mainCover}
+            alt={post.coverImageAlt}
+          />
 
           <h2
             className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}

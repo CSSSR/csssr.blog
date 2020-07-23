@@ -16,6 +16,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     display: block;
   }
 
+  .picture {
+    display: block;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+
+    &_size_m {
+      min-height: ${calcRem(310)};
+    }
+
+    &_size_s {
+      min-height: ${calcRem(215)};
+    }
+  }
+
   .title {
     font-family: 'Roboto', 'Arial', sans-serif;;
     font-style: normal;
@@ -31,14 +48,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       font-size: 24px;
       line-height: 32px;
     }
-  }
-
-  picture {
-    display: block;
-  }
-
-  img {
-    width: 100%;
   }
 
   .tag,
@@ -64,7 +73,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${desktop.all} {
-    &:nth-child(n + 3) {
+    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
       margin-top: 75px;
     }
 
@@ -74,8 +83,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${tablet.all} {
-    &:nth-child(n + 3) {
+    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
       margin-top: ${calcRem(60)};
+    }
+
+    .picture {
+      &_size_m {
+        min-height: ${calcRem(220)};
+      }
+
+      &_size_s {
+        min-height: ${calcRem(150)};
+      }
     }
 
     .title {
@@ -86,6 +105,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${mobile.all} {
     &:not(:first-of-type) {
       margin-top: ${calcRem(50)};
+    }
+
+    .picture {
+      min-height: ${calcRem(150)};
     }
 
     .title {
