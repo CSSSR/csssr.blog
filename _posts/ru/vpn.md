@@ -1,14 +1,14 @@
 ---
 title: 'Космический VPN для сурового фронтенда'
-date: '2015-11-21 14:32:00'
+date: '2015-11-21T11:32:00.000Z'
 coverImageAlt: 'Или как поднять и настроить свой VPN сервер'
 author: 'Паша'
 tag: 'post'
 ---
 
-![](/images/pazanov.png)
-
 **В**сем привет! С вами один из ведущих разработчиков CSSSR и просто путешественник.
+
+![](/images/pazanov.png)
 
 Уже не раз мы писали о том, что CSSSR — это полностью распределенная компания. География сотрудников постепенно охватывает почти весь земной шар, и многие из нас постоянно в пути. Бывая в самых экзотических уголках вселенной, мы часто сталкиваемся с ограничениями доступа к определенным сервисам и ресурсам, будь то Github, Skype, WhatsApp или Facebook. Я решил рассказать как преодолеть эти ограничения, развернув свой собственный VPN сервер.
 
@@ -32,19 +32,19 @@ tag: 'post'
 
 Первым делом обновляем пакеты:
 
-```
+```js
 apt-get update && apt-get upgrade
 ```
 
 Устанавливаем зависимости:
 
-```
+```js
 apt-get install git libreadline-dev libssl-dev libncurses5-dev zlib1g-dev make checkinstall
 ```
 
 Клонируем репозиторий и настраиваем проект:
 
-```
+```js
 git clone https://github.com/SoftEtherVPN/SoftEtherVPN.git
 cd SoftEtherVPN\
 ./configure
@@ -52,7 +52,7 @@ cd SoftEtherVPN\
 
 После вызова `configure` нужно ответить на пару вопросов, выбрать OS и разрядность. В моем случае это Linux и x64. Теперь можно собрать проект и установить VPN сервер:
 
-```
+```js
 make
 checkinstall
 ```
@@ -61,7 +61,7 @@ checkinstall
 
 Теперь мы можем запустить наш VPN сервер:
 
-```
+```js
 vpnserver start
 ```
 
@@ -77,7 +77,7 @@ vpnserver start
 
 Запускаем `vpncmd`, нам будет предложено три варианта:
 
-```
+```js
 1. Management of VPN Server or VPN Bridge
 2. Management of VPN Client
 3. Use of VPN Tools (certificate creation and Network Traffic Speed Test Tool)
@@ -87,44 +87,44 @@ vpnserver start
 
 Теперь можно приступить к конфигурации. Первым делом устанавливаем пароль для администрирования сервера:
 
-```
+```js
 ServerPasswordSet
 ```
 
 Далее создаем новый виртуальный хаб, к которому в дальнейшем будут подключаться пользователи:
 
-```
+```js
 hubcreate csssrhub
 ```
 
 Пароль для хаба указывать необязательно, так как мы не планируем делегировать администрирование хаба третьему лицу. После создания хаба, переключаемся в режим его администрирования:
 
-```
+```js
 Hub csssrhub
 ```
 
 Создание пользователей сводится к двум командам:
 
-```
+```js
 UserCreate
 UserPasswordSet
 ```
 
 Теперь включим для нашего хаба SecureNAT и DHCP. Выполняется это одной командой:
 
-```
+```js
 SecureNATEnable
 ```
 
 Для Windows, MacOS, iOS, Android и Windows Phone (8.1+) можно использовать **L2TP/IPSec**, включаем:
 
-```
+```js
 IPsecEnable
 ```
 
 На первые три вопроса отвечаем `yes`. Далее указываем ключ который позже будет использоваться для доступа к VPN серверу (Shared Key). После этого нам будет предложено выбрать стандартный хаб чтобы не добавлять его к имени пользователя каждый раз, вводим здесь название хаба созданного ранее (в моем случае `csssrhub`):
 
-```
+```js
 Enable L2TP over IPsec Server Function (yes / no): yes
 Enable Raw L2TP Server Function (yes / no): yes
 Enable EtherIP / L2TPv3 over IPsec Server Function (yes / no): yes

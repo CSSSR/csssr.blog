@@ -1,7 +1,7 @@
 ---
 title: 'Обновление шаблона до v0.12'
 coverImageAlt: 'alt me'
-date: '2015-12-15 20:30:00'
+date: '2015-12-15T17:30:00.000Z:30:00'
 tag: 'Web-development'
 ---
 
