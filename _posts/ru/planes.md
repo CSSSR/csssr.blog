@@ -1,9 +1,9 @@
 ---
 title: 'Неудобства коллективной работы или почему начали взлетать самолеты.'
 coverImageAlt: 'alt me'
-date: '2015-03-14T10:30:00.000Z'
-tag: 'Web-development'
 author: 'Павел Азанов'
+date: '2015-03-14T10:30:00.000Z'
+tag: 'Management'
 ---
 
 <Subtitle>

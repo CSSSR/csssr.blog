@@ -1,9 +1,9 @@
 ---
 title: 'Я менеджер, если...'
 coverImageAlt: 'alt me'
-date: '2015-03-05T11:55:00.000Z'
-tag: 'Web-development'
 author: 'Елизавета Яновская'
+date: '2015-03-05T11:55:00.000Z'
+tag: 'Management'
 ---
 
 **М**еня зовут Елизавета, и я менеджер в CSSSR.
