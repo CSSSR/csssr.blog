@@ -25,7 +25,7 @@ tag: 'Web-development'
   </thead>
   <tbody>
     <tr>
-      <th colspan="4">Цель</th>
+      <th colspan="4" data-text="Цель">Цель</th>
     </tr>
     <tr>
       <th>«Скорая помощь» проекту</th>
@@ -46,7 +46,7 @@ tag: 'Web-development'
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Квалификация специалистов</th>
+      <th colspan="4" data-text="Квалификация специалистов">Квалификация специалистов</th>
     </tr>
     <tr>
       <th>Типовые работники</th>
@@ -61,7 +61,7 @@ tag: 'Web-development'
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Процессы</th>
+      <th colspan="4" data-text="Процессы">Процессы</th>
     </tr>
     <tr>
       <th>Строгий контроль</th>
@@ -100,7 +100,7 @@ tag: 'Web-development'
       <td>-</td>
     </tr>
     <tr>
-      <th colspan="4">Другое</th>
+      <th colspan="4" data-text="Другое">Другое</th>
     </tr>
     <tr>
       <th>Завершение проекта</th>
@@ -128,7 +128,7 @@ tag: 'Web-development'
   </thead>
   <tbody>
     <tr>
-      <th colspan="4">Цель</th>
+      <th colspan="4" data-text="Цель">Цель</th>
     </tr>
     <tr>
       <th>«Скорая помощь» проекту</th>
@@ -149,7 +149,7 @@ tag: 'Web-development'
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Квалификация специалистов</th>
+      <th colspan="4" data-text="Квалификация специалистов">Квалификация специалистов</th>
     </tr>
     <tr>
       <th>Типовые работники</th>
@@ -164,7 +164,7 @@ tag: 'Web-development'
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Процессы</th>
+      <th colspan="4" data-text="Процессы">Процессы</th>
     </tr>
     <tr>
       <th>Строгий контроль</th>
@@ -203,7 +203,7 @@ tag: 'Web-development'
       <td>-</td>
     </tr>
     <tr>
-      <th colspan="4">Другое</th>
+      <th colspan="4" data-text="Другое">Другое</th>
     </tr>
     <tr>
       <th>Завершение проекта</th>
@@ -231,7 +231,7 @@ tag: 'Web-development'
   </thead>
   <tbody>
     <tr>
-      <th colspan="4">Цель</th>
+      <th colspan="4" data-text="Цель">Цель</th>
     </tr>
     <tr>
       <th>«Скорая помощь» проекту</th>
@@ -252,7 +252,7 @@ tag: 'Web-development'
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Квалификация специалистов</th>
+      <th colspan="4" data-text="Квалификация специалистов">Квалификация специалистов</th>
     </tr>
     <tr>
       <th>Типовые работники</th>
@@ -267,7 +267,7 @@ tag: 'Web-development'
       <td>+</td>
     </tr>
     <tr>
-      <th colspan="4">Процессы</th>
+      <th colspan="4" data-text="Процессы">Процессы</th>
     </tr>
     <tr>
       <th>Строгий контроль</th>
@@ -306,7 +306,7 @@ tag: 'Web-development'
       <td>-</td>
     </tr>
     <tr>
-      <th colspan="4">Другое</th>
+      <th colspan="4" data-text="Другое">Другое</th>
     </tr>
     <tr>
       <th>Завершение проекта</th>
