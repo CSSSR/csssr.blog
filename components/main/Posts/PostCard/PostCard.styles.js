@@ -58,8 +58,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     color: #5695ED;
     transition: color 150ms ease-in-out;
 
-    &:hover {
-      color: #0254d8;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #0254d8;
+      }
     }
   }
 
