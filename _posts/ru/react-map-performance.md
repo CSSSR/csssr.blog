@@ -1,14 +1,14 @@
 ---
 title: 'Повышаем производительность рендера списков в React-компонентах'
-date: '2016-07-28 23:00:00'
+date: '2016-07-28T20:00:00.000Z'
 author: 'Felix Exter'
 coverImageAlt: 'Описание изображения'
 tag: 'Web-development'
 ---
 
-![image](/images/react.png)
-
 **Ч**асто при написании компонентов приходится использовать мапы для рендера списков.
+
+![image](/images/react.png)
 
 ```js
 items.map(({ value }, i) =>

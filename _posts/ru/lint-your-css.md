@@ -2,7 +2,7 @@
 title: 'Безболезненный линтинг CSS с помощью stylelint'
 coverImageAlt: 'Как настроить линтинг стилей на проекте так, чтобы не было больно ни при разработке, ни на code review'
 author: 'v1z'
-date: '2018-12-05'
+date: '2018-12-05T00:00:00.000Z'
 tag: 'Web-development'
 ---
 
@@ -121,13 +121,13 @@ npm install stylelint-config-airbnb --save-dev
 ![image](/images/lint-your-css/formatting.gif)
 <p class="image-caption">Результат работы линтера</p>
 
-### [Prettier](https://prettier.io/){:target="_blank"}
-В&nbsp;моей команде выбор был сделан в&nbsp;пользу кодстайла Prettier. На&nbsp;самом деле [его&nbsp;конфиг для&nbsp;stylelint](https://github.com/prettier/stylelint-config-prettier#stylelint-config-prettier){:target="_blank"} не&nbsp;добавляет никаких правил, а&nbsp;наоборот, <span class="bold">отключает</span> бОльшую их&nbsp;часть. Сделано это для того, чтобы отключить все пересекающиеся правила из&nbsp;предыдущих конфигов (конфиг Prettier должен подключаться последним), дабы они не&nbsp;конфликтовали с&nbsp;логикой форматирования, заложенной в&nbsp;Prettier.
+### [Prettier](https://prettier.io/)
 
-Как следствие отключения правил линтера&nbsp;&mdash; в&nbsp;текстовом редакторе пропадают предупреждения об&nbsp;ошибках форматирования, так как stylelint вообще перестаёт наблюдать за&nbsp;этими правилами. Это требует от&nbsp;разработчиков не&nbsp;забывать запускать Prettier либо [через CLI](https://prettier.io/docs/en/cli.html){:target="_blank"}, либо через плагин для текстового редактора ([вот такой, к&nbsp;примеру, для VS&nbsp;Code](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode){:target="_blank"}).
+В&nbsp;моей команде выбор был сделан в&nbsp;пользу кодстайла Prettier. На&nbsp;самом деле [его&nbsp;конфиг для&nbsp;stylelint](https://github.com/prettier/stylelint-config-prettier#stylelint-config-prettier) не&nbsp;добавляет никаких правил, а&nbsp;наоборот, <span class="bold">отключает</span> бОльшую их&nbsp;часть. Сделано это для того, чтобы отключить все пересекающиеся правила из&nbsp;предыдущих конфигов (конфиг Prettier должен подключаться последним), дабы они не&nbsp;конфликтовали с&nbsp;логикой форматирования, заложенной в&nbsp;Prettier. Как следствие отключения правил линтера&nbsp;&mdash; в&nbsp;текстовом редакторе пропадают предупреждения об&nbsp;ошибках форматирования, так как stylelint вообще перестаёт наблюдать за&nbsp;этими правилами. Это требует от&nbsp;разработчиков не&nbsp;забывать запускать Prettier либо [через CLI](https://prettier.io/docs/en/cli.html), либо через плагин для текстового редактора ([вот такой, к&nbsp;примеру, для VS&nbsp;Code](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)).
 
 
 ## Часть III. Порядок свойств внутри селектора. Делаем структурированно
+
 Порядок, в&nbsp;котором вы&nbsp;пишете свойства внутри селектора, очень важен. Это может быть менее очевидно для разработчиков, которые работают в&nbsp;одиночку, но&nbsp;становится очень значимым фактором при командной разработке.
 
 Если все ваши свойства сгруппированы по&nbsp;логическому смыслу и&nbsp;отсортированы внутри этих групп, код становится более структурированным. Преимущества такой сортировки:
@@ -136,7 +136,7 @@ npm install stylelint-config-airbnb --save-dev
 + <span class="bold">упрощается работа с&nbsp;кодом, который писали не&nbsp;вы</span>, а&nbsp;другой разработчик команды.
 
 ### Реализация сортировки
-Для достижения поставленной цели в&nbsp;виде сгруппированных и&nbsp;отсортированных свойств следует воспользоваться [плагином для stylelint](https://github.com/hudochenkov/stylelint-order#stylelint-order---){:target="_blank"}.
+Для достижения поставленной цели в&nbsp;виде сгруппированных и&nbsp;отсортированных свойств следует воспользоваться [плагином для stylelint](https://github.com/hudochenkov/stylelint-order#stylelint-order---).
 ```zsh
 npm install stylelint-order --save-dev
 ```
@@ -158,7 +158,7 @@ npm install stylelint-order --save-dev
   },
 }
 ```
-Порядком расположения не&nbsp;перечисленных в&nbsp;конфиге свойств относительно перечисленных можно управлять с&nbsp;помощью необязательного параметра [unspecified](https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md#unspecified-topbottombottomalphabeticalignore){:target="_blank"}.
+Порядком расположения не&nbsp;перечисленных в&nbsp;конфиге свойств относительно перечисленных можно управлять с&nbsp;помощью необязательного параметра [unspecified](https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md#unspecified-topbottombottomalphabeticalignore).
 ```json
 "order/properties-order": [
   [
@@ -186,7 +186,9 @@ npm install stylelint-order --save-dev
 Так&nbsp;же как и&nbsp;одинаковый порядок свойств в&nbsp;селекторе, одинаковая очерёдность в&nbsp;нестинге позволяет облегчить работу с&nbsp;кодом, который писал другой разработчик команды, так как вы&nbsp;всегда уверены, в&nbsp;каком именно месте искать определенные вложенные правила. Плюс это страхует от&nbsp;ошибок при поддержке кода, когда, к&nbsp;примеру, к&nbsp;уже существующим media добавляется ещё одно, но&nbsp;в&nbsp;неправильной очерёдности. Добавьте к&nbsp;этому правило о&nbsp;максимальной глубине вложенности и&nbsp;запрет на&nbsp;любые селекторы внутри media (<nobr>т.е.</nobr> чтобы изменить эффект при наведении на&nbsp;планшетах, вы&nbsp;обязываете своих разработчиков вкладывать media в&nbsp;hover, а&nbsp;не&nbsp;наоборот)&nbsp;&mdash; и&nbsp;на&nbsp;выходе получите очень мощный инструмент стандартизации кода.
 
 ### Реализация сортировки
+
 Данная сортировка достигается за&nbsp;счёт использования упомянутого выше плагина <nobr>stylelint-order</nobr>, возможный конфиг `.stylelintrc` может выглядеть так:
+
 ```json
 {
   "plugins": [
@@ -219,7 +221,7 @@ npm install stylelint-order --save-dev
   },
 }
 ```
-Обратите особое внимание, что для определения вложенного правила [используются регулярные выражения](https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md#extended-rule-objects){:target="_blank"}.
+Обратите особое внимание, что для определения вложенного правила [используются регулярные выражения](https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md#extended-rule-objects).
 
 ![image](/images/lint-your-css/nesting.gif)
 <p class="image-caption">Результат работы линтера</p>
@@ -230,7 +232,7 @@ npm install stylelint-order --save-dev
 
 Хотите запретить использование тегов или id&nbsp;в&nbsp;селекторах? Застраховаться от&nbsp;дублирования правил внутри селектора или дублирования самих селекторов? Запретить `!important`, ограничить максимальную глубину нестинга, запретить использование `em` или `px`? А&nbsp;может, запретить целые правила, вроде сокращённой записи `margin/padding/flex`? stylelint предоставляет огромное количество правил, отвечающих именно за&nbsp;такие ситуации. За&nbsp;счет их&nbsp;использования внутри команды достигается некое единообразие в&nbsp;самой логике написания стилевых файлов.
 
-Помимо стандартных правил stylelint также стоит обратить внимание на&nbsp;[плагины](https://stylelint.io/user-guide/plugins/){:target="_blank"}, расширяющие возможности проверки кода&nbsp;&mdash; например, можно [запретить использование media без custom-media](https://github.com/csstools/stylelint-media-use-custom-media#media-use-custom-media-){:target="_blank"} или [запретить вкладывать селекторы внутрь media](https://github.com/adityavm/stylelint-at-rule-no-children#tldr){:target="_blank"}.
+Помимо стандартных правил stylelint также стоит обратить внимание на&nbsp;[плагины](https://stylelint.io/user-guide/plugins/), расширяющие возможности проверки кода&nbsp;&mdash; например, можно [запретить использование media без custom-media](https://github.com/csstools/stylelint-media-use-custom-media#media-use-custom-media-) или [запретить вкладывать селекторы внутрь media](https://github.com/adityavm/stylelint-at-rule-no-children#tldr).
 
 Использование таких правил очень сильно зависит от&nbsp;договоренностей внутри команды. Главный посыл здесь должен быть &laquo;не&nbsp;навреди&raquo;&nbsp;&mdash; обсуждайте внедрение правил с&nbsp;командой, ставьте их&nbsp;под сомнение, разбирайте все плюсы и&nbsp;минусы их&nbsp;использования. Хорошим маркером для подключения нового правила (или расширения уже подключенного) является момент, когда при прохождении code review ошибка встречается более двух раз, <nobr>т.е.</nobr> в&nbsp;первый раз разработчик поправил ошибку после замечания, но&nbsp;через некоторое время снова отправил на&nbsp;проверку код с&nbsp;такой&nbsp;же ошибкой.
 
@@ -241,7 +243,7 @@ npm install stylelint-order --save-dev
 ## Часть VI. Автоматизация процесса. Убираем боль
 Итак, вы&nbsp;потратили достаточно времени на&nbsp;составление добротного конфига stylelint, который покрывает все требуемые вашим кодстайлом моменты&nbsp;&mdash; общее форматирование, различные сортировки правил, а&nbsp;также &laquo;качественные&raquo; нюансы. Следующий вопрос, который вам предстоит решить&nbsp;&mdash; &laquo;в&nbsp;какой момент запускать проверку линтера, и&nbsp;что должно происходить при наличии ошибок в&nbsp;этой проверке?&raquo;. Этот вопрос имеет огромное значение.
 
-Представьте себе такую ситуацию&nbsp;&mdash; ваша система сборки (gulp/webpack/etc.) настроена таким образом, что проверка линтера запускается на&nbsp;каждое сохранение файла и&nbsp;при наличии ошибок не&nbsp;даёт обновить локальный сервер, <nobr>т.е.</nobr> вы&nbsp;не&nbsp;сможете увидеть результат внесённых изменений. Неважно, на&nbsp;какой стадии находится проект&nbsp;&mdash; на&nbsp;начальном этапе разработки самых мелких реиспользуемых компонент или&nbsp;же на&nbsp;этапе поддержки, когда код вносится в&nbsp;уже функционирующую систему с&nbsp;огромным количеством файлов и&nbsp;строк кода. Вы&nbsp;не&nbsp;увидите ни&nbsp;одного изменения до&nbsp;тех пор, пока не&nbsp;расставите все написанные правила в&nbsp;правильном порядке и&nbsp;не&nbsp;соблюдёте все <nobr>бест-практики</nobr>, предписанные кодстайлом. <span class="bold">Боль</span>.
+Представьте себе такую ситуацию&nbsp;&mdash; ваша система сборки (gulp/webpack/etc.) настроена таким образом, что проверка линтера запускается на&nbsp;каждое сохранение файла и&nbsp;при наличии ошибок не&nbsp;даёт обновить локальный сервер, <nobr>т.е.</nobr> вы&nbsp;не&nbsp;сможете увидеть результат внесённых изменений. Неважно, на&nbsp;какой стадии находится проект&nbsp;&mdash; на&nbsp;начальном этапе разработки самых мелких реиспользуемых компонент или&nbsp;же на&nbsp;этапе поддержки, когда код вносится в&nbsp;уже функционирующую систему с&nbsp;огромным количеством файлов и&nbsp;строк кода. Вы&nbsp;не&nbsp;увидите ни&nbsp;одного изменения до&nbsp;тех пор, пока не&nbsp;расставите все написанные правила в&nbsp;правильном порядке и&nbsp;не&nbsp;соблюдёте все <nobr>бест-практики</nobr>, предписанные кодстайлом. Боль.
 
 Настроив систему сборки и/или сам линтер так, чтобы ошибки общего форматирования и&nbsp;сортировки не&nbsp;препятствовали обновлению локального сервера (к&nbsp;примеру, за&nbsp;счёт смены отображения ошибок в&nbsp;правилах на&nbsp;предупреждения), вы&nbsp;снизите боль, но&nbsp;не&nbsp;уберёте её полностью. Ведь большинство разработчиков, которые имеют хоть <nobr>какой-то</nobr> опыт работы на&nbsp;проектах с&nbsp;линтерами, пользуются плагинами для своих текстовых редакторов/IDE, чтобы ошибки и&nbsp;предупреждения линтеров подсвечивались в&nbsp;коде. Все эти подчёркивания и&nbsp;всплывающие попапы знатно мозолят глаза и&nbsp;прилично отвлекают от&nbsp;основной задачи&nbsp;&mdash; написания кода. Слёз перфекционистов вообще не&nbsp;счесть.
 
@@ -259,7 +261,7 @@ npm install stylelint-order --save-dev
 ### Автоматизация запуска линтера
 Как уже упоминалось выше, есть как минимум три способа запуска линтера, обеспечивающие автоматизацию процесса проверки.
 
-Первый&nbsp;&mdash; запуск линтера в&nbsp;момент сохранения файлов. Этого можно достичь за&nbsp;счёт настройки вашей системы сборки ([так&nbsp;&mdash; для webpack](https://github.com/webpack-contrib/stylelint-webpack-plugin#stylelint-webpack-plugin){:target="_blank"} и&nbsp;[вот так&nbsp;&mdash; для gulp](https://github.com/olegskl/gulp-stylelint#gulp-stylelint){:target="_blank"}). Лично мне не&nbsp;нравится этот подход по&nbsp;ряду причин:
+Первый&nbsp;&mdash; запуск линтера в&nbsp;момент сохранения файлов. Этого можно достичь за&nbsp;счёт настройки вашей системы сборки ([так&nbsp;&mdash; для webpack](https://github.com/webpack-contrib/stylelint-webpack-plugin#stylelint-webpack-plugin) и&nbsp;[вот так&nbsp;&mdash; для gulp](https://github.com/olegskl/gulp-stylelint#gulp-stylelint)). Лично мне не&nbsp;нравится этот подход по&nbsp;ряду причин:
 + из-за сортировок код перемешивается прямо у&nbsp;вас на&nbsp;глазах, что вызывает дискомфорт, <nobr>т.к.</nobr> теряется положение курсора на&nbsp;последнем месте изменения в&nbsp;редакторе, а&nbsp;также нарушается порядок действий для `cmd/ctrl + z` команды;
 + повышается задержка между сохранением файла и&nbsp;реальным отображением правок в&nbsp;браузере (hot reload), а&nbsp;ведь сохранений в&nbsp;течение рабочего дня может быть ОЧЕНЬ много;
 + нет гарантий того, что код с&nbsp;ошибками не&nbsp;попадёт в&nbsp;репозиторий.
@@ -272,14 +274,14 @@ npm install stylelint-order --save-dev
 
 Именно реализацию такого подхода мы&nbsp;и&nbsp;рассмотрим далее. Заключается она в&nbsp;использовании прекоммит хука, запускающего проверку линтера (с&nbsp;расширенным конфигом и&nbsp;флагом <span class="no-wrap">`--fix`</span>) с&nbsp;помощью husky и&nbsp;<nobr>lint-staged</nobr>.
 
-Третий способ заключается в&nbsp;использовании [CI (Continuous integration)](https://en.wikipedia.org/wiki/Continuous_integration){:target="_blank"}, проверка линтером в&nbsp;таком случае может быть проведена автоматически для каждого отдельного Pull/Merge Request. Такой подход обеспечивает чистоту и&nbsp;порядок в&nbsp;стабильной ветке проекта без необходимости запуска проверки для каждого отдельного коммита в&nbsp;<nobr>feature-ветках</nobr>.
+Третий способ заключается в&nbsp;использовании [CI (Continuous integration)](https://en.wikipedia.org/wiki/Continuous_integration), проверка линтером в&nbsp;таком случае может быть проведена автоматически для каждого отдельного Pull/Merge Request. Такой подход обеспечивает чистоту и&nbsp;порядок в&nbsp;стабильной ветке проекта без необходимости запуска проверки для каждого отдельного коммита в&nbsp;<nobr>feature-ветках</nobr>.
 
 ### husky + lint-staged + prettier = ❤️❤️❤️
-[husky](https://github.com/typicode/husky#husky){:target="_blank"}&nbsp;&mdash; инструмент, позволяющий использовать различные гит хуки, в&nbsp;том числе и&nbsp;прекоммит хук.
+[husky](https://github.com/typicode/husky#husky)&nbsp;&mdash; инструмент, позволяющий использовать различные гит хуки, в&nbsp;том числе и&nbsp;прекоммит хук.
 
-[lint-staged](https://github.com/okonet/lint-staged#-lint-staged----){:target="_blank"}&nbsp;&mdash; позволяет запускать линтер только для тех файлов, которые находятся в&nbsp;[«staged»](https://githowto.com/staging_changes){:target="_blank"} состоянии, а&nbsp;не&nbsp;прогонять проверку всего проекта целиком.
+[lint-staged](https://github.com/okonet/lint-staged#-lint-staged----)&nbsp;&mdash; позволяет запускать линтер только для тех файлов, которые находятся в&nbsp;[«staged»](https://githowto.com/staging_changes) состоянии, а&nbsp;не&nbsp;прогонять проверку всего проекта целиком.
 
-[prettier](https://github.com/prettier/prettier#opinionated-code-formatter){:target="_blank"}&nbsp;&mdash; форматтер кода, который будет отвечать за&nbsp;следование правилам общего форматирования (о&nbsp;них шла речь во&nbsp;второй части статьи) нашего кодстайла.
+[prettier](https://github.com/prettier/prettier#opinionated-code-formatter)&nbsp;&mdash; форматтер кода, который будет отвечать за&nbsp;следование правилам общего форматирования (о&nbsp;них шла речь во&nbsp;второй части статьи) нашего кодстайла.
 
 Перейдём к&nbsp;настройке этих инструментов для работы в&nbsp;связке. Первым делом установим зависимости:
 ```zsh
@@ -315,7 +317,7 @@ npm install prettier husky lint-staged stylelint-order stylelint-config-prettier
 }
 ```
 
-Для того, чтобы переопределить [дефолтные настройки prettier](https://prettier.io/docs/en/options.html){:target="_blank"}, можно создать `.prettierrc` файл в&nbsp;корне вашего проекта. Выглядеть он&nbsp;может, к&nbsp;примеру, так:
+Для того, чтобы переопределить [дефолтные настройки prettier](https://prettier.io/docs/en/options.html), можно создать `.prettierrc` файл в&nbsp;корне вашего проекта. Выглядеть он&nbsp;может, к&nbsp;примеру, так:
 ```json
 {
   "singleQuote": true,
@@ -429,8 +431,8 @@ npm install prettier husky lint-staged stylelint-order stylelint-config-prettier
 ## Заключение
 С&nbsp;каждым днем stylelint становится всё мощнее, дополняясь новыми правилами и&nbsp;возможностями для автоматических исправлений. Так что если вы&nbsp;ещё не&nbsp;используете данный инструмент, я&nbsp;очень надеюсь, что после прочтения этой статьи вы&nbsp;хотя&nbsp;бы попробуете внедрить его на&nbsp;свои проекты. Также некоторые подходы, описанные в&nbsp;статье, применимы к&nbsp;линтингу не&nbsp;только стилевых файлов, но&nbsp;и, к&nbsp;примеру, JSX файлов, но&nbsp;это уже совсем другая история&hellip;
 
-Для тех&nbsp;же из&nbsp;вас, кто захочет поучаствовать в&nbsp;разработке новых или улучшении уже существующих фич, разработчики stylelint подготовили [хороший гайд](https://github.com/stylelint/stylelint/blob/master/docs/developer-guide/rules.md#working-on-rules){:target="_blank"}.
+Для тех&nbsp;же из&nbsp;вас, кто захочет поучаствовать в&nbsp;разработке новых или улучшении уже существующих фич, разработчики stylelint подготовили [хороший гайд](https://github.com/stylelint/stylelint/blob/master/docs/developer-guide/rules.md#working-on-rules).
 
-Конфиги линтера, которые используются в&nbsp;моей команде, вы&nbsp;можете [найти тут](https://github.com/v1z/linters-example){:target="_blank"}.
+Конфиги линтера, которые используются в&nbsp;моей команде, вы&nbsp;можете [найти тут](https://github.com/v1z/linters-example).
 
 Спасибо за внимание!

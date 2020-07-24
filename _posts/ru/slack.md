@@ -1,8 +1,8 @@
 ---
 title: 'Slack&#58; CSSSR edition'
 coverImageAlt: 'alt me'
-date: '2015-03-12 18:10:00'
 author: 'Елизавета Яновская'
+date: '2015-03-12T15:10:00.000Z'
 tag: 'Management'
 ---
 
