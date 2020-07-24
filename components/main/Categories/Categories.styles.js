@@ -34,6 +34,13 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
     text-transform: uppercase;
     color: #0076ff;
     white-space: nowrap;
+    transition: color 150ms ease-in-out;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #0254d8;
+      }
+    }
   }
 
   ${desktop.all} {

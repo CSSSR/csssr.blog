@@ -35,6 +35,7 @@ const Post = ({ post, language, className }) => {
         tag={post.tag}
         date={post.date}
         author={post.author}
+        language={language}
       />
 
       <Body content={post.content} slug={post.slug} images={post.images} />

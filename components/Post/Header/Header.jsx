@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import Link from 'next/link'
 import { string, array } from 'prop-types'
 import { Grid } from '../../Grid'
 import { Heading } from '@csssr/core-design'
@@ -8,7 +9,7 @@ import DateFormatter from '../../DateFormatter'
 import styles from './Header.styles'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
-const Header = ({ className, title, author, tag, date, coverImage, alt }) => {
+const Header = ({ className, title, author, tag, date, coverImage, alt, language }) => {
   return (
     <Grid as="header" className={className}>
       <div className="post-meta">
@@ -16,7 +17,9 @@ const Header = ({ className, title, author, tag, date, coverImage, alt }) => {
 
         <DateFormatter className="date">{date}</DateFormatter>
 
-        <a className="tag">{tag}</a>
+        <Link href={`/${language}/category/${tag.toLowerCase()}/page/1`}>
+          <a className="tag">{tag}</a>
+        </Link>
       </div>
 
       <Heading
@@ -39,6 +42,7 @@ Header.propTypes = {
   date: string,
   coverImage: array,
   alt: string,
+  language: string,
 }
 
 export default styled(Header)`
