@@ -1,4 +1,4 @@
-export default [
+export const navItemsEn = [
   {
     id: 'services',
     title: 'SERVICES',
@@ -80,6 +80,72 @@ export default [
         id: 'tracker',
         title: 'TIME-TRACKING SOFTWARE',
         href: 'https://tracker.csssr.com',
+      },
+    ],
+  },
+]
+
+export const navItemsRu = [
+  {
+    id: 'services',
+    title: 'УСЛУГИ',
+    links: [
+      {
+        id: 'outsourcing',
+        title: 'ФРОНТЕНД АУТСОРСИНГ',
+        href: 'https://csssr.com/en/service/outsourcing-front-end',
+      },
+      {
+        id: 'mvp',
+        title: 'РАЗРАБОТКА MVP',
+        href: 'https://csssr.com/en/service/mvp-development',
+      },
+      {
+        id: 'backend',
+        title: 'БЭКЕНД И DEVOPS',
+        href: 'https://csssr.com/en/service/back-end-and-devops',
+      },
+    ],
+  },
+  {
+    id: 'industries',
+    title: 'ИНДУСТРИИ',
+    links: [
+      {
+        id: 'fintech',
+        title: 'ФИНТЕХ',
+        href: 'https://csssr.com/en/industry/fintech',
+      },
+      {
+        id: 'eCommerce',
+        title: 'E-COMMERCE',
+        href: 'https://csssr.com/en/industry/ecommerce',
+      },
+      {
+        id: 'information',
+        title: 'ИНФОРМАЦИОННЫЕ ТЕХНОЛОГИИ',
+        href: 'https://csssr.com/en/industry/information-technology',
+      },
+      {
+        id: 'mediaAndMarketing',
+        title: 'МЕДИА И МАРКЕТИНГ',
+        href: 'https://csssr.com/en/industry/media-and-marketing',
+      },
+    ],
+  },
+  {
+    id: 'howWeWork',
+    title: 'КАК МЫ РАБОТАЕМ',
+    links: [
+      {
+        id: 'technologies',
+        title: 'ТЕХНОЛОГИИ',
+        href: 'https://csssr.com/en/tech-stack',
+      },
+      {
+        id: 'processes',
+        title: 'ПРОЦЕССЫ',
+        href: 'https://csssr.com/en/way-of-work',
       },
     ],
   },
