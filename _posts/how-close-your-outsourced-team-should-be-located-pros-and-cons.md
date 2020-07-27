@@ -1,6 +1,6 @@
 ---
 title: 'How Close Your <i>Outsourced Team</i> Should Be Located? Pros and Cons'
-coverImageAlt: 'alt image'
+coverImageAlt: 'Working process'
 date: '2020-07-22T05:35:07.322Z'
 tag: 'Business'
 ---
@@ -52,7 +52,7 @@ The good news is that including the team "inside" your processes is not always n
 There's a security issue worths mentioned separately. We can assume that distributed teams definitely lose out when it comes to working on projects that require a high level of data access control. But in reality, it's a question of experience and the right tools: we've been working with banks and companies dealing with cybersecurity for many years and have learned to adjust to almost any requirements.
 
 <ParagraphWithImage imageName="laptop-work">
-  ### Project Completion
+  ## Project Completion
   <p>Any project comes to an end at some point and at that point one have to decide what to do with the people who no longer have assignments. Having an outsourced team is like an insurance against the necessity to fire or transfer employees to other departments. The costs of “shutting down” distributed teams or those in own office are lower — one doesn't have to think about abandoned workplaces, passes cancellation and empty spaces. This also applies to putting work on hold: for your in-house developers such standstill is often too much to bear and it is definitely expensive for you.</p>
 </ParagraphWithImage>
 
