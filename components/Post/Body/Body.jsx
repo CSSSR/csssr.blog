@@ -16,14 +16,14 @@ import Video from './Video'
 import Table from './Table'
 import List from './List'
 
-const Body = ({ content, className, slug, images }) =>
+const Body = ({ content, className, slug, images, language }) =>
   compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
         return (
           <Grid className={`post-body ${className}`}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
-            <Comments id={slug} />
+            <Comments id={slug} language={language} />
           </Grid>
         )
       }
