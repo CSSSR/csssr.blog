@@ -3,7 +3,7 @@ title: 'Формальная и интуитивная семантика язы
 coverImageAlt: 'Как писать понятный код'
 author: 'Артём Арутюнян'
 date: '2019-05-26T00:00:00.000Z'
-tag: 'Web-development'
+tag: 'web-development'
 ---
 
 **Э**та статья — расширенная версия <a href="https://youtu.be/rVFW009olAI" target="_blank">доклада</a> на PiterJS tour#1.

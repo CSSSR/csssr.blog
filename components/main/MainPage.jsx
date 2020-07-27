@@ -22,34 +22,9 @@ const meta = {
   },
 }
 
-const MainPage = ({ posts, language, activeCategory }) => {
-  const categoriesMock = [
-    {
-      id: 'all',
-      title: 'All',
-    },
-    {
-      id: 'business',
-      title: 'Business',
-    },
-    {
-      id: 'management',
-      title: 'Management',
-    },
-    {
-      id: 'web-development',
-      title: 'Web development',
-    },
-    {
-      id: 'culture',
-      title: 'Culture',
-    },
-    // {
-    //   id: 'news',
-    //   title: '🔥 Новости',
-    // },
-  ]
+import categories from '../../data/categories'
 
+const MainPage = ({ posts, language, activeCategory }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(1)
 
@@ -70,7 +45,7 @@ const MainPage = ({ posts, language, activeCategory }) => {
       </Head>
       <Layout language={language}>
         <h1 className="visual-hidden">{meta[language].title}</h1>
-        <Categories items={categoriesMock} activeCategory={activeCategory} />
+        <Categories items={categories} language={language} activeCategory={activeCategory} />
 
         <Posts language={language} posts={posts} />
 

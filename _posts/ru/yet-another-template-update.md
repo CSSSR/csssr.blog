@@ -2,7 +2,7 @@
 title: 'Обновление шаблона до v0.12'
 coverImageAlt: 'alt me'
 date: '2015-12-15T17:30:00.000Z:30:00'
-tag: 'Web-development'
+tag: 'web-development'
 ---
 
 **У**ра! Шаблон обновился!

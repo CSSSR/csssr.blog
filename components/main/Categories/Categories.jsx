@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import styles from './Categories.styles'
 import ActiveLine from './ActiveLine'
 
-const Categories = ({ className, items, activeCategory }) => {
+const Categories = ({ className, items, activeCategory, language }) => {
   const [activeWidth, setActiveWidth] = useState(0)
   const [activeLeft, setActiveLeft] = useState(0)
   const activeItemRef = createRef(null)
@@ -13,8 +13,11 @@ const Categories = ({ className, items, activeCategory }) => {
   useEffect(() => {
     if (activeItemRef && activeItemRef.current) {
       const { offsetWidth, offsetLeft } = activeItemRef.current
-      setActiveWidth(offsetWidth)
-      setActiveLeft(offsetLeft)
+      // TODO: Временно решение возможно анимация изменится
+      setTimeout(() => {
+        setActiveWidth(offsetWidth)
+        setActiveLeft(offsetLeft)
+      }, 0)
     }
   }, [activeItemRef])
 
@@ -27,7 +30,7 @@ const Categories = ({ className, items, activeCategory }) => {
               <Link href={`/en/category/${id.toLowerCase()}/page/1`}>
                 <a
                   className={cn('link', { _active: id === activeCategory })}
-                  dangerouslySetInnerHTML={{ __html: title }}
+                  dangerouslySetInnerHTML={{ __html: title[language] }}
                   ref={id === activeCategory ? activeItemRef : null}
                 />
               </Link>

@@ -3,7 +3,7 @@ title: 'Slack&#58; CSSSR edition'
 coverImageAlt: 'alt me'
 author: 'Елизавета Яновская'
 date: '2015-03-12T15:10:00.000Z'
-tag: 'Management'
+tag: 'management'
 ---
 
 ![EYanovskaya](/images/eyanovskaya.png)

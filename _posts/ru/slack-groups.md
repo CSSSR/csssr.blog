@@ -2,7 +2,7 @@
 title: 'Группы в Slack'
 date: '2016-02-18T16:01:00.000Z'
 coverImageAlt: 'Лайфхаки о способах обращения сразу к нескольким пользователям в Slack'
-tag: 'Management'
+tag: 'management'
 ---
 
 ![image](/images/slack-groups/slack.png)

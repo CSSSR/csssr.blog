@@ -2,7 +2,7 @@
 title: '<i>Augmented & Virtual Reality</i> to Shape the Future of Web Development'
 coverImageAlt: 'alt me'
 date: '2020-02-06T05:35:07.322Z'
-tag: 'Web-development'
+tag: 'web-development'
 ---
 
 **In** this digital era, a website comprising various UI/UX elements and features can reveal the ocean of opportunities and become even more effective and engaging. UI/UX  components and technologies not only make a website lookgreat but also secure the brand’s marketing goals.
