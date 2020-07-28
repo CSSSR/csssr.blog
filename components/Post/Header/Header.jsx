@@ -20,7 +20,10 @@ const Header = ({ className, title, author, tag, date, coverImage, alt, language
           {date}
         </DateFormatter>
 
-        <Link href={`/${language}/category/${tag.toLowerCase()}/page/1`}>
+        <Link
+          href="/[language]/category/[category]/page/[page]"
+          as={`/${language}/category/${tag.toLowerCase()}/page/1`}
+        >
           <a className="tag">{getPostCategoryLocale(tag, language)}</a>
         </Link>
       </div>

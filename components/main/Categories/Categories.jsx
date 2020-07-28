@@ -27,7 +27,10 @@ const Categories = ({ className, items, activeCategory, language }) => {
         <ul className="items">
           {items.map(({ id, title }) => (
             <li key={id} className="item">
-              <Link href={`/en/category/${id.toLowerCase()}/page/1`}>
+              <Link
+                href="/[language]/category/[category]/page/[page]"
+                as={`/en/category/${id.toLowerCase()}/page/1`}
+              >
                 <a
                   className={cn('link', { _active: id === activeCategory })}
                   dangerouslySetInnerHTML={{ __html: title[language] }}
