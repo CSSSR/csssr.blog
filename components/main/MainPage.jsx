@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { string, arrayOf, shape, object } from 'prop-types'
 import Head from 'next/head'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
 
@@ -83,6 +84,19 @@ const MainPage = ({ posts, language, activeCategory }) => {
       </Layout>
     </>
   )
+}
+
+Posts.propTypes = {
+  allPosts: arrayOf(
+    shape({
+      title: string,
+      coverImageAlt: string,
+      images: object,
+      slug: string,
+      date: string,
+      tag: string,
+    }),
+  ),
 }
 
 export default MainPage

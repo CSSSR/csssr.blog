@@ -15,7 +15,14 @@ const PostCard = ({ className, language, post, size }) => {
     <li className={className}>
       <Link as={`/${language}/article/${post.slug}`} href={`/${language}/article/[slug]`}>
         <a>
-          <Picture sources={imgCover} alt={post.coverImageAlt} />
+          <Picture
+            className={cn('picture', {
+              picture_size_m: size === 'm',
+              picture_size_s: size === 's',
+            })}
+            sources={imgCover}
+            alt={post.coverImageAlt}
+          />
 
           <h2
             className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}
@@ -46,9 +53,10 @@ PostCard.propTypes = {
     ogImage: shape({
       url: string,
     }),
+    tag: string,
+    slug: string,
   }),
   size: oneOf(['m', 's']),
-  side: oneOf(['l', 'r']),
 }
 
 export default styled(PostCard)`
