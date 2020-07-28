@@ -18,7 +18,12 @@ export default function Layout({ children, language }) {
       <main id="main" className="main">
         {children}
       </main>
-      <Footer className="footer" nav={nav} languageLink={{ href: '/ru', text: 'ru' }} />
+      <Footer
+        className="footer"
+        nav={nav}
+        languageLink={{ href: '/ru', text: 'ru' }}
+        email="launch@csssr.com"
+      />
 
       <Global styles={styles} />
     </>
