@@ -7,7 +7,7 @@ import Posts from './Posts'
 import Layout from '../Layout'
 import Categories from './Categories'
 
-import myImageData from '../../public/posts/en/offshore-web-development/mainCoverM/desktop.m.png'
+import myImageData from '../../public/posts/en/offshore-web-development/mainCoverL/desktop.m.png'
 import Pagination from './Pagination/Pagination'
 
 const meta = {
