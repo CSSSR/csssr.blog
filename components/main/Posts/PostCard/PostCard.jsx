@@ -14,7 +14,7 @@ const PostCard = ({ className, language, post, size }) => {
 
   return (
     <li className={className}>
-      <Link as={`/${language}/article/${post.slug}`} href={`/${language}/article/[slug]`}>
+      <Link href="/[language]/article/[slug]" as={`/${language}/article/${post.slug}`}>
         <a>
           <Picture
             className={cn('picture', {
@@ -38,7 +38,10 @@ const PostCard = ({ className, language, post, size }) => {
         {post.date}
       </DateFormatter>
 
-      <Link href={`/${language}/category/${post.tag.toLowerCase()}/page/1`}>
+      <Link
+        href="/[language]/category/[category]/page/[page]"
+        as={`/${language}/category/${post.tag.toLowerCase()}/page/1`}
+      >
         <a className="tag">{getPostCategoryLocale(post.tag, language)}</a>
       </Link>
     </li>
