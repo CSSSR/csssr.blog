@@ -31,7 +31,7 @@ const Posts = ({ language, posts, className }) => {
         }
 
         const orderInGroupOfFour = memo.length % 4
-        const size = orderInGroupOfFour === 0 || orderInGroupOfFour === 3 ? 'm' : 's'
+        const size = orderInGroupOfFour === 0 || orderInGroupOfFour === 3 ? 'l' : 's'
         const side = orderInGroupOfFour === 0 || orderInGroupOfFour === 2 ? 'l' : 'r'
 
         return [

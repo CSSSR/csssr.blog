@@ -9,7 +9,7 @@ import cleaningTitle from '../../../../utils/client/cleaningTitle'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
 const PostCard = ({ className, language, post, size }) => {
-  const imgCover = size === 'm' ? post.images.mainCoverM : post.images.mainCoverS
+  const imgCover = size === 'l' ? post.images.mainCoverL : post.images.mainCoverS
 
   return (
     <li className={className}>
@@ -18,7 +18,7 @@ const PostCard = ({ className, language, post, size }) => {
           <Picture sources={imgCover} alt={post.coverImageAlt} />
 
           <h2
-            className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}
+            className={cn('title', { title_size_m: size === 'l', title_size_s: size === 's' })}
             dangerouslySetInnerHTML={{ __html: cleaningTitle(post.title) }}
           />
         </a>
@@ -47,7 +47,7 @@ PostCard.propTypes = {
       url: string,
     }),
   }),
-  size: oneOf(['m', 's']),
+  size: oneOf(['l', 's']),
   side: oneOf(['l', 'r']),
 }
 

@@ -23,7 +23,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     color: ${colors.secondary.darken100};
     margin-bottom: ${calcRem(15)};
 
-    &_size_m {
+    &_size_l {
       font-size: 32px;
       line-height: 40px;
     }
@@ -85,7 +85,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${desktop.all} {
-    &:nth-child(n + 3) {
+    &:nth-of-type(n + 3) {
       margin-top: 75px;
     }
 
@@ -95,7 +95,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${tablet.all} {
-    &:nth-child(n + 3) {
+    &:nth-of-type(n + 3) {
       margin-top: ${calcRem(60)};
     }
 
@@ -120,8 +120,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
 const dynamic = ({ breakpoints: { mobile }, size, side }) => {
   return css`
-    grid-column-end: ${size === 'm' ? 'span 7' : 'span 3'};
-    grid-column-start: ${side === 'r' ? size === 'm' ? 5 : 9 : 2};
+    grid-column-end: ${size === 'l' ? 'span 7' : 'span 3'};
+    grid-column-start: ${side === 'r' ? size === 'l' ? 5 : 9 : 2};
 
     ${mobile.all} {
       grid-column: 1 / span 6;
