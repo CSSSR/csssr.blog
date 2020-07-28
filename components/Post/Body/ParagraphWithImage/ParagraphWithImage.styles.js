@@ -73,6 +73,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-right: ${calcRem(8)};
     }
 
+    .heading_regular_m + .text_regular_m.paragraph {
+      margin-top: ${calcRem(15)};
+    }
+
     .heading_regular_s + .text_regular_m {
       margin-top: ${calcRem(15)};
     }

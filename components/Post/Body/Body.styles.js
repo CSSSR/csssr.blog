@@ -239,6 +239,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .line-numbers {
       margin-top: 3.125rem !important;
     }
+
+    .how-close-br {
+      display: none;
+    }
   }
 `
 
