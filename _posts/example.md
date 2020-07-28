@@ -14,6 +14,315 @@ tag: 'Web-development'
 
 **In**this digital era, a **website** comprising various UI/UX elements and features can reveal the ocean of opportunities and become even more effective and engaging. UI/UX  components and technologies not only make a website look great but also secure the brand’s marketing goals.
 
+<Table>
+  <thead>
+    <tr>
+      <th />
+      <th>Команда в вашем офисе</th>
+      <th>Команда в своем офисе</th>
+      <th>Распределенная команда</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th colspan="4" data-text="Цель">Цель</th>
+    </tr>
+    <tr>
+      <th>«Скорая помощь» проекту</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Поддержка разработки или новый функционал</th>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th>Старт разработки</th>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th colspan="4" data-text="Квалификация специалистов">Квалификация специалистов</th>
+    </tr>
+    <tr>
+      <th>Типовые работники</th>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th>Уникальные работники</th>
+      <td>--</td>
+      <td>-</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th colspan="4" data-text="Процессы">Процессы</th>
+    </tr>
+    <tr>
+      <th>Строгий контроль</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Четкие процессы</th>
+      <td>+</td>
+      <td>+</td>
+      <td>++</td>
+    </tr>
+    <tr>
+      <th>Документация</th>
+      <td>+</td>
+      <td>++</td>
+      <td>++</td>
+    </tr>
+    <tr>
+      <th>Приоритет личному общению</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Приоритет общению в мессенджерах</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Требования службы безопасности</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th colspan="4" data-text="Другое">Другое</th>
+    </tr>
+    <tr>
+      <th>Завершение проекта</th>
+      <td>-</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th>Низкая стоимость</th>
+      <td>--</td>
+      <td>-</td>
+      <td>++</td>
+    </tr>
+  </tbody>
+</Table>
+
+<Table color='green'>
+  <thead>
+    <tr>
+      <th />
+      <th>Команда в вашем офисе</th>
+      <th>Команда в своем офисе</th>
+      <th>Распределенная команда</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th colspan="4" data-text="Цель">Цель</th>
+    </tr>
+    <tr>
+      <th>«Скорая помощь» проекту</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Поддержка разработки или новый функционал</th>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th>Старт разработки</th>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th colspan="4" data-text="Квалификация специалистов">Квалификация специалистов</th>
+    </tr>
+    <tr>
+      <th>Типовые работники</th>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th>Уникальные работники</th>
+      <td>--</td>
+      <td>-</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th colspan="4" data-text="Процессы">Процессы</th>
+    </tr>
+    <tr>
+      <th>Строгий контроль</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Четкие процессы</th>
+      <td>+</td>
+      <td>+</td>
+      <td>++</td>
+    </tr>
+    <tr>
+      <th>Документация</th>
+      <td>+</td>
+      <td>++</td>
+      <td>++</td>
+    </tr>
+    <tr>
+      <th>Приоритет личному общению</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Приоритет общению в мессенджерах</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Требования службы безопасности</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th colspan="4" data-text="Другое">Другое</th>
+    </tr>
+    <tr>
+      <th>Завершение проекта</th>
+      <td>-</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th>Низкая стоимость</th>
+      <td>--</td>
+      <td>-</td>
+      <td>++</td>
+    </tr>
+  </tbody>
+</Table>
+
+<Table color='purple' withBorders>
+  <thead>
+    <tr>
+      <th />
+      <th>Команда в вашем офисе</th>
+      <th>Команда в своем офисе</th>
+      <th>Распределенная команда</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th colspan="4" data-text="Цель">Цель</th>
+    </tr>
+    <tr>
+      <th>«Скорая помощь» проекту</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Поддержка разработки или новый функционал</th>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th>Старт разработки</th>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th colspan="4" data-text="Квалификация специалистов">Квалификация специалистов</th>
+    </tr>
+    <tr>
+      <th>Типовые работники</th>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th>Уникальные работники</th>
+      <td>--</td>
+      <td>-</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th colspan="4" data-text="Процессы">Процессы</th>
+    </tr>
+    <tr>
+      <th>Строгий контроль</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Четкие процессы</th>
+      <td>+</td>
+      <td>+</td>
+      <td>++</td>
+    </tr>
+    <tr>
+      <th>Документация</th>
+      <td>+</td>
+      <td>++</td>
+      <td>++</td>
+    </tr>
+    <tr>
+      <th>Приоритет личному общению</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Приоритет общению в мессенджерах</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>Требования службы безопасности</th>
+      <td>++</td>
+      <td>+</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th colspan="4" data-text="Другое">Другое</th>
+    </tr>
+    <tr>
+      <th>Завершение проекта</th>
+      <td>-</td>
+      <td>+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th>Низкая стоимость</th>
+      <td>--</td>
+      <td>-</td>
+      <td>++</td>
+    </tr>
+  </tbody>
+</Table>
+
 **c**omprising various UI/UX elements and features can reveal the ocean of opportunities and become even more effective and engaging. UI/UX  components and technologies not only make a website look great but also secure the brand’s marketing goals.
 
 <Note id='note'>
