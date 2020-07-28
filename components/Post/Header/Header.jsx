@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
-import { string, array } from 'prop-types'
+import { string, arrayOf, object } from 'prop-types'
 import { Grid } from '../../Grid'
 import { Heading } from '@csssr/core-design'
 import DateFormatter from '../../DateFormatter'
@@ -40,7 +40,7 @@ Header.propTypes = {
   author: string,
   tag: string,
   date: string,
-  coverImage: array,
+  coverImage: arrayOf(object),
   alt: string,
   language: string,
 }

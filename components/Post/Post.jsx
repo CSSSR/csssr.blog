@@ -1,4 +1,4 @@
-import { string, object } from 'prop-types'
+import { string, object, shape } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Post.styles'
 import Head from 'next/head'
@@ -45,7 +45,15 @@ const Post = ({ post, language, className }) => {
 
 Post.propTypes = {
   className: string,
-  post: object,
+  post: shape({
+    content: string,
+    title: string,
+    coverImageAlt: string,
+    images: object,
+    slug: string,
+    date: string,
+    tag: string,
+  }),
 }
 
 export default styled(Post)`
