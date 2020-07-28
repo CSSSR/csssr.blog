@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import cn from 'classnames'
@@ -53,11 +54,17 @@ const ErrorPage = ({ className }) => {
     )
   }
 
+  const text404 = isLanguageRu ? 'Страница не найдена' : 'Not found'
+
   return (
-    <Fragment>
+    <>
       <Global styles={globalStyles} />
 
       <Meta />
+
+      <Head>
+        <title>{text404}</title>
+      </Head>
 
       <Grid as="header" className={className}>
         <a className="logo" href="https://csssr.com/en">
@@ -66,7 +73,7 @@ const ErrorPage = ({ className }) => {
       </Grid>
 
       <Grid as="main" className={cn(className, `error-code_404`)}>
-        <h1 className="font_h1-slab">{isLanguageRu ? 'Страница не найдена' : 'Not found'}</h1>
+        <h1 className="font_h1-slab">{text404}</h1>
 
         <PictureSmart
           className="picture"
@@ -89,7 +96,7 @@ const ErrorPage = ({ className }) => {
           <div className="navList">{dynamicNavItems.map((items) => renderNav({ items }))}</div>
         </Fragment>
       </Grid>
-    </Fragment>
+    </>
   )
 }
 
