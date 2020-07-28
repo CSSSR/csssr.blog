@@ -3,7 +3,7 @@ title: 'Я менеджер, если...'
 coverImageAlt: 'alt me'
 author: 'Елизавета Яновская'
 date: '2015-03-05T11:55:00.000Z'
-tag: 'Management'
+tag: 'management'
 ---
 
 **М**еня зовут Елизавета, и я менеджер в CSSSR.

@@ -2,7 +2,7 @@
 title: 'Split-Stack Web Development: Some <i>Advantages</i> of&nbsp;Separating <span style="white-space:nowrap">Front-end</span> from <span style="white-space:nowrap">Back-end</span>'
 coverImageAlt: 'alt me'
 date: '2019-11-01T05:35:07.322Z'
-tag: 'Business'
+tag: 'business'
 ---
 
 **W**ebsite (or&nbsp;web application) development strategies have been evolving continuously over the past decade. Today, web development companies fall into two broad groups&nbsp;– full-stack agencies and specialized, or&nbsp;niche, agencies. The first category, still dominating the Asian market, consists of&nbsp;full-service agencies used to&nbsp;offer a&nbsp;wide range of&nbsp;services (from back-end and design, to&nbsp;front-end development and&nbsp;QA), while specialized agencies are offering a&nbsp;limited range of&nbsp;services focusing on&nbsp;specific kind of&nbsp;works. Nowadays, it&nbsp;is&nbsp;a&nbsp;common practice worldwide to&nbsp;divide the development process into two parts. There are several reasons behind&nbsp;it, however, the key question is&nbsp;whether it&nbsp;is&nbsp;a&nbsp;good idea to&nbsp;have front-end part separated for a&nbsp;product.

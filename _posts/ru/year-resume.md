@@ -3,7 +3,7 @@ title: 'Итоги 2016 года от CSSSR'
 author: 'Максим'
 date: '2016-12-26T00:00:00.000Z'
 coverImageAlt: 'Описание изображения'
-tag: 'Web-development'
+tag: 'web-development'
 ---
 
 **В**сем привет! Меня зовут Максим, и я работаю верстальщиком в CSSSR.

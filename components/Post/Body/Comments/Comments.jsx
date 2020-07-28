@@ -24,7 +24,7 @@ const removeScript = (id, parentElement) => {
   }
 }
 
-const Comments = ({ id, className }) => {
+const Comments = ({ id, className, language }) => {
   useEffect(() => {
     if (!window) {
       return
@@ -42,7 +42,7 @@ const Comments = ({ id, className }) => {
   return (
     <div className={className}>
       <Heading.H3 type="regular" size="l" className="title">
-        Comments
+        {language === 'ru' ? 'Комментарии' : 'Comments'}
       </Heading.H3>
 
       <div id="commento" />

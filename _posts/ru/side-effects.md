@@ -3,7 +3,7 @@ title: 'Осторожно! Возможны побочные эффекты'
 coverImageAlt: 'Разбираемся с тем, что такое сайд-эффекты и что они несут нашему коду'
 author: 'bracketsarrows'
 date: '2017-10-07T00:00:00.000Z'
-tag: 'Web-development'
+tag: 'web-development'
 ---
 <Subtitle>
   > Начинать нужно с того, что сеет сомнение.

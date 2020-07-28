@@ -2,7 +2,7 @@
 title: 'This is an <i>example</i> of components usage'
 coverImageAlt: 'Image description'
 date: '2019-03-16T05:35:07.322Z'
-tag: 'Web-development'
+tag: 'web-development'
 ---
 
 # Lorem Ipsum

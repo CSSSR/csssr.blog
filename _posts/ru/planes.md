@@ -3,7 +3,7 @@ title: 'Неудобства коллективной работы или поч
 coverImageAlt: 'alt me'
 author: 'Павел Азанов'
 date: '2015-03-14T10:30:00.000Z'
-tag: 'Management'
+tag: 'management'
 ---
 
 <Subtitle>

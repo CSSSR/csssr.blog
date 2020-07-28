@@ -38,7 +38,7 @@ const Post = ({ post, language, className }) => {
         language={language}
       />
 
-      <Body content={post.content} slug={post.slug} images={post.images} />
+      <Body content={post.content} slug={post.slug} images={post.images} language={language} />
     </article>
   )
 }

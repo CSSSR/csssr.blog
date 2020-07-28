@@ -3,7 +3,7 @@ title: 'Алгоритм чтения книг по программирован
 author: 'Boris Vanyushin'
 coverImageAlt: 'Описание изображения'
 date: '2016-10-11T00:00:00.000Z'
-tag: 'Culture'
+tag: 'culture'
 ---
 
 **В**сем привет.

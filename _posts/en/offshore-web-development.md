@@ -2,7 +2,7 @@
 title: '<i>Offshore Web Development:</i> Top Destinations For Singapore'
 coverImageAlt: 'alt me'
 date: '2020-03-16T05:35:07.322Z'
-tag: 'Business'
+tag: 'business'
 ---
 
 <style>
