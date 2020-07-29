@@ -4,13 +4,13 @@ export const nav = [
     title: 'Services',
     links: [
       {
-        id: 'outsourcing',
-        title: 'Outsourcing',
+        id: 'web-development',
+        title: 'Web Development',
         href: 'https://csssr.com/en/service/outsourcing-front-end',
       },
       {
-        id: 'express',
-        title: 'Express',
+        id: 'psd-to-html',
+        title: 'PSD to HTML',
         href: 'https://csssr.com/en/service/express-front-end',
       },
       {
@@ -73,8 +73,8 @@ export const nav = [
     ],
   },
   {
-    id: 'products',
-    title: 'Products',
+    id: 'solutions',
+    title: 'Solutions',
     links: [
       {
         id: 'lms',

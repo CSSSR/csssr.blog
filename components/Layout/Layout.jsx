@@ -9,6 +9,7 @@ import { links } from '../../data/headerLinks'
 export default function Layout({ children, language }) {
   const headerLinks = [...links]
   headerLinks[0].href = `/${language}`
+  const languageLink = language === 'ru' ? 'en' : 'ru'
 
   return (
     <>
@@ -18,7 +19,12 @@ export default function Layout({ children, language }) {
       <main id="main" className="main">
         {children}
       </main>
-      <Footer className="footer" nav={nav} languageLink={{ href: '/ru', text: 'ru' }} />
+      <Footer
+        className="footer"
+        nav={nav}
+        languageLink={{ href: `/${languageLink}`, text: languageLink }}
+        email="launch@csssr.com"
+      />
 
       <Global styles={styles} />
     </>
