@@ -2,7 +2,7 @@
 title: 'How Close Your <i>Outsourced Team</i> Should Be Located? Pros and Cons'
 coverImageAlt: 'Working process'
 date: '2020-07-28T05:35:07.322Z'
-tag: 'Business'
+tag: 'business'
 ---
 
 **T**hose days when you could seriously argue whether it's a bad or a good idea to bring outsourcers in your business are gone. Now the question is different: how to choose an outsourcing team so as to get maximum benefit and minimum risks.<br class="how-close-br" />
