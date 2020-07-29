@@ -105,9 +105,20 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       line-height: 20px;
     }
 
-    tbody th,
+    tbody th[colspan] {
+      padding: 0;
+    }
+
+    tbody th {
+      padding: 16px 16px 16px 10px;
+    }
+
     tbody td {
       padding: 16px;
+    }
+
+    & + p.paragraph {
+      margin-top: 50px;
     }
   }
 
@@ -145,17 +156,12 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       overflow-x: auto;
     }
 
-    &.with_borders {
-      tbody td {
-        text-align: left;
-      }
-    }
-
     thead th {
       padding-top: ${calcRem(16)};
       padding-right: ${calcRem(32)};
-      padding-left: ${calcRem(32)};
+      padding-left: ${calcRem(16)};
       padding-bottom: ${calcRem(16)};
+      vertical-align: middle;
     }
 
     tbody th {
@@ -184,6 +190,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       text-align: left;
     }
 
+    tbody th[colspan] {
+      position: sticky;
+    }
+
     th:first-child {
       position: sticky;
       background-color: white;
@@ -193,21 +203,19 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     }
 
     th:only-child {
-      left: 0;
-      display: block;
-      width: ${calcRem(220)};
+      position: static;
+      font-size: 0;
+      line-height: 0;
+      letter-spacing: 0;
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: ${calcRem(-1)};
-        left: 100%;
-        display: block;
+      &::before {
+        content: attr(data-text);
+        position: sticky;
+        left: ${calcRem(10)};
+        display: inline-block;
         height: 100%;
-        width: 100%;
-        border-top: ${calcRem(1)} solid #e2e7ef;
-        border-bottom: ${calcRem(1)} solid #e2e7ef;
-        background-color: inherit;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
       }
     }
   }

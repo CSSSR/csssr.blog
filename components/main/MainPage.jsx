@@ -41,6 +41,7 @@ const MainPage = ({ posts, language, activeCategory }) => {
         <meta name="description" content={meta[language].description} />
         <meta property="og:title" content={meta[language].title} />
         <meta property="og:description" content={meta[language].description} />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://blog.csssr.com/${language}`} />
         <meta property="og:image" content={getOriginal(myImageData)} />
       </Head>

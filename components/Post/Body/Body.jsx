@@ -83,7 +83,7 @@ const Body = ({ content, className, slug, images, language }) =>
       p: {
         component: Text,
         props: {
-          className: 'text_regular_m',
+          className: 'text_regular_m paragraph',
           type: 'regular',
           size: 'm',
         },

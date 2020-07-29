@@ -14,12 +14,14 @@ const Post = ({ post, language, className }) => {
       <Head>
         <title>{cleaningTitle(post.title)}</title>
         <meta name="description" content={getDescription(post.content)} />
-        <meta property="og:title" content={cleaningTitle(post.title)} />
-        <meta property="og:description" content={getDescription(post.content)} />
+        <meta property="og:type" content="article" />
+        <meta property="article:section" content={post.tag} />
         <meta
           property="og:url"
           content={`https://blog.csssr.com/${language}/article/${post.slug}`}
         />
+        <meta property="og:title" content={cleaningTitle(post.title)} />
+        <meta property="og:description" content={getDescription(post.content)} />
         <meta property="article:published_time" content={post.date} />
         {post.author && <meta property="article:author" content={post.author} />}
         <meta
