@@ -4,10 +4,11 @@ import getGtmId from '../utils/getGtmId'
 
 export default class MyDocument extends Document {
   render() {
-    const gtmId = getGtmId()
+    const language = this.props.dangerousAsPath.includes('ru') ? 'ru' : 'en'
+    const gtmId = getGtmId(language)
 
     return (
-      <Html lang={this.props.dangerousAsPath.includes('ru') ? 'ru' : 'en'}>
+      <Html lang={language}>
         <Head>
           <GtmScript gtmId={gtmId} />
         </Head>
