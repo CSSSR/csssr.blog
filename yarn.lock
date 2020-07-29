@@ -1155,10 +1155,10 @@
     react-reveal "^1.2.2"
     scroll-lock "^2.1.4"
 
-"@csssr/csssr-shared-header@1.0.54":
-  version "1.0.54"
-  resolved "https://npm.pkg.github.com/download/@csssr/csssr-shared-header/1.0.54/e2655520c3f69b20f67a46b8d5b00b4e4437f766dca8918251c4a440812e15d7#04a4de2266874c771e2fe1de1851b87e45791b26"
-  integrity sha512-5MgBC2X0VhsRflIx5pL9IbVdwwR//b/jHjxxZzemT3xBLIx+kKyjT6qfvZwdZnoawp44Vux2LfiUIvuWm8EaQw==
+"@csssr/csssr-shared-header@1.0.59":
+  version "1.0.59"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-shared-header/1.0.59/5509aa0569af72e72aa52b3cb8b239ee4ae56b72de24c08af2f9b4364c0b2a73#ef990efe35a39968bef921596e07b350e658ed45"
+  integrity sha512-zdzWLTgA2qKyqAF2fcQMLgXi0VzBY/qAEgyDPDxcvf4+Jbpx+YpkcbBtUOrXX+aoroKa++G9KEZgbM6S/77glg==
   dependencies:
     classnames "^2.2.6"
     color "^3.1.2"
