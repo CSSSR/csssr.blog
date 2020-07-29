@@ -29,7 +29,7 @@ const Categories = ({ className, items, activeCategory, language }) => {
             <li key={id} className="item">
               <Link
                 href="/[language]/category/[category]/page/[page]"
-                as={`/en/category/${id.toLowerCase()}/page/1`}
+                as={`/${language}/category/${id.toLowerCase()}/page/1`}
               >
                 <a
                   className={cn('link', { _active: id === activeCategory })}
