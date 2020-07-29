@@ -21,7 +21,7 @@ export default function Layout({ children, language }) {
       </main>
       <Footer
         className="footer"
-        nav={nav}
+        nav={nav[language]}
         languageLink={{ href: `/${languageLink}`, text: languageLink }}
         email="launch@csssr.com"
       />
