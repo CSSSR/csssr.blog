@@ -4,7 +4,6 @@ import { Text } from '@csssr/core-design'
 import styles from './Note.styles'
 
 const Note = (props) => {
-  console.log(props)
   const { children, className } = props
   if (children.length === 1)
     return (
