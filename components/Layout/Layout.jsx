@@ -17,7 +17,7 @@ function Layout({ children, router }) {
       <Meta />
 
       <ThemeProvider theme={theme}>
-        <Header pathname="blog" lng={lng} NextLink={Link} appRootElement={appRootElement} />
+        <Header pathname="podcasts" lng={lng} NextLink={Link} appRootElement={appRootElement} />
       </ThemeProvider>
 
       <PageContent>
