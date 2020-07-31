@@ -109,11 +109,11 @@ export const nav = {
   ru: [
     {
       id: 'services',
-      title: 'Услуги',
+      title: 'Сервисы',
       links: [
         {
           id: 'web-development',
-          title: 'Фронтенд аутсорсинг',
+          title: 'Aутсорсинг',
           href: 'https://csssr.com/ru/service/outsourcing-front-end',
         },
         {

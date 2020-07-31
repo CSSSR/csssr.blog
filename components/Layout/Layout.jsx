@@ -4,6 +4,7 @@ import styles from './Layout.styles'
 import { Header, Footer } from '@csssr/core-design'
 
 import { nav } from '../../data/footerLinks'
+import { actionPhrase, cookiesPolicyLink, privacyPolicyLink, addresses } from '../../data/footer'
 import { links } from '../../data/headerLinks'
 
 export default function Layout({ children, language }) {
@@ -24,6 +25,10 @@ export default function Layout({ children, language }) {
         nav={nav[language]}
         languageLink={{ href: `/${languageLink}`, text: languageLink }}
         email="launch@csssr.com"
+        actionPhrase={actionPhrase[language]}
+        cookiesPolicyLink={cookiesPolicyLink[language]}
+        privacyPolicyLink={language === 'en' && privacyPolicyLink[language]}
+        addresses={addresses[language]}
       />
 
       <Global styles={styles} />
