@@ -3,20 +3,27 @@ import Meta from '../Meta'
 import styles from './Layout.styles'
 import { Header, Footer } from '@csssr/core-design'
 
-import { nav } from '../../data/footerLinks'
-import { actionPhrase, cookiesPolicyLink, privacyPolicyLink, addresses } from '../../data/footer'
-import { links } from '../../data/headerLinks'
+import {
+  nav,
+  actionPhrase,
+  cookiesPolicyLink,
+  privacyPolicyLink,
+  addresses,
+} from '../../data/footerLinks'
+import { links /*menu*/ } from '../../data/headerLinks'
 
 export default function Layout({ children, language }) {
-  const headerLinks = [...links]
-  headerLinks[0].href = `/${language}`
   const languageLink = language === 'ru' ? 'en' : 'ru'
 
   return (
     <>
       <Meta />
 
-      <Header actionButton={{ isVisible: false }} links={headerLinks} />
+      <Header
+        actionButton={{ isVisible: false }}
+        // В этом месте падает не успел разобраться почему но данные все создал
+        links={links[language]} /*menu={menu[language]}*/
+      />
       <main id="main" className="main">
         {children}
       </main>
