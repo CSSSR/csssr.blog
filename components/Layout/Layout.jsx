@@ -10,7 +10,7 @@ import {
   privacyPolicyLink,
   addresses,
 } from '../../data/footerLinks'
-import { links /*menu*/ } from '../../data/headerLinks'
+import { links, menu } from '../../data/headerLinks'
 
 export default function Layout({ children, language }) {
   const languageLink = language === 'ru' ? 'en' : 'ru'
@@ -21,8 +21,8 @@ export default function Layout({ children, language }) {
 
       <Header
         actionButton={{ isVisible: false }}
-        // В этом месте падает не успел разобраться почему но данные все создал
-        links={links[language]} /*menu={menu[language]}*/
+        links={links[language]}
+        menu={{ links: menu[language] }}
       />
       <main id="main" className="main">
         {children}
