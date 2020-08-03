@@ -44,13 +44,13 @@ export const links = {
       component: Link,
     },
     {
-      href: 'https://csssr.com/en/jobs',
+      href: 'https://csssr.com/ru/jobs',
       title: 'Вакансии',
       testId: 'Header:link.careers',
       component: Link,
     },
     {
-      href: 'https://csssr.com/en/contacts',
+      href: 'https://csssr.com/ru/contacts',
       title: 'Контакты',
       testId: 'Header:link.contacts',
       component: Link,
