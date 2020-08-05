@@ -27,18 +27,28 @@ export async function getStaticProps({ params }) {
     'images',
   ])
 
-  const posts = postsByLanguage[language].filter((post, index) => {
+  const postsByLanguageAndCategory = postsByLanguage[language].filter((post) => {
+    if (params.category === 'all') {
+      return post
+    }
+
+    return post.tag.toLowerCase() === params.category
+  })
+
+  const postsByLanguageAndCategoryAndPage = postsByLanguageAndCategory.filter((post, index) => {
     const pageNumber = calculatePageNumberByPostIndex(index + 1)
 
-    if (params.category === 'all') return pageNumber === params.page
+    if (params.category === 'all') {
+      return pageNumber === params.page
+    }
 
-    return post.tag.toLowerCase() === params.category && pageNumber === params.page
+    return pageNumber === params.page
   })
 
   return {
     props: {
-      posts,
-      totalNumberOfPosts: postsByLanguage[language].length,
+      posts: postsByLanguageAndCategoryAndPage,
+      totalNumberOfPosts: postsByLanguageAndCategory.length,
       activeCategory: params.category,
       activePageNumber: Number(params.page),
       language,
@@ -47,38 +57,41 @@ export async function getStaticProps({ params }) {
 }
 export async function getStaticPaths() {
   const posts = await getPostsByLanguage(['tag'])
+  const paths = languages.reduce(
+    (memo, language) => [
+      ...memo,
+      ...posts[language]
+        .map((post, index) => {
+          const page = calculatePageNumberByPostIndex(index)
 
-  return {
-    paths: languages.reduce((memo, language) => {
-      return [
-        ...memo,
-        ...posts[language]
-          .map((post, index) => {
+          return {
+            params: {
+              language,
+              category: post.tag.toLowerCase(),
+              page,
+            },
+          }
+        })
+        .concat(
+          posts[language].map((post, index) => {
             const page = calculatePageNumberByPostIndex(index)
 
             return {
               params: {
                 language,
-                category: post.tag.toLowerCase(),
+                category: 'all',
                 page,
               },
             }
-          })
-          .concat(
-            posts[language].map((post, index) => {
-              const page = calculatePageNumberByPostIndex(index)
+          }),
+        )
+        .filter(({ params: { page } }) => page !== '1'),
+    ],
+    [],
+  )
 
-              return {
-                params: {
-                  language,
-                  category: 'all',
-                  page,
-                },
-              }
-            }),
-          ),
-      ]
-    }, []),
+  return {
+    paths,
     fallback: false,
   }
 }
