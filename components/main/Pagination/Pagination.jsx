@@ -8,7 +8,7 @@ import { Grid } from '@csssr/core-design'
 import PrevPageLink from './PrevPageLink'
 import NextPageLink from './NextPageLink'
 import { POSTS_PER_PAGE } from '../../../data/constants'
-import updatePageNumbers from '../../../utils/updatePageNumbers'
+import getPageNumbers from '../../../utils/getPageNumbers'
 
 const Pagination = ({
   className,
@@ -18,7 +18,7 @@ const Pagination = ({
   totalNumberOfPosts,
 }) => {
   const totalNumberOfPages = Math.ceil(totalNumberOfPosts / POSTS_PER_PAGE)
-  const pageNumbers = updatePageNumbers(activePageNumber, totalNumberOfPages)
+  const pageNumbers = getPageNumbers(activePageNumber, totalNumberOfPages)
 
   return (
     <Grid as="div" className={className}>

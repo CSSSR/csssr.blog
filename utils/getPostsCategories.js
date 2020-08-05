@@ -1,13 +1,13 @@
 export default (posts) =>
-  posts.reduce(
-    (memo, post) => {
-      const isCategoryAlreadyInMemo = memo.find((category) => category === post.tag.toLowerCase())
+  Object.keys(
+    posts.reduce(
+      (memo, post) => {
+        memo[post.tag.toLowerCase()] = true
 
-      if (isCategoryAlreadyInMemo) {
         return memo
-      }
-
-      return memo.concat(post.tag.toLowerCase())
-    },
-    ['all'],
+      },
+      {
+        all: true,
+      },
+    ),
   )

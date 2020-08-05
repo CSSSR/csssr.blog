@@ -45,7 +45,7 @@ export async function getStaticProps({ params }) {
     return post.tag.toLowerCase() === params.category
   })
   const postsByLanguageAndCategoryAndPage = postsByLanguageAndCategory.filter((post, index) => {
-    const pageNumber = calculatePageNumberByPostIndex(index + 1)
+    const pageNumber = calculatePageNumberByPostIndex(index)
 
     if (params.category === 'all') {
       return pageNumber === params.page

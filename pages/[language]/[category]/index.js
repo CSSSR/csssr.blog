@@ -3,6 +3,7 @@ import { getPostsByLanguage } from '../../../lib/api'
 import MainPage from '../../../components/main/MainPage'
 import languages from '../../../utils/languages'
 import getPostsCategories from '../../../utils/getPostsCategories'
+import { POSTS_PER_PAGE } from '../../../data/constants'
 
 const Index = ({ posts, categories, totalNumberOfPosts, activeCategory, language }) => (
   <MainPage
@@ -35,7 +36,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      posts: postsByLanguageAndCategory.slice(0, 8),
+      posts: postsByLanguageAndCategory.slice(0, POSTS_PER_PAGE),
       categories,
       totalNumberOfPosts: postsByLanguageAndCategory.length,
       activeCategory: params.category,
