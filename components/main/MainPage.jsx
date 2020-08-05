@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { string, arrayOf, shape, object } from 'prop-types'
+import React from 'react'
+import { string, number, arrayOf, shape, object } from 'prop-types'
 import Head from 'next/head'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
 
@@ -7,8 +7,9 @@ import Posts from './Posts'
 import Layout from '../Layout'
 import Categories from './Categories'
 
-import myImageData from '../../public/posts/en/offshore-web-development/mainCoverL/desktop.m.png'
 import Pagination from './Pagination/Pagination'
+import myImageData from '../../public/posts/en/offshore-web-development/mainCoverL/desktop.m.png'
+import categories from '../../data/categories'
 
 const meta = {
   en: {
@@ -23,47 +24,35 @@ const meta = {
   },
 }
 
-import categories from '../../data/categories'
+const MainPage = ({ posts, totalNumberOfPosts, activeCategory, activePageNumber, language }) => (
+  <>
+    <Head>
+      <title>{meta[language].title}</title>
+      <meta name="description" content={meta[language].description} />
+      <meta property="og:title" content={meta[language].title} />
+      <meta property="og:description" content={meta[language].description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={`https://blog.csssr.com/${language}`} />
+      <meta property="og:image" content={getOriginal(myImageData)} />
+    </Head>
+    <Layout language={language}>
+      <h1 className="visual-hidden">{meta[language].title}</h1>
+      <Categories items={categories} language={language} activeCategory={activeCategory} />
 
-const MainPage = ({ posts, language, activeCategory }) => {
-  const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(1)
+      <Posts language={language} posts={posts} />
 
-  // const indexOfLastPost = currentPage * postsPerPage
-  // const indexOfFirstPost = indexOfLastPost - postsPerPage
-  // const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+      <Pagination
+        language={language}
+        activeCategory={activeCategory}
+        activePageNumber={activePageNumber}
+        totalNumberOfPosts={totalNumberOfPosts}
+      />
+    </Layout>
+  </>
+)
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
-  return (
-    <>
-      <Head>
-        <title>{meta[language].title}</title>
-        <meta name="description" content={meta[language].description} />
-        <meta property="og:title" content={meta[language].title} />
-        <meta property="og:description" content={meta[language].description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://blog.csssr.com/${language}`} />
-        <meta property="og:image" content={getOriginal(myImageData)} />
-      </Head>
-      <Layout language={language}>
-        <h1 className="visual-hidden">{meta[language].title}</h1>
-        <Categories items={categories} language={language} activeCategory={activeCategory} />
-
-        <Posts language={language} posts={posts} />
-
-        <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
-          paginate={paginate}
-          currentPage={currentPage}
-        />
-      </Layout>
-    </>
-  )
-}
-
-Posts.propTypes = {
-  allPosts: arrayOf(
+MainPage.propTypes = {
+  posts: arrayOf(
     shape({
       title: string,
       coverImageAlt: string,
@@ -73,6 +62,10 @@ Posts.propTypes = {
       tag: string,
     }),
   ),
+  totalNumberOfPosts: number,
+  activeCategory: string,
+  activePageNumber: number,
+  language: string,
 }
 
 export default MainPage

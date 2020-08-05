@@ -8,33 +8,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     justify-content: center;
   }
 
-  .control-button {
-    width: ${calcRem(6)};
-    height: ${calcRem(12)};
-    border: none;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    cursor: pointer;
-  }
-
-  .prev {
-    margin-right: ${calcRem(28)};
-    background-image: url(${require('../../../public/components/pagination/leftArrow.svg').default});
-
-    &._disabled {
-      background-image: url(${require('../../../public/components/pagination/leftArrow_disabled.svg').default});
-    }
-  }
-
-  .next {
+  a:not(:first-of-type) {
     margin-left: ${calcRem(28)};
-    background-image: url(${require('../../../public/components/pagination/rightArrow.svg').default});
-
-    &._disabled {
-      background-image: url(${require('../../../public/components/pagination/rightArrow_disabled.svg').default});
-    }
   }
 
   .item {
@@ -43,21 +18,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     color: #000;
     cursor: pointer;
 
-    &:not(:last-of-type) {
-      margin-right: ${calcRem(28)};
-    }
-
-    &:not(.active):hover {
-      color: #0076FF;
-    }
-
     &.active {
       font-weight: normal;
       color: #0076FF;
-
-      &:hover {
-        color: #0254D8;
-      }
+      pointer-events: none;
     }
 
     &.dots {
@@ -82,6 +46,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${tablet.all} {
+    & {
+      margin-top: ${calcRem(71)};
+    }
+
     .item {
       font-size: ${calcRem(16)};
       line-height: ${calcRem(24)};
@@ -93,12 +61,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${mobile.all} {
+    & {
+      margin-top: ${calcRem(50)};
+    }
+
     .item {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
 
       &.active {
         font-size: 18px;
+      }
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .item {
+      &:hover {
+        color: #0076FF;
       }
     }
   }

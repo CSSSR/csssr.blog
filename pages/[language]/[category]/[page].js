@@ -1,11 +1,17 @@
-import { getPostsByLanguage } from '../../../../../lib/api'
-import MainPage from '../../../../../components/main/MainPage'
-import calculatePageByIndex from '../../../../../utils/calculatePageByIndex'
-import languages from '../../../../../utils/languages'
+import { getPostsByLanguage } from '../../../lib/api'
+import MainPage from '../../../components/main/MainPage'
+import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberByPostIndex'
+import languages from '../../../utils/languages'
 import React from 'react'
 
-const Index = ({ posts, activeCategory, language }) => (
-  <MainPage activeCategory={activeCategory} posts={posts} language={language} />
+const Index = ({ posts, totalNumberOfPosts, activeCategory, activePageNumber, language }) => (
+  <MainPage
+    posts={posts}
+    totalNumberOfPosts={totalNumberOfPosts}
+    activeCategory={activeCategory}
+    activePageNumber={activePageNumber}
+    language={language}
+  />
 )
 
 export default Index
@@ -22,18 +28,20 @@ export async function getStaticProps({ params }) {
   ])
 
   const posts = postsByLanguage[language].filter((post, index) => {
-    const page = calculatePageByIndex(index)
+    const pageNumber = calculatePageNumberByPostIndex(index + 1)
 
-    if (params.category === 'all') return page === params.page
+    if (params.category === 'all') return pageNumber === params.page
 
-    return post.tag.toLowerCase() === params.category && page === params.page
+    return post.tag.toLowerCase() === params.category && pageNumber === params.page
   })
 
   return {
     props: {
-      language,
-      activeCategory: params.category,
       posts,
+      totalNumberOfPosts: postsByLanguage[language].length,
+      activeCategory: params.category,
+      activePageNumber: Number(params.page),
+      language,
     },
   }
 }
@@ -46,7 +54,7 @@ export async function getStaticPaths() {
         ...memo,
         ...posts[language]
           .map((post, index) => {
-            const page = calculatePageByIndex(index)
+            const page = calculatePageNumberByPostIndex(index)
 
             return {
               params: {
@@ -58,7 +66,7 @@ export async function getStaticPaths() {
           })
           .concat(
             posts[language].map((post, index) => {
-              const page = calculatePageByIndex(index)
+              const page = calculatePageNumberByPostIndex(index)
 
               return {
                 params: {
