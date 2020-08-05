@@ -2,10 +2,12 @@ import React from 'react'
 import { getPostsByLanguage } from '../../lib/api'
 import MainPage from '../../components/main/MainPage'
 import languages from '../../utils/languages'
+import getPostsCategories from '../../utils/getPostsCategories'
 
-const Index = ({ posts, totalNumberOfPosts, language }) => (
+const Index = ({ posts, categories, totalNumberOfPosts, language }) => (
   <MainPage
     posts={posts}
+    categories={categories}
     totalNumberOfPosts={totalNumberOfPosts}
     activeCategory="all"
     activePageNumber={1}
@@ -25,12 +27,13 @@ export async function getStaticProps({ params }) {
     'tag',
     'images',
   ])
-
   const language = params.language
+  const categories = getPostsCategories(postsByLanguage[language])
 
   return {
     props: {
       posts: postsByLanguage[language].slice(0, 8),
+      categories,
       totalNumberOfPosts: postsByLanguage[language].length,
       language,
     },

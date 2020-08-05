@@ -9,7 +9,6 @@ import Categories from './Categories'
 
 import Pagination from './Pagination/Pagination'
 import myImageData from '../../public/posts/en/offshore-web-development/mainCoverL/desktop.m.png'
-import categories from '../../data/categories'
 
 const meta = {
   en: {
@@ -24,7 +23,14 @@ const meta = {
   },
 }
 
-const MainPage = ({ posts, totalNumberOfPosts, activeCategory, activePageNumber, language }) => (
+const MainPage = ({
+  posts,
+  categories,
+  totalNumberOfPosts,
+  activeCategory,
+  activePageNumber,
+  language,
+}) => (
   <>
     <Head>
       <title>{meta[language].title}</title>
@@ -62,6 +68,7 @@ MainPage.propTypes = {
       tag: string,
     }),
   ),
+  categories: arrayOf(string),
   totalNumberOfPosts: number,
   activeCategory: string,
   activePageNumber: number,

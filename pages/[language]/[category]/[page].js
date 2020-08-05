@@ -4,10 +4,19 @@ import MainPage from '../../../components/main/MainPage'
 import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberByPostIndex'
 import languages from '../../../utils/languages'
 import areEqualShallow from '../../../utils/areEqualShallow'
+import getPostsCategories from '../../../utils/getPostsCategories'
 
-const Index = ({ posts, totalNumberOfPosts, activeCategory, activePageNumber, language }) => (
+const Index = ({
+  posts,
+  categories,
+  totalNumberOfPosts,
+  activeCategory,
+  activePageNumber,
+  language,
+}) => (
   <MainPage
     posts={posts}
+    categories={categories}
     totalNumberOfPosts={totalNumberOfPosts}
     activeCategory={activeCategory}
     activePageNumber={activePageNumber}
@@ -17,7 +26,6 @@ const Index = ({ posts, totalNumberOfPosts, activeCategory, activePageNumber, la
 
 export default Index
 export async function getStaticProps({ params }) {
-  const language = params.language
   const postsByLanguage = await getPostsByLanguage([
     'title',
     'date',
@@ -27,7 +35,8 @@ export async function getStaticProps({ params }) {
     'tag',
     'images',
   ])
-
+  const language = params.language
+  const categories = getPostsCategories(postsByLanguage[language])
   const postsByLanguageAndCategory = postsByLanguage[language].filter((post) => {
     if (params.category === 'all') {
       return post
@@ -35,7 +44,6 @@ export async function getStaticProps({ params }) {
 
     return post.tag.toLowerCase() === params.category
   })
-
   const postsByLanguageAndCategoryAndPage = postsByLanguageAndCategory.filter((post, index) => {
     const pageNumber = calculatePageNumberByPostIndex(index + 1)
 
@@ -49,6 +57,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       posts: postsByLanguageAndCategoryAndPage,
+      categories,
       totalNumberOfPosts: postsByLanguageAndCategory.length,
       activeCategory: params.category,
       activePageNumber: Number(params.page),

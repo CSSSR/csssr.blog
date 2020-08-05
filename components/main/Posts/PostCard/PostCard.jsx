@@ -6,7 +6,7 @@ import styles from './PostCard.styles'
 import DateFormatter from '../../../DateFormatter'
 import Link from 'next/link'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
-import getPostCategoryLocale from '../../../../utils/getPostCategoryLocale'
+import categoriesByLanguage from '../../../../data/categoriesByLanguage'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
 const PostCard = ({ className, language, post, size }) => {
@@ -38,11 +38,8 @@ const PostCard = ({ className, language, post, size }) => {
         {post.date}
       </DateFormatter>
 
-      <Link
-        href="/[language]/category/[category]/page/[page]"
-        as={`/${language}/category/${post.tag.toLowerCase()}/page/1`}
-      >
-        <a className="tag">{getPostCategoryLocale(post.tag, language)}</a>
+      <Link href="/[language]/[category]" as={`/${language}/${post.tag.toLowerCase()}`}>
+        <a className="tag">{categoriesByLanguage[language][post.tag.toLowerCase()]}</a>
       </Link>
     </li>
   )
