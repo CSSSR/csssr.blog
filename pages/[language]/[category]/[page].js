@@ -1,8 +1,9 @@
+import React from 'react'
 import { getPostsByLanguage } from '../../../lib/api'
 import MainPage from '../../../components/main/MainPage'
 import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberByPostIndex'
 import languages from '../../../utils/languages'
-import React from 'react'
+import areEqualShallow from '../../../utils/areEqualShallow'
 
 const Index = ({ posts, totalNumberOfPosts, activeCategory, activePageNumber, language }) => (
   <MainPage
@@ -85,6 +86,23 @@ export async function getStaticPaths() {
             }
           }),
         )
+        .reduce((memo, post) => {
+          const isParamsAlreadyInMemo = memo.find(({ params }) =>
+            areEqualShallow(params, post.params),
+          )
+
+          if (isParamsAlreadyInMemo) {
+            return memo
+          }
+
+          return memo.concat({
+            params: {
+              language: post.params.language,
+              category: post.params.category,
+              page: post.params.page,
+            },
+          })
+        }, [])
         .filter(({ params: { page } }) => page !== '1'),
     ],
     [],
