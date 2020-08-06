@@ -2,9 +2,25 @@ import React from 'react'
 import { getPostsByLanguage } from '../../lib/api'
 import MainPage from '../../components/main/MainPage'
 import languages from '../../utils/languages'
+import getPostsCategories from '../../utils/getPostsCategories'
+import { POSTS_PER_PAGE } from '../../data/constants'
+import postsOrderEn from '../../postsOrderEn.json'
+import postsOrderRu from '../../postsOrderRu'
 
-const Index = ({ posts, language }) => (
-  <MainPage activeCategory="all" posts={posts} language={language} />
+const postsOrder = {
+  en: postsOrderEn,
+  ru: postsOrderRu,
+}
+
+const Index = ({ posts, categories, totalNumberOfPosts, language }) => (
+  <MainPage
+    posts={posts}
+    categories={categories}
+    totalNumberOfPosts={totalNumberOfPosts}
+    activeCategory="all"
+    activePageNumber={1}
+    language={language}
+  />
 )
 
 export default Index
@@ -19,12 +35,17 @@ export async function getStaticProps({ params }) {
     'tag',
     'images',
   ])
-
   const language = params.language
+  const categories = getPostsCategories(postsByLanguage[language])
+  const posts = postsByLanguage[language].filter((post) =>
+    postsOrder[language].flat().includes(post.slug),
+  )
 
   return {
     props: {
-      posts: postsByLanguage[language],
+      posts: posts.slice(0, POSTS_PER_PAGE),
+      categories,
+      totalNumberOfPosts: posts.length,
       language,
     },
   }
