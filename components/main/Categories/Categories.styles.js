@@ -5,7 +5,7 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     display: flex;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
     overflow-x: auto;
   }
