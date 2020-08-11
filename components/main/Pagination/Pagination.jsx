@@ -20,6 +20,10 @@ const Pagination = ({
   const totalNumberOfPages = Math.ceil(totalNumberOfPosts / POSTS_PER_PAGE)
   const pageNumbers = getPageNumbers(activePageNumber, totalNumberOfPages)
 
+  if (totalNumberOfPages <= 1) {
+    return <></>
+  }
+
   return (
     <Grid as="div" className={className}>
       <PrevPageLink
