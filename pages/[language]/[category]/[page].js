@@ -5,6 +5,8 @@ import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberBy
 import languages from '../../../utils/languages'
 import areEqualShallow from '../../../utils/areEqualShallow'
 import getPostsCategories from '../../../utils/getPostsCategories'
+import postsOrderEn from '../../../postsOrderEn.json'
+import postsOrderRu from '../../../postsOrderRu.json'
 
 const Index = ({
   posts,
@@ -44,15 +46,39 @@ export async function getStaticProps({ params }) {
 
     return post.tag.toLowerCase() === params.category
   })
-  const postsByLanguageAndCategoryAndPage = postsByLanguageAndCategory.filter((post, index) => {
-    const pageNumber = calculatePageNumberByPostIndex(index)
 
-    if (params.category === 'all') {
-      return pageNumber === params.page
+  let orderedPostsByLanguageAndCategory
+
+  if (params.category === 'all') {
+    const postsBySlug = postsByLanguage[language].reduce((acc, post) => {
+      acc[post.slug] = post
+
+      return acc
+    }, {})
+
+    const postsOrder = {
+      en: postsOrderEn,
+      ru: postsOrderRu,
     }
 
-    return pageNumber === params.page
-  })
+    orderedPostsByLanguageAndCategory = postsOrder[language].flat().map((slug) => postsBySlug[slug])
+  } else {
+    orderedPostsByLanguageAndCategory = postsByLanguageAndCategory.sort(
+      (postA, postB) => new Date(postB.date) - new Date(postA.date),
+    )
+  }
+
+  const postsByLanguageAndCategoryAndPage = orderedPostsByLanguageAndCategory.filter(
+    (post, index) => {
+      const pageNumber = calculatePageNumberByPostIndex(index)
+
+      if (params.category === 'all') {
+        return pageNumber === params.page
+      }
+
+      return pageNumber === params.page
+    },
+  )
 
   return {
     props: {

@@ -30,9 +30,9 @@ export async function getStaticProps({ params }) {
   const language = params.language
   const categories = getPostsCategories(postsByLanguage[language])
 
-  const postsByLanguageAndCategory = postsByLanguage[language].filter(
-    (post) => post.tag.toLowerCase() === params.category,
-  )
+  const postsByLanguageAndCategory = postsByLanguage[language]
+    .filter((post) => post.tag.toLowerCase() === params.category)
+    .sort((postA, postB) => new Date(postB.date) - new Date(postA.date))
 
   return {
     props: {
