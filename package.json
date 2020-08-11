@@ -23,7 +23,7 @@
     "lint-staged": "^10.2.11",
     "markdown-to-jsx": "^6.11.4",
     "next": "latest",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.21.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-gtm-components": "^0.5.0",
