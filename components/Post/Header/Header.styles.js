@@ -57,12 +57,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-column: 4 / span 4;
     grid-row: 2;
     color: #18191B;
-
-    & > i {
-      font-family: 'Amita';
-      font-style: normal;
-      font-weight: normal;
-    }
   }
 
   .picture {
@@ -140,10 +134,39 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
+const dynamic = (language) => {
+  if (language === 'ru') {
+    return css`
+      @font-face {
+        font-family: 'Sweet Mavka Script';
+        font-style: normal;
+        font-weight: normal;
+        src: url('/fonts/sweet-mavka-script-d25a5d77.woff2') format('woff2');
+        font-display: swap;
+      }
+
+      .title > i {
+        font-family: 'Sweet Mavka Script';
+        font-style: normal;
+        font-weight: normal;
+      }
+    `
+  }
+
+  return css `
+    .title > i {
+      font-family: 'Amita';
+      font-style: normal;
+      font-weight: normal;
+    }
+  `
+}
+
 export default props => {
-  const { theme: { breakpoints } } = props
+  const { theme: { breakpoints }, language } = props
 
   return css`
     ${base({ breakpoints })}
+    ${dynamic(language)}
   `
 }
