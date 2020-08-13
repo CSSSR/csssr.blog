@@ -28,6 +28,9 @@ const Post = ({ post, language, className }) => {
           property="og:image"
           content={getOriginal(post.images.mainCoverL[post.images.mainCoverL.length - 1])}
         />
+        {language === 'ru' && (
+          <link href="/fonts/sweet-mavka-script-d25a5d77.woff2" rel="preload" as="font" />
+        )}
       </Head>
 
       <Header
