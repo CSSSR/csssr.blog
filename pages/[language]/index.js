@@ -5,7 +5,7 @@ import languages from '../../utils/languages'
 import getPostsCategories from '../../utils/getPostsCategories'
 import { POSTS_PER_PAGE } from '../../data/constants'
 import postsOrderEn from '../../postsOrderEn.json'
-import postsOrderRu from '../../postsOrderRu'
+import postsOrderRu from '../../postsOrderRu.json'
 
 const postsOrder = {
   en: postsOrderEn,
@@ -37,9 +37,13 @@ export async function getStaticProps({ params }) {
   ])
   const language = params.language
   const categories = getPostsCategories(postsByLanguage[language])
-  const posts = postsByLanguage[language].filter((post) =>
-    postsOrder[language].flat().includes(post.slug),
-  )
+  const postsBySlug = postsByLanguage[language].reduce((acc, post) => {
+    acc[post.slug] = post
+
+    return acc
+  }, {})
+
+  const posts = postsOrder[language].flat().map((slug) => postsBySlug[slug])
 
   return {
     props: {
