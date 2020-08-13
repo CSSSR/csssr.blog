@@ -17,6 +17,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_s {
       margin-top: 0;
     }
+
+    & > p:only-child {
+      margin-top: 0;
+    }
   }
 
   ${desktop.all} {

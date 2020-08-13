@@ -80,8 +80,20 @@ const Body = ({ content, className, slug, images, language }) =>
           size: 's',
         },
       },
+      hr: {
+        props: {
+          className: 'grid-element',
+        },
+      },
       p: {
-        component: Text,
+        // https://github.com/probablyup/markdown-to-jsx/issues/209
+        component: function ParagraphWrapper(props) {
+          return props.children.some((child) => child.type && child.type === Img) ? (
+            <>{props.children}</>
+          ) : (
+            <Text {...props} />
+          )
+        },
         props: {
           className: 'text_regular_m paragraph',
           type: 'regular',
@@ -125,6 +137,13 @@ const Body = ({ content, className, slug, images, language }) =>
       Img: {
         component: function ImgWrapper({ imageName, ...rest }) {
           return <Img className="picture" sources={images[imageName]} {...rest} />
+        },
+      },
+      img: {
+        component: Img,
+        props: {
+          className: 'picture',
+          withOutProcessing: true,
         },
       },
       ParagraphWithImage: {

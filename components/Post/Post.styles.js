@@ -53,10 +53,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
+const dynamic = (language) => {
+  if (language === 'ru') {
+    return css`
+      @font-face {
+        font-family: 'Sweet Mavka Script';
+        font-style: normal;
+        font-weight: normal;
+        src: url('/fonts/sweet-mavka-script-d25a5d77.woff2') format('woff2');
+        font-display: swap;
+      }
+    `
+  }
+
+  return ''
+}
+
 export default props => {
-  const { theme: { breakpoints, colors }} = props
+  const { theme: { breakpoints, colors }, language} = props
 
   return css`
     ${base({ breakpoints, colors })}
+    ${dynamic(language)}
   `
 }

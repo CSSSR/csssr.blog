@@ -19,6 +19,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     text-transform: uppercase;
   }
 
+  .title > i {
+    font-style: normal;
+    font-weight: normal;
+  }
+
   .author {
     margin-left: ${calcRem(1)};
     display: inline-block;
@@ -134,33 +139,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
-const dynamic = (language) => {
-  if (language === 'ru') {
-    return css`
-      @font-face {
-        font-family: 'Sweet Mavka Script';
-        font-style: normal;
-        font-weight: normal;
-        src: url('/fonts/sweet-mavka-script-d25a5d77.woff2') format('woff2');
-        font-display: swap;
-      }
-
-      .title > i {
-        font-family: 'Sweet Mavka Script';
-        font-style: normal;
-        font-weight: normal;
-      }
-    `
+const dynamic = (language) =>  css`
+  .title > i {
+    font-family: ${language === 'ru' ? 'Sweet Mavka Script' : 'Amita'};
   }
-
-  return css `
-    .title > i {
-      font-family: 'Amita';
-      font-style: normal;
-      font-weight: normal;
-    }
-  `
-}
+`
 
 export default props => {
   const { theme: { breakpoints }, language } = props

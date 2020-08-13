@@ -6,9 +6,9 @@ date: '2019-12-26T00:00:00.000Z'
 tag: 'web-development'
 ---
 
-# Пролог
+## Пролог
 
-![image](/images/year-resume2019/zann.jpg)
+![image](/posts/ru/year-resume-2019/zann/all.jpg)
 
 **Ж**иву один в сталинке в ЦАО. Звукоизоляция от внешнего мира потрясающая, ибо стены из кирпича больше метра толщиной (где снаружи пилястры идут — больше полутора). От соседей звукоизоляция так себе, но это компенсируется их малой активностью, доходящей до незаметности. Неважно. Не суть.
 
@@ -16,7 +16,7 @@ tag: 'web-development'
 
 И в этой циклопической, почти хтонической тишине, в ставшей уже аметистовой комнате, ты видишь его...
 
-# 10 лет немого крика...
+## 10 лет немого крика...
 
 ...кажется, подходят к концу. Всё началось в мае 2009 года с первым релизом Ноды, потом через год релиз AngularJS, потом были knockout, meteor и backbone. Наконец релиз React в мае 2013го. Рывок JavaScript от jQuery до полноценных фреймворков оказался таким сильным, что в тот момент в сознании IT-индустрии появилось понятие «фронтенд разработка».
 
@@ -34,7 +34,8 @@ tag: 'web-development'
 
 ## Deno
 
-![image](/images/year-resume2019/deno.png)
+![image](/posts/ru/year-resume-2019/deno/all.png)
+
 Это новый (альтернативный?) виток эволюции Node, за авторством всё того же Райана Дала.
 
 Помните скандал c [event-stream в ноябре прошлого года?](https://habr.com/ru/post/431360/) Тогда малварь утекла на тысячи машин. Возможность достучаться к файловой системе — ахиллесова пята Node.
@@ -53,7 +54,7 @@ tag: 'web-development'
 
 ## CommonJS -> AMD -> UMD ->  «It don't matter if you're black or white»
 
-![image](/images/year-resume2019/mjs.png)
+![image](/posts/ru/year-resume-2019/mjs/all.png)
 
 Да-да, это те самые michael-jackson-файлы (`.mjs`). А если говорить общепринятым языком, [ECMAScript Modules](https://nodejs.org/api/esm.html#esm_ecmascript_modules).
 
@@ -83,26 +84,37 @@ tag: 'web-development'
 Но только в этом году Logux сошёл с ярких страниц гитхаба и получил отдельный [ресурс с документацией](https://logux.io/guide/architecture/core/).
 
 По словам Андрея:
-> Само собой, сайт построен не на популярных реакт-решениях. В треде расскажу об экспериментах, которые удалось в нём реализовать.
-> 17 килобайт веса, 100 очков на Lighthouse, никаких фреймворков. Фокус на DX и UX.
+
+<Quote>
+Само собой, сайт построен не на популярных реакт-решениях. В треде расскажу об экспериментах, которые удалось в нём реализовать. 17 килобайт веса, 100 очков на Lighthouse, никаких фреймворков. Фокус на DX и UX.
+</Quote>
 
 Помимо исходников в твите все могут изучить [развёрнутый пост](https://evilmartians.com/chronicles/new-home-for-logux-pouring-love-into-an-oss-documentation-website) Андрея о разработке доки, чтобы «заглянуть под капот новому лицу Logux».
 
-# Эпилог
+## Эпилог
 
 Мы заигрались за 10 лет становления JavaScript и фронтенда. Да так успешно, что все в награду получили аметистового протодракона. Сейчас покажу, как это вышло:
 
-![image](/images/year-resume2019/wow1.png)
-![image](/images/year-resume2019/wow2.png)
-![image](/images/year-resume2019/wow3.png)
-![image](/images/year-resume2019/wow4.png)
-![image](/images/year-resume2019/wow5.png)
-![image](/images/year-resume2019/wow6.png)
-![image](/images/year-resume2019/wow7.png)
-![image](/images/year-resume2019/wow8.png)
-![image](/images/year-resume2019/wow9.png)
+<div class='grid-element wow'>
+![image](/posts/ru/year-resume-2019/wow1/all.png)
+![image](/posts/ru/year-resume-2019/wow2/all.png)
+![image](/posts/ru/year-resume-2019/wow3/all.png)
+![image](/posts/ru/year-resume-2019/wow4/all.png)
+![image](/posts/ru/year-resume-2019/wow5/all.png)
+![image](/posts/ru/year-resume-2019/wow6/all.png)
+![image](/posts/ru/year-resume-2019/wow7/all.png)
+![image](/posts/ru/year-resume-2019/wow8/all.png)
+![image](/posts/ru/year-resume-2019/wow9/all.png)
+</div>
+
+<style type="text/css">
+  .wow img:not(:first-of-type) {
+    margin-top: 0;
+  }
+</style>
 
 Ну было же? Было?
 
 С ежегодной речью выступил Максон «Черная Борода» Вислогуров. До новых встреч в новом десятилетии! Все по драконам!
-![image](/images/recursion/outro.jpg)
+
+![image](/posts/ru/year-resume-2019/outro/all.jpg)

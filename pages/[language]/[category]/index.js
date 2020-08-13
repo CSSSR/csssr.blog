@@ -4,6 +4,13 @@ import MainPage from '../../../components/main/MainPage'
 import languages from '../../../utils/languages'
 import getPostsCategories from '../../../utils/getPostsCategories'
 import { POSTS_PER_PAGE } from '../../../data/constants'
+import postsOrderEn from '../../../postsOrderEn.json'
+import postsOrderRu from '../../../postsOrderRu.json'
+
+const postsOrder = {
+  en: postsOrderEn,
+  ru: postsOrderRu,
+}
 
 const Index = ({ posts, categories, totalNumberOfPosts, activeCategory, language }) => (
   <MainPage
@@ -27,10 +34,18 @@ export async function getStaticProps({ params }) {
     'tag',
     'images',
   ])
+
   const language = params.language
   const categories = getPostsCategories(postsByLanguage[language])
+  const postsBySlug = postsByLanguage[language].reduce((acc, post) => {
+    acc[post.slug] = post
 
-  const postsByLanguageAndCategory = postsByLanguage[language]
+    return acc
+  }, {})
+
+  const postsByLanguageAndCategory = postsOrder[language]
+    .flat()
+    .map((slug) => postsBySlug[slug])
     .filter((post) => post.tag.toLowerCase() === params.category)
     .sort((postA, postB) => new Date(postB.date) - new Date(postA.date))
 
