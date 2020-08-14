@@ -16,6 +16,26 @@ export default class MyDocument extends Document {
           <GtmNoScript gtmId={gtmId} />
           <Main />
           <NextScript />
+          {/* Скрипт должен срабатывать в IE11 поэтому не используется ES6 синтаксис */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.addEventListener('load', function() {
+                var isValidBrowser
+
+                if (window.CSS && window.CSS.supports) {
+                  isValidBrowser = (
+                    CSS.supports('display', 'flex') && CSS.supports('display', 'grid')
+                  )
+                }
+
+                if (!isValidBrowser) {
+                  var modalScript = document.createElement('script')
+                  modalScript.src = '/modal/modal.js'
+                  document.body.appendChild(modalScript)
+                }
+              })`,
+            }}
+          />
         </body>
       </Html>
     )
