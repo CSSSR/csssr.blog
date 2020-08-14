@@ -21,7 +21,7 @@ import globalStyles from '../Layout/Layout.styles'
 
 const ErrorPage = ({ className }) => {
   const route = useRouter()
-  const isLanguageRu = route.asPath.includes('/ru/')
+  const isLanguageRu = route.asPath.includes('/ru/') || route.asPath === '/r'
   const dynamicNavItems = isLanguageRu ? navItemsRu : navItemsEn
 
   const renderNav = ({ items: { title, id, links } }) => {
