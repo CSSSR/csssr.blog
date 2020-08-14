@@ -24,7 +24,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       width: 100%;
     }
 
-    &_size_m {
+    &_size_l {
       min-height: ${calcRem(310)};
     }
 
@@ -41,13 +41,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     margin-bottom: ${calcRem(15)};
 
     &_size_l {
-      font-size: 32px;
-      line-height: 40px;
+      font-size: ${calcRem(32)};
+      line-height: ${calcRem(40)};
     }
 
     &_size_s {
-      font-size: 24px;
-      line-height: 32px;
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(32)};
     }
   }
 
@@ -109,7 +109,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .picture {
-      &_size_m {
+      &_size_l {
         min-height: ${calcRem(220)};
       }
 

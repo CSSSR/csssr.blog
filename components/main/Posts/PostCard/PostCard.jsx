@@ -18,7 +18,7 @@ const PostCard = ({ className, language, post, size }) => {
         <a>
           <Picture
             className={cn('picture', {
-              picture_size_m: size === 'm',
+              picture_size_l: size === 'l',
               picture_size_s: size === 's',
             })}
             sources={imgCover}
@@ -26,7 +26,7 @@ const PostCard = ({ className, language, post, size }) => {
           />
 
           <h2
-            className={cn('title', { title_size_m: size === 'l', title_size_s: size === 's' })}
+            className={cn('title', { title_size_l: size === 'l', title_size_s: size === 's' })}
             dangerouslySetInnerHTML={{ __html: cleaningTitle(post.title) }}
           />
         </a>
