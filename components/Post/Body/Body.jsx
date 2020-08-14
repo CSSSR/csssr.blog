@@ -88,7 +88,7 @@ const Body = ({ content, className, slug, images, language }) =>
       p: {
         // https://github.com/probablyup/markdown-to-jsx/issues/209
         component: function ParagraphWrapper(props) {
-          return props.children.some((child) => child.type && child.type === Img) ? (
+          return props.children.some((child) => child && child.type && child.type === Img) ? (
             <>{props.children}</>
           ) : (
             <Text {...props} />
