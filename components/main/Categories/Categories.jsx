@@ -4,7 +4,7 @@ import Link from 'next/link'
 import styled from '@emotion/styled'
 import styles from './Categories.styles'
 import ActiveLine from './ActiveLine'
-import categoriesByLanguage from '../../../data/categoriesByLanguage'
+import categoriesByLanguage, { categoriesOrder } from '../../../data/categoriesByLanguage'
 
 const Categories = ({ className, items, activeCategory, language }) => {
   const [activeWidth, setActiveWidth] = useState(0)
@@ -26,31 +26,33 @@ const Categories = ({ className, items, activeCategory, language }) => {
     <div className={className}>
       <div className="inner">
         <ul className="items">
-          {items.map((id) => {
-            let href
-            let as
+          {categoriesOrder
+            .filter((categoryId) => items.some((itemId) => itemId === categoryId))
+            .map((id) => {
+              let href
+              let as
 
-            if (id === 'all') {
-              href = '/[language]'
-              as = `/${language}`
-            } else {
-              href = '/[language]/[category]'
-              as = `/${language}/${id}`
-            }
+              if (id === 'all') {
+                href = '/[language]'
+                as = `/${language}`
+              } else {
+                href = '/[language]/[category]'
+                as = `/${language}/${id}`
+              }
 
-            return (
-              <li key={id} className="item">
-                <Link href={href} as={as}>
-                  <a
-                    className={cn('link', { _active: id === activeCategory })}
-                    ref={id === activeCategory ? activeItemRef : null}
-                  >
-                    {categoriesByLanguage[language][id]}
-                  </a>
-                </Link>
-              </li>
-            )
-          })}
+              return (
+                <li key={id} className="item">
+                  <Link href={href} as={as}>
+                    <a
+                      className={cn('link', { _active: id === activeCategory })}
+                      ref={id === activeCategory ? activeItemRef : null}
+                    >
+                      {categoriesByLanguage[language][id]}
+                    </a>
+                  </Link>
+                </li>
+              )
+            })}
         </ul>
         <ActiveLine width={activeWidth} left={activeLeft} />
       </div>

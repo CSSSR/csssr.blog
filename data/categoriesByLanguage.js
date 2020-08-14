@@ -7,10 +7,12 @@ export default {
     culture: 'Culture',
   },
   ru: {
-    all: 'Все',
+    all: 'Все статьи',
     business: 'Бизнес',
     management: 'Менеджмент',
     'web-development': 'Разработка',
     culture: 'Культура',
   },
 }
+
+export const categoriesOrder = ['all', 'business', 'management', 'web-development', 'culture']
