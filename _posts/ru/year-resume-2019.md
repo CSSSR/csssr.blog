@@ -1,5 +1,5 @@
 ---
-title: 'Итоги 2019 от CSSSR'
+title: 'Итоги <i>2019</i></br> от CSSSR'
 coverImageAlt: 'Преображение фронтенда в 2019'
 author: 'vislogurov'
 date: '2019-12-26T00:00:00.000Z'
