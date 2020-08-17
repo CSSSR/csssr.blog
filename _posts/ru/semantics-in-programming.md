@@ -289,7 +289,7 @@ return <span>{title}</span>
 
 Render Props через `children` тоже подходит как явный пример антипаттерна семантики. Да, сам подход хорошо решает технические проблемы, но сильно ухудшает читаемость кода, нарушая принципы ответственности JSX. Решением может быть использование <a href="https://github.com/pedronauck/react-adopt" target="_blank">сведе'ния</a> render-props.
 
-[Плохие советы](https://css-tricks.com/an-overview-of-render-props-in-react/){:target="_blank"} по render-props дают даже на популярном ресурсе ***css-tricks***:
+Даже на популярном ресурсе ***css-tricks*** дают <a href="https://css-tricks.com/an-overview-of-render-props-in-react/" target="_blank">плохие советы</a> по render-props:
 
 ```jsx
 const App = () => {
