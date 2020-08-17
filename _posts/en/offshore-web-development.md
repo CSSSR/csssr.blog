@@ -5,26 +5,6 @@ date: '2020-03-16T05:35:07.322Z'
 tag: 'business'
 ---
 
-<style>
-  .compare {
-    grid-column: 4 / span 6;
-    margin-top: 0.9375rem;
-  }
-  .compare-item {
-    display: block;
-    font-family: 'Roboto', 'Arial', sans-serif;
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-  .compare-item.pros {
-    color:  #6364D1;
-  }
-  .compare-item.cons {
-    color: #18191B;
-  }
-</style>
-
 <Subtitle>
   Cost-effectiveness, high-quality services and other reasons why so many Singapore entrepreneurs are looking into offshoring web development services
 </Subtitle>

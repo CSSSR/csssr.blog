@@ -63,6 +63,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     text-align: center;
   }
 
+  .compare {
+    margin-top: 0.9375rem;
+  }
+
+  .compare-item {
+    display: block;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .compare-item.pros {
+    color:  #6364D1;
+  }
+
+  .compare-item.cons {
+    color: #18191B;
+  }
+
   ${desktop.all} {
     & > .text_regular_m:first-of-type {
       margin-top: 50px;
@@ -110,7 +130,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_m,
     .heading_regular_s,
     .list_s,
-    .grid-element {
+    .grid-element,
+    .compare {
       grid-column: 4 / span 6;
     }
 
@@ -177,7 +198,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_m,
     .heading_regular_s,
     .list_s,
-    .grid-element {
+    .grid-element,
+    .compare {
       grid-column: 3 / span 8;
     }
 
@@ -240,7 +262,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_s,
     .list_s,
     .line-numbers,
-    .grid-element {
+    .grid-element,
+    .compare {
       grid-column: 1 / span 6;
     }
 
