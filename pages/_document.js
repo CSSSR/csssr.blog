@@ -11,6 +11,13 @@ export default class MyDocument extends Document {
       <Html lang={language}>
         <Head>
           <GtmScript gtmId={gtmId} />
+          <link
+            href={require('../public/components/post/post-header-bg.svg').default}
+            rel="prefetch"
+            as="image"
+            type="image/svg+xml"
+            crossOrigin="anonymous"
+          />
         </Head>
         <body>
           <GtmNoScript gtmId={gtmId} />

@@ -131,13 +131,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_s,
     .list_s,
     .grid-element,
-    .compare {
+    .compare,
+    .line-numbers  {
       grid-column: 4 / span 6;
     }
 
     .line-numbers {
       margin-top: 50px !important;
-      grid-column: 3 / span 8;
     }
   }
 
@@ -199,13 +199,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_s,
     .list_s,
     .grid-element,
-    .compare {
+    .compare,
+    .line-numbers {
       grid-column: 3 / span 8;
     }
 
     .line-numbers {
       margin-top: 2.5rem !important;
-      grid-column: 2 / span 10;
     }
   }
 

@@ -22,6 +22,11 @@ const Categories = ({ className, items, activeCategory, language }) => {
     }
   }, [activeItemRef])
 
+  useEffect(() => {
+    activeItemRef?.current?.scrollIntoView(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <div className={className}>
       <div className="inner">

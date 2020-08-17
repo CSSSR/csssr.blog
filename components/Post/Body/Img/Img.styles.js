@@ -40,11 +40,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     & {
       margin-top: ${calcRem(20)};
       grid-column: 1 / span 6;
+      width: 100%;
     }
 
     &.with_big_margin {
       margin-top: ${calcRem(50)};
     }
+
   }
 `
 

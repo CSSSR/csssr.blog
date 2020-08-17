@@ -6,8 +6,8 @@ date: '2019-05-26T00:00:00.000Z'
 tag: 'web-development'
 ---
 
-<Note>
-  <p>
+<Note isQuoteLike>
+  <p class='first-note'>
     Эта статья — расширенная версия [доклада](https://youtu.be/rVFW009olAI) на PiterJS tour#1.
   </p>
 </Note>
