@@ -2,6 +2,7 @@ import { Global } from '@emotion/core'
 import Meta from '../Meta'
 import styles from './Layout.styles'
 import { Header, Footer } from '@csssr/core-design'
+import CookiesPopup from '../CookiesPopup'
 
 import {
   nav,
@@ -37,6 +38,7 @@ export default function Layout({ children, language }) {
         privacyPolicyLink={language === 'en' && privacyPolicyLink[language]}
         addresses={addresses[language]}
       />
+      <CookiesPopup language={language} />
 
       <Global styles={styles} />
     </>
