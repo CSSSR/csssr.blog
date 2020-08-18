@@ -64,6 +64,16 @@ const dynamic = (language) => {
         font-display: swap;
       }
     `
+  } else if (language === 'en') {
+    return css`
+      @font-face {
+        font-family: 'Amita';
+        font-style: normal;
+        font-weight: normal;
+        src: url('https://static.csssr.com/fonts-subsets/Amita-Regular-ca065d1f.woff2') format('woff2');
+        font-display: swap;
+      }
+    `
   }
 
   return ''

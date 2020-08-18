@@ -37,6 +37,16 @@ const Post = ({ post, language, className }) => {
             crossOrigin="anonymous"
           />
         )}
+
+        {language === 'en' && (
+          <link
+            href="https://static.csssr.com/fonts-subsets/Amita-Regular-ca065d1f.woff2"
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        )}
       </Head>
 
       <Header
