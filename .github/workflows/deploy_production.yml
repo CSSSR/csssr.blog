@@ -46,7 +46,7 @@ jobs:
           project-id: csssr-new-blog
           files: ./new_blog_prod/out
           no-previous-files: "true"
-          not-found-page: 404/index.html
+          not-found-page: 404.html
           host: blog.csssr.com
           environment: production
           values: |
