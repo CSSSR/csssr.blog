@@ -11,7 +11,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     background-color: #F1F2F7;
 
     & * {
-      color: #18191B !important;
+      color: #18191B;
     }
 
     .heading_regular_s {

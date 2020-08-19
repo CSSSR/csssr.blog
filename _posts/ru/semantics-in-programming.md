@@ -8,7 +8,7 @@ tag: 'web-development'
 
 <Note isQuoteLike>
   <p class='first-note'>
-    Эта статья — расширенная версия [доклада](https://youtu.be/rVFW009olAI) на PiterJS tour#1.
+    Эта статья — расширенная версия <a href="https://youtu.be/rVFW009olAI" target="_blank">доклада</a> на PiterJS tour#1.
   </p>
 </Note>
 
