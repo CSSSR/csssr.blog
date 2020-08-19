@@ -83,6 +83,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     color: #18191B;
   }
 
+  .no-wrap {
+    white-space: nowrap;
+  }
+
   ${desktop.all} {
     & > .text_regular_m:first-of-type {
       margin-top: 50px;
