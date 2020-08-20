@@ -63,9 +63,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 3 / span 8;
       margin-top: ${calcRem(9)};
 
-      & li {
-        &:not(:first-of-type).list_item {
-          margin-top: ${calcRem(8)};
+      & li.list_item:not(:first-of-type) {
+        margin-top: ${calcRem(8)};
       }
 
       & li::before {
@@ -81,7 +80,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 1 / span 6;
       margin-top: ${calcRem(9)};
 
-      & li:not(:first-of-type).list_item {
+      & li.list_item:not(:first-of-type) {
         margin-top: ${calcRem(8)};
       }
 
