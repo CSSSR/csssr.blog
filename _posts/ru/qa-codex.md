@@ -86,14 +86,9 @@ tag: 'web-development'
 
 <p><a href="http://testingchallenges.thetestingmap.org/index.php" target="_blank">Потренить свои скиллы</a></p>
 
-Познавательные ресурсы:
+Познавательные ресурсы: <a href="http://radio-qa.com/" target="_blank">Radio QA</a>&nbsp;<a href="https://qablog.practitest.com/" target="_blank">PractiTest</a>
 
-<p><a href="http://radio-qa.com/" target="_blank">Radio QA</a></p>
-<p><a href="https://qablog.practitest.com/" target="_blank">PractiTest</a></p>
-
-Про автоматизацию:
-<p><a href="https://webdriver.ru/" target="_blank">Webdriver</a></p>
-<p><a href="https://selenium.dev/documentation/en" target="_blank">Selenium</a></p>
+Про автоматизацию: <a href="https://webdriver.ru/" target="_blank">Webdriver</a>&nbsp;<a href="https://selenium.dev/documentation/en" target="_blank">Selenium</a>
 
 <p><a href="https://trello.com/b/2hvbzg9y/nightwatchjs" target="_blank">Если вы хотите быть модным автотестером :)</a></p>
 
