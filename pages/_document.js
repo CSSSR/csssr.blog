@@ -1,7 +1,7 @@
 import { GtmNoScript, GtmScript } from 'react-gtm-components'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import Fonts from '../components/Fonts'
 import getGtmId from '../utils/getGtmId'
+import { Fonts } from '@csssr/core-design'
 
 export default class MyDocument extends Document {
   render() {
@@ -19,9 +19,9 @@ export default class MyDocument extends Document {
             type="image/svg+xml"
             crossOrigin="anonymous"
           />
-          {/* TODO: вынести шрифты – https://jira.csssr.io/browse/COM-2172 */}
-          <Fonts />
+          <Fonts preset="blog" />
         </Head>
+
         <body>
           <GtmNoScript gtmId={gtmId} />
           <Main />

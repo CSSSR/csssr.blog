@@ -7,6 +7,7 @@ import Header from './Header'
 import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
+import { Fonts } from '@csssr/core-design'
 
 const Post = ({ post, language, className }) => {
   return (
@@ -28,25 +29,17 @@ const Post = ({ post, language, className }) => {
           property="og:image"
           content={getOriginal(post.images.mainCoverL[post.images.mainCoverL.length - 1])}
         />
-        {language === 'ru' && (
-          <link
-            href="https://static.csssr.com/fonts-subsets/Sweet-Mavka-Script-d25a5d77.woff2"
-            rel="preload"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-        )}
 
-        {language === 'en' && (
-          <link
-            href="https://static.csssr.com/fonts-subsets/Amita-Regular-ca065d1f.woff2"
-            rel="preload"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-        )}
+        <Fonts
+          options={[
+            {
+              family: language === 'ru' ? 'Sweet Mavka Script' : 'Amita',
+              weight: 400,
+              style: 'normal',
+              rel: 'preload',
+            },
+          ]}
+        />
       </Head>
 
       <Header

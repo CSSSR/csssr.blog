@@ -53,37 +53,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
-const dynamic = (language) => {
-  if (language === 'ru') {
-    return css`
-      @font-face {
-        font-family: 'Sweet Mavka Script';
-        font-style: normal;
-        font-weight: normal;
-        src: url('https://static.csssr.com/fonts-subsets/Sweet-Mavka-Script-d25a5d77.woff2') format('woff2');
-        font-display: swap;
-      }
-    `
-  } else if (language === 'en') {
-    return css`
-      @font-face {
-        font-family: 'Amita';
-        font-style: normal;
-        font-weight: normal;
-        src: url('https://static.csssr.com/fonts-subsets/Amita-Regular-ca065d1f.woff2') format('woff2');
-        font-display: swap;
-      }
-    `
-  }
-
-  return ''
-}
-
 export default props => {
-  const { theme: { breakpoints, colors }, language} = props
+  const { theme: { breakpoints, colors }} = props
 
   return css`
     ${base({ breakpoints, colors })}
-    ${dynamic(language)}
   `
 }
