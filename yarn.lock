@@ -1307,10 +1307,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@csssr/core-design@^5.7.0":
-  version "5.7.0"
-  resolved "https://npm.pkg.github.com/download/@csssr/core-design/5.7.0/a8f8043f90168ea1591d3b79caa92b41f2dbec9a9d93e9355526f27c20e47e04#9a8a0900f2df282a3711749aacaaf9924afd7fb2"
-  integrity sha512-oNwpHguwnKij2Z0d9YkxoQWk9T6oxCGdex0E7Ff4hyyGfg4l8ORKSitbjEfA/dWGq/K5y7fjn1vMFvBjP0uv6A==
+"@csssr/core-design@^5.8.0":
+  version "5.8.0"
+  resolved "https://npm.pkg.github.com/download/@csssr/core-design/5.8.0/310e2bb045eec2cadf55d963a190631ff5bc31e1454495dfd8eb9be3d62f706d#4d92aa4d6b49ccf56a538ee8d332e8b72f7968ff"
+  integrity sha512-oUZHxNmM+1p/7FMV7kR3AQmfVinaNz2GgDGZ1s+6L+Xmh5Fbd5kggyjgWYxueAjvmKfG7dvzJfzeYit29gw1qg==
   dependencies:
     "@emotion/styled-base" "^10.0.31"
     classnames "^2.2.6"
