@@ -14,7 +14,7 @@
     "@csssr/csssr.images": "^1.12.0",
     "@emotion/core": "^10.0.34",
     "@emotion/styled": "^10.0.10",
-    "@sentry/browser": "^5.21.1",
+    "@sentry/browser": "^5.21.4",
     "babel-plugin-prismjs": "^2.0.1",
     "classnames": "^2.2.6",
     "date-fns": "2.15.0",
