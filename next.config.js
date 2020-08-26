@@ -99,4 +99,4 @@ const withImages = (nextConfig = {}) => ({
   },
 })
 
-module.exports = withPlugins([withImages, withFonts], { exportTrailingSlash: true })
+module.exports = withPlugins([withImages, withFonts], { trailingSlash: true })

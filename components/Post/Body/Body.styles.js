@@ -7,13 +7,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   & > .text_regular_m:first-of-type strong:first-of-type {
-    font-family: "Amita";
     font-style: normal;
     font-weight: normal;
     font-size: ${calcRem(76)};
     line-height: ${calcRem(32)};
     padding-top: ${calcRem(20)};
-    padding-right: ${calcRem(7)};
     padding-left: ${calcRem(4)};
     float: left;
   }
@@ -61,6 +59,34 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  .hr {
+    text-align: center;
+  }
+
+  .compare {
+    margin-top: 0.9375rem;
+  }
+
+  .compare-item {
+    display: block;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .compare-item.pros {
+    color:  #6364D1;
+  }
+
+  .compare-item.cons {
+    color: #18191B;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
+  }
+
   ${desktop.all} {
     & > .text_regular_m:first-of-type {
       margin-top: 50px;
@@ -72,7 +98,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       font-size: 24px;
       line-height: 32px;
     }
-  
+
     .text_regular_m + .heading_regular_m,
     div +  .heading_regular_m {
       margin-top: 50px;
@@ -84,7 +110,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: 24px;
     }
 
-    .text_regular_m {
+    .text_regular_m,
+    hr.grid-element  {
       margin-top: 25px;
     }
 
@@ -106,13 +133,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_l,
     .heading_regular_m,
     .heading_regular_s,
-    .list_s {
+    .list_s,
+    .grid-element,
+    .compare,
+    .line-numbers  {
       grid-column: 4 / span 6;
     }
 
     .line-numbers {
       margin-top: 50px !important;
-      grid-column: 3 / span 8;
     }
   }
 
@@ -137,7 +166,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: ${calcRem(24)};
     }
 
-    .text_regular_m {
+    .text_regular_m,
+    hr.grid-element  {
       margin-top: ${calcRem(15)};
     }
 
@@ -171,13 +201,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_l,
     .heading_regular_m,
     .heading_regular_s,
-    .list_s {
+    .list_s,
+    .grid-element,
+    .compare,
+    .line-numbers {
       grid-column: 3 / span 8;
     }
 
     .line-numbers {
       margin-top: 2.5rem !important;
-      grid-column: 2 / span 10;
     }
   }
 
@@ -201,7 +233,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: ${calcRem(24)};
     }
 
-    .text_regular_m {
+    .text_regular_m,
+    hr.grid-element {
       margin-top: ${calcRem(15)};
     }
 
@@ -232,7 +265,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .heading_regular_m,
     .heading_regular_s,
     .list_s,
-    .line-numbers {
+    .line-numbers,
+    .grid-element,
+    .compare {
       grid-column: 1 / span 6;
     }
 
@@ -246,10 +281,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
+const dynamic = (language) =>  css`
+  & > .text_regular_m:first-of-type strong:first-of-type {
+    padding-right: ${language === 'ru' ? calcRem(23) : calcRem(7)};
+    font-family: ${language === 'ru' ? 'Sweet Mavka Script' : 'Amita'};
+  }
+`
+
 export default props => {
-  const { theme: { breakpoints } } = props
+  const { theme: { breakpoints }, language } = props
 
   return css`
     ${base({ breakpoints })}
+    ${dynamic(language)}
   `
 }

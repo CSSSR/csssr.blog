@@ -8,16 +8,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     & {
-      padding-top: 192px;
+      padding-top: 128px;
       background-image: linear-gradient(to right, white, white), url(${require('../../public/components/post/post-header-bg.svg').default});
       background-repeat: no-repeat, repeat-x;
-      background-position: center 192px, center top;
+      background-position: center 128px, center -64px;
     }
   }
 
   ${desktop.l} {
     & {
-      background-size: 1184px 232px, 1360px 408px;
+      background-size: 880px 232px, 1360px 408px;
     }
   }
 
@@ -53,10 +53,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
+const dynamic = (language) => {
+  if (language === 'ru') {
+    return css`
+      @font-face {
+        font-family: 'Sweet Mavka Script';
+        font-style: normal;
+        font-weight: normal;
+        src: url('https://static.csssr.com/fonts-subsets/Sweet-Mavka-Script-d25a5d77.woff2') format('woff2');
+        font-display: swap;
+      }
+    `
+  }
+
+  return ''
+}
+
 export default props => {
-  const { theme: { breakpoints, colors }} = props
+  const { theme: { breakpoints, colors }, language} = props
 
   return css`
     ${base({ breakpoints, colors })}
+    ${dynamic(language)}
   `
 }

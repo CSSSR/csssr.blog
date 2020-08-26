@@ -24,7 +24,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       width: 100%;
     }
 
-    &_size_m {
+    &_size_l {
       min-height: ${calcRem(310)};
     }
 
@@ -38,24 +38,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     font-style: normal;
     font-weight: 900;
     color: ${colors.secondary.darken100};
+    margin-bottom: ${calcRem(15)};
 
-    &_size_m {
-      font-size: 32px;
-      line-height: 40px;
+    &_size_l {
+      font-size: ${calcRem(32)};
+      line-height: ${calcRem(40)};
     }
 
     &_size_s {
-      font-size: 24px;
-      line-height: 32px;
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(32)};
     }
   }
 
   .tag,
-  .date {
-    margin-top: ${calcRem(15)};
+  .date,
+  .author {
     display: inline-block;
     font-family: Roboto;
     font-style: normal;
+    text-transform: uppercase;
     font-size: ${calcRem(10)};
     line-height: ${calcRem(16)};
   }
@@ -63,13 +65,32 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   .tag {
     font-weight: 500;
     color: #5695ED;
+    transition: color 150ms ease-in-out;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #0254d8;
+      }
+    }
   }
 
   .date {
-    margin-left: ${calcRem(16)};
+    margin-right: ${calcRem(16)};
     display: inline-block;
     font-weight: normal;
     color: #7E8FA4;
+  }
+
+  .author {
+    display: inline-block;
+    font-weight: normal;
+    color: #7E8FA4;
+
+    &::after {
+      content: "•";
+      margin-left: ${calcRem(8)};
+      margin-right: ${calcRem(8)};
+    }
   }
 
   ${desktop.all} {
@@ -88,7 +109,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .picture {
-      &_size_m {
+      &_size_l {
         min-height: ${calcRem(220)};
       }
 
@@ -115,19 +136,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       margin-top: ${calcRem(20)};
       font-size: ${calcRem(18)};
       line-height: ${calcRem(24)};
-    }
-
-    .tag,
-    .date {
-      margin-top: ${calcRem(10)};
+      margin-bottom: ${calcRem(10)};
     }
   }
 `
 
 const dynamic = ({ breakpoints: { mobile }, size, side }) => {
   return css`
-    grid-column-end: ${size === 'm' ? 'span 7' : 'span 3'};
-    grid-column-start: ${side === 'r' ? size === 'm' ? 5 : 9 : 2};
+    grid-column-end: ${size === 'l' ? 'span 7' : 'span 3'};
+    grid-column-start: ${side === 'r' ? size === 'l' ? 5 : 9 : 2};
 
     ${mobile.all} {
       grid-column: 1 / span 6;

@@ -60,7 +60,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
   }
 
   ${desktop.l} {
-    --width-container: 1792px;
+    --width-container: 1328px;
   }
 
   ${desktop.m} {

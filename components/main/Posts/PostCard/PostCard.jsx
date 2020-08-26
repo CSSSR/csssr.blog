@@ -6,30 +6,41 @@ import styles from './PostCard.styles'
 import DateFormatter from '../../../DateFormatter'
 import Link from 'next/link'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
+import categoriesByLanguage from '../../../../data/categoriesByLanguage'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
-const PostCard = ({ className, post, size }) => {
+const PostCard = ({ className, language, post, size }) => {
+  const imgCover = size === 'l' ? post.images.mainCoverL : post.images.mainCoverS
+
   return (
     <li className={className}>
-      <Link as={`/en/article/${post.slug}`} href="/en/article/[slug]">
+      <Link href="/[language]/article/[slug]" as={`/${language}/article/${post.slug}`}>
         <a>
           <Picture
             className={cn('picture', {
-              picture_size_m: size === 'm',
+              picture_size_l: size === 'l',
               picture_size_s: size === 's',
             })}
-            sources={post.images.mainCover}
+            sources={imgCover}
             alt={post.coverImageAlt}
           />
 
           <h2
-            className={cn('title', { title_size_m: size === 'm', title_size_s: size === 's' })}
+            className={cn('title', { title_size_l: size === 'l', title_size_s: size === 's' })}
             dangerouslySetInnerHTML={{ __html: cleaningTitle(post.title) }}
           />
         </a>
       </Link>
-      <a className="tag">{post.tag}</a>
-      <DateFormatter className="date">{post.date}</DateFormatter>
+
+      {post.author && <span className="author">{post.author}</span>}
+
+      <DateFormatter className="date" language={language}>
+        {post.date}
+      </DateFormatter>
+
+      <Link href="/[language]/[category]" as={`/${language}/${post.tag.toLowerCase()}`}>
+        <a className="tag">{categoriesByLanguage[language][post.tag.toLowerCase()]}</a>
+      </Link>
     </li>
   )
 }
@@ -41,10 +52,14 @@ PostCard.propTypes = {
     coverImageAlt: string,
     images: object,
     date: string,
+    author: string,
+    ogImage: shape({
+      url: string,
+    }),
     tag: string,
     slug: string,
   }),
-  size: oneOf(['m', 's']),
+  size: oneOf(['l', 's']),
 }
 
 export default styled(PostCard)`

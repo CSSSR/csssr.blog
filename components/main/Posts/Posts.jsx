@@ -1,32 +1,24 @@
+import React from 'react'
 import { string, arrayOf, shape, object } from 'prop-types'
-import { Grid } from '@csssr/core-design'
+import { Grid } from '../../Grid'
 import styled from '@emotion/styled'
 import styles from './Posts.styles'
 import PostCard from './PostCard'
 
-const Posts = ({ posts, postsOrder, className }) => {
-  const postsBySlug = posts.reduce((acc, post) => {
-    acc[post.slug] = post
+const Posts = ({ language, posts, className }) => (
+  <Grid as="ul" className={className}>
+    {posts.reduce((memo, post) => {
+      const orderInGroupOfFour = memo.length % 4
+      const size = orderInGroupOfFour === 0 || orderInGroupOfFour === 3 ? 'l' : 's'
+      const side = orderInGroupOfFour === 0 || orderInGroupOfFour === 2 ? 'l' : 'r'
 
-    return acc
-  }, {})
-
-  return (
-    <Grid as="ul" className={className}>
-      {postsOrder.map((postsRow, rowIndex) =>
-        postsRow.map((postSlug, postIndex) => {
-          const post = postsBySlug[postSlug]
-          const isOddRow = (rowIndex + 1) % 2
-          const isOddPost = (postIndex + 1) % 2
-          const size = (isOddRow && isOddPost) || (!isOddRow && !isOddPost) ? 'm' : 's'
-          const side = isOddPost ? 'l' : 'r'
-
-          return <PostCard key={postSlug} post={post} size={size} side={side} />
-        }),
-      )}
-    </Grid>
-  )
-}
+      return [
+        ...memo,
+        <PostCard key={post.slug} language={language} post={post} size={size} side={side} />,
+      ]
+    }, [])}
+  </Grid>
+)
 
 Posts.propTypes = {
   className: string,

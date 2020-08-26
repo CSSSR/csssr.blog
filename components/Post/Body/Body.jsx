@@ -1,7 +1,7 @@
 import React from 'react'
 import { string, object } from 'prop-types'
 import styled from '@emotion/styled'
-import { Grid } from '@csssr/core-design'
+import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, ListItem } from '@csssr/core-design'
 import styles from './Body.styles'
@@ -17,14 +17,14 @@ import Video from './Video'
 import Table from './Table'
 import List from './List'
 
-const Body = ({ content, className, slug, images }) =>
+const Body = ({ content, className, slug, images, language }) =>
   compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
         return (
           <Grid className={`post-body ${className}`}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
-            <Comments id={slug} />
+            <Comments id={slug} language={language} />
           </Grid>
         )
       }
@@ -80,8 +80,20 @@ const Body = ({ content, className, slug, images }) =>
           size: 's',
         },
       },
+      hr: {
+        props: {
+          className: 'grid-element',
+        },
+      },
       p: {
-        component: Text,
+        // https://github.com/probablyup/markdown-to-jsx/issues/209
+        component: function ParagraphWrapper(props) {
+          return props.children.some((child) => child && child.type && child.type === Img) ? (
+            <>{props.children}</>
+          ) : (
+            <Text {...props} />
+          )
+        },
         props: {
           className: 'text_regular_m paragraph',
           type: 'regular',
@@ -125,6 +137,13 @@ const Body = ({ content, className, slug, images }) =>
       Img: {
         component: function ImgWrapper({ imageName, ...rest }) {
           return <Img className="picture" sources={images[imageName]} {...rest} />
+        },
+      },
+      img: {
+        component: Img,
+        props: {
+          className: 'picture',
+          withOutProcessing: true,
         },
       },
       ParagraphWithImage: {
