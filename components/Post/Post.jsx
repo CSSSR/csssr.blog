@@ -7,7 +7,6 @@ import Header from './Header'
 import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
-import { Fonts } from '@csssr/core-design'
 
 const Post = ({ post, language, className }) => {
   return (
@@ -28,17 +27,6 @@ const Post = ({ post, language, className }) => {
         <meta
           property="og:image"
           content={getOriginal(post.images.mainCoverL[post.images.mainCoverL.length - 1])}
-        />
-
-        <Fonts
-          options={[
-            {
-              family: language === 'ru' ? 'Sweet Mavka Script' : 'Amita',
-              weight: 400,
-              style: 'normal',
-              rel: 'preload',
-            },
-          ]}
         />
       </Head>
 

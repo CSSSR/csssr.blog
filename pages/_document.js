@@ -20,6 +20,18 @@ export default class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <Fonts preset="blog" />
+          {this.props.dangerousAsPath.includes('article') && (
+            <Fonts
+              options={[
+                {
+                  family: language === 'ru' ? 'Sweet Mavka Script' : 'Amita',
+                  weight: 400,
+                  style: 'normal',
+                  rel: 'preload',
+                },
+              ]}
+            />
+          )}
         </Head>
 
         <body>
