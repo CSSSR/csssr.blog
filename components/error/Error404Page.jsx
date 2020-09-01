@@ -1,7 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import { withRouter } from 'next/router'
 import { Global } from '@emotion/core'
+import { Header, getLocaleFromUrl, PageContent } from '@csssr/csssr-shared-header'
+import { DeviceContext } from '../DeviceContext'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
@@ -11,7 +14,6 @@ import { Grid } from '@csssr/core-design'
 import Meta from '../Meta'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-import { ReactComponent as LogoIcon } from '../../public/components/error/icons/csssr_logo.svg'
 import { ReactComponent as LineFromTopToBottomIcon } from '../../public/components/error/icons/lineFromTopToBottom.svg'
 import { ReactComponent as NotFound } from '../../public/components/error/icons/notFound.svg'
 
@@ -19,7 +21,7 @@ import { navItemsEn, navItemsRu } from '../../data/navItems'
 
 import globalStyles from '../Layout/Layout.styles'
 
-const ErrorPage = ({ className }) => {
+const ErrorPage = ({ className, router }) => {
   const route = useRouter()
   const isLanguageRu = route.asPath.includes('/ru/') || route.asPath === '/r'
   const dynamicNavItems = isLanguageRu ? navItemsRu : navItemsEn
@@ -55,6 +57,9 @@ const ErrorPage = ({ className }) => {
   }
 
   const text404 = isLanguageRu ? 'Страница не найдена' : 'Not found'
+  const { isMobile } = useContext(DeviceContext)
+  const appRootElement = typeof window === 'object' ? document.getElementById('__next') : null
+  const lng = getLocaleFromUrl(router.asPath)
 
   return (
     <>
@@ -66,40 +71,46 @@ const ErrorPage = ({ className }) => {
         <title>{text404}</title>
       </Head>
 
-      <Grid as="header" className={className}>
-        <a className="logo" href="https://csssr.com/en">
-          <LogoIcon width="100%" height="100%" />
-        </a>
-      </Grid>
+      <Header
+        isMobile={isMobile}
+        pathname="blog"
+        lng={lng}
+        NextLink={Link}
+        appRootElement={appRootElement}
+        jobsDomain="https://csssr.space"
+      />
 
-      <Grid as="main" className={cn(className, `error-code_404`)}>
-        <h1 className="font_h1-slab">{text404}</h1>
+      <PageContent>
+        <Grid as="main" className={cn(className, `error-code_404`)}>
+          <h1 className="font_h1-slab">{text404}</h1>
 
-        <PictureSmart
-          className="picture"
-          alt="404"
-          requireImages={require.context('../../public/components/error/images/404')}
-        />
+          <PictureSmart
+            className="picture"
+            alt="404"
+            requireImages={require.context('../../public/components/error/images/404')}
+          />
 
-        <div className={'code-wrapper'}>
-          <NotFound width="auto" height="100%" />
-        </div>
-
-        <h2 className="font_subhead-slab">
-          {isLanguageRu ? 'Изучите наши разделы' : 'Explore other pages'}
-        </h2>
-        <Fragment>
-          <div className="arrow-wrapper">
-            <LineFromTopToBottomIcon width="100%" height="100%" />
+          <div className={'code-wrapper'}>
+            <NotFound width="auto" height="100%" />
           </div>
 
-          <div className="navList">{dynamicNavItems.map((items) => renderNav({ items }))}</div>
-        </Fragment>
-      </Grid>
+          <h2 className="font_subhead-slab">
+            {isLanguageRu ? 'Изучите наши разделы' : 'Explore other pages'}
+          </h2>
+
+          <Fragment>
+            <div className="arrow-wrapper">
+              <LineFromTopToBottomIcon width="100%" height="100%" />
+            </div>
+
+            <div className="navList">{dynamicNavItems.map((items) => renderNav({ items }))}</div>
+          </Fragment>
+        </Grid>
+      </PageContent>
     </>
   )
 }
 
-export default styled(ErrorPage)`
+export default withRouter(styled(ErrorPage)`
   ${styles}
-`
+`)

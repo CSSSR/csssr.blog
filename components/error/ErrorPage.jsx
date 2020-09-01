@@ -1,6 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
+import { withRouter } from 'next/router'
 import { Global } from '@emotion/core'
+import { Header, getLocaleFromUrl, PageContent } from '@csssr/csssr-shared-header'
+import { DeviceContext } from '../DeviceContext'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 
@@ -9,7 +12,6 @@ import { Grid } from '@csssr/core-design'
 import Meta from '../Meta'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-import { ReactComponent as LogoIcon } from '../../public/components/error/icons/csssr_logo.svg'
 import { ReactComponent as ServerError } from '../../public/components/error/icons/serverError.svg'
 
 import globalStyles from '../Layout/Layout.styles'
@@ -34,63 +36,28 @@ const codeIconByStatusCode = {
   500: <ServerError width="auto" height="100%" />,
 }
 
-class ErrorPage extends React.Component {
-  renderNav = ({ items: { title, id, links } }) => {
-    const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
+const ErrorPage = ({ className, router }) => {
+  const statusCode = possibleStatusCodes.indexOf(statusCode) !== -1 ? statusCode : defaultStatusCode
+  const { isMobile } = useContext(DeviceContext)
+  const appRootElement = typeof window === 'object' ? document.getElementById('__next') : null
+  const lng = getLocaleFromUrl(router.asPath)
 
-    return (
-      <span key={id}>
-        <h3 className="font_burger-menu" dangerouslySetInnerHTML={{ __html: title }} />
+  return (
+    <>
+      <Global styles={globalStyles} />
 
-        {links && (
-          <ul className="menu">
-            {links.map(({ id, title, href }) => {
-              return (
-                <li key={id}>
-                  {linkRegExp.test(href) ? (
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="menu-item"
-                      href={href}
-                      dangerouslySetInnerHTML={{ __html: title }}
-                    />
-                  ) : (
-                    <Link href={`/${href}`}>
-                      <a className="menu-item" dangerouslySetInnerHTML={{ __html: title }} />
-                    </Link>
-                  )}
-                </li>
-              )
-            })}
-          </ul>
-        )}
-      </span>
-    )
-  }
+      <Meta />
 
-  render() {
-    const { className } = this.props
+      <Header
+        isMobile={isMobile}
+        pathname="blog"
+        lng={lng}
+        NextLink={Link}
+        appRootElement={appRootElement}
+        jobsDomain="https://csssr.space"
+      />
 
-    const statusCode =
-      possibleStatusCodes.indexOf(this.props.statusCode) !== -1
-        ? this.props.statusCode
-        : defaultStatusCode
-
-    return (
-      <Fragment>
-        <Global styles={globalStyles} />
-
-        <Meta />
-
-        <Grid as="header" className={className}>
-          <Link href="/en">
-            <a className="logo">
-              <LogoIcon width="100%" height="100%" />
-            </a>
-          </Link>
-        </Grid>
-
+      <PageContent>
         <Grid as="main" className={cn(className, `error-code_${statusCode}`)}>
           <h1
             className="font_h1-slab"
@@ -117,11 +84,11 @@ class ErrorPage extends React.Component {
             }}
           />
         </Grid>
-      </Fragment>
-    )
-  }
+      </PageContent>
+    </>
+  )
 }
 
-export default styled(ErrorPage)`
+export default withRouter(styled(ErrorPage)`
   ${styles}
-`
+`)
