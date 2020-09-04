@@ -147,7 +147,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & > .text_regular_m:first-of-type  {
-      margin-top: ${calcRem(62)};
+      margin-top: ${calcRem(50)};
     }
 
     & > .text_regular_m:first-of-type strong:first-of-type {
