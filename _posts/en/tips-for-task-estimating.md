@@ -35,19 +35,19 @@ If ToR leave no hope for an accurate estimation, never be afraid to ask question
 
 ### Ideally, task estimating consists of two phases:
 
-You carefully read ToR, ask questions to the analyst/customer’s representative.
+- You carefully read ToR, ask questions to the analyst/customer’s representative.
 
-Get the answers and estimate the task.
+- Get the answers and estimate the task.
 
-But the truth would be more like this:
+- But the truth would be more like this:
 
-You carefully read ToR and ask questions to the author of the original idea.
+- You carefully read ToR and ask questions to the author of the original idea.
 
-You get the answers that generate even more questions.
+- You get the answers that generate even more questions.
 
-Again.
+- Again.
 
-And again.
+- And again.
 
 The process can be delayed, however, these time costs will bring more value. By the way, at this stage we often involve testers instead of developers. Mistakes made while stating the problem are expensive, and the more people participate in bugs hunting, the better results you would achieve.
 
@@ -66,12 +66,14 @@ To upgrade the estimating skill, you need to receive feedback on how close to re
 
 <ParagraphWithImage imageName="man-and-compass">
   ### Mind the risks
-  <p>Discuss separately everything that can significantly affect the final estimate. These factors include:<br/> Unfinished task setting (unprepared layouts and ToR, API issues and everything “to be provided later”);</p>
+  <p>Discuss separately everything that can significantly affect the final estimate. These factors include:</p>
+
+  - Unfinished task setting (unprepared layouts and ToR, API issues and everything “to be provided later”);
 </ParagraphWithImage>
 
-Technology that you have not used before;
+- Technology that you have not used before;
 
-Gaps in the description and lack of answers to your questions.
+- Gaps in the description and lack of answers to your questions.
 
 Report these when evaluating the task, make it clear that changes made to task setting would result in labor costs increase.
 
