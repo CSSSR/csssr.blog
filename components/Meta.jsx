@@ -17,10 +17,6 @@ export default function Meta() {
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="fb:app_id" content="416195255787519" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Roboto+Slab:wght@300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap"
-        rel="stylesheet"
-      />
       <script
         dangerouslySetInnerHTML={{
           __html: `

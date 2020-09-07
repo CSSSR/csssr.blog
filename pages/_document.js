@@ -1,6 +1,7 @@
 import { GtmNoScript, GtmScript } from 'react-gtm-components'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import getGtmId from '../utils/getGtmId'
+import { Fonts } from '@csssr/core-design'
 
 export default class MyDocument extends Document {
   render() {
@@ -18,7 +19,21 @@ export default class MyDocument extends Document {
             type="image/svg+xml"
             crossOrigin="anonymous"
           />
+          <Fonts preset="blog" />
+          {this.props.dangerousAsPath.includes('article') && (
+            <Fonts
+              options={[
+                {
+                  family: language === 'ru' ? 'Sweet Mavka Script' : 'Amita',
+                  weight: 400,
+                  style: 'normal',
+                  rel: 'preload',
+                },
+              ]}
+            />
+          )}
         </Head>
+
         <body>
           <GtmNoScript gtmId={gtmId} />
           <Main />

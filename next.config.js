@@ -1,5 +1,4 @@
 const withPlugins = require('next-compose-plugins')
-const withFonts = require('next-fonts')
 const { defaultTheme } = require('@csssr/core-design')
 const { Plugin } = require('@csssr/csssr.images/dist/webpack/plugin')
 
@@ -99,4 +98,4 @@ const withImages = (nextConfig = {}) => ({
   },
 })
 
-module.exports = withPlugins([withImages, withFonts], { trailingSlash: true })
+module.exports = withPlugins([withImages], { trailingSlash: true })
