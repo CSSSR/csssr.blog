@@ -1643,10 +1643,10 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/node@*", "@types/node@^14.0.18":
-  version "14.0.18"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.18.tgz#5111b2285659442f9f95697386a2b42b875bd7e9"
-  integrity sha512-0Z3nS5acM0cIV4JPzrj9g/GH0Et5vmADWtip3YOXOp1NpOLU8V3KoZDc8ny9c1pe/YSYYzQkAWob6dyV/EWg4g==
+"@types/node@*", "@types/node@^14.6.4":
+  version "14.6.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.4.tgz#a145cc0bb14ef9c4777361b7bbafa5cf8e3acb5a"
+  integrity sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -6085,12 +6085,12 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sitemap@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-6.2.0.tgz#06c8b4f39025389a167e0b6d04347919bf62197f"
-  integrity sha512-ta9BLo/ZLUNgfGVhknA2IHWuIXfcFPxMvMCY3Xhf141rEZoW8G5nIVCDR0/zeXJCAvWk+UzqxyLBtRBH1OOq6w==
+sitemap@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-6.3.0.tgz#c9affa49d654b5bd76a56a8e67cee3c17560a8f3"
+  integrity sha512-U0jS5b+V/MQOkmkqwq3ow++sE1A+F4Yo/nDU5wksiGFO7ww7VutOXJWdM2wk54Ztvl4UmlX65l2GVz5jeI4rgw==
   dependencies:
-    "@types/node" "^14.0.18"
+    "@types/node" "^14.6.4"
     "@types/sax" "^1.2.1"
     arg "^4.1.3"
     sax "^1.2.4"
