@@ -64,12 +64,12 @@ Eat an elephant one bite at a time. A good decomposition gives a powerful boost 
 
 To upgrade the estimating skill, you need to receive feedback on how close to reality your previous estimates really were. You can set a special filter in Jira, or at least create a dedicated Google table.
 
-<ParagraphWithImage imageName="man-and-compass">
-  ### Mind the risks
-  <p>Discuss separately everything that can significantly affect the final estimate. These factors include:</p>
 
-  - Unfinished task setting (unprepared layouts and ToR, API issues and everything “to be provided later”);
-</ParagraphWithImage>
+### Mind the risks
+
+<p>Discuss separately everything that can significantly affect the final estimate. These factors include:</p>
+
+- Unfinished task setting (unprepared layouts and ToR, API issues and everything “to be provided later”);
 
 - Technology that you have not used before;
 
