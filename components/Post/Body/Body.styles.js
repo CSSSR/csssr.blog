@@ -83,8 +83,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     color: #18191B;
   }
 
-  .no-wrap {
+  .no-wrap,
+  code {
     white-space: nowrap;
+  }
+
+  .heading_regular_l,
+  .heading_regular_m,
+  .heading_regular_s {
+    .link_list_s {
+      font-size: inherit;
+      line-height: inherit;
+    }
   }
 
   ${desktop.all} {
