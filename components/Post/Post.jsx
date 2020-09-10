@@ -12,7 +12,7 @@ const Post = ({ post, language, className }) => {
   return (
     <article className={className}>
       <Head>
-        <title>{cleaningTitle(post.title)}</title>
+        <title>{cleaningTitle(post.title, 'meta')}</title>
         <meta name="description" content={getDescription(post.content)} />
         <meta property="og:type" content="article" />
         <meta property="article:section" content={post.tag} />
@@ -20,7 +20,7 @@ const Post = ({ post, language, className }) => {
           property="og:url"
           content={`https://blog.csssr.com/${language}/article/${post.slug}`}
         />
-        <meta property="og:title" content={cleaningTitle(post.title)} />
+        <meta property="og:title" content={cleaningTitle(post.title, 'meta')} />
         <meta property="og:description" content={getDescription(post.content)} />
         <meta property="article:published_time" content={post.date} />
         {post.author && <meta property="article:author" content={post.author} />}
