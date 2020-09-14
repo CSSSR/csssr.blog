@@ -13,6 +13,7 @@
   "dependencies": {
     "@csssr/core-design": "^5.9.2",
     "@csssr/csssr.images": "^1.12.0",
+    "@csssr/csssr-shared-header": "1.0.98",
     "@emotion/core": "^10.0.34",
     "@emotion/styled": "^10.0.10",
     "@sentry/browser": "^5.21.1",
