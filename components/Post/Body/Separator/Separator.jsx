@@ -6,10 +6,10 @@ import styled from '@emotion/styled'
 import styles from './Separator.styles'
 import { backgroundCss } from '@csssr/csssr.images/dist/utils'
 
-const Separator = ({ className, sources, type }) => {
+const Separator = ({ className, sources, type, ...props }) => {
   return (
     <>
-      <hr className={cn(className, type)} />
+      <hr className={cn(className, type)} {...props} />
       <Global
         styles={css`
           ${backgroundCss(`.${className}::after`, sources)}
