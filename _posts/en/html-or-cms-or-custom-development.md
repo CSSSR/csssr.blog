@@ -53,7 +53,7 @@ To help you decide which web development strategy is best for you, let’s look 
   <p>Who it’s best for: established companies looking to build an online store, aggregators, startups looking to build an online company, news sites</p>
 </ParagraphWithImage>
 
-<Separator id="peopleWithBasket" type="color-line" lineColor="#D3D3FF" imageName="peopleWithBasket"/>
+<Separator type="color-line" lineColor="#D3D3FF" imageTitle="peopleWithBasket" imageName="peopleWithBasket"/>
 
 ## Conclusion
 

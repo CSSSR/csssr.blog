@@ -90,7 +90,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
       }
     }
 
-    &#peopleWithBasket {
+    &&_peopleWithBasket {
       height: ${calcRem(124)};
     }
 
