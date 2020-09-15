@@ -39,7 +39,7 @@ If ToR leave no hope for an accurate estimation, never be afraid to ask question
 
 - Get the answers and estimate the task.
 
-- But the truth would be more like this:
+But the truth would be more like this:
 
 - You carefully read ToR and ask questions to the author of the original idea.
 
