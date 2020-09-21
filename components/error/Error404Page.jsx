@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { withRouter } from 'next/router'
 import { Global } from '@emotion/core'
-import { Header, PageContent } from '@csssr/csssr-shared-header'
+import { Header, PageContent, getLocaleFromUrl } from '@csssr/csssr-shared-header'
 import { DeviceContext } from '../DeviceContext'
 import styled from '@emotion/styled'
 import cn from 'classnames'
@@ -59,8 +59,8 @@ const ErrorPage = ({ className }) => {
   const text404 = isLanguageRu ? 'Страница не найдена' : 'Not found'
   const { isMobile } = useContext(DeviceContext)
   const appRootElement = typeof window === 'object' ? document.getElementById('__next') : null
-  const lng = isLanguageRu ? 'ru' : 'en'
-  // const lng = getLocaleFromUrl(route.asPath)
+  // const lng = isLanguageRu ? 'ru' : 'en'
+  const lng = getLocaleFromUrl(route.asPath)
   console.log('lang is', lng)
 
   return (
@@ -74,7 +74,7 @@ const ErrorPage = ({ className }) => {
       </Head>
 
       <Header
-        isMobile={true || isMobile}
+        isMobile={isMobile}
         pathname="blog"
         lng={lng}
         NextLink={Link}
