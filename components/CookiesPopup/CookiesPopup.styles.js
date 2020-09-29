@@ -14,11 +14,12 @@ const base = ({ media }) => css`
     padding-right: 2.265rem;
     background-color: #171717;
     color: #ffffff;
-    transition: transform 200ms ease-out;
+    transition: transform 200ms ease-out, opacity 200ms ease-out;
   }
 
   &.hide {
     transform: translateY(100%);
+    opacity: 0;
   }
 
   .wrap {
