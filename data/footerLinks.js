@@ -5,14 +5,14 @@ export const nav = {
       title: 'Services',
       links: [
         {
-          id: 'web-development',
-          title: 'Web Development',
+          id: 'outsourcing',
+          title: 'Outsourcing',
           href: 'https://csssr.com/en/service/outsourcing-front-end',
         },
         {
-          id: 'psd-to-html',
-          title: 'PSD to HTML',
-          href: 'https://csssr.com/en/service/express-front-end',
+          id: 'backend',
+          title: 'Back-end</br>and DevOps',
+          href: 'https://csssr.com/en/service/back-end-and-devops',
         },
         {
           id: 'mvp',
@@ -20,9 +20,9 @@ export const nav = {
           href: 'https://csssr.com/en/service/mvp-development',
         },
         {
-          id: 'backend',
-          title: 'Back-end</br>and DevOps',
-          href: 'https://csssr.com/en/service/back-end-and-devops',
+          id: 'design',
+          title: 'DesignLab',
+          href: 'https://csssr.com/en/service/design-lab',
         },
       ],
     },
@@ -117,14 +117,14 @@ export const nav = {
           href: 'https://csssr.com/ru/service/outsourcing-front-end',
         },
         {
-          id: 'mvp',
-          title: 'MVP',
-          href: 'https://csssr.com/ru/service/mvp-development',
-        },
-        {
           id: 'backend',
           title: 'Бэкенд</br>и DevOps',
           href: 'https://csssr.com/ru/service/back-end-and-devops',
+        },
+        {
+          id: 'mvp',
+          title: 'MVP',
+          href: 'https://csssr.com/ru/service/mvp-development',
         },
       ],
     },

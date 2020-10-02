@@ -11,7 +11,7 @@
     "article": "node scripts/articleTemplate/scaffoldNewArticle.js"
   },
   "dependencies": {
-    "@csssr/core-design": "^5.9.2",
+    "@csssr/core-design": "^5.10.0",
     "@csssr/csssr.images": "^1.12.0",
     "@emotion/core": "^10.0.34",
     "@emotion/styled": "^10.0.10",
