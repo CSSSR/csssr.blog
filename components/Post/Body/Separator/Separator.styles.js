@@ -90,6 +90,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
       }
     }
 
+    &&_peopleWithBasket {
+      height: ${calcRem(124)};
+    }
+
     &.bg-repeat {
       height: ${calcRem(100)};
 
