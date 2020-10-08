@@ -1,5 +1,5 @@
 ---
-title: '«И так сойдёт!» или главные ошибки кандидатов'
+title: '«И так сойдёт!» или <i>главные ошибки кандидатов</i>'
 author: 'Сергей Головин, Андрей Мельников, Александр Кетов, Ислам Виндижев, Борис Черныш'
 coverImageAlt: 'Статья об основных ошибках кандидатов. Полезные советы и материалы от команды CSSSR.'
 date: '2018-08-16T00:00:00.000Z'
@@ -14,7 +14,7 @@ tag: 'web-development'
 
 ## Итак, кто же виноват?
 
-![i-tak](/images/candidates-mistakes/i_tak.png)
+![i-tak](/posts/ru/candidates-mistakes/i-tak/all.png)
 
 Однозначно, этот парень, нашёптывающий кандидату, что методология «раз, раз и в продакшн» — работает. Потому что главные враги разработчика – это именно невнимательность, лень и нежелание учиться.
 
@@ -29,9 +29,10 @@ tag: 'web-development'
 
 Лучшие всегда учатся на своих ошибках. Мы ценим это и поощряем стремление расти над собой. Поэтому собрали рекомендации наших разработчиков, которые проверили уже больше 1400 тестов и могут подробно разобрать основные недочёты и поделиться советами.
 
-![learn](/images/candidates-mistakes/learn.png)
+![learn](/posts/ru/candidates-mistakes/learn/all.png)
 
 ### Постройте фундамент
+
 В первую очередь стоит изучать фундаментальные вещи, связанные с веб-разработкой:
 
 - принципы работы браузера;
@@ -43,42 +44,43 @@ tag: 'web-development'
 При изучении всегда спрашивайте себя: «Понимаю ли я, как это работает и почему это работает именно так?». Недостаточно просто знать, что JavaScript — асинхронный и однопоточный язык, нужно понимать, что это значит и чем обусловлено. Мало простого заучивания методов жизненного цикла компонента React — разберитесь, с какой целью они были добавлены.
 
 ### Расширяйте кругозор
+
 Иногда другие языки, библиотеки, фреймворки или даже парадигмы программирования могут показать новые способы решения привычных проблем.
 
 Например, разработчик использует только императивные конструкции. Чтобы получить список имен пользователей старше 30 лет, он обойдёт изначальный список циклом for, предварительно создав массив-аккумулятор:
 
 ```js
-const users = [
-  { name: 'Иван', age: 39 },
-  { name: 'Елена', age: 23 },
-  { name: 'Аркадий', age: 21 },
-  { name: 'Ирина', age: 31 },
-]
+  const users = [
+    { name: 'Иван', age: 39 },
+    { name: 'Елена', age: 23 },
+    { name: 'Аркадий', age: 21 },
+    { name: 'Ирина', age: 31 },
+  ]
 
-const names = []
+  const names = []
 
-for (let i = 0; i < users.length; i++) {
-  const user = users[i];
+  for (let i = 0; i < users.length; i++) {
+    const user = users[i];
 
-  if (user.age >= 30) {
-    names.push(user.name)
+    if (user.age >= 30) {
+      names.push(user.name)
+    }
   }
-}
-```
+  ```
 
-Декларативные конструкции дают другой способ решения той же задачи:
+  Декларативные конструкции дают другой способ решения той же задачи:
 
-```js
-const users = [
-  { name: 'Иван', age: 39 },
-  { name: 'Елена', age: 23 },
-  { name: 'Аркадий', age: 21 },
-  { name: 'Ирина', age: 31 },
-]
+  ```js
+  const users = [
+    { name: 'Иван', age: 39 },
+    { name: 'Елена', age: 23 },
+    { name: 'Аркадий', age: 21 },
+    { name: 'Ирина', age: 31 },
+  ]
 
-const names = users
-  .filter(user => user.age >= 30)
-  .map(user => user.name)
+  const names = users
+    .filter(user => user.age >= 30)
+    .map(user => user.name)
 ```
 
 Даже крупные компании прибегают к альтернативным методам решения задач. Когда React только вышел, его довольно быстро портировали на ClojureScript. И оказалось, что на ClojureScript он работает быстрее. Разработчики из Facebook изучили вопрос и поняли, что причина в persistent data structures, которые по умолчанию используются в Clojure. После этого Facebook разработал Immutable.js, который в свою очередь и привнёс в мир JavaScript persistent data structures.
@@ -96,56 +98,65 @@ const names = users
 
 Очевидный совет, и тем не менее практикуйтесь. Решайте задачи, попробуйте программировать на чистом JS или окунитесь в другой язык. Напишите своё приложение. Пусть оно и будет копией существующего, но это позволит применить новые знания и навыки. И не забывайте о деталях: постоянно улучшайте свой код и думайте о том, как сделать его ещё лучше.
 
-![pet](/images/candidates-mistakes/pet.png)
+![pet](/posts/ru/candidates-mistakes/pet/all.png)
 
 ### Полезные материалы
 
-1. Книги:
-  * “Structure and interpretation of computer programs (SICP)” Harold Abelson, Gerald Jay Sussman;
-  * “Искусство программирования” Дональд Кнут;
-  * “Алгоритмы: построение и анализ” Томас Кормен;
-  * “Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих” Адитья Бхаргава;
-  * “Паттерны проектирования” Эрик Фримен;
-  * “Чистый код. Создание, анализ и рефакторинг” Роберт Мартин;
-  * [“You don’t know JS”](https://github.com/getify/You-Dont-Know-JS) Kyle Simpson;
-  * “Секреты JavaScript ниндзя” Джон Резиг, Беэр Бибо;
-  * “Не заставляйте меня думать” Стив Круг.
+#### 1. Книги:
 
-2. Курсы для начинающих разработчиков:
-    * [Hexlet](https://hexlet.io)
-    * [HTML Academy](https://htmlacademy.ru)
-    * [Курсы React от CSSSR.School](https://school.csssr.com/ru)
+  - “Structure and interpretation of computer programs (SICP)” Harold Abelson, Gerald Jay Sussman;
+  - “Искусство программирования” Дональд Кнут;
+  - “Алгоритмы: построение и анализ” Томас Кормен;
+  - “Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих” Адитья Бхаргава;
+  - “Паттерны проектирования” Эрик Фримен;
+  - “Чистый код. Создание, анализ и рефакторинг” Роберт Мартин;
+  - [“You don’t know JS”](https://github.com/getify/You-Dont-Know-JS) Kyle Simpson;
+  - “Секреты JavaScript ниндзя” Джон Резиг, Беэр Бибо;
+  - “Не заставляйте меня думать” Стив Круг.
 
-3. Задачи:
-    * [https://www.codewars.com](https://www.codewars.com)
-    * [http://rosalind.info](http://rosalind.info)
+#### 2. Курсы для начинающих разработчиков:
 
-4. Документация
-    * [https://reactjs.org/docs/](https://reactjs.org/docs/)
-    * [https://angular.io/docs](https://angular.io/docs)
-    * [https://vuejs.org/v2/guide/](https://vuejs.org/v2/guide/)
-    * [https://redux.js.org](https://redux.js.org)
-5. Официальные блоги фреймворков
-    * [https://reactjs.org/blog](https://reactjs.org/blog)
-    * [https://blog.angular.io](https://blog.angular.io)
-    * [https://medium.com/the-vue-point](https://medium.com/the-vue-point)
+  - [Hexlet](https://hexlet.io)
+  - [HTML Academy](https://htmlacademy.ru)
+  - [Курсы React от CSSSR.School](https://school.csssr.com/ru)
 
-6. Сhange detection во фреймворках:
-    * [React](https://reactjs.org/docs/reconciliation.html)
-    * [Ещё React](https://blog.csssr.ru/2016/12/07/react-perfomance)
-    * [Снова React](https://reactjs.org/docs/optimizing-performance.html#avoid-reconciliation)
-    * [Angular](https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html)
+#### 3. Задачи:
 
-7. Подход, предполагающий самостоятельное изучение того, как библиотека написана:
-    * [Redux](https://zapier.com/engineering/how-to-build-redux/)
-    * [RxJS](https://medium.com/@benlesh/learning-observable-by-building-observable-d5da57405d87)
-    * [Build your own X](https://github.com/danistefanovic/build-your-own-x)
+  - [https://www.codewars.com](https://www.codewars.com)
+  - [http://rosalind.info](http://rosalind.info)
 
-8. Ещё кое-что полезное:
-    * [Учебник по JS](https://learn.javascript.ru/)
-    * [Другой учебник по JS](https://eloquentjavascript.net/)
-    * [Принципы работы современных браузеров](https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/)
-    * [Блог Вячеслава Егорова](https://mrale.ph/)
-    * [Блог Никиты Прокопова](http://tonsky.me/)
-    * [Блог Дмитрия Сошникова](http://dmitrysoshnikov.com)
-    * [Блог Addy Osmani](https://medium.com/@addyosmani)
+#### 4. Документация
+
+  - [https://reactjs.org/docs/](https://reactjs.org/docs/)
+  - [https://angular.io/docs](https://angular.io/docs)
+  - [https://vuejs.org/v2/guide/](https://vuejs.org/v2/guide/)
+  - [https://redux.js.org](https://redux.js.org)
+
+#### 5. Официальные блоги фреймворков
+
+  - [https://reactjs.org/blog](https://reactjs.org/blog)
+  - [https://blog.angular.io](https://blog.angular.io)
+  - [https://medium.com/the-vue-point](https://medium.com/the-vue-point)
+
+#### 6. Сhange detection во фреймворках:
+
+  - [React](https://reactjs.org/docs/reconciliation.html)
+  - [Ещё React](https://blog.csssr.ru/2016/12/07/react-perfomance)
+  - [Снова React](https://reactjs.org/docs/optimizing-performance.html#avoid-reconciliation)
+  - [Angular](https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html)
+
+#### 7. Подход, предполагающий самостоятельное изучение того, как библиотека написана:
+
+  - [Redux](https://zapier.com/engineering/how-to-build-redux/)
+  - [RxJS](https://medium.com/@benlesh/learning-observable-by-building-observable-d5da57405d87)
+  - [Build your own X](https://github.com/danistefanovic/build-your-own-x)
+
+#### 8. Ещё кое-что полезное:
+
+  - [Учебник по JS](https://learn.javascript.ru/)
+  - [Другой учебник по JS](https://eloquentjavascript.net/)
+  - [Принципы работы современных браузеров](https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/)
+  - [Блог Вячеслава Егорова](https://mrale.ph/)
+  - [Блог Никиты Прокопова](http://tonsky.me/)
+  - [Блог Дмитрия Сошникова](http://dmitrysoshnikov.com)
+  - [Блог Addy Osmani](https://medium.com/@addyosmani)
