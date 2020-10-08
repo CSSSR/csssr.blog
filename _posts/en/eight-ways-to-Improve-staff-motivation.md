@@ -49,7 +49,7 @@ Absence of career opportunities shadows the motivation and profession goals of�
 <Note>
 #### Dangers: what is the impact of a demotivated employee?
 
-There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.
+There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a <span class="no-wrap">client-facing</span> position, then the problem may have a killing impact on your relationship with both the existing and potential customers.
 </Note>
 
 <Img imageName="man-with-butterfly" alt="man with butterfly" withBigMargin/>

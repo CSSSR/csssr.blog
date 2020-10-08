@@ -9,7 +9,7 @@ tag: 'business'
 
 **W**eb development and creative design have always gone hand-in-hand. In the beginning, websites and internet traffic were relatively simple, with only basic code and designs, and limited specialization. Simply put, there wasn’t much thought putinto making websites truly high performance. However, times have changed, and each field has become increasingly competitive. As budgets for web development have swelled, the challenge of bringing together creative agencies and web developers has become more important.
 
-The history of digital advertising is a gradual trend towards increased specialization. At first, large companies wanted a full-service provider, so they typically turned to major advertising agencies to give them the full spectrum of communications services. Originally, there were two classifications for these services, above-the-line (ATL), focussing on a broad range of customers, or the more targeted below-the-line (BTL), appealing to specific groups. At first, digital advertising was grouped in with BTL, but over time digital advertising became a separate field in its own right. Now, when a company seeks an advertising agency, they look for ATL, BTL and digital.
+The history of digital advertising is a gradual trend towards increased specialization. At first, large companies wanted a full-service provider, so they typically turned to major advertising agencies to give them the full spectrum of communications services. Originally, there were two classifications for these services, above-the-line (ATL), focussing on a broad range of customers, or the more targeted <span class="no-wrap">below-the-line</span> (BTL), appealing to specific groups. At first, digital advertising was grouped in with BTL, but over time digital advertising became a separate field in its own right. Now, when a company seeks an advertising agency, they look for ATL, BTL and digital.
 
 Web development is also becoming more and more sophisticated and, with it, budgets for digital promotion have been growing. As the field has developed, specialization has increased, with some companies offering specialized creative services and others, web development, because it is no longer efficient for creative agencies to hire internal developers and build a management model for IT teams.
 
@@ -21,7 +21,7 @@ Web development is also becoming more and more sophisticated and, with it, bud
 
 What are the main challenges of building your own IT department? Well, it takes time to set up a reliable and skilled IT team and significant investment to support it. Additionally, the team needs to have a wide range of skills so that it can handle specialized requests. The agency may instead have to hire or train additional team members for each assignment, which can be time-consuming and expensive.
 
-So, often developing internal technical skills is a less-than-appealing idea for creative agencies. However, the good news is that when agencies choose to forgo developing their own IT departments, there are several alternatives, better models for web development services:
+So, often developing internal technical skills is a <span class="no-wrap">less-than-appealing</span> idea for creative agencies. However, the good news is that when agencies choose to forgo developing their own IT departments, there are several alternatives, better models for web development services:
 
 <ParagraphWithImage imageName="clockwork-bird">
 ### Option 2: Subcontractor / Freelance
@@ -54,7 +54,7 @@ Creative agencies and web development companies that are seriously considering a
 
 ### 1. Both teams must be engaged from start
 
-The main advantage of an alliance is the ability to complement each other’s expertise. While working in tandem, web developers can advise creative agencies early on about what ideas might significantly increase project costs and suggest how to implement them in a more cost-effective way.
+The main advantage of an alliance is the ability to complement each other’s expertise. While working in tandem, web developers can advise creative agencies early on about what ideas might significantly increase project costs and suggest how to implement them in a more <span class="no-wrap">cost-effective</span> way.
 
 Web developers can also advise on which technologies are best suited to a particular project and which would be best to avoid. For example, some projects require costly support of outdated web browsers that few customers would actually use. Costs to support an old browser could amount to a 30% increase in the total cost of the project, while only applicable for a net increase in customers of 0.5%. Of course, the client might decide it still wants to go ahead with supporting the browser, but if both the creative team and the web development team are included in the conversation from the start, the vision will be clearer.
 
