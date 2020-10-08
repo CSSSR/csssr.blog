@@ -71,6 +71,11 @@ export const nav = {
           title: 'Core values',
           href: 'https://csssr.com/en/core-values',
         },
+        {
+          id: 'ourCases',
+          title: 'Our cases',
+          href: 'https://csssr.com/en/our-cases',
+        },
       ],
     },
     {
