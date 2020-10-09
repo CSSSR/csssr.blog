@@ -84,7 +84,7 @@ export async function getStaticProps({ params }) {
     props: {
       posts: postsByLanguageAndCategoryAndPage,
       categories,
-      totalNumberOfPosts: postsByLanguageAndCategory.length,
+      totalNumberOfPosts: orderedPostsByLanguageAndCategory.length,
       activeCategory: params.category,
       activePageNumber: Number(params.page),
       language,
