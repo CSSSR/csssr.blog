@@ -2,7 +2,7 @@
   "presets": ["next/babel"],
   "plugins": [
     ["prismjs", {
-        "languages": ["javascript","css","markup","html","jsx", "scss", "stylus", "json", "shell"],
+        "languages": ["javascript", "css", "markup", "html", "jsx", "scss", "stylus", "json", "shell", "diff"],
         "plugins": ["line-numbers"],
         "theme": "coy",
         "css": true

@@ -146,13 +146,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .list_s,
     .grid-element,
     .compare,
-    .line-numbers  {
+    .line-numbers {
       grid-column: 4 / span 6;
     }
 
     .line-numbers {
       margin-top: 50px !important;
     }
+  }
+
+
+  blockquote {
+    margin-top: ${calcRem(50)};
+    margin-bottom: ${calcRem(35)};
+    padding-left: ${calcRem(20)};
+    padding-top: ${calcRem(2)};
+    padding-bottom: ${calcRem(18)};
+    grid-column: 4 / span 6;
+    border-left: 4px solid  #E0E4EC;
   }
 
   ${tablet.all} {
@@ -214,7 +225,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .list_s,
     .grid-element,
     .compare,
-    .line-numbers {
+    .line-numbers,
+    blockquote {
       grid-column: 3 / span 8;
     }
 
@@ -277,7 +289,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .list_s,
     .line-numbers,
     .grid-element,
-    .compare {
+    .compare,
+    blockquote {
       grid-column: 1 / span 6;
     }
 
