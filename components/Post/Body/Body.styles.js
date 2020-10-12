@@ -16,6 +16,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     float: left;
   }
 
+  em {
+    font-weight: normal;
+  }
+
+  strong, strong > em {
+    font-weight: bold;
+  }
+
   .heading_regular_s {
     margin-top: ${calcRem(30)};
   }
@@ -158,12 +166,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   blockquote {
     margin-top: ${calcRem(50)};
-    margin-bottom: ${calcRem(35)};
+    margin-bottom: ${calcRem(42)};
     padding-left: ${calcRem(20)};
-    padding-top: ${calcRem(2)};
+    padding-top: ${calcRem(18)};
     padding-bottom: ${calcRem(18)};
     grid-column: 4 / span 6;
     border-left: 4px solid  #E0E4EC;
+
+    & > .text_regular_m:first-of-type {
+      margin-top: 0;
+    }
+
+    & + *,
+    & + *[class] {
+      margin-top: 0;
+    }
   }
 
   ${tablet.all} {
