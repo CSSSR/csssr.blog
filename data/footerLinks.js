@@ -101,7 +101,7 @@ export const nav = {
         {
           id: 'blog',
           title: 'Blog',
-          href: '/',
+          href: '/en',
         },
       ],
     },
@@ -187,7 +187,7 @@ export const nav = {
         {
           id: 'blog',
           title: 'Блог',
-          href: '/',
+          href: '/ru',
         },
       ],
     },
