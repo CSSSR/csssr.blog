@@ -8,6 +8,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
   }
 
   .quote {
+    border: none;
+    padding: 0;
+    margin: 0;
     position: relative;
 
     ${withImage ?
