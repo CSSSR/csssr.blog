@@ -14,6 +14,33 @@ tag: 'web-development'
 
 **In**this digital era, a **website** comprising various UI/UX elements and features can reveal the ocean of opportunities and become even more effective and engaging. UI/UX  components and technologies not only make a website look great but also secure the brand’s marketing goals.
 
+Regular text
+
+**Bold text**
+
+_Italic text_
+
+**_Italic & Bold text_**
+
+>Сноска
+
+- If ToR leave no hope for an accurate estimation
+- never be afraid to ask questions
+
+  I need to add another paragraph below the second list item.
+
+- even if it takes additional time.
+  - Indented item
+  - Indented item
+
+
+1. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
+2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet.
+3. A team is fully distributed, all interaction is remote:
+
+  1. Indented item
+  2. Indented item
+
 <Table>
   <thead>
     <tr>
