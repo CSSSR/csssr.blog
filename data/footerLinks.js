@@ -71,6 +71,11 @@ export const nav = {
           title: 'Core values',
           href: 'https://csssr.com/en/core-values',
         },
+        {
+          id: 'projects',
+          title: 'Our projects',
+          href: 'https://csssr.com/en/projects',
+        },
       ],
     },
     {
@@ -172,6 +177,11 @@ export const nav = {
           id: 'coreValues',
           title: 'Ценности',
           href: 'https://csssr.com/ru/core-values',
+        },
+        {
+          id: 'projects',
+          title: 'Наши проекты',
+          href: 'https://csssr.com/ru/projects',
         },
       ],
     },
