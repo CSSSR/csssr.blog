@@ -40,8 +40,6 @@ const Categories = ({ className, items, activeCategory, language }) => {
               if (id === 'all') {
                 href = '/[language]'
                 as = `/${language}`
-              } else if (id === 'news') {
-                href = `/${language}/news512`
               } else {
                 href = '/[language]/[category]'
                 as = `/${language}/${id}`
@@ -60,6 +58,19 @@ const Categories = ({ className, items, activeCategory, language }) => {
                 </li>
               )
             })}
+
+          {language === 'ru' && (
+            <li className="item">
+              <Link href={`/${language}/news512`}>
+                <a
+                  className={cn('link', { _active: 'news' === activeCategory })}
+                  ref={'news' === activeCategory ? activeItemRef : null}
+                >
+                  🔥 Новости
+                </a>
+              </Link>
+            </li>
+          )}
         </ul>
         <ActiveLine width={activeWidth} left={activeLeft} />
       </div>
