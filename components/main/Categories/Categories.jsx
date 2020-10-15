@@ -40,6 +40,8 @@ const Categories = ({ className, items, activeCategory, language }) => {
               if (id === 'all') {
                 href = '/[language]'
                 as = `/${language}`
+              } else if (id === 'news') {
+                href = `/${language}/news512`
               } else {
                 href = '/[language]/[category]'
                 as = `/${language}/${id}`

@@ -12,6 +12,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     color: #18191B;
   }
 
+  .categories {
+    grid-column: 1 / span 12;
+  }
+
   ${desktop.all} {
 
   }

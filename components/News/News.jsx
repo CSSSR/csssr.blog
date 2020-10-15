@@ -1,15 +1,16 @@
 import React from 'react'
-import { string, number, arrayOf } from 'prop-types'
+import { string, number, arrayOf, shape } from 'prop-types'
 import styled from '@emotion/styled'
 import Head from 'next/head'
 import { Heading } from '@csssr/core-design'
 
 import { Grid } from '../Grid'
 import Layout from '../Layout'
+import Categories from '../main/Categories'
 
 import styles from './News.styles'
 
-const News = ({ language, className }) => {
+const News = ({ language, className, categories, posts }) => {
   return (
     <>
       <Head>
@@ -24,9 +25,18 @@ const News = ({ language, className }) => {
 
       <Layout language={language}>
         <Grid className={className}>
+          <Categories
+            items={categories}
+            language={language}
+            activeCategory="news"
+            className="categories"
+          />
+
           <Heading.H1 className="title" type="regular" size="l">
             Новости 512
           </Heading.H1>
+
+          {posts.map((post) => post.title)}
         </Grid>
       </Layout>
     </>
@@ -34,9 +44,16 @@ const News = ({ language, className }) => {
 }
 
 News.propTypes = {
+  posts: arrayOf(
+    shape({
+      title: string,
+      slug: string,
+      date: string,
+      tag: string,
+    }),
+  ),
   categories: arrayOf(string),
   totalNumberOfPosts: number,
-  activeCategory: string,
   activePageNumber: number,
   language: string,
   className: string,
