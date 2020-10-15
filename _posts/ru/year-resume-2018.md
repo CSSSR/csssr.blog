@@ -89,8 +89,13 @@ TLDR: вот [ссылка](https://github.com/zerobias/effector) на либу,
 В твите факты, указывающие на такие перемены.
 
 <div class="grid-element">
-	<blockquote class="twitter-tweet" data-lang="ru"><p lang="en" dir="ltr">
-		Every website in 2018 <a href="https://t.co/Gm7jhfuuUO">pic.twitter.com/Gm7jhfuuUO</a></p>&mdash; Daryl Ginn (@darylginn) <a href="https://twitter.com/darylginn/status/1053646859686809600?ref_src=twsrc%5Etfw">20 октября 2018 г.</a>
+	<blockquote class="twitter-tweet" data-lang="ru">
+	<p lang="en" dir="ltr">
+		Every website in 2018 <a href="https://t.co/Gm7jhfuuUO">pic.twitter.com/Gm7jhfuuUO</a>
+	</p>
+	<p>
+		— Daryl Ginn (@darylginn) <a href="https://twitter.com/darylginn/status/1053646859686809600?ref_src=twsrc%5Etfw">20 октября 2018 г.</a>
+	</p>
 	</blockquote>
 
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
