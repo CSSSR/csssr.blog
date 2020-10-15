@@ -1,5 +1,5 @@
 ---
-title: 'The Baltic E-Success: A&nbsp;Brief Introduction to&nbsp;the <i>Estonian IT</i>&nbsp;Industry'
+title: 'The Baltic <span>E-Success</span>: A&nbsp;Brief Introduction to&nbsp;the <i>Estonian IT</i>&nbsp;Industry'
 coverImageAlt: 'alt me'
 date: '2019-11-14T05:35:07.322Z'
 tag: 'business'
