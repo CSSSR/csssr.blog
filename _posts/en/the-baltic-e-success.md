@@ -1,5 +1,5 @@
 ---
-title: 'The Baltic <span>E-Success</span>: A&nbsp;Brief Introduction to&nbsp;the <i>Estonian IT</i>&nbsp;Industry'
+title: 'The Baltic <span>E-Success</span>:</br> A&nbsp;Brief Introduction to&nbsp;the <i>Estonian IT</i>&nbsp;Industry'
 coverImageAlt: 'alt me'
 date: '2019-11-14T05:35:07.322Z'
 tag: 'business'
@@ -35,7 +35,7 @@ Another attractive thing about Estonia is the progressive and competitive tax s
 
 The score in the given index was achieved through a 20% corporate profit tax (applied to distributed profits only), a 20% tax on individual income (not applying to personal dividend income), and a property tax applied to the land’s value only. Foreign profits earned by local companies are also exempted from the profit taxation.
 
-<Separator type="color-line" lineColor="#D3D3FF" imageName="manWithCafeBg"/>
+<Separator type="color-line" lineColor="#D3D3FF" imageName="manWithCafeBg" imageTitle="manWithCafeBg" />
 
 ## Homegrown IT minds and scholars
 
