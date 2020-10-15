@@ -1,0 +1,42 @@
+{
+  "tools": {
+    "@csssr/e2e-tools-nightwatch": {
+      "browsers": {
+        "local_chrome": {
+          "default": true,
+          "type": "webdriver",
+          "desiredCapabilities": {
+            "browserName": "chrome",
+            "goog:chromeOptions": { "args": ["--window-size=1200,800"] }
+          },
+          "globals": { "skipScreenshotAssertions": true }
+        },
+        "remote_chrome": {
+          "remote": true,
+          "type": "selenium",
+          "host": "selenium-linux.csssr.ru",
+          "basicAuth": {
+            "credentialsId": "chromedriver",
+            "username_env": "CHROMEDRIVER_USERNAME",
+            "password_env": "CHROMEDRIVER_PASSWORD"
+          },
+          "desiredCapabilities": {
+            "browserName": "chrome",
+            "goog:chromeOptions": {
+              "w3c": false,
+              "args": [
+                "--headless",
+                "--no-sandbox",
+                "--disable-gpu",
+                "--window-size=1200,800"
+              ]
+            }
+          },
+          "globals": { "skipScreenshotAssertions": false }
+        }
+      }
+    }
+  },
+  "projectName": "blog-starter",
+  "defaultLaunchUrl": "http://"
+}
