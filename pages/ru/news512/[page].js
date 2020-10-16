@@ -5,6 +5,8 @@ import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
 import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberByPostIndex'
 import getPostsCategories from '../../../utils/getPostsCategories'
 
+import { POSTS_PER_PAGE } from '../../../data/constants'
+
 const News512 = ({ posts, categories, totalNumberOfPosts, activePageNumber, language }) => (
   <News
     posts={posts}
@@ -42,11 +44,17 @@ export async function getStaticProps({ params }) {
   }
 }
 
-//  TODO: Сделать правильную реализацию getStaticPaths
-
 export async function getStaticPaths() {
+  const postsNews = await getPostsNews()
+  const pageNumber = Math.ceil(postsNews.length / POSTS_PER_PAGE)
+  const paths = [...Array(pageNumber)]
+    .map((item, index) => ({
+      params: { page: (index + 1).toString() },
+    }))
+    .filter(({ params: { page } }) => page !== '1')
+
   return {
-    paths: [{ params: { page: '2' } }, { params: { page: '3' } }],
+    paths,
     fallback: false,
   }
 }

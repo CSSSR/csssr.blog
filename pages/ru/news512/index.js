@@ -21,7 +21,7 @@ export default News512
 
 export async function getStaticProps() {
   const postsByLanguage = await getPostsByLanguage(['tag'])
-  const postsNews = await getPostsNews(['title', 'date', 'slug', 'author', 'tag'])
+  const postsNews = await getPostsNews(['title', 'date', 'slug', 'number'])
 
   const language = 'ru'
   const categories = getPostsCategories(postsByLanguage[language])
@@ -38,5 +38,3 @@ export async function getStaticProps() {
     },
   }
 }
-
-//  TODO: Сделать  реализацию getStaticPaths
