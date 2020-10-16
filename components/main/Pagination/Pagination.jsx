@@ -47,13 +47,13 @@ const Pagination = ({
 
         if (pageNumber === 1 && activeCategory.toLowerCase() === 'all') {
           as = `/${language}`
-          href = '/[language]'
+          href = `/${language}`
         } else if (pageNumber === 1) {
           as = `/${language}/${activeCategory.toLowerCase()}`
-          href = '/[language]/[category]'
+          href = `/${language}/${activeCategory.toLowerCase()}`
         } else {
           as = `/${language}/${activeCategory.toLowerCase()}/${pageNumber}`
-          href = '/[language]/[category]/[page]'
+          href = `/${language}/${activeCategory.toLowerCase()}/${pageNumber}`
         }
 
         return (

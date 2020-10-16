@@ -21,13 +21,13 @@ const PrevPageLink = ({ className, language, disabled, activeCategory, activePag
 
   if (activePageNumber === 2 && activeCategory.toLowerCase() === 'all') {
     as = `/${language}`
-    href = '/[language]'
+    href = `/${language}`
   } else if (activePageNumber === 2) {
     as = `/${language}/${activeCategory.toLowerCase()}`
-    href = '/[language]/[category]'
+    href = `/${language}/${activeCategory.toLowerCase()}`
   } else {
     as = `/${language}/${activeCategory.toLowerCase()}/${activePageNumber - 1}`
-    href = '/[language]/[category]/[page]'
+    href = `/${language}/${activeCategory.toLowerCase()}/${activePageNumber - 1}`
   }
 
   return (

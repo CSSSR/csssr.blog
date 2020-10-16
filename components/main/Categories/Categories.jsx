@@ -63,8 +63,8 @@ const Categories = ({ className, items, activeCategory, language }) => {
             <li className="item">
               <Link href={`/${language}/news512`}>
                 <a
-                  className={cn('link', { _active: 'news' === activeCategory })}
-                  ref={'news' === activeCategory ? activeItemRef : null}
+                  className={cn('link', { _active: 'news512' === activeCategory })}
+                  ref={'news512' === activeCategory ? activeItemRef : null}
                 >
                   🔥 Новости
                 </a>

@@ -25,7 +25,7 @@ const NextPageLink = ({
 
   return (
     <Link
-      href={'/[language]/[category]/[page]'}
+      href={`/${language}/${activeCategory.toLowerCase()}/${activePageNumber + 1}`}
       as={`/${language}/${activeCategory.toLowerCase()}/${activePageNumber + 1}`}
     >
       <a

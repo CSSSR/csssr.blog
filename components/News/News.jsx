@@ -7,10 +7,11 @@ import { Heading } from '@csssr/core-design'
 import { Grid } from '../Grid'
 import Layout from '../Layout'
 import Categories from '../main/Categories'
+import Pagination from '../main/Pagination'
 
 import styles from './News.styles'
 
-const News = ({ language, className, categories, posts }) => {
+const News = ({ language, className, categories, posts, activePageNumber, totalNumberOfPosts }) => {
   return (
     <>
       <Head>
@@ -28,7 +29,7 @@ const News = ({ language, className, categories, posts }) => {
           <Categories
             items={categories}
             language={language}
-            activeCategory="news"
+            activeCategory="news512"
             className="categories"
           />
 
@@ -38,6 +39,13 @@ const News = ({ language, className, categories, posts }) => {
 
           {posts.map((post) => post.title)}
         </Grid>
+
+        <Pagination
+          language={language}
+          activeCategory="news512"
+          activePageNumber={activePageNumber}
+          totalNumberOfPosts={totalNumberOfPosts}
+        />
       </Layout>
     </>
   )
