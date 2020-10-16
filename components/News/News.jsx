@@ -8,6 +8,7 @@ import { Grid } from '../Grid'
 import Layout from '../Layout'
 import Categories from '../main/Categories'
 import Pagination from '../main/Pagination'
+import NavList from './NewsList'
 
 import styles from './News.styles'
 
@@ -37,7 +38,7 @@ const News = ({ language, className, categories, posts, activePageNumber, totalN
             Новости 512
           </Heading.H1>
 
-          {posts.map((post) => post.title)}
+          <NavList posts={posts} className="nav-list" />
         </Grid>
 
         <Pagination
@@ -57,7 +58,7 @@ News.propTypes = {
       title: string,
       slug: string,
       date: string,
-      tag: string,
+      number: number,
     }),
   ),
   categories: arrayOf(string),

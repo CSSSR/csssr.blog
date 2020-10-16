@@ -16,6 +16,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-column: 1 / span 12;
   }
 
+  .nav-list {
+    grid-column: 1 / span 12;
+  }
+
   ${desktop.all} {
 
   }
