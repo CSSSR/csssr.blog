@@ -13,7 +13,15 @@ import DateFormatter from '../DateFormatter'
 
 import styles from './News.styles'
 
-const News = ({ language, className, categories, posts, activePageNumber, totalNumberOfPosts }) => {
+const News = ({
+  language,
+  className,
+  categories,
+  posts,
+  activePageNumber,
+  totalNumberOfPosts,
+  lastPostDate,
+}) => {
   return (
     <>
       <Head>
@@ -41,7 +49,7 @@ const News = ({ language, className, categories, posts, activePageNumber, totalN
 
           <div className="news-info">
             <span className="autor">Ислам Виндижев</span>
-            <DateFormatter language="ru">2020-07-14T00:00:00.000Z</DateFormatter>
+            <DateFormatter language="ru">{lastPostDate}</DateFormatter>
             <span className="tag">новости</span>
           </div>
         </Grid>
@@ -72,6 +80,7 @@ News.propTypes = {
   totalNumberOfPosts: number,
   activePageNumber: number,
   language: string,
+  lastPostDate: string,
   className: string,
 }
 

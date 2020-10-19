@@ -7,13 +7,21 @@ import getPostsCategories from '../../../utils/getPostsCategories'
 
 import { POSTS_PER_PAGE } from '../../../data/constants'
 
-const News512 = ({ posts, categories, totalNumberOfPosts, activePageNumber, language }) => (
+const News512 = ({
+  posts,
+  categories,
+  totalNumberOfPosts,
+  activePageNumber,
+  language,
+  lastPostDate,
+}) => (
   <News
     posts={posts}
     categories={categories}
     totalNumberOfPosts={totalNumberOfPosts}
     activePageNumber={activePageNumber}
     language={language}
+    lastPostDate={lastPostDate}
   />
 )
 
@@ -21,7 +29,7 @@ export default News512
 
 export async function getStaticProps({ params }) {
   const postsByLanguage = await getPostsByLanguage(['tag'])
-  const postsNews = await getPostsNews(['title', 'date', 'slug', 'author', 'tag'])
+  const postsNews = await getPostsNews(['title', 'date', 'slug', 'number'])
   const language = 'ru'
   const categories = getPostsCategories(postsByLanguage[language])
   const orderedPostsNews = postsNews.sort(
@@ -32,9 +40,11 @@ export async function getStaticProps({ params }) {
 
     return pageNumber === params.page
   })
+  const lastPostDate = orderedPostsNews[0]['date']
 
   return {
     props: {
+      lastPostDate,
       posts: postsNewsAndPage,
       categories,
       totalNumberOfPosts: orderedPostsNews.length,
