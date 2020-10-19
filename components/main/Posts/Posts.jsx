@@ -14,7 +14,14 @@ const Posts = ({ language, posts, className }) => (
 
       return [
         ...memo,
-        <PostCard key={post.slug} language={language} post={post} size={size} side={side} />,
+        <PostCard
+          key={post.slug}
+          language={language}
+          post={post}
+          size={size}
+          side={side}
+          isNews={post.tag === 'news'}
+        />,
       ]
     }, [])}
   </Grid>

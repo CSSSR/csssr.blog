@@ -24,7 +24,18 @@ export default class MyDocument extends Document {
           <Fonts
             options={[
               {
-                family: language === 'ru' ? 'Sweet Mavka Script' : 'Amita',
+                family: 'Sweet Mavka Script',
+                weight: 400,
+                style: 'normal',
+                rel: 'preload',
+              },
+            ]}
+          />
+
+          <Fonts
+            options={[
+              {
+                family: 'Amita',
                 weight: 400,
                 style: 'normal',
                 rel: 'preload',

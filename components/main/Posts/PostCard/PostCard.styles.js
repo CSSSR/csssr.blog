@@ -2,18 +2,22 @@ import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
-  & a {
+  .link {
+    display: block;
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover .title {
-        color: ${colors.primary.origin};
-        transition: color 150ms ease-in-out;
+      &:hover {
+        .title {
+          color: ${colors.primary.origin};
+          transition: color 150ms ease-in-out;
+        }
+
+        .news-number {
+          color: ${colors.primary.origin};
+          transition: color 150ms ease-in-out;
+        }
       }
     }
-  }
-
-  li > a {
-    display: block;
   }
 
   .picture {
@@ -34,7 +38,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   .title {
-    font-family: 'Roboto', 'Arial', sans-serif;;
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 900;
     color: ${colors.secondary.darken100};
@@ -51,9 +55,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
   }
 
-  .tag,
+  .author,
   .date,
-  .author {
+  .tag {
     display: inline-block;
     font-family: Roboto;
     font-style: normal;
@@ -62,29 +66,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     line-height: ${calcRem(16)};
   }
 
-  .tag {
-    font-weight: 500;
-    color: #5695ED;
-    transition: color 150ms ease-in-out;
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        color: #0254d8;
-      }
-    }
-  }
-
-  .date {
-    margin-right: ${calcRem(16)};
-    display: inline-block;
-    font-weight: normal;
-    color: #7E8FA4;
-  }
-
   .author {
-    display: inline-block;
     font-weight: normal;
     color: #7E8FA4;
+    letter-spacing: ${calcRem(1.25)};
 
     &::after {
       content: "•";
@@ -93,13 +78,77 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
   }
 
-  ${desktop.all} {
-    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
-      margin-top: 75px;
+  .date {
+    margin-right: ${calcRem(24)};
+    font-weight: normal;
+    color: #7E8FA4;
+    letter-spacing: ${calcRem(1.25)};
+  }
+
+  .tag {
+    font-weight: 500;
+    color: #5695ED;
+    transition: color 150ms ease-in-out;
+    letter-spacing: ${calcRem(1.25)};
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #0254d8;
+      }
+    }
+  }
+
+  &.news {
+    position: relative;
+    background-color: #F1F2F7;
+    padding: 0 ${calcRem(16)} ${calcRem(16)} ${calcRem(16)};
+
+    .link {
+      margin-bottom: ${calcRem(15)}
+    }
+
+    .picture {
+      width: calc(100% + ${calcRem(32)});
+      margin: 0 -${calcRem(16)};
     }
 
     .title {
-      margin-top: 30px;
+      margin-top: ${calcRem(37)};
+      margin-bottom: 0;
+      font-size: ${calcRem(32)};
+      line-height: ${calcRem(40)};
+      font-weight: bold;
+    }
+
+    .news-number {
+      position: absolute;
+      bottom: ${calcRem(27)};
+      right: ${calcRem(27)};
+      color: ${colors.secondary.darken100};
+      font-family: 'Amita', sans-serif;
+      font-size: ${calcRem(64)};
+      line-height: ${calcRem(44)};
+      font-weight: bold;
+    }
+
+    .date,
+    .tag {
+      margin-top: ${calcRem(6)};
+    }
+
+    .tag {
+      display: block;
+      margin-bottom: ${calcRem(64)};
+    }
+  }
+
+  ${desktop.all} {
+    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
+      margin-top: ${calcRem(75)};
+    }
+
+    .title {
+      margin-top: ${calcRem(30)};
     }
   }
 
@@ -121,6 +170,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     .title {
       margin-top: ${calcRem(20)};
     }
+
+    &.news {
+      padding: 0 ${calcRem(16)} ${calcRem(16)} ${calcRem(16)};
+
+      .title {
+        margin-top:  ${calcRem(18)};
+      }
+
+      .news-number {
+        bottom: ${calcRem(16)};
+        right: ${calcRem(16)};
+      }
+
+      .tag {
+        margin-bottom: ${calcRem(31)};
+      }
+    }
   }
 
   ${mobile.all} {
@@ -137,6 +203,45 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       font-size: ${calcRem(18)};
       line-height: ${calcRem(24)};
       margin-bottom: ${calcRem(10)};
+    }
+
+    &.news {
+      padding: 0 ${calcRem(12)} ${calcRem(16)} ${calcRem(16)};
+
+      .link {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 0;
+      }
+
+      .picture {
+        width: ${calcRem(180)};
+        margin: 0;
+        order: 1;
+      }
+
+      .title {
+        margin-top: 0;
+        margin-bottom: ${calcRem(10)};
+      }
+
+      .news-number {
+        bottom: auto;
+        right: auto;
+        top: ${calcRem(44)};
+        left: ${calcRem(16)};
+      }
+
+      .date,
+      .tag {
+        margin-top: 0;
+      }
+
+      .tag {
+        display: inline-block;
+        margin-bottom : 0;
+      }
     }
   }
 `
