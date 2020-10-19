@@ -9,6 +9,7 @@ import Layout from '../Layout'
 import Categories from '../main/Categories'
 import Pagination from '../main/Pagination'
 import NavList from './NewsList'
+import DateFormatter from '../DateFormatter'
 
 import styles from './News.styles'
 
@@ -38,8 +39,14 @@ const News = ({ language, className, categories, posts, activePageNumber, totalN
             Новости 512
           </Heading.H1>
 
-          <NavList posts={posts} className="nav-list" />
+          <div className="news-info">
+            <span className="autor">Ислам Виндижев</span>
+            <DateFormatter language="ru">2020-07-14T00:00:00.000Z</DateFormatter>
+            <span className="tag">новости</span>
+          </div>
         </Grid>
+
+        <NavList posts={posts} className="nav-list" />
 
         <Pagination
           language={language}
