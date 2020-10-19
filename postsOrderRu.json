@@ -1,5 +1,6 @@
 [
-  ["qa-codex", "news-512-12"],
-  ["year-resume-2019", "estimate-like-god"],["unicorn-busters", "semantics-in-programming"],
-  ["work-harder", "work-stronger"]
+  ["qa-codex", "year-resume-2019"],
+  ["estimate-like-god", "unicorn-busters"],
+  ["semantics-in-programming", "work-harder"],
+  ["work-better", "work-stronger"]
 ]

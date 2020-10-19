@@ -11,11 +11,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
           color: ${colors.primary.origin};
           transition: color 150ms ease-in-out;
         }
-
-        .news-number {
-          color: ${colors.primary.origin};
-          transition: color 150ms ease-in-out;
-        }
       }
     }
   }
@@ -102,6 +97,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     position: relative;
     background-color: #F1F2F7;
     padding: 0 ${calcRem(16)} ${calcRem(16)} ${calcRem(16)};
+
+    &.hovered {
+      .news-number {
+        color: ${colors.primary.origin};
+        transition: color 150ms ease-in-out;
+      }
+    }
 
     .link {
       margin-bottom: ${calcRem(15)}
@@ -224,6 +226,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       .title {
         margin-top: 0;
         margin-bottom: ${calcRem(10)};
+        font-size: ${calcRem(18)};
+        line-height: ${calcRem(24)};
+        font-weight: 900;
       }
 
       .news-number {

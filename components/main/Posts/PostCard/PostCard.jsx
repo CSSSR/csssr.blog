@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { string, bool, shape, object, oneOf } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
@@ -11,11 +11,16 @@ import { Picture } from '@csssr/csssr.images/dist/react'
 
 const PostCard = ({ className, language, post, size, isNews }) => {
   const imgCover = size === 'l' ? post.images.mainCoverL : post.images.mainCoverS
+  const [isLinkHovered, setIsLinkHovered] = useState(false)
 
   return (
-    <li className={cn(`${className}`, { news: isNews })}>
+    <li className={cn(`${className}`, { news: isNews, hovered: isLinkHovered })}>
       <Link href="/[language]/article/[slug]" as={`/${language}/article/${post.slug}`}>
-        <a className="link">
+        <a
+          className="link"
+          onMouseOver={() => setIsLinkHovered(true)}
+          onMouseOut={() => setIsLinkHovered(false)}
+        >
           <Picture
             className={cn('picture', {
               picture_size_l: size === 'l',
@@ -41,7 +46,7 @@ const PostCard = ({ className, language, post, size, isNews }) => {
         <a className="tag">{categoriesByLanguage[language][post.tag.toLowerCase()]}</a>
       </Link>
 
-      {isNews && <span className="news-number">#12</span>}
+      {isNews && <span className="news-number">#{post.episode}</span>}
     </li>
   )
 }
@@ -59,6 +64,7 @@ PostCard.propTypes = {
     }),
     tag: string,
     slug: string,
+    episode: string,
   }),
   size: oneOf(['l', 's']),
   isNews: bool,
