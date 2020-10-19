@@ -1,10 +1,11 @@
 import React from 'react'
-import { getPostsByLanguage } from '../../../lib/api'
+import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
 import MainPage from '../../../components/main/MainPage'
 import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberByPostIndex'
 import languages from '../../../utils/languages'
 import areEqualShallow from '../../../utils/areEqualShallow'
 import getPostsCategories from '../../../utils/getPostsCategories'
+import { POSTS_PER_PAGE } from '../../../data/constants'
 import postsOrderEn from '../../../postsOrderEn.json'
 import postsOrderRu from '../../../postsOrderRu.json'
 
@@ -71,7 +72,6 @@ export async function getStaticProps({ params }) {
   const postsByLanguageAndCategoryAndPage = orderedPostsByLanguageAndCategory.filter(
     (post, index) => {
       const pageNumber = calculatePageNumberByPostIndex(index)
-
       if (params.category === 'all') {
         return pageNumber === params.page
       }
@@ -80,9 +80,32 @@ export async function getStaticProps({ params }) {
     },
   )
 
+  const allNews = await getPostsNews([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImageAlt',
+    'tag',
+    'images',
+    'episode',
+  ])
+  const lastNews = allNews.reverse().slice(0, 3)
+  let postsWithNewsByLanguageAndCategoryAndPage = postsByLanguageAndCategoryAndPage
+
+  if (params.category === 'all') {
+    if (params.page === '2') {
+      postsByLanguageAndCategoryAndPage.splice(1, 0, lastNews[1])
+      postsWithNewsByLanguageAndCategoryAndPage = postsByLanguageAndCategoryAndPage.slice(0, -1)
+    } else if (params.page === '3') {
+      postsByLanguageAndCategoryAndPage.splice(1, 0, lastNews[2])
+      postsWithNewsByLanguageAndCategoryAndPage = postsByLanguageAndCategoryAndPage.slice(0, -1)
+    }
+  }
+
   return {
     props: {
-      posts: postsByLanguageAndCategoryAndPage,
+      posts: postsWithNewsByLanguageAndCategoryAndPage.slice(0, POSTS_PER_PAGE),
       categories,
       totalNumberOfPosts: postsByLanguageAndCategory.length,
       activeCategory: params.category,
@@ -91,6 +114,7 @@ export async function getStaticProps({ params }) {
     },
   }
 }
+
 export async function getStaticPaths() {
   const posts = await getPostsByLanguage(['tag'])
   const paths = languages.reduce(

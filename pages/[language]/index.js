@@ -1,5 +1,5 @@
 import React from 'react'
-import { getPostsByLanguage } from '../../lib/api'
+import { getPostsByLanguage, getPostsNews } from '../../lib/api'
 import MainPage from '../../components/main/MainPage'
 import languages from '../../utils/languages'
 import getPostsCategories from '../../utils/getPostsCategories'
@@ -12,16 +12,18 @@ const postsOrder = {
   ru: postsOrderRu,
 }
 
-const Index = ({ posts, categories, totalNumberOfPosts, language }) => (
-  <MainPage
-    posts={posts}
-    categories={categories}
-    totalNumberOfPosts={totalNumberOfPosts}
-    activeCategory="all"
-    activePageNumber={1}
-    language={language}
-  />
-)
+const Index = ({ posts, categories, totalNumberOfPosts, language }) => {
+  return (
+    <MainPage
+      posts={posts}
+      categories={categories}
+      totalNumberOfPosts={totalNumberOfPosts}
+      activeCategory="all"
+      activePageNumber={1}
+      language={language}
+    />
+  )
+}
 
 export default Index
 
@@ -39,17 +41,29 @@ export async function getStaticProps({ params }) {
   const categories = getPostsCategories(postsByLanguage[language])
   const postsBySlug = postsByLanguage[language].reduce((acc, post) => {
     acc[post.slug] = post
-
     return acc
   }, {})
-
   const posts = postsOrder[language].flat().map((slug) => postsBySlug[slug])
+
+  const allNews = await getPostsNews([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImageAlt',
+    'tag',
+    'images',
+    'episode',
+  ])
+  posts.splice(1, 0, allNews[allNews.length - 1])
+
+  const postsWithNews = posts.slice(0, -1)
 
   return {
     props: {
-      posts: posts.slice(0, POSTS_PER_PAGE),
+      posts: postsWithNews.slice(0, POSTS_PER_PAGE),
       categories,
-      totalNumberOfPosts: posts.length,
+      totalNumberOfPosts: postsWithNews.length,
       language,
     },
   }

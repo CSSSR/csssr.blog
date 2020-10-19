@@ -41,7 +41,7 @@ const PostCard = ({ className, language, post, size, isNews }) => {
         <a className="tag">{categoriesByLanguage[language][post.tag.toLowerCase()]}</a>
       </Link>
 
-      {isNews && <span className="news-number">#12</span>}
+      {isNews && <span className="news-number">#{post.episode}</span>}
     </li>
   )
 }
@@ -59,6 +59,7 @@ PostCard.propTypes = {
     }),
     tag: string,
     slug: string,
+    episode: string,
   }),
   size: oneOf(['l', 's']),
   isNews: bool,
