@@ -12,7 +12,15 @@ export default {
     management: 'Менеджмент',
     'web-development': 'Разработка',
     culture: 'Культура',
+    news: 'Новости',
   },
 }
 
-export const categoriesOrder = ['all', 'business', 'management', 'web-development', 'culture']
+export const categoriesOrder = [
+  'all',
+  'business',
+  'management',
+  'web-development',
+  'culture',
+  'news',
+]

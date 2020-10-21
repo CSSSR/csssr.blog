@@ -6,6 +6,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     overflow-x: hidden;
   }
 
+  &.newsPost {
+    background-image: linear-gradient(to right, white, white), url(${require('../../public/components/post/news-post-header-bg.svg').default});
+  }
+
   ${desktop.all} {
     & {
       padding-top: 128px;
@@ -41,6 +45,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       background-size: ${calcRem(782)} ${calcRem(232)}, auto ${calcRem(307)};
       background-repeat: no-repeat, repeat-x;
     }
+
+    &.newsPost {
+      padding-top: ${calcRem(78)};
+      background-image: linear-gradient(to right, white, white), url(${require('../../public/components/post/news-post-header-bg_tablet.svg').default});
+      background-position: center ${calcRem(78)}, center ${calcRem(-67)};
+      background-size: ${calcRem(782)} ${calcRem(232)}, 100% ${calcRem(355)};
+    }
   }
 
   ${mobile.all} {
@@ -49,6 +60,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       background-image: url(${require('../../public/components/post/post-header-bg.svg').default});
       background-size: auto ${calcRem(250)};
       background-repeat: repeat-x;
+    }
+
+    &.newsPost {
+      padding-top: ${calcRem(155)};
+      background-image: url(${require('../../public/components/post/news-post-header-bg_mobile.svg').default});
+      background-position: 0 ${calcRem(-57)};
+      background-size: 100% ${calcRem(174)};
     }
   }
 `
