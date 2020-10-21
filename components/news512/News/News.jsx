@@ -4,17 +4,16 @@ import styled from '@emotion/styled'
 import Head from 'next/head'
 import { Heading } from '@csssr/core-design'
 
-import { Grid } from '../Grid'
-import Layout from '../Layout'
-import Categories from '../main/Categories'
-import Pagination from '../main/Pagination'
+import { Grid } from '../../Grid'
+import Layout from '../../Layout'
+import Categories from '../../main/Categories'
+import Pagination from '../../main/Pagination'
+import DateFormatter from '../../DateFormatter'
 import NavList from './NewsList'
-import DateFormatter from '../DateFormatter'
 
 import styles from './News.styles'
 
 const News = ({
-  language,
   className,
   categories,
   posts,
@@ -28,17 +27,17 @@ const News = ({
         {/* TODO: Указать правильные мета данные */}
         <title>Новости 512 | CSSSR</title>
         <meta name="description" content="news" />
-        <meta property="og:url" content={`https://blog.csssr.com/${language}/news512/`} />
+        <meta property="og:url" content={`https://blog.csssr.com/ru/news512/`} />
         <meta property="og:title" content="Новости 512 | CSSS" />
         <meta property="og:description" content="news" />
         <meta property="og:image" content="" />
       </Head>
 
-      <Layout language={language}>
+      <Layout language="ru">
         <Grid className={className}>
           <Categories
             items={categories}
-            language={language}
+            language="ru"
             activeCategory="news512"
             className="categories"
           />
@@ -54,13 +53,14 @@ const News = ({
           </div>
         </Grid>
 
-        <NavList posts={posts} className="nav-list" />
+        <NavList posts={posts} lastPostDate={lastPostDate} className="nav-list" />
 
         <Pagination
-          language={language}
+          language="ru"
           activeCategory="news512"
           activePageNumber={activePageNumber}
           totalNumberOfPosts={totalNumberOfPosts}
+          isNews
         />
       </Layout>
     </>
@@ -73,13 +73,12 @@ News.propTypes = {
       title: string,
       slug: string,
       date: string,
-      number: number,
+      episodeNumber: number,
     }),
   ),
   categories: arrayOf(string),
   totalNumberOfPosts: number,
   activePageNumber: number,
-  language: string,
   lastPostDate: string,
   className: string,
 }

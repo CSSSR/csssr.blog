@@ -1,3 +1,4 @@
 const POSTS_PER_PAGE = 8
+const NEWS_PER_PAGE = 12
 
-export { POSTS_PER_PAGE }
+export { POSTS_PER_PAGE, NEWS_PER_PAGE }

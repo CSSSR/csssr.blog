@@ -1,11 +1,11 @@
 import React from 'react'
 
-import News from '../../../components/News'
+import News from '../../../components/news512/News'
 
 import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
 import getPostsCategories from '../../../utils/getPostsCategories'
 
-import { POSTS_PER_PAGE } from '../../../data/constants'
+import { NEWS_PER_PAGE } from '../../../data/constants'
 
 const News512 = ({ categories, language, posts, totalNumberOfPosts, lastPostDate }) => (
   <News
@@ -22,7 +22,7 @@ export default News512
 
 export async function getStaticProps() {
   const postsByLanguage = await getPostsByLanguage(['tag'])
-  const postsNews = await getPostsNews(['title', 'date', 'slug', 'number'])
+  const postsNews = await getPostsNews(['title', 'date', 'slug', 'episodeNumber'])
   const language = 'ru'
   const categories = getPostsCategories(postsByLanguage[language])
   const orderedPostsNews = postsNews.sort(
@@ -35,7 +35,7 @@ export async function getStaticProps() {
       lastPostDate,
       categories,
       language,
-      posts: orderedPostsNews.slice(0, POSTS_PER_PAGE),
+      posts: orderedPostsNews.slice(0, NEWS_PER_PAGE),
       totalNumberOfPosts: orderedPostsNews.length,
     },
   }

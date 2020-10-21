@@ -16,22 +16,18 @@ const PrevPageLink = ({ className, language, disabled, activeCategory, activePag
     )
   }
 
-  let as
   let href
 
   if (activePageNumber === 2 && activeCategory.toLowerCase() === 'all') {
-    as = `/${language}`
     href = `/${language}`
   } else if (activePageNumber === 2) {
-    as = `/${language}/${activeCategory.toLowerCase()}`
     href = `/${language}/${activeCategory.toLowerCase()}`
   } else {
-    as = `/${language}/${activeCategory.toLowerCase()}/${activePageNumber - 1}`
     href = `/${language}/${activeCategory.toLowerCase()}/${activePageNumber - 1}`
   }
 
   return (
-    <Link href={href} as={as}>
+    <Link href={href}>
       <a
         className={cn(className, {
           _disabled: disabled,
