@@ -84,6 +84,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
     grid-column: 1 / span 6;
     margin-top: ${calcRem(60)};
 
+    &.color-line {
+      &::after {
+        background-size: ${calcRem(360)};
+      }
+    }
+
+    &&_peopleWithBasket {
+      height: ${calcRem(124)};
+    }
+
     &.bg-repeat {
       height: ${calcRem(100)};
 

@@ -155,7 +155,7 @@ const Body = ({ content, className, slug, images, language }) =>
       },
       Separator: {
         component: function SeparatorWrapper({ imageName, ...rest }) {
-          return <Separator sources={images[imageName]} {...rest} />
+          return <Separator imageName={imageName} sources={images[imageName]} {...rest} />
         },
       },
       Note: {

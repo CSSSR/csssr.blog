@@ -7,6 +7,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     grid-column: 4 / span 6;
   }
 
+  & > ul li {
+    display: inline;
+  }
+
   .heading_regular_m,
   .heading_regular_s,
   .text_regular_m {
