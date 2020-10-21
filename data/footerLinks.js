@@ -19,11 +19,11 @@ export const nav = {
           title: 'MVP',
           href: 'https://csssr.com/en/service/mvp-development',
         },
-        {
-          id: 'design',
-          title: 'DesignLab',
-          href: 'https://csssr.com/en/service/design-lab',
-        },
+        // {
+        //   id: 'design',
+        //   title: 'DesignLab',
+        //   href: 'https://csssr.com/en/service/design-lab',
+        // },
       ],
     },
     {
