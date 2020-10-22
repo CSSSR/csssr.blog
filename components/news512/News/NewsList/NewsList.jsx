@@ -5,6 +5,7 @@ import { string, number, arrayOf, shape } from 'prop-types'
 import styled from '@emotion/styled'
 
 import DateFormatter from '../../../DateFormatter'
+import cleaningTitle from '../../../../utils/client/cleaningTitle'
 import { Grid } from '../../../Grid'
 
 import styles from './NewsList.styles'
@@ -22,7 +23,7 @@ const NewsList = ({ posts, lastPostDate, className }) => {
                 <DateFormatter language="ru">{date}</DateFormatter>
               </span>
 
-              <span className="news-item-title">{title}</span>
+              <span className="news-item-title">{cleaningTitle(title)}</span>
             </Grid>
           </Link>
         </li>
