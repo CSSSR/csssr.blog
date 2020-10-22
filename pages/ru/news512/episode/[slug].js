@@ -21,7 +21,7 @@ export default function PostNewsPage({ post, /* morePosts, */ language }) {
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getPostNewsBySlug(params.slug, 'ru', [
+  const post = await getPostNewsBySlug(params.slug, [
     'title',
     'date',
     'slug',
@@ -30,7 +30,7 @@ export async function getStaticProps({ params }) {
     'tag',
     'coverImageAlt',
     'images',
-    'number',
+    'episodeNumber',
   ])
   return {
     props: {

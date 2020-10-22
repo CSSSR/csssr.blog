@@ -26,8 +26,8 @@ const Header = ({ className, title, author, tag, date, coverImage, alt, language
           {date}
         </DateFormatter>
 
-        <Link href="/[language]/[category]" as={`/${language}/${tag.toLowerCase()}`}>
-          <a className="tag">{categoriesByLanguage[language][tag.toLowerCase()]}</a>
+        <Link href="/[language]/[category]" as={`/${language}/${tag}512`}>
+          <a className="tag">{categoriesByLanguage[language][tag]}</a>
         </Link>
       </div>
 

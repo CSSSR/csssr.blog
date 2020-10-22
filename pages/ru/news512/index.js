@@ -22,7 +22,7 @@ export default News512
 
 export async function getStaticProps() {
   const postsByLanguage = await getPostsByLanguage(['tag'])
-  const postsNews = await getPostsNews(['title', 'date', 'slug', 'episodeNumber'])
+  const postsNews = await getPostsNews(['title', 'date', 'tag', 'episodeNumber'])
   const language = 'ru'
   const categories = getPostsCategories(postsByLanguage[language])
   const orderedPostsNews = postsNews.sort(
