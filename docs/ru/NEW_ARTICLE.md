@@ -13,6 +13,10 @@
 то будьте уверены что сможете найти его по адресу `http://localhost:3000/en/article/new-awesome-post`.
 
 Картинки для статей находятся в папке [public/images](../public/images/).
+Если исходное изображение 3x его следует разместить в папке [public/images/resize](../public/images/resize).
+Если исходное изображение 1x его следует разместить в папке [public/images/dont-resize](../public/images/dont-resize).
+Svg и gif изображения размещаются в папке [public/images/dont-resize](../public/images/dont-resize) и подключаются с помощью стандартного Markdown правила `![alt-текст](/images/dont-resize/ru/post-name/img.gif)`.
+
 Для каждой статьи обязательно должны быть созданы картинки
 mainCoverL - большая плитка, mainCoverS - маленькая плитка ([изображение для главной](http://s.csssr.ru/U31J879TR/20200527101534.jpg)) и
 postCover ([изображение в заголовке статьи](http://s.csssr.ru/U31J879TR/20200527101626.jpg)).
