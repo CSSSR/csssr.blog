@@ -1,5 +1,5 @@
 ---
-title: 'Ten Tips and Best Practices for <i>Accurately Task Estimating</i>'
+title: 'Ten Tips and Best Practices for<br> <i>Accurate Task Estimating</i>'
 coverImageAlt: 'alt me'
 date: '2019-12-02T05:35:07.322Z'
 tag: 'management'
