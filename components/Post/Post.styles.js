@@ -7,7 +7,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   &.newsPost {
-    background-image: linear-gradient(to right, white, white), url(${require('../../public/components/post/news-post-header-bg.svg').default});
+    background-image: linear-gradient(to right, white, white), url(${require('../../public/components/post/news-post-header-bg_desktop.svg').default});
+    background-size: 880px 232px, 1920px 408px;
   }
 
   ${desktop.all} {
@@ -22,6 +23,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${desktop.l} {
     & {
       background-size: 880px 232px, 1360px 408px;
+    }
+
+    &.newsPost {
+      background-image: linear-gradient(to right, white, white), url(${require('../../public/components/post/news-post-header-bg_desktop.svg').default});
+      background-size: 880px 232px, 1920px 408px;
     }
   }
 
@@ -48,8 +54,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     &.newsPost {
       padding-top: ${calcRem(78)};
-      background-image: linear-gradient(to right, white, white), url(${require('../../public/components/post/news-post-header-bg_tablet.svg').default});
-      background-position: center ${calcRem(78)}, center ${calcRem(-67)};
+      background-position: center ${calcRem(78)}, center ${calcRem(-70)};
       background-size: ${calcRem(782)} ${calcRem(232)}, 100% ${calcRem(355)};
     }
   }
