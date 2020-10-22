@@ -48,6 +48,26 @@ const withImages = (nextConfig = {}) => ({
       },
     }
 
+    const handleImagesForResize = (originalPixelRatio) => {
+      return {
+        use: [
+          {
+            loader: '@csssr/csssr.images',
+            options: {
+              breakpoints: defaultTheme.breakpointsOrdered,
+              imgproxy: {
+                disable: dev,
+                imagesHost: blogHost,
+                host: imgproxyHost,
+              },
+              originalPixelRatio,
+            },
+          },
+          fileLoaderConfig,
+        ],
+      }
+    }
+
     config.module.rules.push({
       test: /\.svg$/,
       oneOf: [
@@ -73,19 +93,17 @@ const withImages = (nextConfig = {}) => ({
 
     config.module.rules.push({
       test: /\.(jpe?g|png|gif|ico)$/,
-      use: [
+      oneOf: [
         {
-          loader: '@csssr/csssr.images',
-          options: {
-            breakpoints: defaultTheme.breakpointsOrdered,
-            imgproxy: {
-              disable: dev,
-              imagesHost: blogHost,
-              host: imgproxyHost,
-            },
-          },
+          resourceQuery: /dont-resize/,
+          ...handleImagesForResize('1x'),
         },
-        fileLoaderConfig,
+        {
+          ...handleImagesForResize('3x'),
+        },
+        {
+          use: [fileLoaderConfig],
+        },
       ],
     })
 

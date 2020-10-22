@@ -28,7 +28,7 @@ touch why-is-modern-software-such-a-shit.md
 
 ### Бета luna-lang
 
-![tony](/posts/ru/year-resume-2018/tony/all.jpg)
+<Img imageName='tony' alt='tony'>
 
 <Note>
 		— А если бы кто-нибудь умер? Если бы взорвался макбук прямо в Старбаксе?
@@ -90,12 +90,13 @@ TLDR: вот [ссылка](https://github.com/zerobias/effector) на либу,
 
 <div class="grid-element">
 	<blockquote class="twitter-tweet" data-lang="ru">
-	<p lang="en" dir="ltr">
-		Every website in 2018 <a href="https://t.co/Gm7jhfuuUO">pic.twitter.com/Gm7jhfuuUO</a>
-	</p>
-	<p>
-		— Daryl Ginn (@darylginn) <a href="https://twitter.com/darylginn/status/1053646859686809600?ref_src=twsrc%5Etfw">20 октября 2018 г.</a>
-	</p>
+		<p lang="en" dir="ltr">
+			Every website in 2018 <a href="https://t.co/Gm7jhfuuUO">pic.twitter.com/Gm7jhfuuUO</a>
+		</p>
+
+		<p>
+			— Daryl Ginn (@darylginn) <a href="https://twitter.com/darylginn/status/1053646859686809600?ref_src=twsrc%5Etfw">20 октября 2018 г.</a>
+		</p>
 	</blockquote>
 
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
@@ -130,7 +131,7 @@ TLDR: вот [ссылка](https://github.com/zerobias/effector) на либу,
 
 * Второе — сама суть изменений. Асинхронность, однопоточность всегда была визитной карточкой Ноды. Фактически, Нода создавалась как альтернатива многопоточным бэкендам (Джаве, например)...
 
-![obivan](/posts/ru/year-resume-2018/obivan/all.jpg)
+<Img imageName='obivan' alt='obivan'>
 
 Ну ладно, насчёт «становления» Джавой, я, пожалуй, слукавил. Воркер-треды, скорее, должны дополнить асинхронность Ноды, стать фичей, типа child process. При этом явно об этом в официальной доке ни слова. Так сказать, «имеющий глаза да увидит». Согласитесь, выглядит странно, учитывая невозможность конкурентных коллекций. Радует, что функционал ещё экспериментальный, наверняка ещё будут поясняющие PR'ы.
 
@@ -156,4 +157,5 @@ TLDR: вот [ссылка](https://github.com/zerobias/effector) на либу,
 
 С вами был по-прежнему чернобородый фронтенд-пират, бороздящий на подлодке украинские степи Максон Вислогуров. Оставайтесь на связи.
 
-![image](/posts/ru/year-resume-2018/outro/all.jpg)
+
+<Img imageName='outro' alt='outro'>

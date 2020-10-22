@@ -72,12 +72,11 @@ export const menu = {
           href: 'https://csssr.com/en/service/outsourcing-front-end',
         },
         {
-          id: 'express',
-          icon: Triangle,
-          title: 'PSD to HTML Conversion',
-          description:
-            'Turn your design (PSD, Sketch, Figma) into <span style="white-space: nowrap;">HTML-pages</span>.',
-          href: 'https://csssr.com/en/service/express-front-end',
+          id: 'backend',
+          icon: Arc,
+          title: 'Back-end and&nbsp;DevOps',
+          description: 'Reliable back-end development and DevOps services.',
+          href: 'https://csssr.com/en/service/back-end-and-devops',
         },
         {
           id: 'mvp',
@@ -87,11 +86,12 @@ export const menu = {
           href: 'https://csssr.com/en/service/mvp-development',
         },
         {
-          id: 'backend',
-          icon: Arc,
-          title: 'Back-end and&nbsp;DevOps',
-          description: 'Reliable back-end development and DevOps services.',
-          href: 'https://csssr.com/en/service/back-end-and-devops',
+          id: 'design',
+          icon: Triangle,
+          title: 'DesignLab',
+          description:
+            'Design expertise with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue.',
+          href: 'https://csssr.com/en/service/design-lab',
         },
       ],
     },
