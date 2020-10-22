@@ -1,7 +1,7 @@
 /* eslint-disable-next-line */
 import React from 'react'
 import { ReactComponent as Square } from '../public/icons/header/square.svg'
-import { ReactComponent as Triangle } from '../public/icons/header/triangle.svg'
+// import { ReactComponent as Triangle } from '../public/icons/header/triangle.svg'
 import { ReactComponent as Circle } from '../public/icons/header/circle.svg'
 import { ReactComponent as Arc } from '../public/icons/header/arc.svg'
 import { ReactComponent as PieChart } from '../public/icons/header/pieChart.svg'
@@ -68,23 +68,8 @@ export const menu = {
           id: 'outsourcing',
           icon: Circle,
           title: 'Web Development',
-          description: 'Fast, reliable and professional web development services.',
+          description: 'Web development to&nbsp;complement core competencies',
           href: 'https://csssr.com/en/service/outsourcing-front-end',
-        },
-        {
-          id: 'express',
-          icon: Triangle,
-          title: 'PSD to HTML Conversion',
-          description:
-            'Turn your design (PSD, Sketch, Figma) into <span style="white-space: nowrap;">HTML-pages</span>.',
-          href: 'https://csssr.com/en/service/express-front-end',
-        },
-        {
-          id: 'mvp',
-          icon: Square,
-          title: 'MVP Development',
-          description: 'Development of&nbsp;core functionality for testing purposes.',
-          href: 'https://csssr.com/en/service/mvp-development',
         },
         {
           id: 'backend',
@@ -93,6 +78,21 @@ export const menu = {
           description: 'Reliable back-end development and DevOps services.',
           href: 'https://csssr.com/en/service/back-end-and-devops',
         },
+        {
+          id: 'mvp',
+          icon: Square,
+          title: 'MVP Development',
+          description: 'Development of&nbsp;core functionality for testing purposes.',
+          href: 'https://csssr.com/en/service/mvp-development',
+        },
+        // {
+        //   id: 'design',
+        //   icon: Triangle,
+        //   title: 'DesignLab',
+        //   description:
+        //     'Design expertise with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue.',
+        //   href: 'https://csssr.com/en/service/design-lab',
+        // },
       ],
     },
     {
