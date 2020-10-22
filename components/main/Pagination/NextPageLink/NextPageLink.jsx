@@ -24,10 +24,7 @@ const NextPageLink = ({
   }
 
   return (
-    <Link
-      href={'/[language]/[category]/[page]'}
-      as={`/${language}/${activeCategory.toLowerCase()}/${activePageNumber + 1}`}
-    >
+    <Link href={`/${language}/${activeCategory.toLowerCase()}/${activePageNumber + 1}`}>
       <a
         className={cn(className, {
           _disabled: disabled,

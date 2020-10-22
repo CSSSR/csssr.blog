@@ -16,8 +16,9 @@ const Pagination = ({
   activeCategory,
   activePageNumber,
   totalNumberOfPosts,
+  postsPerPage,
 }) => {
-  const totalNumberOfPages = Math.ceil(totalNumberOfPosts / POSTS_PER_PAGE)
+  const totalNumberOfPages = Math.ceil(totalNumberOfPosts / postsPerPage)
   const pageNumbers = getPageNumbers(activePageNumber, totalNumberOfPages)
 
   if (totalNumberOfPages <= 1) {
@@ -42,22 +43,18 @@ const Pagination = ({
           )
         }
 
-        let as
         let href
 
         if (pageNumber === 1 && activeCategory.toLowerCase() === 'all') {
-          as = `/${language}`
-          href = '/[language]'
+          href = `/${language}`
         } else if (pageNumber === 1) {
-          as = `/${language}/${activeCategory.toLowerCase()}`
-          href = '/[language]/[category]'
+          href = `/${language}/${activeCategory.toLowerCase()}`
         } else {
-          as = `/${language}/${activeCategory.toLowerCase()}/${pageNumber}`
-          href = '/[language]/[category]/[page]'
+          href = `/${language}/${activeCategory.toLowerCase()}/${pageNumber}`
         }
 
         return (
-          <Link key={index} href={href} as={as}>
+          <Link key={index} href={href}>
             <a className={cn('item', { active: pageNumber === activePageNumber })}>{pageNumber}</a>
           </Link>
         )
@@ -80,6 +77,11 @@ Pagination.propTypes = {
   activeCategory: string,
   activePageNumber: number,
   totalNumberOfPosts: number,
+  postsPerPage: number,
+}
+
+Pagination.defaultProps = {
+  postsPerPage: POSTS_PER_PAGE,
 }
 
 export default styled(Pagination)`
