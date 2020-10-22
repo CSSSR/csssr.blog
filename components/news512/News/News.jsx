@@ -11,6 +11,8 @@ import Pagination from '../../main/Pagination'
 import DateFormatter from '../../DateFormatter'
 import NavList from './NewsList'
 
+import { NEWS_PER_PAGE } from '../../../data/constants'
+
 import styles from './News.styles'
 
 const News = ({
@@ -60,7 +62,7 @@ const News = ({
           activeCategory="news512"
           activePageNumber={activePageNumber}
           totalNumberOfPosts={totalNumberOfPosts}
-          isNews
+          postsPerPage={NEWS_PER_PAGE}
         />
       </Layout>
     </>

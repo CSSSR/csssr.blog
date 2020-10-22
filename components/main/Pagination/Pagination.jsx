@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, number, bool } from 'prop-types'
+import { string, number } from 'prop-types'
 import Link from 'next/link'
 import cn from 'classnames'
 import styled from '@emotion/styled'
@@ -7,7 +7,7 @@ import styles from './Pagination.styles'
 import { Grid } from '@csssr/core-design'
 import PrevPageLink from './PrevPageLink'
 import NextPageLink from './NextPageLink'
-import { POSTS_PER_PAGE, NEWS_PER_PAGE } from '../../../data/constants'
+import { POSTS_PER_PAGE } from '../../../data/constants'
 import getPageNumbers from '../../../utils/getPageNumbers'
 
 const Pagination = ({
@@ -16,10 +16,9 @@ const Pagination = ({
   activeCategory,
   activePageNumber,
   totalNumberOfPosts,
-  isNews,
+  postsPerPage,
 }) => {
-  const perPage = isNews ? NEWS_PER_PAGE : POSTS_PER_PAGE
-  const totalNumberOfPages = Math.ceil(totalNumberOfPosts / perPage)
+  const totalNumberOfPages = Math.ceil(totalNumberOfPosts / postsPerPage)
   const pageNumbers = getPageNumbers(activePageNumber, totalNumberOfPages)
 
   if (totalNumberOfPages <= 1) {
@@ -78,7 +77,11 @@ Pagination.propTypes = {
   activeCategory: string,
   activePageNumber: number,
   totalNumberOfPosts: number,
-  isNews: bool,
+  postsPerPage: number,
+}
+
+Pagination.defaultProps = {
+  postsPerPage: POSTS_PER_PAGE,
 }
 
 export default styled(Pagination)`
