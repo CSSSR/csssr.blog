@@ -18,24 +18,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .text_regular_m + .text_regular_m {
-    margin-top: 25px;
+    margin-top: ${calcRem(25)};
   }
 
   .heading_regular_s + .text_regular_m {
-    margin-top: 20px;
+    margin-top: ${calcRem(20)};
   }
 
   .newsHeading_regular_s + .text_regular_m {
-    margin-top: 15px;
+    margin-top: ${calcRem(15)};
   }
 
   .img-wrap {
     display: block;
-    width: ${calcRem(184)};
     min-height: ${calcRem(144)};
     float: left;
     margin-top: 0;
-    margin-right: 16px;
+    margin-right: ${calcRem(16)};
     grid-column: none;
 
     img {
@@ -48,8 +47,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-top: ${calcRem(70)};
   }
 
-  &.newsParagraphWithImage .img-wrap {
-    min-height: auto;
+  .img-wrap.img-wrap_right-side {
+    width: ${calcRem(184)};
+    min-height: ${calcRem(128)};
     float: right;
     margin-right: 0;
     margin-left: ${calcRem(40)};
@@ -60,7 +60,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-top: 20px
     }
 
-    &.newsParagraphWithImage .img-wrap {
+    .img-wrap.img-wrap_right-side {
       transform: translateX(-32px);
     }
 
@@ -105,6 +105,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       line-height: ${calcRem(24)};
     }
 
+    &.newsParagraphWithImage + .text_regular_m_is_scaled-down {
+      margin-top: ${calcRem(9)};
+    }
+
     &.newsParagraphWithImage > .text_regular_m {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
@@ -128,7 +132,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-right: ${calcRem(8)};
     }
 
-    &.newsParagraphWithImage .img-wrap {
+    .img-wrap.img-wrap_right-side {
+      width: auto;
+      min-width: ${calcRem(104)};
+      min-height: unset;
       margin-top: ${calcRem(7)};
       margin-left: ${calcRem(6)};
     }
@@ -145,6 +152,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-top: 0;
       font-size: ${calcRem(18)};
       line-height: ${calcRem(24)};
+    }
+
+    &.newsParagraphWithImage + .text_regular_m_is_scaled-down {
+      margin-top: ${calcRem(16)};
     }
   }
 `

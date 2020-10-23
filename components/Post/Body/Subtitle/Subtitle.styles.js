@@ -9,7 +9,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       color: #18191B;
     }
 
-    &.newsSubtitle {
+    &._is-large {
       margin-top: 0;
     }
   }
@@ -20,7 +20,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 3 / span 8;
     }
 
-    &.newsSubtitle {
+    &._is-large {
       margin-top: ${calcRem(16)};
       font-size: ${calcRem(24)};
       line-height: ${calcRem(40)};
@@ -33,7 +33,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 1 / span 6;
     }
 
-    &.newsSubtitle {
+    &._is-large {
       margin-top: ${calcRem(37)};
     }
   }

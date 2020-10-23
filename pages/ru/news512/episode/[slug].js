@@ -4,18 +4,9 @@ import { getPostNewsBySlug, getPostsNews } from '../../../../lib/api'
 import Post from '../../../../components/Post'
 
 export default function PostNewsPage({ post, /* morePosts, */ language }) {
-  // const router = useRouter()
-  // TODO: добавить ErrorPage из csssr.com
-  // if (!router.isFallback && !post?.slug) {
-  //   return <ErrorPage statusCode={404} />
-  // }
   return (
     <Layout language={language}>
-      {/*
-        не думаю что нам это пока нужно, но оставлю как пример создания фолбека
-        router.isFallback ? <PostTitle>Loading…</PostTitle> : <Post post={post} />
-      */}
-      <Post language={language} post={post} isNews />
+      <Post language={language} post={post} type="news" />
     </Layout>
   )
 }
@@ -47,6 +38,6 @@ export async function getStaticPaths() {
     paths: posts.map((post) => ({
       params: { slug: post.slug },
     })),
-    fallback: true,
+    fallback: false,
   }
 }

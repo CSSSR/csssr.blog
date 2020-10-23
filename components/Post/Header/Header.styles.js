@@ -24,10 +24,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     font-weight: normal;
   }
 
-  .newsTitle > i {
-    font-weight: 700;
-  }
-
   .author {
     margin-left: ${calcRem(1)};
     display: inline-block;
@@ -60,11 +56,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     color: #7E8FA4;
   }
 
+  .title-wrapper {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    grid-column: 4 / span 4;
+    grid-row: 2;
+  }
+
   .title {
     position: relative;
     z-index: 2;
     grid-column: 4 / span 4;
     grid-row: 2;
+    color: #18191B;
+  }
+
+  .episode-number {
+    margin-left: ${calcRem(10)};
+    font-family: 'Sweet Mavka Script', sans-serif;
+    font-weight: 700;
     color: #18191B;
   }
 
@@ -83,10 +94,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
-  .newsPicture {
-    grid-column: 9 / span 2;
-    width: 120px;
-    min-height: auto;
+  &.type_news {
+    .title {
+      margin-top: 0 !important;
+    }
+
+    .picture {
+      grid-column: 9 / span 2;
+      width: ${calcRem(120)};
+      min-height: auto;
+    }
   }
 
   ${desktop.all} {
@@ -94,15 +111,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       padding-top: 37px;
     }
 
-    &.newsHeader {
-      padding-top: 36px;
-    }
-
     .title {
       margin-top: 35px;
     }
 
-    .newsTitle {
+    .title-wrapper {
       margin-top: 30px;
     }
 
@@ -110,9 +123,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: 27px;
     }
 
-    .newsPicture {
-      margin-top: 2px;
-      margin-left: -23px;
+    &.type_news {
+      .picture {
+        margin-top: 2px;
+        margin-left: -23px;
+      }
     }
   }
 
@@ -132,19 +147,31 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 3 / span 5;
     }
 
+    .episode-number {
+      font-size: ${calcRem(40)};
+      line-height: ${calcRem(56)};
+    }
+
+    .title-wrapper {
+      margin-top: ${calcRem(20)};
+      grid-column: 3 / span 5;
+    }
+
     .picture {
       min-height: ${calcRem(235)};
       margin-top: ${calcRem(12)};
       grid-column: 7 / span 4;
     }
 
-    .newsPicture {
-      grid-column: 10 / span 2;
-      width: ${calcRem(96)};
-      height: ${calcRem(101)};
-      margin-top: 0;
-      min-height: auto;
-      transform: translateY(${calcRem(-4)});
+    &.type_news {
+      .picture {
+        grid-column: 10 / span 2;
+        width: ${calcRem(96)};
+        height: ${calcRem(101)};
+        margin-top: 0;
+        min-height: auto;
+        transform: translateY(${calcRem(-4)});
+      }
     }
   }
 
@@ -163,10 +190,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: ${calcRem(44)};
     }
 
-    .newsTitle {
-      margin-top: 0;
+    .episode-number {
       font-size: ${calcRem(40)};
       line-height: ${calcRem(56)};
+    }
+
+    .title-wrapper {
+      margin-top: 0;
+      grid-column: 1 / span 6;
     }
 
     .post-meta {
@@ -175,8 +206,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-row: 3;
     }
 
-    .newsPicture {
-      display: none;
+    &.type_news {
+      .title {
+        font-size: ${calcRem(40)};
+        line-height: ${calcRem(56)};
+      }
+
+      .picture {
+        display: none;
+      }
     }
   }
 `

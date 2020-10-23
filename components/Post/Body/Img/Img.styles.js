@@ -23,10 +23,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     &.with_big_margin {
       margin-top: 80px;
     }
-
-    &.newsImage {
-      margin-top: 60px;
-    }
   }
 
   ${tablet.all} {

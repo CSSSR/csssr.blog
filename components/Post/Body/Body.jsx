@@ -13,22 +13,18 @@ import ParagraphWithImage from './ParagraphWithImage'
 import Img from './Img'
 import Note from './Note'
 import Quote from './Quote'
-import NewsLink from './NewsLink'
+import NewsAudioLink from './NewsAudioLink'
 import Subtitle from './Subtitle'
 import Video from './Video'
 import Table from './Table'
 import List from './List'
 
-const Body = ({ content, className, slug, images, language, isNews }) =>
+const Body = ({ content, className, slug, images, language, type }) =>
   compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
         return (
-          <Grid
-            className={cn(`post-body ${className}`, {
-              newsPostBody: isNews,
-            })}
-          >
+          <Grid className={cn(`post-body ${className}`)}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
             <Comments id={slug} language={language} />
           </Grid>
@@ -58,7 +54,7 @@ const Body = ({ content, className, slug, images, language, isNews }) =>
         component: Heading.H3,
         props: {
           className: cn('heading_regular_s', {
-            newsHeading_regular_s: isNews,
+            newsHeading_regular_s: type === 'news',
           }),
           type: 'regular',
           size: 's',
@@ -103,7 +99,9 @@ const Body = ({ content, className, slug, images, language, isNews }) =>
           )
         },
         props: {
-          className: 'text_regular_m paragraph',
+          className: cn('text_regular_m paragraph', {
+            'text_regular_m_is_scaled-down': type === 'news',
+          }),
           type: 'regular',
           size: 'm',
         },
@@ -117,10 +115,10 @@ const Body = ({ content, className, slug, images, language, isNews }) =>
           external: true,
         },
       },
-      NewsLink: {
-        component: NewsLink,
+      NewsAudioLink: {
+        component: NewsAudioLink,
         props: {
-          className: 'newsLink',
+          className: 'newsAudioLink',
         },
       },
       ul: {

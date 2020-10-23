@@ -6,7 +6,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     overflow-x: hidden;
   }
 
-  &.newsPost {
+  &.type_news {
     background-image: linear-gradient(to right, white, white), url(${require('../../public/components/post/news-post-header-bg_desktop.svg').default});
     background-size: 880px 232px, 1920px 408px;
   }
@@ -25,7 +25,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       background-size: 880px 232px, 1360px 408px;
     }
 
-    &.newsPost {
+    &.type_news {
       background-image: linear-gradient(to right, white, white), url(${require('../../public/components/post/news-post-header-bg_desktop.svg').default});
       background-size: 880px 232px, 1920px 408px;
     }
@@ -52,7 +52,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       background-repeat: no-repeat, repeat-x;
     }
 
-    &.newsPost {
+    &.type_news {
       padding-top: ${calcRem(78)};
       background-position: center ${calcRem(78)}, center ${calcRem(-70)};
       background-size: ${calcRem(782)} ${calcRem(232)}, 100% ${calcRem(355)};
@@ -67,7 +67,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       background-repeat: repeat-x;
     }
 
-    &.newsPost {
+    &.type_news {
       padding-top: ${calcRem(155)};
       background-image: url(${require('../../public/components/post/news-post-header-bg_mobile.svg').default});
       background-position: 0 ${calcRem(-57)};

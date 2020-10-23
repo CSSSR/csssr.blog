@@ -1,4 +1,4 @@
-import { string, bool, object, shape } from 'prop-types'
+import { string, object, shape } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Post.styles'
 import Head from 'next/head'
@@ -9,11 +9,11 @@ import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
 
-const Post = ({ post, language, className, isNews }) => {
+const Post = ({ post, language, className, type = 'regular' }) => {
   return (
     <article
       className={cn(className, {
-        newsPost: isNews,
+        type_news: type === 'news',
       })}
     >
       <Head>
@@ -37,14 +37,14 @@ const Post = ({ post, language, className, isNews }) => {
 
       <Header
         title={post.title}
-        number={post.number && post.number}
+        episodeNumber={post.episodeNumber}
         coverImage={post.images.postCover}
         alt={post.coverImageAlt}
         tag={post.tag}
         date={post.date}
         author={post.author}
         language={language}
-        isNews={isNews}
+        type={type}
       />
 
       <Body
@@ -52,7 +52,7 @@ const Post = ({ post, language, className, isNews }) => {
         slug={post.slug}
         images={post.images}
         language={language}
-        isNews={isNews}
+        type={type}
       />
     </article>
   )
@@ -60,7 +60,7 @@ const Post = ({ post, language, className, isNews }) => {
 
 Post.propTypes = {
   className: string,
-  isNews: bool,
+  type: string,
   post: shape({
     content: string,
     title: string,
