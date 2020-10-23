@@ -1,0 +1,5 @@
+# Этот файл сгенерирован автоматически, не редактируйте его вручную
+
+report/
+jenkins-report.xml
+failure-screenshots/*.png
