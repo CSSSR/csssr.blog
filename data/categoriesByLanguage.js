@@ -5,7 +5,6 @@ export default {
     management: 'Management',
     'web-development': 'Web development',
     culture: 'Culture',
-    news: 'News',
   },
   ru: {
     all: 'Все статьи',

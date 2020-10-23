@@ -38,7 +38,7 @@ const Header = ({
         </DateFormatter>
 
         {type === 'news' ? (
-          <Link href="/[language]/[category]" as={`/${language}/${tag}512`}>
+          <Link href={`/${language}/${tag}512`}>
             <a className="tag">{categoriesByLanguage[language][tag]}</a>
           </Link>
         ) : (
