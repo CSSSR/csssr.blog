@@ -48,7 +48,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-left: ${calcRem(7)};
   }
 
-
   ${desktop.all} {
     & {
       grid-column: 4 / span 6;
@@ -56,12 +55,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .soundtrack-image {
       height: 21px;
-
-      @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          background-image: url('/icons/newsLink/soundtrack_hover/desktop.all.png');
-        }
-      }
     }
   }
 
@@ -85,6 +78,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .soundtrack-image {
       height: ${calcRem(18)};
+    }
+  }
+
+  .soundtrack-image {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-image: url('/icons/newsLink/soundtrack_hover/desktop.all.png');
+      }
     }
   }
 `
