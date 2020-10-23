@@ -6,5 +6,5 @@
   ["year-resume-2018","lint-your-css"],
   ["recursion","candidates-mistakes"],
   ["side-effects","property-testing"],
-  ["year-resume"]
+  ["year-resume", "react-perfomance"]
 ]

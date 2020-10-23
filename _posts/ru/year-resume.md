@@ -2,7 +2,7 @@
 title: 'Итоги <i>2016</i> года от CSSSR'
 author: 'Максим'
 date: '2016-12-26T00:00:00.000Z'
-coverImageAlt: 'Описание изображения'
+coverImageAlt: 'Итоги 2016 года'
 tag: 'web-development'
 ---
 
