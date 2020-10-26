@@ -45,6 +45,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .line-numbers {
+    margin-top: ${calcRem(30)};
+
     &::after,
     &::before {
       content: none !important;
@@ -157,10 +159,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .line-numbers {
       grid-column: 4 / span 6;
     }
-
-    .line-numbers {
-      margin-top: 50px !important;
-    }
   }
 
 
@@ -246,10 +244,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     blockquote {
       grid-column: 3 / span 8;
     }
-
-    .line-numbers {
-      margin-top: 2.5rem !important;
-    }
   }
 
   ${mobile.all} {
@@ -309,11 +303,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .compare,
     blockquote {
       grid-column: 1 / span 6;
-    }
-
-    .line-numbers {
-      margin-top: 3.125rem !important;
-      white-space: normal;
     }
 
     .how-close-br {
