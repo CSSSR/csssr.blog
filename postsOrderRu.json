@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
   ["qa-codex", "news512"],
   ["year-resume-2019" , "estimate-like-god"],
   ["unicorn-busters", "semantics-in-programming"],
@@ -11,4 +12,18 @@
   ["react-perfomance", "tech-book-reading"],
   ["how-to-be-a-beginner-developer", "react-map-performance"],
   ["split-blocks-into-groups"]
+=======
+  ["qa-codex", "year-resume-2019"],
+  ["estimate-like-god", "unicorn-busters"],
+  ["semantics-in-programming", "work-stronger"],
+  ["work-harder", "work-better"],
+  ["year-resume-2018", "lint-your-css"],
+  ["recursion", "candidates-mistakes"],
+  ["side-effects", "property-testing"],
+  ["year-resume", "react-perfomance"],
+  ["tech-book-reading", "how-to-be-a-beginner-developer"],
+  ["react-map-performance", "split-blocks-into-groups"],
+  ["lenses", "habits"],
+  ["sitemap-generator", "how-remote-developers-talk"], ["slack-groups", "yet-another-template-update"]
+>>>>>>> [COM-2892]: Added new posts
 ]
