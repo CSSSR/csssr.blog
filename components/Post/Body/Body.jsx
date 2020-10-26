@@ -54,7 +54,7 @@ const Body = ({ content, className, slug, images, language, type }) =>
         component: Heading.H3,
         props: {
           className: cn('heading_regular_s', {
-            newsHeading_regular_s: type === 'news',
+            'is_scaled-down': type === 'news',
           }),
           type: 'regular',
           size: 's',
@@ -100,7 +100,7 @@ const Body = ({ content, className, slug, images, language, type }) =>
         },
         props: {
           className: cn('text_regular_m paragraph', {
-            'text_regular_m_is_scaled-down': type === 'news',
+            'is_scaled-down': type === 'news',
           }),
           type: 'regular',
           size: 'm',

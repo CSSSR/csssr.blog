@@ -161,7 +161,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: ${calcRem(24)};
     }
 
-    .text_regular_m_is_scaled-down {
+    .text_regular_m.is_scaled-down {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
     }

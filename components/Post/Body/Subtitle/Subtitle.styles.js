@@ -2,6 +2,10 @@ import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+  &._is-large {
+    font-family: 'Roboto','Arial',sans-serif;
+  }
+
   ${desktop.all} {
     & {
       margin-top: 66px;
@@ -11,6 +15,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     &._is-large {
       margin-top: 0;
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(40)};
     }
   }
 
@@ -35,6 +41,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     &._is-large {
       margin-top: ${calcRem(37)};
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
     }
   }
 `

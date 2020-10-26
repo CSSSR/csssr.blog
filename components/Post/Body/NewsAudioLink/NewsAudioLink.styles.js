@@ -6,10 +6,6 @@ import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss
 const soundtrackImages = require.context('../../../../public/components/newsAudioLink/images?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
-  & {
-    margin-top: 60px;
-  }
-
   .link {
     &:visited {
       color: #7D7FFE;
@@ -29,12 +25,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     align-items: center;
     margin-top: ${calcRem(5)};
     color: #7D7FFE;
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        color: #0254d8;
-      }
-    }
   }
 
   .link-title {
@@ -51,6 +41,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${desktop.all} {
     & {
       grid-column: 4 / span 6;
+      margin-top: 60px;
     }
 
     .soundtrack-image {
@@ -81,11 +72,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
-  .soundtrack-image {
-    @media (hover: hover) and (pointer: fine) {
+  @media (hover: hover) and (pointer: fine) {
+    .soundtrack-image {
       &:hover {
         background-image: url('/icons/newsLink/soundtrack_hover/desktop.all.png');
       }
+    }
+
+    .title-wrapper:hover {
+      color: #0254d8;
     }
   }
 `

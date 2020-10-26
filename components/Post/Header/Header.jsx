@@ -58,12 +58,9 @@ const Header = ({
           />
 
           {episodeNumber && (
-            <Heading.H2
-              type="regular"
-              size="l"
-              className="episode-number"
-              dangerouslySetInnerHTML={{ __html: episodeNumber }}
-            />
+            <Heading.H2 type="regular" size="l" className="episode-number">
+              #{episodeNumber}
+            </Heading.H2>
           )}
         </div>
       ) : (

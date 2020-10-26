@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
-import { string, node } from 'prop-types'
+import { string, oneOf, node } from 'prop-types'
 import styles from './Subtitle.styles'
 import { Text } from '@csssr/core-design'
 
-const Subtitle = ({ className, size, children }) => (
+const Subtitle = ({ className, size = 'm', children }) => (
   <Text
     className={cn(className, {
       '_is-large': size === 'l',
     })}
     type="strong"
-    size="m"
+    size={(size === 's' || size === 'm') && size}
     as="div"
   >
     {children}
@@ -21,7 +21,7 @@ const Subtitle = ({ className, size, children }) => (
 Subtitle.propTypes = {
   className: string,
   children: node,
-  size: string,
+  size: oneOf(['l', 'm', 's']),
 }
 
 export default styled(Subtitle)`

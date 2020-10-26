@@ -25,7 +25,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-top: ${calcRem(20)};
   }
 
-  .newsHeading_regular_s + .text_regular_m {
+  .heading_regular_s.is_scaled-down + .text_regular_m {
     margin-top: ${calcRem(15)};
   }
 
@@ -43,11 +43,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
-  &.newsParagraphWithImage {
+  &.with_right-side-image {
     margin-top: ${calcRem(70)};
   }
 
-  .img-wrap.img-wrap_right-side {
+  .img-wrap.side_right {
     width: ${calcRem(184)};
     min-height: ${calcRem(128)};
     float: right;
@@ -64,11 +64,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       transform: translateX(-32px);
     }
 
-    &.newsParagraphWithImage + .text_regular_m {
+    &.with_right-side-image + .text_regular_m {
       margin-top: 20px;
     }
 
-    &.newsParagraphWithImage .heading_regular_s {
+    &.with_right-side-image .heading_regular_s {
       font-size: 18px;
       line-height: 24px;
     }
@@ -80,7 +80,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-column: 3 / span 8;
     }
 
-    &.newsParagraphWithImage {
+    &.with_right-side-image {
       margin-top: ${calcRem(50)};
     }
 
@@ -99,17 +99,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-top: ${calcRem(15)};
     }
 
-    &.newsParagraphWithImage .heading_regular_s {
+    &.with_right-side-image .heading_regular_s {
       margin-top: 0;
       font-size: ${calcRem(18)};
       line-height: ${calcRem(24)};
     }
 
-    &.newsParagraphWithImage + .text_regular_m_is_scaled-down {
+    &.with_right-side-image + .text_regular_m.is_scaled-down {
       margin-top: ${calcRem(9)};
     }
 
-    &.newsParagraphWithImage > .text_regular_m {
+    &.with_right-side-image > .text_regular_m {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
     }
@@ -121,7 +121,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-column: 1 / span 6;
     }
 
-    &.newsParagraphWithImage {
+    &.with_right-side-image {
       margin-top: ${calcRem(50)};
     }
 
@@ -148,13 +148,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-top: ${calcRem(15)};
     }
 
-    &.newsParagraphWithImage .heading_regular_s {
+    &.with_right-side-image .heading_regular_s {
       margin-top: 0;
       font-size: ${calcRem(18)};
       line-height: ${calcRem(24)};
     }
 
-    &.newsParagraphWithImage + .text_regular_m_is_scaled-down {
+    &.with_right-side-image + .text_regular_m.is_scaled-down {
       margin-top: ${calcRem(16)};
     }
   }

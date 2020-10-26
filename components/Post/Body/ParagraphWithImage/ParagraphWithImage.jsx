@@ -9,13 +9,13 @@ const ParagraphWithImage = ({ children, className, imageSide = 'left', sources, 
   return (
     <div
       className={cn(className, {
-        newsParagraphWithImage: imageSide === 'right',
+        'with_right-side-image': imageSide === 'right',
       })}
     >
       <Picture
         sources={sources}
         className={cn('img-wrap', {
-          'img-wrap_right-side': imageSide === 'right',
+          side_right: imageSide === 'right',
         })}
         alt={alt}
       />
