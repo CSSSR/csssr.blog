@@ -1,6 +1,7 @@
 import React from 'react'
 import { string, object } from 'prop-types'
 import styled from '@emotion/styled'
+import cn from 'classnames'
 import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, ListItem } from '@csssr/core-design'
@@ -12,17 +13,18 @@ import ParagraphWithImage from './ParagraphWithImage'
 import Img from './Img'
 import Note from './Note'
 import Quote from './Quote'
+import NewsAudioLink from './NewsAudioLink'
 import Subtitle from './Subtitle'
 import Video from './Video'
 import Table from './Table'
 import List from './List'
 
-const Body = ({ content, className, slug, images, language }) =>
+const Body = ({ content, className, slug, images, language, type }) =>
   compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
         return (
-          <Grid className={`post-body ${className}`}>
+          <Grid className={cn(`post-body ${className}`)}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
             <Comments id={slug} language={language} />
           </Grid>
@@ -51,7 +53,9 @@ const Body = ({ content, className, slug, images, language }) =>
       h3: {
         component: Heading.H3,
         props: {
-          className: 'heading_regular_s',
+          className: cn('heading_regular_s', {
+            'is_scaled-down': type === 'news',
+          }),
           type: 'regular',
           size: 's',
         },
@@ -95,7 +99,9 @@ const Body = ({ content, className, slug, images, language }) =>
           )
         },
         props: {
-          className: 'text_regular_m paragraph',
+          className: cn('text_regular_m paragraph', {
+            'is_scaled-down': type === 'news',
+          }),
           type: 'regular',
           size: 'm',
         },
@@ -106,6 +112,13 @@ const Body = ({ content, className, slug, images, language }) =>
           className: 'link_list_s',
           type: 'list',
           size: 's',
+          external: true,
+        },
+      },
+      NewsAudioLink: {
+        component: NewsAudioLink,
+        props: {
+          className: 'newsAudioLink',
         },
       },
       ul: {

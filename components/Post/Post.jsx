@@ -2,15 +2,20 @@ import { string, object, shape } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Post.styles'
 import Head from 'next/head'
+import cn from 'classnames'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
 import Header from './Header'
 import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
 
-const Post = ({ post, language, className }) => {
+const Post = ({ post, language, className, type = 'regular' }) => {
   return (
-    <article className={className}>
+    <article
+      className={cn(className, {
+        type_news: type === 'news',
+      })}
+    >
       <Head>
         <title>{cleaningTitle(post.title, 'meta')}</title>
         <meta name="description" content={getDescription(post.content)} />
@@ -32,21 +37,30 @@ const Post = ({ post, language, className }) => {
 
       <Header
         title={post.title}
+        episodeNumber={post.episodeNumber}
         coverImage={post.images.postCover}
         alt={post.coverImageAlt}
         tag={post.tag}
         date={post.date}
         author={post.author}
         language={language}
+        type={type}
       />
 
-      <Body content={post.content} slug={post.slug} images={post.images} language={language} />
+      <Body
+        content={post.content}
+        slug={post.slug}
+        images={post.images}
+        language={language}
+        type={type}
+      />
     </article>
   )
 }
 
 Post.propTypes = {
   className: string,
+  type: string,
   post: shape({
     content: string,
     title: string,
