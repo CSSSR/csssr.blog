@@ -16,11 +16,4 @@ export default {
   },
 }
 
-export const categoriesOrder = [
-  'all',
-  'business',
-  'management',
-  'web-development',
-  'culture',
-  'news',
-]
+export const categoriesOrder = ['all', 'business', 'management', 'web-development', 'culture']

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { string, bool, shape, object, oneOf } from 'prop-types'
+import React from 'react'
+import { string, shape, object, oneOf } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './PostCard.styles'
@@ -9,18 +9,17 @@ import cleaningTitle from '../../../../utils/client/cleaningTitle'
 import categoriesByLanguage from '../../../../data/categoriesByLanguage'
 import { Picture } from '@csssr/csssr.images/dist/react'
 
-const PostCard = ({ className, language, post, size, isNews }) => {
+const PostCard = ({ className, language, post, size, type = 'regular' }) => {
   const imgCover = size === 'l' ? post.images.mainCoverL : post.images.mainCoverS
-  const [isLinkHovered, setIsLinkHovered] = useState(false)
 
   return (
-    <li className={cn(`${className}`, { news: isNews, hovered: isLinkHovered })}>
-      <Link href="/[language]/article/[slug]" as={`/${language}/article/${post.slug}`}>
-        <a
-          className="link"
-          onMouseOver={() => setIsLinkHovered(true)}
-          onMouseOut={() => setIsLinkHovered(false)}
-        >
+    <li className={cn(`${className}`, { news: type === 'news' })}>
+      <Link
+        href={
+          type === 'news' ? `/ru/news512/episode/${post.slug}` : `/${language}/article/${post.slug}`
+        }
+      >
+        <a className="link">
           <Picture
             className={cn('picture', {
               picture_size_l: size === 'l',
@@ -33,6 +32,8 @@ const PostCard = ({ className, language, post, size, isNews }) => {
             className={cn('title', { title_size_l: size === 'l', title_size_s: size === 's' })}
             dangerouslySetInnerHTML={{ __html: cleaningTitle(post.title) }}
           />
+
+          {type === 'news' && <span className="news-number">#{post.episode}</span>}
         </a>
       </Link>
 
@@ -42,11 +43,9 @@ const PostCard = ({ className, language, post, size, isNews }) => {
         {post.date}
       </DateFormatter>
 
-      <Link href="/[language]/[category]" as={`/${language}/${post.tag.toLowerCase()}`}>
+      <Link href={type === 'news' ? '/ru/news512' : '/[language]/[category]'}>
         <a className="tag">{categoriesByLanguage[language][post.tag.toLowerCase()]}</a>
       </Link>
-
-      {isNews && <span className="news-number">#{post.episode}</span>}
     </li>
   )
 }
@@ -67,7 +66,7 @@ PostCard.propTypes = {
     episode: string,
   }),
   size: oneOf(['l', 's']),
-  isNews: bool,
+  type: oneOf(['regular', 'news']),
 }
 
 export default styled(PostCard)`

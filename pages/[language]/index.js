@@ -6,6 +6,7 @@ import getPostsCategories from '../../utils/getPostsCategories'
 import { POSTS_PER_PAGE } from '../../data/constants'
 import postsOrderEn from '../../postsOrderEn.json'
 import postsOrderRu from '../../postsOrderRu.json'
+import sortByDate from '../../utils/sortByDate'
 
 const postsOrder = {
   en: postsOrderEn,
@@ -43,9 +44,8 @@ export async function getStaticProps({ params }) {
     acc[post.slug] = post
     return acc
   }, {})
-  const posts = postsOrder[language].flat().map((slug) => postsBySlug[slug])
 
-  const allNews = await getPostsNews([
+  const news = await getPostsNews([
     'title',
     'date',
     'slug',
@@ -55,15 +55,22 @@ export async function getStaticProps({ params }) {
     'images',
     'episode',
   ])
-  posts.splice(1, 0, allNews[allNews.length - 1])
 
-  const postsWithNews = posts.slice(0, -1)
+  const newsSortedByDate = sortByDate(news)
+
+  const posts = postsOrder[language].flat().map((slug) => {
+    if (slug === 'news512') {
+      return newsSortedByDate[0]
+    }
+
+    return postsBySlug[slug]
+  })
 
   return {
     props: {
-      posts: postsWithNews.slice(0, POSTS_PER_PAGE),
+      posts: posts.slice(0, POSTS_PER_PAGE),
       categories,
-      totalNumberOfPosts: postsWithNews.length,
+      totalNumberOfPosts: posts.length,
       language,
     },
   }

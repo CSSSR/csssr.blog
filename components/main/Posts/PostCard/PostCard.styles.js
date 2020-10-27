@@ -4,15 +4,6 @@ import calcRem from '../../../../utils/style/calcRem'
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   .link {
     display: block;
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        .title {
-          color: ${colors.primary.origin};
-          transition: color 150ms ease-in-out;
-        }
-      }
-    }
   }
 
   .picture {
@@ -85,25 +76,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     color: #5695ED;
     transition: color 150ms ease-in-out;
     letter-spacing: ${calcRem(1.25)};
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        color: #0254d8;
-      }
-    }
   }
 
   &.news {
     position: relative;
     background-color: #F1F2F7;
     padding: 0 ${calcRem(16)} ${calcRem(16)} ${calcRem(16)};
-
-    &.hovered {
-      .news-number {
-        color: ${colors.primary.origin};
-        transition: color 150ms ease-in-out;
-      }
-    }
 
     .link {
       margin-bottom: ${calcRem(15)}
@@ -131,6 +109,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       font-size: ${calcRem(64)};
       line-height: ${calcRem(44)};
       font-weight: bold;
+      pointer-events: none;
     }
 
     .date,
@@ -146,11 +125,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.all} {
     &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
-      margin-top: ${calcRem(75)};
+      margin-top: 75px;
     }
 
     .title {
-      margin-top: ${calcRem(30)};
+      margin-top: 30px;
     }
   }
 
@@ -247,6 +226,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
         display: inline-block;
         margin-bottom : 0;
       }
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .link:hover {
+      .title {
+        color: ${colors.primary.origin};
+        transition: color 150ms ease-in-out;
+      }
+
+      .news-number {
+        color: ${colors.primary.origin};
+        transition: color 150ms ease-in-out;
+      }
+    }
+
+    .tag:hover {
+      color: #0254d8;
     }
   }
 `

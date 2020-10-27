@@ -9,6 +9,8 @@ import { POSTS_PER_PAGE } from '../../../data/constants'
 import postsOrderEn from '../../../postsOrderEn.json'
 import postsOrderRu from '../../../postsOrderRu.json'
 
+import sortByDate from '../../../utils/sortByDate'
+
 const Index = ({
   posts,
   categories,
@@ -62,11 +64,30 @@ export async function getStaticProps({ params }) {
       ru: postsOrderRu,
     }
 
-    orderedPostsByLanguageAndCategory = postsOrder[language].flat().map((slug) => postsBySlug[slug])
+    const news = await getPostsNews([
+      'title',
+      'date',
+      'slug',
+      'author',
+      'coverImageAlt',
+      'tag',
+      'images',
+      'episode',
+    ])
+
+    const newsSortedByDate = sortByDate(news)
+
+    orderedPostsByLanguageAndCategory = postsOrder[language].flat().map((slug) => {
+      if (slug === 'news512') {
+        console.log('second news', newsSortedByDate[params.page - 1])
+
+        return newsSortedByDate[params.page - 1]
+      }
+
+      return postsBySlug[slug]
+    })
   } else {
-    orderedPostsByLanguageAndCategory = postsByLanguageAndCategory.sort(
-      (postA, postB) => new Date(postB.date) - new Date(postA.date),
-    )
+    orderedPostsByLanguageAndCategory = sortByDate(postsByLanguageAndCategory)
   }
 
   const postsByLanguageAndCategoryAndPage = orderedPostsByLanguageAndCategory.filter(
@@ -80,28 +101,7 @@ export async function getStaticProps({ params }) {
     },
   )
 
-  const allNews = await getPostsNews([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImageAlt',
-    'tag',
-    'images',
-    'episode',
-  ])
-  const lastNews = allNews.reverse().slice(0, 3)
   let postsWithNewsByLanguageAndCategoryAndPage = postsByLanguageAndCategoryAndPage
-
-  if (params.category === 'all') {
-    if (params.page === '2') {
-      postsByLanguageAndCategoryAndPage.splice(1, 0, lastNews[1])
-      postsWithNewsByLanguageAndCategoryAndPage = postsByLanguageAndCategoryAndPage.slice(0, -1)
-    } else if (params.page === '3') {
-      postsByLanguageAndCategoryAndPage.splice(1, 0, lastNews[2])
-      postsWithNewsByLanguageAndCategoryAndPage = postsByLanguageAndCategoryAndPage.slice(0, -1)
-    }
-  }
 
   return {
     props: {
