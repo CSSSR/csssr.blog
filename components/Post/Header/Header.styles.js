@@ -56,11 +56,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     color: #7E8FA4;
   }
 
+  .title-wrapper {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    grid-column: 4 / span 4;
+    grid-row: 2;
+  }
+
   .title {
     position: relative;
     z-index: 2;
     grid-column: 4 / span 4;
     grid-row: 2;
+    color: #18191B;
+  }
+
+  .episode-number {
+    margin-left: ${calcRem(10)};
+    font-family: 'Sweet Mavka Script', sans-serif;
+    font-weight: 700;
     color: #18191B;
   }
 
@@ -79,6 +94,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  &.type_news {
+    .title {
+      margin-top: 0 !important;
+    }
+
+    .picture {
+      grid-column: 9 / span 2;
+      width: ${calcRem(120)};
+      min-height: auto;
+    }
+  }
+
   ${desktop.all} {
     & {
       padding-top: 37px;
@@ -88,8 +115,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: 35px;
     }
 
+    .title-wrapper {
+      margin-top: 30px;
+    }
+
     .picture {
       margin-top: 27px;
+    }
+
+    &.type_news {
+      .picture {
+        margin-top: 2px;
+        margin-left: -23px;
+      }
     }
   }
 
@@ -109,10 +147,31 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 3 / span 5;
     }
 
+    .episode-number {
+      font-size: ${calcRem(40)};
+      line-height: ${calcRem(56)};
+    }
+
+    .title-wrapper {
+      margin-top: ${calcRem(20)};
+      grid-column: 3 / span 5;
+    }
+
     .picture {
       min-height: ${calcRem(235)};
       margin-top: ${calcRem(12)};
       grid-column: 7 / span 4;
+    }
+
+    &.type_news {
+      .picture {
+        grid-column: 10 / span 2;
+        width: ${calcRem(96)};
+        height: ${calcRem(101)};
+        margin-top: 0;
+        min-height: auto;
+        transform: translateY(${calcRem(-4)});
+      }
     }
   }
 
@@ -131,10 +190,31 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: ${calcRem(44)};
     }
 
+    .episode-number {
+      font-size: ${calcRem(40)};
+      line-height: ${calcRem(56)};
+    }
+
+    .title-wrapper {
+      margin-top: 0;
+      grid-column: 1 / span 6;
+    }
+
     .post-meta {
       margin-top: ${calcRem(20)};
       grid-column: 1 / span 6;
       grid-row: 3;
+    }
+
+    &.type_news {
+      .title {
+        font-size: ${calcRem(40)};
+        line-height: ${calcRem(56)};
+      }
+
+      .picture {
+        display: none;
+      }
     }
   }
 `

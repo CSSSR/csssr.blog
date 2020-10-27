@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
           <Fonts
             options={[
               {
-                family: 'Sweet Mavka Script',
+                family: 'Amita',
                 weight: 400,
                 style: 'normal',
                 rel: 'preload',
@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
           <Fonts
             options={[
               {
-                family: 'Amita',
+                family: 'Sweet Mavka Script',
                 weight: 400,
                 style: 'normal',
                 rel: 'preload',
