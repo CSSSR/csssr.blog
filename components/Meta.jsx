@@ -3,7 +3,7 @@ import { withRouter } from 'next/router'
 
 const Meta = ({ router }) => (
   <Head>
-    <link rel="canonical" href={`https://blog.csssr.com/${router.asPath}`} />
+    <link rel="canonical" href={`https://blog.csssr.com${router.asPath}`} />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
