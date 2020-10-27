@@ -1,5 +1,6 @@
 .next/
 out
 node_modules/
+e2e-tests/
 !.eslintrc.js
 !.prettierrc.js
