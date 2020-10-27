@@ -79,8 +79,6 @@ export async function getStaticProps({ params }) {
 
     orderedPostsByLanguageAndCategory = postsOrder[language].flat().map((slug) => {
       if (slug === 'news512') {
-        console.log('second news', newsSortedByDate[params.page - 1])
-
         return newsSortedByDate[params.page - 1]
       }
 
