@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, shape, object, oneOf } from 'prop-types'
+import { string, number, shape, object, oneOf } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './PostCard.styles'
@@ -7,7 +7,7 @@ import DateFormatter from '../../../DateFormatter'
 import Link from 'next/link'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
 import categoriesByLanguage from '../../../../data/categoriesByLanguage'
-import { Picture } from '@csssr/csssr.images/dist/react'
+import { Picture, PictureSmart } from '@csssr/csssr.images/dist/react'
 
 const PostCard = ({ className, language, post, size, type = 'regular' }) => {
   const imgCover = size === 'l' ? post.images.mainCoverL : post.images.mainCoverS
@@ -20,20 +20,30 @@ const PostCard = ({ className, language, post, size, type = 'regular' }) => {
         }
       >
         <a className="link">
-          <Picture
-            className={cn('picture', {
-              picture_size_l: size === 'l',
-              picture_size_s: size === 's',
-            })}
-            sources={imgCover}
-            alt={post.coverImageAlt}
-          />
+          {type === 'news' ? (
+            <PictureSmart
+              className="picture picture_size_s"
+              requireImages={require.context('../../../../public/posts/ru/news-512/mainCoverS')}
+              alt={post.coverImageAlt}
+            />
+          ) : (
+            <Picture
+              className={cn('picture', {
+                picture_size_l: size === 'l',
+                picture_size_s: size === 's',
+              })}
+              sources={imgCover}
+              alt={post.coverImageAlt}
+            />
+          )}
           <h2
             className={cn('title', { title_size_l: size === 'l', title_size_s: size === 's' })}
-            dangerouslySetInnerHTML={{ __html: cleaningTitle(post.title) }}
+            dangerouslySetInnerHTML={{
+              __html: type === 'news' ? 'Новости 512' : cleaningTitle(post.title),
+            }}
           />
 
-          {type === 'news' && <span className="news-number">#{post.episode}</span>}
+          {type === 'news' && <span className="news-number">#{post.episodeNumber}</span>}
         </a>
       </Link>
 
@@ -43,7 +53,7 @@ const PostCard = ({ className, language, post, size, type = 'regular' }) => {
         {post.date}
       </DateFormatter>
 
-      <Link href={type === 'news' ? '/ru/news512' : '/[language]/[category]'}>
+      <Link href={type === 'news' ? '/ru/news512' : `/${language}/${post.tag.toLowerCase()}`}>
         <a className="tag">{categoriesByLanguage[language][post.tag.toLowerCase()]}</a>
       </Link>
     </li>
@@ -63,7 +73,7 @@ PostCard.propTypes = {
     }),
     tag: string,
     slug: string,
-    episode: string,
+    episodeNumber: number,
   }),
   size: oneOf(['l', 's']),
   type: oneOf(['regular', 'news']),

@@ -1,8 +1,8 @@
 [
-  ["qa-codex", "news-512-12"],
+  ["qa-codex", "news512"],
   ["year-resume-2019", "estimate-like-god"],["unicorn-busters", "semantics-in-programming"],
   ["work-harder", "work-stronger"],
-  ["work-better", "news-512-11"],
+  ["work-better", "news512"],
   ["year-resume-2018","lint-your-css"],
   ["recursion","candidates-mistakes"],
   ["new-react-context","side-effects"],

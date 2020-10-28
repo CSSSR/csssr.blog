@@ -5,11 +5,9 @@ import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberBy
 import languages from '../../../utils/languages'
 import areEqualShallow from '../../../utils/areEqualShallow'
 import getPostsCategories from '../../../utils/getPostsCategories'
-import { POSTS_PER_PAGE } from '../../../data/constants'
+import sortByDate from '../../../utils/sortByDate'
 import postsOrderEn from '../../../postsOrderEn.json'
 import postsOrderRu from '../../../postsOrderRu.json'
-
-import sortByDate from '../../../utils/sortByDate'
 
 const Index = ({
   posts,
@@ -72,7 +70,7 @@ export async function getStaticProps({ params }) {
       'coverImageAlt',
       'tag',
       'images',
-      'episode',
+      'episodeNumber',
     ])
 
     const newsSortedByDate = sortByDate(news)
@@ -99,13 +97,11 @@ export async function getStaticProps({ params }) {
     },
   )
 
-  let postsWithNewsByLanguageAndCategoryAndPage = postsByLanguageAndCategoryAndPage
-
   return {
     props: {
-      posts: postsWithNewsByLanguageAndCategoryAndPage.slice(0, POSTS_PER_PAGE),
+      posts: postsByLanguageAndCategoryAndPage,
       categories,
-      totalNumberOfPosts: postsByLanguageAndCategory.length,
+      totalNumberOfPosts: orderedPostsByLanguageAndCategory.length,
       activeCategory: params.category,
       activePageNumber: Number(params.page),
       language,

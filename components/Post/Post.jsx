@@ -9,6 +9,8 @@ import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
 
+import myImageData from '../../public/posts/ru/news-512/mainCoverS/desktop.m.png'
+
 const Post = ({ post, language, className, type = 'regular' }) => {
   return (
     <article
@@ -31,7 +33,11 @@ const Post = ({ post, language, className, type = 'regular' }) => {
         {post.author && <meta property="article:author" content={post.author} />}
         <meta
           property="og:image"
-          content={getOriginal(post.images.mainCoverL[post.images.mainCoverL.length - 1])}
+          content={
+            type === 'news'
+              ? getOriginal(myImageData)
+              : getOriginal(post.images.mainCoverL[post.images.mainCoverL.length - 1])
+          }
         />
       </Head>
 
