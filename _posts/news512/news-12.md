@@ -2,7 +2,7 @@
 title: 'Новости 512'
 coverImageAlt: 'Обложка новостного поста'
 author: 'Ислам Виндижев'
-tag: news
+tag: 'news'
 date: '2020-07-14T00:00:00.000Z'
 episodeNumber: 12
 ---

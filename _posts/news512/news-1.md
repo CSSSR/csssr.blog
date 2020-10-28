@@ -1,5 +1,5 @@
 ---
-title: 'На Mozilla Hacks доступно описание новой инициативы Front-end developer learning pathway. Это новый подраздел MDN, работающий не как справочник, а как учебник: от html, до javascript-фреймворков.'
+title: 'Новости 512'
 author: 'Ислам Виндижев'
 tag: 'news'
 date: '2020-07-11T00:00:00.000Z'

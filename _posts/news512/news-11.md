@@ -2,8 +2,8 @@
 title: 'Новости 512'
 coverImageAlt: 'Новости 512'
 author: 'Ислам Виндижев'
-date: '2020-06-26T00:00:00.000Z'
 tag: 'news'
+date: '2020-06-26T00:00:00.000Z'
 episodeNumber: 11
 ---
 
