@@ -19,11 +19,11 @@ export const nav = {
           title: 'MVP',
           href: 'https://csssr.com/en/service/mvp-development',
         },
-        {
-          id: 'design',
-          title: 'DesignLab',
-          href: 'https://csssr.com/en/service/design-lab',
-        },
+        // {
+        //   id: 'design',
+        //   title: 'DesignLab',
+        //   href: 'https://csssr.com/en/service/design-lab',
+        // },
       ],
     },
     {
@@ -106,7 +106,7 @@ export const nav = {
         {
           id: 'blog',
           title: 'Blog',
-          href: '/',
+          href: '/en',
         },
       ],
     },
@@ -197,7 +197,7 @@ export const nav = {
         {
           id: 'blog',
           title: 'Блог',
-          href: '/',
+          href: '/ru',
         },
       ],
     },
