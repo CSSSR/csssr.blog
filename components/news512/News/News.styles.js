@@ -3,6 +3,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet }}) => css`
   & {
+    padding-bottom: ${calcRem(30)};
     background-image: url('/icons/news-bg.svg');
     background-size: ${calcRem(83)} ${calcRem(87)};
     background-repeat: no-repeat;
@@ -62,7 +63,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
   ${desktop.all} {
     & {
-      background-size: ${calcRem(93)} ${calcRem(97)};
+      background-size: ${calcRem(92)} ${calcRem(96)};
       background-position: 86.6% ${calcRem(126)};
     }
 

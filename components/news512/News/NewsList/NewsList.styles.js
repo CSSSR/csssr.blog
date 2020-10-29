@@ -5,7 +5,6 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
   & {
     display: flex;
     flex-direction: column;
-    margin-top: ${calcRem(30)};
   }
 
   .news-item {
