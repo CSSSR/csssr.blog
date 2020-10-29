@@ -78,7 +78,6 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
       font-size: 32px;
       line-height: 40px;
     }
-
   }
 `
 

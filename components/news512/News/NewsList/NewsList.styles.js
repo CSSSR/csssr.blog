@@ -197,7 +197,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
       font-weight: normal;
       font-size: 16px;
       line-height: 24px;
-      margin-left: 10px;
+      margin-left: 26px;
     }
 
     .news-item.first .news-item-title {
