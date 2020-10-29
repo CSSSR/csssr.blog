@@ -60,7 +60,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-top: 20px
     }
 
-    .img-wrap.img-wrap_right-side {
+    .img-wrap.side_right {
       transform: translateX(-32px);
     }
 
@@ -132,7 +132,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-right: ${calcRem(8)};
     }
 
-    .img-wrap.img-wrap_right-side {
+    .img-wrap.side_right {
       width: auto;
       min-width: ${calcRem(104)};
       min-height: unset;
