@@ -31,14 +31,6 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     margin-top: ${calcRem(15)};
   }
 
-  .autor {
-    &::after {
-      content: '•';
-      margin-left: ${calcRem(7)};
-      margin-right: ${calcRem(8)};
-    }
-  }
-
   .tag {
     margin-left: ${calcRem(23)};
     color: #5695ED;
