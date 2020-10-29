@@ -34,7 +34,7 @@ tag: 'web-development'
 
 ## Deno
 
-![image](/posts/ru/year-resume-2019/deno/all.png)
+<Img imageName='deno' alt='deno'/>
 
 Это новый (альтернативный?) виток эволюции Node, за авторством всё того же Райана Дала.
 
@@ -54,7 +54,7 @@ tag: 'web-development'
 
 ## CommonJS -> AMD -> UMD -> «It don’t matter if you’re black or white»
 
-![image](/posts/ru/year-resume-2019/mjs/all.png)
+<Img imageName='mjs' alt='mjs'/>
 
 Да-да, это те самые michael-jackson-файлы (`.mjs`). А если говорить общепринятым языком, <a href="https://nodejs.org/api/esm.html#esm_ecmascript_modules" target="_blank">ECMAScript Modules</a>.
 
@@ -97,19 +97,19 @@ tag: 'web-development'
 Мы заигрались за 10 лет становления JavaScript и фронтенда. Да так успешно, что все в награду получили аметистового протодракона. Сейчас покажу, как это вышло:
 
 <div class='grid-element wow'>
-![image](/posts/ru/year-resume-2019/wow1/all.png)
-![image](/posts/ru/year-resume-2019/wow2/all.png)
-![image](/posts/ru/year-resume-2019/wow3/all.png)
-![image](/posts/ru/year-resume-2019/wow4/all.png)
-![image](/posts/ru/year-resume-2019/wow5/all.png)
-![image](/posts/ru/year-resume-2019/wow6/all.png)
-![image](/posts/ru/year-resume-2019/wow7/all.png)
-![image](/posts/ru/year-resume-2019/wow8/all.png)
-![image](/posts/ru/year-resume-2019/wow9/all.png)
+  <Img imageName='wow1' alt='wow1'/>
+  <Img imageName='wow2' alt='wow2'/>
+  <Img imageName='wow3' alt='wow3'/>
+  <Img imageName='wow4' alt='wow4'/>
+  <Img imageName='wow5' alt='wow5'/>
+  <Img imageName='wow6' alt='wow6'/>
+  <Img imageName='wow7' alt='wow7'/>
+  <Img imageName='wow8' alt='wow8'/>
+  <Img imageName='wow9' alt='wow9'/>
 </div>
 
 <style type="text/css">
-  .wow img:not(:first-of-type) {
+  .wow picture:not(:first-of-type) {
     margin-top: 0;
   }
 </style>
@@ -118,4 +118,4 @@ tag: 'web-development'
 
 С ежегодной речью выступил Максон «Черная Борода» Вислогуров. До новых встреч в новом десятилетии! Все по драконам!
 
-![image](/posts/ru/year-resume-2019/outro/all.jpg)
+<Img imageName='outro' alt='outro'/>
