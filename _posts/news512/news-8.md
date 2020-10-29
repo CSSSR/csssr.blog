@@ -1,8 +1,8 @@
 ---
-title: 'На Mozilla Hacks доступно описание новой инициативы Front-end developer learning pathway. Это новый подраздел MDN, работающий не как справочник, а как учебник: от html, до javascript-фреймворков.'
+title: 'Создатели инициативы объясняют, что такое веб-стандарты и как веб-технологии работают вместе, а также как эффективно учиться и получать помощь.'
 soundcloudLink: 'https://soundcloud.com/csssr/css-3d-gayd-po-webpack-5-nodejs-15-react-17-i-cra-4-playwright-python-composer-2-observer-apis?in=csssr/sets/512-news'
-date: '2020-05-14T00:00:00.000Z'
-episodeNumber: 10
+date: '2020-03-14T00:00:00.000Z'
+episodeNumber: 8
 tag: 'news'
 author: 'Ислам Виндижев'
 ---

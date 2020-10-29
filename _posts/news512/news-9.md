@@ -1,8 +1,8 @@
 ---
-title: 'На Mozilla Hacks доступно описание новой инициативы Front-end developer learning pathway. Это новый подраздел MDN, работающий не как справочник, а как учебник: от html, до javascript-фреймворков.'
+title: 'В гитхабе Хекслета появился репозиторий, где собраны тестовый задания почти тридцат IT компаний. Кстати, недавно, совместно с Хекcлетом мы провели публичное собеседование на должность фронтенд-разработчика'
 soundcloudLink: 'https://soundcloud.com/csssr/css-3d-gayd-po-webpack-5-nodejs-15-react-17-i-cra-4-playwright-python-composer-2-observer-apis?in=csssr/sets/512-news'
-date: '2020-05-14T00:00:00.000Z'
-episodeNumber: 10
+date: '2020-04-14T00:00:00.000Z'
+episodeNumber: 9
 tag: 'news'
 author: 'Ислам Виндижев'
 ---

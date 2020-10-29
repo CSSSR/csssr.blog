@@ -9,7 +9,7 @@ import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
 
-import myImageData from '../../public/posts/ru/news-512/mainCoverS/desktop.m.png'
+import newsPostCardImage from '../../public/components/postCard/desktop.m.png'
 
 const Post = ({ post, language, className, type = 'regular' }) => {
   return (
@@ -33,17 +33,18 @@ const Post = ({ post, language, className, type = 'regular' }) => {
         {post.author && <meta property="article:author" content={post.author} />}
         <meta
           property="og:image"
-          content={
+          content={getOriginal(
             type === 'news'
-              ? getOriginal(myImageData)
-              : getOriginal(post.images.mainCoverL[post.images.mainCoverL.length - 1])
-          }
+              ? newsPostCardImage
+              : post.images.mainCoverL[post.images.mainCoverL.length - 1],
+          )}
         />
       </Head>
 
       <Header
         title={post.title}
         episodeNumber={post.episodeNumber}
+        soundcloudLink={post.soundcloudLink}
         coverImage={post.images.postCover}
         alt={post.coverImageAlt}
         tag={post.tag}

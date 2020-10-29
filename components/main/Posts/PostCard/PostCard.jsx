@@ -23,7 +23,7 @@ const PostCard = ({ className, language, post, size, type = 'regular' }) => {
           {type === 'news' ? (
             <PictureSmart
               className="picture picture_size_s"
-              requireImages={require.context('../../../../public/posts/ru/news-512/mainCoverS')}
+              requireImages={require.context('../../../../public/components/postCard')}
               alt={post.coverImageAlt}
             />
           ) : (

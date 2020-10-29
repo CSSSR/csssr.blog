@@ -20,7 +20,7 @@ const Posts = ({ language, posts, className }) => (
           post={post}
           size={size}
           side={side}
-          type={post.tag === 'news' && 'news'}
+          type={post.tag === 'news' ? 'news' : 'regular'}
         />,
       ]
     }, [])}
