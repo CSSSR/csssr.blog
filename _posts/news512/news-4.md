@@ -1,8 +1,8 @@
 ---
 title: 'Создатели инициативы объясняют, что такое веб-стандарты и как веб-технологии работают вместе, а также как эффективно учиться и получать помощь.'
 soundcloudLink: 'https://soundcloud.com/csssr/css-3d-gayd-po-webpack-5-nodejs-15-react-17-i-cra-4-playwright-python-composer-2-observer-apis?in=csssr/sets/512-news'
-date: '2019-08-14T00:00:00.000Z'
-episodeNumber: 2
+date: '2019-10-14T00:00:00.000Z'
+episodeNumber: 4
 tag: 'news'
 author: 'Ислам Виндижев'
 ---

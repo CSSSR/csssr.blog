@@ -3,15 +3,10 @@ import calcRem from '../../../../utils/style/calcRem'
 
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
-const soundtrackImages = require.context('../../../../public/components/newsAudioLink/images?csssr-images')
+const soundtrackImages = require.context('../../../../public/components/newsAudioLink/images')
+const soundtrackImagesHovered = require.context('../../../../public/components/newsAudioLink/images_hovered')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
-  .link {
-    &:visited {
-      color: #7D7FFE;
-    }
-  }
-
   .soundtrack-image {
     width: 100%;
     background-repeat: no-repeat;
@@ -73,20 +68,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .soundtrack-image {
-      &:hover {
-        background-image: url('/icons/newsLink/soundtrack_hover/desktop.all.png');
+    &:hover {
+      .title-wrapper {
+        color: #0254d8;
       }
-    }
-
-    .title-wrapper:hover {
-      color: #0254d8;
     }
   }
 `
 
 export const backgroundImagesStyles = () => css`
   ${backgroundCssSmart('.soundtrack-image', soundtrackImages)}
+
+
+  @media (hover: hover) and (pointer: fine) {
+    ${backgroundCssSmart('.news-audio-link:hover .soundtrack-image', soundtrackImagesHovered)}
+  }
 `
 
 
