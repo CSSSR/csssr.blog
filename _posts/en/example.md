@@ -14,6 +14,34 @@ tag: 'web-development'
 
 **In**this digital era, a **website** comprising various UI/UX elements and features can reveal the ocean of opportunities and become even more effective and engaging. UI/UX  components and technologies not only make a website look great but also secure the brand’s marketing goals.
 
+Regular text
+
+**Bold text**
+
+_Italic text_
+
+**_Italic & Bold text_**
+
+>Сноска
+
+- If ToR leave no hope for an accurate estimation
+- never be afraid to ask questions
+
+  I need to add another paragraph below the second list item.
+
+
+- even if it takes additional time.
+  - Indented item
+  - Indented item
+
+
+1. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
+2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet.
+3. A team is fully distributed, all interaction is remote:
+
+  1. Indented item
+  2. Indented item
+
 <Table>
   <thead>
     <tr>
@@ -390,7 +418,7 @@ There’s a perfect example. In 2017, Wayfair (online furniture retailer) launch
 
 Видео ниже:
 
-<Video src='/posts/example/camp-video.mp4' />
+<Video src='/video/camp-video.mp4' />
 
 <Note id='note2'>
   Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.

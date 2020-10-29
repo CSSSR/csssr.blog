@@ -16,6 +16,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     float: left;
   }
 
+  em {
+    font-weight: normal;
+  }
+
+  strong, strong > em {
+    font-weight: bold;
+  }
+
   .heading_regular_s {
     margin-top: ${calcRem(30)};
   }
@@ -83,8 +91,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     color: #18191B;
   }
 
-  .no-wrap {
+  .no-wrap,
+  code {
     white-space: nowrap;
+  }
+
+  .heading_regular_l,
+  .heading_regular_m,
+  .heading_regular_s {
+    .link_list_s {
+      font-size: inherit;
+      line-height: inherit;
+    }
   }
 
   ${desktop.all} {
@@ -136,7 +154,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .list_s,
     .grid-element,
     .compare,
-    .line-numbers  {
+    .line-numbers {
       grid-column: 4 / span 6;
     }
 
@@ -145,9 +163,29 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+
+  blockquote {
+    margin-top: ${calcRem(50)};
+    margin-bottom: ${calcRem(42)};
+    padding-left: ${calcRem(20)};
+    padding-top: ${calcRem(18)};
+    padding-bottom: ${calcRem(18)};
+    grid-column: 4 / span 6;
+    border-left: 4px solid  #E0E4EC;
+
+    & > .text_regular_m:first-of-type {
+      margin-top: 0;
+    }
+
+    & + *,
+    & + *[class] {
+      margin-top: 0;
+    }
+  }
+
   ${tablet.all} {
     & > .text_regular_m:first-of-type  {
-      margin-top: ${calcRem(62)};
+      margin-top: ${calcRem(50)};
     }
 
     & > .text_regular_m:first-of-type strong:first-of-type {
@@ -204,7 +242,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .list_s,
     .grid-element,
     .compare,
-    .line-numbers {
+    .line-numbers,
+    blockquote {
       grid-column: 3 / span 8;
     }
 
@@ -267,7 +306,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .list_s,
     .line-numbers,
     .grid-element,
-    .compare {
+    .compare,
+    blockquote {
       grid-column: 1 / span 6;
     }
 

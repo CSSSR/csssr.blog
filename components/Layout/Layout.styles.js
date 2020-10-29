@@ -18,6 +18,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  @media (hover: hover) and (pointer: fine) {
+    .footer .link:hover::after,
+    .footer .link:focus::after {
+        display: none;
+    }
+  }
+
   body {
     margin: 0;
     margin-left: auto;

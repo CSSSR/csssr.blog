@@ -1,0 +1,6 @@
+// Этот файл сгенерирован автоматически, не редактируйте его вручную
+
+node {
+  checkout scm
+  load "${pwd()}/e2e-tests/nightwatch/jenkins-pipeline.groovy"
+}

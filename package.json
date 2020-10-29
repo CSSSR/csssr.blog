@@ -11,8 +11,9 @@
     "article": "node scripts/articleTemplate/scaffoldNewArticle.js"
   },
   "dependencies": {
-    "@csssr/core-design": "^5.9.2",
-    "@csssr/csssr.images": "^1.12.0",
+    "@csssr/core-design": "^5.10.0",
+    "@csssr/csssr.images": "^3.0.0",
+    "@csssr/e2e-tools": "^1.4.0",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.10",
     "@sentry/browser": "^5.27.1",
@@ -24,7 +25,6 @@
     "gray-matter": "4.0.2",
     "jest": "^26.2.2",
     "lint-staged": "^10.2.11",
-    "isomorphic-unfetch": "3.1.0",
     "markdown-to-jsx": "^7.0.1",
     "next": "^9.5.5",
     "prismjs": "^1.22.0",
