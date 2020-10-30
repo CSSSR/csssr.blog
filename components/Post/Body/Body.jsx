@@ -13,8 +13,7 @@ import ParagraphWithImage from './ParagraphWithImage'
 import Img from './Img'
 import Note from './Note'
 import Quote from './Quote'
-import NewsAudioLink from './NewsAudioLink'
-import Subtitle from './Subtitle'
+import Subtitle from '../Subtitle'
 import Video from './Video'
 import Table from './Table'
 import List from './List'
@@ -113,12 +112,6 @@ const Body = ({ content, className, slug, images, language, type }) =>
           type: 'list',
           size: 's',
           external: true,
-        },
-      },
-      NewsAudioLink: {
-        component: NewsAudioLink,
-        props: {
-          className: 'newsAudioLink',
         },
       },
       ul: {

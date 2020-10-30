@@ -2,20 +2,23 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 import { string, arrayOf, object } from 'prop-types'
-import { Grid } from '../../Grid'
+import { Picture, PictureSmart } from '@csssr/csssr.images/dist/react'
 import cn from 'classnames'
 import { Heading } from '@csssr/core-design'
+import Subtitle from '../Subtitle'
+import NewsAudioLink from './NewsAudioLink'
+import { Grid } from '../../Grid'
 import DateFormatter from '../../DateFormatter'
 import categoriesByLanguage from '../../../data/categoriesByLanguage'
 
 import styles from './Header.styles'
-import { Picture } from '@csssr/csssr.images/dist/react'
 
 const Header = ({
   className,
   title,
   author,
   tag,
+  soundcloudLink,
   episodeNumber,
   date,
   coverImage,
@@ -49,20 +52,25 @@ const Header = ({
       </div>
 
       {type === 'news' ? (
-        <div className="title-wrapper">
-          <Heading
-            type="regular"
-            size="l"
-            className="title"
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
+        <>
+          <div className="title-wrapper">
+            <Heading type="regular" size="l" className="title">
+              Новости 512
+            </Heading>
 
-          {episodeNumber && (
-            <Heading.H2 type="regular" size="l" className="episode-number">
-              #{episodeNumber}
-            </Heading.H2>
+            {episodeNumber && (
+              <Heading.H2 type="regular" size="l" className="episode-number">
+                #{episodeNumber}
+              </Heading.H2>
+            )}
+          </div>
+
+          <Subtitle size="l">{title}</Subtitle>
+
+          {soundcloudLink && (
+            <NewsAudioLink href={soundcloudLink} title="Прослушать аудио-версию" />
           )}
-        </div>
+        </>
       ) : (
         <Heading
           type="regular"
@@ -72,7 +80,15 @@ const Header = ({
         />
       )}
 
-      <Picture className="picture" sources={coverImage} alt={alt} />
+      {type === 'news' ? (
+        <PictureSmart
+          className="picture"
+          requireImages={require.context('../../../public/components/post/header/postCover')}
+          alt="Человек с громкоговорителем оглашающий новости"
+        />
+      ) : (
+        <Picture className="picture" sources={coverImage} alt={alt} />
+      )}
     </Grid>
   )
 }

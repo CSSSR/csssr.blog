@@ -45,6 +45,7 @@ export async function getStaticProps({ params }) {
 
   const postsByLanguageAndCategory = postsOrder[language]
     .flat()
+    .filter((slug) => slug !== 'news512')
     .map((slug) => postsBySlug[slug])
     .filter((post) => post.tag.toLowerCase() === params.category)
     .sort((postA, postB) => new Date(postB.date) - new Date(postA.date))

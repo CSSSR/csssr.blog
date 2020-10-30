@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     display: flex;
     flex-direction: column;
@@ -75,7 +75,6 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
   }
 
   .news-item.first .news-item-date {
-    margin-left: ${calcRem(16)};
     font-size: ${calcRem(14)};
     transform: translateY(${calcRem(-9)});
     color: #18191B;
@@ -88,6 +87,16 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     font-weight: 300;
     grid-row: 2;
     grid-column: 1 / span 6;
+  }
+
+  ${mobile.all} {
+    .news-item-number {
+      grid-column: 1 / span 2;
+    }
+
+    .news-item-date {
+      grid-column: 3 / span 4;
+    }
   }
 
 
@@ -114,7 +123,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     }
 
     .news-item.first .news-item-number {
-      margin-left: ${calcRem(22)};
+      margin-left: ${calcRem(8)};
     }
 
     .news-item-date {
@@ -166,7 +175,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
       font-size: 24px;
       line-height: 35px;
       margin-left: ${calcRem(38)};
-      grid-column: 2 / span 2;
+      grid-column: 2 / span 1;
     }
 
     .news-item.first .news-item-number {
@@ -177,16 +186,14 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
     .news-item-date {
       margin-top: 12px;
-      margin-left: 110px;
       white-space: nowrap;
-      grid-column: 2 / span 2;
+      grid-column: 3 / span 1;
       align-self: flex-start;
       transform: none;
     }
 
     .news-item.first .news-item-date {
       margin-top: 26px;
-      margin-left: 97px;
       transform: none;
     }
 
@@ -202,6 +209,19 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
     .news-item.first .news-item-title {
       margin-top: 22px;
+      margin-left: 24px;
+    }
+  }
+
+  ${desktop.s} {
+    .news-item.first .news-item-number {
+      margin-left: 6px;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    & li {
+      cursor: pointer;
     }
   }
 `

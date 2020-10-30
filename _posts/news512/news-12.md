@@ -1,15 +1,11 @@
 ---
-title: 'Новости 512'
-coverImageAlt: 'Обложка новостного поста'
-author: 'Ислам Виндижев'
-tag: news
+title: 'В этом выпуске: путь обучения фронтенду от Mozilla, комбинация флексов и гридов, тестовые задания компаний, материалы по Vue 3, протокол QUIC, релизы PHP-фреймворков, судебные тяжбы из-за nginx дубль 2.'
+soundcloudLink: 'https://soundcloud.com/csssr/css-3d-gayd-po-webpack-5-nodejs-15-react-17-i-cra-4-playwright-python-composer-2-observer-apis?in=csssr/sets/512-news'
 date: '2020-07-14T00:00:00.000Z'
-episodeNumber: '12'
+episodeNumber: 12
+tag: 'news'
+author: 'Ислам Виндижев'
 ---
-
-<Subtitle size="l">В этом выпуске: путь обучения фронтенду от Mozilla, комбинация флексов и гридов, тестовые задания компаний, материалы по Vue 3, протокол QUIC, релизы PHP-фреймворков, судебные тяжбы из-за nginx <span style="white-space:nowrap">дубль 2.</span></Subtitle>
-
-<NewsAudioLink href="https://soundcloud.com/csssr   frontend-learning-ot-mozilla-vue-3-materialy-quic-relizy-php-freymvorkov-css-grid-flexbox?in=csssr/sets/512-news" title="Прослушать аудио-версию" imageName="soundtrack" alt="Soundcloud" />
 
 <ParagraphWithImage imageName="manWithLaptop" imageSide="right">
   ### Интересные публикации
@@ -38,9 +34,9 @@ npkill это Node-модуль....для удобного удаления др
 
 <ParagraphWithImage imageName="laptopNews" imageSide="right">
   ### Новости релизов
-  
+
   На этой неделе мы подробнее остановились на релизах PHP-фреймворков, заглянули на огонёк к фреймворку Ionic и посмотрели на Atom с VSCode.
-  
+
   С пачкой багфиксов и новым методом withToken() неделю релизов начал Laravel Семь точка Пятнадцать.
 </ParagraphWithImage>
 
@@ -60,7 +56,7 @@ Atom поднялся до версии Один Сорок Восемь. Был
 
 <ParagraphWithImage imageName="laptopDialog" imageSide="right">
   ### Другие новости
-  
+
   Из языка Go убирают все упоминания терминов whitelist/blacklist, а также master/slave. Два года назад аналогичную инициативу уже приняли в Python. О "преемниках" устоявшихся названий будет сообщено позже. На фоне этой же волны и GitHub собирается переименовывать "master"-ветку во что-то другое. Возможно пора начинать переживать за шахматы, потому что в наше время фраза «Белые ходят первыми» кажется приобретает совсем другой смысл.
 </ParagraphWithImage>
 
@@ -79,9 +75,9 @@ Atom поднялся до версии Один Сорок Восемь. Был
   Хороший и плохой технический контент — https://www.aleksandra.codes/tech-content-consumer
 
   12 советов по внедрения TypeScript в React- приложение — https://habr.com/ru/company/tinkoff/blog/505488/
-  
+
   Кобминация CSS Grid и Flexbox — https://ishadeed.com/article/grid-layout-flexbox-components/
-  
+
   Front-end developer learning pathway от Mozilla — https://hacks.mozilla.org/2020/06/introducing-the-mdn-web-docs-front-end-developer-learning-pathway/
 
   Тестовые задания IT-компаний и собеседование на должность фронтенд-разработчика — https://github.com/Hexlet/ru-test-assignments | https://www.youtube.com/watch?v=P12lWcOIIDE
@@ -95,8 +91,8 @@ Atom поднялся до версии Один Сорок Восемь. Был
   Материалы по Vue 3 — https://github.com/blacksonic/awesome-vue-3
 
   Статьи по TS от Акселя Раушмаера — https://2ality.com/2020/06/logical-assignment-operators.html |
-  https://2ality.com/2020/06/validating-data-typescript.html | 
-  https://2ality.com/2020/06/type-guards-assertion-functions-typescript.html | 
+  https://2ality.com/2020/06/validating-data-typescript.html |
+  https://2ality.com/2020/06/type-guards-assertion-functions-typescript.html |
   https://2ality.com/2020/06/type-assertions-typescript.html
 
   Safari Technology Preview 108 — https://webkit.org/blog/10840/release-notes-for-safari-technology-preview-108/

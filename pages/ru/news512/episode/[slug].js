@@ -22,6 +22,7 @@ export async function getStaticProps({ params }) {
     'coverImageAlt',
     'images',
     'episodeNumber',
+    'soundcloudLink',
   ])
   return {
     props: {
