@@ -38,7 +38,7 @@ const MainPage = ({
       <meta property="og:title" content={meta[language].title} />
       <meta property="og:description" content={meta[language].description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`https://blog.csssr.com/${language}`} />
+      <meta property="og:url" content={`${process.env.BLOG_HOST}/${language}`} />
       <meta property="og:image" content={getOriginal(myImageData)} />
     </Head>
     <Layout language={language}>

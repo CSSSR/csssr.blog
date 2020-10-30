@@ -29,7 +29,7 @@ const generateSitemap = async () => {
     ...postsLinks.flat(),
   ]
 
-  const stream = new SitemapStream({ hostname: 'https://blog.csssr.com/' })
+  const stream = new SitemapStream({ hostname: process.env.BLOG_HOST })
 
   links.forEach((link) => stream.write(link))
 
