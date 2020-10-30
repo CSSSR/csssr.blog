@@ -29,10 +29,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-top: ${calcRem(15)};
   }
 
-  .heading_regular_s.is_scaled-down {
-    white-space: nowrap;
-  }
-
   .img-wrap {
     display: block;
     min-height: ${calcRem(144)};
