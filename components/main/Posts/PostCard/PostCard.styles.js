@@ -81,10 +81,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   &.news {
     position: relative;
     background-color: #F1F2F7;
-    padding: 0 ${calcRem(16)} ${calcRem(16)} ${calcRem(16)};
 
     .link {
-      margin-bottom: ${calcRem(15)}
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 ${calcRem(16)} ${calcRem(16)} ${calcRem(16)};
+    }
+
+    .title-wrapper {
+      display: flex;
     }
 
     .picture {
@@ -128,6 +133,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       margin-top: 75px;
     }
 
+    &.news {
+      .link {
+        height: 453px;
+      }
+
+      .title-wrapper {
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
+    }
+
     .title {
       margin-top: 30px;
     }
@@ -136,6 +152,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${tablet.all} {
     &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
       margin-top: ${calcRem(60)};
+    }
+
+    .title-wrapper {
+      flex-direction: column;
     }
 
     .picture {
@@ -153,10 +173,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     &.news {
-      padding: 0 ${calcRem(16)} ${calcRem(16)} ${calcRem(16)};
+      .link {
+        padding: 0 ${calcRem(16)} ${calcRem(16)} ${calcRem(16)};
+      }
+
+      .title-wrapper {
+        flex-direction: column;
+        margin-bottom: ${calcRem(15)};
+      }
 
       .title {
-        margin-top:  ${calcRem(18)};
+        margin-top: ${calcRem(18)};
       }
 
       .news-number {
@@ -187,13 +214,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     &.news {
-      padding: 0 ${calcRem(12)} ${calcRem(16)} ${calcRem(16)};
-
       .link {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: flex-start;
         margin-bottom: 0;
+        padding: 0 ${calcRem(12)} ${calcRem(16)} ${calcRem(16)};
+      }
+
+      .title-wrapper {
+        width: 100%;
+        justify-content: space-between;
       }
 
       .picture {
@@ -203,6 +234,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       }
 
       .title {
+        align-self: flex-end;
         margin-top: 0;
         margin-bottom: ${calcRem(10)};
         font-size: ${calcRem(18)};
