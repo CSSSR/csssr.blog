@@ -20,41 +20,49 @@ const PostCard = ({ className, language, post, size, type = 'regular' }) => {
         }
       >
         <a className="link">
-          {type === 'news' ? (
-            <PictureSmart
-              className="picture picture_size_s"
-              requireImages={require.context('../../../../public/components/postCard')}
-              alt={post.coverImageAlt}
+          <div className="title-wrapper">
+            {type === 'news' ? (
+              <PictureSmart
+                className="picture picture_size_s"
+                requireImages={require.context('../../../../public/components/postCard')}
+                alt={post.coverImageAlt}
+              />
+            ) : (
+              <Picture
+                className={cn('picture', {
+                  picture_size_l: size === 'l',
+                  picture_size_s: size === 's',
+                })}
+                sources={imgCover}
+                alt={post.coverImageAlt}
+              />
+            )}
+            <h2
+              className={cn('title', { title_size_l: size === 'l', title_size_s: size === 's' })}
+              dangerouslySetInnerHTML={{
+                __html: type === 'news' ? 'Новости 512' : cleaningTitle(post.title),
+              }}
             />
-          ) : (
-            <Picture
-              className={cn('picture', {
-                picture_size_l: size === 'l',
-                picture_size_s: size === 's',
-              })}
-              sources={imgCover}
-              alt={post.coverImageAlt}
-            />
-          )}
-          <h2
-            className={cn('title', { title_size_l: size === 'l', title_size_s: size === 's' })}
-            dangerouslySetInnerHTML={{
-              __html: type === 'news' ? 'Новости 512' : cleaningTitle(post.title),
-            }}
-          />
+          </div>
 
           {type === 'news' && <span className="news-number">#{post.episodeNumber}</span>}
+
+          <div className="data-wrapper">
+            {post.author && <span className="author">{post.author}</span>}
+
+            <DateFormatter className="date" language={language}>
+              {post.date}
+            </DateFormatter>
+
+            <object>
+              <Link
+                href={type === 'news' ? '/ru/news512' : `/${language}/${post.tag.toLowerCase()}`}
+              >
+                <a className="tag">{categoriesByLanguage[language][post.tag.toLowerCase()]}</a>
+              </Link>
+            </object>
+          </div>
         </a>
-      </Link>
-
-      {post.author && <span className="author">{post.author}</span>}
-
-      <DateFormatter className="date" language={language}>
-        {post.date}
-      </DateFormatter>
-
-      <Link href={type === 'news' ? '/ru/news512' : `/${language}/${post.tag.toLowerCase()}`}>
-        <a className="tag">{categoriesByLanguage[language][post.tag.toLowerCase()]}</a>
       </Link>
     </li>
   )
