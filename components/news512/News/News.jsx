@@ -8,7 +8,6 @@ import { Grid } from '../../Grid'
 import Layout from '../../Layout'
 import Categories from '../../main/Categories'
 import Pagination from '../../main/Pagination'
-import DateFormatter from '../../DateFormatter'
 import NavList from './NewsList'
 
 import { NEWS_PER_PAGE } from '../../../data/constants'
@@ -50,7 +49,6 @@ const News = ({
 
           <div className="news-info">
             <span className="autor">Ислам Виндижев</span>
-            <DateFormatter language="ru">{lastPostDate}</DateFormatter>
             <span className="tag">новости</span>
           </div>
         </Grid>

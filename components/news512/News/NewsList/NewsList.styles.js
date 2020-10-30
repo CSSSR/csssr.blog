@@ -5,7 +5,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     display: flex;
     flex-direction: column;
-    margin-top: ${calcRem(30)};
   }
 
   .news-item {
@@ -205,7 +204,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       font-weight: normal;
       font-size: 16px;
       line-height: 24px;
-      margin-left: 10px;
+      margin-left: 26px;
     }
 
     .news-item.first .news-item-title {

@@ -5,7 +5,7 @@ import { string, oneOf, node } from 'prop-types'
 import styles from './Subtitle.styles'
 import { Text } from '@csssr/core-design'
 
-const Subtitle = ({ className, size, children }) => (
+const Subtitle = ({ className, size, dangerouslySetInnerHTML, children }) => (
   <Text
     className={cn(className, {
       '_is-large': size === 'l',
@@ -13,9 +13,9 @@ const Subtitle = ({ className, size, children }) => (
     type="strong"
     size={size === 's' || size === 'm' ? size : 'm'}
     as="div"
-  >
-    {children}
-  </Text>
+    children = {children}
+    dangerouslySetInnerHTML={ dangerouslySetInnerHTML }
+  />
 )
 
 Subtitle.propTypes = {

@@ -65,7 +65,7 @@ const Header = ({
             )}
           </div>
 
-          <Subtitle size="l">{title}</Subtitle>
+          <Subtitle dangerouslySetInnerHTML={{ __html: title }} size="l" />
 
           {soundcloudLink && (
             <NewsAudioLink href={soundcloudLink} title="Прослушать аудио-версию" />

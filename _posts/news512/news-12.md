@@ -1,5 +1,5 @@
 ---
-title: 'В этом выпуске: путь обучения фронтенду от Mozilla, комбинация флексов и гридов, тестовые задания компаний, материалы по Vue 3, протокол QUIC, релизы PHP-фреймворков, судебные тяжбы из-за nginx дубль 2.'
+title: 'В этом выпуске: путь обучения фронтенду от Mozilla, комбинация флексов и гридов, тестовые задания компаний, материалы по Vue 3, протокол QUIC, релизы PHP-фреймворков, судебные тяжбы из-за nginx <span style="white-space:nowrap">дубль 2.</span>'
 soundcloudLink: 'https://soundcloud.com/csssr/css-3d-gayd-po-webpack-5-nodejs-15-react-17-i-cra-4-playwright-python-composer-2-observer-apis?in=csssr/sets/512-news'
 date: '2020-07-14T00:00:00.000Z'
 episodeNumber: 12

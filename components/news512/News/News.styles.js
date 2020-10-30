@@ -3,6 +3,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet }}) => css`
   & {
+    padding-bottom: ${calcRem(30)};
     background-image: url('/icons/news-bg.svg');
     background-size: ${calcRem(83)} ${calcRem(87)};
     background-repeat: no-repeat;
@@ -30,14 +31,6 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     margin-top: ${calcRem(15)};
   }
 
-  .autor {
-    &::after {
-      content: '•';
-      margin-left: ${calcRem(7)};
-      margin-right: ${calcRem(8)};
-    }
-  }
-
   .tag {
     margin-left: ${calcRem(23)};
     color: #5695ED;
@@ -62,7 +55,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
   ${desktop.all} {
     & {
-      background-size: ${calcRem(93)} ${calcRem(97)};
+      background-size: ${calcRem(92)} ${calcRem(96)};
       background-position: 86.6% ${calcRem(126)};
     }
 
@@ -77,7 +70,6 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
       font-size: 32px;
       line-height: 40px;
     }
-
   }
 `
 
