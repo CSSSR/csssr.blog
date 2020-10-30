@@ -18,7 +18,7 @@ const Post = ({ post, language, className }) => {
         <meta property="article:section" content={post.tag} />
         <meta
           property="og:url"
-          content={`https://blog.csssr.com/${language}/article/${post.slug}`}
+          content={`${process.env.BLOG_HOST}/${language}/article/${post.slug}`}
         />
         <meta property="og:title" content={cleaningTitle(post.title, 'meta')} />
         <meta property="og:description" content={getDescription(post.content)} />
