@@ -182,10 +182,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-row: 1;
     }
 
-    .title {
+    .title-wrapper {
       margin-top: ${calcRem(30)};
       grid-column: 1 / span 6;
-      grid-row: 2;
+      grid-row: 1;
+    }
+
+    .title {
       font-size: ${calcRem(36)};
       line-height: ${calcRem(44)};
     }
@@ -203,7 +206,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .post-meta {
       margin-top: ${calcRem(20)};
       grid-column: 1 / span 6;
-      grid-row: 3;
+      grid-row: 2;
     }
 
     &.type_news {
