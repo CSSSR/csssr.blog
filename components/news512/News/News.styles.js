@@ -3,21 +3,20 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet } }) => css`
   & {
+    padding-top: ${calcRem(72)};
     background-image: url('/icons/news-bg.svg');
     background-size: ${calcRem(83)} ${calcRem(87)};
     background-repeat: no-repeat;
-    background-position: 100% ${calcRem(104)};
+    background-position: 100% ${calcRem(35)};
   }
 
-  .categories,
   .title,
   .news-info,
   .nav-list {
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 6
   }
 
   .title {
-    margin-top: ${calcRem(66)};
     color: #18191B;
   }
 
@@ -39,29 +38,25 @@ const base = ({ breakpoints: { desktop, tablet } }) => css`
 
   ${tablet.all} {
     & {
+      padding-top: ${calcRem(76)};
       background-size: ${calcRem(93)} ${calcRem(97)};
-      background-position: 90.6% ${calcRem(126)};
+      background-position: 90.6% ${calcRem(58)};
     }
 
-    .categories,
     .title,
     .news-info,
     .nav-list {
       grid-column: 2 / span 10;
-    }
-
-    .title {
-      margin-top: ${calcRem(76)};
     }
   }
 
   ${desktop.all} {
     & {
-      background-size: ${calcRem(92)} ${calcRem(96)};
-      background-position: 86.6% ${calcRem(126)};
+      padding-top: 76px;
+      background-size: ${calcRem(92)} ${calcRem(94)};
+      background-position: 86.6% ${calcRem(53)};
     }
 
-    .categories,
     .title,
     .news-info,
     .nav-list {
@@ -69,7 +64,6 @@ const base = ({ breakpoints: { desktop, tablet } }) => css`
     }
 
     .title {
-      margin-top: ${calcRem(77)};
       font-size: 32px;
       line-height: 40px;
     }
