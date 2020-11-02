@@ -110,10 +110,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       bottom: ${calcRem(27)};
       right: ${calcRem(27)};
       color: ${colors.secondary.darken100};
-      font-family: 'Amita', sans-serif;
-      font-size: ${calcRem(64)};
-      line-height: ${calcRem(44)};
-      font-weight: bold;
+      font-family: 'Sweet Mavka Script', sans-serif;
+      font-size: ${calcRem(54)};
+      line-height: ${calcRem(40)};
+      font-weight: 500;
       pointer-events: none;
     }
 
@@ -189,6 +189,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       .news-number {
         bottom: ${calcRem(16)};
         right: ${calcRem(16)};
+        font-size: ${calcRem(50)};
       }
 
       .tag {
@@ -247,6 +248,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
         right: auto;
         top: ${calcRem(44)};
         left: ${calcRem(16)};
+        font-size: ${calcRem(50)};
       }
 
       .date,

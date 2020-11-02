@@ -51,9 +51,9 @@ const News = ({
             <span className="autor">Ислам Виндижев</span>
             <span className="tag">новости</span>
           </div>
-        </Grid>
 
-        <NavList posts={posts} lastPostDate={lastPostDate} className="nav-list" />
+          <NavList posts={posts} lastPostDate={lastPostDate} className="nav-list" />
+        </Grid>
 
         <Pagination
           language="ru"
