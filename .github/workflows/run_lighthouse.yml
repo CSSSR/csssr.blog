@@ -5,6 +5,7 @@ on:
 
 jobs:
   run:
+    name: Проверка Lighthouse CI
     runs-on: ubuntu-latest
     if: github.event.deployment_status.state == 'success'
     steps:
