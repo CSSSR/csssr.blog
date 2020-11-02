@@ -32,7 +32,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
   }
 
   .tag {
-    margin-left: ${calcRem(23)};
+    margin-left: ${calcRem(24)};
     color: #5695ED;
   }
 
