@@ -163,7 +163,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .news-item.first {
       padding-top: 23px;
-      padding-bottom: 47px;
 
       &::after {
         grid-column: 2 / span 10;
