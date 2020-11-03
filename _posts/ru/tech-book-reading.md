@@ -77,5 +77,5 @@ tag: 'culture'
 * [Супермышление](http://www.ozon.ru/context/detail/id/2678641)
 * [Флэнэган. Javascript подробное руководство](http://www.ozon.ru/context/detail/id/19677670)
 * [ng-book](https://www.ng-book.com)
-* [Learn Ruby the hardway](http://learnrubythehardway.org)
+* [Learn Ruby the hard way](http://learnrubythehardway.org)
 * [Coursera Learning how to learn](https://www.coursera.org/learn/learning-how-to-learn/home/welcome)
