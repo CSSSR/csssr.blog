@@ -10,7 +10,10 @@ jobs:
     if: github.event.deployment_status.state == 'success'
     steps:
       - uses: actions/checkout@v2
+      - uses: nelonoel/branch-name@v1
+      - run: echo ${BRANCH_NAME}
       - run: |
           npx @lhci/cli@0.4.x autorun --collect.url=${{ github.event.deployment.payload.environmentURL }}/en --collect.url=${{ github.event.deployment.payload.environmentURL }}/en/article/offshore-web-development
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          LHCI_BUILD_CONTEXT__CURRENT_BRANCH: ${{ BRANCH_NAME }}
