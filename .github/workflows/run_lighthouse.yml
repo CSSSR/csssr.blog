@@ -16,6 +16,3 @@ jobs:
             ${{ github.event.deployment.payload.environmentURL }}/en
             ${{ github.event.deployment.payload.environmentURL }}/en/article/offshore-web-development
           configPath: './lighthouserc.js'
-          uploadArtifacts: true
-          serverBaseUrl: https://lighthouse.csssr.cloud/
-          serverToken: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
