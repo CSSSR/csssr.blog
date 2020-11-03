@@ -40,7 +40,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     &._is-large {
-      margin-top: ${calcRem(37)};
+      margin-top: ${calcRem(40)};
       font-size: ${calcRem(16)};
       line-height: ${calcRem(24)};
     }
