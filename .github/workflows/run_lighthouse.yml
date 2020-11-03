@@ -18,6 +18,6 @@ jobs:
         shell: bash
         run: export LHCI_BUILD_CONTEXT__CURRENT_BRANCH=${{ steps.extract_branch.outputs.branch }}
       - run: |
-          npx @lhci/cli@0.4.x autorun --collect.url=${{ github.event.deployment.payload.environmentURL }}/en --collect.url=${{ github.event.deployment.payload.environmentURL }}/en/article/offshore-web-development
+          npx @lhci/cli@0.6.x autorun --collect.url=${{ github.event.deployment.payload.environmentURL }}/en --collect.url=${{ github.event.deployment.payload.environmentURL }}/en/article/offshore-web-development
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
