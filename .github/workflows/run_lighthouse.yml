@@ -10,9 +10,7 @@ jobs:
     if: github.event.deployment_status.state == 'success'
     steps:
       - uses: actions/checkout@v2
-      - uses: treosh/lighthouse-ci-action@v3
-        with:
-          urls: |
-            ${{ github.event.deployment.payload.environmentURL }}/en
-            ${{ github.event.deployment.payload.environmentURL }}/en/article/offshore-web-development
-          configPath: './lighthouserc.js'
+      - run: |
+          npx @lhci/cli@0.4.x autorun --collect.url=${{ github.event.deployment.payload.environmentURL }}/en --collect.url=${{ github.event.deployment.payload.environmentURL }}/en/article/offshore-web-development
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
