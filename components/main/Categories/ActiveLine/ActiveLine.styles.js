@@ -33,8 +33,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 const dynamic = ({ width, left }) => {
   return css`
      & {
-      width: ${calcRem(width) || 0};
-      transform: translateX(${calcRem(left) || 0});
+      width: ${width || 0}px;
+      transform: translateX(${left || 0}px);
      }
   `
 }
