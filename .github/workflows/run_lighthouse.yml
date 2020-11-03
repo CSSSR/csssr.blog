@@ -1,15 +1,21 @@
-name: Запуск проверки Lighthouse CI
+name: Lighthouse CI
 
 on:
   deployment_status
 
 jobs:
   run:
-    name: Проверка Lighthouse CI
+    name: Запуск Lighthouse по url стенда и валидация по установленным assertions
     runs-on: ubuntu-latest
     if: github.event.deployment_status.state == 'success'
     steps:
-    - run: |
-        npx @lhci/cli@0.4.x autorun --collect.url=${{ github.event.deployment.payload.environmentURL }}/en --collect.url=${{ github.event.deployment.payload.environmentURL }}/en/article/offshore-web-development
-      env:
-        LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      - uses: actions/checkout@v2
+      - uses: treosh/lighthouse-ci-action@v3
+        with:
+          urls: |
+            ${{ github.event.deployment.payload.environmentURL }}/en
+            ${{ github.event.deployment.payload.environmentURL }}/en/article/offshore-web-development
+          configPath: './lighthouserc.js'
+          uploadArtifacts: true
+          serverBaseUrl: https://lighthouse.csssr.cloud/
+          serverToken: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
