@@ -1,34 +1,35 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet }}) => css`
+const base = ({ breakpoints: { desktop, tablet } }) => css`
   & {
-    padding-bottom: ${calcRem(30)};
     background-image: url('/icons/news-bg.svg');
     background-size: ${calcRem(83)} ${calcRem(87)};
     background-repeat: no-repeat;
     background-position: 100% ${calcRem(104)};
   }
 
-  .title {
-    margin-top: ${calcRem(66)};
+  .categories,
+  .title,
+  .news-info,
+  .nav-list {
     grid-column: 1 / span 6;
-    color: #18191B;
   }
 
-  .categories {
-    grid-column: 1 / span 6;
+  .title {
+    margin-top: ${calcRem(66)};
+    color: #18191B;
   }
 
   .news-info {
     font-family: 'Roboto', sans-serif;
-    grid-column: 1 / span 6;
     font-size: ${calcRem(10)};
     line-height: ${calcRem(16)};
     color: #7E8FA4;
     letter-spacing: ${calcRem(1.25)};
     text-transform: uppercase;
     margin-top: ${calcRem(15)};
+    margin-bottom: ${calcRem(30)};
   }
 
   .tag {
@@ -44,7 +45,8 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
     .categories,
     .title,
-    .news-info {
+    .news-info,
+    .nav-list {
       grid-column: 2 / span 10;
     }
 
@@ -61,12 +63,13 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
     .categories,
     .title,
-    .news-info {
+    .news-info,
+    .nav-list {
       grid-column: 2 / span 10;
     }
 
     .title {
-      margin-top: 77px;
+      margin-top: ${calcRem(77)};
       font-size: 32px;
       line-height: 40px;
     }
@@ -74,7 +77,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 `
 
 export default props => {
-  const { theme: { breakpoints }} = props
+  const { theme: { breakpoints } } = props
 
   return css`
     ${base({ breakpoints })}

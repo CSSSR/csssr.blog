@@ -6,7 +6,6 @@ import styled from '@emotion/styled'
 
 import DateFormatter from '../../../DateFormatter'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
-import { Grid } from '../../../Grid'
 
 import styles from './NewsList.styles'
 
@@ -14,17 +13,19 @@ const NewsList = ({ posts, lastPostDate, className }) => {
   return (
     <ul className={className}>
       {posts.map(({ slug, title, episodeNumber, date }) => (
-        <li key={slug}>
+        <li key={slug} className={cn('news-item', { first: date === lastPostDate })}>
           <Link href={`/ru/news512/episode/${slug}`}>
-            <Grid as="a" className={cn('news-item', { first: date === lastPostDate })}>
-              <span className="news-item-number">#{episodeNumber}</span>
+            <a className="news-item-link">
+              <div className="news-item-wrapper">
+                <span className="news-item-number">#{episodeNumber}</span>
 
-              <span className="news-item-date">
-                <DateFormatter language="ru">{date}</DateFormatter>
-              </span>
+                <span className="news-item-date">
+                  <DateFormatter language="ru">{date}</DateFormatter>
+                </span>
+              </div>
 
-              <span className="news-item-title">{cleaningTitle(title)}</span>
-            </Grid>
+              <p className="news-item-title">{cleaningTitle(title)}</p>
+            </a>
           </Link>
         </li>
       ))}

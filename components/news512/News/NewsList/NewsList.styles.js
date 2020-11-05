@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
     display: flex;
     flex-direction: column;
@@ -9,11 +9,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   .news-item {
     position: relative;
-    font-family: Roboto, sans-serif;
     padding-top: ${calcRem(20)};
     padding-bottom: ${calcRem(25)};
-    color: #18191B;
-    transition: color 200ms ease-in;
 
     &::before {
       content: '';
@@ -46,14 +43,25 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  .news-item-link {
+    display: flex;
+    font-family: Roboto, sans-serif;
+    color: #18191B;
+    transition: color 200ms ease-in;
+  }
+
+  .news-item-wrapper {
+    display: flex;
+  }
+
   .news-item-number {
+    margin-right: ${calcRem(22)};
     font-family: Sweet Mavka Script;
     font-style: normal;
     font-weight: 500;
     font-size: ${calcRem(24)};
     line-height: ${calcRem(35)};
-    grid-row: 1;
-    grid-column: 1 / span 6;
+    text-align: right;
   }
 
   .news-item.first .news-item-number {
@@ -62,21 +70,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .news-item-date {
+    align-self: flex-start;
+    width: ${calcRem(112)};
+    margin-right: ${calcRem(22)};
     font-size: ${calcRem(10)};
     line-height: ${calcRem(16)};
     letter-spacing: ${calcRem(1.25)};
     text-transform: uppercase;
     color: #7E8FA4;
     transition: color 200ms ease-in;
-    align-self: flex-end;
-    grid-row: 1;
-    grid-column: 2 / span 5;
-    transform: translateY(${calcRem(-4)});
+    text-align: center;
   }
 
   .news-item.first .news-item-date {
-    font-size: ${calcRem(14)};
-    transform: translateY(${calcRem(-9)});
     color: #18191B;
   }
 
@@ -85,65 +91,57 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     font-size: ${calcRem(14)};
     line-height: ${calcRem(24)};
     font-weight: 300;
-    grid-row: 2;
-    grid-column: 1 / span 6;
   }
 
   ${mobile.all} {
+    .news-item-link {
+      flex-direction: column;
+    }
+
+    .news-item.first .news-item-date {
+      font-size: ${calcRem(14)};
+    }
+
     .news-item-number {
-      grid-column: 1 / span 2;
+      margin-right: ${calcRem(16)};
+      text-align: left;
     }
 
     .news-item-date {
-      grid-column: 3 / span 4;
+      align-self: flex-end;
+      width: auto;
+      margin-right: 0;
+      transform: translateY(${calcRem(-4)});
+      text-align: left;
+    }
+
+    .news-item.first .news-item-date {
+      transform: translateY(${calcRem(-9)});
     }
   }
 
-
   ${tablet.all} {
     .news-item {
-      padding-top: ${calcRem(19)};
-
-      &::before {
-        grid-column: 2 / span 10;
-      }
+      padding-top: ${calcRem(18)};
     }
 
     .news-item.first {
-      padding-top: ${calcRem(27)};
-
-      &::after {
-        grid-column: 2 / span 10;
-      }
+      padding-top: ${calcRem(8)};
     }
 
     .news-item-number {
-      margin-left: ${calcRem(38)};
-      grid-column: 2 / span 2;
-    }
-
-    .news-item.first .news-item-number {
-      margin-left: ${calcRem(8)};
+      width: ${calcRem(84)};
     }
 
     .news-item-date {
       margin-top: ${calcRem(14)};
-      margin-left: ${calcRem(29)};
-      white-space: nowrap;
-      grid-column: 3 / span 2;
-      align-self: flex-start;
-      transform: none;
     }
 
     .news-item.first .news-item-date {
       margin-top: ${calcRem(21)};
-      margin-left: ${calcRem(15)};
-      transform: none;
     }
 
     .news-item-title {
-      grid-column: 5 / span 7;
-      grid-row: 1;
       margin-top: ${calcRem(7)};
     }
 
@@ -154,67 +152,35 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     .news-item {
-      padding-top: 19px;
-
-      &::before {
-        grid-column: 2 / span 10;
-      }
+      padding-top: ${calcRem(14)};
     }
 
     .news-item.first {
-      padding-top: 23px;
-
-      &::after {
-        grid-column: 2 / span 10;
-      }
+      padding-top: ${calcRem(8)};
     }
 
     .news-item-number {
-      margin-left: 10px;
+      width: ${calcRem(78)};
       font-size: 24px;
       line-height: 35px;
-      margin-left: ${calcRem(38)};
-      grid-column: 2 / span 1;
-    }
-
-    .news-item.first .news-item-number {
-      font-size: 36px;
-      line-height: 52px;
-      margin-left: 14px;
     }
 
     .news-item-date {
-      margin-top: 12px;
-      white-space: nowrap;
-      grid-column: 3 / span 1;
-      align-self: flex-start;
-      transform: none;
+      margin-top: ${calcRem(12)};
     }
 
     .news-item.first .news-item-date {
-      margin-top: 26px;
-      transform: none;
+      margin-top: ${calcRem(26)};
     }
 
     .news-item-title {
-      grid-column: 4 / span 8;
-      grid-row: 1;
-      margin-top: 6px;
+      margin-top: ${calcRem(6)};
       font-weight: normal;
       font-size: 16px;
-      line-height: 24px;
-      margin-left: 26px;
     }
 
     .news-item.first .news-item-title {
-      margin-top: 22px;
-      margin-left: 24px;
-    }
-  }
-
-  ${desktop.s} {
-    .news-item.first .news-item-number {
-      margin-left: 6px;
+      margin-top: ${calcRem(22)};
     }
   }
 
@@ -226,7 +192,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 `
 
 export default props => {
-  const { theme: { breakpoints }} = props
+  const { theme: { breakpoints } } = props
 
   return css`
     ${base({ breakpoints })}
