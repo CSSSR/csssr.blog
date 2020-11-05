@@ -23,9 +23,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     @media (hover: hover) and (pointer: fine) {
       &:hover,
-      &:hover .news-item-date,
-      &.first:hover .news-item-date {
-        color: #0076FF;
+      &.first:hover {
+        & .news-item-date,
+        & .news-item-number,
+        & .news-item-title {
+          color: #0076FF;
+        }
       }
     }
   }
@@ -62,6 +65,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     font-size: ${calcRem(24)};
     line-height: ${calcRem(35)};
     text-align: right;
+    transition: color 200ms ease-in;
   }
 
   .news-item.first .news-item-number {
@@ -91,6 +95,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     font-size: ${calcRem(14)};
     line-height: ${calcRem(24)};
     font-weight: 300;
+    transition: color 200ms ease-in;
   }
 
   ${mobile.all} {
