@@ -1,0 +1,20 @@
+name: Lighthouse CI check
+
+on:
+  deployment_status
+
+jobs:
+  run:
+    name: Lighthouse CI check
+    runs-on: ubuntu-latest
+    if: github.event.deployment_status.state == 'success'
+    steps:
+      - name: Download repository with all commits
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Run Lighthouse for provided urls
+        run: |
+          npx @lhci/cli@0.4.x autorun --collect.url=${{ github.event.deployment.payload.environmentURL }}/en --collect.url=${{ github.event.deployment.payload.environmentURL }}/en/article/offshore-web-development
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
