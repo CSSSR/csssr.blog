@@ -1,18 +1,20 @@
-name: Lighthouse CI
+name: Lighthouse CI check
 
 on:
   deployment_status
 
 jobs:
   run:
-    name: Запуск Lighthouse по url стенда и валидация по установленным assertions
+    name: Lighthouse CI check
     runs-on: ubuntu-latest
     if: github.event.deployment_status.state == 'success'
     steps:
-      - uses: actions/checkout@v2
+      - name: Download repository with all commits
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - run: |
+      - name: Run Lighthouse for provided urls
+        run: |
           npx @lhci/cli@0.4.x autorun --collect.url=${{ github.event.deployment.payload.environmentURL }}/en --collect.url=${{ github.event.deployment.payload.environmentURL }}/en/article/offshore-web-development
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
