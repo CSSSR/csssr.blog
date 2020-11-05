@@ -4,8 +4,8 @@ import styled from '@emotion/styled'
 import Head from 'next/head'
 import { Heading } from '@csssr/core-design'
 
-import { Grid } from '../../Grid'
 import Layout from '../../Layout'
+import { Grid } from '../../Grid'
 import Categories from '../../main/Categories'
 import Pagination from '../../main/Pagination'
 import NavList from './NewsList'
@@ -35,14 +35,9 @@ const News = ({
       </Head>
 
       <Layout language="ru">
-        <Grid className={className}>
-          <Categories
-            items={categories}
-            language="ru"
-            activeCategory="news512"
-            className="categories"
-          />
+        <Categories items={categories} language="ru" activeCategory="news512" />
 
+        <Grid className={className}>
           <Heading.H1 className="title" type="regular" size="l">
             Новости 512
           </Heading.H1>

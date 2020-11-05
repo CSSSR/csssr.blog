@@ -5,15 +5,13 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     display: flex;
     justify-content: center;
-    width: 100%;
     overflow: hidden;
     overflow-x: auto;
+    grid-column: 2 / span 10;
   }
 
   .inner {
     position: relative;
-    margin-left: ${calcRem(40)};
-    margin-right: ${calcRem(40)};
   }
 
   .items {
@@ -60,8 +58,9 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
   ${mobile.all} {
     & {
       padding-top: ${calcRem(28)};
-      padding-bottom: ${calcRem(14)};
+      padding-bottom: ${calcRem(8)};
       justify-content: flex-start;
+      grid-column: 1 / span 6;
     }
 
     .item {
@@ -73,10 +72,7 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .inner {
-      margin-left: ${calcRem(16)};
-      padding-right: ${calcRem(16)};
-
-      &::before {
+      &::after {
         position: absolute;
         bottom: 0;
         left: 0;
