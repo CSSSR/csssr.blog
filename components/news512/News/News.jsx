@@ -8,7 +8,7 @@ import Layout from '../../Layout'
 import { Grid } from '../../Grid'
 import Categories from '../../main/Categories'
 import Pagination from '../../main/Pagination'
-import NavList from './NewsList'
+import NewsList from './NewsList'
 
 import { NEWS_PER_PAGE } from '../../../data/constants'
 
@@ -47,7 +47,7 @@ const News = ({
             <span className="tag">новости</span>
           </div>
 
-          <NavList posts={posts} lastPostDate={lastPostDate} className="nav-list" />
+          <NewsList posts={posts} lastPostDate={lastPostDate} className="news-list" />
         </Grid>
 
         <Pagination

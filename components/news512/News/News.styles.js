@@ -12,7 +12,7 @@ const base = ({ breakpoints: { desktop, tablet } }) => css`
 
   .title,
   .news-info,
-  .nav-list {
+  .news-list {
     grid-column: 1 / span 6
   }
 
@@ -45,7 +45,7 @@ const base = ({ breakpoints: { desktop, tablet } }) => css`
 
     .title,
     .news-info,
-    .nav-list {
+    .news-list {
       grid-column: 2 / span 10;
     }
   }
@@ -59,7 +59,7 @@ const base = ({ breakpoints: { desktop, tablet } }) => css`
 
     .title,
     .news-info,
-    .nav-list {
+    .news-list {
       grid-column: 2 / span 10;
     }
 
