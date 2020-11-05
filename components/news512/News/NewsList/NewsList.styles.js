@@ -139,7 +139,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .news-item-date {
-      margin-top: ${calcRem(14)};
+      margin-top: ${calcRem(13)};
     }
 
     .news-item.first .news-item-date {
@@ -151,7 +151,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .news-item.first .news-item-title {
-      margin-top: ${calcRem(18)};
+      margin-top: ${calcRem(17)};
     }
   }
 
@@ -171,21 +171,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .news-item-date {
-      margin-top: ${calcRem(12)};
+      margin-top: ${calcRem(15)};
     }
 
     .news-item.first .news-item-date {
-      margin-top: ${calcRem(26)};
+      margin-top: ${calcRem(21)};
     }
 
     .news-item-title {
-      margin-top: ${calcRem(6)};
+      margin-top: ${calcRem(10)};
       font-weight: normal;
       font-size: 16px;
     }
 
     .news-item.first .news-item-title {
-      margin-top: ${calcRem(22)};
+      margin-top: ${calcRem(17)};
     }
   }
 
