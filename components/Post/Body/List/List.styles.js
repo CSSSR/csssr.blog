@@ -29,8 +29,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       padding-left: ${calcRem(21)};
     }
 
+    & li ul,
+    & li ol {
+      padding-left: ${calcRem(10)};
+    }
+
     li.list_item:not(:first-of-type) {
-      margin-top: ${calcRem(24)};
+      margin-top: ${calcRem(16)};
     }
 
     & li:first-of-type {

@@ -106,7 +106,9 @@ const Body = ({ content, className, slug, images, language, type }) =>
         },
       },
       a: {
-        component: Link,
+        component: function LinkWrapper(props) {
+          return props.href.startsWith('/') ? <Link {...props} /> : <Link {...props} external />
+        },
         props: {
           className: 'link_list_s',
           type: 'list',

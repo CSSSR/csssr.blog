@@ -24,6 +24,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     font-weight: normal;
   }
 
+  .title > span {
+    white-space: nowrap;
+  }
+
   .author {
     margin-left: ${calcRem(1)};
     display: inline-block;

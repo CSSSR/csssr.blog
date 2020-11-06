@@ -1,0 +1,35 @@
+# Этот файл сгенерирован автоматически, не редактируйте его вручную
+
+name: Обновление зависимостей @csssr/e2e-tools
+on:
+  schedule:
+    - cron: 0 0 * * 3 # Каждую среду в 00:00
+
+jobs:
+  update:
+    name: Update
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Upgrade e2e tests dependencies
+        working-directory: e2e-tests
+        run: |
+          yarn
+          yarn et upgrade
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Обновление зависимостей @csssr/e2e-tools
+          title: Обновление зависимостей @csssr/e2e-tools
+          body: |
+            Описание изменений:
+            - [@csssr/e2e-tools](https://github.com/CSSSR/e2e-tools/blob/master/modules/tools/CHANGELOG.md)
+            - [@csssr/e2e-tools-nightwatch](https://github.com/CSSSR/e2e-tools/blob/master/modules/nightwatch/CHANGELOG.md):
+          labels: dependencies,e2e
+          branch: upgrade-e2e-tests-dependencies

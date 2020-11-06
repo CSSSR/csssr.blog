@@ -1,7 +1,7 @@
 // https://github.com/okonet/lint-staged#how-can-i-ignore-files-from-eslintignore-
-const { CLIEngine } = require('eslint')
+const { ESLint } = require('eslint')
 
-const cli = new CLIEngine({})
+const cli = new ESLint({})
 
 module.exports = {
   '*.{js,jsx}': (files) =>

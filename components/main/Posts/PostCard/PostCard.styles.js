@@ -30,6 +30,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     color: ${colors.secondary.darken100};
     margin-bottom: ${calcRem(15)};
 
+    & > span {
+      white-space: nowrap;
+    }
+
     &_size_l {
       font-size: ${calcRem(32)};
       line-height: ${calcRem(40)};
