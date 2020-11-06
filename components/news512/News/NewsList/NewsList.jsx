@@ -24,7 +24,10 @@ const NewsList = ({ posts, lastPostDate, className }) => {
                 </span>
               </div>
 
-              <p className="news-item-title">{cleaningTitle(title)}</p>
+              <p
+                className="news-item-title"
+                dangerouslySetInnerHTML={{ __html: cleaningTitle(title) }}
+              />
             </a>
           </Link>
         </li>
