@@ -37,4 +37,5 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_REGISTRY_TOKEN }}
 
       - name: Run Eslint
-        run: yarn run lint:js
+        working-directory: new_blog
+        run: yarn lint:js
