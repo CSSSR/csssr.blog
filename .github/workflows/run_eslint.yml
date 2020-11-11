@@ -13,16 +13,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download repository
+      - name: Download CSSSR actions
         uses: actions/checkout@v2
-
-      - name: Use Node.js
-        uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          repository: CSSSR/actions
+          token: ${{ secrets.DOWNLOAD_ACTIONS_TOKEN }}
+          path: actions
+
+      - uses: actions/setup-node@v2-beta
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@csssr'
 
       - name: Install dependencies
         run: yarn --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_REGISTRY_TOKEN }}
 
       - name: Run Eslint
         run: yarn run lint:js
