@@ -45,7 +45,7 @@
     "husky": "^4.3.0",
     "ip": "^1.1.5",
     "next-compose-plugins": "^2.2.0",
-    "next-fonts": "^1.4.0",
+    "next-fonts": "^1.5.1",
     "prettier": "^2.1.2"
   },
   "husky": {
