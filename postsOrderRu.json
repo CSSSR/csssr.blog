@@ -5,5 +5,8 @@
   ["work-harder","work-better"],
   ["year-resume-2018","lint-your-css"],
   ["recursion","candidates-mistakes"],
-  ["side-effects","property-testing"]
+  ["side-effects","property-testing"],
+  ["year-resume", "react-perfomance"],
+  ["tech-book-reading","how-to-be-a-beginner-developer"],
+  ["react-map-performance","split-blocks-into-groups"]
 ]
