@@ -1,8 +1,8 @@
 ---
-title: 'Использование<br/><i>линз</i> на реальных примерах'
-date: '2016-07-08T00:00:00.000Z'
+title: 'Использование<br/> <i>линз</i> на реальных примерах'
 coverImageAlt: 'Иллюстрация мужчины, молотком и зубилом вырубающего камни из скалы'
 author: 'Андрей Мельников'
+date: '2016-07-08T00:00:00.000Z'
 tag: 'web-development'
 ---
 
@@ -91,7 +91,7 @@ const a = {key: 2},
 const over = (someLens, func, data) => {
   const val = view(someLens, data)
   const newVal = func(val)
-  
+
   return set(someLens, newVal)
 }
 ```
