@@ -18,6 +18,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  @media (hover: hover) and (pointer: fine) {
+    .footer .link:hover::after,
+    .footer .link:focus::after {
+        display: none;
+    }
+  }
+
   body {
     margin: 0;
     margin-left: auto;
@@ -57,6 +64,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     height: 1px;
     margin: -1px;
     clip: rect(0 0 0 0);
+  }
+
+  ${desktop.all} {
+    .main {
+      padding-top: 4rem;
+    }
   }
 
   ${desktop.l} {
@@ -112,6 +125,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .post-body .text_regular_m {
       font-size: ${calcRem(16)};
     }
+
+    .main {
+      padding-top: 4rem;
+    }
   }
 
   ${tablet.s} {
@@ -142,6 +159,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .grid-container {
       grid-template-columns: repeat(6, 3rem);
       grid-gap: 0 0.5rem;
+    }
+
+    .main {
+      padding-top: 3.5rem;
     }
 
     .footer {

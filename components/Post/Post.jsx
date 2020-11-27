@@ -1,4 +1,4 @@
-import { string, object } from 'prop-types'
+import { string, object, shape } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Post.styles'
 import Head from 'next/head'
@@ -8,18 +8,25 @@ import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
 
-const Post = ({ post, className }) => {
+const Post = ({ post, language, className }) => {
   return (
     <article className={className}>
       <Head>
-        <title>{cleaningTitle(post.title)} | CSSSR blog</title>
+        <title>{cleaningTitle(post.title, 'meta')}</title>
         <meta name="description" content={getDescription(post.content)} />
-        <meta property="og:title" content={`${cleaningTitle(post.title)} | CSSSR blog`} />
+        <meta property="og:type" content="article" />
+        <meta property="article:section" content={post.tag} />
+        <meta
+          property="og:url"
+          content={`${process.env.BLOG_HOST}/${language}/article/${post.slug}`}
+        />
+        <meta property="og:title" content={cleaningTitle(post.title, 'meta')} />
         <meta property="og:description" content={getDescription(post.content)} />
-        <meta property="og:url" content={`https://blog.csssr.com/en/article/${post.slug}`} />
+        <meta property="article:published_time" content={post.date} />
+        {post.author && <meta property="article:author" content={post.author} />}
         <meta
           property="og:image"
-          content={getOriginal(post.images.mainCover[post.images.mainCover.length - 1])}
+          content={getOriginal(post.images.mainCoverL[post.images.mainCoverL.length - 1])}
         />
       </Head>
 
@@ -29,16 +36,26 @@ const Post = ({ post, className }) => {
         alt={post.coverImageAlt}
         tag={post.tag}
         date={post.date}
+        author={post.author}
+        language={language}
       />
 
-      <Body content={post.content} slug={post.slug} images={post.images} />
+      <Body content={post.content} slug={post.slug} images={post.images} language={language} />
     </article>
   )
 }
 
 Post.propTypes = {
   className: string,
-  post: object,
+  post: shape({
+    content: string,
+    title: string,
+    coverImageAlt: string,
+    images: object,
+    slug: string,
+    date: string,
+    tag: string,
+  }),
 }
 
 export default styled(Post)`

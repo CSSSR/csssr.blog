@@ -1,8 +1,8 @@
 import React from 'react'
-import { string, bool } from 'prop-types'
+import { string, node, bool } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Quote.styles'
-import { Grid } from '@csssr/core-design'
+import { Grid } from '../../../Grid'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 const Quote = ({ className, children, author, position, withImage }) => {
@@ -17,7 +17,7 @@ const Quote = ({ className, children, author, position, withImage }) => {
       )}
 
       <blockquote className="quote">
-        <p className="quote-text font_p16-regular">{children}</p>
+        <div className="quote-text font_p16-regular">{children}</div>
         <span className="author font_h3-regular ">{author}</span>
         <span className="autor-post font_perforator-10-regular">{position}</span>
       </blockquote>
@@ -27,6 +27,7 @@ const Quote = ({ className, children, author, position, withImage }) => {
 
 Quote.propTypes = {
   className: string,
+  children: node,
   author: string,
   position: string,
   withImage: bool,

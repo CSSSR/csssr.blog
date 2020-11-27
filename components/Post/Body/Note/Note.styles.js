@@ -11,16 +11,32 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     background-color: #F1F2F7;
 
     & * {
-      color: #18191B !important;
+      color: #18191B;
     }
 
     .heading_regular_s {
       margin-top: 0;
     }
+
+    & > p:only-child {
+      margin-top: 0;
+    }
+
+    &.is_quote_like {
+      padding-top: ${calcRem(18)};
+      padding-bottom: ${calcRem(18)};
+      padding-left:${calcRem(24)};
+      border-left: ${calcRem(4)} solid #E0E4EC;
+      background-color: transparent;
+    }
   }
 
   ${desktop.all} {
     grid-column: 3 / span 8;
+
+    &.is_quote_like {
+      grid-column: 4 / span 6;
+    }
   }
 
   ${tablet.all} {
@@ -33,6 +49,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       padding-left: ${calcRem(80)};
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
+    }
+
+    &.is_quote_like {
+      grid-column: 3 / span 8;
     }
   }
 
@@ -49,6 +69,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       transform: translateX(-50%);
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
+    }
+
+    &.is_quote_like {
+      width: 100%;
+      margin-left: 0;
+      transform: translateX(0);
     }
   }
 

@@ -8,7 +8,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .tag,
-  .date {
+  .date,
+  .author {
     display: inline-block;
     font-family: Roboto;
     font-style: normal;
@@ -18,13 +19,42 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     text-transform: uppercase;
   }
 
+  .title > i {
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .title > span {
+    white-space: nowrap;
+  }
+
+  .author {
+    margin-left: ${calcRem(1)};
+    display: inline-block;
+    font-weight: normal;
+    color: #7E8FA4;
+
+    &::after {
+      content: "•";
+      margin-left: ${calcRem(8)};
+      margin-right: ${calcRem(8)};
+    }
+  }
+
   .tag {
     font-weight: 500;
-    color: #5695ED;
+    color: #5695ed;
+    transition: color 150ms ease-in-out;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #0254d8;
+      }
+    }
   }
 
   .date {
-    margin-left: ${calcRem(22)};
+    margin-right: ${calcRem(22)};
     display: inline-block;
     font-weight: normal;
     color: #7E8FA4;
@@ -36,17 +66,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-column: 4 / span 4;
     grid-row: 2;
     color: #18191B;
-
-    & > i {
-      font-family: 'Amita';
-      font-style: normal;
-      font-weight: normal;
-    }
   }
 
   .picture {
     display: block;
     width: 100%;
+    min-height: ${calcRem(230)};
     position: relative;
     z-index: 1;
     grid-column: 7 / span 3;
@@ -60,7 +85,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     & {
-      padding-top: 34px;
+      padding-top: 37px;
     }
 
     .title {
@@ -74,7 +99,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      padding-top:  ${calcRem(27)};
+      padding-top: ${calcRem(25)};
     }
 
     .post-meta {
@@ -89,6 +114,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .picture {
+      min-height: ${calcRem(235)};
       margin-top: ${calcRem(12)};
       grid-column: 7 / span 4;
     }
@@ -96,6 +122,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
     .picture {
+      min-height: ${calcRem(150)};
       grid-column: 1 / span 6;
       grid-row: 1;
     }
@@ -116,10 +143,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
+const dynamic = (language) =>  css`
+  .title > i {
+    font-family: ${language === 'ru' ? 'Sweet Mavka Script' : 'Amita'};
+  }
+`
+
 export default props => {
-  const { theme: { breakpoints } } = props
+  const { theme: { breakpoints }, language } = props
 
   return css`
     ${base({ breakpoints })}
+    ${dynamic(language)}
   `
 }

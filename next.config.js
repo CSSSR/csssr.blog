@@ -1,5 +1,4 @@
 const withPlugins = require('next-compose-plugins')
-const withFonts = require('next-fonts')
 const { defaultTheme } = require('@csssr/core-design')
 const { Plugin } = require('@csssr/csssr.images/dist/webpack/plugin')
 
@@ -49,6 +48,26 @@ const withImages = (nextConfig = {}) => ({
       },
     }
 
+    const handleImagesForResize = (originalPixelRatio) => {
+      return {
+        use: [
+          {
+            loader: '@csssr/csssr.images',
+            options: {
+              breakpoints: defaultTheme.breakpointsOrdered,
+              imgproxy: {
+                disable: dev,
+                imagesHost: blogHost,
+                host: imgproxyHost,
+              },
+              originalPixelRatio,
+            },
+          },
+          fileLoaderConfig,
+        ],
+      }
+    }
+
     config.module.rules.push({
       test: /\.svg$/,
       oneOf: [
@@ -74,19 +93,17 @@ const withImages = (nextConfig = {}) => ({
 
     config.module.rules.push({
       test: /\.(jpe?g|png|gif|ico)$/,
-      use: [
+      oneOf: [
         {
-          loader: '@csssr/csssr.images',
-          options: {
-            breakpoints: defaultTheme.breakpointsOrdered,
-            imgproxy: {
-              disable: dev,
-              imagesHost: blogHost,
-              host: imgproxyHost,
-            },
-          },
+          resourceQuery: /dont-resize/,
+          ...handleImagesForResize('1x'),
         },
-        fileLoaderConfig,
+        {
+          ...handleImagesForResize('3x'),
+        },
+        {
+          use: [fileLoaderConfig],
+        },
       ],
     })
 
@@ -99,4 +116,4 @@ const withImages = (nextConfig = {}) => ({
   },
 })
 
-module.exports = withPlugins([withImages, withFonts], { exportTrailingSlash: true })
+module.exports = withPlugins([withImages], { trailingSlash: true })

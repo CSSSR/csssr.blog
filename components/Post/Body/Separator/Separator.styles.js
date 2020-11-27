@@ -60,7 +60,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
   }
 
   ${desktop.l} {
-    --width-container: 1792px;
+    --width-container: 1328px;
   }
 
   ${desktop.m} {
@@ -83,6 +83,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
     --width-container: 20.5rem;
     grid-column: 1 / span 6;
     margin-top: ${calcRem(60)};
+
+    &.color-line {
+      &::after {
+        background-size: ${calcRem(360)};
+      }
+    }
+
+    &&_peopleWithBasket {
+      height: ${calcRem(124)};
+    }
 
     &.bg-repeat {
       height: ${calcRem(100)};

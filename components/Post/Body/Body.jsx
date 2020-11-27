@@ -1,8 +1,9 @@
 import React from 'react'
+import { string, object } from 'prop-types'
 import styled from '@emotion/styled'
-import { Grid } from '@csssr/core-design'
+import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
-import { Heading, Text, Link, List, ListItem } from '@csssr/core-design'
+import { Heading, Text, Link, ListItem } from '@csssr/core-design'
 import styles from './Body.styles'
 
 import Separator from './Separator'
@@ -13,15 +14,17 @@ import Note from './Note'
 import Quote from './Quote'
 import Subtitle from './Subtitle'
 import Video from './Video'
+import Table from './Table'
+import List from './List'
 
-const Body = ({ content, className, slug, images }) =>
+const Body = ({ content, className, slug, images, language }) =>
   compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
         return (
           <Grid className={`post-body ${className}`}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
-            <Comments id={slug} />
+            <Comments id={slug} language={language} />
           </Grid>
         )
       }
@@ -77,16 +80,30 @@ const Body = ({ content, className, slug, images }) =>
           size: 's',
         },
       },
-      p: {
-        component: Text,
+      hr: {
         props: {
-          className: 'text_regular_m',
+          className: 'grid-element',
+        },
+      },
+      p: {
+        // https://github.com/probablyup/markdown-to-jsx/issues/209
+        component: function ParagraphWrapper(props) {
+          return props.children.some((child) => child && child.type && child.type === Img) ? (
+            <>{props.children}</>
+          ) : (
+            <Text {...props} />
+          )
+        },
+        props: {
+          className: 'text_regular_m paragraph',
           type: 'regular',
           size: 'm',
         },
       },
       a: {
-        component: Link,
+        component: function LinkWrapper(props) {
+          return props.href.startsWith('/') ? <Link {...props} /> : <Link {...props} external />
+        },
         props: {
           className: 'link_list_s',
           type: 'list',
@@ -103,7 +120,8 @@ const Body = ({ content, className, slug, images }) =>
       li: {
         component: ListItem,
         props: {
-          className: 'list_item_s',
+          className: 'text_regular_m list_item',
+          type: 'regular',
           size: 'm',
         },
       },
@@ -123,6 +141,13 @@ const Body = ({ content, className, slug, images }) =>
           return <Img className="picture" sources={images[imageName]} {...rest} />
         },
       },
+      img: {
+        component: Img,
+        props: {
+          className: 'picture',
+          withOutProcessing: true,
+        },
+      },
       ParagraphWithImage: {
         component: function ParagraphWithImageWrapper({ imageName, ...rest }) {
           return <ParagraphWithImage sources={images[imageName]} {...rest} />
@@ -130,7 +155,7 @@ const Body = ({ content, className, slug, images }) =>
       },
       Separator: {
         component: function SeparatorWrapper({ imageName, ...rest }) {
-          return <Separator sources={images[imageName]} {...rest} />
+          return <Separator imageName={imageName} sources={images[imageName]} {...rest} />
         },
       },
       Note: {
@@ -145,8 +170,26 @@ const Body = ({ content, className, slug, images }) =>
       Video: {
         component: Video,
       },
+      Table: {
+        component: Table,
+      },
+      ol: {
+        component: List,
+        props: {
+          className: 'list_s is_ordered',
+          type: 'regular',
+          size: 'm',
+        },
+      },
     },
   })
+
+Body.propTypes = {
+  className: string,
+  content: string,
+  images: object,
+  slug: string,
+}
 
 export default styled(Body)`
   ${styles}
