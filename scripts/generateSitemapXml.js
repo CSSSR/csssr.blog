@@ -15,7 +15,7 @@ const generateSitemap = async () => {
         return fileNames
           .filter((name) => !(process.env.IS_PRODUCTION && name === 'example.md'))
           .map((postName) => ({
-            url: `/${language}/article/${postName.replace('.md', '')}/`,
+            url: `https://blog.csssr.com/${language}/article/${postName.replace('.md', '')}/`,
             changefreq: 'weekly',
             priority: 0.8,
           }))
@@ -24,8 +24,8 @@ const generateSitemap = async () => {
   )
 
   const links = [
-    { url: '/en/', changefreq: 'weekly', priority: 1 },
-    { url: '/ru/', changefreq: 'weekly', priority: 1 },
+    { url: 'https://blog.csssr.com/en/', changefreq: 'weekly', priority: 1 },
+    { url: 'https://blog.csssr.com/ru/', changefreq: 'weekly', priority: 1 },
     ...postsLinks.flat(),
   ]
 

@@ -199,18 +199,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: ${calcRem(24)};
     }
 
+    .text_regular_m.is_scaled-down {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
+    }
+
     .heading_regular_s {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
     }
 
+    .text_regular_m + .text_regular_m {
+      margin-top: ${calcRem(9)};
+    }
+
     .text_regular_m,
     hr.grid-element  {
       margin-top: ${calcRem(15)};
-    }
-
-    .text_regular_m + .text_regular_m {
-      margin-top: ${calcRem(9)};
     }
 
     .picture + .text_regular_m {

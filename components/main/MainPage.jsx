@@ -43,6 +43,7 @@ const MainPage = ({
     </Head>
     <Layout language={language}>
       <h1 className="visual-hidden">{meta[language].title}</h1>
+
       <Categories items={categories} language={language} activeCategory={activeCategory} />
 
       <Posts language={language} posts={posts} />
