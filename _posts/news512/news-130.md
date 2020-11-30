@@ -54,7 +54,7 @@ Google экспериментирует с [WebP 2](https://www.phoronix.com/sca
 
 <Note>
   ### Слушайте нас на любимой платформе
-  [RSS подкаста](https://csssr.radio/rss/news512.rss)
+  [RSS подкаста](https://radio.csssr.com/rss/news512.rss)
 
   [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815)
 
