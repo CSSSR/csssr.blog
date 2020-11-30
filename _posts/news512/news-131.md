@@ -1,6 +1,6 @@
 ---
 title: 'В этом выпуске: нестареющий лонгрид о работе современных браузеров, Vue Testing Library, визуализация работы git на D3, интересы Google и Web Vitals, а также минорные релизы мажорных фреймворков. '
-soundcloudLink: 'https://soundcloud.com/csssr/chrome-87-firefox-83-typescript-41-aria-label-html-formy-css-gradienty-cssbattle-2020'
+soundcloudLink: 'https://soundcloud.com/csssr/brauzer-iznutri-git-naglyadno-bfcache-electron-11-skepsis-i-web-vitals-tiobe-v-noyabre'
 date: '2020-11-27T00:00:00.000Z'
 episodeNumber: 131
 tag: 'news'
@@ -54,7 +54,7 @@ author: 'Ислам Виндижев'
 
 <Note>
   ### Слушайте нас на любимой платформе
-  [RSS подкаста](https://csssr.radio/rss/news512.rss)
+  [RSS подкаста](https://radio.csssr.com/rss/news512.rss)
 
   [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815)
 
