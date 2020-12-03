@@ -7,11 +7,32 @@ const soundtrackImages = require.context('../../../../public/components/newsAudi
 const soundtrackImagesHovered = require.context('../../../../public/components/newsAudioLink/images_hovered')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
-  .soundtrack-image {
+  .soundtrack-wrapper {
+    position: relative;
+  }
+
+  .soundtrack-image,
+  .soundtrack-image_hover {
+    position: relative;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 100%;
+    will-change: opacity;
+  }
+
+  .soundtrack-image {
+    z-index: 2;
+    opacity: 1;
+  }
+
+  .soundtrack-image_hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
   }
 
   .title-wrapper {
@@ -39,7 +60,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: 60px;
     }
 
-    .soundtrack-image {
+    .soundtrack-image,
+    .soundtrack-image_hover {
       height: 21px;
     }
   }
@@ -50,7 +72,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 3 / span 8;
     }
 
-    .soundtrack-image {
+    .soundtrack-image,
+    .soundtrack-image_hover {
       height: ${calcRem(21)};
     }
   }
@@ -62,7 +85,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       width: 100%;
     }
 
-    .soundtrack-image {
+    .soundtrack-image,
+    .soundtrack-image_hover {
       height: ${calcRem(18)};
     }
   }
@@ -73,15 +97,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
         color: #0254d8;
       }
     }
+
+    &:hover .soundtrack-image {
+      opacity: 0;
+    }
+
+    &:hover .soundtrack-image_hover {
+      opacity: 1;
+    }
   }
 `
 
-export const backgroundImagesStyles = () => css`
-  ${backgroundCssSmart('.soundtrack-image', soundtrackImages)}
+export const backgroundImagesStyles = css`
+  & {
+    ${backgroundCssSmart('.soundtrack-image', soundtrackImages)}
 
-
-  @media (hover: hover) and (pointer: fine) {
-    ${backgroundCssSmart('.news-audio-link:hover .soundtrack-image', soundtrackImagesHovered)}
+    ${backgroundCssSmart('.soundtrack-image_hover', soundtrackImagesHovered)}
   }
 `
 
@@ -91,5 +122,6 @@ export default  props => {
 
   return css`
     ${base({ breakpoints })}
+    ${backgroundImagesStyles}
   `
 }

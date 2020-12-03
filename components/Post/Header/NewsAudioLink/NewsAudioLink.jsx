@@ -14,7 +14,10 @@ const NewsAudioLink = ({ className, href, title }) => (
     target="_blank"
     rel="noopener nofollow"
   >
-    <div className="soundtrack-image" />
+    <div className="soundtrack-wrapper">
+      <div className="soundtrack-image" />
+      <div className="soundtrack-image_hover" />
+    </div>
 
     <div className="title-wrapper">
       <span className="link-title" dangerouslySetInnerHTML={{ __html: title }} />
