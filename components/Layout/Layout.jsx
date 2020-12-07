@@ -24,6 +24,10 @@ export default function Layout({ children, language }) {
         actionButton={{ isVisible: false }}
         links={links[language]}
         menu={{ links: menu[language] }}
+        logo={{
+          testId: 'Header:link.logo',
+          href: `https://csssr.com/${language}`,
+        }}
       />
       <main id="main" className="main">
         {children}
