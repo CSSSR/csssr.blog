@@ -29,7 +29,7 @@ tag: 'web-development'
 Идея была проста: в первом списке показать все вольеры при помощи ng-repeat, в контроллере слить в один массив все клетки и (спасибо Stackoverflow) использовать фильтр для отображения нужных клеток во втором списке. Если нет ранее выбранных значений, то они выбираются по умолчанию.
 
 ```jsx
-  <div class="form-group">
+<div class="form-group">
 	<select ng-model="request.volary_id" name="volary" class="form-control">
 		<option ng-repeat="volary in volaries" ng-selected="volary.volary_id == initVolary()" value=""></option>
 	</select>

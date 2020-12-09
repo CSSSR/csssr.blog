@@ -1,7 +1,7 @@
 ---
 title: 'Космический VPN для сурового фронтенда'
 coverImageAlt: 'Пробуем искать и проверять свойства программ при помощи генеративного тестирования'
-author: 'Павел Азанов'
+author: 'Паша'
 date: '2015-11-21T00:00:00.000Z'
 tag: 'web-development'
 ---
@@ -14,7 +14,7 @@ tag: 'web-development'
 
 ## Чемодан с телефонами
 
-При поиске средств для развертывания VPN самым важным было охватить все устройства, которые оказываются в моем чемодане во время путешествий. Ноутбук (Windows + Ubuntu), телефоны iPhone, Windows Phone, Android и с недавних пор MacBook Air. Все они поддерживают L2TP/IPSec, но иногда возникает необходимость подключиться через OpenVPN или SSTP. Посмотрев множество решений, в конце концов я остановился на <a href="https://www.softether.org" rel="nofollow noopener" target="_blank">SoftEther VPN</a>, разработанном в японском университете Tsukuba.
+При поиске средств для развертывания VPN самым важным было охватить все устройства, которые оказываются в моем чемодане во время путешествий. Ноутбук (Windows + Ubuntu), телефоны iPhone, Windows Phone, Android и с недавних пор MacBook Air. Все они поддерживают L2TP/IPSec, но иногда возникает необходимость подключиться через OpenVPN или SSTP. Посмотрев множество решений, в конце концов я остановился на <a href="https://www.softether.org" rel="nofollow noopener" target="_blank">**SoftEther VPN**</a>, разработанном в японском университете Tsukuba.
 
 <Img imageName='softether' alt='SoftEther'>
 
@@ -22,7 +22,7 @@ tag: 'web-development'
 
 Имея опыт использования платных VPN серверов, я хорошо понимал, что VPN должен путешествовать с тобой. Так, бессмысленно развертывать VPN в Сингапуре, если ты находишься в Европе. Путешествуя в Азии также не очень разумно использовать VPN сервера в Амстердаме или в Нью-йорке. Таким образом, помимо стабильного доступа и хорошей скорости, нужна возможность быстро развертывать VPN в другой точке галактики.
 
-При выборе провайдера я решил остановиться на <a href="https://www.digitalocean.com" rel="nofollow noopener" target="_blank">DigitalOcean,</a>, который за три года не подвел меня ни разу. Ребята предлагают размещение как в Европе и США, так и в Азии. Есть возможность делать образы серверов для их быстрого развертывания в новых локациях. Для VPN сервера вполне достаточно базового пакета за **5$ / месяц**, что равноценно стоимости чашки кофе в аэропорту. Новые клиенты могут воспользоваться купонами (например ALLSSD10), которые часто публикуют в официальном твиттере и в рекламе, или зарегистрироваться по <a href="https://www.digitalocean.com/?refcode=d47158e015a5" rel="nofollow noopener" target="_blank">реферальной ссылке</a> и получить **10$ на счет**.
+При выборе провайдера я решил остановиться на <a href="https://www.digitalocean.com" rel="nofollow noopener" target="_blank">**DigitalOcean**</a>, который за три года не подвел меня ни разу. Ребята предлагают размещение как в Европе и США, так и в Азии. Есть возможность делать образы серверов для их быстрого развертывания в новых локациях. Для VPN сервера вполне достаточно базового пакета за **5$ / месяц**, что равноценно стоимости чашки кофе в аэропорту. Новые клиенты могут воспользоваться купонами (например ALLSSD10), которые часто публикуют в официальном твиттере и в рекламе, или зарегистрироваться по <a href="https://www.digitalocean.com/?refcode=d47158e015a5" rel="nofollow noopener" target="_blank">**реферальной ссылке**</a> и получить **10$ на счет**.
 
 ## Устанавливаем VPN сервер
 
@@ -33,21 +33,21 @@ tag: 'web-development'
 Первым делом обновляем пакеты:
 
 ```js
-  apt-get update && apt-get upgrade
+apt-get update && apt-get upgrade
 ```
 
 Устанавливаем зависимости:
 
 ```js
-  apt-get install git libreadline-dev libssl-dev libncurses5-dev zlib1g-dev make checkinstall
+apt-get install git libreadline-dev libssl-dev libncurses5-dev zlib1g-dev make checkinstall
 ```
 
 Клонируем репозиторий и настраиваем проект:
 
 ```js
-  git clone https://github.com/SoftEtherVPN/SoftEtherVPN.git
-  cd SoftEtherVPN\
-  ./configure
+git clone https://github.com/SoftEtherVPN/SoftEtherVPN.git
+cd SoftEtherVPN\
+./configure
 ```
 
 При создании пакета и установке также нужно будет ответить на пару вопросов, важный тут только самый первый, когда нужно указать имя для пакета. Я указал csssrvpn.
@@ -55,7 +55,7 @@ tag: 'web-development'
 Теперь мы можем запустить наш VPN сервер:
 
 ```js
-  vpnserver start
+vpnserver start
 ```
 
 ## Настройка VPN сервера
@@ -79,47 +79,49 @@ tag: 'web-development'
 Теперь можно приступить к конфигурации. Первым делом устанавливаем пароль для администрирования сервера:
 
 ```js
-  ServerPasswordSet
+ServerPasswordSet
 ```
 
 Далее создаем новый виртуальный хаб, к которому в дальнейшем будут подключаться пользователи:
 
 ```js
-  hubcreate csssrhub
+hubcreate csssrhub
 ```
 
 Пароль для хаба указывать необязательно, так как мы не планируем делегировать администрирование хаба третьему лицу. После создания хаба, переключаемся в режим его администрирования:
 
 ```js
-  Hub csssrhub
+Hub csssrhub
 ```
 
 Создание пользователей сводится к двум командам:
 
 ```js
-  UserCreate
-  UserPasswordSet
+UserCreate
+UserPasswordSet
 ```
 
 Теперь включим для нашего хаба SecureNAT и DHCP. Выполняется это одной командой:
 
 ```js
-  SecureNATEnable
+SecureNATEnable
 ```
 
 Для Windows, MacOS, iOS, Android и Windows Phone (8.1+) можно использовать **L2TP/IPSec**, включаем:
 
 ```js
- IPsecEnable
+IPsecEnable
 ```
 
 На первые три вопроса отвечаем `yes`. Далее указываем ключ который позже будет использоваться для доступа к VPN серверу (Shared Key). После этого нам будет предложено выбрать стандартный хаб чтобы не добавлять его к имени пользователя каждый раз, вводим здесь название хаба созданного ранее (в моем случае `csssrhub`):
 
-`Enable L2TP over IPsec Server Function (yes / no): yes` <br>
-`Enable Raw L2TP Server Function (yes / no): yes` <br>
-`Enable EtherIP / L2TPv3 over IPsec Server Function (yes / no): yes`<br>
-`Pre Shared Key for IPsec (Recommended: 9 letters at maximum): MyVPN`<br>
-`Default Virtual HUB in a case of omitting the HUB on the Username: csssrhub`
+```js
+Enable L2TP over IPsec Server Function (yes / no): yes
+Enable Raw L2TP Server Function (yes / no): yes
+Enable EtherIP / L2TPv3 over IPsec Server Function (yes / no): yes
+Pre Shared Key for IPsec (Recommended: 9 letters at maximum): MyVPN
+Default Virtual HUB in a case of omitting the HUB on the Username: csssrhub
+```
 
 На этом конфигурация L2TP/IPSec закончена и можно опробовать подключение.
 

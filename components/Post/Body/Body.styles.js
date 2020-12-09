@@ -96,6 +96,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     white-space: nowrap;
   }
 
+  code + a {
+    margin-left: ${calcRem(1)};
+  }
+
   .heading_regular_l,
   .heading_regular_m,
   .heading_regular_s {
