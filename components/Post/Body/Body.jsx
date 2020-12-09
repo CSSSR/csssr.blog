@@ -6,25 +6,37 @@ import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, ListItem } from '@csssr/core-design'
 import styles from './Body.styles'
-
+import Newsletter from '../../Newsletter'
 import Separator from './Separator'
 import Comments from './Comments'
 import ParagraphWithImage from './ParagraphWithImage'
 import Img from './Img'
 import Note from './Note'
 import Quote from './Quote'
+import ReadMore from './ReadMore'
 import Subtitle from '../Subtitle'
 import Video from './Video'
 import Table from './Table'
 import List from './List'
 
-const Body = ({ content, className, slug, images, language, type }) =>
-  compiler(content, {
+const Body = ({ className, posts, content, slug, images, language, type }) => {
+  const postType = type
+
+  return compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
         return (
           <Grid className={cn(`post-body ${className}`)}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
+
+            {language === 'ru' && postType !== 'news' && (
+              <>
+                <Newsletter kind="post" />
+
+                <ReadMore posts={posts} />
+              </>
+            )}
+
             <Comments id={slug} language={language} />
           </Grid>
         )
@@ -189,6 +201,7 @@ const Body = ({ content, className, slug, images, language, type }) =>
       },
     },
   })
+}
 
 Body.propTypes = {
   className: string,

@@ -80,7 +80,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
   }
 
   ${mobile.all} {
-    --width-container: 20.5rem;
+    --width-container: ${calcRem(328)};
+
     grid-column: 1 / span 6;
     margin-top: ${calcRem(60)};
 

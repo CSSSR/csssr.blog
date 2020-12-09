@@ -3,8 +3,8 @@ import { string, number, arrayOf, shape, object } from 'prop-types'
 import Head from 'next/head'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
 
-import Posts from './Posts'
 import Layout from '../Layout'
+import Posts from './Posts'
 import Categories from './Categories'
 
 import Pagination from './Pagination/Pagination'
