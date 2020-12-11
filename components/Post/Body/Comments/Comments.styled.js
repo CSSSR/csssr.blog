@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
+const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   & {
     display: block;
     background-color: #ffffff;
@@ -11,6 +11,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   .title {
     margin-bottom: ${calcRem(-30)};
+    color: ${colors.secondary.darken100};
   }
 
   .commento-root {
@@ -45,10 +46,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
 export default (props) => {
   const {
-    theme: { breakpoints },
+    theme: { breakpoints, colors },
   } = props
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
   `
 }
