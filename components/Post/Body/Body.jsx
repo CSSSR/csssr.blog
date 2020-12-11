@@ -19,7 +19,17 @@ import Video from './Video'
 import Table from './Table'
 import List from './List'
 
-const Body = ({ className, posts, content, slug, images, language, type }) => {
+const Body = ({
+  className,
+  posts,
+  content,
+  slug,
+  images,
+  language,
+  type,
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
+}) => {
   const postType = type
 
   return compiler(content, {
@@ -31,7 +41,11 @@ const Body = ({ className, posts, content, slug, images, language, type }) => {
 
             {language === 'ru' && postType !== 'news' && (
               <>
-                <Newsletter kind="post" />
+                <Newsletter
+                  kind="post"
+                  BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+                  BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+                />
 
                 <ReadMore posts={posts} />
               </>

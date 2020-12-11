@@ -6,7 +6,7 @@ import styles from './Posts.styles'
 import Newsletter from '../../Newsletter'
 import PostCard from './PostCard'
 
-const Posts = ({ language, posts, className }) => (
+const Posts = ({ language, posts, className, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID }) => (
   <Grid as="ul" className={className}>
     {posts.slice(0, 4).reduce((memo, post) => {
       const orderInGroupOfFour = memo.length % 4
@@ -26,7 +26,12 @@ const Posts = ({ language, posts, className }) => (
       ]
     }, [])}
 
-    {language === 'ru' && <Newsletter />}
+    {language === 'ru' && (
+      <Newsletter
+        BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+        BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+      />
+    )}
 
     {posts.length >= 4 &&
       posts.slice(4, 8).reduce((memo, post) => {

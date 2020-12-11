@@ -11,7 +11,15 @@ import getDescription from '../../utils/client/getDescription'
 
 import newsPostCardImage from '../../public/components/postCard/desktop.m.png'
 
-const Post = ({ posts, post, language, className, type = 'regular' }) => {
+const Post = ({
+  posts,
+  post,
+  language,
+  className,
+  type = 'regular',
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
+}) => {
   return (
     <article
       className={cn(className, {
@@ -61,6 +69,8 @@ const Post = ({ posts, post, language, className, type = 'regular' }) => {
         images={post.images}
         language={language}
         type={type}
+        BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+        BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
       />
     </article>
   )

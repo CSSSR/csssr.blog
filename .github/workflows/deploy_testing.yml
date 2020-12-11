@@ -43,6 +43,7 @@ jobs:
         run: yarn build
         env:
           BLOG_HOST: http://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud
+          BENCHMARK_EMAIL_TOKEN: ${{ secrets.BENCHMARK_EMAIL_TOKEN }}
 
       - name: Деплой на тестинг
         uses: ./actions/deploy-static-site/v1beta1

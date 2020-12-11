@@ -36,6 +36,8 @@ jobs:
       - name: Build prod
         working-directory: new_blog_prod
         run: IS_PRODUCTION=TRUE BLOG_HOST=https://blog.csssr.com yarn build
+        env:
+          BENCHMARK_EMAIL_TOKEN: ${{ secrets.BENCHMARK_EMAIL_TOKEN }}
 
       - name: Деплой на продакшен
         uses: ./actions/deploy-static-site/v1beta1
