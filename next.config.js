@@ -116,4 +116,13 @@ const withImages = (nextConfig = {}) => ({
   },
 })
 
-module.exports = withPlugins([withImages], { trailingSlash: true })
+module.exports = withPlugins([
+  [withImages],
+  {
+    exportPathMap: async function () {
+      return {
+        '/404/index.html': { page: '/404' },
+      }
+    },
+  },
+])

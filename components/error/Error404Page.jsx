@@ -21,7 +21,7 @@ import globalStyles from '../Layout/Layout.styles'
 
 const ErrorPage = ({ className }) => {
   const route = useRouter()
-  const isLanguageRu = route.asPath.includes('/ru/') || route.asPath === '/r'
+  const isLanguageRu = route.asPath.includes('/ru') || route.asPath === '/r'
   const dynamicNavItems = isLanguageRu ? navItemsRu : navItemsEn
 
   const renderNav = ({ items: { title, id, links } }) => {
@@ -74,6 +74,7 @@ const ErrorPage = ({ className }) => {
 
       <Grid as="main" className={cn(className, `error-code_404`)}>
         <h1 className="font_h1-slab">{text404}</h1>
+        <span>OLD EVA</span>
 
         <PictureSmart
           className="picture"

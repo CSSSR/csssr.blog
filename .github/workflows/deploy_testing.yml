@@ -53,7 +53,7 @@ jobs:
           project-id: csssr-new-blog
           files: ./new_blog/out
           no-previous-files: "true"
-          not-found-page: 404/index.html
+          not-found-page: 404.html
           tls-secret: csssr-new-blog-tls
           values: |
             ingress:
