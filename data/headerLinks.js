@@ -1,10 +1,11 @@
 /* eslint-disable-next-line */
 import React from 'react'
 import { ReactComponent as Square } from '../public/icons/header/square.svg'
-// import { ReactComponent as Triangle } from '../public/icons/header/triangle.svg'
+import { ReactComponent as Triangle } from '../public/icons/header/triangle.svg'
 import { ReactComponent as Circle } from '../public/icons/header/circle.svg'
 import { ReactComponent as Arc } from '../public/icons/header/arc.svg'
 import { ReactComponent as PieChart } from '../public/icons/header/pieChart.svg'
+import { ReactComponent as OurProjects } from '../public/icons/header/our-projects.svg'
 import { ReactComponent as Bag } from '../public/icons/header/bag.svg'
 import { ReactComponent as Computer } from '../public/icons/header/computer.svg'
 import { ReactComponent as Message } from '../public/icons/header/message.svg'
@@ -67,7 +68,7 @@ export const menu = {
         {
           id: 'outsourcing',
           icon: Circle,
-          title: 'Web Development',
+          title: 'Outsourcing Front-end',
           description: 'Web development to&nbsp;complement core competencies',
           href: 'https://csssr.com/en/service/outsourcing-front-end',
         },
@@ -85,14 +86,14 @@ export const menu = {
           description: 'Development of&nbsp;core functionality for testing purposes.',
           href: 'https://csssr.com/en/service/mvp-development',
         },
-        // {
-        //   id: 'design',
-        //   icon: Triangle,
-        //   title: 'DesignLab',
-        //   description:
-        //     'Design expertise with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue.',
-        //   href: 'https://csssr.com/en/service/design-lab',
-        // },
+        {
+          id: 'design',
+          icon: Triangle,
+          title: 'DesignLab',
+          description:
+            'Design expertise with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue.',
+          href: 'https://csssr.com/en/service/design',
+        },
       ],
     },
     {
@@ -100,10 +101,10 @@ export const menu = {
       title: 'Industries',
       links: [
         {
-          id: 'fintech',
-          icon: PieChart,
-          title: 'Fintech',
-          href: 'https://csssr.com/en/industry/fintech',
+          id: 'mediaAndMarketing',
+          icon: Message,
+          title: 'Media & Marketing',
+          href: 'https://csssr.com/en/industry/media-and-marketing',
         },
         {
           id: 'eCommerce',
@@ -118,10 +119,18 @@ export const menu = {
           href: 'https://csssr.com/en/industry/information-technology',
         },
         {
-          id: 'mediaAndMarketing',
-          icon: Message,
-          title: 'Media & Marketing',
-          href: 'https://csssr.com/en/industry/media-and-marketing',
+          id: 'fintech',
+          icon: PieChart,
+          title: 'Fintech',
+          href: 'https://csssr.com/en/industry/fintech',
+        },
+        {
+          id: 'ourProjects',
+          icon: OurProjects,
+          title: 'Our Projects',
+          description:
+            'We&nbsp;are proud of&nbsp;our clients list and<br/> glad to&nbsp;share some of&nbsp;our cases.',
+          href: 'https://csssr.com/en/projects',
         },
       ],
     },
@@ -164,7 +173,7 @@ export const menu = {
           icon: Tracker,
           title: 'Time-tracking Software',
           description:
-            'Powerful time tracking app for teams. Track working hours across projects and get detailed reports to&nbsp;improve budgeting efficiency',
+            'We&rsquo;ve created an&nbsp;app that helps&nbsp;us manage time on&nbsp;our projects. Give it&nbsp;a&nbsp;try',
           href: 'https://tracker.csssr.com',
         },
       ],
@@ -183,18 +192,18 @@ export const menu = {
           href: 'https://csssr.com/ru/service/outsourcing-front-end',
         },
         {
-          id: 'mvp',
-          icon: Square,
-          title: 'Разработка MVP',
-          description: 'Ключевой функционал для проверки бизнес-идей.',
-          href: 'https://csssr.com/ru/service/mvp-development',
-        },
-        {
           id: 'backend',
           icon: Arc,
           title: 'Бэкенд и&nbsp;DevOps',
           description: 'Разработка полного цикла и&nbsp;настройка окружения.',
           href: 'https://csssr.com/ru/service/back-end-and-devops',
+        },
+        {
+          id: 'mvp',
+          icon: Square,
+          title: 'Разработка MVP',
+          description: 'Ключевой функционал для проверки бизнес-идей.',
+          href: 'https://csssr.com/ru/service/mvp-development',
         },
       ],
     },
@@ -203,10 +212,10 @@ export const menu = {
       title: 'Индустрии',
       links: [
         {
-          id: 'fintech',
-          icon: PieChart,
-          title: 'Финтех',
-          href: 'https://csssr.com/ru/industry/fintech',
+          id: 'mediaAndMarketing',
+          icon: Message,
+          title: 'Медиа и&nbsp;маркетинг',
+          href: 'https://csssr.com/ru/industry/media-and-marketing',
         },
         {
           id: 'eCommerce',
@@ -221,10 +230,18 @@ export const menu = {
           href: 'https://csssr.com/ru/industry/information-technology',
         },
         {
-          id: 'mediaAndMarketing',
-          icon: Message,
-          title: 'Медиа и&nbsp;маркетинг',
-          href: 'https://csssr.com/ru/industry/media-and-marketing',
+          id: 'fintech',
+          icon: PieChart,
+          title: 'Финтех',
+          href: 'https://csssr.com/ru/industry/fintech',
+        },
+        {
+          id: 'ourProjects',
+          icon: OurProjects,
+          title: 'Наши проекты',
+          description:
+            'Мы&nbsp;гордимся нашим списком клиентов и&nbsp;рады<br/> поделиться некоторыми проектами.',
+          href: 'https://csssr.com/ru/projects',
         },
       ],
     },
