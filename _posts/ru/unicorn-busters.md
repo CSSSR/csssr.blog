@@ -143,6 +143,6 @@ tag: 'culture'
 P.S.
 Коллеги периодически пишут полезные статьи про быт удалёнщика, не проходите мимо:
 
-<!-- - [Полезные привычки для удалённой работы](https://blog.csssr.ru/2016/07/01/habits) -->
+- [Полезные привычки для удалённой работы](/ru/article/habits)
 - Стимуляторы работы программиста: [Обстановка](/ru/article/work-better), [Мотивация](/ru/article/work-harder), [Здоровье](/ru/article/work-stronger)
-<!-- - [Правила общения удалённых разработчиков](https://blog.csssr.ru/2016/02/25/how-remote-developers-talk) -->
+- [Правила общения удалённых разработчиков](/ru/article/how-remote-developers-talk)
