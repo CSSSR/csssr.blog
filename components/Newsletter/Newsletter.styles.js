@@ -25,6 +25,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
       }
 
       .picture {
+        bottom: auto;
         top: ${calcRem(-72)};
         width: ${calcRem(215)};
         height: ${calcRem(143)};
@@ -51,7 +52,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 
   .picture {
     position: absolute;
-    top: ${calcRem(109)};
+    bottom: ${calcRem(-55)};
     right: ${calcRem(0)};
     width: ${calcRem(208)};
     height: ${calcRem(139)};
@@ -109,7 +110,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     }
 
     .picture {
-      top: ${calcRem(129)};
+      bottom: ${calcRem(-50)};
       width: ${calcRem(224)};
       height: ${calcRem(114)};
     }
@@ -157,6 +158,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     }
 
     .picture {
+      bottom: auto;
       top: ${calcRem(40)};
       right: ${calcRem(-16)};
       width: ${calcRem(104)};
