@@ -3,8 +3,8 @@ import { string, number, arrayOf, shape, object } from 'prop-types'
 import Head from 'next/head'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
 
-import Posts from './Posts'
 import Layout from '../Layout'
+import Posts from './Posts'
 import Categories from './Categories'
 
 import Pagination from './Pagination/Pagination'
@@ -30,6 +30,8 @@ const MainPage = ({
   activeCategory,
   activePageNumber,
   language,
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
 }) => (
   <>
     <Head>
@@ -43,9 +45,15 @@ const MainPage = ({
     </Head>
     <Layout language={language}>
       <h1 className="visual-hidden">{meta[language].title}</h1>
+
       <Categories items={categories} language={language} activeCategory={activeCategory} />
 
-      <Posts language={language} posts={posts} />
+      <Posts
+        language={language}
+        posts={posts}
+        BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+        BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+      />
 
       <Pagination
         language={language}

@@ -45,6 +45,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .line-numbers {
+    margin-top: ${calcRem(30)};
+
     &::after,
     &::before {
       content: none !important;
@@ -157,10 +159,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .line-numbers {
       grid-column: 4 / span 6;
     }
-
-    .line-numbers {
-      margin-top: 50px !important;
-    }
   }
 
 
@@ -199,18 +197,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: ${calcRem(24)};
     }
 
+    .text_regular_m.is_scaled-down {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
+    }
+
     .heading_regular_s {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
     }
 
+    .text_regular_m + .text_regular_m {
+      margin-top: ${calcRem(9)};
+    }
+
     .text_regular_m,
     hr.grid-element  {
       margin-top: ${calcRem(15)};
-    }
-
-    .text_regular_m + .text_regular_m {
-      margin-top: ${calcRem(9)};
     }
 
     .picture + .text_regular_m {
@@ -245,10 +248,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .line-numbers,
     blockquote {
       grid-column: 3 / span 8;
-    }
-
-    .line-numbers {
-      margin-top: 2.5rem !important;
     }
   }
 
@@ -309,11 +308,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .compare,
     blockquote {
       grid-column: 1 / span 6;
-    }
-
-    .line-numbers {
-      margin-top: 3.125rem !important;
-      white-space: normal;
     }
 
     .how-close-br {

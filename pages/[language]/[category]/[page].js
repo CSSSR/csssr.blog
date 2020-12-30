@@ -1,10 +1,12 @@
 import React from 'react'
-import { getPostsByLanguage } from '../../../lib/api'
+import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
 import MainPage from '../../../components/main/MainPage'
 import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberByPostIndex'
 import languages from '../../../utils/languages'
 import areEqualShallow from '../../../utils/areEqualShallow'
 import getPostsCategories from '../../../utils/getPostsCategories'
+import getBenchmarkEmailListId from '../../../utils/getBenchmarkEmailListId'
+import sortByDate from '../../../utils/sortByDate'
 import postsOrderEn from '../../../postsOrderEn.json'
 import postsOrderRu from '../../../postsOrderRu.json'
 
@@ -15,6 +17,8 @@ const Index = ({
   activeCategory,
   activePageNumber,
   language,
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
 }) => (
   <MainPage
     posts={posts}
@@ -23,6 +27,8 @@ const Index = ({
     activeCategory={activeCategory}
     activePageNumber={activePageNumber}
     language={language}
+    BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+    BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
   />
 )
 
@@ -61,17 +67,33 @@ export async function getStaticProps({ params }) {
       ru: postsOrderRu,
     }
 
-    orderedPostsByLanguageAndCategory = postsOrder[language].flat().map((slug) => postsBySlug[slug])
+    const news = await getPostsNews([
+      'title',
+      'date',
+      'slug',
+      'author',
+      'coverImageAlt',
+      'tag',
+      'images',
+      'episodeNumber',
+    ])
+
+    const newsSortedByDate = sortByDate(news)
+
+    orderedPostsByLanguageAndCategory = postsOrder[language].flat().map((slug) => {
+      if (slug === 'news512') {
+        return newsSortedByDate[params.page - 1]
+      }
+
+      return postsBySlug[slug]
+    })
   } else {
-    orderedPostsByLanguageAndCategory = postsByLanguageAndCategory.sort(
-      (postA, postB) => new Date(postB.date) - new Date(postA.date),
-    )
+    orderedPostsByLanguageAndCategory = sortByDate(postsByLanguageAndCategory)
   }
 
   const postsByLanguageAndCategoryAndPage = orderedPostsByLanguageAndCategory.filter(
     (post, index) => {
       const pageNumber = calculatePageNumberByPostIndex(index)
-
       if (params.category === 'all') {
         return pageNumber === params.page
       }
@@ -84,13 +106,16 @@ export async function getStaticProps({ params }) {
     props: {
       posts: postsByLanguageAndCategoryAndPage,
       categories,
-      totalNumberOfPosts: postsByLanguageAndCategory.length,
+      totalNumberOfPosts: orderedPostsByLanguageAndCategory.length,
       activeCategory: params.category,
       activePageNumber: Number(params.page),
       language,
+      BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
+      BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
     },
   }
 }
+
 export async function getStaticPaths() {
   const posts = await getPostsByLanguage(['tag'])
   const paths = languages.reduce(

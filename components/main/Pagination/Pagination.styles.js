@@ -6,6 +6,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     display: flex;
     align-items: center;
     justify-content: center;
+    height: ${calcRem(40)};
   }
 
   a:not(:first-of-type) {
@@ -32,7 +33,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.all} {
     & {
-      margin-top: 108px;
+      margin-top: ${calcRem(100)};
     }
 
     .item {
@@ -47,7 +48,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(71)};
+      margin-top: ${calcRem(80)};
     }
 
     .item {
@@ -62,6 +63,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${mobile.all} {
     & {
+      height: ${calcRem(24)};
       margin-top: ${calcRem(50)};
     }
 

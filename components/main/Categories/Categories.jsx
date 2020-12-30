@@ -2,8 +2,12 @@ import React, { useState, createRef, useEffect } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import styled from '@emotion/styled'
-import styles from './Categories.styles'
+
 import ActiveLine from './ActiveLine'
+import { Grid } from '../../Grid'
+
+import styles from './Categories.styles'
+
 import categoriesByLanguage, { categoriesOrder } from '../../../data/categoriesByLanguage'
 
 const Categories = ({ className, items, activeCategory, language }) => {
@@ -28,7 +32,7 @@ const Categories = ({ className, items, activeCategory, language }) => {
   }, [])
 
   return (
-    <div className={className}>
+    <Grid className={className}>
       <div className="inner">
         <ul className="items">
           {categoriesOrder
@@ -58,10 +62,23 @@ const Categories = ({ className, items, activeCategory, language }) => {
                 </li>
               )
             })}
+
+          {language === 'ru' && (
+            <li className="item">
+              <Link href={`/${language}/news512`}>
+                <a
+                  className={cn('link', { _active: 'news512' === activeCategory })}
+                  ref={'news512' === activeCategory ? activeItemRef : null}
+                >
+                  🔥 Новости
+                </a>
+              </Link>
+            </li>
+          )}
         </ul>
         <ActiveLine width={activeWidth} left={activeLeft} />
       </div>
-    </div>
+    </Grid>
   )
 }
 
