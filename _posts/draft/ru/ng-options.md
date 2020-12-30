@@ -30,63 +30,63 @@ _Если код режет глаза, постарайтесь отнести�
 
 ```html
 <div class="form-group">
-	<select ng-model="request.volary_id" name="volary" class="form-control">
-		<option ng-repeat="volary in volaries" ng-selected="volary.volary_id == initVolary()" value="{{ volary.volary_id }}">{{ volary.text }}</option>
-	</select>
+  <select ng-model="request.volary_id" name="volary" class="form-control">
+    <option ng-repeat="volary in volaries" ng-selected="volary.volary_id == initVolary()" value="{{ volary.volary_id }}">{{ volary.text }}</option>
+  </select>
 </div>
 <div class="form-group">
-	<select ng-model="request.cage_id" name="cage" class="form-control">
-		<option ng-repeat="cage in cages | filter:{ volary_id : request.volary_id }" ng-selected="cage.cage_id == initCage()" value="{{ cage.cage_id }}">{{ cage.text }}</option>
-	</select>
+  <select ng-model="request.cage_id" name="cage" class="form-control">
+    <option ng-repeat="cage in cages | filter:{ volary_id : request.volary_id }" ng-selected="cage.cage_id == initCage()" value="{{ cage.cage_id }}">{{ cage.text }}</option>
+  </select>
 </div>
 ```
 
 ```js
-	$scope.cages = [];
+  $scope.cages = [];
 
-	angular.forEach($scope.volaries, function(volary) {
-		angular.forEach(volary.cages, function(cage) {
-			if (cage.volary_id = volary.volary_id) {
-				$scope.cages.push(cage);                    //Собираем массив всех клеток
-			}
-		});
-	});
+  angular.forEach($scope.volaries, function(volary) {
+    angular.forEach(volary.cages, function(cage) {
+      if (cage.volary_id = volary.volary_id) {
+        $scope.cages.push(cage);                    //Собираем массив всех клеток
+      }
+    });
+  });
 
-	$scope.initVolary = function() {                    //Если ранее вольер был выбран модель инициализируется этим значением, иначе - значением по умолчанию
-		var init;										                      //Для того, чтобы был выбран соответствующий option, возвращается значение init
+  $scope.initVolary = function() {                    //Если ранее вольер был выбран модель инициализируется этим значением, иначе - значением по умолчанию
+    var init;										                      //Для того, чтобы был выбран соответствующий option, возвращается значение init
 
-		if ($scope.request.volary_id) {
-			init = $scope.request.volary_id;
-		} else {
-			angular.forEach($scope.volaries, function(volary) {
-				if (volary.is_default === 1) {
-					init = volary.volary_id;
-					$scope.request.volary_id = volary.volary_id;
-				}
-			});
-		}
+    if ($scope.request.volary_id) {
+      init = $scope.request.volary_id;
+    } else {
+      angular.forEach($scope.volaries, function(volary) {
+        if (volary.is_default === 1) {
+          init = volary.volary_id;
+          $scope.request.volary_id = volary.volary_id;
+        }
+      });
+    }
 
-		console.log($scope.request.volary_id);
+    console.log($scope.request.volary_id);
 
-		return init;
-	};
+    return init;
+  };
 
-	$scope.initCage = function() {                       //Если ранее была выбрана клетка модель инициализируется этим значением, иначе - значением по умолчанию
-		var init;										                       //Для того, чтобы был выбран соответствующий option, возвращается значение init
+  $scope.initCage = function() {                       //Если ранее была выбрана клетка модель инициализируется этим значением, иначе - значением по умолчанию
+    var init;										                       //Для того, чтобы был выбран соответствующий option, возвращается значение init
 
-		if ($scope.request.cage_id) {
-			init = $scope.request.cage_id;
-		} else {
-			angular.forEach($scope.cages, function(cage) {
-				if (cage.is_default === 1 && cage.volary_id === $scope.request.volary_id) {
-					init = cage.cage_id;
-					$scope.request.cage_id = cage.cage_id;
-				}
-			});
-		}
+    if ($scope.request.cage_id) {
+      init = $scope.request.cage_id;
+    } else {
+      angular.forEach($scope.cages, function(cage) {
+        if (cage.is_default === 1 && cage.volary_id === $scope.request.volary_id) {
+          init = cage.cage_id;
+          $scope.request.cage_id = cage.cage_id;
+        }
+      });
+    }
 
-		return init;
-	};
+    return init;
+  };
 ```
 
 ## Второе решение
@@ -99,11 +99,11 @@ _Часто мы забываем о том, какую большую роль 
 
 ```html
 <div class="form-group">
-	<select ng-model="request.volary" ng-options="volary as volary.text for volary in volaries" class="form-control"></select>
+  <select ng-model="request.volary" ng-options="volary as volary.text for volary in volaries" class="form-control"></select>
 </div>
 
 <div ng-if="request.volary" class="form-group"> <!-- Отображать, если вольер уже выбран -->
-	<select ng-model="request.cage" ng-repeat="volary in volaries" ng-show="request.volary == volary" ng-options="cage as cage.text for cage in volary.cages" class="form-control"></select> <!--Здесь мы проходим по всем вольерам и отображаем клетки из того вольера, который был выбран ранее-->
+  <select ng-model="request.cage" ng-repeat="volary in volaries" ng-show="request.volary == volary" ng-options="cage as cage.text for cage in volary.cages" class="form-control"></select> <!--Здесь мы проходим по всем вольерам и отображаем клетки из того вольера, который был выбран ранее-->
 </div>
 ```
 
@@ -178,10 +178,10 @@ $scope.setDefaultCage = function() {
 
 ```html
 <div class="form-group">
-	<select ng-model="request.volary" ng-change="setDefaultCage()" ng-options="volary.text for volary in volaries track by volary.volary_id" class="form-control"></select>
+  <select ng-model="request.volary" ng-change="setDefaultCage()" ng-options="volary.text for volary in volaries track by volary.volary_id" class="form-control"></select>
 </div>
 <div class="form-group">
-	<select ng-model="request.cage" ng-options="cage.text for cage in request.volary.cages track by cage.cage_id" class="form-control">
+  <select ng-model="request.cage" ng-options="cage.text for cage in request.volary.cages track by cage.cage_id" class="form-control">
 </div>
 ```
 

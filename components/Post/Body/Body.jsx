@@ -1,29 +1,56 @@
 import React from 'react'
 import { string, object } from 'prop-types'
 import styled from '@emotion/styled'
+import cn from 'classnames'
 import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, ListItem } from '@csssr/core-design'
 import styles from './Body.styles'
-
+import Newsletter from '../../Newsletter'
 import Separator from './Separator'
 import Comments from './Comments'
 import ParagraphWithImage from './ParagraphWithImage'
 import Img from './Img'
 import Note from './Note'
 import Quote from './Quote'
-import Subtitle from './Subtitle'
+import ReadMore from './ReadMore'
+import Subtitle from '../Subtitle'
 import Video from './Video'
 import Table from './Table'
 import List from './List'
 
-const Body = ({ content, className, slug, images, language }) =>
-  compiler(content, {
+const Body = ({
+  className,
+  posts,
+  content,
+  slug,
+  images,
+  language,
+  type,
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
+}) => {
+  const postType = type
+
+  return compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
         return (
-          <Grid className={`post-body ${className}`}>
+          <Grid className={cn(`post-body ${className}`)}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
+
+            {language === 'ru' && postType !== 'news' && (
+              <>
+                <Newsletter
+                  kind="post"
+                  BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+                  BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+                />
+
+                <ReadMore posts={posts} />
+              </>
+            )}
+
             <Comments id={slug} language={language} />
           </Grid>
         )
@@ -51,7 +78,9 @@ const Body = ({ content, className, slug, images, language }) =>
       h3: {
         component: Heading.H3,
         props: {
-          className: 'heading_regular_s',
+          className: cn('heading_regular_s', {
+            'is_scaled-down': type === 'news',
+          }),
           type: 'regular',
           size: 's',
         },
@@ -95,7 +124,9 @@ const Body = ({ content, className, slug, images, language }) =>
           )
         },
         props: {
-          className: 'text_regular_m paragraph',
+          className: cn('text_regular_m paragraph', {
+            'is_scaled-down': type === 'news',
+          }),
           type: 'regular',
           size: 'm',
         },
@@ -108,6 +139,7 @@ const Body = ({ content, className, slug, images, language }) =>
           className: 'link_list_s',
           type: 'list',
           size: 's',
+          external: true,
         },
       },
       ul: {
@@ -183,6 +215,7 @@ const Body = ({ content, className, slug, images, language }) =>
       },
     },
   })
+}
 
 Body.propTypes = {
   className: string,

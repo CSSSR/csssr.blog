@@ -1,0 +1,63 @@
+---
+title: 'В этом выпуске: релиз PHP 8, производительность TypeScript, написание фронтенд-фреймворка и языка программирования, как построить RESTful API, первые результаты инициативы Open Prioritization от Igalia.'
+soundcloudLink: 'https://soundcloud.com/csssr/php-8-typescript-performance-ot-microsoft-ror-61-rc1-pishem-frontend-freymvork-i-yap-na-javascipt'
+date: '2020-12-01T00:00:00.000Z'
+episodeNumber: 132
+tag: 'news'
+author: 'Ислам Виндижев'
+---
+
+<Note>
+  [RSS подкаста](https://radio.csssr.com/rss/news512.rss), [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815), [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14), [SoundCloud](https://soundcloud.com/csssr/sets/512-news), [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
+</Note>
+
+<ParagraphWithImage imageName="manWithLaptop" imageSide="right">
+  ### Интересные публикации
+
+  Первый материал на этой неделе — [о реактивных переменных в React Apollo](https://www.smashingmagazine.com/2020/11/reactive-variables-graphql-apollo-client/). Реактивные переменные — это механизм хранения данных вне кеша Apollo. Дэниел Дон в статье на Smashing Magazine разбирается в фиче, рассказывает, как создать и обновить реактивную переменную, а также реализует приложение-пример для демонстрации работы реактивных переменных.
+</ParagraphWithImage>
+
+  В прошлом выпуске я предлагал вам подробнее разобраться в работе git. На этой неделе давайте напишем собственный фронтенд-фреймворк. Марвин Фраше создал небольшой [тьюториал, который покрывает основные аспекты работы фреймворков](https://mfrachet.github.io/create-frontend-framework/): работу с шаблонами, Virtual DOM, состояние приложения и отслеживание изменений. В итоге получается простая и грубая реализация фреймворка. По ходу реализации все концепции разбираются, и автор рассказывает о том, как это работает сейчас в «большой тройке» фреймворков. Неплохая возможность заглянуть под капот фреймворков.
+
+  В репозитории TypeScript в разделе wiki есть страница Performance. Как вы уже догадались, она посвящена [производительности TypeScript](https://github.com/microsoft/TypeScript/wiki/Performance). В статье собраны советы по написанию оптимального кода и менеджменту кодовой базы. Есть разделы о конфигурации самого TS и инструментов сборки, крупный раздел об отладке, также там есть инструкция, как правильно создать Issue.
+
+  Михай Парпарита из Quip написал небольшую заметку о том, [как сравнение ело много ресурсов процессора](http://blog.persistent.info/2020/11/the-case-of-missing-equals-sign.html). Повышенное потребление было замечено в приложении Quip для macOS, а проблема была всего лишь в нестрогом сравнении. Как это вышло и как проблему удалось обнаружить читайте в блоге автора.
+
+  Следующий материал — об [API, который обнаруживает пользовательский ввод](https://web.dev/isinputpending/). Теперь он добавлен по умолчанию в Chrome 87. isInputPending() позволяет улучшить отзывчивость интерфейса и установить свой баланс между загрузкой и работой интерфейса. Примечательно, что это первый вклад Facebook в браузерные API. [Более подробный пост](https://engineering.fb.com/2019/04/22/developer-tools/isinputpending-api/) в инженерном блоге Facebook.
+
+  Винай Шани написал в своём блоге [статью о разработке RESTful API](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api). В ней собраны лучшие практики и советы. Поднимаются вопросы дизайна интерфейса для разработчиков и использования разных типов запросов. Ещё Винай рассказывает, как правильно организовать сортировку, поиск и фильтры, а также как эффективно пользоваться кодами состояния HTTP. Это далеко не полный перечень, в статье еще много других полезных советов.
+
+  Напоследок: самые хардкорные из вас могут [написать язык программирования на JavaScript](http://lisperator.net/pltut/). Понятное дело, тоже в образовательных целях. Если слова парсер, интерпретатор, компилятор для вас не пустой звук, и вы хотите понять, как всё это работает, обязательно попробуйте.
+
+<ParagraphWithImage imageName="laptopNews" imageSide="right">
+  ### Новости релизов
+
+  Главный релиз этой недели — [PHP 8](https://www.php.net/releases/8.0/ru.php?lang=ru). В новой версии языка теперь есть JIT-компиляция. Появились именованные аргументы функций, новое выражение manch — младший брат case. В конструкторах классов теперь можно объявлять свойства, появился оператор nullsafe. Сравнение строк и чисел прокачали. И это далеко не все изменения, ищите подробности на странице релиза.
+</ParagraphWithImage>
+
+  У [Ruby on Rails](https://weblog.rubyonrails.org/2020/11/2/Rails-6-1-rc1-release/) теперь есть первый релиз-кандидат версии 6.1. Нас ждут улучшения для работы с несколькими базами данных, апгрейд Active Storage и объекты ошибок для Active Model. Также планируется выпустить ряд багфиксов и оптимизаций.
+
+  Очередными security-фиксами отметился фреймворк [Django](https://www.djangoproject.com/weblog/2020/nov/02/bugfix-releases/). В ноябре команда фреймворка выпустила ряд багфикс-релизов для всех поддерживаемых веток Django — это версии 3.1.3, 3.0.11 и 2.2.17.
+
+  Закрывает рубрику релиз [GraphQL Apollo](https://github.com/apollographql/apollo-client/releases/tag/v3.3.0) версии 3.3.0.
+
+<ParagraphWithImage imageName="laptopDialog" imageSide="right">
+  ### Другие новости
+
+  В прошлых выпусках мы рассказывали об Open Prioritization. Напомню, это инициатива Igalia, которая призвана помочь реализовать самые нужные фичи в браузерах в первую очередь. Igalia — это агентство-консультант, которое реализовало многие фичи в разных браузерах. Open Prioritization представляла из себя сбор средств на реализацию самой нужной фичи и своего рода голосование. Первой реализованной фичей стала :focus-visible в WebKit. К выпуску прикладываем ссылку на [пост в блоге Igalia](https://www.igalia.com/2020/11/20/Open-Prioritization-Results.html) и на [небольшой обзор от Брайана Карделла](https://bkardell.com/blog/FirstOPFinished.html).
+</ParagraphWithImage>
+
+  Microsoft продолжает попытки сделать Windows максимально универсальным. Возможно, [Android-приложения станут доступны на Windows 10](https://www.windowscentral.com/windows-10-project-latte-android-apps). По неподтвержденным данным проект называется «Project Latte» и, возможно, будет построен при помощи технологии WSL и анонсирован осенью 2021-го года. Непонятно, произойдет ли это, но тогда Windows станет воистину универсальным.
+
+<Note>
+  ### Пишите нам и читайте
+  [Telegram—канал CSSSR](https://t.me/csssr)
+
+  [Twitter CSSSR](https://twitter.com/csssr_dev)
+
+  [Twitter новостей](https://twitter.com/csssr_news)
+
+  [Telegram ведущего](https://t.me/Vindizh)
+
+  [Twitter ведущего](https://twitter.com/Vindizh)
+</Note>

@@ -12,6 +12,7 @@ export default {
     management: 'Менеджмент',
     'web-development': 'Разработка',
     culture: 'Культура',
+    news: 'Новости',
   },
 }
 
