@@ -1,12 +1,12 @@
 ---
 title: 'Космический VPN для сурового фронтенда'
-coverImageAlt: 'Пробуем искать и проверять свойства программ при помощи генеративного тестирования'
-author: 'Паша'
+coverImageAlt: 'Подключенные к сети компьютеры'
+author: 'Павел Азанов'
 date: '2015-11-21T00:00:00.000Z'
 tag: 'web-development'
 ---
 
-<Img imageName='azanov' alt='Pavel Azanov'>
+<Img imageName='azanov' alt='Фотография автора статьи - Павла Азанова'>
 
 Всем привет! С вами один из ведущих разработчиков CSSSR и просто путешественник.
 
@@ -16,7 +16,7 @@ tag: 'web-development'
 
 При поиске средств для развертывания VPN самым важным было охватить все устройства, которые оказываются в моем чемодане во время путешествий. Ноутбук (Windows + Ubuntu), телефоны iPhone, Windows Phone, Android и с недавних пор MacBook Air. Все они поддерживают L2TP/IPSec, но иногда возникает необходимость подключиться через OpenVPN или SSTP. Посмотрев множество решений, в конце концов я остановился на <a href="https://www.softether.org" rel="nofollow noopener" target="_blank">**SoftEther VPN**</a>, разработанном в японском университете Tsukuba.
 
-<Img imageName='softether' alt='SoftEther'>
+<Img imageName='softether' alt='Разбор процесса работы SoftEther VPN Server'>
 
 ## Выбор сервера и страны размещения
 
@@ -28,7 +28,7 @@ tag: 'web-development'
 
 Для начала создаем новый Droplet в DigitalOcean. Я выбрал сервер за 5$ на базе Ubuntu 14 и разместил его в Нью-Йорке, это заняло у меня всего 30 секунд:
 
-<Img imageName='server' alt='SoftEther'>
+<Img imageName='server' alt='Скриншот консоли'>
 
 Первым делом обновляем пакеты:
 
@@ -127,7 +127,7 @@ Default Virtual HUB in a case of omitting the HUB on the Username: csssrhub
 
 ## L2TP подключение в iOS
 
-<Img imageName='ios' alt='ios'>
+<Img imageName='ios' alt='Скриншот настройки подключения L2TP на iOS устройстве'>
 
 Настройка Android и Windows Phone производится аналогично. Для MacOS настройки также отличаются не очень сильно.
 
@@ -135,15 +135,15 @@ Default Virtual HUB in a case of omitting the HUB on the Username: csssrhub
 
 В Windows создаем обычное VPN подключение и затем настраиваем его.
 
-<Img imageName='connection' alt='Connection settings'>
+<Img imageName='connection' alt='Скриншот окна настройки подключения к сети в Windows'>
 
 В свойствах подключения меняем тип на L2TP/IPSec:
 
-<Img imageName='vpn' alt='VPN settings'>
+<Img imageName='vpn' alt='Скриншот панели настройки VPN в Windows, вкладка "Security"'>
 
 И указываем Shared Key в дополнительных настройках:
 
-<Img imageName='key' alt='Shared Key settings'>
+<Img imageName='key' alt='Скриншот панели дополнительных настроек, вкладка L2TP'>
 
 Всё готово!
 

@@ -1,6 +1,6 @@
 ---
 title: 'Ускорьте свою разработку с помощью команды `npm init`'
-coverImageAlt: 'alt me'
+coverImageAlt: 'Парень и девушка на скейтборде с ноутбуком'
 author: 'Владимир Старков'
 date: '2015-03-14T10:30:00.000Z'
 tag: 'web-development'
