@@ -2,7 +2,7 @@
   "private": true,
   "prettier": "@csssr/e2e-tools/prettier",
   "devDependencies": {
-    "@csssr/e2e-tools": "~1.4.0",
-    "@csssr/e2e-tools-nightwatch": "~1.14.0"
+    "@csssr/e2e-tools": "~1.4.1",
+    "@csssr/e2e-tools-nightwatch": "~1.14.2"
   }
 }
