@@ -121,7 +121,7 @@ const setProps = (state, action) => over(
 ```js
 const lensRangeSlider = lensProp('rangeSlider')
 ```
-Можно определить линзу для работы с аттрибутом `from` у любого объекта, используя все тот же `lensProp`:
+Можно определить линзу для работы с атрибутом `from` у любого объекта, используя все тот же `lensProp`:
 
 ```js
 const lensFrom = lensProp('from')
