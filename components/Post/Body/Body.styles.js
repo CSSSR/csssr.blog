@@ -105,10 +105,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
-  .paragraph_big-letter {
-    min-height: ${calcRem(70)};
-  }
-
   ${desktop.all} {
     & > .text_regular_m:first-of-type {
       margin-top: 50px;
