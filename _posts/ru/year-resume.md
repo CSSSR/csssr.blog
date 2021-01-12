@@ -1,8 +1,8 @@
 ---
 title: 'Итоги <i>2016</i> года от CSSSR'
-author: 'Максим'
-date: '2016-12-26T00:00:00.000Z'
 coverImageAlt: 'Итоги 2016 года'
+author: 'Максим Вислогуров'
+date: '2016-12-26T00:00:00.000Z'
 tag: 'web-development'
 ---
 
