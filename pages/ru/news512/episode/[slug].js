@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../../../../components/Layout'
+import Post from '../../../../components/Post'
 import { getPostNewsBySlug, getPostsNews } from '../../../../lib/api'
 import getBenchmarkEmailListId from '../../../../utils/getBenchmarkEmailListId'
-import Post from '../../../../components/Post'
 
 export default function PostNewsPage({
   post,
@@ -11,15 +11,17 @@ export default function PostNewsPage({
   BENCHMARK_EMAIL_LIST_ID,
 }) {
   return (
-    <Layout language={language}>
-      <Post
-        language={language}
-        post={post}
-        type="news"
-        BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-        BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-      />
-    </Layout>
+    <>
+      <Layout language={language} type="news">
+        <Post
+          language={language}
+          post={post}
+          type="news"
+          BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+          BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+        />
+      </Layout>
+    </>
   )
 }
 

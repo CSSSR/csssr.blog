@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { withRouter } from 'next/router'
 
-const Meta = ({ router }) => (
+const Meta = ({ router, type }) => (
   <Head>
     <link rel="canonical" href={`${process.env.BLOG_HOST}${router.asPath}`} />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
@@ -15,8 +15,19 @@ const Meta = ({ router }) => (
     <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
     <meta name="theme-color" content="#000" />
     <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+
+    {type === 'news' ? (
+      <>
+        <meta property="og:image:width" content="3840" />
+        <meta property="og:image:height" content="1920" />
+      </>
+    ) : (
+      <>
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </>
+    )}
+
     <meta property="fb:app_id" content="416195255787519" />
     <script
       dangerouslySetInnerHTML={{
