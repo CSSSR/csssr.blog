@@ -55,8 +55,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${desktop.all} {
-    grid-column: 4 / span 6;
-    margin-top: ${calcRem(16)};
+    & {
+      grid-column: 4 / span 6;
+      margin-top: ${calcRem(16)};
+    }
 
     & + .paragraph {
       margin-top: ${calcRem(30)};
