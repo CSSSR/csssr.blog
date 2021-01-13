@@ -9,7 +9,7 @@ import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
 
-import newsPostCardImage from '../../public/components/postCard/desktop.m.png'
+import newsPostOgImage from '../../public/images/og/news512/all.png'
 
 const Post = ({
   posts,
@@ -27,23 +27,29 @@ const Post = ({
       })}
     >
       <Head>
-        <title>{cleaningTitle(post.title, 'meta')}</title>
-        <meta name="description" content={getDescription(post.content)} />
+        <title>{type === 'news' ? 'Новости 512 | CSSS' : cleaningTitle(post.title, 'meta')}</title>
+        <meta
+          name="description"
+          content={
+            type === 'news' ? cleaningTitle(post.title, 'meta') : getDescription(post.content)
+          }
+        />
         <meta property="og:type" content="article" />
         <meta property="article:section" content={post.tag} />
+        <meta property="article:published_time" content={post.date} />
+        {post.author && <meta property="article:author" content={post.author} />}
+
         <meta
           property="og:url"
           content={`${process.env.BLOG_HOST}/${language}/article/${post.slug}`}
         />
         <meta property="og:title" content={cleaningTitle(post.title, 'meta')} />
         <meta property="og:description" content={getDescription(post.content)} />
-        <meta property="article:published_time" content={post.date} />
-        {post.author && <meta property="article:author" content={post.author} />}
         <meta
           property="og:image"
           content={getOriginal(
             type === 'news'
-              ? newsPostCardImage
+              ? newsPostOgImage
               : post.images.mainCoverL[post.images.mainCoverL.length - 1],
           )}
         />

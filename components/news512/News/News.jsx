@@ -1,9 +1,9 @@
 import React from 'react'
+import Head from 'next/head'
 import { string, number, arrayOf, shape } from 'prop-types'
 import styled from '@emotion/styled'
-import Head from 'next/head'
 import { Heading } from '@csssr/core-design'
-
+import { getOriginal } from '@csssr/csssr.images/dist/utils'
 import Layout from '../../Layout'
 import { Grid } from '../../Grid'
 import Categories from '../../main/Categories'
@@ -11,8 +11,11 @@ import Pagination from '../../main/Pagination'
 import NewsList from './NewsList'
 
 import { NEWS_PER_PAGE } from '../../../data/constants'
+import ogImages from '../../../public/images/og/news512/all.png'
 
 import styles from './News.styles'
+
+const ogImage = getOriginal(ogImages)
 
 const News = ({
   className,
@@ -26,15 +29,24 @@ const News = ({
     <>
       <Head>
         {/* TODO: Указать правильные мета данные */}
-        <title>Новости 512 | CSSSR</title>
-        <meta name="description" content="news" />
-        <meta property="og:url" content={`https://blog.csssr.com/ru/news512/`} />
+        <title>Новости 512 | CSSS</title>
+        <meta
+          name="description"
+          content="Новости 512 — короткометражные выпуски новостей о технологиях и индустрии веба."
+        />
+
         <meta property="og:title" content="Новости 512 | CSSS" />
-        <meta property="og:description" content="news" />
-        <meta property="og:image" content="" />
+        <meta
+          property="og:description"
+          content="Новости 512 — короткометражные выпуски новостей о технологиях и индустрии веба."
+        />
+        <meta property="og:url" content="https://blog.csssr.com/ru/news512/" />
+
+        <meta name="twitter:image" content={ogImage} />
+        <meta property="og:image" content={ogImage} />
       </Head>
 
-      <Layout language="ru">
+      <Layout language="ru" type="news">
         <Categories items={categories} language="ru" activeCategory="news512" />
 
         <Grid className={className}>

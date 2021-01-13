@@ -13,12 +13,12 @@ import {
 } from '../../data/footerLinks'
 import { links, menu } from '../../data/headerLinks'
 
-export default function Layout({ children, language }) {
+export default function Layout({ children, language, type }) {
   const languageLink = language === 'ru' ? 'en' : 'ru'
 
   return (
     <>
-      <Meta />
+      <Meta type={type} />
 
       <Header
         actionButton={{ isVisible: false }}
