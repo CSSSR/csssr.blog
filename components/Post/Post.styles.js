@@ -2,10 +2,6 @@ import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
-  & {
-    overflow-x: hidden;
-  }
-
   &.type_news {
     background-image: linear-gradient(to right, white, white), url(${require('../../public/components/post/news-post-header-bg_desktop.svg').default});
     background-size: 880px 232px, 1920px 408px;
