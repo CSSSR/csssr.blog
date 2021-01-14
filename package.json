@@ -23,7 +23,7 @@
     "isomorphic-unfetch": "3.1.0",
     "markdown-to-jsx": "^7.1.1",
     "next": "latest",
-    "prismjs": "^1.22.0",
+    "prismjs": "^1.23.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-gtm-components": "^0.5.0",
