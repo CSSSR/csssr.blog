@@ -39,6 +39,10 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     border: 0;
   }
 
+  .main {
+    overflow: hidden;
+  }
+
   ul {
     list-style: none;
   }
