@@ -13,10 +13,7 @@
 .settings/
 *.sublime-workspace
 .DS_STORE
-
-# IDE - VSCode
 .vscode/*
-!.vscode/settings.json
 
 # misc
 npm-debug.log
