@@ -165,12 +165,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 `
 
-export const mainStyles = css`
-  .main {
-    overflow: hidden;
-  }
-`
-
 export default (props) => {
   const { breakpoints, colors } = props.theme
 

@@ -1,8 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
-import styles, { mainStyles } from './Newsletter.styles'
-import { Global } from '@emotion/core'
+import styles from './Newsletter.styles'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { Heading, Text } from '@csssr/core-design'
 import { Grid } from '../Grid'
@@ -35,11 +34,10 @@ const Newsletter = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LI
           <PictureSmart
             requireImages={kind === 'post' ? postImg : img}
             className="picture"
-            alt={imgAlt}f
+            alt={imgAlt}
           />
         </div>
       </Grid>
-      <Global styles={mainStyles} />
     </div>
   )
 }
