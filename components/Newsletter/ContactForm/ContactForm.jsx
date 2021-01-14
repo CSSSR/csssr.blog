@@ -48,6 +48,8 @@ const Component = ({
       setSubmittedToServerStatus(true)
 
       return submitResult.then(() => {
+        reset()
+
         if (onSubmitResolve) {
           onSubmitResolve(getStatus())
         }
