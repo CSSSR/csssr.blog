@@ -139,7 +139,6 @@ const Body = ({
           className: 'link_list_s',
           type: 'list',
           size: 's',
-          external: true,
         },
       },
       ul: {
