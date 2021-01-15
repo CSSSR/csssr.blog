@@ -1,6 +1,6 @@
 ---
 title: 'В этом выпуске восполняем новогодний пробел.'
-soundcloudLink: ''
+soundcloudLink: 'https://soundcloud.com/csssr/novogodnie-probely'
 date: '2021-01-15T00:00:00.000Z'
 episodeNumber: 141
 tag: 'news'
