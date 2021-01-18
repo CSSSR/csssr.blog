@@ -14,9 +14,8 @@
   ["split-blocks-into-groups", "lenses"],
   ["habits", "sitemap-generator"],
   ["how-remote-developers-talk", "slack-groups"],
-  ["yet-another-template-update"]
-  ["ng-options", "vpn"],
-  ["npm-init", "news512"],
+  ["yet-another-template-update", "ng-options"],
+  ["vpn", "npm-init"],
   ["planes", "slack"],
   ["unplug-yourself-csssr-edition"]
 ]
