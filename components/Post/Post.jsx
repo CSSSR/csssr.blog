@@ -9,9 +9,21 @@ import Body from './Body'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
 
-import newsPostCardImage from '../../public/components/postCard/desktop.m.png'
+import newsPostOgImage from '../../public/images/og/news512/all.png'
 
-const Post = ({ post, language, className, type = 'regular' }) => {
+const Post = ({
+  posts,
+  post,
+  language,
+  className,
+  type = 'regular',
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
+}) => {
+  const title = type === 'news' ? 'Новости 512 | CSSS' : cleaningTitle(post.title, 'meta')
+  const description =
+    type === 'news' ? cleaningTitle(post.title, 'meta') : getDescription(post.content)
+
   return (
     <article
       className={cn(className, {
@@ -19,26 +31,28 @@ const Post = ({ post, language, className, type = 'regular' }) => {
       })}
     >
       <Head>
-        <title>{cleaningTitle(post.title, 'meta')}</title>
-        <meta name="description" content={getDescription(post.content)} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="article" />
-        <meta property="article:section" content={post.tag} />
         <meta
           property="og:url"
           content={`${process.env.BLOG_HOST}/${language}/article/${post.slug}`}
         />
-        <meta property="og:title" content={cleaningTitle(post.title, 'meta')} />
-        <meta property="og:description" content={getDescription(post.content)} />
-        <meta property="article:published_time" content={post.date} />
-        {post.author && <meta property="article:author" content={post.author} />}
         <meta
           property="og:image"
           content={getOriginal(
             type === 'news'
-              ? newsPostCardImage
+              ? newsPostOgImage
               : post.images.mainCoverL[post.images.mainCoverL.length - 1],
           )}
         />
+
+        <meta property="article:section" content={post.tag} />
+        <meta property="article:published_time" content={post.date} />
+        {post.author && <meta property="article:author" content={post.author} />}
       </Head>
 
       <Header
@@ -55,11 +69,14 @@ const Post = ({ post, language, className, type = 'regular' }) => {
       />
 
       <Body
+        posts={posts}
         content={post.content}
         slug={post.slug}
         images={post.images}
         language={language}
         type={type}
+        BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+        BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
       />
     </article>
   )

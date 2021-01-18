@@ -133,8 +133,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${desktop.all} {
-    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
+    {
       margin-top: 75px;
+
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
+        margin-top: 0;
+      }
     }
 
     &.news {
@@ -154,8 +159,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${tablet.all} {
-    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
-      margin-top: ${calcRem(60)};
+    & {
+      margin-top: 60px;
+
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
+        margin-top: 0;
+      }
     }
 
     .title-wrapper {
@@ -203,8 +213,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${mobile.all} {
-    &:not(:first-of-type) {
+    & {
       margin-top: ${calcRem(50)};
+
+      &:nth-of-type(1) {
+        margin-top: 0;
+      }
     }
 
     .picture {

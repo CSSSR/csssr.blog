@@ -1,7 +1,7 @@
 ---
-title: 'Безболезненный линтинг CSS с помощью stylelint'
+title: '<i>Безболезненный линтинг CSS</i> с помощью stylelint'
 coverImageAlt: 'Как настроить линтинг стилей на проекте так, чтобы не было больно ни при разработке, ни на code review'
-author: 'v1z'
+author: 'Артём Глуханько'
 date: '2018-12-05T00:00:00.000Z'
 tag: 'web-development'
 ---

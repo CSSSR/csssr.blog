@@ -7,6 +7,10 @@ tag: 'news'
 author: 'Ислам Виндижев'
 ---
 
+<Note>
+  [RSS подкаста](https://radio.csssr.com/rss/news512.rss), [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815), [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14), [SoundCloud](https://soundcloud.com/csssr/sets/512-news), [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
+</Note>
+
 <ParagraphWithImage imageName="manWithLaptop" imageSide="right">
   ### Интересные публикации
 
@@ -44,19 +48,6 @@ author: 'Ислам Виндижев'
 </ParagraphWithImage>
 
   Microsoft продолжает попытки сделать Windows максимально универсальным. Возможно, [Android-приложения станут доступны на Windows 10](https://www.windowscentral.com/windows-10-project-latte-android-apps). По неподтвержденным данным проект называется «Project Latte» и, возможно, будет построен при помощи технологии WSL и анонсирован осенью 2021-го года. Непонятно, произойдет ли это, но тогда Windows станет воистину универсальным.
-
-<Note>
-  ### Слушайте нас на любимой платформе
-  [RSS подкаста](https://radio.csssr.com/rss/news512.rss)
-
-  [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815)
-
-  [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14)
-
-  [SoundCloud](https://soundcloud.com/csssr/sets/512-news)
-
-  [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
-</Note>
 
 <Note>
   ### Пишите нам и читайте

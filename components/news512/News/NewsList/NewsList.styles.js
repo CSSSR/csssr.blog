@@ -98,30 +98,37 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     transition: color 200ms ease-in;
   }
 
-  ${mobile.all} {
-    .news-item-link {
-      flex-direction: column;
+  ${desktop.all} {
+    .news-item {
+      padding-top: ${calcRem(14)};
     }
 
-    .news-item.first .news-item-date {
-      font-size: ${calcRem(14)};
+    .news-item.first {
+      padding-top: ${calcRem(8)};
     }
 
     .news-item-number {
-      margin-right: ${calcRem(16)};
-      text-align: left;
+      width: ${calcRem(78)};
+      font-size: 24px;
+      line-height: 35px;
     }
 
     .news-item-date {
-      align-self: flex-end;
-      width: auto;
-      margin-right: 0;
-      transform: translateY(${calcRem(-4)});
-      text-align: left;
+      margin-top: ${calcRem(15)};
     }
 
     .news-item.first .news-item-date {
-      transform: translateY(${calcRem(-9)});
+      margin-top: ${calcRem(21)};
+    }
+
+    .news-item-title {
+      margin-top: ${calcRem(10)};
+      font-weight: normal;
+      font-size: 16px;
+    }
+
+    .news-item.first .news-item-title {
+      margin-top: ${calcRem(17)};
     }
   }
 
@@ -155,37 +162,30 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
-  ${desktop.all} {
-    .news-item {
-      padding-top: ${calcRem(14)};
-    }
-
-    .news-item.first {
-      padding-top: ${calcRem(8)};
-    }
-
-    .news-item-number {
-      width: ${calcRem(78)};
-      font-size: 24px;
-      line-height: 35px;
-    }
-
-    .news-item-date {
-      margin-top: ${calcRem(15)};
+  ${mobile.all} {
+    .news-item-link {
+      flex-direction: column;
     }
 
     .news-item.first .news-item-date {
-      margin-top: ${calcRem(21)};
+      font-size: ${calcRem(14)};
     }
 
-    .news-item-title {
-      margin-top: ${calcRem(10)};
-      font-weight: normal;
-      font-size: 16px;
+    .news-item-number {
+      margin-right: ${calcRem(16)};
+      text-align: left;
     }
 
-    .news-item.first .news-item-title {
-      margin-top: ${calcRem(17)};
+    .news-item-date {
+      align-self: flex-end;
+      width: auto;
+      margin-right: 0;
+      transform: translateY(${calcRem(-4)});
+      text-align: left;
+    }
+
+    .news-item.first .news-item-date {
+      transform: translateY(${calcRem(-9)});
     }
   }
 

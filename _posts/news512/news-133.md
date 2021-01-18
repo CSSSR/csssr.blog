@@ -7,6 +7,10 @@ tag: 'news'
 author: 'Ислам Виндижев'
 ---
 
+<Note>
+  [RSS подкаста](https://radio.csssr.com/rss/news512.rss), [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815), [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14), [SoundCloud](https://soundcloud.com/csssr/sets/512-news), [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
+</Note>
+
 <ParagraphWithImage imageName="manWithLaptop" imageSide="right">
   ### Интересные публикации
 
@@ -46,19 +50,6 @@ author: 'Ислам Виндижев'
 Результаты [State of CSS 2020](https://2020.stateofcss.com/) наконец-то обработали. Ожидаемо CSS Grid начинает использовать всё больше людей, и многие ждут принятия Subgrid в стандарт. CSS-переменные и логические свойства также были в фаворе у сообщества в этом году. PostCSS уверенно удерживает первое место среди процессоров и получил за это награду. CSS-фреймворк №1 в этом году — TailwindCSS, а методология BEM уступила первое место Atomic CSS. Также в отчёте другие популярные инструменты, образовательные ресурсы, подкасты и мнения членов сообщества.
 
 В заключение выпуска — ресурс для тех, кто ищет настоящего челленджа. Пришествие кода, или [Advent of Code](https://adventofcode.com/) в оригинале, — это ресурс от Эрика Уосла (Eric Wastl) с ежегодным челленджем по программированию. 25 задачек появляются по одной в сутки. От других похожих ресурсов он отличается наличием задач для самых разных уровней и из самых разных областей знаний. Здорово помогает расширить кругозор. AoC проводится уже в шестой раз, можно посмотреть лидерборды и старые задачки за предыдущие 5 лет и порешать их.
-
-<Note>
-  ### Слушайте нас на любимой платформе
-  [RSS подкаста](https://radio.csssr.com/rss/news512.rss)
-
-  [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815)
-
-  [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14)
-
-  [SoundCloud](https://soundcloud.com/csssr/sets/512-news)
-
-  [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
-</Note>
 
 <Note>
   ### Пишите нам и читайте

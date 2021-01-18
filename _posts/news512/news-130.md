@@ -7,6 +7,10 @@ tag: 'news'
 author: 'Ислам Виндижев'
 ---
 
+<Note>
+  [RSS подкаста](https://radio.csssr.com/rss/news512.rss), [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815), [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14), [SoundCloud](https://soundcloud.com/csssr/sets/512-news), [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
+</Note>
+
 <ParagraphWithImage imageName="manWithLaptop" imageSide="right">
   ### Интересные публикации
 
@@ -51,19 +55,6 @@ Google экспериментирует с [WebP 2](https://www.phoronix.com/sca
 Стартовал [12-й CSS Battle](https://cssbattle.dev/battle/12). Напомню, это игра, в которой нужно выполнить ряд заданий с минимальным количество кода на CSS. Игра продлится до 21 декабря.
 
 Все ссылки на инфоповоды и сопутствующие публикации ищите в описании. С вами был Ислам Виндижев, до встречи в следующем выпуске.
-
-<Note>
-  ### Слушайте нас на любимой платформе
-  [RSS подкаста](https://radio.csssr.com/rss/news512.rss)
-
-  [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815)
-
-  [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14)
-
-  [SoundCloud](https://soundcloud.com/csssr/sets/512-news)
-
-  [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
-</Note>
 
 <Note>
   ### Пишите нам и читайте
