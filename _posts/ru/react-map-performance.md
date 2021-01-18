@@ -1,8 +1,8 @@
 ---
 title: 'Повышаем <i>производительность рендера</i> списков в React-компонентах'
-date: '2016-07-28T20:00:00.000Z'
-author: 'Felix Exter'
 coverImageAlt: 'Повышаем производительность рендера списков в React-компонентах'
+author: 'Феликс Экстер'
+date: '2016-07-28T20:00:00.000Z'
 tag: 'web-development'
 ---
 
@@ -12,7 +12,7 @@ tag: 'web-development'
 
 ```js
 items.map(({ value }, i) =>
-	<div key={i} styleName='value'>{value}</div>
+  <div key={i} styleName='value'>{value}</div>
 )
 ```
 
@@ -20,10 +20,10 @@ items.map(({ value }, i) =>
 
 ```js
 items.map(({ name, value }, i) =>
-	<div key={i} styleName='item'>
-		<div styleName='name'>{name}</div>
-		<div styleName='value'>{value}</div>
-	</div>
+  <div key={i} styleName='item'>
+    <div styleName='name'>{name}</div>
+    <div styleName='value'>{value}</div>
+  </div>
 )
 ```
 
@@ -31,11 +31,11 @@ items.map(({ name, value }, i) =>
 
 ```js
 items.map(({ name, value }, i) =>
-	<Item
-		key={i}
-		name={name}
-		value={value}
-	/>
+  <Item
+    key={i}
+    name={name}
+    value={value}
+  />
 )
 ```
 
@@ -47,11 +47,11 @@ React не будет перерендеривать уже имеющийся 
 
 ```js
 items.map(({ id, name, value }) =>
-	<Item
-		key={id}
-		name={name}
-		value={value}
-	/>
+  <Item
+    key={id}
+    name={name}
+    value={value}
+  />
 )
 ```
 
@@ -61,9 +61,9 @@ items.map(({ id, name, value }) =>
 
 ```js
 items.map(({ id, name, value }) =>
-	<div key={id} styleName='item'>
-		<Item name={name} value={value} />
-	</div>
+  <div key={id} styleName='item'>
+    <Item name={name} value={value} />
+  </div>
 )
 ```
 
@@ -78,11 +78,11 @@ React сначала рендерит компонент в разметку, �
 
 ```js
 items.map(({ id, name, value }) =>
-	<Item
-		key={id}
-		name={name}
-		value={value}
-	/>
+  <Item
+    key={id}
+    name={name}
+    value={value}
+  />
 )
 ```
 
@@ -93,13 +93,13 @@ items.map(({ id, name, value }) =>
 
 ```js
 items.map(({ id, name, value }) =>
-	<div key={id} styleName='item'>
-		<Item
-			name={name}
-			value={value}
-			onClick={onClick(id)}
-		/>
-	</div>
+  <div key={id} styleName='item'>
+    <Item
+      name={name}
+      value={value}
+      onClick={onClick(id)}
+    />
+  </div>
 )
 ```
 
@@ -107,13 +107,13 @@ items.map(({ id, name, value }) =>
 
 ```js
 items.map(({ id, name, value }) =>
-	<Item
-		key={id}
-		id={id}
-		name={name}
-		value={value}
-		onClick={onClick}
-	/>
+  <Item
+    key={id}
+    id={id}
+    name={name}
+    value={value}
+    onClick={onClick}
+  />
 )
 ```
 
@@ -138,20 +138,20 @@ import ListItem from './item'
 export default class List extends Component {
 	// ...
 
-	renderItem = ({ id, name, value }) =>
-		<ListItem
-			key={id}
-			id={id}
-			name={name}
-			value={value}
-			onClick={this.props.onClick}
-		/>
+  renderItem = ({ id, name, value }) =>
+    <ListItem
+      key={id}
+      id={id}
+      name={name}
+      value={value}
+      onClick={this.props.onClick}
+    />
 
-	render() {
-		return <div styleName='list'>
-			{this.props.items.map(this.renderItem)}
-		</div>
-	}
+  render() {
+    return <div styleName='list'>
+      {this.props.items.map(this.renderItem)}
+    </div>
+  }
 }
 ```
 
@@ -168,19 +168,19 @@ import Item from '../item'
 export default class ListItem extends Component {
 	// ...
 
-	onClick = () => this.props.onClick(this.props.id)
+  onClick = () => this.props.onClick(this.props.id)
 
-	render() {
-		const { id, name, value } = this.props
+  render() {
+    const { id, name, value } = this.props
 
-		return <div styleName='item'>
-			<Item
-				name={name}
-				value={value}
-				onClick={this.onClick}
-			/>
-		</div>
-	}
+    return <div styleName='item'>
+      <Item
+        name={name}
+        value={value}
+        onClick={this.onClick}
+      />
+    </div>
+  }
 }
 ```
 
@@ -191,10 +191,10 @@ import css from 'react-css-modules'
 import styles from './styles.sss'
 
 function Item({ name, value }) {
-	return <div styleName='item'>
-		<div styleName='name'>{name}</div>
-		<div styleName='value'>{value}</div>
-	</div>
+  return <div styleName='item'>
+    <div styleName='name'>{name}</div>
+    <div styleName='value'>{value}</div>
+  </div>
 }
 
 export default pure(css(Item, styles))

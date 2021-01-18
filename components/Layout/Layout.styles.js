@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   * {
     box-sizing: border-box;
     margin: 0;
@@ -66,45 +66,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     clip: rect(0 0 0 0);
   }
 
+  .visible {
+    .nav.nav_industries {
+      .nav-item {
+        width: auto;
+      }
+    }
+
+    .nav-item_active .icon_ourProjects path:nth-of-type(2) {
+      fill: #5695ED;
+    }
+  }
+
   ${desktop.all} {
     .main {
       padding-top: 4rem;
-    }
-  }
-
-  ${desktop.l} {
-    .footer {
-      margin-top: 149px;
-    }
-  }
-
-  ${desktop.m} {
-    body {
-      min-width: 1328px;
-    }
-
-    .grid-container {
-      grid-template-columns: repeat(12, 96px);
-      grid-gap: 0 16px;
-    }
-
-    .footer {
-      margin-top: 267px;
-    }
-  }
-
-  ${desktop.s} {
-    body {
-      min-width: 1232px;
-    }
-
-    .grid-container {
-      grid-template-columns: repeat(12, 88px);
-      grid-gap: 0 16px;
-    }
-
-    .footer {
-      margin-top: 267px;
     }
   }
 
@@ -146,6 +122,181 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  ${above.mobile} {
+    .visible {
+      .nav.nav_industries {
+        ul {
+          width: 100%;
+          max-width: 1360px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 0.5fr 0.5fr 1fr;
+          grid-row-gap: ${calcRem(32)};
+          align-content: center;
+        }
+
+        .nav-item {
+          padding: 0;
+        }
+
+        .nav-item_mediaAndMarketing {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        .nav-item_eCommerce {
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        .nav-item_information {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        .nav-item_fintech {
+          grid-column: 2;
+          grid-row: 2;
+        }
+
+        .nav-item_ourProjects {
+          grid-column: 3;
+          grid-row: 1 / span 2;
+
+          .link {
+            padding-left: ${calcRem(111)};
+            transform: translateY(${calcRem(7)});
+          }
+
+          .icon {
+            top: ${calcRem(19)};
+            left: ${calcRem(64)};
+            width: ${calcRem(24)};
+            height: ${calcRem(24)};
+          }
+
+          .title {
+            font-weight: 900;
+            font-size: ${calcRem(24)};
+            line-height: ${calcRem(32)};
+          }
+
+          .description {
+            font-size: ${calcRem(14)};
+            line-height: ${calcRem(24)};
+          }
+        }
+
+        .link {
+          padding-left: ${calcRem(68)};
+        }
+
+        .icon {
+          top: ${calcRem(3)};
+          left: ${calcRem(34)};
+          width: ${calcRem(18)};
+          height: ${calcRem(18)};
+        }
+
+        .title {
+          font-weight: 900;
+          font-size: ${calcRem(16)};
+          line-height: ${calcRem(24)};
+        }
+      }
+    }
+  }
+
+  ${desktop.l} {
+    .footer {
+      margin-top: 149px;
+    }
+
+    .visible {
+      .nav.nav_industries {
+        ul {
+          grid-template-columns: min-content min-content 1fr;
+          grid-column-gap: 32px;
+          padding-left: 5.5%;
+        }
+
+        .nav-item_ourProjects {
+          margin-left: 21.5%;
+        }
+
+        .link {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  ${desktop.m} {
+    body {
+      min-width: 1328px;
+    }
+
+    .grid-container {
+      grid-template-columns: repeat(12, 96px);
+      grid-gap: 0 16px;
+    }
+
+    .footer {
+      margin-top: 267px;
+    }
+
+    .visible {
+      .nav.nav_industries {
+        ul {
+          grid-template-columns: min-content min-content 1fr;
+          grid-column-gap: 12px;
+          padding-left: 5.5%;
+        }
+
+        .nav-item_ourProjects {
+          margin-left: 25%;
+        }
+
+        .link {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  ${desktop.s} {
+    body {
+      min-width: 1232px;
+    }
+
+    .grid-container {
+      grid-template-columns: repeat(12, 88px);
+      grid-gap: 0 16px;
+    }
+
+    .footer {
+      margin-top: 267px;
+    }
+
+    .visible {
+      .nav.nav_industries {
+        ul {
+          grid-template-columns: min-content min-content 1fr;
+          grid-column-gap: 12px;
+          padding-left: 53px;
+        }
+
+        .nav-item_ourProjects {
+          margin-left: 22%;
+        }
+
+        .link {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
   ${mobile.all} {
     html {
       font-size: 4.44444444444444444444444444444444vw;
@@ -167,6 +318,47 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .footer {
       margin-top: ${calcRem(70)};
+    }
+
+    .visible {
+      .nav.nav_industries {
+        padding-bottom: ${calcRem(32)};
+
+        ul {
+          flex-direction: column-reverse;
+        }
+
+        .nav-item:not(:last-of-type) {
+          margin-bottom: ${calcRem(25)};
+        }
+
+        .nav-item_ourProjects {
+          order: -1;
+        }
+
+        .link {
+          flex-wrap: wrap;
+        }
+
+        .icon {
+          width: ${calcRem(24)};
+          height: ${calcRem(24)};
+        }
+
+        .title {
+          width: calc(100% - ${calcRem(52)});
+        }
+
+        .description {
+          width: 100%;
+          margin-top: ${calcRem(8)};
+          padding-left: ${calcRem(47)};
+          padding-right: ${calcRem(8)};
+          font-size: ${calcRem(14)};
+          line-height: ${calcRem(24)};
+          font-weight: normal;
+        }
+      }
     }
   }
 

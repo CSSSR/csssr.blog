@@ -137,7 +137,7 @@ pipeline {
 
       steps {
         script {
-          withCredentials(browserCredentials) {
+          withCredentials(browserCredentials + [usernamePassword(credentialsId: "browserstack", usernameVariable: "BROWSERSTACK_USER", passwordVariable: "BROWSERSTACK_KEY")]) {
             sh """
               pwd
               cd e2e-tests

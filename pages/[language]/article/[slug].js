@@ -1,9 +1,25 @@
 import Layout from '../../../components/Layout'
-import { getPostBySlugAndLanguage, getPostsByLanguage } from '../../../lib/api'
 import Post from '../../../components/Post'
+import { getPostBySlugAndLanguage, getPostsByLanguage } from '../../../lib/api'
 import languages from '../../../utils/languages'
+import getBenchmarkEmailListId from '../../../utils/getBenchmarkEmailListId'
+import postsOrderEn from '../../../postsOrderEn.json'
+import postsOrderRu from '../../../postsOrderRu.json'
 
-export default function PostPage({ post, /* morePosts, */ language }) {
+const postsOrder = {
+  en: postsOrderEn,
+  ru: postsOrderRu,
+}
+
+// const postsOrder = postsOrderRu.flat().filter((slug) => slug !== 'news512')
+
+export default function PostPage({
+  posts,
+  post,
+  language,
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
+}) {
   // const router = useRouter()
   // TODO: добавить ErrorPage из csssr.com
   // if (!router.isFallback && !post?.slug) {
@@ -16,14 +32,46 @@ export default function PostPage({ post, /* morePosts, */ language }) {
         не думаю что нам это пока нужно, но оставлю как пример создания фолбека
         router.isFallback ? <PostTitle>Loading…</PostTitle> : <Post post={post} />
       */}
-      <Post language={language} post={post} />
+      <Post
+        language={language}
+        posts={posts}
+        post={post}
+        BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+        BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+      />
     </Layout>
   )
 }
 
 export async function getStaticProps({ params }) {
-  const language = params.language
-  const post = await getPostBySlugAndLanguage(params.slug, language, [
+  const { language, slug } = params
+
+  const postsByLanguage = await getPostsByLanguage([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImageAlt',
+    'tag',
+    'images',
+  ])
+
+  const postsBySlug = postsByLanguage[language].reduce((acc, post) => {
+    acc[post.slug] = post
+    return acc
+  }, {})
+
+  const posts = postsOrder[language]
+    .flat()
+    .filter((post) => {
+      return post !== slug && post !== 'news512'
+    })
+    .slice(0, 2)
+    .map((post) => {
+      return postsBySlug[post]
+    })
+
+  const post = await getPostBySlugAndLanguage(slug, language, [
     'title',
     'date',
     'slug',
@@ -36,8 +84,11 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      post,
       language,
+      posts,
+      post,
+      BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
+      BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
     },
   }
 }
