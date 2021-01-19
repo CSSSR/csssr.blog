@@ -53,6 +53,8 @@ jobs:
           environment: production
           values: |
             ingress:
+              cache: everything
+              cacheMaxAge: 3600
               annotations:
                 nginx.ingress.kubernetes.io/server-snippet: |
                   rewrite ^/$ /en redirect;
