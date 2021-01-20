@@ -31,7 +31,7 @@ _Если код режет глаза, постарайтесь отнести�
 ```html
 <div class="form-group">
 	<select ng-model="request.volary_id" name="volary" class="form-control">
-		<option ng-repeat="volary in volaries" ng-selected="volary.volary_id == initVolary()" value="{{ volary.volary_id }}">{{ volary.text }}</option>
+		<option ng-repeat="volary in volaries" ng-selected="volary.volary_id == initVolary()" value="">{{ volary.text }}</option>
 	</select>
 </div>
 <div class="form-group">
@@ -102,8 +102,8 @@ _Часто мы забываем о том, какую большую роль 
 	<select ng-model="request.volary" ng-options="volary as volary.text for volary in volaries" class="form-control"></select>
 </div>
 
-<div ng-if="request.volary" class="form-group"> <!-- Отображать, если вольер уже выбран -->
-	<select ng-model="request.cage" ng-repeat="volary in volaries" ng-show="request.volary == volary" ng-options="cage as cage.text for cage in volary.cages" class="form-control"></select> <!--Здесь мы проходим по всем вольерам и отображаем клетки из того вольера, который был выбран ранее-->
+<div ng-if="request.volary" class="form-group"> // Отображать, если вольер уже выбран
+	<select ng-model="request.cage" ng-repeat="volary in volaries" ng-show="request.volary == volary" ng-options="cage as cage.text for cage in volary.cages" class="form-control"></select> // Здесь мы проходим по всем вольерам и отображаем клетки из того вольера, который был выбран ранее
 </div>
 ```
 

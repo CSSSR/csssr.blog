@@ -31,7 +31,7 @@ const Body = ({
   BENCHMARK_EMAIL_LIST_ID,
 }) => {
   const postType = type
-
+  
   return compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
