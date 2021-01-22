@@ -31,12 +31,12 @@ _Если код режет глаза, постарайтесь отнести�
 ```html
 <div class="form-group">
 	<select ng-model="request.volary_id" name="volary" class="form-control">
-		<option ng-repeat="volary in volaries" ng-selected="volary.volary_id == initVolary()" value="">{{ volary.text }}</option>
+		<option ng-repeat="volary in volaries" ng-selected="volary.volary_id == initVolary()" value=""></option>
 	</select>
 </div>
 <div class="form-group">
 	<select ng-model="request.cage_id" name="cage" class="form-control">
-		<option ng-repeat="cage in cages | filter:{ volary_id : request.volary_id }" ng-selected="cage.cage_id == initCage()" value="{{ cage.cage_id }}">{{ cage.text }}</option>
+		<option ng-repeat="cage in cages | filter:{ volary_id : request.volary_id }" ng-selected="cage.cage_id == initCage()" value=""></option>
 	</select>
 </div>
 ```
