@@ -29,13 +29,13 @@ const News = ({
     <>
       <Head>
         {/* TODO: Указать правильные мета данные */}
-        <title>Новости 512 | CSSS</title>
+        <title>Новости 512 | CSSSR</title>
         <meta
           name="description"
           content="Новости 512 — короткометражные выпуски новостей о технологиях и индустрии веба."
         />
 
-        <meta property="og:title" content="Новости 512 | CSSS" />
+        <meta property="og:title" content="Новости 512 | CSSSR" />
         <meta
           property="og:description"
           content="Новости 512 — короткометражные выпуски новостей о технологиях и индустрии веба."
