@@ -132,7 +132,7 @@ _Читайте документацию и Stackoverflow внимательно
 </div>
 
 <div ng-if="request.volary" class="form-group">
-  <select ng-model="request.cage" ng-options="select cage.cage_id as cage.text for cage in volary.cages.data track by cage.cage_id" class="form-control"></select><!--track by указывает на значение, которое должно быть в value-->
+  <select ng-model="request.cage" ng-options="select cage.cage_id as cage.text for cage in volary.cages.data track by cage.cage_id" class="form-control"></select> // track by указывает на значение, которое должно быть в value
 </div>
 ```
 
