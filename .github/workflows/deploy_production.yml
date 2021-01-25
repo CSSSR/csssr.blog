@@ -52,6 +52,8 @@ jobs:
           host: blog.csssr.com
           environment: production
           values: |
+            cache: everything
+            cacheMaxAge: 3600
             ingress:
               annotations:
                 nginx.ingress.kubernetes.io/server-snippet: |
