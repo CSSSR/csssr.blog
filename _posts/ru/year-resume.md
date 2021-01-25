@@ -110,7 +110,7 @@ Npm умер! Да здравствует Yarn.
 
 Заинтересованы? [Го к нам, уже создали](http://csssr.ru/jobs#).
 
-#### [#react-learning-club](https://www.youtube.com/user/John1744444/videos)
+#### [#react-learning-club](https://www.youtube.com/playlist?list=PLaEXvLxQXu_0cCfWRm9x61Jf8wG8C1-Ho)
 
 <Img imageName='rlc' alt='rlc'>
 
