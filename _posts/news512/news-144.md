@@ -1,6 +1,6 @@
 ---
 title: 'В этом выпуске: React Context vs Redux, Microsoft Edge 88, оптимизация SmashingMagazine, сборник ресурсов для фронтенд-разработчиков и VS Code Day 2021.'
-soundcloudLink: 'https://soundcloud.com/csssr/chrome-88-meteorjs-20-deno-17-css-clip-path-300-voprosov-po-react-js-rising-stars-2020'
+soundcloudLink: 'https://soundcloud.com/csssr/edge-88-react-context-vs-redux-frontend-resursy-zapis-skriptov-puppeteer-vs-code-day-2021'
 date: '2021-01-26T00:00:00.000Z'
 episodeNumber: 144
 tag: 'news'
