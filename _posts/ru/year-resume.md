@@ -6,7 +6,7 @@ date: '2016-12-26T00:00:00.000Z'
 tag: 'web-development'
 ---
 
-**В**сем привет! Меня зовут Максим, и я работаю верстальщиком в CSSSR.
+<p style="min-height: 4.375rem;">**В**сем привет! Меня зовут Максим, и я работаю верстальщиком в CSSSR.</p>
 
 Сегодня мы решили вспомнить события и людей уходящего года, поделиться, чем он нас порадовал или огорчил, какие ожидания оправдал, а какие — нет. Одним словом, сегодня подведём итоги 2016-го.
 
@@ -110,7 +110,7 @@ Npm умер! Да здравствует Yarn.
 
 Заинтересованы? [Го к нам, уже создали](http://csssr.ru/jobs#).
 
-#### [#react-learning-club](https://www.youtube.com/user/John1744444/videos)
+#### [#react-learning-club](https://www.youtube.com/playlist?list=PLaEXvLxQXu_0cCfWRm9x61Jf8wG8C1-Ho)
 
 <Img imageName='rlc' alt='rlc'>
 
