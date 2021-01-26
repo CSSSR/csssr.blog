@@ -16,7 +16,7 @@
     "@csssr/e2e-tools": "^1.4.1",
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.10",
-    "@sentry/browser": "^5.27.3",
+    "@sentry/browser": "^6.0.2",
     "babel-jest": "^26.6.3",
     "babel-plugin-prismjs": "^2.0.1",
     "classnames": "^2.2.6",
