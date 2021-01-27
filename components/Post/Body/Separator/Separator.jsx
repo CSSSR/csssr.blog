@@ -1,7 +1,7 @@
 import React from 'react'
 import { string, oneOf, arrayOf, object } from 'prop-types'
 import cn from 'classnames'
-import { css, Global } from '@emotion/core'
+import { css, Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import styles from './Separator.styles'
 import { backgroundCss } from '@csssr/csssr.images/dist/utils'

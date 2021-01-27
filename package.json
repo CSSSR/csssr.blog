@@ -11,17 +11,16 @@
     "article": "node scripts/articleTemplate/scaffoldNewArticle.js"
   },
   "dependencies": {
-    "@csssr/core-design": "^5.13.3",
+    "@csssr/core-design": "^6.0.2",
     "@csssr/csssr.images": "^3.1.1",
     "@csssr/e2e-tools": "^1.4.1",
-    "@emotion/core": "^10.1.1",
-    "@emotion/styled": "^10.0.10",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "@sentry/browser": "^6.0.2",
     "babel-jest": "^26.6.3",
     "babel-plugin-prismjs": "^2.0.1",
     "classnames": "^2.2.6",
     "date-fns": "2.16.1",
-    "emotion-theming": "^10.0.27",
     "final-form": "^4.20.1",
     "gray-matter": "4.0.2",
     "jest": "^26.6.3",
@@ -41,6 +40,7 @@
   },
   "devDependencies": {
     "@csssr/eslint-config-core": "^1.1.0",
+    "@emotion/eslint-plugin": "^11.0.0",
     "@svgr/webpack": "^5.5.0",
     "dotenv": "8.2.0",
     "eslint": "^7.18.0",

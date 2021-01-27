@@ -1,5 +1,5 @@
 import React from 'react'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import { string, arrayOf, object } from 'prop-types'

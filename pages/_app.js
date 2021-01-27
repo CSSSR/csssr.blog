@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ThemeProvider } from 'emotion-theming'
+import { ThemeProvider } from '@emotion/react'
 import { Root, defaultTheme } from '@csssr/core-design'
 import Router from 'next/router'
 import Prism from 'prismjs'

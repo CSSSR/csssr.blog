@@ -1,4 +1,4 @@
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import Meta from '../Meta'
 import styles from './Layout.styles'
 import { Header, Footer } from '@csssr/core-design'
