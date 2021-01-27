@@ -311,7 +311,7 @@ const dynamic = ({ breakpoints: { mobile }, size, side }) => {
   `
 }
 
-export default props => {
+const StyledPostCard = props => {
   const { theme: { breakpoints, colors }, size, side } = props
 
   return css`
@@ -319,3 +319,5 @@ export default props => {
     ${dynamic({ breakpoints, size, side})}
   `
 }
+
+export default StyledPostCard

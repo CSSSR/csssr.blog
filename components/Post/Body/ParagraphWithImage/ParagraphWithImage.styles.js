@@ -161,7 +161,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 `
 
-export default (props) => {
+const StyledParagraphWithImage = props => {
   const {
     theme: { breakpoints},
   } = props
@@ -170,3 +170,5 @@ export default (props) => {
     ${base({ breakpoints })}
   `
 }
+
+export default StyledParagraphWithImage

@@ -86,10 +86,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 `
 
-export default props => {
+const StyledPagination = props => {
   const { theme: { breakpoints, colors } } = props
 
   return css`
     ${base({ breakpoints, colors })}
   `
 }
+
+export default StyledPagination

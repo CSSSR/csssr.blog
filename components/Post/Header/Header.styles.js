@@ -239,7 +239,7 @@ const dynamic = (language) =>  css`
   }
 `
 
-export default props => {
+const StyledHeader = props => {
   const { theme: { breakpoints }, language } = props
 
   return css`
@@ -247,3 +247,5 @@ export default props => {
     ${dynamic(language)}
   `
 }
+
+export default StyledHeader

@@ -221,7 +221,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   }
 `
 
-export default (props) => {
+const StyledTable = props => {
   const {
     theme: { breakpoints },
   } = props
@@ -230,3 +230,5 @@ export default (props) => {
     ${base({ breakpoints })}
   `
 }
+
+export default StyledTable

@@ -323,7 +323,7 @@ const dynamic = (language) =>  css`
   }
 `
 
-export default props => {
+const StyledBody = props => {
   const { theme: { breakpoints }, language } = props
 
   return css`
@@ -331,3 +331,5 @@ export default props => {
     ${dynamic(language)}
   `
 }
+
+export default StyledBody

@@ -196,10 +196,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 `
 
-export default props => {
+const StyledNewsList = props => {
   const { theme: { breakpoints } } = props
 
   return css`
     ${base({ breakpoints })}
   `
 }
+
+export default StyledNewsList

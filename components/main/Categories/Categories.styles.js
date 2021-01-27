@@ -85,10 +85,12 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
-export default props => {
+const StyledCategories = props => {
   const { breakpoints } = props.theme
 
   return css`
     ${base({ breakpoints })}
   `
 }
+
+export default StyledCategories

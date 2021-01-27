@@ -8,11 +8,12 @@ const base = ({ breakpoints: { desktop }}) => css`
     width: 1328px;
   }
 `
-
-export default props => {
+const StyledGrid = props => {
   const { theme: { breakpoints } } = props
 
   return css`
     ${base({ breakpoints })}
   `
 }
+
+export default StyledGrid

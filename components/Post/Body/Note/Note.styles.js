@@ -80,10 +80,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 `
 
-export default props => {
+const StyledNote = props => {
   const { theme: { breakpoints }} = props
 
   return css`
     ${base({ breakpoints })}
   `
 }
+
+export default StyledNote
