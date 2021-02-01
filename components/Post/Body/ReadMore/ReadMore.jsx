@@ -8,7 +8,7 @@ const ReadMore = ({ className, posts }) => {
   return (
     <div className={className}>
       <Heading.H2 type="regular" className="title">
-        Читайте так же
+        Читайте также
       </Heading.H2>
       <ul className="morePosts">
         {posts.reduce((memo, post) => {
