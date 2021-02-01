@@ -97,13 +97,14 @@ export const menu = {
       ],
     },
     {
-      id: 'industries',
-      title: 'Industries',
+      id: 'portfolio',
+      title: 'Portfolio',
+      listTitle: 'Clients by industry',
       links: [
         {
           id: 'mediaAndMarketing',
           icon: Message,
-          title: 'Media & Marketing',
+          title: 'Media and marketing',
           href: 'https://csssr.com/en/industry/media-and-marketing',
         },
         {
@@ -115,7 +116,7 @@ export const menu = {
         {
           id: 'information',
           icon: Computer,
-          title: 'Information Technology',
+          title: 'IT industry',
           href: 'https://csssr.com/en/industry/information-technology',
         },
         {
@@ -127,9 +128,8 @@ export const menu = {
         {
           id: 'ourProjects',
           icon: OurProjects,
-          title: 'Our Projects',
-          description:
-            'We&nbsp;are proud of&nbsp;our clients list and<br/> glad to&nbsp;share some of&nbsp;our cases.',
+          title: 'Our projects',
+          description: 'Take a look at solutions we have developed for some of our clients',
           href: 'https://csssr.com/en/projects',
         },
       ],
@@ -208,13 +208,14 @@ export const menu = {
       ],
     },
     {
-      id: 'industries',
-      title: 'Индустрии',
+      id: 'portfolio',
+      title: 'Портфолио',
+      listTitle: 'Делаем проекты для',
       links: [
         {
           id: 'mediaAndMarketing',
           icon: Message,
-          title: 'Медиа и&nbsp;маркетинг',
+          title: 'Медиа и&nbsp;маркетинга',
           href: 'https://csssr.com/ru/industry/media-and-marketing',
         },
         {
@@ -226,21 +227,20 @@ export const menu = {
         {
           id: 'information',
           icon: Computer,
-          title: 'Информационные технологии',
+          title: 'IT-отрасли',
           href: 'https://csssr.com/ru/industry/information-technology',
         },
         {
           id: 'fintech',
           icon: PieChart,
-          title: 'Финтех',
+          title: 'Финтеха',
           href: 'https://csssr.com/ru/industry/fintech',
         },
         {
           id: 'ourProjects',
           icon: OurProjects,
           title: 'Наши проекты',
-          description:
-            'Мы&nbsp;гордимся нашим списком клиентов и&nbsp;рады<br/> поделиться некоторыми проектами.',
+          description: 'Посмотрите на решения для некоторых из наших клиентов',
           href: 'https://csssr.com/ru/projects',
         },
       ],
