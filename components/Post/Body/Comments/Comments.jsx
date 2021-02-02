@@ -24,7 +24,28 @@ const removeScript = (id, parentElement) => {
   }
 }
 
+const cleanComments = () => {
+  const commentsContainer = window.document.getElementById('commento')
+
+  if (commentsContainer) {
+    while (commentsContainer.firstChild) {
+      commentsContainer.removeChild(commentsContainer.lastChild)
+    }
+  }
+}
+
 const Comments = ({ id, className, language }) => {
+  //This part allows comments in development mode
+  useEffect(() => {
+    window.parent = {
+      location: {
+        host: "https://blog.csssr.com/",
+        pathname: `${language}/article/${id}`
+      },
+    };
+  }, [language, id]);
+
+
   useEffect(() => {
     if (!window) {
       return
@@ -36,11 +57,14 @@ const Comments = ({ id, className, language }) => {
       insertScript('https://cdn.commento.io/js/commento.js', 'commento-script', document.body)
     }
 
-    return () => removeScript('commento-script', document.body)
+    return () =>  {
+      removeScript('commento-script', document.body)
+      cleanComments()
+    }
   }, [id])
 
   return (
-    <div className={className}>
+    <div id="commento-container" className={className}>
       <Heading.H3 type="regular" size="l" className="title">
         {language === 'ru' ? 'Комментарии' : 'Comments'}
       </Heading.H3>
