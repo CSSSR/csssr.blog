@@ -39,12 +39,11 @@ const Comments = ({ id, className, language }) => {
   useEffect(() => {
     window.parent = {
       location: {
-        host: "https://blog.csssr.com/",
-        pathname: `${language}/article/${id}`
+        host: 'https://blog.csssr.com/',
+        pathname: `${language}/article/${id}`,
       },
-    };
-  }, [language, id]);
-
+    }
+  }, [language, id])
 
   useEffect(() => {
     if (!window) {
@@ -57,14 +56,14 @@ const Comments = ({ id, className, language }) => {
       insertScript('https://cdn.commento.io/js/commento.js', 'commento-script', document.body)
     }
 
-    return () =>  {
+    return () => {
       removeScript('commento-script', document.body)
       cleanComments()
     }
   }, [id])
 
   return (
-    <div id="commento-container" className={className}>
+    <div className={className}>
       <Heading.H3 type="regular" size="l" className="title">
         {language === 'ru' ? 'Комментарии' : 'Comments'}
       </Heading.H3>
