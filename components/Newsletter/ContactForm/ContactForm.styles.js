@@ -103,6 +103,11 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     color: ${colors.primary.origin};
   }
 
+  svg.checkmark path,
+  svg.cross path {
+    stroke-width: 4;
+  }
+
   ${tablet.all} {
     & {
       &.post {
