@@ -36,6 +36,7 @@ const cleanComments = () => {
 
 const Comments = ({ id, className, language }) => {
   //This part allows comments in development mode
+  //Read more about this hack: https://remysharp.com/2019/06/11/ejecting-disqus#testing-commento-offline--adjusting-urls
   useEffect(() => {
     window.parent = {
       location: {
