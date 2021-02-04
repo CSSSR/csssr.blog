@@ -133,7 +133,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${desktop.all} {
-    {
+    & {
       margin-top: 75px;
 
       &:nth-of-type(1),
