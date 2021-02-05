@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ colors }) => css`
@@ -69,10 +69,12 @@ const base = ({ colors }) => css`
   }
 `
 
-export default (props) => {
+const StyledTestField = props => {
   const { colors } = props.theme
 
   return css`
     ${base({colors})}
   `
 }
+
+export default StyledTestField

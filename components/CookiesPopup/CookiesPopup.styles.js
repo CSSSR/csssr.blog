@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../utils/style/calcRem'
 
 const base = ({ media }) => css`
@@ -97,11 +97,12 @@ const base = ({ media }) => css`
     }
   }
 `
-
-export default props => {
+const StyledCookiesPopup = props => {
   const media = props.theme.media
 
   return css`
     ${base({media})}
   `
 }
+
+export default StyledCookiesPopup

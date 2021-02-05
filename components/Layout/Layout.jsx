@@ -1,4 +1,4 @@
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import Meta from '../Meta'
 import styles from './Layout.styles'
 import { Header, Footer } from '@csssr/core-design'
@@ -27,6 +27,7 @@ export default function Layout({ children, language, type }) {
         logo={{
           testId: 'Header:link.logo',
           href: `https://csssr.com/${language}`,
+          type: 'default',
         }}
       />
       <main id="main" className="main">

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
