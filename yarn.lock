@@ -1292,10 +1292,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@csssr/core-design@^6.0.2":
-  version "6.0.2"
-  resolved "https://npm.pkg.github.com/download/@csssr/core-design/6.0.2/47ffab9ed80247f0b27bb4aa46bbdbfb9be8213e89b285ab758a06d1651bbad7#c152ad99be5a9f58ba42101912600e00c1826540"
-  integrity sha512-u7Q3WKewLnGjY/MNgnMRCJ01Tg8eQYkG3fFqax0RZLQyPnYod8wKmrWq1MBkgQ8wBhJxtDAQp6bCjCw46CIYdg==
+"@csssr/core-design@^6.1.0":
+  version "6.1.0"
+  resolved "https://npm.pkg.github.com/download/@csssr/core-design/6.1.0/c09772784fef00625604bdd6c8d64fc9d794ec0089ce101516263dd3f12ad994#23f08c38d91844dd23e0790c528a83444ffdc7cf"
+  integrity sha512-2sLl/xwSS6jtSX/j9AQXW3HsNxykowM0Zu23qaFj699splFBGXLK2NyGSNnlGez1pDC8s/20a+CbQUZgvkn+Kw==
   dependencies:
     classnames "^2.2.6"
     color "^3.1.3"
