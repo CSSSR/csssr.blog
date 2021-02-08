@@ -27,6 +27,7 @@ export default function Layout({ children, language, type }) {
         logo={{
           testId: 'Header:link.logo',
           href: `https://csssr.com/${language}`,
+          type: 'default',
         }}
       />
       <main id="main" className="main">
