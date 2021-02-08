@@ -4,21 +4,14 @@ import styles from './Layout.styles'
 import { Header, Footer } from '@csssr/core-design'
 import CookiesPopup from '../CookiesPopup'
 
-import {
-  nav,
-  actionPhrase,
-  cookiesPolicyLink,
-  privacyPolicyLink,
-  addresses,
-} from '../../data/footerLinks'
+import { actionPhrase, addresses } from '../../data/footerLinks'
 
 const presetByLanguage = {
   en: 'defaultEn',
   ru: 'defaultRu',
 }
-export default function Layout({ children, language, type }) {
-  const languageLink = language === 'ru' ? 'en' : 'ru'
 
+export default function Layout({ children, language, type }) {
   return (
     <>
       <Meta type={type} />
@@ -34,16 +27,15 @@ export default function Layout({ children, language, type }) {
       <main id="main" className="main">
         {children}
       </main>
+
       <Footer
         className="footer"
-        nav={nav[language]}
-        languageLink={{ href: `/${languageLink}`, text: languageLink }}
+        preset={presetByLanguage[language]}
         email="launch@csssr.com"
         actionPhrase={actionPhrase[language]}
-        cookiesPolicyLink={cookiesPolicyLink[language]}
-        privacyPolicyLink={language === 'en' && privacyPolicyLink[language]}
         addresses={addresses[language]}
       />
+
       <CookiesPopup language={language} />
 
       <Global styles={styles} />
