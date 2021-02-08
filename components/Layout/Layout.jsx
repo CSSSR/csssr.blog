@@ -11,8 +11,11 @@ import {
   privacyPolicyLink,
   addresses,
 } from '../../data/footerLinks'
-import { links, menu } from '../../data/headerLinks'
 
+const presetByLanguage = {
+  en: 'defaultEn',
+  ru: 'defaultRu',
+}
 export default function Layout({ children, language, type }) {
   const languageLink = language === 'ru' ? 'en' : 'ru'
 
@@ -21,9 +24,7 @@ export default function Layout({ children, language, type }) {
       <Meta type={type} />
 
       <Header
-        actionButton={{ isVisible: false }}
-        links={links[language]}
-        menu={{ links: menu[language] }}
+        preset={presetByLanguage[language]}
         logo={{
           testId: 'Header:link.logo',
           href: `https://csssr.com/${language}`,
