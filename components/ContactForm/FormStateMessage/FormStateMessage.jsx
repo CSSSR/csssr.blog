@@ -18,11 +18,11 @@ class FormStateMessage extends PureComponent {
 
     if (status === 'success') {
       return {
-        message: 'Успех!',
+        message: 'Ура! Вы подписались на рассылку.',
       }
     } else if (status === 'fail') {
       return {
-        message: 'Ошибка',
+        message: 'Упс, что-то пошло не так. Попробуйте ещё раз.',
       }
     }
 

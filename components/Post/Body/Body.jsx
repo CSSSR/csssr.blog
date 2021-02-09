@@ -6,7 +6,7 @@ import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, ListItem } from '@csssr/core-design'
 import styles from './Body.styles'
-import Newsletter from '../../Newsletter'
+import PostNewsletter from '../../PostNewsletter'
 import Separator from './Separator'
 import Comments from './Comments'
 import ParagraphWithImage from './ParagraphWithImage'
@@ -41,7 +41,7 @@ const Body = ({
 
             {language === 'ru' && postType !== 'news' && (
               <>
-                <Newsletter
+                <PostNewsletter
                   kind="post"
                   BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
                   BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
