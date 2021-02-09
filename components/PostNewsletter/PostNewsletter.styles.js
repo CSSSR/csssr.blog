@@ -97,6 +97,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     &._fixed {
       position: relative;
       top: 0;
+      padding-top: 0;
     }
 
     .container {
