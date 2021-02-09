@@ -4,8 +4,6 @@ import styles from './Layout.styles'
 import { Header, Footer } from '@csssr/core-design'
 import CookiesPopup from '../CookiesPopup'
 
-import { actionPhrase, addresses } from '../../data/footerLinks'
-
 const presetByLanguage = {
   en: 'defaultEn',
   ru: 'defaultRu',
@@ -28,13 +26,7 @@ export default function Layout({ children, language, type }) {
         {children}
       </main>
 
-      <Footer
-        className="footer"
-        preset={presetByLanguage[language]}
-        email="launch@csssr.com"
-        actionPhrase={actionPhrase[language]}
-        addresses={addresses[language]}
-      />
+      <Footer className="footer" preset={presetByLanguage[language]} />
 
       <CookiesPopup language={language} />
 
