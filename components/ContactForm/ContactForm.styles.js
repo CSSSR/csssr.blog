@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import { calcRem } from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   & {
     position: relative;
     margin-top: ${calcRem(33)};

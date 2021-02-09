@@ -1,5 +1,4 @@
 import React from 'react'
-import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Newsletter.styles'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'

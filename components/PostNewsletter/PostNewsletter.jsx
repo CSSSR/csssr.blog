@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './PostNewsletter.styles'
