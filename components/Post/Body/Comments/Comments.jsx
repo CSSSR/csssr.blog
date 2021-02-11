@@ -24,7 +24,28 @@ const removeScript = (id, parentElement) => {
   }
 }
 
+const cleanComments = () => {
+  const commentsContainer = window.document.getElementById('commento')
+
+  if (commentsContainer) {
+    while (commentsContainer.firstChild) {
+      commentsContainer.removeChild(commentsContainer.lastChild)
+    }
+  }
+}
+
 const Comments = ({ id, className, language }) => {
+  //This part allows comments in development mode
+  //Read more about this hack: https://remysharp.com/2019/06/11/ejecting-disqus#testing-commento-offline--adjusting-urls
+  useEffect(() => {
+    window.parent = {
+      location: {
+        host: 'https://blog.csssr.com/',
+        pathname: `${language}/article/${id}`,
+      },
+    }
+  }, [language, id])
+
   useEffect(() => {
     if (!window) {
       return
@@ -36,7 +57,10 @@ const Comments = ({ id, className, language }) => {
       insertScript('https://cdn.commento.io/js/commento.js', 'commento-script', document.body)
     }
 
-    return () => removeScript('commento-script', document.body)
+    return () => {
+      removeScript('commento-script', document.body)
+      cleanComments()
+    }
   }, [id])
 
   return (
