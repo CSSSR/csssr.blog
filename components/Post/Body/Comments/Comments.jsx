@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import { Heading } from '@csssr/core-design'
-import styled from '@emotion/styled'
 import { string } from 'prop-types'
-
-import styles from './Comments.styled'
+import styled from '@emotion/styled'
+import styles, { backgroundImagesStyles } from './Comments.styled'
+import { Global } from '@emotion/react'
+import { Heading } from '@csssr/core-design'
 
 const insertScript = (src, id, parentElement) => {
   const script = window.document.createElement('script')
@@ -32,6 +32,12 @@ const cleanComments = () => {
       commentsContainer.removeChild(commentsContainer.lastChild)
     }
   }
+}
+
+let totalComments = 1
+
+const getCommentsLength = () => {
+  totalComments = window.document.querySelectorAll('.commento-header').length
 }
 
 const Comments = ({ id, className, language }) => {
@@ -63,13 +69,25 @@ const Comments = ({ id, className, language }) => {
     }
   }, [id])
 
+  const clickHandler = (e) => {
+    const target = e.target
+
+    if (target.className === 'commento-button commento-submit-button') {
+      getCommentsLength()
+    }
+  }
+
   return (
     <div className={className}>
-      <Heading.H3 type="regular" size="l" className="title">
-        {language === 'ru' ? 'Комментарии' : 'Comments'}
-      </Heading.H3>
+      <div style={{ display: 'flex' }}>
+        <Heading.H3 type="regular" size="l" className="title">
+          {language === 'ru' ? 'Комментарии' : 'Comments'}
+        </Heading.H3>
+        <p style={{ fontSize: '40px' }}>{totalComments}</p>
+      </div>
 
-      <div id="commento" />
+      <div id="commento" onClick={clickHandler} />
+      <Global styles={backgroundImagesStyles} />
     </div>
   )
 }
