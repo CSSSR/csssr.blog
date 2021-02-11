@@ -15,6 +15,26 @@ const base = ({ breakpoints: { mobile }}) => css`
     }
   }
 
+  span.message {
+    display: inline;
+    margin-right: ${calcRem(2)};
+    margin-left: 0 !important;
+  }
+
+  .reset-button {
+    display: inline;
+    margin-left: ${calcRem(1)} !important;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background: none;
+    color: #0076ff;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   ${mobile.all} {
     & {
       margin-top: ${calcRem(10)};

@@ -136,6 +136,7 @@ const Component = ({
 
           <FormStateMessage
             status={status}
+            reset={reset}
             errorText={submitError}
             onTryAgain={handleTryToFillFormAgain}
             testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}

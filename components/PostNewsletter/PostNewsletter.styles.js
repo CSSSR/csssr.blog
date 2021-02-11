@@ -3,17 +3,25 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   & {
-    position: absolute;
+    position: fixed;
+    top: ${calcRem(164)};
     left: 0;
     width: ${calcRem(156)};
+    
     padding: ${calcRem(10)};
     background-color: white;
   }
 
-  &._fixed {
-    position: fixed;
-    top: ${calcRem(100)};
-    padding-top: 64px;
+  &.inTop {
+    position: absolute;
+    top: auto;
+    margin-top: ${calcRem(50)};
+  }
+
+  &.inBottom {
+    position: absolute;
+    top: auto;
+    bottom: ${calcRem(595)};
   }
 
   .container {
@@ -42,6 +50,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     & {
       transform: translateX(calc((100vw - 656px) / 4 - 78px));
     }
+
+    &.inBottom {
+      bottom: 470px;
+    }
   }
 
   ${desktop.m} {
@@ -57,10 +69,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   }
 
   ${desktop.all} {
-    & {
-      padding-top: 50px;
-    }
-
     .title {
       line-height: 22px;
     }
@@ -73,8 +81,11 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${tablet.all} {
     & {
-      padding-top: ${calcRem(50)};
       transform: translateX(calc((100vw - ${calcRem(624)}) / 4 - ${calcRem(78)}));
+    }
+
+    &.inBottom {
+      bottom: ${calcRem(466)};
     }
 
     .title {
@@ -88,9 +99,11 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       position: relative;
       top: 0;
       left: 0;
+      display: flex;
+      flex-direction: column;
       grid-column: 1 / span 6;
       width: 100%;
-      margin-top: ${calcRem(60)};
+      margin-top: ${calcRem(24)};
       padding: 0;
     }
 
@@ -98,11 +111,14 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       position: relative;
       top: 0;
       padding-top: 0;
+      margin-top: ${calcRem(24)};
     }
 
     .container {
+      order: 2;
       width: 100%;
       max-width: 100%;
+      margin-top: ${calcRem(60)};
     }
 
     .title {
@@ -116,12 +132,12 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
     .picture {
       position: absolute;
-      top: ${calcRem(12)};
+      top: ${calcRem(100)};
       right: 0;
       width: ${calcRem(73)};
       height: ${calcRem(50)};
     }
-  }
+   }
 `
 
 export default (props) => {

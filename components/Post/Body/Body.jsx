@@ -29,29 +29,41 @@ const Body = ({
   type,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
+  isTopPosition,
+  isBottomPosition,
+  setBottomPossition
 }) => {
   const postType = type
+  
 
   return compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
         return (
-          <Grid className={cn(`post-body ${className}`)}>
+          <Grid 
+            className={cn(`post-body ${className}`)}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
 
-            {language === 'ru' && postType !== 'news' && (
-              <>
-                <PostNewsletter
-                  kind="post"
-                  BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-                  BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-                />
+            <PostNewsletter
+              isTopPosition={isTopPosition}
+              isBottomPosition={isBottomPosition}
+              language={language}
+              postType={postType}
+              kind="post"
+              BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+              BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+            />
 
-                <ReadMore posts={posts} />
-              </>
+            {language === 'ru' && postType !== 'news' && ( 
+              <ReadMore posts={posts} />
             )}
 
-            <Comments id={slug} language={language} />
+            <Comments 
+              id={slug}
+              language={language}
+              postType={postType}
+              setBottomPossition={setBottomPossition} 
+            />
           </Grid>
         )
       }

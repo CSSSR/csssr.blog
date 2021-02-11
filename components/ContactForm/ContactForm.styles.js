@@ -277,10 +277,13 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
       .submit {
         margin-top: 0;
+
+        > button[status='pending'] {
+          height: ${calcRem(40)};
+        }
       }
 
       .submit > button {
-        height: ${calcRem(30)};
         margin-top: 0;
       }
 
@@ -309,6 +312,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
       .policy {
         order: 3;
+        display: block;
         margin-top: ${calcRem(8)};
         font-size: ${calcRem(10)};
         line-height: ${calcRem(14)};
@@ -374,7 +378,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
           color: ${colors.primary.origin}
         }
 
-        .submit > button {
+        .submit > button[status='pending'] {
           border-color: ${colors.primary.origin};
         }
       }
