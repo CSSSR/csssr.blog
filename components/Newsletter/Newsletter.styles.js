@@ -63,6 +63,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   ${desktop.all} {
     & {
       margin-top: ${calcRem(140)};
+      margin-bottom: 26px;
     }
   }
 
@@ -83,6 +84,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 
     & {
       margin-top: ${calcRem(100)};
+      margin-bottom: ${calcRem(20)};
 
       &.post {
         padding: ${calcRem(40)} 0 ${calcRem(40)};

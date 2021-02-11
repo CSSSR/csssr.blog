@@ -85,7 +85,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   ${desktop.all} {
     .main {
       padding-top: 4rem;
-      padding-bottom: 26px;
     }
   }
 
@@ -109,7 +108,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
 
     .main {
       padding-top: 4rem;
-      padding-bottom: ${calcRem(20)};
     }
   }
 
