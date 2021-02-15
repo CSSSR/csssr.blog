@@ -34,10 +34,6 @@ const base = ({ breakpoints: { mobile } }) => css`
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         color: #0254D8;
-
-        & svg path:last-of-type {
-          fill: currentColor;
-        }
       }
     }
   }

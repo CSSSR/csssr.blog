@@ -69,13 +69,12 @@ const Component = ({
     <div className={cn(`${className}`, { news: kind === 'news', post: kind === 'post' })}>
       <form onSubmit={handleSubmit}>
         <div className="wrapper">
-          <div
-            onFocus={() => setFocused(true)}
-          >
+          <div>
             <Field
               name="email"
               render={({ input, meta }) => (
                 <TextField
+                  onFocus={() => setFocused(true)}
                   input={input}
                   meta={meta}
                   label="e-mail"

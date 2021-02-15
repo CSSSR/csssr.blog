@@ -58,13 +58,13 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${desktop.m} {
     & {
-      transform: translateX(calc((100vw - 656px) / 4 - 78px));
+      transform: translateX(calc((100vw - 656px) / 4 - 78px)); // От ширины экрана отнимается ширина контента, делится на 4 (отступ в левой части от конента) и отнимаем половину ширины блока подписки
     }
   }
 
   ${desktop.s}{
     & {
-      transform: translateX(calc((100vw - 608px) / 4 - 78px));
+      transform: translateX(calc((100vw - 608px) / 4 - 78px)); // От ширины экрана отнимается ширина контента, делится на 4 (отступ в левой части от конента) и отнимаем половину ширины блока подписки
     }
   }
 
@@ -81,7 +81,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${tablet.all} {
     & {
-      transform: translateX(calc((100vw - ${calcRem(624)}) / 4 - ${calcRem(78)}));
+      transform: translateX(calc((100vw - ${calcRem(624)}) / 4 - ${calcRem(78)})); // От ширины экрана отнимается ширина контента, делится на 4 (отступ в левой части от конента) и отнимаем половину ширины блока подписки
     }
 
     &.onBottom {
