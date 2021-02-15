@@ -13,7 +13,7 @@ const Newsletter = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LI
 
   return (
     <div className={cn(`${className}`, { post: kind === 'post' })}>
-      <Grid as="section">
+      <Grid as="section" className="section">
         <div className="container">
           <Heading.H2 type="regular" className="title">
             {kind === 'post' ? titlePost : title}
