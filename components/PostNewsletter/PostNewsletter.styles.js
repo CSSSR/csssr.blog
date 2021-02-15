@@ -12,13 +12,13 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     background-color: white;
   }
 
-  &.inTop {
+  &.onTop {
     position: absolute;
     top: auto;
     margin-top: ${calcRem(50)};
   }
 
-  &.inBottom {
+  &.onBottom {
     position: absolute;
     top: auto;
     bottom: ${calcRem(595)};
@@ -48,10 +48,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${desktop.l} {
     & {
-      transform: translateX(calc((100vw - 656px) / 4 - 78px));
+      transform: translateX(calc((100vw - 656px) / 4 - 78px)); // От ширины экрана отнимается ширина контента, делится на 4 (отступ в левой части от конента) и отнимаем половину ширины блока подписки
     }
 
-    &.inBottom {
+    &.onBottom {
       bottom: 470px;
     }
   }
@@ -84,7 +84,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       transform: translateX(calc((100vw - ${calcRem(624)}) / 4 - ${calcRem(78)}));
     }
 
-    &.inBottom {
+    &.onBottom {
       bottom: ${calcRem(466)};
     }
 
@@ -96,7 +96,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${mobile.all} {
     & {
-      position: relative;
+      position: relative !important;
       top: 0;
       left: 0;
       display: flex;

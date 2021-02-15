@@ -102,15 +102,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 `
 
-export const postSubscribeStyles = css`
-  &.post {
-    position: absolute;
-    grid-column: 1 / span 3;
-    width: 136px;
-    background-color: red;
-  }
-`
-
 export default (props) => {
   const { breakpoints, colors } = props.theme
 

@@ -29,20 +29,20 @@ const Header = ({
 }) => {
 
   const headerRef = useRef()
-  const postType = type
 
   useEffect(() => {
     const callback = function ([entry]) {
-      entry.isIntersecting ? setTopPosition(true) : setTopPosition(false)
+      setTopPosition(entry.isIntersecting)
     }
 
-    const margin = (language === 'ru' && postType !== 'news') ? '200px 0px 0px 0px' : '-40px 0px 0px 0px'
-    const langThreshold = (language === 'ru' && postType !== 'news') ? '1' : '0'
+    const langAndPostCondition = (language === 'ru' && type !== 'news')
+    const rootMargin = langAndPostCondition ? '200px 0px 0px 0px' : '-40px 0px 0px 0px'
+    const threshold = langAndPostCondition ? '1' : '0'
 
     const options = {
       root: null,
-      rootMargin: margin,
-      threshold: langThreshold
+      rootMargin,
+      threshold
     }
 
     if ('IntersectionObserver' in window) {

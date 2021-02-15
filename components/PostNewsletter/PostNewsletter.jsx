@@ -13,8 +13,8 @@ const PostNewsletter = ({ className, language, kind, postType, isTopPosition, is
 
   return (
     <div className={cn(className, {
-      inBottom: isBottomPosition,
-      inTop: isTopPosition
+      onBottom: isBottomPosition,
+      onTop: isTopPosition
     })}
     >
       {(language === 'ru' && postType !== 'news') && (

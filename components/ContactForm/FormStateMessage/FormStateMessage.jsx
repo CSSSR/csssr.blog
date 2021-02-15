@@ -7,21 +7,19 @@ import { Text } from '@csssr/core-design'
 
 const FormStateMessage = ({ className, status, testId, onTryAgain }) => {
   
-  const getTextData = () => {
+  const getMessage = () => {
     if (status === 'success') {
-      return {
-        message: 'Ура! Вы подписались на рассылку.',
-      }
-    } else if (status === 'fail') {
-      return {
-        message: 'Упс, что-то пошло не так.',
-      }
+      return 'Ура! Вы подписались на рассылку.'
+    } 
+    
+    if (status === 'fail') {
+      return 'Упс, что-то пошло не так.'
     }
-
+    
     return null
   }
 
-  const textData = getTextData()
+  const textData = getMessage()
   const messageShown = status === 'success' || status === 'fail'
 
   return (
@@ -35,11 +33,11 @@ const FormStateMessage = ({ className, status, testId, onTryAgain }) => {
           data-testid={testId}
         >
           <span className="message">
-            {textData.message}
+            {getMessage()}
           </span> 
           {status === 'fail' && 
             <>
-              <span className="reset-button" onClick={() => onTryAgain()}>Попробуйте<br/> еще раз</span>
+              <span className="reset-button" onClick={onTryAgain}>Попробуйте<br/> еще раз</span>
               <span>.</span>
             </>
           }
@@ -51,7 +49,6 @@ const FormStateMessage = ({ className, status, testId, onTryAgain }) => {
 
 FormStateMessage.propTypes = {
   status: oneOf(['pending', 'submitting', 'success', 'fail']),
-  errorText: string,
   onTryAgain: func,
   testId: string.isRequired,
 }

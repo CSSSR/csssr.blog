@@ -20,6 +20,8 @@ const base = ({ breakpoints: { mobile } }) => css`
   }
 
   .link-item {
+    color: #18191B;
+
     &:nth-of-type(3),
     &:nth-of-type(4) {
       margin-top: ${calcRem(16)};
@@ -27,6 +29,16 @@ const base = ({ breakpoints: { mobile } }) => css`
 
     &.copy {
       position: relative;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #0254D8;
+
+        & svg path:last-of-type {
+          fill: currentColor;
+        }
+      }
     }
   }
 
@@ -60,48 +72,8 @@ const base = ({ breakpoints: { mobile } }) => css`
     border: none;
     cursor: pointer;
 
-    &.facebook {
-      background-image: url(${require('../../public/icons/share/facebook.svg').default});
-    }
-
-    &.vk {
-      background-image: url(${require('../../public/icons/share/vk.svg').default});
-    }
-
-    &.twitter {
-      background-image: url(${require('../../public/icons/share/twitter.svg').default});
-    }
-
     &.copy {
-      background-image: url(${require('../../public/icons/share/copy.svg').default});
-    }
-
-    &.mail {
-      background-image: url(${require('../../public/icons/share/mail.svg').default});
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        &.facebook {
-          background-image: url(${require('../../public/icons/share/hover/facebook.svg').default});
-        }
-
-        &.vk {
-          background-image: url(${require('../../public/icons/share/hover/vk.svg').default});
-        }
-
-        &.twitter {
-          background-image: url(${require('../../public/icons/share/hover/twitter.svg').default});
-        }
-
-        &.copy {
-          background-image: url(${require('../../public/icons/share/hover/copy.svg').default});
-        }
-
-        &.mail {
-          background-image: url(${require('../../public/icons/share/hover/mail.svg').default});
-        }
-      }
+      color: inherit;
     }
   }
 

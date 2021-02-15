@@ -74,7 +74,6 @@ const Component = ({
           >
             <Field
               name="email"
-              
               render={({ input, meta }) => (
                 <TextField
                   input={input}
@@ -136,7 +135,6 @@ const Component = ({
 
           <FormStateMessage
             status={status}
-            reset={reset}
             errorText={submitError}
             onTryAgain={handleTryToFillFormAgain}
             testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}

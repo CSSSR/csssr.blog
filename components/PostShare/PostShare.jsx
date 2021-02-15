@@ -11,6 +11,12 @@ import {
   VKShareButton,
 } from "react-share";
 
+import { ReactComponent as FacebookIcon } from '../../public/icons/share/facebook.svg'
+import { ReactComponent as TwitterIcon } from '../../public/icons/share/twitter.svg'
+import { ReactComponent as VkIcon } from '../../public/icons/share/vk.svg'
+import { ReactComponent as EmailIcon } from '../../public/icons/share/mail.svg'
+import { ReactComponent as CopyIcon } from '../../public/icons/share/copy.svg'
+
 const PostShare = ({ className, language, postType }) => {
   const router = useRouter()
   const shareTitle = language === 'ru' ? 'Поделиться' : 'Share'
@@ -54,16 +60,29 @@ const PostShare = ({ className, language, postType }) => {
 
       <ul className="links">
         <li className="link-item">
-          <FacebookShareButton  className="share-link facebook" url={currentUrl} />
+          <FacebookShareButton  className="share-link facebook" url={currentUrl}>
+            <FacebookIcon />
+          </FacebookShareButton>
         </li>
         <li className="link-item">
-          {language === 'ru' ? <VKShareButton className="share-link vk" url={currentUrl} /> : <EmailShareButton className="share-link mail" url={currentUrl} />}
+          {language === 'ru' ?
+            <VKShareButton className="share-link vk" url={currentUrl}>
+              <VkIcon />
+            </VKShareButton> :
+          <EmailShareButton className="share-link mail" url={currentUrl}>
+            <EmailIcon />
+          </EmailShareButton>
+          }
         </li>
         <li className="link-item">
-          <TwitterShareButton className="share-link twitter" url={currentUrl} />
+          <TwitterShareButton className="share-link twitter" url={currentUrl}>
+            <TwitterIcon />
+          </TwitterShareButton>
         </li>
         <li className="link-item copy">
-          <button type="button" className="share-link copy" url={currentUrl} onClick={copyHandler} />
+          <button type="button" className="share-link copy" url={currentUrl} onClick={copyHandler}>
+            <CopyIcon />
+          </button>
           <input className="hidden-input" ref={inputRef} defaultValue={currentUrl} />
 
           {isMessageShown && (
