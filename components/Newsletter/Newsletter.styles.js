@@ -8,8 +8,13 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     width: 100vw;
     margin-top: ${calcRem(75)};
     padding: ${calcRem(30)} 0;
+  }
+
+  .section {
+    width: 100%;
+    justify-content: center;
+    padding: ${calcRem(30)} 0;
     background-color: #F5F6FA;
-    transform: translateX(calc((100vw - var(--width-container)) / -2));
   }
 
   .container {
@@ -41,6 +46,13 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     }
   }
 
+  ${desktop.all} {
+    & {
+      margin-top: ${calcRem(140)};
+      padding-bottom: 26px;
+    }
+  }
+
   ${desktop.l} {
     --width-container: 1328px;
   }
@@ -54,8 +66,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 
   ${tablet.all} {
-    --width-container: ${calcRem(944)};
-
     & {
       margin-top: ${calcRem(60)};
     }
@@ -72,10 +82,15 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 
   ${mobile.all} {
-    --width-container: ${calcRem(328)};
 
     & {
       margin-top: ${calcRem(50)};
+      background-color: #F5F6FA;
+    }
+
+    .section {
+      padding-left: ${calcRem(16)};
+      padding-right: ${calcRem(16)};
     }
 
     .container {

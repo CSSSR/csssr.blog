@@ -373,6 +373,12 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   }
 `
 
+export const dynamicFooterStyles = css`
+  .footer {
+    margin-top: 0;
+  }
+`
+
 export const ie11Styles = css`
   html,
   body,

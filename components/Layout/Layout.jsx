@@ -1,6 +1,6 @@
 import { Global } from '@emotion/core'
 import Meta from '../Meta'
-import styles from './Layout.styles'
+import styles, { dynamicFooterStyles } from './Layout.styles'
 import { Header, Footer } from '@csssr/core-design'
 import CookiesPopup from '../CookiesPopup'
 
@@ -45,6 +45,9 @@ export default function Layout({ children, language, type }) {
       <CookiesPopup language={language} />
 
       <Global styles={styles} />
+      {language === 'ru' &&
+        <Global styles={dynamicFooterStyles} />
+      }
     </>
   )
 }
