@@ -8,8 +8,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     width: 100vw;
     margin-top: ${calcRem(75)};
     padding: ${calcRem(30)} 0;
-    background-color: #F5F6FA;
-    transform: translateX(calc((100vw - var(--width-container)) / -2));
   }
 
   .section {
@@ -68,8 +66,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 
   ${tablet.all} {
-    --width-container: ${calcRem(944)};    
-
     & {
       margin-top: ${calcRem(60)};
     }
@@ -86,10 +82,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 
   ${mobile.all} {
-    --width-container: ${calcRem(328)};
 
     & {
       margin-top: ${calcRem(50)};
+      background-color: #F5F6FA;
     }
 
     .section {
