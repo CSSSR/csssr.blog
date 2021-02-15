@@ -6,7 +6,7 @@ import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, ListItem } from '@csssr/core-design'
 import styles from './Body.styles'
-import Newsletter from '../../Newsletter'
+import PostNewsletter from '../../PostNewsletter'
 import Separator from './Separator'
 import Comments from './Comments'
 import ParagraphWithImage from './ParagraphWithImage'
@@ -29,29 +29,41 @@ const Body = ({
   type,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
+  isTopPosition,
+  isBottomPosition,
+  setBottomPossition
 }) => {
   const postType = type
+  
 
   return compiler(content, {
     createElement(type, props, children) {
       if (props.key === 'outer') {
         return (
-          <Grid className={cn(`post-body ${className}`)}>
+          <Grid 
+            className={cn(`post-body ${className}`)}>
             {React.createElement(React.Fragment, { key: props.key }, children)}
 
-            {language === 'ru' && postType !== 'news' && (
-              <>
-                <Newsletter
-                  kind="post"
-                  BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-                  BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-                />
+            <PostNewsletter
+              isTopPosition={isTopPosition}
+              isBottomPosition={isBottomPosition}
+              language={language}
+              postType={postType}
+              kind="post"
+              BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+              BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+            />
 
-                <ReadMore posts={posts} />
-              </>
+            {language === 'ru' && postType !== 'news' && ( 
+              <ReadMore posts={posts} />
             )}
 
-            <Comments id={slug} language={language} />
+            <Comments 
+              id={slug}
+              language={language}
+              postType={postType}
+              setBottomPossition={setBottomPossition} 
+            />
           </Grid>
         )
       }

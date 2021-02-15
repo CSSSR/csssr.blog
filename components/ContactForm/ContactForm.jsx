@@ -8,8 +8,8 @@ import styles from './ContactForm.styles'
 import { AnimatedButton } from '@csssr/core-design'
 import TextField from './TextField'
 import FormStateMessage from './FormStateMessage'
-import testEmails from '../../../utils/testEmails'
-import rateFormValidationRules from '../../../utils/validators/rateFormValidationRules'
+import testEmails from '../../utils/testEmails'
+import rateFormValidationRules from '../../utils/validators/rateFormValidationRules'
 
 const Component = ({
   className,
@@ -24,6 +24,7 @@ const Component = ({
   ...props
 }) => {
   const [submittedToServer, setSubmittedToServerStatus] = useState(false)
+  const [isFocused, setFocused] = useState(false)
 
   const getStatus = () => {
     if (submitting) {
@@ -68,19 +69,24 @@ const Component = ({
     <div className={cn(`${className}`, { news: kind === 'news', post: kind === 'post' })}>
       <form onSubmit={handleSubmit}>
         <div className="wrapper">
-          <Field
-            name="email"
-            render={({ input, meta }) => (
-              <TextField
-                input={input}
-                meta={meta}
-                label="e-mail"
-                testId={`${formName}:field:newsletter.email`}
-              />
-            )}
-          />
+          <div>
+            <Field
+              name="email"
+              render={({ input, meta }) => (
+                <TextField
+                  onFocus={() => setFocused(true)}
+                  input={input}
+                  meta={meta}
+                  label="e-mail"
+                  testId={`${formName}:field:newsletter.email`}
+                />
+              )}
+            />
+          </div>
 
-          <div className="buttonWrapper">
+          <div className={cn('buttonWrapper', {
+                success: status === 'success'
+              })}>
             <AnimatedButton
               kind="secondary"
               className="submit"
@@ -101,14 +107,20 @@ const Component = ({
           </div>
         </div>
 
-        <p
-          className="policy"
+         <p
+          className={cn('policy', {
+            visible: isFocused
+          })}
+          onMouseOver={() => setFocused(true)}
+          onMouseOut={() => setFocused(false)}
           dangerouslySetInnerHTML={{
             __html: `Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и информационных материалов, а также факт своего ознакомления и согласия с <a class="link" href="https://csssr.com/ru/privacy-policy" target="_blank">Политикой конфиденциальности<a/>`,
           }}
         />
 
-        <div className="buttonWrapper_mobile">
+        <div className={cn('buttonWrapper_mobile', {
+          success: status === 'success'
+        })}>
           <AnimatedButton
             kind="secondary"
             className="submit"

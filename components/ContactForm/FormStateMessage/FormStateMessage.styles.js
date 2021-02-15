@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { calcRem } from '../../../../utils/style/calcRem'
+import { calcRem } from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile }}) => css`
   & {
@@ -13,6 +13,26 @@ const base = ({ breakpoints: { mobile }}) => css`
     &.invisible {
       transform: scale(0);
     }
+  }
+
+  span.message {
+    display: inline;
+    margin-right: ${calcRem(2)};
+    margin-left: 0 !important;
+  }
+
+  .reset-button {
+    display: inline;
+    margin-left: ${calcRem(1)} !important;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background: none;
+    color: #0076ff;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   ${mobile.all} {
