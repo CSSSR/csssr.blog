@@ -6,27 +6,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     position: relative;
     grid-column: 1 / span 12;
     width: 100vw;
-
-    &.post {
-      margin-top: ${calcRem(80)};
-      padding: ${calcRem(40)} 0 ${calcRem(50)};
-
-      .container {
-        grid-column: 4 / span 6;
-      }
-
-      .title {
-        font-size: ${calcRem(40)};
-        line-height: ${calcRem(56)};
-      }
-
-      .picture {
-        bottom: auto;
-        top: ${calcRem(-72)};
-        width: ${calcRem(215)};
-        height: ${calcRem(143)};
-      }
-    }
+    margin-top: ${calcRem(75)};
+    padding: ${calcRem(30)} 0;
+    background-color: #F5F6FA;
+    transform: translateX(calc((100vw - var(--width-container)) / -2));
   }
 
   .section {
@@ -88,32 +71,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     --width-container: ${calcRem(944)};    
 
     & {
-      margin-top: ${calcRem(100)};
-      margin-bottom: ${calcRem(20)};
-
-      &.post {
-        padding: ${calcRem(40)} 0 ${calcRem(40)};
-
-        .container {
-          grid-column: 3 / span 8;
-        }
-
-        .title {
-          font-size: ${calcRem(32)};
-          line-height: ${calcRem(40)};
-        }
-
-        .subtitle {
-          width: ${calcRem(520)};
-          font-size: ${calcRem(16)};
-        }
-
-        .picture {
-          top: ${calcRem(-67)};
-          width: ${calcRem(184)};
-          height: ${calcRem(122)};
-        }
-      }
+      margin-top: ${calcRem(60)};
     }
 
     .subtitle {
@@ -131,27 +89,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     --width-container: ${calcRem(328)};
 
     & {
-      margin-top: ${calcRem(70)};
-
-      &.post {
-        margin-top: ${calcRem(60)};
-        padding: ${calcRem(30)} 0;
-
-        .container {
-          grid-column: 1 / span 6
-        }
-
-        .title {
-          font-size: ${calcRem(24)};
-          line-height: ${calcRem(32)};
-        }
-
-        .picture {
-          top: ${calcRem(40)};
-          width: ${calcRem(104)};
-          height: ${calcRem(77)};
-        }
-      }
+      margin-top: ${calcRem(50)};
     }
 
     .section {

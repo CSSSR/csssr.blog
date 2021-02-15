@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Heading } from '@csssr/core-design'
 import styled from '@emotion/styled'
 import { string } from 'prop-types'
@@ -24,7 +24,8 @@ const removeScript = (id, parentElement) => {
   }
 }
 
-const Comments = ({ id, className, language }) => {
+const Comments = ({ id, className, postType, language, setBottomPossition }) => {
+  const commnetsRef = useRef()
   useEffect(() => {
     if (!window) {
       return
@@ -39,8 +40,35 @@ const Comments = ({ id, className, language }) => {
     return () => removeScript('commento-script', document.body)
   }, [id])
 
+  useEffect(() => {
+    const callback = function ([entry]) {
+      entry.isIntersecting ? setBottomPossition(true) : setBottomPossition(false)
+    }
+
+    const margin = (language === 'ru' && postType !== 'news') ? '500px 0px 0px 0px' : '0px 0px -500px 0px'
+    const langThreshold = (language === 'ru' && postType !== 'news') ? '1' : '0'
+
+    const options = {
+      root: null,
+      rootMargin: margin,
+      threshold: langThreshold
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(callback, options)
+      observer.observe(commnetsRef.current)
+
+      return () => observer.disconnect()
+    }
+  
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
-    <div className={className}>
+    <div 
+      className={className}
+      ref={commnetsRef}
+    >
       <Heading.H3 type="regular" size="l" className="title">
         {language === 'ru' ? 'Комментарии' : 'Comments'}
       </Heading.H3>

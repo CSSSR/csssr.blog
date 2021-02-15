@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 import { string, arrayOf, object } from 'prop-types'
@@ -25,9 +25,38 @@ const Header = ({
   alt,
   language,
   type,
+  setTopPosition
 }) => {
+
+  const headerRef = useRef()
+
+  useEffect(() => {
+    const callback = function ([entry]) {
+      setTopPosition(entry.isIntersecting)
+    }
+
+    const langAndPostCondition = (language === 'ru' && type !== 'news')
+    const rootMargin = langAndPostCondition ? '200px 0px 0px 0px' : '-40px 0px 0px 0px'
+    const threshold = langAndPostCondition ? '1' : '0'
+
+    const options = {
+      root: null,
+      rootMargin,
+      threshold
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(callback, options)
+      observer.observe(headerRef.current)
+
+      return () => observer.disconnect()
+    }
+  
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <Grid
+      ref={headerRef}
       as="header"
       className={cn(className, {
         type_news: type === 'news',
