@@ -17,14 +17,14 @@ import { ReactComponent as VkIcon } from '../../public/icons/share/vk.svg'
 import { ReactComponent as EmailIcon } from '../../public/icons/share/mail.svg'
 import { ReactComponent as CopyIcon } from '../../public/icons/share/copy.svg'
 
-const PostShare = ({ className, language, postType }) => {
+const PostShare = ({ className, language, type }) => {
   const router = useRouter()
   const shareTitle = language === 'ru' ? 'Поделиться' : 'Share'
   const copyMessage = language === 'ru' ? 'Скопировано!' : 'Copied!'
 
   const inputRef = useRef()
 
-  const currentUrl = postType === 'news' ?
+  const currentUrl = type === 'news' ?
    `http://blog.csssr.com/${language}/news512/episode/${router.query.slug}` :
    `http://blog.csssr.com/${language}/article/${router.query.slug}`
 
@@ -52,7 +52,7 @@ const PostShare = ({ className, language, postType }) => {
 
   return (
     <div className={cn(className, 'share', {
-      withMargin: language === 'ru' && postType !== 'news'
+      withMargin: language === 'ru' && type !== 'news'
     })}>
       <Heading.H2 type="regular" className="share-title">
         {shareTitle}

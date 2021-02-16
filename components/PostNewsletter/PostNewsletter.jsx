@@ -8,7 +8,7 @@ import ContactForm from '../ContactForm'
 import PostShare from '../PostShare'
 import { postNewsletterData } from '../../data/newsletter'
 
-const PostNewsletter = ({ className, language, kind, postType, isTopPosition, isBottomPosition, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID }) => {
+const PostNewsletter = ({ className, language, kind, type, isTopPosition, isBottomPosition, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID }) => {
   const { title, subtitle, img, imgAlt } = postNewsletterData
 
   return (
@@ -17,7 +17,7 @@ const PostNewsletter = ({ className, language, kind, postType, isTopPosition, is
       onTop: isTopPosition
     })}
     >
-      {(language === 'ru' && postType !== 'news') && (
+      {(language === 'ru' && type !== 'news') && (
        <div className="container">
         <PictureSmart
           requireImages={img}
@@ -44,7 +44,7 @@ const PostNewsletter = ({ className, language, kind, postType, isTopPosition, is
 
       <PostShare 
         language={language}
-        postType={postType}
+        type={type}
       />
     </div>
   )

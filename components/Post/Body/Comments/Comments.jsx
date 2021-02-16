@@ -34,7 +34,7 @@ const cleanComments = () => {
   }
 }
 
-const Comments = ({ id, className, postType, language, setBottomPossition }) => {
+const Comments = ({ id, className, type, language, setBottomPossition }) => {
   const commnetsRef = useRef()
   //This part allows comments in development mode
   //Read more about this hack: https://remysharp.com/2019/06/11/ejecting-disqus#testing-commento-offline--adjusting-urls
@@ -69,8 +69,8 @@ const Comments = ({ id, className, postType, language, setBottomPossition }) => 
       entry.isIntersecting ? setBottomPossition(true) : setBottomPossition(false)
     }
 
-    const margin = (language === 'ru' && postType !== 'news') ? '500px 0px 0px 0px' : '0px 0px -500px 0px'
-    const langThreshold = (language === 'ru' && postType !== 'news') ? '1' : '0'
+    const margin = (language === 'ru' && type !== 'news') ? '500px 0px 0px 0px' : '0px 0px -500px 0px'
+    const langThreshold = (language === 'ru' && type !== 'news') ? '1' : '0'
 
     const options = {
       root: null,

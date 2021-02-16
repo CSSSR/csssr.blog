@@ -199,20 +199,20 @@ const Body = ({
       isTopPosition={isTopPosition}
       isBottomPosition={isBottomPosition}
       language={language}
-      postType={postType}
+      type={type}
       kind="post"
       BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
       BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
     />
 
-    {language === 'ru' && postType !== 'news' && ( 
+    {language === 'ru' && type !== 'news' && ( 
       <ReadMore posts={posts} />
     )}
 
     <Comments 
       id={slug}
       language={language}
-      postType={postType}
+      type={type}
       setBottomPossition={setBottomPossition} 
     />
   </Grid>
