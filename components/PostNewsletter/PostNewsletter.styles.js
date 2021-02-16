@@ -96,7 +96,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${mobile.all} {
     & {
-      position: relative !important;
+      position: static !important;
       top: 0;
       left: 0;
       display: flex;
@@ -108,13 +108,14 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     }
 
     &._fixed {
-      position: relative;
+      position: static;
       top: 0;
       padding-top: 0;
       margin-top: ${calcRem(24)};
     }
 
     .container {
+      position: relative;
       order: 2;
       width: 100%;
       max-width: 100%;
@@ -132,7 +133,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
     .picture {
       position: absolute;
-      top: ${calcRem(100)};
+      top: ${calcRem(16)};
       right: 0;
       width: ${calcRem(73)};
       height: ${calcRem(50)};
