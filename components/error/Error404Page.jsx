@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
@@ -21,7 +21,8 @@ import globalStyles from '../Layout/Layout.styles'
 
 const ErrorPage = ({ className }) => {
   const route = useRouter()
-  const isLanguageRu = route.asPath.includes('/ru/') || route.asPath === '/r'
+  const isRuPageRegExp = /^\/r([u\w]+)?\/?/
+  const isLanguageRu = isRuPageRegExp.test(route.asPath)
   const dynamicNavItems = isLanguageRu ? navItemsRu : navItemsEn
 
   const renderNav = ({ items: { title, id, links } }) => {

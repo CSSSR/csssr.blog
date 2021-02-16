@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { calcRem } from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
@@ -39,7 +39,7 @@ const dynamic = ({ width, left }) => {
   `
 }
 
-export default props => {
+const StyledActiveLine= props => {
   const { breakpoints } = props.theme
   const { width, left } = props
 
@@ -48,3 +48,5 @@ export default props => {
     ${dynamic({ width, left })}
   `
 }
+
+export default StyledActiveLine

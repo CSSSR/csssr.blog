@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
@@ -133,7 +133,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${desktop.all} {
-    {
+    & {
       margin-top: 75px;
 
       &:nth-of-type(1),
@@ -311,7 +311,7 @@ const dynamic = ({ breakpoints: { mobile }, size, side }) => {
   `
 }
 
-export default props => {
+const StyledPostCard = props => {
   const { theme: { breakpoints, colors }, size, side } = props
 
   return css`
@@ -319,3 +319,5 @@ export default props => {
     ${dynamic({ breakpoints, size, side})}
   `
 }
+
+export default StyledPostCard
