@@ -4,17 +4,33 @@ import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss
 
 const defaultAvatarImages = require.context('../../../../public/components/comments/defaultAvatar')
 
-const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
+const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
   & {
+    position: relative;
     display: block;
     background-color: #ffffff;
-    margin-top: ${calcRem(60)};
+    margin-top: 97px;
     grid-column: 4 / span 6;
   }
 
+  .title-wrapper {
+    position: absolute;
+    top: -17px;
+    left: 0;
+    display: flex;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 40px;
+    line-height: 56px;
+    font-weight: 900;
+  }
+
   .title {
-    margin-bottom: ${calcRem(-30)};
     color: ${colors.secondary.darken100};
+  }
+
+  .total-comments {
+    margin-left: 9px;
+    color: #7E8FA4;
   }
 
   .commento-root {
@@ -24,6 +40,14 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
       align-items: flex-end;
       height: auto;
       margin: 0;
+
+      ~ .commento-main-area {
+        .commento-button-margin {
+          .commento-button {
+            display: block;
+          }
+        }
+      }
 
       .commento-logged-in-as {
         .commento-avatar {
@@ -55,6 +79,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 
     .commento-avatar {
       float: none;
+      display: inline-flex;
       width: 32px;
       height: 32px;
       margin-right: 0;
@@ -67,11 +92,12 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     .commento-main-area {
       .commento-login {
         position: relative;
+        padding-top: 8px;
 
         &::before {
           position: absolute;
           content: '';
-          top: 84px;
+          top: 92px;
           left: 0;
           width: 32px;
           height: 32px;
@@ -95,7 +121,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
         padding-top: 0;
         padding-bottom: 20px;
         margin-top: 37px;
-        margin-left: 24px;
+        margin-left: 48px;
 
         .commento-textarea-container {
           & > textarea {
@@ -129,6 +155,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 
         .commento-button {
           float: none;
+          display: none;
           width: 208px;
           height: 40px;
           margin: 0;
@@ -148,91 +175,61 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
         }
       }
 
-      & > .commento-button-margin {
-        margin-left: 48px;
-      }
-
       .commento-sort-policy-buttons-container {
         display: none;
       }
 
-      .commento-comments {
-        .commento-card {
-          margin: 0;
-          padding-top: 30px;
-          padding-left: 24px;
-          border: none !important;
+      .commento-card {
+        margin: 0;
+        padding-top: 30px;
+        padding-left: 0;
+        border: none !important;
 
-          .commento-header {
-            position: relative;
-            padding-bottom: 0;
+        .commento-header {
+          position: relative;
+          padding-bottom: 0;
 
-            .commento-options {
-              position: absolute;
-              float: none;
-              height: 20px;
-
-              .commento-option-button {
-                display: none;
-              }
-
-              .commento-option-reply,
-              .commento-option-cancel {
-                top: 64px;
-                right: auto !important;
-                left: 0;
-                display: block;
-                margin: 0;
-              }
-
-              .commento-option-cancel {
-                top: 70px;
-              }
-            }
-
-            .commento-avatar {
-              display: inline-flex;
-            }
-
-            .commento-name {
-              display: inline;
-              margin-left: 16px;
-              font-family: 'Roboto', 'Arial', sans-serif;
-              font-size: 12px;
-              line-height: 24px;
-              font-weight: 900;
-              color: #18191b;
-            }
-
-            .commento-subtitle {
-              display: inline;
-              margin-left: 0;
-
-              .commento-score {
-                display: none;
-              }
-
-              .commento-timeago {
-                font-family: 'Roboto', 'Arial', sans-serif;
-                line-height: 24px;
-                font-weight: normal;
-                color: #7e8fa4;
-              }
-            }
+          .commento-options {
+            display: none;
           }
 
-          .commento-body {
-            margin-top: 8px;
-            padding-bottom: 28px;
+          .commento-name {
+            display: inline;
+            margin-left: 16px;
+            font-family: 'Roboto', 'Arial', sans-serif;
+            font-size: 12px;
+            line-height: 24px;
+            font-weight: 900;
+            color: #18191b;
+          }
 
-            p {
-              margin: 0;
-              font-family: 'Roboto', 'Arial', sans-serif;
-              font-size: 14px;
-              line-height: 24px;
-              font-weight: 300;
-              color: #18191b;
+          .commento-subtitle {
+            display: inline;
+            margin-left: 0;
+
+            .commento-score {
+              display: none;
             }
+
+            .commento-timeago {
+              font-family: 'Roboto', 'Arial', sans-serif;
+              line-height: 24px;
+              font-weight: normal;
+              color: #7e8fa4;
+            }
+          }
+        }
+
+        .commento-body {
+          margin-top: 8px;
+
+          p {
+            margin: 0;
+            font-family: 'Roboto', 'Arial', sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 300;
+            color: #18191b;
           }
         }
       }
@@ -243,26 +240,27 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     }
   }
 
-  ${desktop.all} {
-    & {
-      margin-top: ${calcRem(80)};
-    }
-  }
-
   ${tablet.all} {
     & {
       grid-column: 3 / span 8;
+      margin-top: ${calcRem(66)};
     }
 
-    .title {
-      margin-bottom: ${calcRem(-10)};
+    .title-wrapper {
+      top: ${calcRem(-6)};
+      font-size: ${calcRem(32)};
+      line-height: ${calcRem(40)};
+    }
+
+    .total-comments {
+      margin-left: ${calcRem(9)};
     }
 
     .commento-root {
       .commento-logged-container {
         .commento-logged-in-as {
           .commento-avatar {
-            top: 87px;
+            top: ${calcRem(87)};
           }
         }
       }
@@ -270,7 +268,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
       .commento-main-area {
         .commento-login {
           &::before {
-            top: 79px;
+            top: ${calcRem(87)};
           }
         }
 
@@ -284,13 +282,76 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   ${mobile.all} {
     & {
       grid-column: 1 / span 6;
+      margin-top: ${calcRem(100)};
+    }
+
+    .title-wrapper {
+      top: ${calcRem(-40)};
+      font-size: ${calcRem(32)};
+      line-height: ${calcRem(40)};
+    }
+
+    .total-comments {
+      margin-left: ${calcRem(9)};
     }
 
     .commento-root {
+      .commento-logged-container {
+        justify-content: flex-start;
+
+        .commento-logged-in-as {
+          .commento-avatar {
+            top: ${calcRem(85)};
+          }
+        }
+
+        .commento-profile-button {
+          &:nth-of-type(2) {
+            position: relative;
+            left: ${calcRem(-32)};
+          }
+        }
+      }
+
       .commento-main-area {
+        .commento-login {
+          &::before {
+            top: ${calcRem(85)};
+          }
+
+          .commento-login-text {
+            text-align: left;
+          }
+        }
+
         .commento-button-margin {
+          margin-top: ${calcRem(30)};
+          padding-bottom: ${calcRem(10)};
+
           .commento-button {
             width: 100%;
+          }
+        }
+
+        .commento-card {
+          .commento-options {
+            display: none;
+          }
+
+          .commento-options-clearfix {
+            display: none;
+          }
+        }
+
+        .commento-comments {
+          .commento-card {
+            .commento-options {
+              display: none;
+            }
+  
+            .commento-options-clearfix {
+              display: none;
+            }
           }
         }
       }

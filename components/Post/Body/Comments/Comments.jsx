@@ -34,13 +34,17 @@ const cleanComments = () => {
   }
 }
 
-let totalComments = 1
-
-const getCommentsLength = () => {
-  totalComments = window.document.querySelectorAll('.commento-header').length
-}
-
 const Comments = ({ id, className, language }) => {
+  const handleSubmitButtonClick = (e) => {
+    const target = e.target
+
+    if (target.className === 'commento-button commento-submit-button') {
+      removeScript('commento-comments-counter', document.body)
+      insertScript('https://cdn.commento.io/js/count.js', 'commento-comments-counter', document.body)
+      document.getElementById("commento-comments-counter").setAttribute("data-custom-text", "window.commentoCustomText");
+    }
+  }
+
   //This part allows comments in development mode
   //Read more about this hack: https://remysharp.com/2019/06/11/ejecting-disqus#testing-commento-offline--adjusting-urls
   useEffect(() => {
@@ -61,32 +65,30 @@ const Comments = ({ id, className, language }) => {
 
     if (document.getElementById('commento')) {
       insertScript('https://cdn.commento.io/js/commento.js', 'commento-script', document.body)
+      insertScript('https://cdn.commento.io/js/count.js', 'commento-comments-counter', document.body)
+      document.getElementById("commento-comments-counter").setAttribute("data-custom-text", "window.commentoCustomText");
+      window.commentoCustomText = function(count) {
+        return count;
+      }
     }
 
     return () => {
       removeScript('commento-script', document.body)
+      removeScript('commento-comments-counter', document.body)
       cleanComments()
     }
   }, [id])
 
-  const clickHandler = (e) => {
-    const target = e.target
-
-    if (target.className === 'commento-button commento-submit-button') {
-      getCommentsLength()
-    }
-  }
-
   return (
     <div className={className}>
-      <div style={{ display: 'flex' }}>
+      <div className="title-wrapper">
         <Heading.H3 type="regular" size="l" className="title">
           {language === 'ru' ? 'Комментарии' : 'Comments'}
         </Heading.H3>
-        <p style={{ fontSize: '40px' }}>{totalComments}</p>
+        <a className="total-comments" href="#commento" data-page-id={`${language}/article/${id}`} />
       </div>
 
-      <div id="commento" onClick={clickHandler} />
+      <div id="commento" onClick={handleSubmitButtonClick} />
       <Global styles={backgroundImagesStyles} />
     </div>
   )
