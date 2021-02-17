@@ -9,6 +9,7 @@ const base = ({ breakpoints: { mobile } }) => css`
 
     &.withMargin {
       margin-top: ${calcRem(40)};
+      transform: translateX(${calcRem(-10)});
     }
   }
 
