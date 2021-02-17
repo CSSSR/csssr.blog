@@ -4,10 +4,9 @@ import calcRem from '../../utils/style/calcRem'
 const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   & {
     position: fixed;
-    top: ${calcRem(164)};
+    top: ${calcRem(154)}; //100px отступ + 64px высота хедера - 10px padding-top
     left: 0;
     width: ${calcRem(156)};
-    
     padding: ${calcRem(10)};
     background-color: white;
   }
