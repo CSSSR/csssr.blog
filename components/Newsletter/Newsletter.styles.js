@@ -7,7 +7,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     grid-column: 1 / span 12;
     width: 100vw;
     margin-top: ${calcRem(75)};
-    padding: ${calcRem(30)} 0;
+    padding-bottom: ${calcRem(30)};
   }
 
   .section {
