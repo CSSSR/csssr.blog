@@ -11,7 +11,7 @@ export const newsletterData = {
 
 export const postNewsletterData = {
   title: 'Ежемесячная рассылка CSSSR',
-  subtitle: 'Новости, свежие статьии многое другое',
+  subtitle: 'Новости, свежие статьи и многое другое',
   img: postReaderImages,
   imgAlt: 'Иллюстрация говорящего человека',
 }
