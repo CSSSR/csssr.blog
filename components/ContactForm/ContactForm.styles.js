@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import { calcRem } from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   & {
     position: relative;
     margin-top: ${calcRem(33)};
@@ -73,10 +73,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
         svg {
           top: ${calcRem(-3)};
-          left: ${calcRem(15)};
+          left: ${calcRem(-3)};
           width: ${calcRem(35)};
           height: ${calcRem(35)};
           margin-left: 0;
+          transform: rotateZ(14deg);
         }
       }
 
@@ -157,7 +158,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     > button[status='success'],
     > button[status='submitting'] {
       width: ${calcRem(40)};
-      margin-left: ${calcRem(50)};
+      margin-left: ${calcRem(16)};
 
       > span {
         display: none;
@@ -167,7 +168,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     svg {
       width: ${calcRem(40)};
       height: ${calcRem(40)};
-      margin-left: ${calcRem(26)};
+      margin-left: ${calcRem(-12)};
+      transform: rotateZ(14deg) scale(1.2);
     }
 
     span {
@@ -204,20 +206,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   svg.checkmark path,
   svg.cross path {
     stroke-width: 4;
-  }
-
-  ${desktop.s} {
-    .submit {
-      > button[status='fail'],
-      > button[status='success'],
-      > button[status='submitting'] {
-        margin-left: 16px;
-      }
-
-      svg {
-        margin-left: 8px;
-      }
-    }
+    stroke-linecap: round;
   }
 
   ${tablet.all} {
@@ -245,16 +234,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .submit {
       > button {
         width: ${calcRem(144)};
-      }
-
-      > button[status='fail'],
-      > button[status='success'],
-      > button[status='submitting'] {
-        margin-left: ${calcRem(68)};
-      }
-
-      svg {
-        margin-left: ${calcRem(34)};
       }
     }
   }
@@ -378,7 +357,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       }
 
       svg {
-        margin: 0 auto;
+        margin-left: ${calcRem(-37)};
       }
     }
 

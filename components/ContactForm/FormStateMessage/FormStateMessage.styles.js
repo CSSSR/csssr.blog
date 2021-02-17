@@ -16,7 +16,8 @@ const base = ({ breakpoints: { mobile }}) => css`
   }
 
   span.message {
-    display: inline;
+    display: inline-block;
+    max-width: ${calcRem(130)};
     margin-right: ${calcRem(2)};
     margin-left: 0 !important;
   }
@@ -39,6 +40,10 @@ const base = ({ breakpoints: { mobile }}) => css`
     & {
       margin-top: ${calcRem(10)};
       margin-left: 0;
+    }
+    
+    span.message {
+      max-width: unset;
     }
   }
 `
