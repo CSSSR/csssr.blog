@@ -11,6 +11,8 @@ import { postNewsletterData } from '../../data/newsletter'
 const PostNewsletter = ({ className, language, kind, type, isTopPosition, isBottomPosition, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID }) => {
   const { title, subtitle, img, imgAlt } = postNewsletterData
 
+  console.log(isBottomPosition)
+
   return (
     <div className={cn(className, {
       onBottom: isBottomPosition,

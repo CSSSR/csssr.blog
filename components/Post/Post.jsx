@@ -20,13 +20,13 @@ const Post = ({
   type = 'regular',
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
+  isBottomPosition
 }) => {
   const title = type === 'news' ? 'Новости 512 | CSSSR' : cleaningTitle(post.title, 'meta')
   const description =
     type === 'news' ? cleaningTitle(post.title, 'meta') : getDescription(post.content)
 
   const [isTopPosition, setTopPosition] = useState(false)
-  const [isBottomPosition, setBottomPossition] = useState(false)
 
   return (
     <article
@@ -84,7 +84,6 @@ const Post = ({
         BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
         isTopPosition={isTopPosition}
         isBottomPosition={isBottomPosition}
-        setBottomPossition={setBottomPossition}
       />
     </article>
   )

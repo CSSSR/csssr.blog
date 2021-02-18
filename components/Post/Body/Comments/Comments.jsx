@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { Heading } from '@csssr/core-design'
 import styled from '@emotion/styled'
 import { string } from 'prop-types'
@@ -34,8 +34,7 @@ const cleanComments = () => {
   }
 }
 
-const Comments = ({ id, className, type, language, setBottomPossition }) => {
-  const commnetsRef = useRef()
+const Comments = ({ id, className, language }) => {
   //This part allows comments in development mode
   //Read more about this hack: https://remysharp.com/2019/06/11/ejecting-disqus#testing-commento-offline--adjusting-urls
   useEffect(() => {
@@ -64,35 +63,8 @@ const Comments = ({ id, className, type, language, setBottomPossition }) => {
     }
   }, [id])
 
-  useEffect(() => {
-    const callback = function ([entry]) {
-      entry.isIntersecting ? setBottomPossition(true) : setBottomPossition(false)
-    }
-
-    const margin = (language === 'ru' && type !== 'news') ? '500px 0px 0px 0px' : '0px 0px -500px 0px'
-    const langThreshold = (language === 'ru' && type !== 'news') ? '1' : '0'
-
-    const options = {
-      root: null,
-      rootMargin: margin,
-      threshold: langThreshold
-    }
-
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(callback, options)
-      observer.observe(commnetsRef.current)
-
-      return () => observer.disconnect()
-    }
-  
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   return (
-    <div 
-      className={className}
-      ref={commnetsRef}
-    >
+    <div className={className}>
       <Heading.H3 type="regular" size="l" className="title">
         {language === 'ru' ? 'Комментарии' : 'Comments'}
       </Heading.H3>

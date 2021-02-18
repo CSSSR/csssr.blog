@@ -29,7 +29,6 @@ const Body = ({
   type,
   isTopPosition,
   isBottomPosition,
-  setBottomPossition,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => (
@@ -213,7 +212,6 @@ const Body = ({
       id={slug}
       language={language}
       type={type}
-      setBottomPossition={setBottomPossition} 
     />
   </Grid>
 )

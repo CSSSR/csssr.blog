@@ -20,7 +20,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   &.onBottom {
     position: absolute;
     top: auto;
-    bottom: ${calcRem(595)};
+    bottom: ${calcRem(383)};
   }
 
   .container {
