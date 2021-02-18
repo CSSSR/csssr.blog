@@ -1,10 +1,10 @@
-import { css } from '@emotion/react'
+import { css, keyframes } from '@emotion/react'
 import calcRem from '../../../../utils/style/calcRem'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
 const defaultAvatarImages = require.context('../../../../public/components/comments/defaultAvatar')
 
-const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     position: relative;
     display: block;
@@ -13,7 +13,7 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
     grid-column: 4 / span 6;
   }
 
-  .title-wrapper {
+  .title {
     position: absolute;
     top: -17px;
     left: 0;
@@ -22,15 +22,7 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
     font-size: 40px;
     line-height: 56px;
     font-weight: 900;
-  }
-
-  .title {
     color: ${colors.secondary.darken100};
-  }
-
-  .total-comments {
-    margin-left: 9px;
-    color: #7E8FA4;
   }
 
   .commento-root {
@@ -87,6 +79,14 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
       font-size: 18px;
       line-height: 24px;
       font-weight: bold;
+    }
+
+    .commento-error-box {
+      position: absolute;
+      top: 215px;
+      left: 0;
+      opacity: 1;
+      animation: ${fadeOut} 0s 3s linear forwards;
     }
 
     .commento-main-area {
@@ -187,10 +187,44 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
 
         .commento-header {
           position: relative;
+          display: flex;
+          align-items: center;
           padding-bottom: 0;
 
           .commento-options {
-            display: none;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            float: none;
+            display: flex;
+            width: auto !important;
+            height: auto;
+
+            .commento-option-button {
+              position: static;
+              display: none;
+              right: auto !important;
+            }
+
+            .commento-option-edit,
+            .commento-option-remove {
+              display: block;
+              width: 20px;
+              height: 20px;
+              margin: 0;
+              mask-image: none;
+              background: #ffffff;
+            }
+
+            .commento-option-edit {
+              background-image: url(${require('../../../../public/icons/edit.svg').default});
+            }
+
+            .commento-option-remove {
+              margin-left: 16px;
+              background-image: url(${require('../../../../public/icons/delete.svg').default});
+            }
           }
 
           .commento-name {
@@ -201,6 +235,10 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
             line-height: 24px;
             font-weight: 900;
             color: #18191b;
+          }
+
+          .commento-name.commento-moderator::after {
+            content: none;
           }
 
           .commento-subtitle {
@@ -223,6 +261,12 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
         .commento-body {
           margin-top: 8px;
 
+          .commento-button-margin {
+            margin-left: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+          }
+
           p {
             margin: 0;
             font-family: 'Roboto', 'Arial', sans-serif;
@@ -240,22 +284,34 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
     }
   }
 
+  ${desktop.m} {
+    .commento-root {
+      .commento-error-box {
+        top: 235px;
+      }
+    }
+  }
+
+  ${desktop.s} {
+    .commento-root {
+      .commento-error-box {
+        top: 235px;
+      }
+    }
+  }
+
   ${tablet.all} {
     & {
       grid-column: 3 / span 8;
       margin-top: ${calcRem(66)};
     }
 
-    .title-wrapper {
+    .title {
       top: ${calcRem(-6)};
       font-size: ${calcRem(32)};
       line-height: ${calcRem(40)};
     }
-
-    .total-comments {
-      margin-left: ${calcRem(9)};
-    }
-
+    
     .commento-root {
       .commento-logged-container {
         .commento-logged-in-as {
@@ -263,6 +319,10 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
             top: ${calcRem(87)};
           }
         }
+      }
+      
+      .commento-error-box {
+        top: ${calcRem(230)};
       }
 
       .commento-main-area {
@@ -285,16 +345,12 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
       margin-top: ${calcRem(100)};
     }
 
-    .title-wrapper {
+    .title {
       top: ${calcRem(-40)};
       font-size: ${calcRem(32)};
       line-height: ${calcRem(40)};
     }
-
-    .total-comments {
-      margin-left: ${calcRem(9)};
-    }
-
+    
     .commento-root {
       .commento-logged-container {
         justify-content: flex-start;
@@ -334,8 +390,53 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
         }
 
         .commento-card {
-          .commento-options {
-            display: none;
+          & div[id*='commento-comment-contents'] {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .commento-body {
+            order: 2;
+          }
+
+          .commento-options,
+          .commento-options-mobile {
+            position: absolute;
+            top: ${calcRem(-17)};
+            right: 0;
+            transform: translateY(-50%);
+            float: none;
+            order: 1;
+            display: flex;
+            width: auto !important;
+            height: auto;
+            margin-right: 0;
+
+            .commento-option-button {
+              position: static;
+              display: none;
+              right: auto !important;
+            }
+
+            .commento-option-edit,
+            .commento-option-remove {
+              display: block;
+              width: ${calcRem(20)};
+              height: ${calcRem(20)};
+              margin: 0;
+              mask-image: none;
+              background: #ffffff;
+            }
+
+            .commento-option-edit {
+              background-image: url(${require('../../../../public/icons/edit.svg').default});
+            }
+
+            .commento-option-remove {
+              margin-left: ${calcRem(16)};
+              background-image: url(${require('../../../../public/icons/delete.svg').default});
+            }
           }
 
           .commento-options-clearfix {
@@ -345,8 +446,53 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
 
         .commento-comments {
           .commento-card {
-            .commento-options {
-              display: none;
+            & div[id*='commento-comment-contents'] {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+            }
+
+            .commento-body {
+              order: 2;
+            }
+
+            .commento-options,
+            .commento-options-mobile {
+              position: absolute;
+              top: ${calcRem(-17)};
+              right: 0;
+              transform: translateY(-50%);
+              float: none;
+              order: 1;
+              display: flex;
+              width: auto !important;
+              height: auto;
+              margin-right: 0;
+  
+              .commento-option-button {
+                position: static;
+                display: none;
+                right: auto !important;
+              }
+  
+              .commento-option-edit,
+              .commento-option-remove {
+                display: block;
+                width: ${calcRem(20)};
+                height: ${calcRem(20)};
+                margin: 0;
+                mask-image: none;
+                background: #ffffff;
+              }
+  
+              .commento-option-edit {
+                background-image: url(${require('../../../../public/icons/edit.svg').default});
+              }
+  
+              .commento-option-remove {
+                margin-left: ${calcRem(16)};
+                background-image: url(${require('../../../../public/icons/delete.svg').default});
+              }
             }
   
             .commento-options-clearfix {
@@ -356,6 +502,12 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
         }
       }
     }
+  }
+`
+
+const fadeOut = keyframes`
+  to {
+    opacity: 0;
   }
 `
 
