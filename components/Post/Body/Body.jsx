@@ -28,7 +28,6 @@ const Body = ({
   language,
   type,
   isTopPosition,
-  isBottomPosition,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => (
@@ -195,7 +194,6 @@ const Body = ({
 
     <PostNewsletter
       isTopPosition={isTopPosition}
-      isBottomPosition={isBottomPosition}
       language={language}
       type={type}
       kind="post"
