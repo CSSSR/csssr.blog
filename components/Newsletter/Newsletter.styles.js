@@ -8,6 +8,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     width: 100vw;
     margin-top: ${calcRem(75)};
     padding-bottom: ${calcRem(30)};
+    background-color: white;
+    z-index: 9999;
   }
 
   .section {
