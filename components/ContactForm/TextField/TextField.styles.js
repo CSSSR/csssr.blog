@@ -68,10 +68,12 @@ const base = ({ colors }) => css`
   }
 `
 
-export default (props) => {
+const StyledTextField = (props) => {
   const { colors } = props.theme
 
   return css`
     ${base({colors})}
   `
 }
+
+export default StyledTextField

@@ -5,6 +5,7 @@ import styles, { dynamicFooterStyles } from './Layout.styles'
 import { Header } from '@csssr/core-design'
 import CookiesPopup from '../CookiesPopup'
 import FooterWrapper from '../FooterWrapper'
+import { Context } from '../../utils/subscribeBlockProvider'
 
 const presetByLanguage = {
   en: 'defaultEn',
@@ -12,9 +13,9 @@ const presetByLanguage = {
 }
 
 export default function Layout({ children, language, type }) {
-  const [isBottomPosition, setBottomPossition] = useState(false)
+  const [isBottomPosition, setBottomPosition] = useState(false)
 
-  const childrenWithExtraProp = React.cloneElement(children, {isBottomPosition});
+  const SubscribeBlockPositionTheme = React.createContext(isBottomPosition)
 
   return (
     <>
@@ -29,23 +30,23 @@ export default function Layout({ children, language, type }) {
         }}
       />
       <main id="main" className="main">
-        {childrenWithExtraProp}
+        <Context.Provider value={{isBottomPosition}}>
+          {children}
+        </Context.Provider>
       </main>
 
-      <FooterWrapper 
-        className="footer" 
-        preset={presetByLanguage[language]} 
-        language={language} 
-        type={type} 
-        setBottomPossition={setBottomPossition}
+      <FooterWrapper
+        className="footer"
+        preset={presetByLanguage[language]}
+        language={language}
+        type={type}
+        setBottomPosition={setBottomPosition}
       />
 
       <CookiesPopup language={language} />
 
       <Global styles={styles} />
-      {language === 'ru' &&
-        <Global styles={dynamicFooterStyles} />
-      }
+      {language === 'ru' && <Global styles={dynamicFooterStyles} />}
     </>
   )
 }

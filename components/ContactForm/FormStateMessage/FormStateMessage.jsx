@@ -6,16 +6,15 @@ import { func, oneOf, string } from 'prop-types'
 import { Text } from '@csssr/core-design'
 
 const FormStateMessage = ({ className, status, testId, onTryAgain }) => {
-  
   const getMessage = () => {
     if (status === 'success') {
       return 'Ура! Вы подписались на рассылку.'
-    } 
-    
+    }
+
     if (status === 'fail') {
       return 'Упс, что-то пошло не так.'
     }
-    
+
     return null
   }
 
@@ -32,15 +31,16 @@ const FormStateMessage = ({ className, status, testId, onTryAgain }) => {
           as="span"
           data-testid={testId}
         >
-          <span className="message">
-            {getMessage()}
-          </span> 
-          {status === 'fail' && 
+          <span className="message">{getMessage()}</span>
+          {status === 'fail' && (
             <>
-              <span className="reset-button" onClick={onTryAgain}>Попробуйте<br/> еще раз</span>
+              <span className="reset-button" onClick={onTryAgain}>
+                Попробуйте
+                <br /> еще раз
+              </span>
               <span>.</span>
             </>
-          }
+          )}
         </Text>
       )}
     </>

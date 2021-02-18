@@ -32,7 +32,6 @@ const Body = ({
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => (
-
   <Grid className={cn(`post-body ${className}`)}>
     {compiler(content, {
       wrapper: Fragment,
@@ -204,15 +203,9 @@ const Body = ({
       BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
     />
 
-    {language === 'ru' && type !== 'news' && ( 
-      <ReadMore posts={posts} />
-    )}
+    {language === 'ru' && type !== 'news' && <ReadMore posts={posts} />}
 
-    <Comments 
-      id={slug}
-      language={language}
-      type={type}
-    />
+    <Comments id={slug} language={language} type={type} />
   </Grid>
 )
 

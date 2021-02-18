@@ -25,7 +25,6 @@ const Posts = ({ language, posts, className }) => (
         />,
       ]
     }, [])}
-
   </Grid>
 )
 

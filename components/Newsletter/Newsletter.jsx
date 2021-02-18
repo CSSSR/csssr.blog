@@ -30,11 +30,7 @@ const Newsletter = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LI
             BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
           />
 
-          <PictureSmart
-            requireImages={img}
-            className="picture"
-            alt={imgAlt}
-          />
+          <PictureSmart requireImages={img} className="picture" alt={imgAlt} />
         </div>
       </Grid>
     </div>

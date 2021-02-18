@@ -112,10 +112,12 @@ const base = ({ breakpoints: { mobile } }) => css`
    }
 `
 
-export default (props) => {
+const StyledPostShare = (props) => {
   const { breakpoints, colors } = props.theme
 
   return css`
     ${base({ breakpoints, colors })}
   `
 }
+
+export default StyledPostShare

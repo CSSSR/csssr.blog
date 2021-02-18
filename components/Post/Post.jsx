@@ -20,7 +20,7 @@ const Post = ({
   type = 'regular',
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
-  isBottomPosition
+  isBottomPosition,
 }) => {
   const title = type === 'news' ? 'Новости 512 | CSSSR' : cleaningTitle(post.title, 'meta')
   const description =

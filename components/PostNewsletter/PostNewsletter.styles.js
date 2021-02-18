@@ -140,10 +140,12 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
    }
 `
 
-export default (props) => {
+const StyledPostNewsletter = (props) => {
   const { breakpoints, colors } = props.theme
 
   return css`
     ${base({ breakpoints, colors })}
   `
 }
+
+export default StyledPostNewsletter

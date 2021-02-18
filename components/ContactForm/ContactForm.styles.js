@@ -387,10 +387,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   }
 `
 
-export default props => {
+const StyledContactForm = props => {
   const { breakpoints, colors } = props.theme
 
   return css`
     ${base({ breakpoints, colors })}
   `
 }
+
+export default StyledContactForm

@@ -9,7 +9,7 @@ import {
   FacebookShareButton,
   TwitterShareButton,
   VKShareButton,
-} from "react-share";
+} from 'react-share'
 
 import { ReactComponent as FacebookIcon } from '../../public/icons/share/facebook.svg'
 import { ReactComponent as TwitterIcon } from '../../public/icons/share/twitter.svg'
@@ -24,9 +24,10 @@ const PostShare = ({ className, language, type }) => {
 
   const inputRef = useRef()
 
-  const currentUrl = type === 'news' ?
-   `http://blog.csssr.com/${language}/news512/episode/${router.query.slug}` :
-   `http://blog.csssr.com/${language}/article/${router.query.slug}`
+  const currentUrl =
+    type === 'news'
+      ? `http://blog.csssr.com/${language}/news512/episode/${router.query.slug}`
+      : `http://blog.csssr.com/${language}/article/${router.query.slug}`
 
   const copyHandler = () => {
     function timerFunction() {
@@ -51,28 +52,31 @@ const PostShare = ({ className, language, type }) => {
   const [isMessageShown, setIsMessageShown] = useState(false)
 
   return (
-    <div className={cn(className, 'share', {
-      withMargin: language === 'ru' && type !== 'news'
-    })}>
+    <div
+      className={cn(className, 'share', {
+        withMargin: language === 'ru' && type !== 'news',
+      })}
+    >
       <Heading.H2 type="regular" className="share-title">
         {shareTitle}
       </Heading.H2>
 
       <ul className="links">
         <li className="link-item">
-          <FacebookShareButton  className="share-link facebook" url={currentUrl}>
+          <FacebookShareButton className="share-link facebook" url={currentUrl}>
             <FacebookIcon />
           </FacebookShareButton>
         </li>
         <li className="link-item">
-          {language === 'ru' ?
+          {language === 'ru' ? (
             <VKShareButton className="share-link vk" url={currentUrl}>
               <VkIcon />
-            </VKShareButton> :
-          <EmailShareButton className="share-link mail" url={currentUrl}>
-            <EmailIcon />
-          </EmailShareButton>
-          }
+            </VKShareButton>
+          ) : (
+            <EmailShareButton className="share-link mail" url={currentUrl}>
+              <EmailIcon />
+            </EmailShareButton>
+          )}
         </li>
         <li className="link-item">
           <TwitterShareButton className="share-link twitter" url={currentUrl}>
@@ -86,9 +90,12 @@ const PostShare = ({ className, language, type }) => {
           <input className="hidden-input" ref={inputRef} defaultValue={currentUrl} />
 
           {isMessageShown && (
-            <Text as="span" className={cn('copy-message', {
-              '_en': language === 'en'
-            })}>
+            <Text
+              as="span"
+              className={cn('copy-message', {
+                _en: language === 'en',
+              })}
+            >
               {copyMessage}
             </Text>
           )}

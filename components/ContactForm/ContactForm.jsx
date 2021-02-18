@@ -84,9 +84,11 @@ const Component = ({
             />
           </div>
 
-          <div className={cn('buttonWrapper', {
-                success: status === 'success'
-              })}>
+          <div
+            className={cn('buttonWrapper', {
+              success: status === 'success',
+            })}
+          >
             <AnimatedButton
               kind="secondary"
               className="submit"
@@ -107,9 +109,9 @@ const Component = ({
           </div>
         </div>
 
-         <p
+        <p
           className={cn('policy', {
-            visible: isFocused
+            visible: isFocused,
           })}
           onMouseOver={() => setFocused(true)}
           onMouseOut={() => setFocused(false)}
@@ -118,9 +120,11 @@ const Component = ({
           }}
         />
 
-        <div className={cn('buttonWrapper_mobile', {
-          success: status === 'success'
-        })}>
+        <div
+          className={cn('buttonWrapper_mobile', {
+            success: status === 'success',
+          })}
+        >
           <AnimatedButton
             kind="secondary"
             className="submit"

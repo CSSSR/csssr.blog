@@ -48,10 +48,10 @@ const base = ({ breakpoints: { mobile }}) => css`
   }
 `
 
-export default (props) => {
+const StyledFormStateMessage = (props) => {
   const { breakpoints } = props.theme
-
   return css`
     ${base({ breakpoints })}
   `
 }
+export default StyledFormStateMessage
