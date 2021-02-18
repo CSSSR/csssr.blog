@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState } from 'react'
 import { Global } from '@emotion/react'
 import Meta from '../Meta'
 import styles, { dynamicFooterStyles } from './Layout.styles'

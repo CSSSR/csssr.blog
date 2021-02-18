@@ -44,6 +44,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
       .buttonWrapper.success span {
         margin-left: ${calcRem(8)};
+
+        & span {
+          width: 100%;
+        }
       }
 
       .buttonWrapper.success .submit {
