@@ -64,7 +64,6 @@ const base = ({ colors }) => css`
     transform: translateY(${calcRem(28)});
     color: ${colors.secondary.darken100};
     font-weight: 300;
-    font-size: ${calcRem(12)};
     text-transform: lowercase;
   }
 `
