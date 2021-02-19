@@ -64,6 +64,7 @@ const MainPage = ({
       />
       {language === 'ru' && (
         <Newsletter
+          language={language}
           BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
           BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
         />

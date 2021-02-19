@@ -119,6 +119,12 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 `
 
+export const dynamicFooterStyles = css`
+  footer.footer {
+    margin-top: 0; // Когда использьуется этот компонент, у футера не должно быть отступа
+  }
+`
+
 const StyledNewsletter = props => {
   const { breakpoints, colors } = props.theme
 

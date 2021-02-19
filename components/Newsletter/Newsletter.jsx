@@ -1,13 +1,20 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import styles from './Newsletter.styles'
+import styles, { dynamicFooterStyles } from './Newsletter.styles'
+import { Global } from '@emotion/react'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { Heading, Text } from '@csssr/core-design'
 import { Grid } from '../Grid'
 import ContactForm from '../ContactForm'
 import { newsletterData } from '../../data/newsletter'
 
-const Newsletter = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID }) => {
+const Newsletter = ({
+  className,
+  language,
+  kind,
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
+}) => {
   const { title, subtitle, img, imgAlt } = newsletterData
 
   return (
@@ -31,6 +38,8 @@ const Newsletter = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LI
           />
 
           <PictureSmart requireImages={img} className="picture" alt={imgAlt} />
+
+          {language === 'ru' && <Global styles={dynamicFooterStyles} />}
         </div>
       </Grid>
     </div>
