@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import { Heading } from '@csssr/core-design'
-import styled from '@emotion/styled'
 import { string } from 'prop-types'
-
-import styles from './Comments.styled'
+import styled from '@emotion/styled'
+import styles, { backgroundImagesStyles } from './Comments.styled'
+import { Global } from '@emotion/react'
+import { Heading } from '@csssr/core-design'
 
 const insertScript = (src, id, parentElement) => {
   const script = window.document.createElement('script')
@@ -34,24 +34,27 @@ const cleanComments = () => {
   }
 }
 
-const Comments = ({ id, className, language }) => {
+const Comments = ({ id, className, language, IS_PRODUCTION }) => {
   //This part allows comments in development mode
   //Read more about this hack: https://remysharp.com/2019/06/11/ejecting-disqus#testing-commento-offline--adjusting-urls
   useEffect(() => {
+    const prodPath = `${language}/article/${id}`
+    const testPath = `${language}/article/${id}-test`
+
     window.parent = {
       location: {
         host: 'https://blog.csssr.com/',
-        pathname: `${language}/article/${id}`,
+        pathname: IS_PRODUCTION ? prodPath : testPath,
       },
     }
-  }, [language, id])
+  }, [language, id, IS_PRODUCTION])
 
   useEffect(() => {
+    const document = window.document
+
     if (!window) {
       return
     }
-
-    const document = window.document
 
     if (document.getElementById('commento')) {
       insertScript('https://cdn.commento.io/js/commento.js', 'commento-script', document.body)
@@ -70,6 +73,7 @@ const Comments = ({ id, className, language }) => {
       </Heading.H3>
 
       <div id="commento" />
+      <Global styles={backgroundImagesStyles} />
     </div>
   )
 }
