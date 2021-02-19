@@ -22,10 +22,16 @@ const base = ({ breakpoints: { mobile } }) => css`
 
   .link-item {
     color: #18191B;
+    width: ${calcRem(24)};
+    height: ${calcRem(24)};
 
     &:nth-of-type(3),
     &:nth-of-type(4) {
       margin-top: ${calcRem(16)};
+    }
+
+    &:nth-of-type(even) {
+      margin-left: ${calcRem(16)};
     }
 
     &.copy {
@@ -89,6 +95,10 @@ const base = ({ breakpoints: { mobile } }) => css`
 
       &._ru {
         margin-top: 0;
+      }
+
+      &.withMargin {
+        transform: unset;
       }
     }
 

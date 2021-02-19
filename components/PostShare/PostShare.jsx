@@ -39,14 +39,12 @@ const PostShare = ({ className, language, type }) => {
 
     if (window.isSecureContext) {
       navigator.clipboard.writeText(currentUrl)
-      setIsMessageShown(true)
-      timerFunction()
     } else {
       inputRef.current.select() // для локальной работы копирования текста
       document.execCommand('copy')
-      setIsMessageShown(true)
-      timerFunction()
     }
+    setIsMessageShown(true)
+    timerFunction()
   }
 
   const [isMessageShown, setIsMessageShown] = useState(false)
