@@ -25,7 +25,7 @@ const Post = ({
   const description =
     type === 'news' ? cleaningTitle(post.title, 'meta') : getDescription(post.content)
 
-  const [isTopPosition, setTopPosition] = useState(false)
+  const [isTopPosition, setTopPosition] = useState(true)
 
   return (
     <article
