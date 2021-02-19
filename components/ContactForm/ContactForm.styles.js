@@ -90,10 +90,11 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         transition: color 0.3s;
       }
 
-      .label {
+      label.label {
         font-size: ${calcRem(12)};
         line-height: ${calcRem(16)};
         left: 0;
+        color: ${colors.secondary.darken100};
       }
 
       .label._active {

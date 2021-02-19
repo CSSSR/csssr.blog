@@ -86,6 +86,10 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     .main {
       padding-top: 4rem;
     }
+
+    .footer {
+      margin-top: ${calcRem(100)};
+    }
   }
 
   ${tablet.all} {
@@ -99,7 +103,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     }
 
     .footer {
-      margin-top: ${calcRem(140)};
+      margin-top: ${calcRem(60)};
     }
 
     .post-body .text_regular_m {
@@ -212,10 +216,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   }
 
   ${desktop.l} {
-    .footer {
-      margin-top: 149px;
-    }
-
     .visible {
       .nav.nav_industries {
         ul {
@@ -245,10 +245,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       grid-gap: 0 16px;
     }
 
-    .footer {
-      margin-top: 267px;
-    }
-
     .visible {
       .nav.nav_industries {
         ul {
@@ -276,10 +272,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     .grid-container {
       grid-template-columns: repeat(12, 88px);
       grid-gap: 0 16px;
-    }
-
-    .footer {
-      margin-top: 267px;
     }
 
     .visible {
@@ -321,7 +313,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     }
 
     .footer {
-      margin-top: ${calcRem(70)};
+      margin-top: ${calcRem(64)};
     }
 
     .visible {

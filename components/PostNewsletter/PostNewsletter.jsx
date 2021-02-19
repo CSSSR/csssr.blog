@@ -26,7 +26,7 @@ const PostNewsletter = ({
     <div
       className={cn(className, {
         onBottom: isBottomPosition,
-        onTop: isTopPosition,
+        onTop: isTopPosition
       })}
     >
       {language === 'ru' && type !== 'news' && (

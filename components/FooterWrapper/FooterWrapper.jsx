@@ -10,7 +10,7 @@ const FooterWrapper = ({ preset, type, language, setBottomPosition }) => {
       setBottomPosition(entry.isIntersecting)
     }
 
-    const margin = language === 'ru' && type !== 'news' ? '200px 0px 0px 0px' : '100px 0px 0px 0px'
+    const margin = language === 'ru' && type !== 'news' ? '200px 0px 0px 0px' : '0px 0px 0px 0px'
 
     const options = {
       root: null,
