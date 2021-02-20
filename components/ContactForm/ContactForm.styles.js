@@ -42,7 +42,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         line-height: ${calcRem(12)};
       }
 
-      .buttonWrapper.success span {
+      .buttonWrapper.success span,
+      .buttonWrapper.fail span {
         margin-left: ${calcRem(8)};
 
         & span {
@@ -50,7 +51,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         }
       }
 
-      .buttonWrapper.success .submit {
+      .buttonWrapper.success .submit,
+      .buttonWrapper.fail .submit {
         width: auto;
       }
 
@@ -75,6 +77,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
           }
         }
 
+        > button[status='fail'] {
+          background-color: unset;
+        }
+
         svg {
           top: ${calcRem(-3)};
           left: ${calcRem(-3)};
@@ -82,6 +88,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
           height: ${calcRem(35)};
           margin-left: 0;
           transform: rotateZ(14deg);
+
+          &.cross {
+            transform: unset;
+          }
         }
       }
 
@@ -146,7 +156,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       display: none;
     }
 
-    &.success .submit {
+    &.success .submit,
+    &.fail .submit {
       width: auto;
     }
   }
@@ -164,6 +175,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     > button[status='submitting'] {
       width: ${calcRem(40)};
       margin-left: ${calcRem(16)};
+      border-color: ${colors.secondary.darken100};
 
       > span {
         display: none;
@@ -175,6 +187,14 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       height: ${calcRem(40)};
       margin-left: ${calcRem(-12)};
       transform: rotateZ(14deg) scale(1.2);
+    }
+
+    svg.cross {
+      transform: scale(1.4);
+    }
+
+    svg.progress-circle {
+      display: none;
     }
 
     span {
@@ -212,6 +232,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   svg.cross path {
     stroke-width: 4;
     stroke-linecap: round;
+    stroke: ${colors.secondary.darken100} !important;
   }
 
   ${tablet.all} {

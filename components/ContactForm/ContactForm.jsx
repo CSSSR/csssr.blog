@@ -42,15 +42,35 @@ const Component = ({
     return 'pending'
   }
 
+  // const handleSubmit = (e) => {
+  //   const submitResult = props.handleSubmit(e)
+
+  //   if (submitResult) {
+  //     setSubmittedToServerStatus(true)
+
+  //     return submitResult.then(() => {
+  //       reset()
+
+  //       if (onSubmitResolve) {
+  //         onSubmitResolve(getStatus())
+  //       }
+
+  //       if (submitSucceeded) {
+  //         reset()
+  //       }
+  //     })
+  //   }
+  // }
+
   const handleSubmit = (e) => {
+    // Может быть undefined если были ошибки валидации
+    // или Promise если запрос отправлен
     const submitResult = props.handleSubmit(e)
 
     if (submitResult) {
       setSubmittedToServerStatus(true)
 
       return submitResult.then(() => {
-        reset()
-
         if (onSubmitResolve) {
           onSubmitResolve(getStatus())
         }
@@ -87,6 +107,7 @@ const Component = ({
           <div
             className={cn('buttonWrapper', {
               success: status === 'success',
+              fail: status === 'fail',
             })}
           >
             <AnimatedButton
@@ -101,6 +122,7 @@ const Component = ({
             </AnimatedButton>
 
             <FormStateMessage
+              kind={kind}
               status={status}
               errorText={submitError}
               onTryAgain={handleTryToFillFormAgain}

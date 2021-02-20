@@ -3,7 +3,7 @@ import { calcRem } from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile }}) => css`
   & {
-    display: inline-block;
+    display: block;
     margin-left: ${calcRem(16)};
     transform: scale(1);
     transition: transform 0.3s ease-out;
@@ -15,15 +15,18 @@ const base = ({ breakpoints: { mobile }}) => css`
     }
   }
 
-  span.message {
+  & span.message {
     display: inline-block;
-    max-width: ${calcRem(130)};
     margin-right: ${calcRem(2)};
     margin-left: 0 !important;
   }
+  
+  &.post span.message {
+    display: inline;
+  }
 
   .reset-button {
-    display: inline;
+    display: block;
     margin-left: ${calcRem(1)} !important;
     font-family: inherit;
     font-weight: inherit;
@@ -34,6 +37,26 @@ const base = ({ breakpoints: { mobile }}) => css`
     border: none;
     text-decoration: underline;
     cursor: pointer;
+
+    & br {
+      display: none;
+    }
+
+    & span.dot {
+      display: inline-block;
+      width: unset !important;
+      margin-left: 0 !important;
+      color: #4A4A4A;
+      text-decoration: none;
+    }
+  }
+
+  &.post .reset-button {
+    display: inline;
+
+    & br {
+      display: block;
+    }
   }
 
   ${mobile.all} {
