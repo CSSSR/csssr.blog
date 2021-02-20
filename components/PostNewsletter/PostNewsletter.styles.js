@@ -45,18 +45,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     }
   }
 
-  ${desktop.l} {
-    &.onBottom {
-      bottom: 470px;
-    }
-  }
-
-  ${desktop.s}{
-    & {
-      transform: translateX(calc(((50vw - 78px) - 516px))); // На дестопах отступ от текста 112px TODO: переделать отступ как сделают в макете
-    }
-  }
-
   ${desktop.all} {
     & {
       transform: translateX(calc(((50vw - 78px) - 516px))); // На дестопах отступ от текста 112px
@@ -69,6 +57,18 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     .subtitle {
       font-size: 12px;
       line-height: 16px;
+    }
+  }
+
+  ${desktop.l} {
+    &.onBottom {
+      bottom: 470px;
+    }
+  }
+
+  ${desktop.s}{
+    & {
+      transform: translateX(calc(((50vw - 78px) - 484px))); // На дестопах отступ от текста 112px TODO: переделать отступ как сделают в макете
     }
   }
 
