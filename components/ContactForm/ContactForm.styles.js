@@ -143,7 +143,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .label {
     left: ${calcRem(14)};
-    color: ${colors.secondary.darken100};
+    color: ${colors.secondary.darken100} !important;
   }
 
   .buttonWrapper {
