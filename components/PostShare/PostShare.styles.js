@@ -16,7 +16,6 @@ const base = ({ breakpoints: { mobile } }) => css`
   .links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin-top: ${calcRem(16)};
   }
 
@@ -107,7 +106,6 @@ const base = ({ breakpoints: { mobile } }) => css`
     }
 
     .links {
-      justify-content: flex-start;
       margin-top: 0;
     }
 
