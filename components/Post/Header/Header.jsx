@@ -35,7 +35,7 @@ const Header = ({
     }
 
     const langAndPostCondition = language === 'ru' && type !== 'news'
-    const rootMargin = langAndPostCondition ? '200px 0px 0px 0px' : '-40px 0px 0px 0px'
+    const rootMargin = langAndPostCondition ? '150px 0px 0px 0px' : '-105px 0px 0px 0px'
     const threshold = langAndPostCondition ? '0.8' : '0'
 
     const options = {

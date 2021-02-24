@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useRef } from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './PostNewsletter.styles'
@@ -8,6 +8,7 @@ import ContactForm from '../ContactForm'
 import PostShare from '../PostShare'
 import { postNewsletterData } from '../../data/newsletter'
 import { Context } from '../../utils/subscribeBlockProvider'
+import useClickOutside from '../../utils/client/useClickOutside'
 
 const PostNewsletter = ({
   className,
@@ -22,12 +23,24 @@ const PostNewsletter = ({
 
   const { isBottomPosition } = useContext(Context)
 
+  const wrapperRef = useRef()
+
+  const [isMessageHidden, setMessageHidden] = useState(true)
+  const [inputValueLength, setInputValueLength] = useState(0)
+
+  const onClickOutSideHandler = () => {
+    inputValueLength !== 0 ? setMessageHidden(false) : setMessageHidden(true)
+  }
+
+  useClickOutside(wrapperRef, onClickOutSideHandler)
+
   return (
     <div
       className={cn(className, {
         onBottom: isBottomPosition,
         onTop: isTopPosition
       })}
+      ref={wrapperRef}
     >
       {language === 'ru' && type !== 'news' && (
         <div className="container">
@@ -44,6 +57,10 @@ const PostNewsletter = ({
 
           <ContactForm
             kind={kind}
+            inputValueLength={inputValueLength}
+            setInputValueLength={setInputValueLength}
+            isMessageHidden={isMessageHidden}
+            setMessageHidden={setMessageHidden}
             BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
             BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
           />

@@ -14,6 +14,10 @@ import rateFormValidationRules from '../../utils/validators/rateFormValidationRu
 const Component = ({
   className,
   kind,
+  inputValueLength,
+  setInputValueLength,
+  isMessageHidden,
+  setMessageHidden,
   formName,
   submitting,
   submitFailed,
@@ -24,7 +28,6 @@ const Component = ({
   ...props
 }) => {
   const [submittedToServer, setSubmittedToServerStatus] = useState(false)
-  const [isFocused, setFocused] = useState(false)
 
   const getStatus = () => {
     if (submitting) {
@@ -85,6 +88,10 @@ const Component = ({
   const handleTryToFillFormAgain = () => setSubmittedToServerStatus(false)
   const status = getStatus()
 
+  const handleInputChange = (e) => {
+    setInputValueLength && setInputValueLength(e.target.value.length)
+  }
+
   return (
     <div className={cn(`${className}`, { news: kind === 'news', post: kind === 'post' })}>
       <form onSubmit={handleSubmit}>
@@ -94,7 +101,8 @@ const Component = ({
               name="email"
               render={({ input, meta }) => (
                 <TextField
-                  onFocus={() => setFocused(true)}
+                  onInput={handleInputChange}
+                  onFocus={() => setMessageHidden && setMessageHidden(false)}
                   input={input}
                   meta={meta}
                   label="e-mail"
@@ -133,10 +141,8 @@ const Component = ({
 
         <p
           className={cn('policy', {
-            visible: isFocused,
+            visible: !isMessageHidden,
           })}
-          onMouseOver={() => setFocused(true)}
-          onMouseOut={() => setFocused(false)}
           dangerouslySetInnerHTML={{
             __html: `Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и информационных материалов, а также факт своего ознакомления и согласия с <a class="link" href="https://csssr.com/ru/privacy-policy" target="_blank">Политикой конфиденциальности<a/>`,
           }}
@@ -174,7 +180,16 @@ Component.propTypes = {
   className: string,
 }
 
-const Form = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID }) => {
+const Form = ({ 
+  className,
+  kind, 
+  inputValueLength,
+  setInputValueLength,
+  isMessageHidden, 
+  setMessageHidden, 
+  BENCHMARK_EMAIL_TOKEN, 
+  BENCHMARK_EMAIL_LIST_ID 
+}) => {
   const onSubmit = async (values) => {
     let res
     const isTestEmail = testEmails.includes(values.email)
@@ -230,6 +245,10 @@ const Form = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID 
     <ReactFinalForm
       className={className}
       kind={kind}
+      inputValue={inputValueLength}
+      setInputValueLength={setInputValueLength}
+      isMessageHidden={isMessageHidden}
+      setMessageHidden={setMessageHidden}
       formName="newsletter"
       component={Component}
       validate={rateFormValidationRules}
