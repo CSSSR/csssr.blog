@@ -14,7 +14,6 @@ import rateFormValidationRules from '../../utils/validators/rateFormValidationRu
 const Component = ({
   className,
   kind,
-  inputValueLength,
   setInputValueLength,
   isMessageHidden,
   setMessageHidden,
@@ -180,15 +179,14 @@ Component.propTypes = {
   className: string,
 }
 
-const Form = ({ 
+const Form = ({
   className,
-  kind, 
-  inputValueLength,
+  kind,
   setInputValueLength,
-  isMessageHidden, 
-  setMessageHidden, 
-  BENCHMARK_EMAIL_TOKEN, 
-  BENCHMARK_EMAIL_LIST_ID 
+  isMessageHidden,
+  setMessageHidden,
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
 }) => {
   const onSubmit = async (values) => {
     let res
@@ -245,7 +243,6 @@ const Form = ({
     <ReactFinalForm
       className={className}
       kind={kind}
-      inputValue={inputValueLength}
       setInputValueLength={setInputValueLength}
       isMessageHidden={isMessageHidden}
       setMessageHidden={setMessageHidden}

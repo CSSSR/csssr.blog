@@ -38,7 +38,7 @@ const PostNewsletter = ({
     <div
       className={cn(className, {
         onBottom: isBottomPosition,
-        onTop: isTopPosition
+        onTop: isTopPosition,
       })}
       ref={wrapperRef}
     >
@@ -57,7 +57,6 @@ const PostNewsletter = ({
 
           <ContactForm
             kind={kind}
-            inputValueLength={inputValueLength}
             setInputValueLength={setInputValueLength}
             isMessageHidden={isMessageHidden}
             setMessageHidden={setMessageHidden}

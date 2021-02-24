@@ -8,7 +8,7 @@ const base = ({ breakpoints: { mobile } }) => css`
     padding: ${calcRem(10)};
 
     &.withMargin {
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(50)};
       transform: translateX(${calcRem(-10)});
     }
   }

@@ -27,14 +27,18 @@ const FormStateMessage = ({ className, kind, status, testId, onTryAgain }) => {
         <Text
           className={cn(className, {
             invisible: !messageShown,
-            post: kind === 'post'
+            post: kind === 'post',
           })}
           as="span"
           data-testid={testId}
         >
-          <span className={cn('message', {
-            post: kind === 'post'
-          })}>{getMessage()}</span>
+          <span
+            className={cn('message', {
+              post: kind === 'post',
+            })}
+          >
+            {getMessage()}
+          </span>
           {status === 'fail' && (
             <>
               <span className="reset-button" onClick={onTryAgain}>
@@ -54,7 +58,7 @@ FormStateMessage.propTypes = {
   status: oneOf(['pending', 'submitting', 'success', 'fail']),
   onTryAgain: func,
   testId: string.isRequired,
-  kind: string
+  kind: string,
 }
 
 export default styled(FormStateMessage)`
