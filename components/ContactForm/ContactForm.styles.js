@@ -64,6 +64,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
           height: ${calcRem(30)};
           margin-top: 0;
           background-color: transparent;
+          border-width: ${calcRem(2)};
         }
 
         > button[status='fail'],
@@ -91,6 +92,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
           &.cross {
             transform: unset;
+          }
+
+          & path {
+            stroke-width: ${calcRem(3)};
           }
         }
       }
