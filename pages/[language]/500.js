@@ -2,7 +2,7 @@ import React from 'react'
 import ErrorPage from '../../components/error/ErrorPage'
 import languages from '../../utils/languages'
 
-// Эта находится тут для удобства тестирования тестов
+// This page is placed here for testing purposes
 class Custom500 extends React.Component {
   render() {
     return <ErrorPage statusCode={500} language={this.props.language} {...this.props} />

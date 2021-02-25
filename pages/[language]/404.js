@@ -1,7 +1,7 @@
 import Error404Page from '../../components/error/Error404Page'
 import React from 'react'
 
-// Эта находится тут для удобства тестирования тестов
+// This page is placed here for testing purposes
 class Custom404 extends React.Component {
   render() {
     return <Error404Page {...this.props} />

@@ -13,7 +13,6 @@ import { ReactComponent as LogoIcon } from '../../public/components/error/icons/
 import { ReactComponent as ServerError } from '../../public/components/error/icons/serverError.svg'
 
 import globalStyles from '../Layout/Layout.styles'
-import { language } from 'gray-matter'
 
 const possibleStatusCodes = [500]
 
