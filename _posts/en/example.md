@@ -433,3 +433,12 @@ There’s a perfect example. In 2017, Wayfair (online furniture retailer) launch
 
   There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.
 </Quote>
+
+## Codepen
+
+<p>
+  <iframe height="400" style="width: 100%;" scrolling="no" title="Slomux" src="https://codepen.io/csssr/embed/QPyPrz?height=400&theme-id=light&default-tab=js" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+    See the Pen <a href='https://codepen.io/csssr/pen/QPyPrz'>Slomux</a> by CSSSR
+    (<a href='https://codepen.io/csssr'>@csssr</a>) on <a href='https://codepen.io'>CodePen</a>.
+  </iframe>
+</p>
