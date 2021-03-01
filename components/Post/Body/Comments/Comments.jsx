@@ -38,16 +38,18 @@ const Comments = ({ id, className, language, IS_PRODUCTION }) => {
   //This part allows comments in development mode
   //Read more about this hack: https://remysharp.com/2019/06/11/ejecting-disqus#testing-commento-offline--adjusting-urls
   useEffect(() => {
-    const prodPath = `${language}/article/${id}`
-    const testPath = `${language}/article/${id}-test`
+    if (IS_PRODUCTION) {
+      return
+    }
 
     window.parent = {
+      ...window.parent,
       location: {
-        host: 'https://blog.csssr.com/',
-        pathname: IS_PRODUCTION ? prodPath : testPath,
+        ...window.parent.location,
+        host: 'commento-testing.csssr-new-blog.csssr.cloud',
       },
     }
-  }, [language, id, IS_PRODUCTION])
+  }, [IS_PRODUCTION])
 
   useEffect(() => {
     const document = window.document
