@@ -151,7 +151,7 @@ main {
 }
 ```
 
-<Img imageName='minmax-adaptive' alt='Гифка, где при сужении экрана в сетке становится всё меньше колонок' />
+<Img src='/images/dont-resize/ru/css-grid-by-example/minmax-adaptive/all.gif' alt='Гифка, где при сужении экрана в сетке становится всё меньше колонок' withOutProcessing />
 
 * Отступы между элементами явно указаны в `grid-gap`
 * Карточки в последнем ряду будут занимать свои колонки и не будут растягиваться
