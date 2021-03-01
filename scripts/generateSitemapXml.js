@@ -23,10 +23,19 @@ const generateSitemap = async () => {
     ),
   )
 
+  const newsLinks = await readdir(path.join(postsDirectory, 'news512')).then((fileNames) => {
+    return fileNames.map((postName) => ({
+      url: `https://blog.csssr.com/ru/news512/episode/${postName.replace('.md', '')}/`,
+      changefreq: 'weekly',
+      priority: 0.8,
+    }))
+  })
+
   const links = [
     { url: 'https://blog.csssr.com/en/', changefreq: 'weekly', priority: 1 },
     { url: 'https://blog.csssr.com/ru/', changefreq: 'weekly', priority: 1 },
     ...postsLinks.flat(),
+    ...newsLinks.flat(),
   ]
 
   const stream = new SitemapStream({ hostname: process.env.BLOG_HOST })

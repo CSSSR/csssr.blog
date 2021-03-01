@@ -19,11 +19,17 @@ const possibleStatusCodes = [500]
 const defaultStatusCode = 500
 
 const titleLocalesByStatusCode = {
-  500: 'Server Error',
+  500: {
+    ru: 'Ошибка на&nbsp;сервере',
+    en: 'Server Error',
+  },
 }
 
 const subtitleLocalesByStatusCode = {
-  500: 'Something went wrong. Try again or&nbsp;contact&nbsp;us at&nbsp;',
+  500: {
+    ru: 'Что-то пошло не&nbsp;так. Попробуйте еще раз или свяжитесь с&nbsp;нами по&nbsp;почте ',
+    en: 'Something went wrong. Try again or&nbsp;contact&nbsp;us at&nbsp;',
+  },
 }
 
 const pictureByStatusCode = {
@@ -35,42 +41,8 @@ const codeIconByStatusCode = {
 }
 
 class ErrorPage extends React.Component {
-  renderNav = ({ items: { title, id, links } }) => {
-    const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
-
-    return (
-      <span key={id}>
-        <h3 className="font_burger-menu" dangerouslySetInnerHTML={{ __html: title }} />
-
-        {links && (
-          <ul className="menu">
-            {links.map(({ id, title, href }) => {
-              return (
-                <li key={id}>
-                  {linkRegExp.test(href) ? (
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="menu-item"
-                      href={href}
-                      dangerouslySetInnerHTML={{ __html: title }}
-                    />
-                  ) : (
-                    <Link href={`/${href}`}>
-                      <a className="menu-item" dangerouslySetInnerHTML={{ __html: title }} />
-                    </Link>
-                  )}
-                </li>
-              )
-            })}
-          </ul>
-        )}
-      </span>
-    )
-  }
-
   render() {
-    const { className } = this.props
+    const { className, language } = this.props
 
     const statusCode =
       possibleStatusCodes.indexOf(this.props.statusCode) !== -1
@@ -94,7 +66,9 @@ class ErrorPage extends React.Component {
         <Grid as="main" className={cn(className, `error-code_${statusCode}`)}>
           <h1
             className="font_h1-slab"
-            dangerouslySetInnerHTML={{ __html: `${titleLocalesByStatusCode[statusCode]}` }}
+            dangerouslySetInnerHTML={{
+              __html: `${titleLocalesByStatusCode[statusCode][language]}`,
+            }}
           />
 
           <PictureSmart
@@ -109,7 +83,7 @@ class ErrorPage extends React.Component {
             className="font_subhead-slab"
             dangerouslySetInnerHTML={{
               __html: [
-                `${subtitleLocalesByStatusCode[statusCode]}`,
+                `${subtitleLocalesByStatusCode[statusCode][language]}`,
                 statusCode === 500
                   ? '<a style="color: #345eff" href="mailto:sales@csssr.io">sales@csssr.io</a>'
                   : null,
