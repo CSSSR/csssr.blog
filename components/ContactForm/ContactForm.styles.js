@@ -56,6 +56,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         width: auto;
       }
 
+      .buttonWrapper.fail .progress-circle {
+        display: none;
+      }
+
       .submit {
         height: auto;
 
@@ -65,6 +69,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
           margin-top: 0;
           background-color: transparent;
           border-width: ${calcRem(2)};
+          transition: unset;
         }
 
         > button[status='fail'],
@@ -148,7 +153,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .label {
     left: ${calcRem(14)};
-    color: ${colors.secondary.darken100} !important;
+    color: ${colors.secondary.darken100};
   }
 
   .buttonWrapper {
@@ -196,10 +201,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
     svg.cross {
       transform: scale(1.4);
-    }
-
-    svg.progress-circle {
-      display: none;
     }
 
     span {
