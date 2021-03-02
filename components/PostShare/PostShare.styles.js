@@ -44,6 +44,13 @@ const base = ({ breakpoints: { mobile } }) => css`
     }
   }
 
+  .share-link {
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   .share-title {
     font-size: ${calcRem(12)};
     line-height: ${calcRem(16)};
