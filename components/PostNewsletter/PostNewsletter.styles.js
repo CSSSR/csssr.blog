@@ -68,7 +68,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${desktop.m} {
     & {
-      transform: translateX(calc(((50vw - 78px) - 506px))); // На дестопах отступ от текста 112px
+      transform: translateX(calc(((50vw - 78px) - 516px))); // На дестопах отступ от текста 112px
     }
   }
 

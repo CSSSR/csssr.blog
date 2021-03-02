@@ -87,6 +87,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
           background-color: unset;
         }
 
+        > button[status='pending'] {
+          border-width: ${calcRem(1)};
+        }
+
         svg {
           top: ${calcRem(-3)};
           left: ${calcRem(-3)};
