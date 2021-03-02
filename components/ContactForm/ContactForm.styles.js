@@ -24,6 +24,11 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         line-height: ${calcRem(24)};
         overflow: hidden;
         text-overflow: ellipsis;
+
+        &:focus + .label {
+          font-size: ${calcRem(10)};
+          line-height: ${calcRem(12)};
+        }
       }
       
       .submit > button {
