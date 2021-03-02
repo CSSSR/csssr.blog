@@ -33,7 +33,7 @@ array.filter(predicate)
 А что можно сказать про такой код?
 
 ```js
-instruction = { type: ’filter’, target: array, arguments: [predicate] }
+instruction = { type: 'filter', target: array, arguments: [predicate] }
 ```
 
 Он более декларативен — в нём нет прямого вызова функций, а только описание того, что нужно сделать. Как такое может быть, есть градации декларативности? А лучше ли этот код в плане читаемости и понимаемости? Кажется, ответ не совсем однозначный.
@@ -42,7 +42,7 @@ instruction = { type: ’filter’, target: array, arguments: [predicate] }
 
 ```js
 for (let i = 0; i < array.length; i++) {
-if (predicate(array[i])) result.push(array[i])
+  if (predicate(array[i])) result.push(array[i])
 }
 ```
 
@@ -56,30 +56,30 @@ if (predicate(array[i])) result.push(array[i])
 
 ```js
 export const validateFormFields = state => {
-const displayedFields = selectFormFieldsNames(state)
-.map(name => selectFormField(state, name))
-.filter(isSystem);
+  const displayedFields = selectFormFieldsNames(state)
+    .map(name => selectFormField(state, name))
+    .filter(isSystem);
 
-const arrayFields = displayedFields.filter(isArray);
+  const arrayFields = displayedFields.filter(isArray);
 
-const emptyRequiredArraysErrors = arrayFields
-.filter(field => isArrayEmpty(field) && field.required)
-.map(field => selectFriendlyText(state, field.title, field.name));
+  const emptyRequiredArraysErrors = arrayFields
+    .filter(field => isArrayEmpty(field) && field.required)
+    .map(field => selectFriendlyText(state, field.title, field.name));
 
-const arrayCellsErrors = arrayFields
-.filter(field => !isArrayEmpty(field) && isTable(field))
-.reduce((acc, field) => [...acc, ...validateArrayCells(state, field)], []);
+  const arrayCellsErrors = arrayFields
+    .filter(field => !isArrayEmpty(field) && isTable(field))
+    .reduce((acc, field) => [...acc, ...validateArrayCells(state, field)], []);
 
-const notArrayFields = displayedFields.filter(field => !isArray(field));
-const notArrayFieldsErrors = notArrayFields
-.filter(field => field.required && isValueExist(field.value))
-.map(field => selectFriendlyText(state, field.title, field.name));
+  const notArrayFields = displayedFields.filter(field => !isArray(field));
+  const notArrayFieldsErrors = notArrayFields
+    .filter(field => field.required && isValueExist(field.value))
+    .map(field => selectFriendlyText(state, field.title, field.name));
 
-return [
-...notArrayFieldsErrors,
-...emptyRequiredArraysErrors,
-...arrayCellsErrors
-];
+  return [
+    ...notArrayFieldsErrors,
+    ...emptyRequiredArraysErrors,
+    ...arrayCellsErrors
+  ];
 };
 ```
 
@@ -87,27 +87,30 @@ VS
 
 ```js
 function validateFormFields(state) {
-const fieldsNames = selectFormFieldsNames(state);
-const result = [];
+  const fieldsNames = selectFormFieldsNames(state);
+  const result = [];
 
-for (let i = 0; i < fieldsNames.length; i++) {
-const field = selectFormField(state, fieldsNames[i]);
+  for (let i = 0; i < fieldsNames.length; i++) {
+    const field = selectFormField(state, fieldsNames[i]);
 
-if (isSystem(field)) continue;
+    if (isSystem(field)) continue;
 
-if (!isArray(field) && field.required && isValueExist(field.value))
-result.push(selectFriendlyText(state, field.title, field.name));
+    if (!isArray(field) && field.required && isValueExist(field.value)) {
+      result.push(selectFriendlyText(state, field.title, field.name));
+    }
 
-if (!isArray(field)) continue;
+    if (!isArray(field)) continue;
 
-if (isArrayEmpty(field) && field.required)
-result.push(selectFriendlyText(state, field.title, field.name));
+    if (isArrayEmpty(field) && field.required) {
+      result.push(selectFriendlyText(state, field.title, field.name));
+    }
 
-if (!isArrayEmpty(field) && isTable(field))
-result.push(...validateArrayCells(state, field));
-}
+    if (!isArrayEmpty(field) && isTable(field)) {
+      result.push(...validateArrayCells(state, field));
+    }
+  }
 
-return result;
+  return result;
 }
 ```
 
@@ -180,9 +183,9 @@ setTimeout(() => f(prop), time)
 
 ```js
 // [1]
-console.log({ ’2′: null, ...({ ’1′: null, ’2′: null }) })
+console.log({ '2': null, ...({ '1': null, '2': null }) })
 // [2]
-console.log({ ’2.0′: null, ...({ ’1.0′: null, ’2.0′: null }) })
+console.log({ '2.0': null, ...({ '1.0': null, '2.0': null }) })
 ```
 
 С первого взгляда может показаться, что это очень похожий код, результаты которого тоже будет похожи. Но, согласно спецификации, сортировка свойств объекта имеет некоторые особенности, поэтому в первом случае результат будет `{1: null, 2: null}`, а во втором `{2.0: null, 1.0: null}` — первыми свойствами всегда идут валидные индексы. Как можно заметить, во втором варианте порядок свойств поменялся. Эта логика не интуитивна и описывается в дебрях спецификации ЯП — формальной семантикой.
@@ -192,17 +195,20 @@ console.log({ ’2.0′: null, ...({ ’1.0′: null, ’2.0′: null }) })
 ```js
 // [1]
 function include(array, target) {
-for (let i = 0; i < array.length; i++) {
-if (array[i] === target) return true;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) return true;
+  }
+
+  return false;
 }
-return false;
-}
+
 // [2]
 function include(array, target) {
-for (const element of array) {
-if (element === target) return true;
-}
-return false;
+  for (const element of array) {
+    if (element === target) return true;
+  }
+
+  return false;
 }
 ```
 
@@ -229,19 +235,19 @@ React.createElement(Component, null)
 JSX с точки зрения интуитивной семантики — вёрстка, он отвечает за то, ***что*** будет отображаться, а не ***как***, потому что его задача именно в инкапсуляции логики `document.createElement` (формальной семантики). И на этом примере можно понять, что хорошая декларативность / метапрограммирование — это когда фактической разницы в результате работы кода с точки зрения интуитивной и формальной семантики нет. Но возвращаясь к JSX: он, как и результат самого HTML, всегда должен быть статичен, независимо от данных. В подтверждение этому выступает API хуков жизненного цикла в классах или хуков в функциональных компонентах — они описываются в JS, до блока с JSX, это наглядно.
 
 ```jsx
-import { Switch, Route, Redirect } from ’react-router’
+import { Switch, Route, Redirect } from 'react-router'
 
 <Switch>
-<Route exact path="/" component={Home} />
-<Route path="/about" component={About} />
-<Redirect to="/" />
+  <Route exact path="/" component={Home} />
+  <Route path="/about" component={About} />
+  <Redirect to="/" />
 </Switch>
 ```
 
 Например, `react-router` является примером очень плохого API, т.к. через компонент `<Switch>` он предлагает описывать логику зависимостей от данных прямо в JSX, более того, сам элемент превращается в управляющий блок. При этом классическая семантика полностью рушится, что ведет к ментальному усложнению чтения кода — в JSX может быть спрятана не только вёрстка, и его уже нужно читать вдумчивее, в голове нужно держать больше контекста. Правильнее в JS в начале блока функционального компонента или метода `render` описывать все зависимости, высчитывать их и потом в конечный возвращаемый JSX вставлять всё необходимое. Это и есть декларативное описание.
 
 ```jsx
-title = predicate ? ’first’ : ’second’;
+title = predicate ? 'first' : 'second';
 return <span>{title}</span>
 ```
 
@@ -253,15 +259,15 @@ return <span>{title}</span>
 
 ```jsx
 {
-render(){
-return (
-<div>
-{this.renderHeader()}
-{this.renderError()}
-{this.renderList()}
-</div>
-)
-}
+  render() {
+    return (
+      <div>
+        {this.renderHeader()}
+        {this.renderError()}
+        {this.renderList()}
+      </div>
+    )
+  }
 }
 ```
 
@@ -269,15 +275,15 @@ return (
 
 ```jsx
 {
-render(){
-return (
-<div>
-<Header />
-<Error />
-<List />
-</div>
-)
-}
+  render()  {
+    return (
+      <div>
+        <Header />
+        <Error />
+        <List />
+      </div>
+    )
+  }
 }
 ```
 
@@ -293,21 +299,23 @@ Render Props через `children` тоже подходит как явный �
 
 ```jsx
 const App = () => {
-return (
-<Wrapper link="https://jsonplaceholder.typicode.com/users">
-{({ list, isLoading, error }) => (
-<div>
-<h2>Random Users</h2>
-{error ? <p>{error.message}</p> : null}
-{isLoading ? (
-<h2>Loading...</h2>
-) : (
-<ul>{list.map(user => <li key={user.id}>{user.name}</li>)}</ul>
-)}
-</div>
-)}
-<Wrapper/>
-);
+  return (
+    <Wrapper link="https://jsonplaceholder.typicode.com/users">
+      {({ list, isLoading, error }) => (
+        <div>
+          <h2>Random Users</h2>
+
+          {error ? <p>{error.message}</p> : null}
+
+          {isLoading ? (
+              <h2>Loading...</h2>
+            ) : (
+              <ul>{list.map(user => <li key={user.id}>{user.name}</li>)}</ul>
+          )}
+        </div>
+      )}
+    <Wrapper/>
+  );
 }
 ```
 
@@ -317,23 +325,23 @@ return (
 
 ```jsx
 const App = () => {
-return React.createElement(
-Wrapper,
-{ link: «https://jsonplaceholder.typicode.com/users» },
-({ list, isLoading, error }) => {
-const errorView = error && <p>{error.message}</p>
-const listView = list.map(user => <li key={user.id}>{user.name}</li>)
-const bodyView = isLoading ? <h2>Loading...</h2> : <ul>{listView}</ul>
+  return React.createElement(
+    Wrapper,
+    { link: 'https://jsonplaceholder.typicode.com/users' },
+    ({ list, isLoading, error }) => {
+      const errorView = error && <p>{error.message}</p>
+      const listView = list.map(user => <li key={user.id}>{user.name}</li>)
+      const bodyView = isLoading ? <h2>Loading...</h2> : <ul>{listView}</ul>
 
-return (
-<div>
-<h2>Random Users</h2>
-{errorView}
-{bodyView}
-</div>
-)
-}
-)
+      return (
+        <div>
+          <h2>Random Users</h2>
+          {errorView}
+          {bodyView}
+        </div>
+      )
+    }
+  )
 }
 ```
 

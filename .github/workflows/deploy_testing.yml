@@ -42,7 +42,7 @@ jobs:
         working-directory: new_blog
         run: yarn build
         env:
-          BLOG_HOST: http://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud
+          BLOG_HOST: https://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud
           BENCHMARK_EMAIL_TOKEN: ${{ secrets.BENCHMARK_EMAIL_TOKEN }}
 
       - name: Деплой на тестинг
