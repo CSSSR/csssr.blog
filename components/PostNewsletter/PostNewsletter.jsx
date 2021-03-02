@@ -39,6 +39,7 @@ const PostNewsletter = ({
       className={cn(className, {
         onBottom: isBottomPosition,
         onTop: isTopPosition,
+        enVersion: language !== 'ru' || type === 'news'
       })}
       ref={wrapperRef}
     >

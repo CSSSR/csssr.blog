@@ -23,6 +23,11 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     bottom: ${calcRem(422)};
   }
 
+  &.enVersion {
+    max-width: ${calcRem(89)};
+    padding: 0;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
