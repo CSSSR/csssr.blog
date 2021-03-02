@@ -9,7 +9,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     margin-top: ${calcRem(75)};
     padding-bottom: ${calcRem(30)};
     background-color: white;
-    z-index: 9999;
+    z-index: 9000;
   }
 
   .section {
