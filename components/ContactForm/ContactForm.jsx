@@ -14,8 +14,6 @@ import rateFormValidationRules from '../../utils/validators/rateFormValidationRu
 const Component = ({
   className,
   kind,
-  setInputValueLength,
-  setInputFocused,
   isMessageHidden,
   setMessageHidden,
   formName,
@@ -45,26 +43,6 @@ const Component = ({
     return 'pending'
   }
 
-  // const handleSubmit = (e) => {
-  //   const submitResult = props.handleSubmit(e)
-
-  //   if (submitResult) {
-  //     setSubmittedToServerStatus(true)
-
-  //     return submitResult.then(() => {
-  //       reset()
-
-  //       if (onSubmitResolve) {
-  //         onSubmitResolve(getStatus())
-  //       }
-
-  //       if (submitSucceeded) {
-  //         reset()
-  //       }
-  //     })
-  //   }
-  // }
-
   const handleSubmit = (e) => {
     // Может быть undefined если были ошибки валидации
     // или Promise если запрос отправлен
@@ -75,10 +53,12 @@ const Component = ({
 
       return submitResult.then(() => {
         if (onSubmitResolve) {
+          alert(`${getStatus()}`)
           onSubmitResolve(getStatus())
-        }
+          
 
-        if (submitSucceeded) {
+        }
+        if (!submitFailed) {
           reset()
         }
       })
@@ -87,23 +67,6 @@ const Component = ({
 
   const handleTryToFillFormAgain = () => setSubmittedToServerStatus(false)
   const status = getStatus()
-
-  const handleInputChange = (e) => {
-    if (setInputValueLength) {
-      setInputValueLength(e.target.value.length)
-      setMessageHidden(false)
-    }
-  }
-
-  const handleInputFocus = () => {
-    if (setInputFocused) {
-      setInputFocused(true)
-    }
-
-    if (setMessageHidden) {
-      setMessageHidden(false)
-    }
-  }
 
   return (
     <div className={cn(`${className}`, { news: kind === 'news', post: kind === 'post' })}>
@@ -114,9 +77,12 @@ const Component = ({
               name="email"
               render={({ input, meta }) => (
                 <TextField
-                  onClick={handleInputFocus}
-                  onInput={handleInputChange}
-                  onFocus={handleInputFocus}
+                  onFocus={() => setMessageHidden(false)}
+                  onBlur={() => {
+                    if (!input.value) {
+                      setMessageHidden(true)
+                    }
+                  }}
                   input={input}
                   meta={meta}
                   label="e-mail"
@@ -157,10 +123,14 @@ const Component = ({
           className={cn('policy', {
             visible: !isMessageHidden,
           })}
-          dangerouslySetInnerHTML={{
-            __html: `Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и информационных материалов, а также факт своего ознакомления и согласия с <a class="link" href="https://csssr.com/ru/privacy-policy" target="_blank">Политикой конфиденциальности<a/>`,
-          }}
-        />
+          onMouseOver={() => setMessageHidden(false)}
+        >
+          Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и информационных материалов, а также факт своего ознакомления и согласия с 
+           <a className="subscribe-policy-link" 
+              href="https://csssr.com/ru/privacy-policy" 
+              target="_blank"> Политикой конфиденциальности
+            </a>
+        </p>
 
         <div
           className={cn('buttonWrapper_mobile', {
@@ -197,8 +167,6 @@ Component.propTypes = {
 const Form = ({
   className,
   kind,
-  setInputValueLength,
-  setInputFocused,
   isMessageHidden,
   setMessageHidden,
   BENCHMARK_EMAIL_TOKEN,
@@ -259,8 +227,6 @@ const Form = ({
     <ReactFinalForm
       className={className}
       kind={kind}
-      setInputValueLength={setInputValueLength}
-      setInputFocused={setInputFocused}
       isMessageHidden={isMessageHidden}
       setMessageHidden={setMessageHidden}
       formName="newsletter"

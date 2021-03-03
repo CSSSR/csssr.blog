@@ -239,7 +239,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     color: ${colors.secondary.gray};
   }
 
-  .link {
+  .subscribe-policy-link {
     color: ${colors.primary.origin};
   }
 

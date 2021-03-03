@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from 'react'
+import React, { useContext, useState } from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './PostNewsletter.styles'
@@ -8,7 +8,6 @@ import ContactForm from '../ContactForm'
 import PostShare from '../PostShare'
 import { postNewsletterData } from '../../data/newsletter'
 import { Context } from '../../utils/subscribeBlockProvider'
-import useClickOutside from '../../utils/client/useClickOutside'
 
 const PostNewsletter = ({
   className,
@@ -23,28 +22,15 @@ const PostNewsletter = ({
 
   const { isBottomPosition } = useContext(Context)
 
-  const wrapperRef = useRef()
-
   const [isMessageHidden, setMessageHidden] = useState(true)
-  const [isInputFocused, setInputFocused] = useState(false)
-  const [inputValueLength, setInputValueLength] = useState(0)
-
-  const messageCondition = (inputValueLength === 0 && !isMessageHidden)
-
-  const onClickOutSideHandler = () => messageCondition && setMessageHidden(true)
-
-  const onClickInsdeHandler = () => messageCondition && setMessageHidden(true)
-
-  useClickOutside(wrapperRef, onClickOutSideHandler, onClickInsdeHandler)
 
   return (
     <div
       className={cn(className, {
         onBottom: isBottomPosition,
         onTop: isTopPosition,
-        enVersion: language !== 'ru' || type === 'news'
+        enVersion: language !== 'ru' || type === 'news',
       })}
-      ref={wrapperRef}
     >
       {language === 'ru' && type !== 'news' && (
         <div className="container">
@@ -61,8 +47,6 @@ const PostNewsletter = ({
 
           <ContactForm
             kind={kind}
-            setInputValueLength={setInputValueLength}
-            setInputFocused={setInputFocused}
             isMessageHidden={isMessageHidden}
             setMessageHidden={setMessageHidden}
             BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}

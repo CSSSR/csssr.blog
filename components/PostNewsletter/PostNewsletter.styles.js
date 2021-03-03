@@ -9,6 +9,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     width: ${calcRem(156)};
     padding: ${calcRem(10)};
     background-color: white;
+    transition: top ease 0.5s, bottom ease 0.5s;
   }
 
   &.onTop {
