@@ -1,10 +1,31 @@
 import { css } from '@emotion/react'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) => css`
   & {
     margin-top: ${calcRem(85)};
     grid-column: 1 / span 12;
+  }
+
+  &.type_black {
+    .quotes {
+      color: #D2D2FF;
+    }
+
+    .quote-text,
+    .author {
+      color: ${colors.secondary.darken100};
+    }
+  }
+
+  &.type_blue { 
+    .quotes {
+      color: ${colors.secondary.darken100};
+    }
+
+    .quote-text {
+      color: #0254D8;
+    }
   }
 
   .quote {
@@ -12,6 +33,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     padding: 0;
     margin: 0;
     position: relative;
+
+    .quotes {
+      display: none;
+    }
 
     ${withImage ?
       `&::before {
@@ -23,17 +48,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
         background-color: #0254D8;
       }`
     :
-    `&::before {
+    `
+      .quotes {
         content: '';
         position: absolute;
+        display: block;
         top: 0;
         width: ${calcRem(48)};
         height: ${calcRem(32)};
-        background-image: url(${require('../../../../public/components/quote/icons/quotes.svg').default});
-        background-repeat: no-repeat;
-        background-size: cover;
-
-      }`
+      }
+    `
     }
     ${withImage &&
       `&::after {
@@ -75,7 +99,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     .quote {
       grid-column: 6 / span 4;
 
-      &::before {
+      &::before,
+      .quotes {
         right: calc(100% + 40px);
       }
 
@@ -98,6 +123,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     .image-wrapper {
       grid-column: 4 / span 1;
       width: ${calcRem(108)};
+    }
+
+    .quote-link {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 24px;
     }
   }
 
@@ -130,7 +161,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
   ${desktop.s} {
     .quote {
 
-      &::before {
+      &::before,
+      .quotes {
         right: calc(100% + 38px);
       }
 
@@ -154,7 +186,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     .quote {
       grid-column: 6 / span 5;
 
-      &::before {
+      &::before,
+      .quotes {
         top: ${withImage ? calcRem(-5) : '0'};
         right: calc(100% +  ${calcRem(28)});
         width: ${withImage ? calcRem(4) : calcRem(48)};
@@ -189,6 +222,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     .autor-post {
       margin-top: ${calcRem(5)};
     }
+
+    .quote-link {
+      margin-top: ${calcRem(5)};
+      font-size: ${calcRem(10)};
+      font-weight: 400;
+      line-height: ${calcRem(16)};
+    }
   }
 
   ${mobile.all} {
@@ -210,7 +250,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     .quote {
       grid-column: ${withImage ? '3 / span 4' : '2 / span 5'};
 
-      &::before {
+      &::before,
+      .quotes {
         top: ${withImage ? calcRem(-6) : '0'};
         right: calc(100% + ${calcRem(15)});
         width: ${withImage ? calcRem(2) : calcRem(36)};
@@ -240,15 +281,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage}) => css`
     .autor-post {
       margin-top: ${calcRem(5)};
     }
+
+    .quote-link {
+      margin-top: ${calcRem(5)};
+      font-size: ${calcRem(10)};
+      font-weight: 400;
+      line-height: ${calcRem(16)};
+    }
   }
 `
 
 const StyledQuote = props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
   const withImage = props.withImage
 
   return css`
-    ${base({ breakpoints, withImage })}
+    ${base({ breakpoints, withImage, colors })}
   `
 }
 
