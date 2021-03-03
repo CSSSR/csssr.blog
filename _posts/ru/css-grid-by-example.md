@@ -6,7 +6,7 @@ date: '2021-02-26T00:00:00.000Z'
 tag: 'web-development'
 ---
 
-Будущее наступило: CSS Grid поддерживается [всеми современными браузерами](https://caniuse.com/css-grid), девтулзы для работы с ним есть в [Firefox](https://mozilladevelopers.github.io/playground/css-grid/03-firefox-devtools/) и [Хроме](https://developers.google.com/web/tools/chrome-devtools/css/grid), а с автопрефиксером и осторожностью гриды можно использовать даже в IE.
+**Б**удущее наступило: CSS Grid поддерживается [всеми современными браузерами](https://caniuse.com/css-grid), девтулзы для работы с ним есть в [Firefox](https://mozilladevelopers.github.io/playground/css-grid/03-firefox-devtools/) и [Хроме](https://developers.google.com/web/tools/chrome-devtools/css/grid), а с автопрефиксером и осторожностью гриды можно использовать даже в IE.
 
 Но знакомясь с туториалами, я заметил, что большинство из них фокусируются либо на том, как работают конкретные свойства, либо на том, как сверстать постер или журнальный разворот. Да, это интересно, помогает погрузиться в тему и показывает всю мощь нового инструмента, но как использовать полученные знания в работе?
 
