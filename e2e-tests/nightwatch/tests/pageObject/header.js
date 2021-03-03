@@ -1,0 +1,40 @@
+module.exports = {
+  logo: {
+    csssr: '[data-testid="Header:link.logo"]',
+  },
+  link: {
+    services: '[data-testid="Header:nav:button.services"]',
+    portfolio: '[data-testid="Header:nav:button.portfolio"]',
+    howWeWork: '[data-testid="Header:nav:button.howWeWork"]',
+    blog: '[data-testid="Header:link.blog"]',
+    careers: '[data-testid="Header:link.careers"]',
+    contacts: '[data-testid="Header:link.contacts"]',
+    outsourcing: '[data-testid="Header:nav:link.outsourcing"]',
+    backend: '[data-testid="Header:nav:link.backend"]',
+    mvp: '[data-testid="Header:nav:link.mvp"]',
+    ourProjects: '[data-testid="Header:nav:link.ourProjects"]',
+    mediaAndMarketing: '[data-testid="Header:nav:link.mediaAndMarketing"]',
+    information: '[data-testid="Header:nav:link.information"]',
+    eCommerce: '[data-testid="Header:nav:link.eCommerce"]',
+    fintech: '[data-testid="Header:nav:link.fintech"]',
+    technologies: '[data-testid="Header:nav:link.technologies"]',
+    processes: '[data-testid="Header:nav:link.processes"]',
+    backToMainMenu: 'header > div > div > div.css-18x32yg.e1k2owjw0.visible > button',
+    solutions: '[data-testid="Header:nav:button.products"]',
+    design: '[data-testid="Header:nav:link.design"]',
+    lms: '[data-testid="Header:nav:link.lms"]',
+    tracker: '[data-testid="Header:nav:link.tracker"]',
+  },
+  block: {
+    header: '[data-testid="Header:block"]',
+    dropdown: '[data-testid="Header:nav.dropdown"]',
+  },
+  button: {
+    burger:'[data-testid="Header:block"] button',
+    services: '[data-testid="Header:nav:button.services"]',
+    portfolio: '[data-testid="Header:nav:button.portfolio"]',
+    howWeWork: '[data-testid="Header:nav:button.howWeWork"]',
+    closeCookiesAlert: '#__next > div > button',
+    products: '[data-testid="Header:nav:button.products"]',
+  }
+}
