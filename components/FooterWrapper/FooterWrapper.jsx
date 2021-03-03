@@ -30,7 +30,7 @@ const FooterWrapper = ({ preset, type, language, setBottomPosition }) => {
 
   return (
     <div ref={footerRef}>
-      <Footer className="footer" preset={preset[language]} />
+      <Footer className="footer" preset={preset} />
     </div>
   )
 }
