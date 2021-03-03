@@ -22,7 +22,6 @@ const BenchmarkEmail = ({ className }) => {
     }
     return (q);
   }
-
   function checkfield(data) {
     if (rmspaces(data) == "") {
       return false;
@@ -30,7 +29,6 @@ const BenchmarkEmail = ({ className }) => {
       return true;
     }
   }
-
   function isemail(data) {
     var flag = false;
     if (data.indexOf("@", 0) == -1 || data.indexOf("\\", 0) != -1 || data.indexOf("/", 0) != -1 || !checkfield(data) || data.indexOf(".", 0) == -1 || data.indexOf("@") == 0 || data.lastIndexOf(".") < data.lastIndexOf("@") || data.lastIndexOf(".") == (data.length - 1) || data.lastIndexOf("@") != data.indexOf("@") || data.indexOf(",", 0) != -1 || data.indexOf(":", 0) != -1 || data.indexOf(";", 0) != -1) {
@@ -115,7 +113,6 @@ const BenchmarkEmail = ({ className }) => {
   };
 
   var hasVerticalCenter_LY6HH = isWindowContext && document.getElementsByClassName('position-centered');
-
   function verticalCenter_LY6HH(element) {
     if (element) {
       element.style.opacity = 0;
@@ -146,7 +143,6 @@ const BenchmarkEmail = ({ className }) => {
     }, 250);
     window.addEventListener('resize', resizeEvent_LY6HH);
   }
-
   return (
     <section className={className}>
       <div className="container">
