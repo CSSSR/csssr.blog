@@ -26,13 +26,16 @@ const PostNewsletter = ({
   const wrapperRef = useRef()
 
   const [isMessageHidden, setMessageHidden] = useState(true)
+  const [isInputFocused, setInputFocused] = useState(false)
   const [inputValueLength, setInputValueLength] = useState(0)
 
-  const onClickOutSideHandler = () => {
-    inputValueLength !== 0 ? setMessageHidden(false) : setMessageHidden(true)
-  }
+  const messageCondition = (inputValueLength === 0 && !isMessageHidden)
 
-  useClickOutside(wrapperRef, onClickOutSideHandler)
+  const onClickOutSideHandler = () => messageCondition && setMessageHidden(true)
+
+  const onClickInsdeHandler = () => messageCondition && setMessageHidden(true)
+
+  useClickOutside(wrapperRef, onClickOutSideHandler, onClickInsdeHandler)
 
   return (
     <div
@@ -59,6 +62,7 @@ const PostNewsletter = ({
           <ContactForm
             kind={kind}
             setInputValueLength={setInputValueLength}
+            setInputFocused={setInputFocused}
             isMessageHidden={isMessageHidden}
             setMessageHidden={setMessageHidden}
             BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}

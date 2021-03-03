@@ -15,6 +15,7 @@ const Component = ({
   className,
   kind,
   setInputValueLength,
+  setInputFocused,
   isMessageHidden,
   setMessageHidden,
   formName,
@@ -88,7 +89,20 @@ const Component = ({
   const status = getStatus()
 
   const handleInputChange = (e) => {
-    setInputValueLength && setInputValueLength(e.target.value.length)
+    if (setInputValueLength) {
+      setInputValueLength(e.target.value.length)
+      setMessageHidden(false)
+    }
+  }
+
+  const handleInputFocus = () => {
+    if (setInputFocused) {
+      setInputFocused(true)
+    }
+
+    if (setMessageHidden) {
+      setMessageHidden(false)
+    }
   }
 
   return (
@@ -100,8 +114,9 @@ const Component = ({
               name="email"
               render={({ input, meta }) => (
                 <TextField
+                  onClick={handleInputFocus}
                   onInput={handleInputChange}
-                  onFocus={() => setMessageHidden && setMessageHidden(false)}
+                  onFocus={handleInputFocus}
                   input={input}
                   meta={meta}
                   label="e-mail"
@@ -183,6 +198,7 @@ const Form = ({
   className,
   kind,
   setInputValueLength,
+  setInputFocused,
   isMessageHidden,
   setMessageHidden,
   BENCHMARK_EMAIL_TOKEN,
@@ -244,6 +260,7 @@ const Form = ({
       className={className}
       kind={kind}
       setInputValueLength={setInputValueLength}
+      setInputFocused={setInputFocused}
       isMessageHidden={isMessageHidden}
       setMessageHidden={setMessageHidden}
       formName="newsletter"
