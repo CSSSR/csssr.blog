@@ -1,4 +1,4 @@
-import { css } from '@emotion/react'
+import { css, keyframes } from '@emotion/react'
 import { calcRem } from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile }, colors }) => css`
@@ -79,6 +79,26 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     right: ${calcRem(-450)};
     width: ${calcRem(366)};
     height: ${calcRem(244)};
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: ${calcRem(22)};
+      width: ${calcRem(5)};
+      height: ${calcRem(5)};
+      border-radius: 50%;
+      background-color: #15292a;
+      animation: ${reading} 2.4s ease infinite;
+    }
+
+    &::before {
+      left: ${calcRem(104)};
+    }
+
+    &::after {
+      left: ${calcRem(122)};
+    }
 
     img {
       width: 100%;
@@ -249,11 +269,30 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
       right: 0;
       width: ${calcRem(168)};
       height: ${calcRem(112)};
+
+      &::before,
+      &::after {
+        content: none;
+      }
     }
 
     .formbox-button_LY6HH {
       margin-top: ${calcRem(40)};
     }
+  }
+`
+
+const reading = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(-4px);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 `
 
