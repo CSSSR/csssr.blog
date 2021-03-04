@@ -133,8 +133,7 @@ const Component = ({
             className="subscribe-policy-link"
             href="https://csssr.com/ru/privacy-policy"
             target="_blank"
-          >
-            Политикой конфиденциальности
+          > Политикой конфиденциальности
           </a>
         </p>
 
