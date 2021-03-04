@@ -77,11 +77,11 @@ export default class MyDocument extends Document {
                 }}
               />
 
-              <script
+              {/* <script
                 type="text/javascript"
                 id="lbscript1499156"
                 src="https://lb.benchmarkemail.com//code/lbformnew.js?mFcQnoBFKMT1rJ4a9IDlKBcwvUXpuXVDgIzF75X4VHnTiptUnEhJ%252BQ%253D%253D"
-              ></script>
+              ></script> */}
               <noscript>
                 Please enable JavaScript <br />
                 <div
