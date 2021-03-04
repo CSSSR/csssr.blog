@@ -55,13 +55,19 @@ const Component = ({
         if (onSubmitResolve) {
           alert(`${getStatus()}`)
           onSubmitResolve(getStatus())
-          
-
         }
-        if (!submitFailed) {
+        if (submitSucceeded) {
           reset()
         }
       })
+    }
+  }
+
+  const handleMessageBlur = (elem) => {
+    if (!elem.value) {
+      setTimeout(() => {
+        setMessageHidden(true)
+      }, 300)
     }
   }
 
@@ -78,11 +84,7 @@ const Component = ({
               render={({ input, meta }) => (
                 <TextField
                   onFocus={() => setMessageHidden(false)}
-                  onBlur={() => {
-                    if (!input.value) {
-                      setMessageHidden(true)
-                    }
-                  }}
+                  onBlur={() => handleMessageBlur(input)}
                   input={input}
                   meta={meta}
                   label="e-mail"
@@ -125,11 +127,15 @@ const Component = ({
           })}
           onMouseOver={() => setMessageHidden(false)}
         >
-          Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и информационных материалов, а также факт своего ознакомления и согласия с 
-           <a className="subscribe-policy-link" 
-              href="https://csssr.com/ru/privacy-policy" 
-              target="_blank"> Политикой конфиденциальности
-            </a>
+          Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и
+          информационных материалов, а также факт своего ознакомления и согласия с
+          <a
+            className="subscribe-policy-link"
+            href="https://csssr.com/ru/privacy-policy"
+            target="_blank"
+          >
+            Политикой конфиденциальности
+          </a>
         </p>
 
         <div
