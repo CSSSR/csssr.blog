@@ -19,9 +19,7 @@ const Component = ({
   formName,
   submitting,
   submitFailed,
-  submitSucceeded,
   submitError,
-  onSubmitResolve,
   form: { reset },
   ...props
 }) => {
@@ -51,12 +49,8 @@ const Component = ({
     if (submitResult) {
       setSubmittedToServerStatus(true)
 
-      return submitResult.then(() => {
-        if (onSubmitResolve) {
-          alert(`${getStatus()}`)
-          onSubmitResolve(getStatus())
-        }
-        if (submitSucceeded) {
+      return submitResult.then((data) => {
+        if (!data['FINAL_FORM/form-error']) {
           reset()
         }
       })
@@ -133,7 +127,9 @@ const Component = ({
             className="subscribe-policy-link"
             href="https://csssr.com/ru/privacy-policy"
             target="_blank"
-          > Политикой конфиденциальности
+          >
+            {' '}
+            Политикой конфиденциальности
           </a>
         </p>
 
