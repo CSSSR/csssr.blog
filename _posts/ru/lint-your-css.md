@@ -240,7 +240,7 @@ npm install stylelint-order --save-dev
 ```
 Обратите особое внимание, что для определения вложенного правила <a href="https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md#extended-rule-objects" target="_blank">используются регулярные выражения</a>.
 
-<Img src='/images/dont-resize/ru/lint-your-css/nesting/all.png' alt='Результат работы линтера' withOutProcessing>
+<Img src='/images/dont-resize/ru/lint-your-css/nesting/all.gif' alt='Результат работы линтера' withOutProcessing>
 
 <p class="image-caption">Результат работы линтера</p>
 
