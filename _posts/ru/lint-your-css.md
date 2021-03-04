@@ -116,7 +116,7 @@ body
 ```shell
 npm install stylelint-config-airbnb --save-dev
 ```
-
+ 
 и использовать его в виде расширения конфигурации линтера. `.stylelintrc` в таком случае приобретёт следующий вид:
 
 ```json
@@ -127,7 +127,7 @@ npm install stylelint-config-airbnb --save-dev
 
 Конечно, ничто не мешает вам расширить или изменить готовый набор правил на свой вкус, переопределив некоторые правила конфига вручную.
 
-<Img imageName='formatting' alt='Результат работы линтера'>
+<Img src='/images/dont-resize/ru/lint-your-css/formatting/all.gif' alt='Результат работы линтера' withOutProcessing>
 
 <p class="image-caption">Результат работы линтера</p>
 
@@ -187,7 +187,7 @@ npm install stylelint-order --save-dev
 ]
 ```
 
-<Img imageName='sorting' alt='Результат работы линтера'>
+<Img src='/images/dont-resize/ru/lint-your-css/sorting/all.gif' alt='Результат работы линтера' withOutProcessing>
 
 <p class="image-caption">Результат работы линтера</p>
 
@@ -196,7 +196,7 @@ npm install stylelint-order --save-dev
 
 Если же говорить про кодстайл, то при командной разработке вы наверняка хотели бы иметь возможность управлять очерёдностью в нестинге. Ведь код, в котором очерёдность «БЭМ модификатор — media — псевдоклассы — псевдоэлементы», будет ОЧЕНЬ сильно отличаться от кода с обратной очерёдностью.
 
-<Img imageName='nestingOrder' alt='Различные варианты сортировки в нестинге'>
+<Img src='/images/dont-resize/ru/lint-your-css/nestingOrder/all.png' alt='Различные варианты сортировки в нестинге' withOutProcessing>
 
 <p class="image-caption">Различные варианты сортировки в нестинге</p>
 
@@ -240,7 +240,7 @@ npm install stylelint-order --save-dev
 ```
 Обратите особое внимание, что для определения вложенного правила <a href="https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md#extended-rule-objects" target="_blank">используются регулярные выражения</a>.
 
-<Img imageName='nesting' alt='Результат работы линтера'>
+<Img src='/images/dont-resize/ru/lint-your-css/nesting/all.png' alt='Результат работы линтера' withOutProcessing>
 
 <p class="image-caption">Результат работы линтера</p>
 
@@ -452,11 +452,11 @@ npm install prettier husky lint-staged stylelint-order stylelint-config-prettier
 
 Тогда работа линтера будет выглядеть так (обратите внимание, что в staged состоянии находится только один стилевой файл):
 
-<Img imageName='fail' alt='Попытка коммита вызывает прекоммит хук и автоисправление форматирования'>
+<Img src='/images/dont-resize/ru/lint-your-css/fail/all.gif' alt='Попытка коммита вызывает прекоммит хук и автоисправление форматирования' withOutProcessing>
 
 <p class="image-caption">Попытка коммита вызывает прекоммит хук и автоисправление форматирования. Линтер падает с ошибками на «качественных» правилах, внесённые prettier изменения форматирования при этом сохраняются</p>
 
-<Img imageName='success' alt='Пример успешного коммита без ошибок в «качественных» правилах'>
+<Img src='/images/dont-resize/ru/lint-your-css/success/all.gif' alt='Пример успешного коммита без ошибок в «качественных» правилах' withOutProcessing>
 
 <p class="image-caption">Пример успешного коммита без ошибок в «качественных» правилах</p>
 
