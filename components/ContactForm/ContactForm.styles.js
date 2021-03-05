@@ -48,7 +48,9 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       }
 
       .buttonWrapper.success span,
-      .buttonWrapper.fail span {
+      .buttonWrapper.fail span,
+      .buttonWrapper_mobile.success span,
+      .buttonWrapper_mobile.fail span {
         margin-left: ${calcRem(8)};
 
         & span {
@@ -56,17 +58,14 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         }
       }
 
+      .buttonWrapper_mobile.success span,
+      .buttonWrapper_mobile.fail span {
+        margin-top: 0;
+      }
+
       .buttonWrapper.success .submit,
       .buttonWrapper.fail .submit {
         width: auto;
-      }
-
-      .buttonWrapper.submitting .submit > button {
-        border-color: white;
-      }
-
-      .buttonWrapper.fail .progress-circle {
-        display: none;
       }
 
       .submit {
@@ -106,9 +105,16 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
           width: ${calcRem(35)};
           height: ${calcRem(35)};
           margin-left: 0;
-          transform: rotateZ(14deg);
 
-          &.cross {
+          &.checkmark {
+            transform: rotateZ(14deg);
+          }
+
+          &.progress-circle {
+            top: 0;
+            left: 0;
+            width: ${calcRem(30)};
+            height: ${calcRem(30)};
             transform: unset;
           }
 
@@ -143,6 +149,26 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       .policy.visible {
         display: block;
       }
+    }
+
+    &.mainPage {
+      svg.checkmark path,
+      svg.cross path,
+      svg.progress-circle path {
+        stroke-width: 4;
+        stroke-linecap: round;
+       
+      }
+    }
+
+    .buttonWrapper.submitting .submit > button,
+    .buttonWrapper_mobile.submitting .submit > button {
+      border-color: transparent;
+    }
+
+    .buttonWrapper:not(.submitting) .progress-circle, 
+    .buttonWrapper_mobile:not(.submitting) .progress-circle {
+      display: none;
     }
   }
 
@@ -205,11 +231,19 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       }
     }
 
+    > button[status="submitting"] {
+      border-color: transparent;
+    }
+
     svg {
       width: ${calcRem(40)};
       height: ${calcRem(40)};
       margin-left: ${calcRem(-12)};
       transform: rotateZ(14deg) scale(1.2);
+      
+      & path {
+        stroke: ${colors.secondary.darken100} !important;
+      }
     }
 
     svg.cross {
@@ -245,13 +279,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .subscribe-policy-link {
     color: ${colors.primary.origin};
-  }
-
-  svg.checkmark path,
-  svg.cross path {
-    stroke-width: 4;
-    stroke-linecap: round;
-    stroke: ${colors.secondary.darken100} !important;
   }
 
   ${tablet.all} {
@@ -299,6 +326,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
       .buttonWrapper_mobile {
         display: flex;
+        flex-direction: row;
+        align-items: center;
         margin-top: ${calcRem(24)};
       }
 
@@ -306,14 +335,14 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         flex-direction: row;
         align-items: center;
 
-        .submit {
-          width: auto;
-        }
-
         & > span {
           margin-top: 0;
           margin-left: ${calcRem(8)};
         }
+      }
+
+      .buttonWrapper_mobile:not(.pending) .submit {
+        width: auto;
       }
 
       .submit {
@@ -357,6 +386,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         margin-top: ${calcRem(8)};
         font-size: ${calcRem(10)};
         line-height: ${calcRem(14)};
+      }
+    }
+
+    &.mainPage {
+      .buttonWrapper_mobile .submit svg {
+        margin-left: ${calcRem(-21)};
       }
     }
 

@@ -75,7 +75,7 @@ const Component = ({
   const status = getStatus()
 
   return (
-    <div className={cn(`${className}`, { news: kind === 'news', post: kind === 'post' })}>
+    <div className={cn(`${className}`, { news: kind === 'news', post: kind === 'post', mainPage: kind !== 'news' && kind !== 'post' })}>
       <form onSubmit={handleSubmit}>
         <div className="wrapper">
           <div>
@@ -141,7 +141,10 @@ const Component = ({
 
         <div
           className={cn('buttonWrapper_mobile', {
-            success: status === 'success'
+            success: status === 'success',
+            fail: status === 'fail',
+            submitting: status === 'submitting',
+            pending: status === 'pending'
 
           })}
         >
@@ -158,6 +161,7 @@ const Component = ({
 
           <FormStateMessage
             status={status}
+            kind={kind}
             errorText={submitError}
             onTryAgain={handleTryToFillFormAgain}
             testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}

@@ -68,6 +68,15 @@ const base = ({ breakpoints: { mobile }}) => css`
     span.message {
       max-width: unset;
     }
+
+    &.post .reset-button {
+      display: block;
+      text-align: left;
+
+      br {
+        display: none;
+      }
+    }
   }
 `
 

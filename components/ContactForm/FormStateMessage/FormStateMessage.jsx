@@ -21,6 +21,8 @@ const FormStateMessage = ({ className, kind, status, testId, onTryAgain }) => {
   const textData = getMessage()
   const messageShown = status === 'success' || status === 'fail'
 
+  console.log(kind)
+
   return (
     <>
       {textData && (
