@@ -25,8 +25,6 @@ const Post = ({
   const description =
     type === 'news' ? cleaningTitle(post.title, 'meta') : getDescription(post.content)
 
-  const [isTopPosition, setTopPosition] = useState(true)
-
   return (
     <article
       className={cn(className, {
@@ -69,7 +67,6 @@ const Post = ({
         author={post.author}
         language={language}
         type={type}
-        setTopPosition={setTopPosition}
       />
 
       <Body
@@ -81,7 +78,6 @@ const Post = ({
         type={type}
         BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
         BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-        isTopPosition={isTopPosition}
       />
     </article>
   )

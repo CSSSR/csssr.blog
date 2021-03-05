@@ -3,25 +3,16 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   & {
-    position: fixed;
+    position: sticky;
     top: ${calcRem(154)}; //100px отступ + 64px высота хедера - 10px padding-top
     left: 0;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 5;
     width: ${calcRem(156)};
+    height: max-content;
     padding: ${calcRem(10)};
     background-color: white;
     transition: top ease 0.5s, bottom ease 0.5s;
-  }
-
-  &.onTop {
-    position: absolute;
-    top: auto;
-    margin-top: ${calcRem(50)};
-  }
-
-  &.onBottom {
-    position: absolute;
-    top: auto;
-    bottom: ${calcRem(422)};
   }
 
   &.enVersion {
@@ -52,6 +43,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   }
 
   ${desktop.all} {
+    & {
+      margin-top: 20px;
+    }
+
     .title {
       line-height: 22px;
     }
@@ -64,33 +59,27 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${desktop.l} {
     & {
-      transform: translateX(calc(((50vw - 78px) - 516px))); // На дестопах отступ от текста 112px
-    }
-
-    &.onBottom {
-      bottom: 470px;
+      transform: translateX(78px);
     }
   }
 
   ${desktop.m} {
     & {
-      transform: translateX(calc(((50vw - 78px) - 516px))); // На дестопах отступ от текста 112px
+      transform: translateX(78px);
     }
   }
 
   ${desktop.s}{
     & {
-      transform: translateX(calc(((50vw - 78px) - 484px))); // На дестопах отступ от текста 112px
+      transform: translateX(63px);
     }
   }
 
   ${tablet.all} {
     & {
-      transform: translateX(calc((100vw - ${calcRem(624)}) / 4 - ${calcRem(78)})); // От ширины экрана отнимается ширина контента, делится на 4 (отступ в левой части от конента) и отнимаем половину ширины блока подписки
-    }
-
-    &.onBottom {
-      bottom: ${calcRem(466)};
+      margin-top: ${calcRem(20)};
+      left: calc((100vw - ${calcRem(624)}) / 4 - (${calcRem(944)} - ${calcRem(624)}));
+      transform: translateX(-50%);
     }
 
     .title {

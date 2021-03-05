@@ -39,10 +39,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     border: 0;
   }
 
-  .main {
-    overflow: hidden;
-  }
-
   ul {
     list-style: none;
   }
@@ -310,6 +306,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
 
     .main {
       padding-top: 3.5rem;
+      overflow: hidden;
     }
 
     .footer {

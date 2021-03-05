@@ -57,8 +57,14 @@ const Component = ({
     }
   }
 
+  const handleMessageFocus = () => {
+    if (setMessageHidden) {
+      setMessageHidden(false)
+    }
+  }
+
   const handleMessageBlur = (elem) => {
-    if (!elem.value) {
+    if (!elem.value && setMessageHidden) {
       setTimeout(() => {
         setMessageHidden(true)
       }, 300)
@@ -77,7 +83,7 @@ const Component = ({
               name="email"
               render={({ input, meta }) => (
                 <TextField
-                  onFocus={() => setMessageHidden(false)}
+                  onFocus={() => handleMessageFocus()}
                   onBlur={() => handleMessageBlur(input)}
                   input={input}
                   meta={meta}
@@ -119,7 +125,6 @@ const Component = ({
           className={cn('policy', {
             visible: !isMessageHidden,
           })}
-          onMouseOver={() => setMessageHidden(false)}
         >
           Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и
           информационных материалов, а также факт своего ознакомления и согласия с

@@ -27,11 +27,17 @@ const Body = ({
   images,
   language,
   type,
-  isTopPosition,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => (
   <Grid className={cn(`post-body ${className}`)}>
+    <PostNewsletter
+      language={language}
+      type={type}
+      kind="post"
+      BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+      BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+    />
     {compiler(content, {
       wrapper: Fragment,
       forceWrapper: true,
@@ -191,15 +197,6 @@ const Body = ({
         },
       },
     })}
-
-    <PostNewsletter
-      isTopPosition={isTopPosition}
-      language={language}
-      type={type}
-      kind="post"
-      BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-      BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-    />
 
     {language === 'ru' && type !== 'news' && <ReadMore posts={posts} />}
 

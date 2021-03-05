@@ -7,28 +7,22 @@ import { Heading, Text } from '@csssr/core-design'
 import ContactForm from '../ContactForm'
 import PostShare from '../PostShare'
 import { postNewsletterData } from '../../data/newsletter'
-import { Context } from '../../utils/subscribeBlockProvider'
 
 const PostNewsletter = ({
   className,
   language,
   kind,
   type,
-  isTopPosition,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => {
   const { title, subtitle, img, imgAlt } = postNewsletterData
-
-  const { isBottomPosition } = useContext(Context)
 
   const [isMessageHidden, setMessageHidden] = useState(true)
 
   return (
     <div
       className={cn(className, {
-        onBottom: isBottomPosition,
-        onTop: isTopPosition,
         enVersion: language !== 'ru' || type === 'news',
       })}
     >

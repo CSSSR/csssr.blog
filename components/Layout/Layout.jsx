@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Global } from '@emotion/react'
 import Meta from '../Meta'
 import styles from './Layout.styles'
-import { Header } from '@csssr/core-design'
+import { Header, Footer } from '@csssr/core-design'
 import CookiesPopup from '../CookiesPopup'
-import FooterWrapper from '../FooterWrapper'
-import { Context } from '../../utils/subscribeBlockProvider'
 
 const presetByLanguage = {
   en: 'defaultEn',
@@ -13,7 +11,6 @@ const presetByLanguage = {
 }
 
 export default function Layout({ children, language, type }) {
-  const [isBottomPosition, setBottomPosition] = useState(false)
 
   return (
     <>
@@ -28,15 +25,14 @@ export default function Layout({ children, language, type }) {
         }}
       />
       <main id="main" className="main">
-        <Context.Provider value={{ isBottomPosition }}>{children}</Context.Provider>
+        {children}
       </main>
 
-      <FooterWrapper
+      <Footer
         className="footer"
         preset={presetByLanguage[language]}
         language={language}
         type={type}
-        setBottomPosition={setBottomPosition}
       />
 
       <CookiesPopup language={language} />

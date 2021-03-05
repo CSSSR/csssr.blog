@@ -5,7 +5,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   & {
     position: relative;
     grid-column: 1 / span 12;
-    width: 100vw;
+    width: 100%;
     margin-top: ${calcRem(75)};
     padding-bottom: ${calcRem(30)};
     background-color: white;
@@ -84,7 +84,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 
   ${mobile.all} {
-
     & {
       margin-top: ${calcRem(50)};
       background-color: #F5F6FA;
