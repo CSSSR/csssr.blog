@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { string, object, shape } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Post.styles'

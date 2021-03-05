@@ -11,7 +11,6 @@ const presetByLanguage = {
 }
 
 export default function Layout({ children, language, type }) {
-
   return (
     <>
       <Meta type={type} />

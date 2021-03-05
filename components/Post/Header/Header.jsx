@@ -26,7 +26,6 @@ const Header = ({
   language,
   type,
 }) => {
-
   return (
     <Grid
       as="header"
