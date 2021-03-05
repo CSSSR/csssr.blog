@@ -6,6 +6,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     position: sticky;
     top: ${calcRem(154)}; //100px отступ + 64px высота хедера - 10px padding-top
     left: 0;
+    z-index: 999;
     grid-column: 1 / span 2;
     grid-row: 1 / span 5;
     width: ${calcRem(156)};
@@ -78,8 +79,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   ${tablet.all} {
     & {
       margin-top: ${calcRem(20)};
-      left: calc((100vw - ${calcRem(624)}) / 4 - (${calcRem(944)} - ${calcRem(624)}));
-      transform: translateX(-50%);
+      left: 0;
+      transform: translateX(calc(((100vw - ${calcRem(624)}) / 2 - 100%) / -2 )); // http://s.csssr.ru/U31J879TR/2021-03-05-11-10-29-3f7ga_.jpg
     }
 
     .title {
