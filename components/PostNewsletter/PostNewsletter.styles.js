@@ -17,8 +17,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   }
 
   &.enVersion {
-    max-width: ${calcRem(89)};
     padding: 0;
+    background-color: transparent;
   }
 
   .container {
@@ -62,11 +62,21 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     & {
       transform: translateX(78px);
     }
+
+    &.enVersion {
+      margin-top: -25px;
+      transform: translateX(84px);
+    }
   }
 
   ${desktop.m} {
     & {
       transform: translateX(78px);
+    }
+
+    &.enVersion {
+      margin-top: -25px;
+      transform: translateX(84px);
     }
   }
 
@@ -74,6 +84,12 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     & {
       transform: translateX(63px);
     }
+
+    &.enVersion {
+      margin-top: -25px;
+      transform: translateX(69px);
+    }
+    
   }
 
   ${tablet.all} {

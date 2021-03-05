@@ -98,6 +98,7 @@ const Component = ({
             className={cn('buttonWrapper', {
               success: status === 'success',
               fail: status === 'fail',
+              submitting: status === 'submitting'
             })}
           >
             <AnimatedButton
@@ -140,7 +141,8 @@ const Component = ({
 
         <div
           className={cn('buttonWrapper_mobile', {
-            success: status === 'success',
+            success: status === 'success'
+
           })}
         >
           <AnimatedButton

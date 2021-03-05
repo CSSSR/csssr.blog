@@ -61,6 +61,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         width: auto;
       }
 
+      .buttonWrapper.submitting .submit > button {
+        border-color: white;
+      }
+
       .buttonWrapper.fail .progress-circle {
         display: none;
       }
