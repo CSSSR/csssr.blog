@@ -42,9 +42,11 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         top: 0;
       }
 
-      .buttonWrapper span {
+
+
+      .buttonWrapper span.submit-text {
         font-size: ${calcRem(10)};
-        line-height: ${calcRem(12)};
+        line-height: ${calcRem(30)};
       }
 
       .buttonWrapper.success span,
@@ -97,6 +99,11 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
         > button[status='pending'] {
           border-width: ${calcRem(1)};
+        }
+
+        > button[status='pending'] > span {
+          height: ${calcRem(30)};
+          max-height: 100%;
         }
 
         svg {

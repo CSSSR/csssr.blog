@@ -23,7 +23,7 @@ const PostNewsletter = ({
   return (
     <div
       className={cn(className, {
-        enVersion: language !== 'ru' || type === 'news',
+        version_en: language !== 'ru' || type === 'news',
       })}
     >
       {language === 'ru' && type !== 'news' && (

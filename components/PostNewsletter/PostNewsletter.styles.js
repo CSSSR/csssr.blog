@@ -16,7 +16,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     transition: top ease 0.5s, bottom ease 0.5s;
   }
 
-  &.enVersion {
+  &.version_en {
     padding: 0;
     background-color: transparent;
   }
@@ -63,8 +63,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       transform: translateX(78px);
     }
 
-    &.enVersion {
-      margin-top: -25px;
+    &.version_en {
       transform: translateX(84px);
     }
   }
@@ -74,8 +73,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       transform: translateX(78px);
     }
 
-    &.enVersion {
-      margin-top: -25px;
+    &.version_en {
       transform: translateX(84px);
     }
   }
@@ -85,8 +83,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       transform: translateX(63px);
     }
 
-    &.enVersion {
-      margin-top: -25px;
+    &.version_en {
       transform: translateX(69px);
     }
     
