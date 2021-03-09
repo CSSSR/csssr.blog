@@ -619,7 +619,7 @@ testcase('Displaying links (EN desktop)', () => {
       )
       .assert.containsText(
         footer.link.contactsEN,
-        'Contact us'
+        'Contacts'
       )
   })
 })
