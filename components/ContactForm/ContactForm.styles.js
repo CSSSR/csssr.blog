@@ -120,6 +120,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
           & path {
             stroke-width: ${calcRem(3)};
+            stroke-linecap: round;
           }
         }
       }
@@ -157,7 +158,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       svg.progress-circle path {
         stroke-width: 4;
         stroke-linecap: round;
-       
       }
     }
 

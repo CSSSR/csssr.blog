@@ -75,7 +75,13 @@ const Component = ({
   const status = getStatus()
 
   return (
-    <div className={cn(`${className}`, { news: kind === 'news', post: kind === 'post', mainPage: kind !== 'news' && kind !== 'post' })}>
+    <div
+      className={cn(`${className}`, {
+        news: kind === 'news',
+        post: kind === 'post',
+        mainPage: kind !== 'news' && kind !== 'post',
+      })}
+    >
       <form onSubmit={handleSubmit}>
         <div className="wrapper">
           <div>
@@ -98,7 +104,7 @@ const Component = ({
             className={cn('buttonWrapper', {
               success: status === 'success',
               fail: status === 'fail',
-              submitting: status === 'submitting'
+              submitting: status === 'submitting',
             })}
           >
             <AnimatedButton
@@ -144,8 +150,7 @@ const Component = ({
             success: status === 'success',
             fail: status === 'fail',
             submitting: status === 'submitting',
-            pending: status === 'pending'
-
+            pending: status === 'pending',
           })}
         >
           <AnimatedButton

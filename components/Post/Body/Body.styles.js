@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   & {
     margin: 0 auto;
   }
@@ -253,6 +253,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  ${above.mobile} {
+    .post-newsletter.hidden_desktop {
+      display: none;
+    }
+  }
+
   ${mobile.all} {
     & > .text_regular_m:first-of-type  {
       margin-top: ${calcRem(40)};
@@ -316,6 +322,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .how-close-br {
       display: none;
+    }
+
+    .post-newsletter.hidden_mobile {
+      display: none;
+    }
+
+    .post-newsletter {
+      grid-row: unset;
     }
   }
 `

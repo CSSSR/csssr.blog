@@ -32,6 +32,7 @@ const Body = ({
 }) => (
   <Grid className={cn(`post-body ${className}`)}>
     <PostNewsletter
+      className="post-newsletter hidden_mobile"
       language={language}
       type={type}
       kind="post"
@@ -197,6 +198,15 @@ const Body = ({
         },
       },
     })}
+
+    <PostNewsletter
+      className="post-newsletter hidden_desktop"
+      language={language}
+      type={type}
+      kind="post"
+      BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+      BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+    />
 
     {language === 'ru' && type !== 'news' && <ReadMore posts={posts} />}
 

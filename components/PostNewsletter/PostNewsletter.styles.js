@@ -45,7 +45,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${desktop.all} {
     & {
-      margin-top: 20px;
+      margin-top: 40px;
     }
 
     .title {
