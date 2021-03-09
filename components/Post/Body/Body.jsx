@@ -16,6 +16,7 @@ import Quote from './Quote'
 import ReadMore from './ReadMore'
 import Subtitle from '../Subtitle'
 import Video from './Video'
+import Caption from './Caption'
 import Table from './Table'
 import List from './List'
 
@@ -176,6 +177,9 @@ const Body = ({
         },
         Video: {
           component: Video,
+        },
+        Caption: {
+          component: Caption,
         },
         Table: {
           component: Table,
