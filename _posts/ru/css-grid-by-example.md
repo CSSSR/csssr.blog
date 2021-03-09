@@ -146,7 +146,10 @@ footer {
 ```css
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  );
   grid-gap: 1rem;
 }
 ```
@@ -220,7 +223,7 @@ button {
 Вот полный код примера:
 
 <p>
-<iframe height="360" style="width: 100%;" scrolling="no" title="10. Form" src="https://codepen.io/nekitk/embed/LYGMpNo?height=360&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="360" style="width: 100%;" scrolling="no" title="10. Form" src="https://codepen.io/nekitk/embed/LYGMpNo?height=360&theme-id=light&default-tab=result,css" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/nekitk/pen/LYGMpNo'>10. Form</a> by nekitk
   (<a href='https://codepen.io/nekitk'>@nekitk</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -240,7 +243,7 @@ button {
 Так как сам элемент с `display: contents` не рендерится, то и визуальных свойств у него быть не может. Но зато он может реагировать на события мыши и определять css-переменные. Вот пример, как с помощью такого элемента реализовать ховер на группу ячеек грида:
 
 <p>
-<iframe height="540" style="width: 100%;" scrolling="no" title="15. Cells group hover" src="https://codepen.io/nekitk/embed/RwrEYJx?height=540&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="540" style="width: 100%;" scrolling="no" title="15. Cells group hover" src="https://codepen.io/nekitk/embed/RwrEYJx?height=540&theme-id=light&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/nekitk/pen/RwrEYJx'>15. Cells group hover</a> by nekitk
   (<a href='https://codepen.io/nekitk'>@nekitk</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -259,9 +262,9 @@ button {
 ```css
 .card.size_l {
   grid-template-areas:
-  'photo info    price'
-  'photo desc    desc'
-  'photo actions date';
+    'photo info    price'
+    'photo desc    desc'
+    'photo actions date';
   grid-template-columns: 20rem 1fr max-content;
 }
 ```
@@ -388,7 +391,7 @@ button {
 Попробовать переключение в деле можно покликав на кнопки под графиком:
 
 <p>
-<iframe height="460" style="width: 100%;" scrolling="no" title="11. BarChart" src="https://codepen.io/nekitk/embed/gOPqgNg?height=460&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="460" style="width: 100%;" scrolling="no" title="11. BarChart" src="https://codepen.io/nekitk/embed/gOPqgNg?height=460&theme-id=light&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/nekitk/pen/gOPqgNg'>11. BarChart</a> by nekitk
   (<a href='https://codepen.io/nekitk'>@nekitk</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
