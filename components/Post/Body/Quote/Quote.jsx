@@ -16,6 +16,7 @@ const Quote = ({
   linkHref,
   linkText,
   type = 'blue',
+  testId = 'Quote:link',
 }) => {
   return (
     <Grid
@@ -51,7 +52,14 @@ const Quote = ({
         <span className="author font_h3-regular ">{author}</span>
         {position && <span className="autor-post font_perforator-10-regular">{position}</span>}
         {linkText && (
-          <Link className="quote-link" href={linkHref} type="list" size="s" external>
+          <Link
+            className="quote-link"
+            href={linkHref}
+            type="list"
+            size="s"
+            external
+            data-testid={testId}
+          >
             {linkText}
           </Link>
         )}

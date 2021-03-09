@@ -7,7 +7,7 @@ import Newsletter from '../../Newsletter'
 import PostCard from './PostCard'
 
 const Posts = ({ language, posts, className, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID }) => (
-  <Grid as="ul" className={className}>
+  <Grid as="ul" className={className} data-testid="Posts:block">
     {posts.slice(0, 4).reduce((memo, post) => {
       const orderInGroupOfFour = memo.length % 4
       const size = orderInGroupOfFour === 0 || orderInGroupOfFour === 3 ? 'l' : 's'
