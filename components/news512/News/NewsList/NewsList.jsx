@@ -15,7 +15,7 @@ const NewsList = ({ posts, lastPostDate, className }) => {
       {posts.map(({ slug, title, episodeNumber, date }) => (
         <li key={slug} className={cn('news-item', { first: date === lastPostDate })}>
           <Link href={`/ru/news512/episode/${slug}`}>
-            <a className="news-item-link">
+            <a className="news-item-link" data-testid={`NewsList:link:episode.${slug}`}>
               <div className="news-item-wrapper">
                 <span className="news-item-number">#{episodeNumber}</span>
 

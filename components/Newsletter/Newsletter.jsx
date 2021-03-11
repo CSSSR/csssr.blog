@@ -12,7 +12,7 @@ const Newsletter = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LI
   const { title, titlePost, subtitle, subtitlePost, img, postImg, imgAlt } = newsletterData
 
   return (
-    <div className={cn(`${className}`, { post: kind === 'post' })}>
+    <div className={cn(`${className}`, { post: kind === 'post' })} data-testid="Newsletter:block">
       <Grid as="section">
         <div className="container">
           <Heading.H2 type="regular" className="title">

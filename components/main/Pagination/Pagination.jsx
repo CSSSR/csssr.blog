@@ -26,7 +26,7 @@ const Pagination = ({
   }
 
   return (
-    <Grid as="div" className={className}>
+    <Grid as="div" className={className} data-testid="Pagination:block">
       <PrevPageLink
         language={language}
         disabled={pageNumbers[0] === activePageNumber}
@@ -55,7 +55,12 @@ const Pagination = ({
 
         return (
           <Link key={index} href={href}>
-            <a className={cn('item', { active: pageNumber === activePageNumber })}>{pageNumber}</a>
+            <a
+              className={cn('item', { active: pageNumber === activePageNumber })}
+              data-testid={`Pagination:link:pageNumber.${pageNumber}`}
+            >
+              {pageNumber}
+            </a>
           </Link>
         )
       })}

@@ -22,7 +22,7 @@ export default function Layout({ children, language, type }) {
           type: 'default',
         }}
       />
-      <main id="main" className="main">
+      <main id="main" className="main" data-testid="Layout:block:main">
         {children}
       </main>
 

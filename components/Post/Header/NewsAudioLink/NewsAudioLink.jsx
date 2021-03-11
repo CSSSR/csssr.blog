@@ -7,12 +7,13 @@ import styles, { backgroundImagesStyles } from './NewsAudioLink.styles'
 
 import { ReactComponent as Arrow } from '../../../../public/components/newsAudioLink/icons/arrow.svg'
 
-const NewsAudioLink = ({ className, href, title }) => (
+const NewsAudioLink = ({ className, href, title, testId = 'NewsAudio:link' }) => (
   <a
     className={cn('news-audio-link', className)}
     href={href}
     target="_blank"
     rel="noopener nofollow"
+    data-testid={testId}
   >
     <div className="soundtrack-wrapper">
       <div className="soundtrack-image" />

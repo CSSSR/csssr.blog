@@ -31,7 +31,7 @@ const Body = ({
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => (
-  <Grid className={cn(`post-body ${className}`)}>
+  <Grid className={cn(`post-body ${className}`)} data-testid="Post:block">
     {compiler(content, {
       wrapper: Fragment,
       forceWrapper: true,
@@ -113,6 +113,7 @@ const Body = ({
             return props.href.startsWith('/') ? <Link {...props} /> : <Link {...props} external />
           },
           props: {
+            'data-testid': 'Post:link',
             className: 'link_list_s',
             type: 'list',
             size: 's',
@@ -137,6 +138,7 @@ const Body = ({
           component: Quote,
           props: {
             className: 'quote-wrapper',
+            testId: 'Post:link',
           },
         },
         code: {
