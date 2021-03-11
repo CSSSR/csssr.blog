@@ -21,7 +21,7 @@
     "emotion-theming": "^11.0.0",
     "gray-matter": "4.0.2",
     "isomorphic-unfetch": "3.1.0",
-    "markdown-to-jsx": "^7.1.1",
+    "markdown-to-jsx": "^7.1.2",
     "next": "latest",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
