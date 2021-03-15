@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile } }) => css`
+const base = ({ breakpoints: { mobile }, colors }) => css`
   & {
     background-color: white;
     max-width: ${calcRem(89)};
@@ -58,6 +58,7 @@ const base = ({ breakpoints: { mobile } }) => css`
   .share-title {
     font-size: ${calcRem(12)};
     line-height: ${calcRem(16)};
+    color: ${colors.secondary.darken100}
   }
 
   .copy-message {
