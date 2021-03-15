@@ -24,13 +24,15 @@ module.exports = {
     design: '[data-testid="Header:nav:link.design"]',
     lms: '[data-testid="Header:nav:link.lms"]',
     tracker: '[data-testid="Header:nav:link.tracker"]',
+    news: '#main > div.css-panwdq-Grid > div > ul > li:nth-child(5) > a',
   },
   block: {
     header: '[data-testid="Header:block"]',
     dropdown: '[data-testid="Header:nav.dropdown"]',
+    submenu: '#main > div > div',
   },
   button: {
-    burger:'[data-testid="Header:block"] button',
+    burger: '[data-testid="Header:block"] button',
     services: '[data-testid="Header:nav:button.services"]',
     portfolio: '[data-testid="Header:nav:button.portfolio"]',
     howWeWork: '[data-testid="Header:nav:button.howWeWork"]',
