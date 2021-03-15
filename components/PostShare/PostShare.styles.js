@@ -11,10 +11,6 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
       margin-top: ${calcRem(50)};
       transform: translateX(${calcRem(-10)});
     }
-
-    &.centerAlign {
-      margin: 0 auto;
-    }
   }
 
   .links {
