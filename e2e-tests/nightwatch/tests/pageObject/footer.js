@@ -10,6 +10,7 @@ module.exports = {
     telRussia: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_russia > a',
     telRussiaTwo: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_russia_2 > a',
     outsourcing: '[data-testid="Footer:link:web-development"]',
+
     backendAndDevops: '[data-testid="Footer:link:backend"]',
     mvp: '[data-testid="Footer:link:mvp"]',
     fintech: '[data-testid="Footer:link:fintech"]',
@@ -30,9 +31,12 @@ module.exports = {
     jobsEn: '[data-testid="Footer:link:careers"]',
     blogEn: '[data-testid="Footer:link:blog"]',
     contactsEN: '[data-testid="Footer:link:contactUs"]',
+    outsourcing: '#__next > footer > div.top-content > nav > div:nth-child(1) > ul > li:nth-child(1) > a',
+    privacyPolicy: '[data-testid="Footer:link:privacyPolicy"]',
   },
   block: {
     footer: '#__next > footer',
+    doubleBottom: '[data-testid="Footer:block:DoubleBottom"]',
     map: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.map-wrapper > div > img',
   },
   text: {
