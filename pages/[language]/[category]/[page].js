@@ -118,12 +118,30 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const posts = await getPostsByLanguage(['tag'])
-  const paths = languages.reduce(
-    (memo, language) => [
+  const paths = languages.reduce((memo, language) => {
+    let indexShift = 0
+
+    return [
       ...memo,
       ...posts[language]
-        .map((post, index) => {
-          const page = calculatePageNumberByPostIndex(index)
+        .sort((postA, postB) => {
+          if (postA.tag < postB.tag) {
+            return -1
+          }
+          if (postA.tag > postB.tag) {
+            return 1
+          }
+
+          return 0
+        })
+        .map((post, index, array) => {
+          const prevItem = (index > 0 && array[index - 1]) || post
+
+          if (post.tag !== prevItem.tag) {
+            indexShift = index
+          }
+
+          const page = calculatePageNumberByPostIndex(index - indexShift)
 
           return {
             params: {
@@ -164,9 +182,8 @@ export async function getStaticPaths() {
           })
         }, [])
         .filter(({ params: { page } }) => page !== '1'),
-    ],
-    [],
-  )
+    ]
+  }, [])
 
   return {
     paths,

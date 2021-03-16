@@ -13,12 +13,15 @@ const NextPageLink = ({
   activePageNumber,
   totalNumberOfPages,
 }) => {
+  const testId = 'Pagination:link:nextPage'
+
   if (activePageNumber === totalNumberOfPages) {
     return (
       <a
         className={cn(className, {
           _disabled: disabled,
         })}
+        data-testid={testId}
       />
     )
   }
@@ -29,6 +32,7 @@ const NextPageLink = ({
         className={cn(className, {
           _disabled: disabled,
         })}
+        data-testid={testId}
       />
     </Link>
   )

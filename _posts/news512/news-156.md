@@ -1,0 +1,67 @@
+---
+title: 'В этом выпуске: Gatsby 3, уязвимость git clone, фронтенд в Lyft, @scroll-timeline, crash course по Firebase и замедление Twitter.'
+soundcloudLink: 'https://soundcloud.com/csssr/gatsby-3-zamedlenie-twitter-uyazvimost-git-clone-frontend-v-lyft-scroll-timeline-firebase-101'
+date: '2021-03-12T00:00:00.000Z'
+episodeNumber: 156
+tag: 'news'
+author: 'Ислам Виндижев'
+---
+
+<Note>
+  [RSS подкаста](https://radio.csssr.com/rss/news512.rss), [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815), [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14), [SoundCloud](https://soundcloud.com/csssr/sets/512-news), [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
+</Note>
+
+<ParagraphWithImage imageName="manWithLaptop" imageSide="right">
+  ### Интересные публикации
+
+Инженеры Lyft в своём блоге рассказали [о разработке фронтенда](https://eng.lyft.com/frontend-at-lyft-an-overview-f934c1524370) в компании. Статью можно поделить на две части: про тулинг и инструменты и про организационную структуру. Раньше проект был большим монолитом на Angular и Express, через какое-то время архитектуру заменили на микросервисную, на фронте стали использовать React, а на бэке Next.js. Кстати, про миграцию на Next.js они тоже писали [статью](https://eng.lyft.com/changing-lanes-how-lyft-is-migrating-100-frontend-microservices-to-next-js-42199aaebd5f). Разделена команда не по обязанностям, а по субпродуктам, например, Фернандо Лопез (Fernando Augusto López Plascencia) — автор статьи — работает в субпродукте Pricing. Подкоманды могут организовываться в команды, когда это нужно для реализации фичи со смежным функционалом. Фернандо также рассказывает, какие плюсы дает такая организация, и об основных ценностях. На самом деле приятно и интересно читать статьи, в которых крупные компании рассказывают о своём опыте, например, как это делали [Uber](https://eng.uber.com/fusionjs/), [AirBnB](https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c), [Bloomberg](https://www.techatbloomberg.com/blog/10-insights-adopting-typescript-at-scale/) или [BBC](https://medium.com/bbc-design-engineering/bbc-world-service-web-performance-26b08f7abfcc).
+</ParagraphWithImage>
+
+В прошлом выпуске мы говорили об экспериментальной фиче CSS @property, а в этом глянем на @scroll-timeline. Статью в двух частях об этой фиче написал Брамус Ван Дамм (Bramus Van Damme). По сути @scroll-timeline позволяет привязать анимацию к позиции элемента внутри прокручиваемого контейнера. [В первой части](https://www.bram.us/2021/02/23/the-future-of-css-scroll-linked-animations-part-1/) Брамус рассказывает про синтаксис и основы и приводит примеры использования: галерею, прогресс-бар и параллакс. [Во второй части](https://www.bram.us/2021/03/04/the-future-of-css-scroll-linked-animations-part-2/) он затрагивает продвинутые аспекты работы @scroll-timeline. Не забудьте, что фича экспериментальная и её поддерживает пока только Chromium.
+
+Бенджамин Шмидт (Benjamin Schmidt) — профессор университета Нью-Йорка — в своём блоге поделился мнением, что [JavaScript может стать главным языком визуализации данных](http://benschmidt.org/post/2020-01-15/2020-01-15-webgpu/). Основная причина — скорость работы и рендера. Бенджамин пишет, что веб-технологии для визуализации работают в разы быстрее традиционных, а если вспомнить WebGPU и WebGL, со временем JS захватит эту нишу в Data Science. Ещё автор возлагает большие надежды на WebAssembly.
+
+[Веб-компоненты — проще, чем вы думаете](https://css-tricks.com/web-components-are-easier-than-you-think/), — говорит в своей статье Джон Риа (John Rhea). Он пошагово создает веб-компонент: пишет шаблон, регистрирует компонент, объясняет механизм работы, стилизует компонент и, конечно же, приводит пример использования.
+
+Иэн Бин (Iain Bean) в своем блоге поделился идеями о [шрифтах](https://iainbean.com/posts/2021/system-fonts-dont-have-to-be-ugly/). Иан предлагает использовать системные шрифты для текстов на сайте, а веб-шрифты — только в редких случаях. Он считает, что так отпадет проблема оптимизации веб-шрифтов и сайты будут загружаться быстрее. Также Иэн делится мнением, что сайт не должен выглядеть одинаково во всех браузерах. Мне кажется, с ним бы поспорил любой дизайнер, а оптимизация загрузки таким способом — тема неоднозначная. Но мнение имеет место быть.
+
+Чаще всего мы слышим и читаем о хороших фичах JavaScript. Но есть ведь и [обратная сторона медали](https://blog.bitsrc.io/the-dark-side-of-javascript-a-look-at-3-features-you-never-want-to-use-83b6f0b3804b). Именно её показывает Фернандо Дольо (Fernando Doglio) в своей статье. Он рассказывает о трёх фичах, которые вы  вообще вряд ли захотите использовать когда-нибудь. Речь идёт об операторе void, выражении with и метках. Для расширения кругозора можно посмотреть.
+
+Следующий материал — [о тестировании в Deno](https://dev.to/talentlessguy/coverage-in-deno-with-codecov-and-github-actions-56jo). У него есть встроенный API для написания тестов, в котором в принципе есть всё, что нужно. Модуль так и называется, testing. Как пример приводится реализация онлайн отчёта по покрытию тестами с использованием Codecov и GitHub Actions. Заметка небольшая и достаточно базовая, но позволяет немного познакомиться с тестированием в Deno и этой небольшой практической задачкой.
+
+Далее ещё одна статья для практики и пробы чего-то нового. Суба Чанда (Subha Chanda) на SmashingMagazine написал статью [о создании Discord-бота с использованием библиотеки Discord.js](https://www.smashingmagazine.com/2021/02/building-discord-bot-discordjs/). Библиотека, как вы понимаете, обёртка над Discord API. В статье автор создает бота, который постит в канал рандомные шутки из массива шуток, умеет менять роли пользователей и может постить твиты с какого-то аккаунта в определённый канал. Так что если вы проводите в Discord много времени, статья, возможно, натолкнет вас на реализацию каких-нибудь классных фич для своего сервера.
+
+Завершает рубрику статья «[Firebase crash course](https://css-tricks.com/firebase-crash-course/)» от Дэвида Иста (David East) на css-tricks. В начале он рассказывает, что же такое Firebase: раньше это была небольшая облачная СУБД, а сейчас это уже 19 разных продуктов. Дэвид показывает базовую настройку, работу с базой и аутентификацию пользователя, рассматривает некоторые нюансы работы с Firebase и как пример приводит небольшое приложение с визуализацией данных. В конце статьи есть полезные ссылки. Если вы давно сталкивались с Firebase — стоит посмотреть ещё раз, если не видели совсем — тем более, может, пригодится.
+
+<ParagraphWithImage imageName="laptopNews" imageSide="right">
+  ### Новости релизов
+
+Вышел [Gatsby 3](https://www.gatsbyjs.com/blog/gatsby-v3/). Если вы не слышали, это open-source фреймворк, основанный на React, который, по словам создателей, подходит и для простых приложений, и для высоконагруженных e-commerce проектов. В этом релизе обновили версии основных зависимостей: Node.js 12, webpack 5, React 17, GraphQL 15 и ESLint 7. Обещают улучшенный developer experience: ускорение на 80% при локальной разработке. Билды ускорили, соответственно, ускорятся и деплои приложений на Gatsby. Есть плюшка и для пользователей: команда поработала над Web Vitals и Lighthouse-метриками. Также доступен [гайд для разработчиков по миграции со второй версии на третью](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v2-to-v3).
+</ParagraphWithImage>
+
+В блоге GitHub появился [анонс релиза всех поддерживаемых веток системы контроля версий git](https://github.blog/2021-03-09-git-clone-vulnerability-announced/). В команде git clone была обнаружена [уязвимость](https://github.com/git/git/security/advisories/GHSA-8prw-h3cq-mghm), она позволяла удаленно выполнить код при клонировании репозитория злоумышленника. Уязвимость присутствует в версиях с 2.15, рекомендуется обновление.
+
+Вышла версия [Laravel 8.32](https://laravel-news.com/laravel-8-32-0). В этой версии появился троттлинг исполнения очередей, хелперы для дампа HTTP-запросов, а метод Model::destroy() теперь поддерживает коллекции Eloquent. Дополнительно отмечу, что [7 версия Laravel достигла стадии end-of-life](https://laravel-news.com/laravel-7-end-of-life), следовательно, более чем пора обновиться до 8 версии.
+
+От других фреймворков тоже есть немного новостей. Вышла [первая бета Django 3.2](https://www.djangoproject.com/weblog/2021/feb/19/django-32-beta-1-released/), о нововведениях мы поговорим ближе к релизу. Тем временем Ruby on Rails отметился релизом версии [6.1.3](https://weblog.rubyonrails.org/2021/2/17/Rails-6-1-3-has-been-released/) с несколькими фиксами в геме Action Record.
+
+Также отмечу релизы CakePHP [3.9.7](https://github.com/cakephp/cakephp/releases/tag/3.9.7) и [3.9.8](https://github.com/cakephp/cakephp/releases/tag/3.9.8), [nginx 1.19.8](http://nginx.org/en/CHANGES) и [njs 0.5.2](http://nginx.org/en/docs/njs/changes.html#njs0.5.2).
+
+<ParagraphWithImage imageName="laptopDialog" imageSide="right">
+  ### Другие новости
+
+Наверное, главной новостью 10 марта стало замедление Twitter. Причина — не удаление некоторого запрещенного контента по запросу Роскомнадзора. В выпуске мы не будем гореть, обсуждать мемы и политику. Я хочу обратить ваше внимание на [материал от редакции Хабра](https://habr.com/ru/post/546422/), в котором можно найти ответы на вопросы, как это технически возможно, чем юридически обосновано и что может произойти дальше. Также в статье есть небольшой блок о том, как проверить, подверглись ли замедлению конкретно вы, и ещё несколько советов. Отмечу дополнительно, что под раздачу попало много других сервисов помимо Twitter — от некоторых доменов Google до Reddit, а виной всему, скорее всего, — плохое регулярное выражение. Будем надеяться, что это не приведёт к падению всего российского интернета.
+</ParagraphWithImage>
+
+<Note>
+  ### Пишите нам и читайте
+  [Telegram—канал CSSSR](https://t.me/csssr)
+
+  [Twitter CSSSR](https://twitter.com/csssr_dev)
+
+  [Twitter новостей](https://twitter.com/csssr_news)
+
+  [Telegram ведущего](https://t.me/Vindizh)
+
+  [Twitter ведущего](https://twitter.com/Vindizh)
+</Note>

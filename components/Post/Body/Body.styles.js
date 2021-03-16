@@ -36,6 +36,12 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     color: #18191B;
   }
 
+  .text_regular_m a {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+
   .text_regular_m + .text_regular_m {
     margin-top: 1rem;
   }

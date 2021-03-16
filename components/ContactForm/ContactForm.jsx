@@ -94,7 +94,7 @@ const Component = ({
                   input={input}
                   meta={meta}
                   label="e-mail"
-                  testId={`${formName}:field:newsletter.email`}
+                  testId={`${formName}:field:email`}
                 />
               )}
             />
@@ -113,7 +113,7 @@ const Component = ({
               type="submit"
               disabled={status === 'submitting' || status === 'fail'}
               status={status}
-              testId={`${formName}:button.formSubmit`}
+              testId={`${formName}:button:submit`}
             >
               <span className="submit-text">Подписаться</span>
             </AnimatedButton>
@@ -123,7 +123,7 @@ const Component = ({
               status={status}
               errorText={submitError}
               onTryAgain={handleTryToFillFormAgain}
-              testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}
+              testId={`${formName}:text:${submittedToServer ? 'success' : 'fail'}`}
             />
           </div>
         </div>
@@ -139,6 +139,7 @@ const Component = ({
             className="subscribe-policy-link"
             href="https://csssr.com/ru/privacy-policy"
             target="_blank"
+            data-testid={`${formName}:link:privacyPolicy`}
           >
             {' '}
             Политикой конфиденциальности
@@ -159,7 +160,7 @@ const Component = ({
             type="submit"
             disabled={status === 'submitting' || status === 'fail'}
             status={status}
-            testId={`${formName}:button.formSubmit`}
+            testId={`${formName}:button:submit`}
           >
             <span className="submit-text">Подписаться</span>
           </AnimatedButton>
@@ -169,7 +170,7 @@ const Component = ({
             kind={kind}
             errorText={submitError}
             onTryAgain={handleTryToFillFormAgain}
-            testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}
+            testId={`${formName}:text:${submittedToServer ? 'success' : 'fail'}`}
           />
         </div>
       </form>
@@ -246,7 +247,7 @@ const Form = ({
       kind={kind}
       isMessageHidden={isMessageHidden}
       setMessageHidden={setMessageHidden}
-      formName="newsletter"
+      formName="NewsletterForm"
       component={Component}
       validate={rateFormValidationRules}
       onSubmit={onSubmit}

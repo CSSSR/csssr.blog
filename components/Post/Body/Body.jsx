@@ -16,6 +16,7 @@ import Quote from './Quote'
 import ReadMore from './ReadMore'
 import Subtitle from '../Subtitle'
 import Video from './Video'
+import Caption from './Caption'
 import Table from './Table'
 import List from './List'
 
@@ -30,7 +31,7 @@ const Body = ({
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => (
-  <Grid className={cn(`post-body ${className}`)}>
+  <Grid className={cn(`post-body ${className}`)} data-testid="Post:block">
     <PostNewsletter
       className="post-newsletter hidden_mobile"
       language={language}
@@ -120,6 +121,7 @@ const Body = ({
             return props.href.startsWith('/') ? <Link {...props} /> : <Link {...props} external />
           },
           props: {
+            'data-testid': 'Post:link',
             className: 'link_list_s',
             type: 'list',
             size: 's',
@@ -144,6 +146,7 @@ const Body = ({
           component: Quote,
           props: {
             className: 'quote-wrapper',
+            testId: 'Post:link',
           },
         },
         code: {
@@ -184,6 +187,9 @@ const Body = ({
         },
         Video: {
           component: Video,
+        },
+        Caption: {
+          component: Caption,
         },
         Table: {
           component: Table,

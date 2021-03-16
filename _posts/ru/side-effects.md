@@ -181,7 +181,7 @@ Cайд-эффектами называют неявные зависимост�
 
 Также в случае кода с <span class="no-wrap">сайд-эффектами</span> значительно усложняется рефакторинг. К примеру, удаление не использующегося кода:
 
-<Img imageName='complicate-refactoring' alt='Delete unused code'>
+<Img src='/images/dont-resize/ru/side-effects/complicate-refactoring/all.gif' alt='Delete unused code' withOutProcessing>
 
 #### Код с <span class="no-wrap">сайд-эффектами</span> сложно переиспользовать
 
