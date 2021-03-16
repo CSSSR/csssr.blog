@@ -91,9 +91,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(20)};
       left: 0;
-      transform: translateX(calc(((100vw - ${calcRem(624)}) / 2 - 100%) / -2 )); // http://s.csssr.ru/U31J879TR/2021-03-05-11-10-29-3f7ga_.jpg
+      grid-column: 1;
+      grid-row: 1;
+      transform: translate(calc(((100vw - ${calcRem(624)}) / 2 - 100%) / -2 ), ${calcRem(29)}); // http://s.csssr.ru/U31J879TR/2021-03-05-11-10-29-3f7ga_.jpg
     }
 
     .title {
