@@ -60,7 +60,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
   .copy-message {
     position: absolute;
     top: 0;
-    right: ${calcRem(-107)};
+    left: 100%;
     padding: ${calcRem(8)} ${calcRem(8)} ${calcRem(6)} ${calcRem(8)};
     background-color: #ffffff;
     font-size: ${calcRem(10)};
