@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { string } from 'prop-types'
+import Fade from 'react-reveal/Fade'
 import cn from 'classnames'
 import { Field, Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
@@ -35,6 +36,7 @@ const Component = ({
         return 'fail'
       }
 
+      setMessageHidden(true)
       return 'success'
     }
 
@@ -65,9 +67,7 @@ const Component = ({
 
   const handleMessageBlur = (elem) => {
     if (!elem.value && setMessageHidden) {
-      setTimeout(() => {
-        setMessageHidden(true)
-      }, 300)
+      setMessageHidden(true)
     }
   }
 
@@ -127,25 +127,21 @@ const Component = ({
             />
           </div>
         </div>
-
-        <p
-          className={cn('policy', {
-            visible: !isMessageHidden,
-          })}
-        >
-          Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и
-          информационных материалов, а также факт своего ознакомления и согласия с
-          <a
-            className="subscribe-policy-link"
-            href="https://csssr.com/ru/privacy-policy"
-            target="_blank"
-            data-testid={`${formName}:link:privacyPolicy`}
-          >
-            {' '}
-            Политикой конфиденциальности
-          </a>
-        </p>
-
+        <Fade duration={400} collapse when={!isMessageHidden}>
+          <p className="policy">
+            Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и
+            информационных материалов, а также факт своего ознакомления и согласия с
+            <a
+              className="subscribe-policy-link"
+              href="https://csssr.com/ru/privacy-policy"
+              target="_blank"
+              data-testid={`${formName}:link:privacyPolicy`}
+            >
+              {' '}
+              Политикой конфиденциальности
+            </a>
+          </p>
+        </Fade>
         <div
           className={cn('buttonWrapper_mobile', {
             success: status === 'success',
