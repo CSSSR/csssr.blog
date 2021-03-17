@@ -16,7 +16,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     transition: top ease 0.5s, bottom ease 0.5s;
   }
 
-  &.version_en {
+  &.without_subscribe-form {
     padding: 0;
     background-color: transparent;
   }
@@ -63,7 +63,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       transform: translateX(78px);
     }
 
-    &.version_en {
+    &.without_subscribe-form {
       transform: translateX(84px);
     }
   }
@@ -73,7 +73,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       transform: translateX(78px);
     }
 
-    &.version_en {
+    &.without_subscribe-form {
       transform: translateX(84px);
     }
   }
@@ -83,7 +83,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       transform: translateX(63px);
     }
 
-    &.version_en {
+    &.without_subscribe-form {
       transform: translateX(69px);
     }
     
@@ -92,9 +92,12 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   ${tablet.all} {
     & {
       left: 0;
+      transform: translate(calc(((100vw - ${calcRem(624)}) / 2 - 100%) / -2 ), ${calcRem(29)}); // http://s.csssr.ru/U31J879TR/2021-03-05-11-10-29-3f7ga_.jpg
+    }
+
+    &.without_subscribe-form {
       grid-column: 1;
       grid-row: 1;
-      transform: translate(calc(((100vw - ${calcRem(624)}) / 2 - 100%) / -2 ), ${calcRem(29)}); // http://s.csssr.ru/U31J879TR/2021-03-05-11-10-29-3f7ga_.jpg
     }
 
     .title {
