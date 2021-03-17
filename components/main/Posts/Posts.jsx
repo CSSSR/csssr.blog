@@ -7,7 +7,7 @@ import styles from './Posts.styles'
 import PostCard from './PostCard'
 
 const Posts = ({ language, posts, className }) => (
-  <Grid as="ul" className={className}>
+  <Grid as="ul" className={className} data-testid="Posts:block">
     {posts.reduce((memo, post) => {
       const orderInGroupOfFour = memo.length % 4
       const size = orderInGroupOfFour === 0 || orderInGroupOfFour === 3 ? 'l' : 's'

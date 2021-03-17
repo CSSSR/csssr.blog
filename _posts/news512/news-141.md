@@ -1,5 +1,5 @@
 ---
-title: 'В этом выпуске восполняем новогодний пробел.'
+title: 'В этом выпуске: восполняем новогодний пробел.'
 soundcloudLink: 'https://soundcloud.com/csssr/novogodnie-probely'
 date: '2021-01-15T00:00:00.000Z'
 episodeNumber: 141
@@ -10,8 +10,6 @@ author: 'Ислам Виндижев'
 <Note>
   [RSS подкаста](https://radio.csssr.com/rss/news512.rss), [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815), [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14), [SoundCloud](https://soundcloud.com/csssr/sets/512-news), [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
 </Note>
-
-В этом выпуске: восполняем новогодний пробел.
 
 <ParagraphWithImage imageName="manWithLaptop" imageSide="right">
   ### Интересные публикации

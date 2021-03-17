@@ -19,7 +19,7 @@ const Newsletter = ({
 
   return (
     <div className={className}>
-      <Grid as="section" className="section">
+      <Grid as="section" className="section" data-testid="Newsletter:block">
         <div className="container">
           <Heading.H2 type="regular" className="title">
             {title}

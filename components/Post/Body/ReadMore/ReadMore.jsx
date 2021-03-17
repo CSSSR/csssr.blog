@@ -6,7 +6,7 @@ import PostCard from '../../../main/Posts/PostCard'
 
 const ReadMore = ({ className, posts }) => {
   return (
-    <div className={className}>
+    <div className={className} data-testid="ReadMore:block">
       <Heading.H2 type="regular" className="title">
         Читайте также
       </Heading.H2>
