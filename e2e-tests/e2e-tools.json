@@ -7,14 +7,20 @@
           "type": "webdriver",
           "desiredCapabilities": {
             "browserName": "chrome",
-            "goog:chromeOptions": { "args": ["--window-size=1200,800"] }
+            "goog:chromeOptions": {
+              "args": [
+                "--window-size=1200,800"
+              ]
+            }
           },
-          "globals": { "skipScreenshotAssertions": true }
+          "globals": {
+            "skipScreenshotAssertions": true
+          }
         },
         "remote_chrome": {
           "remote": true,
           "type": "selenium",
-          "host": "selenium-linux.csssr.ru",
+          "url": "https://chrome.selenium.csssr.cloud/",
           "basicAuth": {
             "credentialsId": "chromedriver",
             "username_env": "CHROMEDRIVER_USERNAME",
@@ -28,15 +34,38 @@
                 "--headless",
                 "--no-sandbox",
                 "--disable-gpu",
-                "--window-size=1200,800"
+                "--window-size=1920,1080"
               ]
             }
           },
-          "globals": { "skipScreenshotAssertions": false }
+          "globals": {
+            "skipScreenshotAssertions": false
+          }
+        },
+        "remote_firefox": {
+          "remote": true,
+          "type": "selenium",
+          "url": "https://firefox.selenium.csssr.cloud",
+          "basicAuth": {
+            "credentialsId": "chromedriver",
+            "username_env": "CHROMEDRIVER_USERNAME",
+            "password_env": "CHROMEDRIVER_PASSWORD"
+          },
+          "desiredCapabilities": {
+            "browserName": "firefox",
+            "moz:firefoxOptions": {
+              "args": [
+                "--headless"
+              ]
+            }
+          },
+          "globals": {
+            "skipScreenshotAssertions": false
+          }
         }
       }
     }
   },
   "projectName": "blog-starter",
-  "defaultLaunchUrl": "http://blog.csssr.com/"
+  "defaultLaunchUrl": "https://blog.csssr.com/"
 }

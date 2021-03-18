@@ -6,7 +6,7 @@ import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
 import { Heading, Text, Link, ListItem } from '@csssr/core-design'
 import styles from './Body.styles'
-import Newsletter from '../../Newsletter'
+import PostNewsletter from '../../PostNewsletter'
 import Separator from './Separator'
 import Comments from './Comments'
 import ParagraphWithImage from './ParagraphWithImage'
@@ -31,7 +31,16 @@ const Body = ({
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => (
-  <Grid className={cn(`post-body ${className}`)} data-testid="Post:block">
+  <Grid className={cn(`post-body ${className}`)}>
+    <PostNewsletter
+      className="post-newsletter hidden_mobile"
+      language={language}
+      type={type}
+      kind="post"
+      BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+      BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+      data-testid="Post:block"
+    />
     {compiler(content, {
       wrapper: Fragment,
       forceWrapper: true,
@@ -197,19 +206,18 @@ const Body = ({
       },
     })}
 
-    {language === 'ru' && type !== 'news' && (
-      <>
-        <Newsletter
-          kind="post"
-          BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-          BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-        />
+    <PostNewsletter
+      className="post-newsletter hidden_desktop"
+      language={language}
+      type={type}
+      kind="post"
+      BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+      BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+    />
 
-        <ReadMore posts={posts} />
-      </>
-    )}
+    {language === 'ru' && type !== 'news' && <ReadMore posts={posts} />}
 
-    <Comments id={slug} language={language} />
+    <Comments id={slug} language={language} type={type} />
   </Grid>
 )
 

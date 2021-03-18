@@ -5,32 +5,18 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   & {
     position: relative;
     grid-column: 1 / span 12;
-    width: 100vw;
+    width: 100%;
     margin-top: ${calcRem(75)};
+    padding-bottom: ${calcRem(30)};
+    background-color: white;
+    z-index: 9000;
+  }
+
+  .section {
+    width: 100%;
+    justify-content: center;
     padding: ${calcRem(30)} 0;
     background-color: #F5F6FA;
-    transform: translateX(calc((100vw - var(--width-container)) / -2));
-
-    &.post {
-      margin-top: ${calcRem(80)};
-      padding: ${calcRem(40)} 0 ${calcRem(50)};
-
-      .container {
-        grid-column: 4 / span 6;
-      }
-
-      .title {
-        font-size: ${calcRem(40)};
-        line-height: ${calcRem(56)};
-      }
-
-      .picture {
-        bottom: auto;
-        top: ${calcRem(-72)};
-        width: ${calcRem(215)};
-        height: ${calcRem(143)};
-      }
-    }
   }
 
   .container {
@@ -62,6 +48,13 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     }
   }
 
+  ${desktop.all} {
+    & {
+      margin-top: ${calcRem(140)};
+      padding-bottom: 26px;
+    }
+  }
+
   ${desktop.l} {
     --width-container: 1328px;
   }
@@ -75,34 +68,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 
   ${tablet.all} {
-    --width-container: ${calcRem(944)};
-
     & {
       margin-top: ${calcRem(60)};
-
-      &.post {
-        padding: ${calcRem(40)} 0 ${calcRem(40)};
-
-        .container {
-          grid-column: 3 / span 8;
-        }
-
-        .title {
-          font-size: ${calcRem(32)};
-          line-height: ${calcRem(40)};
-        }
-
-        .subtitle {
-          width: ${calcRem(520)};
-          font-size: ${calcRem(16)};
-        }
-
-        .picture {
-          top: ${calcRem(-67)};
-          width: ${calcRem(184)};
-          height: ${calcRem(122)};
-        }
-      }
     }
 
     .subtitle {
@@ -117,30 +84,14 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 
   ${mobile.all} {
-    --width-container: ${calcRem(328)};
-
     & {
       margin-top: ${calcRem(50)};
+      background-color: #F5F6FA;
+    }
 
-      &.post {
-        margin-top: ${calcRem(60)};
-        padding: ${calcRem(30)} 0;
-
-        .container {
-          grid-column: 1 / span 6
-        }
-
-        .title {
-          font-size: ${calcRem(24)};
-          line-height: ${calcRem(32)};
-        }
-
-        .picture {
-          top: ${calcRem(40)};
-          width: ${calcRem(104)};
-          height: ${calcRem(77)};
-        }
-      }
+    .section {
+      padding-left: ${calcRem(16)};
+      padding-right: ${calcRem(16)};
     }
 
     .container {
@@ -164,6 +115,12 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
       width: ${calcRem(104)};
       height: ${calcRem(77)};
     }
+  }
+`
+
+export const dynamicFooterStyles = css`
+  footer.footer {
+    margin-top: 0; // Когда использьуется этот компонент, у футера не должно быть отступа
   }
 `
 

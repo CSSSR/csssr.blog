@@ -6,6 +6,7 @@ import { getOriginal } from '@csssr/csssr.images/dist/utils'
 import Layout from '../Layout'
 import Posts from './Posts'
 import Categories from './Categories'
+import Newsletter from '../Newsletter/'
 
 import Pagination from './Pagination/Pagination'
 import myImageData from '../../public/images/resize/en/offshore-web-development/mainCoverL/desktop.m.png'
@@ -61,6 +62,13 @@ const MainPage = ({
         activePageNumber={activePageNumber}
         totalNumberOfPosts={totalNumberOfPosts}
       />
+      {language === 'ru' && (
+        <Newsletter
+          language={language}
+          BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+          BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+        />
+      )}
     </Layout>
   </>
 )
