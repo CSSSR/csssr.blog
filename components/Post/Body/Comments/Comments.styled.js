@@ -17,7 +17,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     position: absolute;
     top: -17px;
     left: 0;
-    margin-bottom: ${calcRem(20)};
     display: flex;
     font-family: 'Roboto', 'Arial', sans-serif;
     font-size: 40px;
@@ -43,9 +42,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       }
 
       .commento-logged-in-as {
-        .commento-avatar {
-          position: relative;
-          top: 92px;
+        top: ${calcRem(90)};
+
+        .commento-avatar-img {
+          width: ${calcRem(32)};
+          height: ${calcRem(32)};
         }
 
         .commento-name {
@@ -316,9 +317,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .commento-root {
       .commento-logged-container {
         .commento-logged-in-as {
-          .commento-avatar {
-            top: ${calcRem(87)};
-          }
+          top: ${calcRem(86)};
         }
       }
 
@@ -350,6 +349,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       top: ${calcRem(-40)};
       font-size: ${calcRem(32)};
       line-height: ${calcRem(40)};
+      font-weight: 400;
     }
 
     .commento-root {
@@ -357,15 +357,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         justify-content: flex-start;
 
         .commento-logged-in-as {
-          .commento-avatar {
-            top: ${calcRem(85)};
+          top: ${calcRem(84)};
+          .commento-avatar-img {
+            width: ${calcRem(24)};
+            height: ${calcRem(24)};
           }
         }
 
         .commento-profile-button {
           &:nth-of-type(2) {
             position: relative;
-            left: ${calcRem(-32)};
+            top: ${calcRem(9)};
+            left: ${calcRem(-34)};
+            font-weight: 700;
+            font-size: ${calcRem(14)};
+            line-height: ${calcRem(24)};
           }
         }
       }
@@ -382,11 +388,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         }
 
         .commento-button-margin {
-          margin-top: ${calcRem(30)};
+          margin-top: ${calcRem(39)};
+          margin-left: ${calcRem(32)};
           padding-bottom: ${calcRem(10)};
 
           .commento-button {
             width: 100%;
+          }
+
+          .commento-textarea-container textarea {
+            height: ${calcRem(72)};
           }
         }
 
