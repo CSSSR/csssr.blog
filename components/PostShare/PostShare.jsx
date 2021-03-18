@@ -87,16 +87,16 @@ const PostShare = ({ className, language, type }) => {
           </button>
           <input className="hidden-input" ref={inputRef} defaultValue={currentUrl} />
 
-          {/* {isMessageShown && ( */}
-          <Text
-            as="span"
-            className={cn('copy-message', {
-              _en: language === 'en',
-            })}
-          >
-            {copyMessage}
-          </Text>
-          {/* )} */}
+          {isMessageShown && (
+            <Text
+              as="span"
+              className={cn('copy-message', {
+                _en: language === 'en',
+              })}
+            >
+              {copyMessage}
+            </Text>
+          )}
         </li>
       </ul>
     </div>
