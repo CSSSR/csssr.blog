@@ -2,7 +2,7 @@ import { Global } from '@emotion/react'
 import Meta from '../Meta'
 import styles from './Layout.styles'
 import { Header, Footer } from '@csssr/core-design'
-import CookiesPopup from '../CookiesPopup'
+import { CookiesPopup } from '@csssr/core-design'
 
 const presetByLanguage = {
   en: 'defaultEn',
@@ -22,13 +22,13 @@ export default function Layout({ children, language, type }) {
           type: 'default',
         }}
       />
-      <main id="main" className="main">
+      <main id="main" className="main" data-testid="Layout:block:main">
         {children}
       </main>
 
       <Footer className="footer" preset={presetByLanguage[language]} />
 
-      <CookiesPopup language={language} />
+      <CookiesPopup preset={presetByLanguage[language]} />
 
       <Global styles={styles} />
     </>

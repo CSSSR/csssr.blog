@@ -11,8 +11,6 @@ author: 'Ислам Виндижев'
   [RSS подкаста](https://radio.csssr.com/rss/news512.rss), [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815), [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14), [SoundCloud](https://soundcloud.com/csssr/sets/512-news), [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
 </Note>
 
-В этом выпуске: релиз Chrome 88, выход Meteor.js 2.0, версии Deno 1.7 и Angular 11.1, CSS clip-path(), проектирование API, 20 инструментов визуализации данных на JS и 10 хороших практик контейнеризации Node.js с Docker.
-
 <ParagraphWithImage imageName="manWithLaptop" imageSide="right">
   ### Интересные публикации
 

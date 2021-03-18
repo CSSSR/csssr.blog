@@ -75,7 +75,7 @@ const Component = ({
                 input={input}
                 meta={meta}
                 label="e-mail"
-                testId={`${formName}:field:newsletter.email`}
+                testId={`${formName}:field:email`}
               />
             )}
           />
@@ -87,7 +87,7 @@ const Component = ({
               type="submit"
               disabled={status === 'submitting' || status === 'fail'}
               status={status}
-              testId={`${formName}:button.formSubmit`}
+              testId={`${formName}:button:submit`}
             >
               <span className="submit-text">Подписаться</span>
             </AnimatedButton>
@@ -96,7 +96,7 @@ const Component = ({
               status={status}
               errorText={submitError}
               onTryAgain={handleTryToFillFormAgain}
-              testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}
+              testId={`${formName}:text:${submittedToServer ? 'success' : 'fail'}`}
             />
           </div>
         </div>
@@ -104,7 +104,7 @@ const Component = ({
         <p
           className="policy"
           dangerouslySetInnerHTML={{
-            __html: `Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и информационных материалов, а также факт своего ознакомления и согласия с <a class="link" href="https://csssr.com/ru/privacy-policy" target="_blank">Политикой конфиденциальности<a/>`,
+            __html: `Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и информационных материалов, а также факт своего ознакомления и согласия с <a class="link" href="https://csssr.com/ru/privacy-policy" target="_blank" data-testid="${formName}:link:privacyPolicy">Политикой конфиденциальности<a/>`,
           }}
         />
 
@@ -115,7 +115,7 @@ const Component = ({
             type="submit"
             disabled={status === 'submitting' || status === 'fail'}
             status={status}
-            testId={`${formName}:button.formSubmit`}
+            testId={`${formName}:button:submit`}
           >
             <span className="submit-text">Подписаться</span>
           </AnimatedButton>
@@ -124,7 +124,7 @@ const Component = ({
             status={status}
             errorText={submitError}
             onTryAgain={handleTryToFillFormAgain}
-            testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}
+            testId={`${formName}:text:${submittedToServer ? 'success' : 'fail'}`}
           />
         </div>
       </form>
@@ -192,7 +192,7 @@ const Form = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID 
     <ReactFinalForm
       className={className}
       kind={kind}
-      formName="newsletter"
+      formName="NewsletterForm"
       component={Component}
       validate={rateFormValidationRules}
       onSubmit={onSubmit}

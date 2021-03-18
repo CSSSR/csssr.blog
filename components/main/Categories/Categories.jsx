@@ -32,7 +32,7 @@ const Categories = ({ className, items, activeCategory, language }) => {
   }, [])
 
   return (
-    <Grid className={className}>
+    <Grid className={className} data-testid="Categories:block">
       <div className="inner">
         <ul className="items">
           {categoriesOrder
@@ -55,6 +55,7 @@ const Categories = ({ className, items, activeCategory, language }) => {
                     <a
                       className={cn('link', { _active: id === activeCategory })}
                       ref={id === activeCategory ? activeItemRef : null}
+                      data-testid={`Categories:link:${id}`}
                     >
                       {categoriesByLanguage[language][id]}
                     </a>
@@ -69,6 +70,7 @@ const Categories = ({ className, items, activeCategory, language }) => {
                 <a
                   className={cn('link', { _active: 'news512' === activeCategory })}
                   ref={'news512' === activeCategory ? activeItemRef : null}
+                  data-testid="Categories:link:news"
                 >
                   🔥 Новости
                 </a>

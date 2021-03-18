@@ -17,6 +17,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     position: absolute;
     top: -17px;
     left: 0;
+    margin-bottom: ${calcRem(20)};
     display: flex;
     font-family: 'Roboto', 'Arial', sans-serif;
     font-size: 40px;
@@ -311,7 +312,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       font-size: ${calcRem(32)};
       line-height: ${calcRem(40)};
     }
-    
+
     .commento-root {
       .commento-logged-container {
         .commento-logged-in-as {
@@ -320,7 +321,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
           }
         }
       }
-      
+
       .commento-error-box {
         top: ${calcRem(230)};
       }
@@ -350,7 +351,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       font-size: ${calcRem(32)};
       line-height: ${calcRem(40)};
     }
-    
+
     .commento-root {
       .commento-logged-container {
         justify-content: flex-start;
@@ -468,13 +469,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
               width: auto !important;
               height: auto;
               margin-right: 0;
-  
+
               .commento-option-button {
                 position: static;
                 display: none;
                 right: auto !important;
               }
-  
+
               .commento-option-edit,
               .commento-option-remove {
                 display: block;
@@ -484,17 +485,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
                 mask-image: none;
                 background: #ffffff;
               }
-  
+
               .commento-option-edit {
                 background-image: url(${require('../../../../public/icons/edit.svg').default});
               }
-  
+
               .commento-option-remove {
                 margin-left: ${calcRem(16)};
                 background-image: url(${require('../../../../public/icons/delete.svg').default});
               }
             }
-  
+
             .commento-options-clearfix {
               display: none;
             }

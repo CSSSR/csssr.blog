@@ -57,7 +57,7 @@ class ErrorPage extends React.Component {
 
         <Grid as="header" className={className}>
           <Link href="/en">
-            <a className="logo">
+            <a className="logo" data-testid="ErrorPage:link:logo">
               <LogoIcon width="100%" height="100%" />
             </a>
           </Link>
