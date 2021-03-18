@@ -231,7 +231,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
           .commento-name {
             display: inline;
-            margin-left: 16px;
+            margin-left: ${calcRem(6)};
             font-family: 'Roboto', 'Arial', sans-serif;
             font-size: 12px;
             line-height: 24px;
@@ -453,6 +453,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
           .commento-options-clearfix {
             display: none;
+          }
+
+          .commento-header {
+            .commento-avatar-img {
+              width: ${calcRem(24)};
+              height: ${calcRem(24)};
+            }
+
+            .commento-name {
+              margin-left: 0;
+            }
           }
         }
 
