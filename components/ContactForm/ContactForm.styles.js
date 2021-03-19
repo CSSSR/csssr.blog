@@ -193,12 +193,9 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .input.field-input {
     width: ${calcRem(544)};
-    padding-left: ${calcRem(14)};
-    padding-right: ${calcRem(14)};
   }
 
   .label {
-    left: ${calcRem(14)};
     color: ${colors.secondary.darken100};
   }
 
