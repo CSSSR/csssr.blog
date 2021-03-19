@@ -257,6 +257,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => {
               content: none;
             }
 
+            .commento-avatar-img {
+              width: ${calcRem(32)};
+              height: ${calcRem(32)};
+            }
+
             .commento-subtitle {
               display: inline;
               margin-left: 0;
