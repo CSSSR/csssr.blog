@@ -9,6 +9,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     &.post {
       margin-top: ${calcRem(16)};
 
+      form {
+        margin-bottom: ${calcRem(-9)};
+      }
+
       .wrapper {
         flex-direction: column;
 
@@ -150,12 +154,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       }
 
       .policy {
-        display: none;
-        width: 100%;
-      }
-
-      .policy.visible {
         display: block;
+        width: 100%;
       }
     }
 
@@ -193,12 +193,9 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .input.field-input {
     width: ${calcRem(544)};
-    padding-left: ${calcRem(14)};
-    padding-right: ${calcRem(14)};
   }
 
   .label {
-    left: ${calcRem(14)};
     color: ${colors.secondary.darken100};
   }
 
@@ -301,7 +298,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
           }
         }
         .policy {
-          display: none;
+          display: block;
         }
       }
     }
@@ -390,7 +387,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       .policy {
         order: 3;
         display: block;
-        margin-top: ${calcRem(8)};
         font-size: ${calcRem(10)};
         line-height: ${calcRem(14)};
       }

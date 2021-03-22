@@ -19,14 +19,14 @@ const PostNewsletter = ({
   const { title, subtitle, img, imgAlt } = postNewsletterData
 
   const [isMessageHidden, setMessageHidden] = useState(true)
-
+  const withoutSubscribeForm = language !== 'ru' || type === 'news'
   return (
     <div
       className={cn(className, {
-        version_en: language !== 'ru' || type === 'news',
+        'without_subscribe-form': withoutSubscribeForm,
       })}
     >
-      {language === 'ru' && type !== 'news' && (
+      {!withoutSubscribeForm && (
         <div className="container">
           <PictureSmart requireImages={img} className="picture" alt={imgAlt} />
           <Heading.H2 type="regular" className="title">

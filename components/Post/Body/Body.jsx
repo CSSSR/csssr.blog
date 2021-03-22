@@ -39,6 +39,7 @@ const Body = ({
       kind="post"
       BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
       BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+      data-testid="Post:block"
     />
     {compiler(content, {
       wrapper: Fragment,

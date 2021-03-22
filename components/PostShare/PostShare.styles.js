@@ -1,19 +1,17 @@
 import { css } from '@emotion/react'
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile } }) => css`
+const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
   & {
+    margin-top: ${calcRem(50)};
+    transform: translateX(${calcRem(-10)});
     background-color: white;
     max-width: ${calcRem(89)};
     padding: ${calcRem(10)};
 
-    &.withMargin {
-      margin-top: ${calcRem(50)};
-      transform: translateX(${calcRem(-10)});
-    }
-
-    &.centerAlign {
-      margin: 0 auto;
+    &.without_margin_top {
+      margin-top: 0;
+      transform: unset;
     }
   }
 
@@ -58,12 +56,13 @@ const base = ({ breakpoints: { mobile } }) => css`
   .share-title {
     font-size: ${calcRem(12)};
     line-height: ${calcRem(16)};
+    color: ${colors.secondary.darken100}
   }
 
   .copy-message {
     position: absolute;
     top: 0;
-    right: ${calcRem(-107)};
+    left: 100%;
     padding: ${calcRem(8)} ${calcRem(8)} ${calcRem(6)} ${calcRem(8)};
     background-color: #ffffff;
     font-size: ${calcRem(10)};
@@ -97,18 +96,28 @@ const base = ({ breakpoints: { mobile } }) => css`
     clip: rect(0 0 0 0);
   }
 
+  ${desktop.all} {
+    &.without_margin_top {
+      margin-left: auto;
+    }
+  }
+
+  ${tablet.all} {
+    &.without_margin_top {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
   ${mobile.all} {
     & {
       order: 1;
       max-width: 100%;
       padding: 0;
+      transform: unset;
 
       &._ru {
         margin-top: 0;
-      }
-
-      &.withMargin {
-        transform: unset;
       }
     }
 
