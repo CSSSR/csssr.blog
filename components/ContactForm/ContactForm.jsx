@@ -36,7 +36,10 @@ const Component = ({
         return 'fail'
       }
 
-      setMessageHidden(true)
+      if (setMessageHidden) {
+        setMessageHidden(true)
+      }
+
       return 'success'
     }
 

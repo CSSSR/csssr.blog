@@ -11,19 +11,19 @@ const base = ({ colors }) => css`
   }
 
   .input {
+    padding-left: ${calcRem(12)};
+    padding-right: ${calcRem(12)};
+    padding-bottom: ${calcRem(4)};
     width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: ${calcRem(1)} solid #d4d4d4;
     font-family: Roboto, sans-serif;
     font-weight: 300;
     font-size: ${calcRem(16)};
     line-height: ${calcRem(24)};
     color: ${colors.secondary.darken100};
-    border: none;
-    border-radius: 0;
-    border-bottom: ${calcRem(1)} solid #d4d4d4;
     background-color: transparent;
-    padding-bottom: ${calcRem(4)};
-    padding-left: ${calcRem(9)};
-    padding-right: ${calcRem(9)};
   }
 
   .input::placeholder {
@@ -51,7 +51,7 @@ const base = ({ colors }) => css`
     line-height: ${calcRem(24)};
     position: absolute;
     top: 0;
-    left: ${calcRem(8)};
+    left: ${calcRem(12)};
     color: ${colors.secondary.gray};
 
     > span {
