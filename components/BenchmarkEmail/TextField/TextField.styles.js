@@ -50,7 +50,7 @@ const base = ({ colors }) => css`
   .label {
     position: absolute;
     top: ${calcRem(32)};
-    left: ${calcRem(8)};
+    left: ${calcRem(14)};
     font-family: 'Roboto', 'Arial', sans-serif;
     font-size: ${calcRem(16)};
     line-height: ${calcRem(24)};

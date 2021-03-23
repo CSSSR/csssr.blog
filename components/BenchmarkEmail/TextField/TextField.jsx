@@ -4,13 +4,7 @@ import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './TextField.styles'
 
-const TextField = ({
-  className,
-  id,
-  name,
-  label,
-  testId
-}) => {
+const TextField = ({ className, id, name, label, testId }) => {
   const [inputValue, setInputValue] = useState('')
 
   const changeHandler = (e) => {
@@ -18,14 +12,14 @@ const TextField = ({
   }
 
   function focusPlaceHolder(e) {
-    e.target.className = "formbox-field_LY6HH";
+    e.target.className = 'formbox-field_LY6HH'
   }
-  
+
   function blurPlaceHolder(e) {
     if (e.target.value === '') {
-      e.target.className = "formbox-field_LY6HH text-placeholder";
+      e.target.className = 'formbox-field_LY6HH text-placeholder'
     } else if (e.target.value !== '') {
-      e.target.className = "formbox-field_LY6HH filled-without-focus";
+      e.target.className = 'formbox-field_LY6HH filled-without-focus'
     }
   }
 
@@ -34,6 +28,7 @@ const TextField = ({
       <input
         className="formbox-field_LY6HH text-placeholder"
         type="text"
+        value={inputValue}
         onFocus={focusPlaceHolder}
         onBlur={blurPlaceHolder}
         onChange={changeHandler}
@@ -43,7 +38,7 @@ const TextField = ({
         data-testid={testId}
       />
       <label
-        className={cn("label", { _active: inputValue })}
+        className={cn('label', { _active: inputValue })}
         htmlFor={id}
         dangerouslySetInnerHTML={{ __html: label }}
       />
@@ -56,7 +51,7 @@ TextField.propTypes = {
   id: string,
   name: string,
   label: string,
-  testId: string
+  testId: string,
 }
 
 export default styled(TextField)`
