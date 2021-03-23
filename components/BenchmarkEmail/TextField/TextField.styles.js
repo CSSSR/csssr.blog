@@ -12,6 +12,7 @@ const base = ({ colors }) => css`
     background-color: #ffffff;
     border: none;
     border-bottom: ${calcRem(1)} solid ${colors.primary.origin};
+    border-radius: 0;
     font-family: 'Roboto', 'Arial', sans-serif;
     font-size: ${calcRem(16)};
     line-height: ${calcRem(24)};
