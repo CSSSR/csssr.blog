@@ -93,7 +93,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     & {
       left: 0;
       width: ${calcRem(160)};
-      padding: ${calcRem(10)} ${calcRem(12)};
+      padding-left: ${calcRem(12)};
+      padding-right: ${calcRem(12)};
       // http://s.csssr.ru/U31J879TR/2021-03-05-11-10-29-3f7ga_.jpg
       transform: translate(calc(((100vw - ${calcRem(624)}) / 2 - 100%) / -2 ), ${calcRem(29)});
       // using big span number, to prevent white spaces between grid rows
