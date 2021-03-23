@@ -23,11 +23,7 @@ const PostShare = ({ className, language, type }) => {
   const copyMessage = language === 'ru' ? 'Скопировано!' : 'Copied!'
 
   const inputRef = useRef()
-
-  const currentUrl =
-    type === 'news'
-      ? `http://blog.csssr.com/${language}/news512/episode/${router.query.slug}`
-      : `http://blog.csssr.com/${language}/article/${router.query.slug}`
+  const currentUrl = `${process.env.BLOG_HOST || 'http://localhost:3000'}${router.asPath}`
 
   const copyHandler = () => {
     function timerFunction() {

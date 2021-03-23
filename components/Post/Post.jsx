@@ -39,7 +39,11 @@ const Post = ({
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content={`${process.env.BLOG_HOST}/${language}/article/${post.slug}`}
+          content={
+            type === 'news'
+              ? `${process.env.BLOG_HOST}/${language}/news512/episode/${post.slug}`
+              : `${process.env.BLOG_HOST}/${language}/article/${post.slug}`
+          }
         />
         <meta
           property="og:image"
