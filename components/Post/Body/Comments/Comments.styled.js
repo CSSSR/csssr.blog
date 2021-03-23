@@ -4,7 +4,7 @@ import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss
 
 const defaultAvatarImages = require.context('../../../../public/components/comments/defaultAvatar')
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => {
+const base = ({ breakpoints: { tablet, mobile }, colors }) => {
   const commentOptionsStyles = `
     .commento-options, 
     .commento-options-mobile {
@@ -516,7 +516,7 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
         width: ${calcRem(160)};
       }
 
-      .commento-button:nth-child(n + 3) {
+      .commento-button:nth-of-type(n + 3) {
         margin-top: ${calcRem(16)};
       }
     }
@@ -655,7 +655,7 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
       text-align: center;
       transform: translateX(-50%);
       opacity: 1;
-      // animation: 200ms linear 2s ${fadeOut} forwards;
+      animation: 200ms linear 2.5s ${fadeOut} forwards;
     }
 
     @media (hover: hover) and (pointer: fine) {
