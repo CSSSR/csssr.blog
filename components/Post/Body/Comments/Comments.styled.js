@@ -417,6 +417,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
 
             .commento-header {
               .commento-avatar-img {
+                margin-right: ${calcRem(8)};
                 width: ${calcRem(24)};
                 height: ${calcRem(24)};
               }
