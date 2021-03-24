@@ -4,52 +4,54 @@ import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss
 
 const defaultAvatarImages = require.context('../../../../public/components/comments/defaultAvatar')
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => {
-  const commentOptionsStyles = `.commento-options, .commento-options-mobile {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    float: none;
-    display: flex;
-    width: auto !important;
-    height: auto;
-  
-    .commento-option-button {
-      position: static;
-      display: none;
-      right: auto !important;
-    }
-  
-    .commento-option-edit,
-    .commento-option-remove {
-      margin: 0;
-      display: block;
-      width: ${calcRem(20)};
-      height: ${calcRem(20)};
-      background-color: #7e8fa4;
-      transition: background-color 200ms ease-out;
-    }
-  
-    .commento-option-edit {
-      mask-image: url(${require('../../../../public/icons/edit.svg').default});
-    }
-  
-    .commento-option-remove {
-      margin-left: ${calcRem(16)};
-      mask-image: url(${require('../../../../public/icons/delete.svg').default});
-    }
-  
-    @media (hover: hover) and (pointer: fine) {
-      .commento-option-edit:hover {
-        background-color: ${colors.secondary.darken100};
+const base = ({ breakpoints: { tablet, mobile }, colors }) => {
+  const commentOptionsStyles = `
+    .commento-options, 
+    .commento-options-mobile {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      float: none;
+      display: flex;
+      width: auto !important;
+      height: auto;
+    
+      .commento-option-button {
+        position: static;
+        display: none;
+        right: auto !important;
       }
-  
-      .commento-option-remove:hover {
-        background-color: #f45b53;
+    
+      .commento-option-edit,
+      .commento-option-remove {
+        margin: 0;
+        display: block;
+        width: ${calcRem(20)};
+        height: ${calcRem(20)};
+        background-color: #7e8fa4;
+        transition: background-color 200ms ease-out;
+      }
+    
+      .commento-option-edit {
+        mask-image: url(${require('../../../../public/icons/edit.svg').default});
+      }
+    
+      .commento-option-remove {
+        margin-left: ${calcRem(16)};
+        mask-image: url(${require('../../../../public/icons/delete.svg').default});
+      }
+    
+      @media (hover: hover) and (pointer: fine) {
+        .commento-option-edit:hover {
+          background-color: ${colors.secondary.darken100};
+        }
+    
+        .commento-option-remove:hover {
+          background-color: #f45b53;
+        }
       }
     }
-  }
   `
 
   return css`
@@ -72,7 +74,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => {
       font-weight: 900;
       color: ${colors.secondary.darken100};
     }
-
+    .commento-root.commento-root-min-height {
+      min-height: auto;
+    }
     .commento-root {
       .commento-logged-container {
         display: flex;
@@ -129,14 +133,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => {
         font-size: 18px;
         line-height: 24px;
         font-weight: bold;
-      }
-
-      .commento-error-box {
-        position: absolute;
-        top: 215px;
-        left: 0;
-        opacity: 1;
-        animation: ${fadeOut} 0s 3s linear forwards;
       }
 
       .commento-main-area {
@@ -305,22 +301,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => {
       }
     }
 
-    ${desktop.m} {
-      .commento-root {
-        .commento-error-box {
-          top: 235px;
-        }
-      }
-    }
-
-    ${desktop.s} {
-      .commento-root {
-        .commento-error-box {
-          top: 235px;
-        }
-      }
-    }
-
     ${tablet.all} {
       & {
         grid-column: 3 / span 8;
@@ -338,10 +318,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => {
           .commento-logged-in-as {
             top: ${calcRem(86)};
           }
-        }
-
-        .commento-error-box {
-          top: ${calcRem(230)};
         }
 
         .commento-main-area {
@@ -368,6 +344,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => {
         top: ${calcRem(-40)};
         font-size: ${calcRem(32)};
         line-height: ${calcRem(40)};
+      }
+
+      #commento-textarea-root {
+        margin-left: ${calcRem(8)};
       }
 
       .commento-root {
@@ -472,11 +452,255 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => {
   `
 }
 
-const fadeOut = keyframes`
-  to {
-    opacity: 0;
-  }
-`
+const modal = ({ breakpoints: { mobile }, colors }) => {
+  const fadeOut = keyframes`
+    to {
+      opacity: 0;
+    }
+  `
+
+  return css`
+    #commento-login-box {
+      position: fixed;
+      top: 50%;
+      padding-top: ${calcRem(64)};
+      padding-left: ${calcRem(40)};
+      padding-right: ${calcRem(40)};
+      padding-bottom: ${calcRem(40)};
+      max-width: ${calcRem(416)};
+      border: ${calcRem(1)} solid #7e8fa4;
+      background-color: white;
+      transform: translateY(-50%);
+    }
+
+    #commento-login-box-container.commento-login-box-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+
+    #commento-login-box-oauth-pretext,
+    #commento-login-box-email-subtitle {
+      margin: 0;
+      font-family: Roboto;
+      font-size: ${calcRem(24)};
+      font-style: normal;
+      font-weight: 900;
+      line-height: ${calcRem(32)};
+      letter-spacing: 0px;
+      text-align: left;
+      color: ${colors.secondary.darken100};
+    }
+
+    #commento-login-box-oauth-buttons-container ~ #commento-login-box-email-subtitle {
+      margin-top: ${calcRem(48)};
+    }
+
+    #commento-login-box-oauth-buttons-container {
+      margin-top: ${calcRem(20)};
+
+      .commento-oauth-buttons {
+        position: static;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .commento-button {
+        width: ${calcRem(160)};
+      }
+
+      .commento-button:nth-of-type(n + 3) {
+        margin-top: ${calcRem(16)};
+      }
+    }
+
+    #commento-login-box-oauth-buttons-container .commento-button,
+    #commento-login-box-email-button,
+    #commento-login-box-password-input + .commento-email-button {
+      margin-left: 0;
+      margin-right: 0;
+      height: ${calcRem(40)};
+      font-family: Roboto;
+      font-size: ${calcRem(12)};
+      font-style: normal;
+      font-weight: 900;
+      line-height: ${calcRem(24)};
+      letter-spacing: ${calcRem(1.6)};
+      text-align: center;
+      border-radius: 0;
+      transition: background-color 200ms ease-out;
+    }
+
+    #commento-login-box-hr2 {
+      display: none;
+    }
+
+    .commento-login-box-close {
+      height: ${calcRem(23)} !important;
+      width: ${calcRem(23)} !important;
+      opacity: 1 !important;
+
+      ::before,
+      ::after {
+        top: ${calcRem(10)} !important;
+        left: ${calcRem(-2)} !important;
+        width: ${calcRem(30)} !important;
+        height: ${calcRem(2)} !important;
+        background-color: #7e8fa4 !important;
+        transition: background-color 200ms ease-out !important;
+      }
+    }
+
+    .commento-email-container {
+      margin-top: ${calcRem(16)} !important;
+      margin-bottom: 0 !important;
+    }
+
+    .commento-email {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      box-shadow: none !important;
+    }
+
+    #commento-login-box-email-input,
+    #commento-login-box-name-input,
+    #commento-login-box-password-input {
+      padding: ${calcRem(4)} 0;
+      width: 100%;
+      height: ${calcRem(32)};
+      border-bottom: ${calcRem(1)} solid #7e8fa4;
+      border-radius: 0;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 300;
+      font-size: ${calcRem(16)};
+      color: ${colors.secondary.darken100};
+      transition: border-color 200ms ease-out;
+
+      ::placeholder {
+        color: ${colors.secondary.darken100};
+      }
+
+      :focus {
+        border-color: ${colors.primary.origin};
+      }
+    }
+
+    #commento-login-box-name-input {
+      margin-top: ${calcRem(11)};
+    }
+
+    #commento-login-box-password-input {
+      margin-top: ${calcRem(-5)};
+    }
+
+    #commento-login-box-website-input {
+      display: none;
+    }
+
+    #commento-login-box-email-button,
+    #commento-login-box-password-input + .commento-email-button {
+      margin-top: ${calcRem(30)};
+      width: 100%;
+      border: ${calcRem(1)} solid ${colors.secondary.darken100};
+      color: ${colors.secondary.darken100};
+      transition: border-color 200ms ease-out, color 200ms ease-out;
+    }
+
+    #commento-login-box-forgot-link-container a,
+    #commento-login-box-login-link-container a {
+      font-family: Roboto;
+      font-size: ${calcRem(14)};
+      font-style: normal;
+      font-weight: 300;
+      line-height: ${calcRem(24)};
+      letter-spacing: 0;
+      text-align: center;
+      text-decoration: underline;
+      color: ${colors.primary.origin};
+      transition: color 200ms ease-out;
+    }
+
+    #commento-login-box-forgot-link-container,
+    #commento-login-box-login-link-container {
+      margin-bottom: 0;
+    }
+
+    #commento-login-box-forgot-link-container {
+      margin-top: ${calcRem(20)};
+    }
+
+    #commento-login-box-login-link-container {
+      margin-top: ${calcRem(8)};
+    }
+
+    #commento-error {
+      position: absolute;
+      top: ${calcRem(38)};
+      left: 50%;
+      height: auto;
+      font-family: Roboto;
+      font-size: ${calcRem(14)};
+      font-style: normal;
+      font-weight: 300;
+      line-height: ${calcRem(24)};
+      letter-spacing: 0;
+      text-align: center;
+      transform: translateX(-50%);
+      opacity: 1;
+      animation: 200ms linear 2.5s ${fadeOut} forwards;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .commento-login-box-close:hover::before,
+      .commento-login-box-close:hover::after,
+      #commento-login-box-oauth-buttons-container .commento-button:hover {
+        background-color: ${colors.primary.darken15} !important;
+      }
+
+      #commento-login-box-forgot-link-container a:hover,
+      #commento-login-box-login-link-container a:hover {
+        color: ${colors.primary.darken15};
+      }
+
+      #commento-login-box-email-button:hover,
+      #commento-login-box-password-input + .commento-email-button:hover {
+        color: ${colors.primary.darken15};
+        border-color: ${colors.primary.darken15};
+      }
+    }
+
+    ${mobile.all} {
+      #commento-login-box {
+        padding-left: ${calcRem(16)};
+        padding-right: ${calcRem(16)};
+        width: ${calcRem(340)};
+        max-width: ${calcRem(340)};
+      }
+
+      #commento-login-box-oauth-buttons-container .commento-button {
+        width: ${calcRem(145)};
+      }
+
+      #commento-login-box-email-button,
+      #commento-login-box-password-input + .commento-email-button {
+        margin-top: ${calcRem(24)};
+      }
+
+      #commento-error {
+        top: ${calcRem(40)};
+        width: ${calcRem(340)};
+      }
+    }
+  `
+}
 
 export const backgroundImagesStyles = css`
   & {
@@ -491,6 +715,7 @@ const StyledComments = (props) => {
 
   return css`
     ${base({ breakpoints, colors })}
+    ${modal({ breakpoints, colors })}
     ${backgroundImagesStyles}
   `
 }
