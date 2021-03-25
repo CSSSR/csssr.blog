@@ -6,9 +6,7 @@
       "label": "Nightwatch: запустить текущий файл в Chrome локально",
       "command": "yarn et nightwatch:run --browser local_chrome --test='${file}'",
       "problemMatcher": [],
-      "presentation": {
-        "showReuseMessage": false
-      },
+      "presentation": { "showReuseMessage": false },
       "group": "build"
     },
     {
@@ -16,9 +14,7 @@
       "label": "Nightwatch: запустить текущий файл в Chrome на удалённом сервере",
       "command": "yarn et nightwatch:run --browser remote_chrome --test='${file}'",
       "problemMatcher": [],
-      "presentation": {
-        "showReuseMessage": false
-      },
+      "presentation": { "showReuseMessage": false },
       "group": "build"
     },
     {
@@ -26,9 +22,7 @@
       "label": "Nightwatch: запустить все тесты в Chrome на удалённом сервере",
       "command": "yarn et nightwatch:run --browser remote_chrome",
       "problemMatcher": [],
-      "presentation": {
-        "showReuseMessage": false
-      },
+      "presentation": { "showReuseMessage": false },
       "group": "build"
     },
     {
@@ -36,18 +30,14 @@
       "label": "Nightwatch: запустить текущий файл в Firefox на удалённом сервере",
       "command": "yarn et nightwatch:run --browser remote_firefox --test='${file}'",
       "problemMatcher": [],
-      "presentation": {
-        "showReuseMessage": false
-      },
+      "presentation": { "showReuseMessage": false },
       "group": "build"
     },
     {
       "type": "shell",
       "label": "Nightwatch: Открыть HTML отчёт о последнем прогоне",
       "command": "open nightwatch/report/mochawesome.html",
-      "windows": {
-        "command": "explorer nightwatch/report\\mochawesome.html"
-      },
+      "windows": { "command": "explorer nightwatch/report\\mochawesome.html" },
       "problemMatcher": [],
       "group": "build"
     },

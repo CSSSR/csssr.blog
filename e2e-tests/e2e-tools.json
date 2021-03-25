@@ -7,15 +7,9 @@
           "type": "webdriver",
           "desiredCapabilities": {
             "browserName": "chrome",
-            "goog:chromeOptions": {
-              "args": [
-                "--window-size=1200,800"
-              ]
-            }
+            "goog:chromeOptions": { "args": ["--window-size=1200,800"] }
           },
-          "globals": {
-            "skipScreenshotAssertions": true
-          }
+          "globals": { "skipScreenshotAssertions": true }
         },
         "remote_chrome": {
           "remote": true,
@@ -38,9 +32,7 @@
               ]
             }
           },
-          "globals": {
-            "skipScreenshotAssertions": false
-          }
+          "globals": { "skipScreenshotAssertions": false }
         },
         "remote_firefox": {
           "remote": true,
@@ -53,15 +45,9 @@
           },
           "desiredCapabilities": {
             "browserName": "firefox",
-            "moz:firefoxOptions": {
-              "args": [
-                "--headless"
-              ]
-            }
+            "moz:firefoxOptions": { "args": ["--headless"] }
           },
-          "globals": {
-            "skipScreenshotAssertions": false
-          }
+          "globals": { "skipScreenshotAssertions": false }
         }
       }
     }
