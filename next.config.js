@@ -31,6 +31,7 @@ const svgrLoaderConfigWithOutSvgo = {
 const withImages = (nextConfig = {}) => ({
   ...nextConfig,
   env: {
+    ...nextConfig.env,
     IS_PRODUCTION: process.env.IS_PRODUCTION === 'TRUE',
   },
   webpack(config, { dev, isServer }) {
@@ -116,4 +117,7 @@ const withImages = (nextConfig = {}) => ({
   },
 })
 
-module.exports = withPlugins([withImages], { trailingSlash: true })
+module.exports = withPlugins([withImages], {
+  env: { BLOG_HOST: process.env.BLOG_HOST },
+  trailingSlash: true,
+})

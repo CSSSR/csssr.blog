@@ -16,13 +16,13 @@ import { ReactComponent as LineFromTopToBottomIcon } from '../../public/componen
 import { ReactComponent as NotFound } from '../../public/components/error/icons/notFound.svg'
 
 import { navItemsEn, navItemsRu } from '../../data/navItems'
+import ruPathRegexp from '../../utils/ruPathRegexp'
 
 import globalStyles from '../Layout/Layout.styles'
 
 const ErrorPage = ({ className }) => {
   const route = useRouter()
-  const isRuPageRegExp = /^\/r([u\w]+)?\/?/
-  const isLanguageRu = isRuPageRegExp.test(route.asPath)
+  const isLanguageRu = ruPathRegexp.test(route.asPath)
   const dynamicNavItems = isLanguageRu ? navItemsRu : navItemsEn
 
   const renderNav = ({ items: { title, id, links } }) => {

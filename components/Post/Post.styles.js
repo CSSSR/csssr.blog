@@ -3,7 +3,6 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
-    overflow: hidden;
   }
 
   &.type_news {

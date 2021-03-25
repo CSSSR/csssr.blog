@@ -1,3 +1,4 @@
+import React from 'react'
 import { Global } from '@emotion/react'
 import Meta from '../Meta'
 import styles from './Layout.styles'
@@ -26,7 +27,12 @@ export default function Layout({ children, language, type }) {
         {children}
       </main>
 
-      <Footer className="footer" preset={presetByLanguage[language]} />
+      <Footer
+        className="footer"
+        preset={presetByLanguage[language]}
+        language={language}
+        type={type}
+      />
 
       <CookiesPopup preset={presetByLanguage[language]} />
 

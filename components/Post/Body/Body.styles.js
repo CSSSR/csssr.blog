@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   & {
     margin: 0 auto;
   }
@@ -189,12 +189,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & > .text_regular_m:first-of-type  {
-      margin-top: ${calcRem(50)};
+      margin-top: ${calcRem(30)};
     }
 
     & > .text_regular_m:first-of-type strong:first-of-type {
       padding-right: ${calcRem(11)};
       padding-left: ${calcRem(2)};
+      font-size: ${calcRem(64)};
+      line-height: ${calcRem(32)};
     }
 
     .heading_regular_m {
@@ -257,6 +259,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  ${above.mobile} {
+    .post-newsletter.hidden_desktop {
+      display: none;
+    }
+  }
+
   ${mobile.all} {
     & > .text_regular_m:first-of-type  {
       margin-top: ${calcRem(40)};
@@ -264,6 +272,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     & > .text_regular_m:first-of-type strong:first-of-type {
       padding-right: ${calcRem(11)};
+      font-size: ${calcRem(64)};
+      line-height: ${calcRem(32)};
     }
 
     .heading_regular_m {
@@ -318,6 +328,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .how-close-br {
       display: none;
+    }
+
+    .post-newsletter.hidden_mobile {
+      display: none;
+    }
+
+    .post-newsletter {
+      grid-row: unset;
     }
   }
 `

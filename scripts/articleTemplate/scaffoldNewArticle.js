@@ -3,6 +3,7 @@ const fs = require('fs')
 const fse = require('fs-extra')
 const languages = require('../../utils/languages')
 const capitalize = require('../../utils/capitalize')
+const { addNewPost } = require('./addNewPost')
 
 const language = process.argv[2]
 const slug = process.argv[3]
@@ -20,8 +21,9 @@ const outputImagesDirPath = path.resolve(__dirname, `../../public/images/resize`
 fse.copySync(path.resolve(__dirname, 'images'), outputImagesDirPath)
 
 const postsOrderFilePath = path.resolve(__dirname, `../../postsOrder${capitalize(language)}.json`)
-const postsOrder = JSON.parse(fs.readFileSync(postsOrderFilePath, 'utf8'))
-fs.writeFileSync(postsOrderFilePath, JSON.stringify([[slug, slug]].concat(postsOrder)))
+const oldPostsOrder = JSON.parse(fs.readFileSync(postsOrderFilePath, 'utf8'))
+const newPostsOrder = addNewPost(oldPostsOrder, slug)
+fs.writeFileSync(postsOrderFilePath, JSON.stringify(newPostsOrder))
 
 // Используем eslint для форматирования файла с порядком статей на главной
 const { CLIEngine } = require('eslint')
