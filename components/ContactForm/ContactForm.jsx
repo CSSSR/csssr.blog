@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import { string } from 'prop-types'
-import Fade from 'react-reveal/Fade'
-import cn from 'classnames'
-import { Field, Form as ReactFinalForm } from 'react-final-form'
-import { FORM_ERROR } from 'final-form'
-import styled from '@emotion/styled'
-import styles from './ContactForm.styles'
 import { AnimatedButton } from '@csssr/core-design'
-import TextField from './TextField'
-import FormStateMessage from './FormStateMessage'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import { FORM_ERROR } from 'final-form'
+import { string } from 'prop-types'
+import { useState } from 'react'
+import { Field, Form as ReactFinalForm } from 'react-final-form'
+import Fade from 'react-reveal/Fade'
+
 import testEmails from '../../utils/testEmails'
 import rateFormValidationRules from '../../utils/validators/rateFormValidationRules'
+
+import styles from './ContactForm.styles'
+import FormStateMessage from './FormStateMessage'
+import TextField from './TextField'
 
 const Component = ({
   className,
@@ -139,6 +141,7 @@ const Component = ({
               href="https://csssr.com/ru/privacy-policy"
               target="_blank"
               data-testid={`${formName}:link:privacyPolicy`}
+              rel="noreferrer"
             >
               {' '}
               Политикой конфиденциальности
@@ -190,7 +193,7 @@ const Form = ({
   BENCHMARK_EMAIL_LIST_ID,
 }) => {
   const onSubmit = async (values) => {
-    let res
+    let res = undefined
     const isTestEmail = testEmails.includes(values.email)
     const shouldSendDataLayerEvent = window.dataLayer && !isTestEmail
     const dataLayerEventNamePrefix = 'subscribe'
@@ -224,7 +227,7 @@ const Form = ({
         window.dataLayer.push({ event: dataLayerEventNamePrefix + '_success' })
       }
     } else {
-      let error
+      let error = undefined
       try {
         const response = await res.json()
         error = typeof response.error !== 'string' ? JSON.stringify(response.error) : response.error

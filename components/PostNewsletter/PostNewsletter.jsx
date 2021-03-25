@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
-import cn from 'classnames'
-import styled from '@emotion/styled'
-import styles from './PostNewsletter.styles'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { Heading, Text } from '@csssr/core-design'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import React, { useState } from 'react'
+
+import { postNewsletterData } from '../../data/newsletter'
 import ContactForm from '../ContactForm'
 import PostShare from '../PostShare'
-import { postNewsletterData } from '../../data/newsletter'
+
+import styles from './PostNewsletter.styles'
 
 const PostNewsletter = ({
   className,

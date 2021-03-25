@@ -1,18 +1,19 @@
-import React from 'react'
 import { Global } from '@emotion/react'
-import cn from 'classnames'
 import styled from '@emotion/styled'
-import { string, arrayOf, object } from 'prop-types'
-import styles, { backgroundImagesStyles } from './NewsAudioLink.styles'
+import cn from 'classnames'
+import { string } from 'prop-types'
+import React from 'react'
 
 import { ReactComponent as Arrow } from '../../../../public/components/newsAudioLink/icons/arrow.svg'
+
+import styles, { backgroundImagesStyles } from './NewsAudioLink.styles'
 
 const NewsAudioLink = ({ className, href, title, testId = 'NewsAudio:link' }) => (
   <a
     className={cn('news-audio-link', className)}
     href={href}
     target="_blank"
-    rel="noopener nofollow"
+    rel="noopener nofollow noreferrer"
     data-testid={testId}
   >
     <div className="soundtrack-wrapper">
@@ -31,9 +32,6 @@ const NewsAudioLink = ({ className, href, title, testId = 'NewsAudio:link' }) =>
 
 NewsAudioLink.propTypes = {
   className: string,
-  sources: arrayOf(object),
-  src: string,
-  alt: string,
 }
 
 export default styled(NewsAudioLink)`

@@ -20,6 +20,8 @@ npm-debug.log
 eslint-log.txt
 yarn-error.log
 ./**/__snapshots__
+.yalc
+yalc.lock
 
 .eslintcache
 .env

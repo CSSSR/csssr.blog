@@ -1,34 +1,25 @@
 module.exports = {
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-  },
-  extends: '@csssr/eslint-config-core',
-  plugins: ['react-hooks', '@emotion'],
+  parser: 'babel-eslint',
+  extends: [
+    require.resolve('csssr-base-lint/eslint/base'),
+    require.resolve('csssr-base-lint/eslint/react'),
+  ],
+  plugins: ['@emotion'],
   rules: {
-    'prettier/prettier': [
+    // Отключения
+    'react/prop-types': 'off', // потому что много где нет
+    'react/forbid-prop-types': 'off', // чтобы можно было оставить object и не уточнять до shape
+    'jsx-a11y/anchor-is-valid': 'off', // потому что Next
+
+    // Донастройка
+    camelcase: [
       'error',
       {
-        useTabs: false,
-        printWidth: 100,
-        semi: false,
-        singleQuote: true,
-        jsxSingleQuote: false,
-        trailingComma: 'all',
-        bracketSpacing: true,
+        properties: 'never',
       },
     ],
-    'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off',
-    'react/jsx-no-target-blank': 'off',
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
+
+    // Доп. правила
     '@emotion/pkg-renaming': 'error',
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
   },
 }

@@ -1,24 +1,26 @@
-import React, { Fragment } from 'react'
-import { string, object } from 'prop-types'
+import { Heading, Link, ListItem, Text } from '@csssr/core-design'
 import styled from '@emotion/styled'
 import cn from 'classnames'
-import { Grid } from '../../Grid'
 import { compiler } from 'markdown-to-jsx'
-import { Heading, Text, Link, ListItem } from '@csssr/core-design'
-import styles from './Body.styles'
+import { object, string } from 'prop-types'
+import React, { Fragment } from 'react'
+
+import { Grid } from '../../Grid'
 import PostNewsletter from '../../PostNewsletter'
-import Separator from './Separator'
+import Subtitle from '../Subtitle'
+
+import styles from './Body.styles'
+import Caption from './Caption'
 import Comments from './Comments'
-import ParagraphWithImage from './ParagraphWithImage'
 import Img from './Img'
+import List from './List'
 import Note from './Note'
+import ParagraphWithImage from './ParagraphWithImage'
 import Quote from './Quote'
 import ReadMore from './ReadMore'
-import Subtitle from '../Subtitle'
-import Video from './Video'
-import Caption from './Caption'
+import Separator from './Separator'
 import Table from './Table'
-import List from './List'
+import Video from './Video'
 
 const Body = ({
   className,
@@ -119,7 +121,13 @@ const Body = ({
         },
         a: {
           component: function LinkWrapper(props) {
-            return props.href.startsWith('/') ? <Link {...props} /> : <Link {...props} external />
+            return props.href.startsWith('/') ? (
+              <Link {...props}>{props.children}</Link>
+            ) : (
+              <Link {...props} external>
+                {props.children}
+              </Link>
+            )
           },
           props: {
             'data-testid': 'Post:link',

@@ -1,7 +1,8 @@
-import React from 'react'
-import { string, bool } from 'prop-types'
-import cn from 'classnames'
 import styled from '@emotion/styled'
+import cn from 'classnames'
+import { bool, string } from 'prop-types'
+import React from 'react'
+
 import styles from './TextField.styles'
 
 const TextField = ({
@@ -46,7 +47,9 @@ const TextField = ({
         <label
           className={cn('label', { _active: value })}
           htmlFor={id}
-          dangerouslySetInnerHTML={{ __html: (showError && (error || submitError)) || label }}
+          dangerouslySetInnerHTML={{
+            __html: (showError && (error || submitError)) || label,
+          }}
         />
       )}
     </div>

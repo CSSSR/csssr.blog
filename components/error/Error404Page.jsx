@@ -1,24 +1,22 @@
-import React, { Fragment } from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import { Grid } from '@csssr/core-design'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import Head from 'next/head'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
+import React, { Fragment } from 'react'
 
-import styles from './ErrorPage.styles'
-import { Grid } from '@csssr/core-design'
-import Meta from '../Meta'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
-
+import { navItemsEn, navItemsRu } from '../../data/navItems'
 import { ReactComponent as LogoIcon } from '../../public/components/error/icons/csssr_logo.svg'
 import { ReactComponent as LineFromTopToBottomIcon } from '../../public/components/error/icons/lineFromTopToBottom.svg'
 import { ReactComponent as NotFound } from '../../public/components/error/icons/notFound.svg'
-
-import { navItemsEn, navItemsRu } from '../../data/navItems'
 import ruPathRegexp from '../../utils/ruPathRegexp'
-
 import globalStyles from '../Layout/Layout.styles'
+import Meta from '../Meta'
+
+import styles from './ErrorPage.styles'
 
 const ErrorPage = ({ className }) => {
   const route = useRouter()
@@ -26,7 +24,7 @@ const ErrorPage = ({ className }) => {
   const dynamicNavItems = isLanguageRu ? navItemsRu : navItemsEn
 
   const renderNav = ({ items: { title, id, links } }) => {
-    const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
+    const linkRegExp = /^(?:ftp|http|https):\/\/[^ "]+$/
 
     return (
       <span key={id}>
@@ -34,10 +32,10 @@ const ErrorPage = ({ className }) => {
 
         {links && (
           <ul className="menu">
-            {links.map(({ id, title, href }) => {
-              const testId = `ErrorPage:link:${id}`
+            {links.map(({ id: linkId, title: linkTitle, href }) => {
+              const testId = `ErrorPage:link:${linkId}`
               return (
-                <li key={id}>
+                <li key={linkId}>
                   {linkRegExp.test(href) ? (
                     <a
                       target="_blank"
@@ -46,12 +44,12 @@ const ErrorPage = ({ className }) => {
                       href={href}
                       data-testid={testId}
                     >
-                      {title}
+                      {linkTitle}
                     </a>
                   ) : (
                     <Link href={`/${href}`}>
                       <a className="menu-item" data-testid={testId}>
-                        {title}
+                        {linkTitle}
                       </a>
                     </Link>
                   )}
@@ -98,13 +96,13 @@ const ErrorPage = ({ className }) => {
         <h2 className="font_subhead-slab">
           {isLanguageRu ? 'Изучите наши разделы' : 'Explore other pages'}
         </h2>
-        <Fragment>
+        <>
           <div className="arrow-wrapper">
             <LineFromTopToBottomIcon width="100%" height="100%" />
           </div>
 
           <div className="navList">{dynamicNavItems.map((items) => renderNav({ items }))}</div>
-        </Fragment>
+        </>
       </Grid>
     </>
   )

@@ -1,6 +1,6 @@
-const withPlugins = require('next-compose-plugins')
 const { defaultTheme } = require('@csssr/core-design')
 const { Plugin } = require('@csssr/csssr.images/dist/webpack/plugin')
+const withPlugins = require('next-compose-plugins')
 
 const svgrLoaderConfig = {
   loader: '@svgr/webpack',
@@ -48,7 +48,6 @@ const withImages = (nextConfig = {}) => ({
         esModule: false,
       },
     }
-
     const handleImagesForResize = (originalPixelRatio) => {
       return {
         use: [
@@ -82,7 +81,8 @@ const withImages = (nextConfig = {}) => ({
       ],
     })
 
-    let blogHost, imgproxyHost
+    let blogHost = undefined
+    let imgproxyHost = undefined
     if (dev) {
       const ip = require('ip')
       blogHost = `http://${ip.address()}:3000`
@@ -93,7 +93,7 @@ const withImages = (nextConfig = {}) => ({
     }
 
     config.module.rules.push({
-      test: /\.(jpe?g|png|gif|ico)$/,
+      test: /\.(?:jpe?g|png|gif|ico)$/,
       oneOf: [
         {
           resourceQuery: /dont-resize/,

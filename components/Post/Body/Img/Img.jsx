@@ -1,9 +1,10 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { string, arrayOf, object, bool } from 'prop-types'
-import styles from './Img.styles'
-import cn from 'classnames'
 import { Picture } from '@csssr/csssr.images/dist/react'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import { arrayOf, bool, object, string } from 'prop-types'
+import React from 'react'
+
+import styles from './Img.styles'
 
 const Img = ({
   className,

@@ -1,15 +1,16 @@
-import { string, object, shape } from 'prop-types'
-import styled from '@emotion/styled'
-import styles from './Post.styles'
-import Head from 'next/head'
-import cn from 'classnames'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
-import Header from './Header'
-import Body from './Body'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import Head from 'next/head'
+import { object, shape, string } from 'prop-types'
+
+import newsPostOgImage from '../../public/images/og/news512/all.png'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
 
-import newsPostOgImage from '../../public/images/og/news512/all.png'
+import Body from './Body'
+import Header from './Header'
+import styles from './Post.styles'
 
 const Post = ({
   posts,

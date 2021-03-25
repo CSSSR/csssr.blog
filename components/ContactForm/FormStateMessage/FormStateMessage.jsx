@@ -1,9 +1,10 @@
-import React from 'react'
-import cn from 'classnames'
-import styled from '@emotion/styled'
-import styles from './FormStateMessage.styles'
-import { func, oneOf, string } from 'prop-types'
 import { Text } from '@csssr/core-design'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import { func, oneOf, string } from 'prop-types'
+import React from 'react'
+
+import styles from './FormStateMessage.styles'
 
 const FormStateMessage = ({ className, kind, status, testId, onTryAgain }) => {
   const getMessage = () => {

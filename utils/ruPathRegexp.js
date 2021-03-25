@@ -1,1 +1,1 @@
-export default /^\/r([u\w]+)?\/?/
+export default /^\/r(?:[u\w]+)?\/?/

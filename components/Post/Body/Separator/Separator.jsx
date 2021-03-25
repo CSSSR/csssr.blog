@@ -1,10 +1,11 @@
-import React from 'react'
-import { string, oneOf, arrayOf, object } from 'prop-types'
-import cn from 'classnames'
+import { backgroundCss } from '@csssr/csssr.images/dist/utils'
 import { css, Global } from '@emotion/react'
 import styled from '@emotion/styled'
+import cn from 'classnames'
+import { arrayOf, object, oneOf, string } from 'prop-types'
+import React from 'react'
+
 import styles, { bodyDynamicStyle } from './Separator.styles'
-import { backgroundCss } from '@csssr/csssr.images/dist/utils'
 
 const Separator = ({ className, sources, type, imageName }) => {
   return (

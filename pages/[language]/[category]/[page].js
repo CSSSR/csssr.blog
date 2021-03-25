@@ -1,14 +1,15 @@
 import React from 'react'
-import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
+
 import MainPage from '../../../components/main/MainPage'
-import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberByPostIndex'
-import languages from '../../../utils/languages'
-import areEqualShallow from '../../../utils/areEqualShallow'
-import getPostsCategories from '../../../utils/getPostsCategories'
-import getBenchmarkEmailListId from '../../../utils/getBenchmarkEmailListId'
-import sortByDate from '../../../utils/sortByDate'
+import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
 import postsOrderEn from '../../../postsOrderEn.json'
 import postsOrderRu from '../../../postsOrderRu.json'
+import areEqualShallow from '../../../utils/areEqualShallow'
+import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberByPostIndex'
+import getBenchmarkEmailListId from '../../../utils/getBenchmarkEmailListId'
+import getPostsCategories from '../../../utils/getPostsCategories'
+import languages from '../../../utils/languages'
+import sortByDate from '../../../utils/sortByDate'
 
 const Index = ({
   posts,
@@ -53,7 +54,7 @@ export async function getStaticProps({ params }) {
     return post.tag.toLowerCase() === params.category
   })
 
-  let orderedPostsByLanguageAndCategory
+  let orderedPostsByLanguageAndCategory = undefined
 
   if (params.category === 'all') {
     const postsBySlug = postsByLanguage[language].reduce((acc, post) => {
@@ -118,11 +119,11 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const posts = await getPostsByLanguage(['tag'])
-  const paths = languages.reduce((memo, language) => {
+  const paths = languages.reduce((pathsAcc, language) => {
     let indexShift = 0
 
     return [
-      ...memo,
+      ...pathsAcc,
       ...posts[language]
         .sort((postA, postB) => {
           if (postA.tag < postB.tag) {
@@ -164,16 +165,16 @@ export async function getStaticPaths() {
             }
           }),
         )
-        .reduce((memo, post) => {
-          const isParamsAlreadyInMemo = memo.find(({ params }) =>
+        .reduce((paramsAcc, post) => {
+          const isParamsAlreadyInMemo = paramsAcc.find(({ params }) =>
             areEqualShallow(params, post.params),
           )
 
           if (isParamsAlreadyInMemo) {
-            return memo
+            return paramsAcc
           }
 
-          return memo.concat({
+          return paramsAcc.concat({
             params: {
               language: post.params.language,
               category: post.params.category,

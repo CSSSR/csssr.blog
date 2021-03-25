@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
 import { Heading } from '@csssr/core-design'
 import styled from '@emotion/styled'
 import { string } from 'prop-types'
+import React, { useEffect } from 'react'
 
 import styles from './Comments.styled'
 

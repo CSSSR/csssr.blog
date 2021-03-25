@@ -1,14 +1,13 @@
-import React, { useState, createRef, useEffect } from 'react'
+import styled from '@emotion/styled'
 import cn from 'classnames'
 import Link from 'next/link'
-import styled from '@emotion/styled'
-
-import ActiveLine from './ActiveLine'
-import { Grid } from '../../Grid'
-
-import styles from './Categories.styles'
+import React, { createRef, useEffect, useState } from 'react'
 
 import categoriesByLanguage, { categoriesOrder } from '../../../data/categoriesByLanguage'
+import { Grid } from '../../Grid'
+
+import ActiveLine from './ActiveLine'
+import styles from './Categories.styles'
 
 const Categories = ({ className, items, activeCategory, language }) => {
   const [activeWidth, setActiveWidth] = useState(0)
@@ -38,8 +37,8 @@ const Categories = ({ className, items, activeCategory, language }) => {
           {categoriesOrder
             .filter((categoryId) => items.some((itemId) => itemId === categoryId))
             .map((id) => {
-              let href
-              let as
+              let href = undefined
+              let as = undefined
 
               if (id === 'all') {
                 href = '/[language]'
@@ -68,7 +67,9 @@ const Categories = ({ className, items, activeCategory, language }) => {
             <li className="item">
               <Link href={`/${language}/news512`}>
                 <a
-                  className={cn('link', { _active: 'news512' === activeCategory })}
+                  className={cn('link', {
+                    _active: 'news512' === activeCategory,
+                  })}
                   ref={'news512' === activeCategory ? activeItemRef : null}
                   data-testid="Categories:link:news"
                 >

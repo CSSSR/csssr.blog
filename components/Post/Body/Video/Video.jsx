@@ -1,7 +1,8 @@
-import React from 'react'
-import cn from 'classnames'
 import styled from '@emotion/styled'
-import { string, node } from 'prop-types'
+import cn from 'classnames'
+import { node, string } from 'prop-types'
+import React from 'react'
+
 import styles from './Video.styles'
 
 const Video = ({ className, src, children }) =>
@@ -22,8 +23,6 @@ const Video = ({ className, src, children }) =>
 Video.propTypes = {
   className: string,
   src: string,
-  width: string,
-  height: string,
   children: node,
 }
 

@@ -1,19 +1,19 @@
-import React from 'react'
-import Head from 'next/head'
-import { string, number, arrayOf, shape } from 'prop-types'
-import styled from '@emotion/styled'
 import { Heading } from '@csssr/core-design'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
-import Layout from '../../Layout'
-import { Grid } from '../../Grid'
-import Categories from '../../main/Categories'
-import Pagination from '../../main/Pagination'
-import NewsList from './NewsList'
+import styled from '@emotion/styled'
+import Head from 'next/head'
+import { arrayOf, number, shape, string } from 'prop-types'
+import React from 'react'
 
 import { NEWS_PER_PAGE } from '../../../data/constants'
 import ogImages from '../../../public/images/og/news512/all.png'
+import { Grid } from '../../Grid'
+import Layout from '../../Layout'
+import Categories from '../../main/Categories'
+import Pagination from '../../main/Pagination'
 
 import styles from './News.styles'
+import NewsList from './NewsList'
 
 const ogImage = getOriginal(ogImages)
 

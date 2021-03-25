@@ -1,16 +1,16 @@
-import React from 'react'
+import { CookiesPopup, Footer, Header } from '@csssr/core-design'
 import { Global } from '@emotion/react'
+import React from 'react'
+
 import Meta from '../Meta'
+
 import styles from './Layout.styles'
-import { Header, Footer } from '@csssr/core-design'
-import { CookiesPopup } from '@csssr/core-design'
 
 const presetByLanguage = {
   en: 'defaultEn',
   ru: 'defaultRu',
 }
-
-export default function Layout({ children, language, type }) {
+const Layout = ({ children, language, type }) => {
   return (
     <>
       <Meta type={type} />
@@ -40,3 +40,5 @@ export default function Layout({ children, language, type }) {
     </>
   )
 }
+
+export default Layout

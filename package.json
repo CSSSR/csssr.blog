@@ -41,15 +41,12 @@
     "sitemap": "^6.3.5"
   },
   "devDependencies": {
-    "@csssr/eslint-config-core": "^1.1.0",
     "@emotion/eslint-plugin": "^11.0.0",
     "@svgr/webpack": "^5.5.0",
+    "babel-eslint": "^10.1.0",
+    "csssr-base-lint": "CSSSR/csssr-base-lint",
     "dotenv": "8.2.0",
     "eslint": "^7.18.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
     "fs-extra": "^9.1.0",
     "husky": "^4.3.8",

@@ -1,8 +1,9 @@
-import React from 'react'
-import { string, number, bool } from 'prop-types'
-import Link from 'next/link'
-import cn from 'classnames'
 import styled from '@emotion/styled'
+import cn from 'classnames'
+import Link from 'next/link'
+import { bool, number, string } from 'prop-types'
+import React from 'react'
+
 import styles from './PrevPageLink.styles'
 
 const PrevPageLink = ({ className, language, disabled, activeCategory, activePageNumber }) => {
@@ -19,7 +20,7 @@ const PrevPageLink = ({ className, language, disabled, activeCategory, activePag
     )
   }
 
-  let href
+  let href = undefined
 
   if (activePageNumber === 2 && activeCategory.toLowerCase() === 'all') {
     href = `/${language}`
