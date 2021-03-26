@@ -233,7 +233,8 @@ const pictureStyles = css`
   }
 `
 
-export default () => css`
+const StyledErrorPage = () => css`
   ${base}
   ${pictureStyles}
 `
+export default StyledErrorPage

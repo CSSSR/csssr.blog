@@ -32,6 +32,7 @@ const Header = ({
       className={cn(className, {
         type_news: type === 'news',
       })}
+      data-testid="Post:block:header"
     >
       <div className="post-meta">
         {author && <span className="author">{author}</span>}
@@ -42,11 +43,15 @@ const Header = ({
 
         {type === 'news' ? (
           <Link href={`/${language}/${tag}512`}>
-            <a className="tag">{categoriesByLanguage[language][tag]}</a>
+            <a className="tag" data-testid="Post:link.category.news">
+              {categoriesByLanguage[language][tag]}
+            </a>
           </Link>
         ) : (
           <Link href="/[language]/[category]" as={`/${language}/${tag.toLowerCase()}`}>
-            <a className="tag">{categoriesByLanguage[language][tag.toLowerCase()]}</a>
+            <a className="tag" data-testid={`Post:link.category.${tag.toLowerCase()}`}>
+              {categoriesByLanguage[language][tag.toLowerCase()]}
+            </a>
           </Link>
         )}
       </div>
@@ -68,7 +73,11 @@ const Header = ({
           <Subtitle dangerouslySetInnerHTML={{ __html: title }} size="l" />
 
           {soundcloudLink && (
-            <NewsAudioLink href={soundcloudLink} title="Прослушать аудио-версию" />
+            <NewsAudioLink
+              href={soundcloudLink}
+              title="Прослушать аудио-версию"
+              testId={'Post:link:newsAudio'}
+            />
           )}
         </>
       ) : (

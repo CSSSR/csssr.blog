@@ -6,12 +6,15 @@ import styled from '@emotion/styled'
 import styles from './PrevPageLink.styles'
 
 const PrevPageLink = ({ className, language, disabled, activeCategory, activePageNumber }) => {
+  const testId = 'Pagination:link:prevPage'
+
   if (activePageNumber === 1) {
     return (
       <a
         className={cn(className, {
           _disabled: disabled,
         })}
+        data-testid={testId}
       />
     )
   }
@@ -32,6 +35,7 @@ const PrevPageLink = ({ className, language, disabled, activeCategory, activePag
         className={cn(className, {
           _disabled: disabled,
         })}
+        data-testid={testId}
       />
     </Link>
   )

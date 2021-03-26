@@ -19,7 +19,7 @@ const PostCard = ({ className, language, post, size, type = 'regular' }) => {
           type === 'news' ? `/ru/news512/episode/${post.slug}` : `/${language}/article/${post.slug}`
         }
       >
-        <a className="link">
+        <a className="link" data-testid={`PostCard:link:article.${post.slug}`}>
           <div className="title-wrapper">
             {type === 'news' ? (
               <PictureSmart
@@ -58,7 +58,9 @@ const PostCard = ({ className, language, post, size, type = 'regular' }) => {
               <Link
                 href={type === 'news' ? '/ru/news512' : `/${language}/${post.tag.toLowerCase()}`}
               >
-                <a className="tag">{categoriesByLanguage[language][post.tag.toLowerCase()]}</a>
+                <a className="tag" data-testid={`PostCard:link:category.${post.tag.toLowerCase()}`}>
+                  {categoriesByLanguage[language][post.tag.toLowerCase()]}
+                </a>
               </Link>
             </object>
           </div>

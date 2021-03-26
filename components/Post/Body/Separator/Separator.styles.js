@@ -111,6 +111,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lineColor }) => css`
   }
 `
 
+export const bodyDynamicStyle = css`
+  body {
+    overflow-x: hidden;
+  }
+`
+
 const StyledSeparator = props => {
   const { theme: { breakpoints } } = props
   const { lineColor } = props

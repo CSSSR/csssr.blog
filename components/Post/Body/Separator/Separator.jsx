@@ -3,7 +3,7 @@ import { string, oneOf, arrayOf, object } from 'prop-types'
 import cn from 'classnames'
 import { css, Global } from '@emotion/react'
 import styled from '@emotion/styled'
-import styles from './Separator.styles'
+import styles, { bodyDynamicStyle } from './Separator.styles'
 import { backgroundCss } from '@csssr/csssr.images/dist/utils'
 
 const Separator = ({ className, sources, type, imageName }) => {
@@ -15,6 +15,7 @@ const Separator = ({ className, sources, type, imageName }) => {
           ${backgroundCss(`.${className}::after`, sources)}
         `}
       />
+      <Global styles={bodyDynamicStyle} />
     </>
   )
 }

@@ -1,28 +1,34 @@
 import React from 'react'
-import cn from 'classnames'
 import styled from '@emotion/styled'
-import styles from './Newsletter.styles'
+import styles, { dynamicFooterStyles } from './Newsletter.styles'
+import { Global } from '@emotion/react'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { Heading, Text } from '@csssr/core-design'
 import { Grid } from '../Grid'
-import ContactForm from './ContactForm'
-import newsletterData from '../../data/newsletter'
+import ContactForm from '../ContactForm'
+import { newsletterData } from '../../data/newsletter'
 
-const Newsletter = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID }) => {
-  const { title, titlePost, subtitle, subtitlePost, img, postImg, imgAlt } = newsletterData
+const Newsletter = ({
+  className,
+  language,
+  kind,
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
+}) => {
+  const { title, subtitle, img, imgAlt } = newsletterData
 
   return (
-    <div className={cn(`${className}`, { post: kind === 'post' })}>
-      <Grid as="section">
+    <div className={className}>
+      <Grid as="section" className="section" data-testid="Newsletter:block">
         <div className="container">
           <Heading.H2 type="regular" className="title">
-            {kind === 'post' ? titlePost : title}
+            {title}
           </Heading.H2>
           <Text
             type="regular"
             size="s"
             className="subtitle"
-            dangerouslySetInnerHTML={{ __html: kind === 'post' ? subtitlePost : subtitle }}
+            dangerouslySetInnerHTML={{ __html: subtitle }}
           />
 
           <ContactForm
@@ -31,11 +37,9 @@ const Newsletter = ({ className, kind, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LI
             BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
           />
 
-          <PictureSmart
-            requireImages={kind === 'post' ? postImg : img}
-            className="picture"
-            alt={imgAlt}
-          />
+          <PictureSmart requireImages={img} className="picture" alt={imgAlt} />
+
+          {language === 'ru' && <Global styles={dynamicFooterStyles} />}
         </div>
       </Grid>
     </div>
