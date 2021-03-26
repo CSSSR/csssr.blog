@@ -7,9 +7,7 @@ tag: 'news'
 author: 'Ислам Виндижев'
 ---
 
-<Note>
   [RSS подкаста](https://radio.csssr.com/rss/news512.rss), [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1370045815), [Google Podcasts](https://podcasts.google.com/?feed=aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz&ep=14), [SoundCloud](https://soundcloud.com/csssr/sets/512-news), [Я.Музыка](https://music.yandex.ru/album/7040324/track/54795992)
-</Note>
 
 <ParagraphWithImage imageName="manWithLaptop" imageSide="right">
   ### Интересные публикации
@@ -57,7 +55,6 @@ Angular 12 продолжает двигаться к стабильному р�
 
 В завершение выпуска — небольшая новость о Chrome 90. Начиная с этой версии браузер начнет использовать [HTTPS в адресной строке по умолчанию](https://blog.chromium.org/2021/03/a-safer-default-for-navigation-https.html).
 
-<Note>
   ### Пишите нам и читайте
   [Telegram—канал CSSSR](https://t.me/csssr)
 
@@ -68,4 +65,3 @@ Angular 12 продолжает двигаться к стабильному р�
   [Telegram ведущего](https://t.me/Vindizh)
 
   [Twitter ведущего](https://twitter.com/Vindizh)
-</Note>
