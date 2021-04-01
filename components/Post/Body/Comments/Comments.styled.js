@@ -89,6 +89,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
           .commento-button-margin {
             .commento-button {
               display: block;
+              border-radius: 0;
             }
           }
         }
