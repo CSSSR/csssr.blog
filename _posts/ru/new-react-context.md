@@ -128,8 +128,16 @@ const Foo = () => (
 
 Использование нового контекста можно посмотреть в интерактивно демонстрации:
 
-[![demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/n3rn49jzz0)
+<p>
+  <a className="no-dot" href="https://codesandbox.io/s/n3rn49jzz0" rel="nofollow noopener" target="_blank">
+    ![demo](https://codesandbox.io/static/img/play-codesandbox.svg)
+  </a>
+</p>
 
 Все вышеописанные технологии можно посмотреть в интерактивной демонстрации:
 
-[![demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/2onvlynj1r)
+<p>
+  <a className="no-dot" href="https://codesandbox.io/s/2onvlynj1r" rel="nofollow noopener" target="_blank">
+    ![demo](https://codesandbox.io/static/img/play-codesandbox.svg)
+  </a>
+</p>
