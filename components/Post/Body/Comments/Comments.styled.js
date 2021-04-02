@@ -560,7 +560,7 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
     }
 
     .commento-email-container {
-      margin-top: ${calcRem(16)} !important;
+      margin-top: ${calcRem(30)} !important;
       margin-bottom: 0 !important;
     }
 
