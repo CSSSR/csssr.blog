@@ -692,7 +692,7 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
 
       #commento-login-box-email-button,
       #commento-login-box-password-input + .commento-email-button {
-        margin-top: ${calcRem(24)};
+        margin-top: ${calcRem(30)};
       }
 
       #commento-error {
