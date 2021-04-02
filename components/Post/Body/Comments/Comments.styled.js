@@ -385,7 +385,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
           }
 
           .commento-button-margin {
-            margin-top: ${calcRem(39)};
+            margin-top: ${calcRem(30)};
             margin-left: ${calcRem(32)};
             padding-bottom: ${calcRem(10)};
 
