@@ -41,8 +41,9 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
         margin-left: ${calcRem(16)};
         mask-image: url(${require('../../../../public/icons/delete.svg').default});
       }
-    
+
       @media (hover: hover) and (pointer: fine) {
+    
         .commento-option-edit:hover {
           background-color: ${colors.secondary.darken100};
         }
@@ -51,6 +52,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
           background-color: #f45b53;
         }
       }
+
     }
   `
 
