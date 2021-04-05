@@ -680,10 +680,14 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
 
     ${mobile.all} {
       #commento-login-box {
-        padding-left: ${calcRem(16)};
-        padding-right: ${calcRem(16)};
         width: ${calcRem(340)};
         max-width: ${calcRem(340)};
+        height: calc(100vh - ${calcRem(56)});
+        top: ${calcRem(56)};
+        padding-left: ${calcRem(16)};
+        padding-right: ${calcRem(16)};
+        overflow-y: scroll;
+        transform: unset;
       }
 
       #commento-login-box-oauth-buttons-container .commento-button {
