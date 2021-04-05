@@ -560,9 +560,9 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
     }
 
     .commento-email-container {
+      display: inline-flex !important;
       margin-top: ${calcRem(16)} !important;
       margin-bottom: 0 !important;
-      padding-bottom: ${calcRem(0.1)};
 
       &:last-of-type {
         margin-top: ${calcRem(11)} !important;
