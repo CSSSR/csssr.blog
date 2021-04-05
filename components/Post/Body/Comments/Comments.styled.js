@@ -603,6 +603,10 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
       margin-top: ${calcRem(11)};
     }
 
+    #commento-login-box-password-input {
+      margin-top: ${calcRem(-5)};
+    }
+
     #commento-login-box-website-input {
       display: none;
     }
