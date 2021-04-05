@@ -562,6 +562,11 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
     .commento-email-container {
       margin-top: ${calcRem(16)} !important;
       margin-bottom: 0 !important;
+      padding-bottom: ${calcRem(0.1)};
+
+      &:last-of-type {
+        margin-top: ${calcRem(11)} !important;
+      }
     }
 
     .commento-email {
@@ -596,10 +601,6 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
 
     #commento-login-box-name-input {
       margin-top: ${calcRem(11)};
-    }
-
-    #commento-login-box-password-input {
-      margin-top: ${calcRem(-5)};
     }
 
     #commento-login-box-website-input {
