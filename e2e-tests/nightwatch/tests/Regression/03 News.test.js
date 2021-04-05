@@ -1,5 +1,6 @@
 const pages = require('../data/pages')
 const footer = require('../pageObject/footer.js')
+const general = require('../pageObject/general')
 const header = require('../pageObject/header.js')
 const news = require('../pageObject/news.js')
 
@@ -9,7 +10,7 @@ testcase('The «`fire` Новости» category is displayed(only FireFox)', ()
       .setWindowSize(1920, 4000)
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   expected('the item «`fire` Новости» is displayed', () => {
@@ -40,7 +41,7 @@ testcase('News page', () => {
     browser
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('click on «`fire` Новости»', () => {
@@ -91,7 +92,7 @@ testcase('Pagination on the news page', () => {
       .setWindowSize(1920, 4000)
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('click on «`fire` Новости»', () => {
@@ -104,7 +105,7 @@ testcase('Pagination on the news page', () => {
   expected('twelve articles are displayed on the page', () => {
     browser
       .waitForElementVisible(news.block.lastNews)
-      .waitForElementNotPresent(news.block.unnecessaryNews)
+      .waitForElementNotPresent(news.block.nonexistingNews)
   })
 
   expected('pagination is displayed', () => {
@@ -130,7 +131,7 @@ testcase('The specific news page', () => {
       .setWindowSize(1920, 4700)
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step(`go to the news page`, () => {
@@ -150,7 +151,7 @@ testcase('Go to the soundcloud page ', () => {
       .setWindowSize(1920, 5500)
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step(`go to the news page`, () => {

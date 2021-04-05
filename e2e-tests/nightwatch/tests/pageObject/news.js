@@ -1,16 +1,16 @@
 module.exports = {
   block: {
-    newsList: '#main > div.css-1sf3nef-Grid > ul',
+    newsList: '[data-testid="NewsList:block"]',
     pagination: '[data-testid="Pagination:block"]',
-    lastNews: '#main > div.css-1sf3nef-Grid > ul > li:nth-child(12)',
-    unnecessaryNews: '#main > div.css-1sf3nef-Grid > ul > li:nth-child(13)',
+    lastNews: '[data-testid="NewsList:link:episode[11]"]',
+    nonexistingNews: '[data-testid="NewsList:link:episode[12]"]',
     fullPage: '[data-testid="Layout:block:main"]',
     audio: '[data-testid="Post:link:newsAudio"]',
   },
   text: {
-    title: '#main > div.css-1sf3nef-Grid > h1',
-    numberFistNews: '#main > div.css-1sf3nef-Grid > ul > li.news-item.first > a > div > span.news-item-number',
-    numberSecondNews: '#main > div.css-1sf3nef-Grid > ul > li:nth-child(2) > a > div > span.news-item-number',
+    title: '[data-testid="News:block:title"]',
+    numberFistNews: '[data-testid="NewsList:link:episode[0]"] span',
+    numberSecondNews: '[data-testid="NewsList:link:episode[1]"] span',
   },
   link: {
     numberOfPage: '[data-testid="Pagination:link:pageNumber.2"]',
