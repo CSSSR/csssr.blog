@@ -64,7 +64,7 @@ const Comments = ({ id, className, language }) => {
   }, [id])
 
   return (
-    <div className={className}>
+    <div className={className} data-testid="Comments:block">
       <Heading.H3 type="regular" size="l" className="title">
         {language === 'ru' ? 'Комментарии' : 'Comments'}
       </Heading.H3>

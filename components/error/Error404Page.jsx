@@ -16,13 +16,13 @@ import { ReactComponent as LineFromTopToBottomIcon } from '../../public/componen
 import { ReactComponent as NotFound } from '../../public/components/error/icons/notFound.svg'
 
 import { navItemsEn, navItemsRu } from '../../data/navItems'
+import ruPathRegexp from '../../utils/ruPathRegexp'
 
 import globalStyles from '../Layout/Layout.styles'
 
 const ErrorPage = ({ className }) => {
   const route = useRouter()
-  const isRuPageRegExp = /^\/r([u\w]+)?\/?/
-  const isLanguageRu = isRuPageRegExp.test(route.asPath)
+  const isLanguageRu = ruPathRegexp.test(route.asPath)
   const dynamicNavItems = isLanguageRu ? navItemsRu : navItemsEn
 
   const renderNav = ({ items: { title, id, links } }) => {
@@ -35,15 +35,24 @@ const ErrorPage = ({ className }) => {
         {links && (
           <ul className="menu">
             {links.map(({ id, title, href }) => {
+              const testId = `ErrorPage:link:${id}`
               return (
                 <li key={id}>
                   {linkRegExp.test(href) ? (
-                    <a target="_blank" rel="noopener noreferrer" className="menu-item" href={href}>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="menu-item"
+                      href={href}
+                      data-testid={testId}
+                    >
                       {title}
                     </a>
                   ) : (
                     <Link href={`/${href}`}>
-                      <a className="menu-item">{title}</a>
+                      <a className="menu-item" data-testid={testId}>
+                        {title}
+                      </a>
                     </Link>
                   )}
                 </li>
@@ -68,7 +77,7 @@ const ErrorPage = ({ className }) => {
       </Head>
 
       <Grid as="header" className={className}>
-        <a className="logo" href="https://csssr.com/en">
+        <a className="logo" href="https://csssr.com/en" data-testid="Logo:link">
           <LogoIcon width="100%" height="100%" />
         </a>
       </Grid>

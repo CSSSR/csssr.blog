@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { string } from 'prop-types'
+import Fade from 'react-reveal/Fade'
 import cn from 'classnames'
 import { Field, Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
@@ -35,6 +36,10 @@ const Component = ({
         return 'fail'
       }
 
+      if (setMessageHidden) {
+        setMessageHidden(true)
+      }
+
       return 'success'
     }
 
@@ -65,9 +70,7 @@ const Component = ({
 
   const handleMessageBlur = (elem) => {
     if (!elem.value && setMessageHidden) {
-      setTimeout(() => {
-        setMessageHidden(true)
-      }, 300)
+      setMessageHidden(true)
     }
   }
 
@@ -94,7 +97,7 @@ const Component = ({
                   input={input}
                   meta={meta}
                   label="e-mail"
-                  testId={`${formName}:field:newsletter.email`}
+                  testId={`${formName}:field:email`}
                 />
               )}
             />
@@ -113,7 +116,7 @@ const Component = ({
               type="submit"
               disabled={status === 'submitting' || status === 'fail'}
               status={status}
-              testId={`${formName}:button.formSubmit`}
+              testId={`${formName}:button:submit`}
             >
               <span className="submit-text">Подписаться</span>
             </AnimatedButton>
@@ -123,28 +126,25 @@ const Component = ({
               status={status}
               errorText={submitError}
               onTryAgain={handleTryToFillFormAgain}
-              testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}
+              testId={`${formName}:text:${submittedToServer ? 'success' : 'fail'}`}
             />
           </div>
         </div>
-
-        <p
-          className={cn('policy', {
-            visible: !isMessageHidden,
-          })}
-        >
-          Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и
-          информационных материалов, а также факт своего ознакомления и согласия с
-          <a
-            className="subscribe-policy-link"
-            href="https://csssr.com/ru/privacy-policy"
-            target="_blank"
-          >
-            {' '}
-            Политикой конфиденциальности
-          </a>
-        </p>
-
+        <Fade duration={400} collapse when={!isMessageHidden}>
+          <p className="policy">
+            Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и
+            информационных материалов, а также факт своего ознакомления и согласия с
+            <a
+              className="subscribe-policy-link"
+              href="https://csssr.com/ru/privacy-policy"
+              target="_blank"
+              data-testid={`${formName}:link:privacyPolicy`}
+            >
+              {' '}
+              Политикой конфиденциальности
+            </a>
+          </p>
+        </Fade>
         <div
           className={cn('buttonWrapper_mobile', {
             success: status === 'success',
@@ -159,7 +159,7 @@ const Component = ({
             type="submit"
             disabled={status === 'submitting' || status === 'fail'}
             status={status}
-            testId={`${formName}:button.formSubmit`}
+            testId={`${formName}:button:submit`}
           >
             <span className="submit-text">Подписаться</span>
           </AnimatedButton>
@@ -169,7 +169,7 @@ const Component = ({
             kind={kind}
             errorText={submitError}
             onTryAgain={handleTryToFillFormAgain}
-            testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}
+            testId={`${formName}:text:${submittedToServer ? 'success' : 'fail'}`}
           />
         </div>
       </form>
@@ -246,7 +246,7 @@ const Form = ({
       kind={kind}
       isMessageHidden={isMessageHidden}
       setMessageHidden={setMessageHidden}
-      formName="newsletter"
+      formName="NewsletterForm"
       component={Component}
       validate={rateFormValidationRules}
       onSubmit={onSubmit}

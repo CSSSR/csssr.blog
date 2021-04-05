@@ -11,11 +11,11 @@ import styles from './NewsList.styles'
 
 const NewsList = ({ posts, lastPostDate, className }) => {
   return (
-    <ul className={className}>
-      {posts.map(({ slug, title, episodeNumber, date }) => (
+    <ul className={className} data-testid="NewsList:block">
+      {posts.map(({ slug, title, episodeNumber, date }, index) => (
         <li key={slug} className={cn('news-item', { first: date === lastPostDate })}>
           <Link href={`/ru/news512/episode/${slug}`}>
-            <a className="news-item-link">
+            <a className="news-item-link" data-testid={`NewsList:link:episode[${index}]`}>
               <div className="news-item-wrapper">
                 <span className="news-item-number">#{episodeNumber}</span>
 

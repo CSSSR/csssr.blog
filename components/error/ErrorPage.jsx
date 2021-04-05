@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
@@ -7,8 +9,8 @@ import cn from 'classnames'
 import styles from './ErrorPage.styles'
 import { Grid } from '@csssr/core-design'
 import Meta from '../Meta'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
+import ruPathRegexp from '../../utils/ruPathRegexp'
 import { ReactComponent as LogoIcon } from '../../public/components/error/icons/csssr_logo.svg'
 import { ReactComponent as ServerError } from '../../public/components/error/icons/serverError.svg'
 
@@ -40,60 +42,59 @@ const codeIconByStatusCode = {
   500: <ServerError width="auto" height="100%" />,
 }
 
-class ErrorPage extends React.Component {
-  render() {
-    const { className, language } = this.props
+const ErrorPage = ({ className, statusCode: statusCodeFromProps }) => {
+  const route = useRouter()
+  const isLanguageRu = ruPathRegexp.test(route.asPath)
+  const language = isLanguageRu ? 'ru' : 'en'
 
-    const statusCode =
-      possibleStatusCodes.indexOf(this.props.statusCode) !== -1
-        ? this.props.statusCode
-        : defaultStatusCode
+  const statusCode =
+    possibleStatusCodes.indexOf(statusCodeFromProps) !== -1
+      ? statusCodeFromProps
+      : defaultStatusCode
 
-    return (
-      <Fragment>
-        <Global styles={globalStyles} />
+  return (
+    <Fragment>
+      <Global styles={globalStyles} />
 
-        <Meta />
+      <Meta />
 
-        <Grid as="header" className={className}>
-          <Link href="/en">
-            <a className="logo">
-              <LogoIcon width="100%" height="100%" />
-            </a>
-          </Link>
-        </Grid>
+      <Grid as="header" className={className}>
+        <Link href="/en">
+          <a className="logo" data-testid="ErrorPage:link:logo">
+            <LogoIcon width="100%" height="100%" />
+          </a>
+        </Link>
+      </Grid>
 
-        <Grid as="main" className={cn(className, `error-code_${statusCode}`)}>
-          <h1
-            className="font_h1-slab"
-            dangerouslySetInnerHTML={{
-              __html: `${titleLocalesByStatusCode[statusCode][language]}`,
-            }}
-          />
+      <Grid as="main" className={cn(className, `error-code_${statusCode}`)}>
+        <h1
+          className="font_h1-slab"
+          dangerouslySetInnerHTML={{
+            __html: `${titleLocalesByStatusCode[statusCode][language]}`,
+          }}
+        />
 
-          <PictureSmart
-            className="picture"
-            alt={statusCode}
-            requireImages={pictureByStatusCode[statusCode]}
-          />
+        <PictureSmart
+          className="picture"
+          alt={statusCode}
+          requireImages={pictureByStatusCode[statusCode]}
+        />
 
-          <div className={'code-wrapper'}>{codeIconByStatusCode[statusCode]}</div>
-
-          <h2
-            className="font_subhead-slab"
-            dangerouslySetInnerHTML={{
-              __html: [
-                `${subtitleLocalesByStatusCode[statusCode][language]}`,
-                statusCode === 500
-                  ? '<a style="color: #345eff" href="mailto:sales@csssr.io">sales@csssr.io</a>'
-                  : null,
-              ].join(''),
-            }}
-          />
-        </Grid>
-      </Fragment>
-    )
-  }
+        <div className={'code-wrapper'}>{codeIconByStatusCode[statusCode]}</div>
+        <h2
+          className="font_subhead-slab"
+          dangerouslySetInnerHTML={{
+            __html: [
+              `${subtitleLocalesByStatusCode[statusCode][language]}`,
+              statusCode === 500
+                ? '<a style="color: #345eff" href="mailto:sales@csssr.io">sales@csssr.io</a>'
+                : null,
+            ].join(''),
+          }}
+        />
+      </Grid>
+    </Fragment>
+  )
 }
 
 export default styled(ErrorPage)`
