@@ -568,8 +568,13 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
     }
 
     .commento-email-container {
+      display: inline-flex !important;
       margin-top: ${calcRem(16)} !important;
       margin-bottom: 0 !important;
+
+      &:last-of-type {
+        margin-top: ${calcRem(11)} !important;
+      }
     }
 
     .commento-email {
