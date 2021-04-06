@@ -128,11 +128,13 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
         display: inline-flex;
         width: 32px;
         height: 32px;
-        margin-right: 0;
+        margin-right: 10px;
         font-family: 'Roboto', 'Arial', sans-serif;
         font-size: 18px;
         line-height: 24px;
         font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
       }
 
       .commento-main-area {
@@ -416,10 +418,16 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
             }
 
             .commento-header {
-              .commento-avatar-img {
+              .commento-avatar-img,
+              .commento-avatar {
                 margin-right: ${calcRem(8)};
                 width: ${calcRem(24)};
                 height: ${calcRem(24)};
+              }
+              
+              .commento-avatar {
+                font-size: ${calcRem(14)};
+                line-height: ${calcRem(18)};
               }
 
               .commento-name {
