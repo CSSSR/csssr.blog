@@ -12,7 +12,7 @@ author: 'Ислам Виндижев'
 <ParagraphWithImage imageName="manWithLaptop" imageSide="right">
   ### Интересные публикации
 
-Александр Беспоясов провел [воркшоп по TDD](https://bespoyasov.ru/blog/tdd-workshop/), или Test-Driven Development. Напомню, что при разработке через тестирование пишется тест, а потом код, который этим самым тестом и будет проверяться. На примере конвертера валют Александр продемонстрировал, как этим подходом пользоваться. Охвачено порядочное количество тем, в том числе тестирование бизнес-логики, компонентов, запросов к API. Доступна и [запись лайвкодинга](Запись воркшопа — https://www.youtube.com/watch?v=oaktsy6YKMk).
+Александр Беспоясов провел [воркшоп по TDD](https://bespoyasov.ru/blog/tdd-workshop/), или Test-Driven Development. Напомню, что при разработке через тестирование пишется тест, а потом код, который этим самым тестом и будет проверяться. На примере конвертера валют Александр продемонстрировал, как этим подходом пользоваться. Охвачено порядочное количество тем, в том числе тестирование бизнес-логики, компонентов, запросов к API. Доступна и [запись лайвкодинга](https://www.youtube.com/watch?v=oaktsy6YKMk).
 </ParagraphWithImage>
 
 Мехди Аусиад (Mehdi Aoussiad) написал статью [о семи малоизвестных HTML-атрибутах](https://javascript.plainenglish.io/7-useful-html-attributes-that-you-probably-dont-know-661784fe21e): accept, multiple, contenteditable, download, translate, poster и pattern. Автор объясняет, для чего они нужны, и приводит примеры синтаксиса.
