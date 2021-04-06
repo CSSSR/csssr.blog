@@ -492,7 +492,7 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
       background-color: rgba(255, 255, 255, 0.3);
       width: 100%;
       height: 100%;
-      z-index: 3;
+      z-index: 1000;
     }
 
     #commento-login-box-oauth-pretext,
