@@ -1,6 +1,10 @@
 import cleaningTitle from './cleaningTitle'
 
 export default (isNews, post) => {
+  if (post?.description) {
+    return post?.description
+  }
+
   if (isNews) {
     return cleaningTitle(post.title, 'meta')
   }

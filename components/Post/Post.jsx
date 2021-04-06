@@ -22,7 +22,7 @@ const Post = ({
 }) => {
   const isNews = type === 'news'
   const title = isNews ? 'Новости 512 | CSSSR' : cleaningTitle(post.title, 'meta')
-  const description = post?.description || getDescription(isNews, post)
+  const description = getDescription(isNews, post)
 
   return (
     <article
