@@ -89,6 +89,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
           .commento-button-margin {
             .commento-button {
               display: block;
+              border-radius: 0;
             }
           }
         }
@@ -621,7 +622,7 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
 
     #commento-login-box-email-button,
     #commento-login-box-password-input + .commento-email-button {
-      margin-top: ${calcRem(30)};
+      margin-top: ${calcRem(24)};
       width: 100%;
       border: ${calcRem(1)} solid ${colors.secondary.darken100};
       color: ${colors.secondary.darken100};
