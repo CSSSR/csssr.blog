@@ -520,6 +520,10 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
+        .commento-button {
+          box-shadow: unset;
+        }
       }
 
       .commento-button {
