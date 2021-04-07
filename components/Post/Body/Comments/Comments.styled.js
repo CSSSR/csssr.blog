@@ -377,6 +377,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
         .commento-main-area {
           .commento-login {
             &::before {
+              width: ${calcRem(24)};
+              height: ${calcRem(24)};
               top: ${calcRem(85)};
             }
 
