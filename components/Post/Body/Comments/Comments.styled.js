@@ -626,7 +626,7 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
 
     #commento-login-box-email-button,
     #commento-login-box-password-input + .commento-email-button {
-      margin-top: ${calcRem(24)};
+      margin-top: ${calcRem(30)};
       width: 100%;
       border: ${calcRem(1)} solid ${colors.secondary.darken100};
       color: ${colors.secondary.darken100};
@@ -706,11 +706,6 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
 
       #commento-login-box-oauth-buttons-container .commento-button {
         width: ${calcRem(145)};
-      }
-
-      #commento-login-box-email-button,
-      #commento-login-box-password-input + .commento-email-button {
-        margin-top: ${calcRem(30)};
       }
 
       #commento-error {
