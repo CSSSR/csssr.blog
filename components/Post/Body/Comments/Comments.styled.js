@@ -492,7 +492,7 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
       background-color: rgba(255, 255, 255, 0.3);
       width: 100%;
       height: 100%;
-      z-index: 1000;
+      z-index: 10000;
     }
 
     #commento-login-box-oauth-pretext,
@@ -698,10 +698,19 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
 
     ${mobile.all} {
       #commento-login-box {
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        top: 0;
         padding-left: ${calcRem(16)};
         padding-right: ${calcRem(16)};
-        width: ${calcRem(340)};
-        max-width: ${calcRem(340)};
+        border: none;
+        overflow-y: scroll;
+        transform: unset;
+      }
+
+      .commento-email {
+        max-width: 100% !important;
       }
 
       #commento-login-box-oauth-buttons-container .commento-button {
