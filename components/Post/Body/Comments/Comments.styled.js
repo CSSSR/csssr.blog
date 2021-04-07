@@ -349,19 +349,17 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
         line-height: ${calcRem(40)};
       }
 
-      #commento-textarea-root {
-        margin-left: ${calcRem(8)};
-      }
-
       .commento-root {
         .commento-logged-container {
           justify-content: flex-start;
 
           .commento-logged-in-as {
             top: ${calcRem(84)};
-            .commento-avatar-img {
+            .commento-avatar-img,
+            .commento-avatar {
               width: ${calcRem(24)};
               height: ${calcRem(24)};
+              margin-right: ${calcRem(8)};
             }
           }
 
@@ -379,6 +377,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
         .commento-main-area {
           .commento-login {
             &::before {
+              width: ${calcRem(24)};
+              height: ${calcRem(24)};
               top: ${calcRem(85)};
             }
 
