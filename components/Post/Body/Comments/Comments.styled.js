@@ -573,13 +573,18 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
     }
 
     .commento-email-container {
-      display: inline-flex !important;
-      margin-top: ${calcRem(16)} !important;
+      display: inline !important;
+      margin-top: ${calcRem(0)} !important;
       margin-bottom: 0 !important;
 
-      &:last-of-type {
-        margin-top: ${calcRem(11)} !important;
+      & input {
+        margin-top: ${calcRem(30)} !important;
+        height: ${calcRem(29)} !important;
       }
+
+      & input[name="email"] {
+        margin-top: ${calcRem(20)} !important;
+      } 
     }
 
     .commento-email {
