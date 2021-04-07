@@ -129,11 +129,13 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
         display: inline-flex;
         width: 32px;
         height: 32px;
-        margin-right: 0;
+        margin-right: 10px;
         font-family: 'Roboto', 'Arial', sans-serif;
         font-size: 18px;
         line-height: 24px;
         font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
       }
 
       .commento-main-area {
@@ -386,7 +388,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
           }
 
           .commento-button-margin {
-            margin-top: ${calcRem(39)};
+            margin-top: ${calcRem(30)};
             margin-left: ${calcRem(32)};
             padding-bottom: ${calcRem(10)};
 
@@ -417,10 +419,16 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
             }
 
             .commento-header {
-              .commento-avatar-img {
+              .commento-avatar-img,
+              .commento-avatar {
                 margin-right: ${calcRem(8)};
                 width: ${calcRem(24)};
                 height: ${calcRem(24)};
+              }
+              
+              .commento-avatar {
+                font-size: ${calcRem(14)};
+                line-height: ${calcRem(18)};
               }
 
               .commento-name {
@@ -484,7 +492,7 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
       background-color: rgba(255, 255, 255, 0.3);
       width: 100%;
       height: 100%;
-      z-index: 3;
+      z-index: 1000;
     }
 
     #commento-login-box-oauth-pretext,
@@ -512,6 +520,10 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
+        .commento-button {
+          box-shadow: unset;
+        }
       }
 
       .commento-button {
@@ -561,8 +573,13 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
     }
 
     .commento-email-container {
+      display: inline-flex !important;
       margin-top: ${calcRem(16)} !important;
       margin-bottom: 0 !important;
+
+      &:last-of-type {
+        margin-top: ${calcRem(11)} !important;
+      }
     }
 
     .commento-email {
