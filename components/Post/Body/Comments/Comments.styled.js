@@ -702,13 +702,17 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
     }
 
     ${mobile.all} {
+      #commento-login-box-container {
+        width: 100vw;
+      }
+
       #commento-login-box {
         width: 100%;
         max-width: 100%;
         height: 100vh;
         top: 0;
-        padding-left: ${calcRem(16)};
-        padding-right: ${calcRem(16)};
+        padding-left: ${calcRem(24)};
+        padding-right: ${calcRem(24)};
         border: none;
         overflow-y: scroll;
         transform: unset;
@@ -718,8 +722,16 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
         max-width: 100% !important;
       }
 
+      #commento-login-box-oauth-buttons-container .commento-oauth-buttons {
+        justify-content: unset;
+      }
+
       #commento-login-box-oauth-buttons-container .commento-button {
-        width: ${calcRem(145)};
+        width: ${calcRem(148)};
+
+        &:nth-of-type(even) {
+          margin-left: ${calcRem(16)};
+        }
       }
 
       #commento-error {
