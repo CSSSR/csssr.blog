@@ -23,7 +23,7 @@ tag: 'management'
 
 На данный момент у нас три успешно запущенные ракеты команды. К старту готовятся еще две.
 
-![tizer](/images/dont-resize/ru/work-in-csssr/csssr-hr-sparta/all.png)
+<Img src='/images/dont-resize/ru/work-in-csssr/csssr-hr-sparta/all.png' alt='Картинка с надписью "Спартанский отбор"' withOutProcessing>
 
 ### Как мы отбираем сотрудников
 

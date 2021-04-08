@@ -6,7 +6,7 @@ date: '2015-03-05T11:55:00.000Z'
 tag: 'management'
 ---
 
-![EYanovskaya](/images/dont-resize/ru/managers-qualities/eyanovskaya/all.png)
+<Img src='/images/dont-resize/ru/managers-qualities/eyanovskaya/all.png' alt='Фотография Яновской Лизы' withOutProcessing>
 
 Меня зовут Елизавета, и я менеджер в CSSSR.
 
