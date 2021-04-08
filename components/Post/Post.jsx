@@ -20,14 +20,14 @@ const Post = ({
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => {
-  const title = type === 'news' ? 'Новости 512 | CSSSR' : cleaningTitle(post.title, 'meta')
-  const description =
-    type === 'news' ? cleaningTitle(post.title, 'meta') : getDescription(post.content)
+  const isNews = type === 'news'
+  const title = isNews ? 'Новости 512 | CSSSR' : cleaningTitle(post.title, 'meta')
+  const description = getDescription(isNews, post)
 
   return (
     <article
       className={cn(className, {
-        type_news: type === 'news',
+        type_news: isNews,
       })}
     >
       <Head>
@@ -40,7 +40,7 @@ const Post = ({
         <meta
           property="og:url"
           content={
-            type === 'news'
+            isNews
               ? `${process.env.BLOG_HOST}/${language}/news512/episode/${post.slug}`
               : `${process.env.BLOG_HOST}/${language}/article/${post.slug}`
           }
@@ -48,9 +48,7 @@ const Post = ({
         <meta
           property="og:image"
           content={getOriginal(
-            type === 'news'
-              ? newsPostOgImage
-              : post.images.mainCoverL[post.images.mainCoverL.length - 1],
+            isNews ? newsPostOgImage : post.images.mainCoverL[post.images.mainCoverL.length - 1],
           )}
         />
 
