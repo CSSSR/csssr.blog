@@ -16,11 +16,11 @@ tag: 'web-development'
 where
 
 #### `title`
-The title of the article. The characters enclosed in the tag `<i>` on the article page will be displayed in the font Amita.
-Also, by default this title is used for SEO.
+Article title. The characters enclosed in the tag `<i>` on the article page will be displayed in Amita font.
+Also, this title is used for SEO and Open Graph.
 
 #### `description`
-This field is used when `title` does not suits for `description` in `meta` and needs to be overridden.
+A brief description of the article for SEO and Open Graph. If it is not specified, then by default we use the lead (first paragraph) cleared of html tags and MD links, and for the news we use the title of the news.
 
 #### `coverImageAlt`
 Alt-text for the main image of the article. Alt-text must describe in words what is shown in the image.

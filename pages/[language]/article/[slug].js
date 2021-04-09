@@ -73,6 +73,7 @@ export async function getStaticProps({ params }) {
 
   const post = await getPostBySlugAndLanguage(slug, language, [
     'title',
+    'description',
     'date',
     'slug',
     'author',
