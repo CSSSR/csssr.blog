@@ -739,6 +739,13 @@ const modal = ({ breakpoints: { mobile }, colors }) => {
         width: ${calcRem(340)};
       }
     }
+
+    @media screen and (max-height: 680px) {
+      #commento-login-box {
+        min-height: -webkit-fill-available;
+        height: -webkit-fill-available;
+      }
+    }
   `
 }
 
