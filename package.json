@@ -57,6 +57,10 @@
     "next-compose-plugins": "^2.2.1",
     "prettier": "^2.2.1"
   },
+  "resolutions": {
+    "netmask" : ">=2.0.1",
+    "ssri": ">=8.0.1"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
