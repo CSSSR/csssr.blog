@@ -112,6 +112,11 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
       margin-right: auto;
       margin-left: auto;
     }
+
+    &.without_margin_top.with_news_podcast {
+      margin: unset;
+      transform: translateX(${calcRem(10)});
+    }
   }
 
   ${mobile.all} {

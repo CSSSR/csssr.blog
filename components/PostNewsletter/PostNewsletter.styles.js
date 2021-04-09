@@ -106,6 +106,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       grid-row: 1;
     }
 
+    &.without_subscribe-form.with_news_podcast {
+      grid-row: 1 / span 100;
+    }
+
     .title {
       font-size: ${calcRem(16)};
       line-height: ${calcRem(22)};

@@ -49,6 +49,7 @@ const PostShare = ({ className, language, type }) => {
     <div
       className={cn(className, 'share', {
         without_margin_top: language !== 'ru' || type === 'news',
+        with_news_podcast: language === 'ru' || type === 'news'
       })}
     >
       <Heading.H2 type="regular" className="share-title">
