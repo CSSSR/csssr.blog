@@ -23,16 +23,16 @@ const NewsPodcast = ({ className }) => {
 
       <ul className="links">
         <li className="link-item">
-          <a className="link" href="https://podcasts.apple.com/us/podcast/id1370045815" rel="nofollow noopener" target="_blank">Apple Podcasts</a>
+          <a className="link font_link-list_16" href="https://podcasts.apple.com/us/podcast/id1370045815" rel="nofollow noopener" target="_blank">Apple Podcasts</a>
         </li>
         <li className="link-item">
-          <a className="link" href="https://podcasts.google.com/feed/aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz?ep=14" rel="nofollow noopener" target="_blank">Google Podcasts</a>
+          <a className="link font_link-list_16" href="https://podcasts.google.com/feed/aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz?ep=14" rel="nofollow noopener" target="_blank">Google Podcasts</a>
         </li>
         <li className="link-item">
-          <a className="link" href="https://soundcloud.com/csssr/sets/512-news" rel="nofollow noopener" target="_blank">SoundCloud</a>
+          <a className="link font_link-list_16" href="https://soundcloud.com/csssr/sets/512-news" rel="nofollow noopener" target="_blank">SoundCloud</a>
         </li>
         <li className="link-item">
-          <a className="link" href="https://music.yandex.ru/album/7040324/track/54795992" rel="nofollow noopener" target="_blank">Я.Музыка</a>
+          <a className="link font_link-list_16" href="https://music.yandex.ru/album/7040324/track/54795992" rel="nofollow noopener" target="_blank">Я.Музыка</a>
         </li>
       </ul>
     </div>
