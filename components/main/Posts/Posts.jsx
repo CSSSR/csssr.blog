@@ -30,15 +30,16 @@ const Posts = ({ language, posts, className }) => (
 
 Posts.propTypes = {
   className: string,
-  postsOrder: arrayOf(arrayOf(string)),
+  language: string,
   post: arrayOf(
     shape({
       title: string,
       coverImageAlt: string,
       images: object,
-      slug: string,
       date: string,
+      author: string,
       tag: string,
+      slug: string,
     }),
   ),
 }
