@@ -27,8 +27,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
       .commento-option-remove {
         margin: 0;
         display: block;
-        width: ${calcRem(20)};
-        height: ${calcRem(20)};
+        width: 20px;
+        height: 20px;
         background-color: #7e8fa4;
         transition: background-color 200ms ease-out;
       }
@@ -51,6 +51,11 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
           background-color: #f45b53;
         }
       }
+    }
+
+    .commento-options-mobile {
+      top: 0;
+      transform: translateY(-115%);
     }
   `
 
