@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
+const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   & {
     max-width: ${calcRem(120)};
     margin-left: auto;

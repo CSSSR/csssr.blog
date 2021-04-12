@@ -26,7 +26,7 @@ const PostNewsletter = ({
     <div
       className={cn(className, {
         'without_subscribe-form': withoutSubscribeForm,
-        'with_news_podcast': withNewsPodcast
+        with_news_podcast: withNewsPodcast,
       })}
     >
       {!withoutSubscribeForm && (
@@ -50,9 +50,9 @@ const PostNewsletter = ({
             BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
           />
         </div>
-       )}
+      )}
 
-       {withNewsPodcast && <NewsPodcast />}
+      {withNewsPodcast && <NewsPodcast />}
 
       <PostShare language={language} type={type} />
     </div>
