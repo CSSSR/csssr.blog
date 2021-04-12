@@ -54,6 +54,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
     }
 
     .commento-options-mobile {
+      top: 0;
       transform: translateY(-115%);
     }
   `
