@@ -32,8 +32,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       text-align: center;
     }
 
-    th:first-child,
-    td:first-child {
+    th:first-of-type,
+    td:first-of-type {
       border-left: none;
     }
 
@@ -194,7 +194,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       position: sticky;
     }
 
-    th:first-child {
+    th:first-of-type {
       position: sticky;
       background-color: white;
       left: 0;

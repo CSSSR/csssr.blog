@@ -31,7 +31,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .img-wrap {
     display: block;
-    min-height: ${calcRem(144)};
+    width: ${calcRem(208)};
+    min-height: ${calcRem(140)};
     float: left;
     margin-top: 0;
     margin-right: ${calcRem(16)};
