@@ -4,15 +4,13 @@ import calcRem from '../../../../utils/style/calcRem'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
 const soundtrackImages = require.context('../../../../public/components/newsAudioLink/images')
-const soundtrackImagesHovered = require.context('../../../../public/components/newsAudioLink/images_hovered')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .soundtrack-wrapper {
     position: relative;
   }
 
-  .soundtrack-image,
-  .soundtrack-image_hover {
+  .soundtrack-image {
     position: relative;
     width: 100%;
     background-repeat: no-repeat;
@@ -26,32 +24,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     opacity: 1;
   }
 
-  .soundtrack-image_hover {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
-    opacity: 0;
-  }
-
-  .title-wrapper {
+  .links-wrapper {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin-top: ${calcRem(5)};
     color: #7D7FFE;
   }
 
-  .link-title {
-    font-family: 'Amita', sans-serif;
+  .link {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: ${calcRem(16)};
     line-height: ${calcRem(31)};
+    color: #0076FF;
   }
 
   .arrow {
-    margin-left: ${calcRem(7)};
+    margin-left: ${calcRem(6)};
   }
 
   ${desktop.all} {
@@ -60,8 +52,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: 60px;
     }
 
-    .soundtrack-image,
-    .soundtrack-image_hover {
+    .soundtrack-image {
       height: 21px;
     }
   }
@@ -72,8 +63,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 3 / span 8;
     }
 
-    .soundtrack-image,
-    .soundtrack-image_hover {
+    .soundtrack-image {
       height: ${calcRem(21)};
     }
   }
@@ -85,25 +75,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       width: 100%;
     }
 
-    .soundtrack-image,
-    .soundtrack-image_hover {
+    .soundtrack-image {
       height: ${calcRem(18)};
+    }
+
+    .links-wrapper {
+      align-items: flex-start;
+      flex-direction: column;
+      margin-top: ${calcRem(15)};
+    }
+
+    .link {
+      line-height: ${calcRem(19)};
+      &:not(:first-of-type) {
+        margin-top: ${calcRem(15)};
+      }
     }
   }
 
   @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      .title-wrapper {
-        color: #0254d8;
-      }
-    }
-
-    &:hover .soundtrack-image {
-      opacity: 0;
-    }
-
-    &:hover .soundtrack-image_hover {
-      opacity: 1;
+    .link:hover {
+      color: #0254d8;
     }
   }
 `
@@ -111,11 +103,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 export const backgroundImagesStyles = css`
   & {
     ${backgroundCssSmart('.soundtrack-image', soundtrackImages)}
-
-    ${backgroundCssSmart('.soundtrack-image_hover', soundtrackImagesHovered)}
   }
 `
-
 
 export default  props => {
   const breakpoints = props.theme.breakpoints

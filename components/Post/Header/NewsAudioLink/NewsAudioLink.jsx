@@ -1,32 +1,41 @@
 import React from 'react'
 import { Global } from '@emotion/react'
-import cn from 'classnames'
 import styled from '@emotion/styled'
 import { string, arrayOf, object } from 'prop-types'
 import styles, { backgroundImagesStyles } from './NewsAudioLink.styles'
 
 import { ReactComponent as Arrow } from '../../../../public/components/newsAudioLink/icons/arrow.svg'
+import { ReactComponent as RightArrow } from '../../../../public/components/newsAudioLink/icons/right-arrow.svg'
 
-const NewsAudioLink = ({ className, href, title, testId = 'NewsAudio:link' }) => (
-  <a
-    className={cn('news-audio-link', className)}
-    href={href}
-    target="_blank"
-    rel="noopener nofollow"
+const NewsAudioLink = ({ className, href, testId = 'NewsAudio:link' }) => (
+  <div
+    className={className}
     data-testid={testId}
   >
     <div className="soundtrack-wrapper">
       <div className="soundtrack-image" />
-      <div className="soundtrack-image_hover" />
     </div>
 
-    <div className="title-wrapper">
-      <span className="link-title" dangerouslySetInnerHTML={{ __html: title }} />
-      <Arrow className="arrow" />
+    <div className="links-wrapper">
+      <a className="link"
+         href="https://radio.csssr.com/rss/news512.rss"
+         target="_blank"
+         rel="noopener nofollow"
+      >
+        {'RSS подкаста'}
+        <RightArrow className="arrow" />
+      </a>
+      <a className="link"
+         href={href}
+         target="_blank"
+         rel="noopener nofollow"
+      >
+        Прослушать аудио-версию
+        <Arrow className="arrow" />
+      </a>
     </div>
-
     <Global styles={backgroundImagesStyles} />
-  </a>
+  </div>
 )
 
 NewsAudioLink.propTypes = {
