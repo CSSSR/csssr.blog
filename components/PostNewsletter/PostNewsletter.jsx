@@ -20,16 +20,16 @@ const PostNewsletter = ({
   const { title, subtitle, img, imgAlt } = postNewsletterData
 
   const [isMessageHidden, setMessageHidden] = useState(true)
-  const withoutSubscribeForm = language !== 'ru' || type === 'news'
+  const withSubscribeForm = language === 'ru' && type !== 'news'
   const withNewsPodcast = language == 'ru' && type === 'news'
   return (
     <div
       className={cn(className, {
-        'without_subscribe-form': withoutSubscribeForm,
+        'without_subscribe-form': withSubscribeForm,
         with_news_podcast: withNewsPodcast,
       })}
     >
-      {!withoutSubscribeForm && (
+      {withSubscribeForm && (
         <div className="container">
           <PictureSmart requireImages={img} className="picture" alt={imgAlt} />
           <Heading.H2 type="regular" className="title">

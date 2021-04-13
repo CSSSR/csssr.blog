@@ -3,58 +3,32 @@ import styled from '@emotion/styled'
 import styles from './NewsPodcast.styles'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-// import { ReactComponent as FacebookIcon } from '../../public/icons/share/facebook.svg'
-
 const NewsPodcast = ({ className }) => {
+  const links = ['Apple Podcasts', 'Google Podcasts', 'SoundCloud', 'Я.Музыка']
+
   return (
-    <div className={className}>
+    <div className={className} data-testid="NewsPodcast:block">
       <PictureSmart
         className="picture"
         alt="Радио с заголовком 'Новости 512'"
         requireImages={require.context('../../../public/components/newsPodcast')}
       />
-
       <ul className="links">
-        <li className="link-item">
-          <a
-            className="link font_link-list_16"
-            href="https://podcasts.apple.com/us/podcast/id1370045815"
-            rel="nofollow noopener"
-            target="_blank"
+        {links.map((link, index) => (
+          <li 
+            className="link-item"
+            key={index}
           >
-            Apple Podcasts
-          </a>
-        </li>
-        <li className="link-item">
-          <a
-            className="link font_link-list_16"
-            href="https://podcasts.google.com/feed/aHR0cHM6Ly9yYWRpby5jc3Nzci5jb20vcnNzL25ld3M1MTIucnNz?ep=14"
-            rel="nofollow noopener"
-            target="_blank"
-          >
-            Google Podcasts
-          </a>
-        </li>
-        <li className="link-item">
-          <a
-            className="link font_link-list_16"
-            href="https://soundcloud.com/csssr/sets/512-news"
-            rel="nofollow noopener"
-            target="_blank"
-          >
-            SoundCloud
-          </a>
-        </li>
-        <li className="link-item">
-          <a
-            className="link font_link-list_16"
-            href="https://music.yandex.ru/album/7040324/track/54795992"
-            rel="nofollow noopener"
-            target="_blank"
-          >
-            Я.Музыка
-          </a>
-        </li>
+            <a
+              className="link font_link-list_16"
+              href="https://podcasts.apple.com/us/podcast/id1370045815"
+              rel="nofollow noopener"
+              target="_blank"
+            >
+              {link}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   )
