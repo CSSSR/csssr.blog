@@ -372,7 +372,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
             &:nth-of-type(2) {
               position: relative;
               top: ${calcRem(9)};
-              left: ${calcRem(-34)};
+              left: ${calcRem(-30)};
               font-size: ${calcRem(14)};
               line-height: ${calcRem(24)};
             }
