@@ -1,4 +1,4 @@
-import { css, keyframes } from '@emotion/react'
+import { css } from '@emotion/react'
 import calcRem from '../../../../utils/style/calcRem'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
@@ -430,7 +430,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
                 width: ${calcRem(24)};
                 height: ${calcRem(24)};
               }
-              
+
               .commento-avatar {
                 font-size: ${calcRem(14)};
                 line-height: ${calcRem(18)};
@@ -467,292 +467,282 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => {
   `
 }
 
-const modal = ({ breakpoints: { mobile }, colors }) => {
-  const fadeOut = keyframes`
-    to {
-      opacity: 0;
-    }
-  `
+const modal = ({ breakpoints: { mobile }, colors }) => css`
+  #commento-login-box {
+    position: fixed;
+    top: 50%;
+    padding-top: ${calcRem(64)};
+    padding-left: ${calcRem(40)};
+    padding-right: ${calcRem(40)};
+    padding-bottom: ${calcRem(40)};
+    max-width: ${calcRem(416)};
+    border: ${calcRem(1)} solid #7e8fa4;
+    background-color: white;
+    transform: translateY(-50%);
+  }
 
-  return css`
-    #commento-login-box {
-      position: fixed;
-      top: 50%;
-      padding-top: ${calcRem(64)};
-      padding-left: ${calcRem(40)};
-      padding-right: ${calcRem(40)};
-      padding-bottom: ${calcRem(40)};
-      max-width: ${calcRem(416)};
-      border: ${calcRem(1)} solid #7e8fa4;
-      background-color: white;
-      transform: translateY(-50%);
+  #commento-login-box-container.commento-login-box-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+  }
+
+  #commento-login-box-oauth-pretext,
+  #commento-login-box-email-subtitle {
+    margin: 0;
+    font-family: Roboto;
+    font-size: ${calcRem(24)};
+    font-style: normal;
+    font-weight: 900;
+    line-height: ${calcRem(32)};
+    letter-spacing: 0px;
+    text-align: left;
+    color: ${colors.secondary.darken100};
+  }
+
+  #commento-login-box-oauth-buttons-container ~ #commento-login-box-email-subtitle {
+    margin-top: ${calcRem(48)};
+  }
+
+  #commento-login-box-oauth-buttons-container {
+    margin-top: ${calcRem(20)};
+
+    .commento-oauth-buttons {
+      position: static;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .commento-button {
+        box-shadow: unset;
+      }
     }
 
-    #commento-login-box-container.commento-login-box-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(255, 255, 255, 0.3);
-      width: 100%;
-      height: 100%;
-      z-index: 10000;
+    .commento-button {
+      width: ${calcRem(160)};
     }
 
-    #commento-login-box-oauth-pretext,
-    #commento-login-box-email-subtitle {
-      margin: 0;
-      font-family: Roboto;
-      font-size: ${calcRem(24)};
-      font-style: normal;
-      font-weight: 900;
-      line-height: ${calcRem(32)};
-      letter-spacing: 0px;
-      text-align: left;
+    .commento-button:nth-of-type(n + 3) {
+      margin-top: ${calcRem(16)};
+    }
+  }
+
+  #commento-login-box-oauth-buttons-container .commento-button,
+  #commento-login-box-email-button,
+  #commento-login-box-password-input + .commento-email-button {
+    margin-left: 0;
+    margin-right: 0;
+    height: ${calcRem(40)};
+    font-family: Roboto;
+    font-size: ${calcRem(12)};
+    font-style: normal;
+    font-weight: 900;
+    line-height: ${calcRem(24)};
+    letter-spacing: ${calcRem(1.6)};
+    text-align: center;
+    border-radius: 0;
+    transition: background-color 200ms ease-out;
+  }
+
+  #commento-login-box-hr2 {
+    display: none;
+  }
+
+  .commento-login-box-close {
+    height: ${calcRem(23)} !important;
+    width: ${calcRem(23)} !important;
+    opacity: 1 !important;
+
+    ::before,
+    ::after {
+      top: ${calcRem(10)} !important;
+      left: ${calcRem(-2)} !important;
+      width: ${calcRem(30)} !important;
+      height: ${calcRem(2)} !important;
+      background-color: #7e8fa4 !important;
+      transition: background-color 200ms ease-out !important;
+    }
+  }
+
+  .commento-email-container {
+    display: inline !important;
+    margin-top: ${calcRem(0)} !important;
+    margin-bottom: 0 !important;
+
+    & input {
+      margin-top: ${calcRem(30)} !important;
+      height: ${calcRem(29)} !important;
+    }
+
+    & input[name='email'] {
+      margin-top: ${calcRem(20)} !important;
+    }
+  }
+
+  .commento-email {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    box-shadow: none !important;
+  }
+
+  #commento-login-box-email-input,
+  #commento-login-box-name-input,
+  #commento-login-box-password-input {
+    padding: ${calcRem(4)} 0;
+    width: 100%;
+    height: ${calcRem(32)};
+    border-bottom: ${calcRem(1)} solid #7e8fa4;
+    border-radius: 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: ${calcRem(16)};
+    color: ${colors.secondary.darken100};
+    transition: border-color 200ms ease-out;
+
+    ::placeholder {
       color: ${colors.secondary.darken100};
     }
 
-    #commento-login-box-oauth-buttons-container ~ #commento-login-box-email-subtitle {
-      margin-top: ${calcRem(48)};
+    :focus {
+      border-color: ${colors.primary.origin};
+    }
+  }
+
+  #commento-login-box-name-input {
+    margin-top: ${calcRem(11)};
+  }
+
+  #commento-login-box-password-input {
+    margin-top: ${calcRem(-5)};
+  }
+
+  #commento-login-box-website-input {
+    display: none;
+  }
+
+  #commento-login-box-email-button,
+  #commento-login-box-password-input + .commento-email-button {
+    margin-top: ${calcRem(30)};
+    width: 100%;
+    border: ${calcRem(1)} solid ${colors.secondary.darken100};
+    color: ${colors.secondary.darken100};
+    transition: border-color 200ms ease-out, color 200ms ease-out;
+  }
+
+  #commento-login-box-forgot-link-container a,
+  #commento-login-box-login-link-container a {
+    font-family: Roboto;
+    font-size: ${calcRem(14)};
+    font-style: normal;
+    font-weight: 300;
+    line-height: ${calcRem(24)};
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: underline;
+    color: ${colors.primary.origin};
+    transition: color 200ms ease-out;
+  }
+
+  #commento-login-box-forgot-link-container,
+  #commento-login-box-login-link-container {
+    margin-bottom: 0;
+  }
+
+  #commento-login-box-forgot-link-container {
+    margin-top: ${calcRem(20)};
+  }
+
+  #commento-login-box-login-link-container {
+    margin-top: ${calcRem(8)};
+  }
+
+  #commento-error {
+    position: absolute;
+    top: ${calcRem(38)};
+    left: 50%;
+    height: auto;
+    font-family: Roboto;
+    font-size: ${calcRem(14)};
+    font-style: normal;
+    font-weight: 300;
+    line-height: ${calcRem(24)};
+    letter-spacing: 0;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .commento-login-box-close:hover::before,
+    .commento-login-box-close:hover::after,
+    #commento-login-box-oauth-buttons-container .commento-button:hover {
+      background-color: ${colors.primary.darken15} !important;
     }
 
-    #commento-login-box-oauth-buttons-container {
-      margin-top: ${calcRem(20)};
-
-      .commento-oauth-buttons {
-        position: static;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        .commento-button {
-          box-shadow: unset;
-        }
-      }
-
-      .commento-button {
-        width: ${calcRem(160)};
-      }
-
-      .commento-button:nth-of-type(n + 3) {
-        margin-top: ${calcRem(16)};
-      }
+    #commento-login-box-forgot-link-container a:hover,
+    #commento-login-box-login-link-container a:hover {
+      color: ${colors.primary.darken15};
     }
 
-    #commento-login-box-oauth-buttons-container .commento-button,
-    #commento-login-box-email-button,
-    #commento-login-box-password-input + .commento-email-button {
-      margin-left: 0;
-      margin-right: 0;
-      height: ${calcRem(40)};
-      font-family: Roboto;
-      font-size: ${calcRem(12)};
-      font-style: normal;
-      font-weight: 900;
-      line-height: ${calcRem(24)};
-      letter-spacing: ${calcRem(1.6)};
-      text-align: center;
-      border-radius: 0;
-      transition: background-color 200ms ease-out;
+    #commento-login-box-email-button:hover,
+    #commento-login-box-password-input + .commento-email-button:hover {
+      color: ${colors.primary.darken15};
+      border-color: ${colors.primary.darken15};
+    }
+  }
+
+  ${mobile.all} {
+    #commento-login-box-container {
+      width: 100vw;
     }
 
-    #commento-login-box-hr2 {
-      display: none;
-    }
-
-    .commento-login-box-close {
-      height: ${calcRem(23)} !important;
-      width: ${calcRem(23)} !important;
-      opacity: 1 !important;
-
-      ::before,
-      ::after {
-        top: ${calcRem(10)} !important;
-        left: ${calcRem(-2)} !important;
-        width: ${calcRem(30)} !important;
-        height: ${calcRem(2)} !important;
-        background-color: #7e8fa4 !important;
-        transition: background-color 200ms ease-out !important;
-      }
-    }
-
-    .commento-email-container {
-      display: inline !important;
-      margin-top: ${calcRem(0)} !important;
-      margin-bottom: 0 !important;
-
-      & input {
-        margin-top: ${calcRem(30)} !important;
-        height: ${calcRem(29)} !important;
-      }
-
-      & input[name="email"] {
-        margin-top: ${calcRem(20)} !important;
-      } 
+    #commento-login-box {
+      width: 100%;
+      max-width: 100%;
+      height: 100vh;
+      top: 0;
+      padding-left: ${calcRem(24)};
+      padding-right: ${calcRem(24)};
+      border: none;
+      overflow-y: scroll;
+      transform: unset;
     }
 
     .commento-email {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      box-shadow: none !important;
+      max-width: 100% !important;
     }
 
-    #commento-login-box-email-input,
-    #commento-login-box-name-input,
-    #commento-login-box-password-input {
-      padding: ${calcRem(4)} 0;
-      width: 100%;
-      height: ${calcRem(32)};
-      border-bottom: ${calcRem(1)} solid #7e8fa4;
-      border-radius: 0;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 300;
-      font-size: ${calcRem(16)};
-      color: ${colors.secondary.darken100};
-      transition: border-color 200ms ease-out;
+    #commento-login-box-oauth-buttons-container .commento-oauth-buttons {
+      justify-content: unset;
+    }
 
-      ::placeholder {
-        color: ${colors.secondary.darken100};
+    #commento-login-box-oauth-buttons-container .commento-button {
+      width: ${calcRem(148)};
+
+      &:nth-of-type(even) {
+        margin-left: ${calcRem(16)};
       }
-
-      :focus {
-        border-color: ${colors.primary.origin};
-      }
-    }
-
-    #commento-login-box-name-input {
-      margin-top: ${calcRem(11)};
-    }
-
-    #commento-login-box-password-input {
-      margin-top: ${calcRem(-5)};
-    }
-
-    #commento-login-box-website-input {
-      display: none;
-    }
-
-    #commento-login-box-email-button,
-    #commento-login-box-password-input + .commento-email-button {
-      margin-top: ${calcRem(30)};
-      width: 100%;
-      border: ${calcRem(1)} solid ${colors.secondary.darken100};
-      color: ${colors.secondary.darken100};
-      transition: border-color 200ms ease-out, color 200ms ease-out;
-    }
-
-    #commento-login-box-forgot-link-container a,
-    #commento-login-box-login-link-container a {
-      font-family: Roboto;
-      font-size: ${calcRem(14)};
-      font-style: normal;
-      font-weight: 300;
-      line-height: ${calcRem(24)};
-      letter-spacing: 0;
-      text-align: center;
-      text-decoration: underline;
-      color: ${colors.primary.origin};
-      transition: color 200ms ease-out;
-    }
-
-    #commento-login-box-forgot-link-container,
-    #commento-login-box-login-link-container {
-      margin-bottom: 0;
-    }
-
-    #commento-login-box-forgot-link-container {
-      margin-top: ${calcRem(20)};
-    }
-
-    #commento-login-box-login-link-container {
-      margin-top: ${calcRem(8)};
     }
 
     #commento-error {
-      position: absolute;
-      top: ${calcRem(38)};
-      left: 50%;
-      height: auto;
-      font-family: Roboto;
-      font-size: ${calcRem(14)};
-      font-style: normal;
-      font-weight: 300;
-      line-height: ${calcRem(24)};
-      letter-spacing: 0;
-      text-align: center;
-      transform: translateX(-50%);
-      opacity: 1;
-      animation: 200ms linear 2.5s ${fadeOut} forwards;
+      top: ${calcRem(40)};
+      width: ${calcRem(340)};
     }
+  }
 
-    @media (hover: hover) and (pointer: fine) {
-      .commento-login-box-close:hover::before,
-      .commento-login-box-close:hover::after,
-      #commento-login-box-oauth-buttons-container .commento-button:hover {
-        background-color: ${colors.primary.darken15} !important;
-      }
-
-      #commento-login-box-forgot-link-container a:hover,
-      #commento-login-box-login-link-container a:hover {
-        color: ${colors.primary.darken15};
-      }
-
-      #commento-login-box-email-button:hover,
-      #commento-login-box-password-input + .commento-email-button:hover {
-        color: ${colors.primary.darken15};
-        border-color: ${colors.primary.darken15};
-      }
+  @media screen and (max-height: 680px) {
+    #commento-login-box {
+      min-height: -webkit-fill-available;
+      height: -webkit-fill-available;
     }
-
-    ${mobile.all} {
-      #commento-login-box-container {
-        width: 100vw;
-      }
-
-      #commento-login-box {
-        width: 100%;
-        max-width: 100%;
-        height: 100vh;
-        top: 0;
-        padding-left: ${calcRem(24)};
-        padding-right: ${calcRem(24)};
-        border: none;
-        overflow-y: scroll;
-        transform: unset;
-      }
-
-      .commento-email {
-        max-width: 100% !important;
-      }
-
-      #commento-login-box-oauth-buttons-container .commento-oauth-buttons {
-        justify-content: unset;
-      }
-
-      #commento-login-box-oauth-buttons-container .commento-button {
-        width: ${calcRem(148)};
-
-        &:nth-of-type(even) {
-          margin-left: ${calcRem(16)};
-        }
-      }
-
-      #commento-error {
-        top: ${calcRem(40)};
-        width: ${calcRem(340)};
-      }
-    }
-
-    @media screen and (max-height: 680px) {
-      #commento-login-box {
-        min-height: -webkit-fill-available;
-        height: -webkit-fill-available;
-      }
-    }
-  `
-}
+  }
+`
 
 export const backgroundImagesStyles = css`
   & {
