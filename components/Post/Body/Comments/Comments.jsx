@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import styles, { backgroundImagesStyles } from './Comments.styled'
 import { Global } from '@emotion/react'
 import { Heading } from '@csssr/core-design'
+import { useRouter } from 'next/router'
 
 const insertScript = (src, id, parentElement) => {
   const script = window.document.createElement('script')
@@ -35,6 +36,7 @@ const cleanComments = () => {
 }
 
 const Comments = ({ id, className, language, IS_PRODUCTION }) => {
+  const { asPath } = useRouter()
   //This part allows comments in development mode
   //Read more about this hack: https://remysharp.com/2019/06/11/ejecting-disqus#testing-commento-offline--adjusting-urls
   useEffect(() => {
@@ -43,17 +45,15 @@ const Comments = ({ id, className, language, IS_PRODUCTION }) => {
     }
 
     window.parent = {
-      ...window.parent,
       location: {
-        ...window.parent.location,
         host: 'commento-testing.csssr-new-blog.csssr.cloud',
+        pathname: asPath,
       },
     }
-  }, [IS_PRODUCTION])
+  }, [IS_PRODUCTION, asPath])
 
   useEffect(() => {
     const document = window.document
-
     if (!window) {
       return
     }
