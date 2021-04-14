@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Error404Page from '../components/error/Error404Page'
-import { getPostsByLanguage } from '../lib/api'
+import Error404Page from '../../components/error/Error404Page'
+import { getPostsByLanguage } from '../../lib/api'
 
 class Custom404 extends React.Component {
   render() {
