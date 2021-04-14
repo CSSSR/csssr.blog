@@ -55,8 +55,6 @@ const PostNewsletter = ({
             dangerouslySetInnerHTML={{ __html: subtitle }}
           />
 
-          
-          {console.log(isMobile)}
           <ContactForm
             kind={kind}
             isMobile={isMobile}
