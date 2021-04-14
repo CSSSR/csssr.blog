@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './PostNewsletter.styles'
@@ -19,7 +19,23 @@ const PostNewsletter = ({
   const { title, subtitle, img, imgAlt } = postNewsletterData
 
   const [isMessageHidden, setMessageHidden] = useState(true)
+  const [isMobile, setMobile] = useState(null)
   const withoutSubscribeForm = language !== 'ru' || type === 'news'
+
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        setMobile(true)
+      } else {
+        setMobile(false)
+      }
+    }
+
+    window.addEventListener('load', updateWindowDimensions)
+    
+    return () => window.removeEventListener('load', updateWindowDimensions)
+  })
+
   return (
     <div
       className={cn(className, {
@@ -39,8 +55,11 @@ const PostNewsletter = ({
             dangerouslySetInnerHTML={{ __html: subtitle }}
           />
 
+          
+          {console.log(isMobile)}
           <ContactForm
             kind={kind}
+            isMobile={isMobile}
             isMessageHidden={isMessageHidden}
             setMessageHidden={setMessageHidden}
             BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
