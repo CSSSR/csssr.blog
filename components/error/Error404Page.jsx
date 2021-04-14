@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
@@ -18,9 +18,21 @@ import styles from './ErrorPage.styles'
 import globalStyles from '../Layout/Layout.styles'
 
 const ErrorPage = ({ className, posts }) => {
+  const [language, setLanguage] = useState()
+
   const route = useRouter()
-  const isLanguageRu = ruPathRegexp.test(route.asPath)
-  const language = isLanguageRu ? 'ru' : 'en'
+  const { isReady, asPath } = route
+
+  useEffect(() => {
+    if (isReady) {
+      ruPathRegexp.test(asPath) ? setLanguage('ru') : setLanguage('en')
+    }
+  }, [isReady, asPath])
+
+  if (!language) {
+    return null
+  }
+
   const postsToLanguage = posts[language]
   const categoriesToLanguage = getPostsCategories(postsToLanguage)
 
