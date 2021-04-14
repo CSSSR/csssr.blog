@@ -3,12 +3,12 @@ import Head from 'next/head'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { Header, ErrorPage404 } from '@csssr/core-design'
 
 import Meta from '../Meta'
 import ErrorCategories from './ErrorCategories'
 import ErrorPosts from './ErrorPosts'
+import ErrorLeftContent from './ErrorLeftContent'
 
 import ruPathRegexp from '../../utils/ruPathRegexp'
 import getPostsCategories from '../../utils/getPostsCategories'
@@ -28,15 +28,6 @@ const ErrorPage = ({ className, posts }) => {
     en: 'defaultEn',
     ru: 'defaultRu',
   }
-
-  const Img = ({ className }) => (
-    <PictureSmart
-      className={className}
-      alt="404"
-      requireImages={require.context('../../public/components/error/images/404')}
-      testId="ErrorPage404:block:img"
-    />
-  )
 
   const { title, subTitle } = errorText[language]
 
@@ -59,7 +50,12 @@ const ErrorPage = ({ className, posts }) => {
 
       <Meta />
 
-      <ErrorPage404 title={title} subTitle={subTitle} className={className} Img={Img}>
+      <ErrorPage404
+        title={title}
+        subTitle={subTitle}
+        className={className}
+        leftContent={<ErrorLeftContent />}
+      >
         <ErrorCategories items={categoriesToLanguage} language={language} />
         <ErrorPosts posts={postsToLanguage} language={language} />
       </ErrorPage404>
