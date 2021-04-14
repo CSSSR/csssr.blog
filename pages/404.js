@@ -29,14 +29,3 @@ export async function getStaticProps() {
     },
   }
 }
-
-export async function getStaticPaths() {
-  return {
-    paths: languages.map((language) => ({
-      params: {
-        language,
-      },
-    })),
-    fallback: false,
-  }
-}
