@@ -357,6 +357,17 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         }
       }
 
+      .submit button[status='pending'] > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        & span {
+          line-height: ${calcRem(12)};
+        }
+      }
+
       .submit > button {
         margin-top: 0;
       }
