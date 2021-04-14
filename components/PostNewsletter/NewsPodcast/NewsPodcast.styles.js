@@ -3,15 +3,21 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   & {
-    max-width: ${calcRem(120)};
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
-    margin-bottom: ${calcRem(61)};
+    margin-top: 13px;
+    margin-bottom: ${calcRem(67)};
     background-color: white;
-    transform: translate(${calcRem(39)}, ${calcRem(18)});
+    transform: translate(${calcRem(19)}, ${calcRem(18)});
   }
 
   .picture {
     max-width: ${calcRem(120)};
+
+    & img {
+      max-width: ${calcRem(120)};
+    }
   }
 
   .links {
@@ -46,16 +52,55 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   ${tablet.all} {
     & {
+      margin-top: ${calcRem(22)};
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: ${calcRem(51)};
+      margin-bottom: ${calcRem(47)};
       transform: unset;
+    }
+
+    .picture {
+      align-self: center;
+    }
+
+    .links {
+      margin-top: ${calcRem(20)};
+      margin-left: ${calcRem(20)};
     }
   }
 
   ${mobile.all} {
     & {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: unset;
+      transform: unset;
+    }
+
+    &.hidden_mobile_bottom {
       display: none;
+    }
+
+    .picture {
+      display: none;
+    }
+
+    .links {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+
+    .link-item {
+      &:not(:first-of-type) {
+        margin-top: 0;
+        margin-left: 16px;
+      }
+      
+      &:last-of-type {
+        margin-top: ${calcRem(15)};
+        margin-left: 0;
+      }
     }
    }
 `

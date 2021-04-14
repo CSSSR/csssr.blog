@@ -136,6 +136,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       margin-top: ${calcRem(24)};
     }
 
+    &.with_news_podcast {
+      margin-top: ${calcRem(30)};
+    }
+
     .container {
       position: relative;
       order: 2;

@@ -14,6 +14,8 @@ const PostNewsletter = ({
   language,
   kind,
   type,
+  onTop,
+  onBottom,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => {
@@ -21,11 +23,11 @@ const PostNewsletter = ({
 
   const [isMessageHidden, setMessageHidden] = useState(true)
   const withSubscribeForm = language === 'ru' && type !== 'news'
-  const withNewsPodcast = language == 'ru' && type === 'news'
+  const withNewsPodcast = type === 'news'
   return (
     <div
       className={cn(className, {
-        'without_subscribe-form': withSubscribeForm,
+        'without_subscribe-form': !withSubscribeForm,
         with_news_podcast: withNewsPodcast,
       })}
     >
@@ -52,9 +54,9 @@ const PostNewsletter = ({
         </div>
       )}
 
-      {withNewsPodcast && <NewsPodcast />}
+      {withNewsPodcast && <NewsPodcast onBottom={onBottom} />}
 
-      <PostShare language={language} type={type} />
+      <PostShare language={language} type={type} onTop={onTop} />
     </div>
   )
 }
