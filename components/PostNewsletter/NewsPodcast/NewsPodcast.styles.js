@@ -77,7 +77,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       transform: unset;
     }
 
-    &.hidden_mobile_bottom {
+    &.hidden_mobile {
       display: none;
     }
 

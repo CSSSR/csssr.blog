@@ -4,7 +4,7 @@ import cn from 'classnames'
 import styles from './NewsPodcast.styles'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-const NewsPodcast = ({ className, onBottom }) => {
+const NewsPodcast = ({ className, HideNewsPodcastOnMobile }) => {
   const links = [
     {
       title: 'Apple Podcasts',
@@ -27,7 +27,7 @@ const NewsPodcast = ({ className, onBottom }) => {
   return (
     <div
       className={cn(className, {
-        hidden_mobile_bottom: onBottom,
+        hidden_mobile: HideNewsPodcastOnMobile,
       })}
       data-testid="NewsPodcast:block"
     >
