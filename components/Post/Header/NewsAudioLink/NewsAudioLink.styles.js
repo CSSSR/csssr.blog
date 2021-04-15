@@ -16,12 +16,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 100%;
-    will-change: opacity;
-  }
-
-  .soundtrack-image {
-    z-index: 2;
-    opacity: 1;
   }
 
   .links-wrapper {
@@ -77,6 +71,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .soundtrack-image {
       height: ${calcRem(18)};
+      background-size: contain;
     }
 
     .links-wrapper {
