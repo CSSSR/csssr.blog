@@ -731,7 +731,7 @@ const modal = ({ breakpoints: { mobile }, colors }) => css`
     }
 
     #commento-error {
-      top: ${calcRem(40)};
+      top: ${calcRem(36)};
       width: ${calcRem(340)};
     }
   }
