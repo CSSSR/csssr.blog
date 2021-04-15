@@ -50,7 +50,7 @@ const News = ({
         <Categories items={categories} language="ru" activeCategory="news512" />
 
         <Grid className={className}>
-          <Heading.H1 className="title" type="regular" size="l">
+          <Heading.H1 className="title" type="regular" size="l" data-testid="News:block:title">
             Новости 512
           </Heading.H1>
 

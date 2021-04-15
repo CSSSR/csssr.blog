@@ -73,5 +73,21 @@ module.exports = {
   },
   contacts: {
     url: '/contacts',
-  }
+  },
+  news512: {
+    url: '/news512/',
+  },
+  news145: {
+    url: '/episode/news-145/',
+  },
+  pageToo: {
+    url: '2/',
+  },
+  audio: {
+    url: 'https://soundcloud.com/csssr/firefox-85-gitlab-138-nodejs-1570-null-i-undefined-privatnost-github-pages-i-open-web-docs',
+  },
+  articleRu: {
+    url: '/article/how-to-be-a-beginner-developer/',
+  },
+
 }

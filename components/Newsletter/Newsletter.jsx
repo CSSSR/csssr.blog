@@ -18,8 +18,8 @@ const Newsletter = ({
   const { title, subtitle, img, imgAlt } = newsletterData
 
   return (
-    <div className={className}>
-      <Grid as="section" className="section" data-testid="Newsletter:block">
+    <div className={className} data-testid="Newsletter:block">
+      <Grid as="section" className="section">
         <div className="container">
           <Heading.H2 type="regular" className="title">
             {title}

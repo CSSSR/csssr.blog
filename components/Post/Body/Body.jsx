@@ -31,7 +31,7 @@ const Body = ({
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => (
-  <Grid className={cn(`post-body ${className}`)}>
+  <Grid className={cn(`post-body ${className}`)} data-testid="Post:block">
     <PostNewsletter
       className="post-newsletter hidden_mobile"
       language={language}
