@@ -28,7 +28,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: ${calcRem(5)};
+    margin-top: ${calcRem(15)};
     color: #7D7FFE;
   }
 
@@ -38,7 +38,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: ${calcRem(16)};
-    line-height: ${calcRem(31)};
+    line-height: ${calcRem(19)};
     color: #0076FF;
   }
 
