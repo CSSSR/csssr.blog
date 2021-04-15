@@ -33,10 +33,13 @@ const Body = ({
 }) => (
   <Grid className={cn(`post-body ${className}`)}>
     <PostNewsletter
-      className="post-newsletter hidden_mobile"
+      className={cn('post-newsletter', {
+        hidden_mobile: type !== 'news',
+      })}
       language={language}
       type={type}
       kind="post"
+      HideShareLinksOnMobile
       BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
       BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
       data-testid="Post:block"
@@ -210,6 +213,7 @@ const Body = ({
       className="post-newsletter hidden_desktop"
       language={language}
       type={type}
+      HideNewsPodcastOnMobile
       kind="post"
       BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
       BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}

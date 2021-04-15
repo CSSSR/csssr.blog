@@ -6,6 +6,7 @@ import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { Heading, Text } from '@csssr/core-design'
 import ContactForm from '../ContactForm'
 import PostShare from '../PostShare'
+import NewsPodcast from './NewsPodcast'
 import { postNewsletterData } from '../../data/newsletter'
 
 const PostNewsletter = ({
@@ -13,20 +14,24 @@ const PostNewsletter = ({
   language,
   kind,
   type,
+  HideShareLinksOnMobile,
+  HideNewsPodcastOnMobile,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => {
   const { title, subtitle, img, imgAlt } = postNewsletterData
 
   const [isMessageHidden, setMessageHidden] = useState(true)
-  const withoutSubscribeForm = language !== 'ru' || type === 'news'
+  const withSubscribeForm = language === 'ru' && type !== 'news'
+  const withNewsPodcast = type === 'news'
   return (
     <div
       className={cn(className, {
-        'without_subscribe-form': withoutSubscribeForm,
+        'without_subscribe-form': !withSubscribeForm,
+        with_news_podcast: withNewsPodcast,
       })}
     >
-      {!withoutSubscribeForm && (
+      {withSubscribeForm && (
         <div className="container">
           <PictureSmart requireImages={img} className="picture" alt={imgAlt} />
           <Heading.H2 type="regular" className="title">
@@ -49,7 +54,9 @@ const PostNewsletter = ({
         </div>
       )}
 
-      <PostShare language={language} type={type} />
+      {withNewsPodcast && <NewsPodcast HideNewsPodcastOnMobile={HideNewsPodcastOnMobile} />}
+
+      <PostShare language={language} type={type} HideShareLinksOnMobile={HideShareLinksOnMobile} />
     </div>
   )
 }

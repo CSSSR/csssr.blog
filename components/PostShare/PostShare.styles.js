@@ -13,6 +13,10 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
       margin-top: 0;
       transform: unset;
     }
+
+    &.with_news_podcast {
+      margin-left: 10px;
+    }
   }
 
   .links {
@@ -100,6 +104,10 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
     &.without_margin_top {
       margin-left: auto;
     }
+
+    &.with_news_podcast {
+      margin-left: unset;
+    }
   }
 
   ${tablet.all} {
@@ -112,6 +120,11 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
       margin-right: auto;
       margin-left: auto;
     }
+
+    &.without_margin_top.with_news_podcast {
+      margin: unset;
+      transform: translateX(${calcRem(7)});
+    }
   }
 
   ${mobile.all} {
@@ -123,6 +136,14 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
 
       &._ru {
         margin-top: 0;
+      }
+
+      &.without_share_links .links {
+        display: none;
+      }
+
+      &.with_news_podcast {
+        margin-left: 0;
       }
     }
 
