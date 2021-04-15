@@ -103,7 +103,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
     &.without_subscribe-form {
       grid-column: 1;
-      grid-row: 1;
     }
 
     .title {
