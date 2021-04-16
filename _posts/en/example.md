@@ -1,5 +1,6 @@
 ---
 title: 'This is an <i>example</i> of components usage'
+description: 'This is a example description'
 coverImageAlt: 'Image description'
 date: '2019-03-16T05:35:07.322Z'
 tag: 'web-development'

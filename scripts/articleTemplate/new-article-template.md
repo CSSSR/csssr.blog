@@ -1,21 +1,21 @@
 ---
-title: '<i>Статья</i> {{slug}}'
-coverImageAlt: 'Мы хвастаемся accessibility, поэтому очень важно здесь указать описание того, что изображено на картинки в шапке статьи'
+title: '<i>Article</i> {{slug}}'.
+coverImageAlt: 'This specifies the alt text for the title image in the article header. Please write good alt text, it's important for accessibility.'
 date: '2020-05-16T06:48:07.322Z'
 tag: 'web-development'
 ---
 
-**Для** быстрого старта можно посмотреть на уже созданные статьи.
+**For** a quick start, you can look at already created articles.
 
 ## {{slug}}
 
-Все картинки статьи хранятся в её папке картинок здесь public/posts/{{slug}}
-и подключаются по имени папки с картинками.
+All pictures of an article are stored in its pictures folder here `public/posts/{{slug}}`
+and connected by name of the images folder.
 
-Для статьи обязательно наличие картинок mainCoverS (маленькая картинка для главной), mainCoverL (большая картинка для главной) и postCover (картинка в шапке статьи).
-Генератор уже создал заглушки для этих картинок, а также для картинки mySampleImage,
-которую вы видите ниже:
+It is obligatory to have mainCoverS (small picture for main page), mainCoverL (big picture for main page) and postCover (picture in article header) pictures.
+The generator has already created a stub for those images and also for the image mySampleImage,
+which you can see below:
 
-<Img imageName='mySampleImage' alt='Не забываем указывать alt!' />
+<Img imageName='mySampleImage' alt='Don't forget to specify alt!' />
 
-Конец статьи.
+End of article.
