@@ -23,7 +23,7 @@ const PostNewsletter = ({
   const withoutSubscribeForm = language !== 'ru' || type === 'news'
 
   useEffect(() => {
-    const updateWindowDimensions = () => {
+    const checkWindowWidth = () => {
       if (window.matchMedia("(max-width: 767px)").matches) {
         setMobile(true)
       } else {
@@ -31,10 +31,10 @@ const PostNewsletter = ({
       }
     }
 
-    window.addEventListener('load', updateWindowDimensions)
+    window.addEventListener('load', checkWindowWidth)
     
-    return () => window.removeEventListener('load', updateWindowDimensions)
-  })
+    return () => window.removeEventListener('load', checkWindowWidth)
+  }, [])
 
   return (
     <div

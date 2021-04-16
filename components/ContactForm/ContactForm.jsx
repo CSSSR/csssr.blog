@@ -70,7 +70,7 @@ const Component = ({
   }
 
   const handleMessageBlur = (elem) => {
-    if (!elem.value && setMessageHidden && !isMobile) {
+    if (!elem.value && setMessageHidden) {
       setMessageHidden(true)
     }
   }
@@ -132,7 +132,7 @@ const Component = ({
             />
           </div>
         </div>
-        <Fade duration={400} collapse when={isMobile ? true : !isMessageHidden}>
+        <Fade duration={400} collapse when={isMobile || !isMessageHidden}>
           <p className="policy">
             Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и
             информационных материалов, а также факт своего ознакомления и согласия с
