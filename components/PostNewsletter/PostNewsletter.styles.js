@@ -4,7 +4,7 @@ import calcRem from '../../utils/style/calcRem'
 const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   & {
     position: sticky;
-    top: ${calcRem(154)}; //100px отступ + 64px высота хедера - 10px padding-top
+    top: ${calcRem(124)};
     left: 0;
     z-index: 999;
     grid-column: 1 / span 2;
@@ -102,7 +102,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     }
 
     &.without_subscribe-form {
-      top: ${calcRem(124)};
       grid-column: 1;
       grid-row: 1;
     }
