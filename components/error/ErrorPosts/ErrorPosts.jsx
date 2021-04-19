@@ -1,21 +1,32 @@
 import React from 'react'
 import { string, shape, object, arrayOf } from 'prop-types'
-import { parseISO } from 'date-fns'
 import styled from '@emotion/styled'
 
 import ErrorPostCard from './ErrorPostCard'
 
+import postsOrderEn from '../../../postsOrderEn.json'
+import postsOrderRu from '../../../postsOrderRu.json'
+
 import styles from './ErrorPosts.styles'
 
 const ErrorPosts = ({ className, posts, language }) => {
+  const postsOrderByLanguage = {
+    en: postsOrderEn,
+    ru: postsOrderRu,
+  }
   const lastPostCount = 6
-  const sortedPosts = posts
-    .sort((postA, postB) => parseISO(postB.date) - parseISO(postA.date))
+  const newsSlug = 'news512'
+
+  const postsOrder = postsOrderByLanguage[language]
+    .flat()
+    .filter((slug) => slug !== newsSlug)
     .slice(0, lastPostCount)
+
+  const postsFiltered = postsOrder.map((slug) => posts.find((post) => post.slug === slug))
 
   return (
     <ul className={className} data-testid="ErrorPage404:block:posts.list">
-      {sortedPosts.map((post) => (
+      {postsFiltered.map((post) => (
         <ErrorPostCard key={post.slug} post={post} language={language} />
       ))}
     </ul>
