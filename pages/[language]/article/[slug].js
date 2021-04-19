@@ -17,6 +17,7 @@ export default function PostPage({
   posts,
   post,
   language,
+  IS_PRODUCTION,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) {
@@ -36,6 +37,7 @@ export default function PostPage({
         language={language}
         posts={posts}
         post={post}
+        IS_PRODUCTION={IS_PRODUCTION}
         BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
         BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
       />
@@ -88,6 +90,7 @@ export async function getStaticProps({ params }) {
       language,
       posts,
       post,
+      IS_PRODUCTION: process.env.IS_PRODUCTION === 'TRUE',
       BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
       BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
     },
