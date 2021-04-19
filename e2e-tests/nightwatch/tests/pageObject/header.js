@@ -25,11 +25,18 @@ module.exports = {
     lms: '[data-testid="Header:nav:link.lms"]',
     tracker: '[data-testid="Header:nav:link.tracker"]',
     news: '[data-testid="Categories:link:news"]',
+    allArticles: '[data-testid="Categories:link:all"]',
+    management: '[data-testid="Categories:link:management"]',
+    webDevelopment: '[data-testid="Categories:link:web-development"]',
+    culture: '[data-testid="Categories:link:culture"]',
+    news: '[data-testid="Categories:link:news"]',
+    business: '[data-testid="Categories:link:business"]',
   },
   block: {
     header: '[data-testid="Header:block"]',
     dropdown: '[data-testid="Header:nav.dropdown"]',
     submenu: '[data-testid="Categories:block"]',
+    categories: '[data-testid="Categories:block"]',
   },
   button: {
     burger: '[data-testid="Header:block"] button',

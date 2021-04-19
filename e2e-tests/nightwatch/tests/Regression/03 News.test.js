@@ -80,7 +80,7 @@ testcase('News page', () => {
     })
     browser.getCssProperty(news.text.numberSecondNews, 'font-size', function (result) {
       if (result.value !== '24px') {
-        throw new Error('incorrect font siz')
+        throw new Error('incorrect font size')
       }
     })
   })

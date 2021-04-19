@@ -6,6 +6,7 @@ module.exports = {
     nonexistingNews: '[data-testid="NewsList:link:episode[12]"]',
     fullPage: '[data-testid="Layout:block:main"]',
     audio: '[data-testid="Post:link:newsAudio"]',
+    radio: '[data-testid^="PostCard:link:article.news"]',
   },
   text: {
     title: '[data-testid="News:block:title"]',
