@@ -35,12 +35,12 @@ const cleanComments = () => {
   }
 }
 
-const Comments = ({ id, className, language, IS_PRODUCTION }) => {
+const Comments = ({ id, className, language }) => {
   const { asPath } = useRouter()
   //This part allows comments in development mode
   //Read more about this hack: https://remysharp.com/2019/06/11/ejecting-disqus#testing-commento-offline--adjusting-urls
   useEffect(() => {
-    if (IS_PRODUCTION) {
+    if (typeof window !== undefined && window.parent.location.host === 'blog.csssr.com') {
       return
     }
 
@@ -50,7 +50,7 @@ const Comments = ({ id, className, language, IS_PRODUCTION }) => {
         pathname: asPath,
       },
     }
-  }, [IS_PRODUCTION, asPath])
+  }, [asPath])
 
   useEffect(() => {
     const document = window.document

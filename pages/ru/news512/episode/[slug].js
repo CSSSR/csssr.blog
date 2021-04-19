@@ -7,7 +7,6 @@ import getBenchmarkEmailListId from '../../../../utils/getBenchmarkEmailListId'
 export default function PostNewsPage({
   post,
   /* morePosts, */ language,
-  IS_PRODUCTION,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) {
@@ -18,7 +17,6 @@ export default function PostNewsPage({
           language={language}
           post={post}
           type="news"
-          IS_PRODUCTION={IS_PRODUCTION}
           BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
           BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
         />
@@ -44,7 +42,6 @@ export async function getStaticProps({ params }) {
     props: {
       post: post,
       language: 'ru',
-      IS_PRODUCTION: process.env.IS_PRODUCTION === 'TRUE',
       BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
       BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
     },
