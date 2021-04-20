@@ -75,8 +75,14 @@ const base = ({breakpoints: { desktop, tablet, mobile }}) => css`
       letter-spacing: ${calcRem(1)};
     }
 
+    .items {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
     .item {
       margin-right: ${calcRem(20)};
+      margin-bottom: ${calcRem(16)};
     }
   }
 
