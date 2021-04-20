@@ -46,6 +46,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   ${desktop.all} {
     & {
       margin-top: 29px;
+      top: 132px;
     }
 
     .title {
@@ -91,6 +92,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   ${tablet.all} {
     & {
       left: 0;
+      top: ${calcRem(112)};
       width: ${calcRem(160)};
       padding-left: ${calcRem(12)};
       padding-right: ${calcRem(12)};
