@@ -45,7 +45,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${desktop.all} {
     & {
-      margin-top: 40px;
+      margin-top: 29px;
     }
 
     .title {
@@ -86,7 +86,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     &.without_subscribe-form {
       transform: translateX(69px);
     }
-    
   }
 
   ${tablet.all} {
