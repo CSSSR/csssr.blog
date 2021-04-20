@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     display: flex;
     flex-direction: column;
@@ -50,6 +50,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     text-decoration: underline;
   }
 
+  ${desktop.all} {
+    & {
+      margin-bottom: 69px;
+    }
+  }
+
   ${tablet.all} {
     & {
       margin-top: ${calcRem(22)};
@@ -96,7 +102,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         margin-top: 0;
         margin-left: 16px;
       }
-      
+
       &:last-of-type {
         margin-top: ${calcRem(15)};
         margin-left: 0;
