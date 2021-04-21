@@ -83,13 +83,13 @@ tag: 'culture'
 **Сплошь и рядом веб-дизайнеры сдавались и делали сайт только под один, лидирующий браузер:** _«Лучше смотреть в Netscape Navigator / Internet Explorer»_. Это стало настолько привычной практикой, что в популярном тогда <a href="https://www.uv.es/jordi/v3/html/html/" target="_blank">справочнике</a> по HTML от Netscape эта плашка — <a href="https://www.uv.es/jordi/v3/html/html/tags1.htm" target="_blank">пример того, как использовать тег &lt;a&gt; </a>.
 
 <Img
-  src='/images/dont-resize/ru/frontend-history-java-script-as-a-reflection-of-a-new-era/website-designs-coca-cola/all.webp'
+  src='/images/dont-resize/ru/frontend-history-java-script-as-a-reflection-of-a-new-era/coca-cola/all.webp'
   alt='Top 10 worst 90s website designs coca-cola'
   withOutProcessing
   align='left'
 >
 <Caption size='s'>
-    Или вот такая надпись на промосайте Coca-Cola: «Этот сайт лучше смотреть, разув глаза и через SHOCKWAVE 6.0. А, да, и NETSCAPE 4.04 не помешает». Будь крутым, читай «Молоток».
+    Или вот такая надпись на промосайте Coca-Cola: «Этот сайт лучше смотреть, разув глаза и через `SHOCKWAVE 6.0.` А, да, и `NETSCAPE 4.04` не помешает». Будь крутым, читай «Молоток».
 </Caption>
 
 ### `<blink>` против `<marquee>`
