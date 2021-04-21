@@ -124,7 +124,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .picture {
-      margin-top: 27px;
+      margin-top: 24px;
     }
 
     &.type_news {
@@ -163,7 +163,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       min-height: ${calcRem(235)};
-      margin-top: ${calcRem(12)};
+      margin-top: ${calcRem(14)};
       grid-column: 7 / span 4;
     }
 

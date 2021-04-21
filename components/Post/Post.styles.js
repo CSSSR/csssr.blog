@@ -60,9 +60,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
     & {
-      padding-top: ${calcRem(128)};
+      padding-top: ${calcRem(56)};
       background-image: url(${require('../../public/components/post/post-header-bg.svg').default});
-      background-size: auto ${calcRem(250)};
+      background-size: auto ${calcRem(187)};
       background-repeat: repeat-x;
     }
 
