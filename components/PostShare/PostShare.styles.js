@@ -108,6 +108,10 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
     &.with_news_podcast {
       margin-left: 10px;
     }
+
+    &.without_aligning {
+      margin-left: unset;
+    }
   }
 
   ${tablet.all} {
@@ -124,6 +128,11 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
     &.without_margin_top.with_news_podcast {
       margin: unset;
       transform: translateX(${calcRem(7)});
+    }
+
+    &.without_aligning {
+      margin-right: unset;
+      margin-left: unset;
     }
   }
 

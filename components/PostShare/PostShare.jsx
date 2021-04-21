@@ -51,6 +51,7 @@ const PostShare = ({ className, language, type, HideShareLinksOnMobile }) => {
         without_margin_top: language !== 'ru' || type === 'news',
         with_news_podcast: language === 'ru' || type === 'news',
         without_share_links: HideShareLinksOnMobile,
+        without_aligning: language !== 'ru',
       })}
     >
       <Heading.H2 type="regular" className="share-title">
