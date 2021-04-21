@@ -23,6 +23,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     &.is_quote_like {
+      margin-top:${calcRem(40)};
       padding-top: ${calcRem(18)};
       padding-bottom: ${calcRem(18)};
       padding-left:${calcRem(24)};

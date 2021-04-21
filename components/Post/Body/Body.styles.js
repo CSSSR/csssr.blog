@@ -126,8 +126,12 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     }
 
     .text_regular_m + .heading_regular_m,
-    div +  .heading_regular_m {
-      margin-top: 50px;
+    div + .heading_regular_m {
+      margin-top: 25px;
+    }
+
+    div + .heading_regular_m + .text_regular_m:first-of-type {
+      margin-top: 25px;
     }
 
     .heading_regular_s {
