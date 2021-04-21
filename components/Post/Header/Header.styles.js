@@ -5,6 +5,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .post-meta {
     grid-column: 4 / span 4;
     grid-row: 1;
+    line-height: 1;
+    font-size: 0;
   }
 
   .tag,
@@ -54,7 +56,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .date {
-    margin-right: ${calcRem(22)};
+    margin-right: ${calcRem(24)};
     display: inline-block;
     font-weight: normal;
     color: #7E8FA4;
@@ -112,7 +114,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     & {
-      padding-top: 37px;
+      padding-top: 40px;
     }
 
     .title {
@@ -137,7 +139,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      padding-top: ${calcRem(25)};
+      padding-top: ${calcRem(28)};
     }
 
     .post-meta {
