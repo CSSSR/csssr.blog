@@ -106,7 +106,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
     }
 
     &.with_news_podcast {
-      margin-left: unset;
+      margin-left: 10px;
     }
   }
 
@@ -115,7 +115,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
       padding-left: ${calcRem(12)};
       padding-right: ${calcRem(12)};
     }
-    
+
     &.without_margin_top {
       margin-right: auto;
       margin-left: auto;
