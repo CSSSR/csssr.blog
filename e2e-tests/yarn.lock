@@ -164,9 +164,9 @@
   integrity sha512-sHgx07IjWWrtG8gcpCNHc0k5S9A+B8C7Pqf7v5AdSpBqweyVfwSty8S91e+YFJsNDn60IeRWCCUfbcemxv86SA==
 
 "@types/node@*", "@types/node@^14.6.4":
-  version "14.14.37"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.37.tgz#a3dd8da4eb84a996c36e331df98d82abd76b516e"
-  integrity sha512-XYmBiy+ohOR4Lh5jE379fV2IU+6Jn4g5qASinhitfyO71b/sCo6MKsMLF5tc7Zf2CE8hViVQyYSobJNke8OvUw==
+  version "14.14.41"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.41.tgz#d0b939d94c1d7bd53d04824af45f1139b8c45615"
+  integrity sha512-dueRKfaJL4RTtSa7bWeTK1M+VH+Gns73oCgzvYfHZywRCoPSd8EkXBL0mZ9unPTveBn+D9phZBaxuzpwjWkW0g==
 
 "@types/yauzl@^2.9.1":
   version "2.9.1"
@@ -583,9 +583,9 @@ chownr@^2.0.0:
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
 chromedriver@*:
-  version "89.0.0"
-  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-89.0.0.tgz#a6f27aa306400651a20dc04976fe5b2c4e65d61a"
-  integrity sha512-+DVYp3+m6tZUYTMl9fEgCZIDk9YBTcHws82nIV1JYwusu51zRITA0oeNzuPyFhuK7ageFnnKCDviH2BL5I4M0w==
+  version "90.0.0"
+  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-90.0.0.tgz#1b18960a31a12884981bdc270b43c4356ce7a65a"
+  integrity sha512-k+GMmNb7cmuCCctQvUIeNxDGSq8DJauO+UKQS2qLT8aA36CPEcv8rpFepf6lRkNaIlfwdCUt/0B5bZDw3wY2yw==
   dependencies:
     "@testim/chrome-version" "^1.0.7"
     axios "^0.21.1"
@@ -2637,9 +2637,9 @@ object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
 object-inspect@^1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.9.0.tgz#c90521d74e1127b67266ded3394ad6116986533a"
-  integrity sha512-i3Bp9iTqwhaLZBxGkRfo5ZbE07BQRT7MGu8+nNgwW9ItGp1TzCTw2DLEoWwjClxBjOFI/hWljTAmYGCEwmtnOw==
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.10.2.tgz#b6385a3e2b7cae0b5eafcf90cddf85d128767f30"
+  integrity sha512-gz58rdPpadwztRrPjZE9DZLOABUpTGdcANUgOwBFO1C+HZZhePoP83M65WGDmbpwFYJSWqavbl4SgDn4k8RYTA==
 
 object-keys@^1.0.11, object-keys@^1.0.12, object-keys@^1.1.1:
   version "1.1.1"
@@ -3507,9 +3507,9 @@ supports-color@^7.1.0:
     has-flag "^4.0.0"
 
 table@^6.0.4:
-  version "6.0.9"
-  resolved "https://registry.yarnpkg.com/table/-/table-6.0.9.tgz#790a12bf1e09b87b30e60419bafd6a1fd85536fb"
-  integrity sha512-F3cLs9a3hL1Z7N4+EkSscsel3z55XT950AvB05bwayrNg5T1/gykXtigioTAjbltvbMSJvvhFCbnf6mX+ntnJQ==
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/table/-/table-6.3.2.tgz#afa86bee5cfe305f9328f89bb3e5454132cdea28"
+  integrity sha512-I9/Ca6Huf2oxFag7crD0DhA+arIdfLtWunSn0NIXSzjtUlDgIBGVZY7SsMkNPNT3Psd/z4gza0nuEpmra9eRbg==
   dependencies:
     ajv "^8.0.1"
     is-boolean-object "^1.1.0"
