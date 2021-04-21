@@ -22,7 +22,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(38)};
+      margin-top: ${calcRem(30)};
       grid-column: 3 / span 8;
     }
 

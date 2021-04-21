@@ -193,7 +193,11 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
 
   ${tablet.all} {
     & > .text_regular_m:first-of-type  {
-      margin-top: ${calcRem(30)};
+      margin-top: ${calcRem(40)};
+    }
+
+    & > .heading_regular_m + .text_regular_m:first-of-type {
+      margin-top: ${calcRem(20)};
     }
 
     & > .text_regular_m:first-of-type strong:first-of-type {
@@ -204,7 +208,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     }
 
     .heading_regular_m {
-      margin-top: ${calcRem(30)};
+      margin-top: ${calcRem(20)};
       font-size: ${calcRem(18)};
       line-height: ${calcRem(24)};
     }
