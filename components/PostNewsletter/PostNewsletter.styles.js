@@ -45,7 +45,11 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${desktop.all} {
     & {
-      margin-top: 29px;
+      margin-top: 40px;
+    }
+
+    &.with_news_podcast {
+      margin-top: 57px;
       top: 132px;
     }
 
@@ -108,6 +112,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
     &.without_subscribe-form.with_news_podcast {
       grid-row: 1 / span 100;
+    }
+
+    &.with_news_podcast {
+      margin-top: ${calcRem(78)};
     }
 
     .title {
