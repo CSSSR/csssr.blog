@@ -107,6 +107,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
 
     &.with_news_podcast {
       margin-left: 10px;
+      margin-top: 57px;
     }
 
     &.without_aligning {
