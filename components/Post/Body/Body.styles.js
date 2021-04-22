@@ -196,7 +196,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       margin-top: ${calcRem(40)};
     }
 
-    & > .heading_regular_m + .text_regular_m:first-of-type {
+    & > .post-newsletter + .heading_regular_m + .text_regular_m {
       margin-top: ${calcRem(20)};
     }
 
@@ -207,8 +207,12 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       line-height: ${calcRem(32)};
     }
 
-    .heading_regular_m {
+    & > .post-newsletter + .heading_regular_m {
       margin-top: ${calcRem(20)};
+    }
+
+    .heading_regular_m {
+      margin-top: ${calcRem(30)};
       font-size: ${calcRem(18)};
       line-height: ${calcRem(24)};
     }
@@ -282,6 +286,14 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       padding-right: ${calcRem(11)};
       font-size: ${calcRem(64)};
       line-height: ${calcRem(32)};
+    }
+
+    & > .post-newsletter + .heading_regular_m {
+      margin-top: ${calcRem(20)};
+    }
+
+    & > .post-newsletter + .heading_regular_m + .text_regular_m {
+      margin-top: ${calcRem(20)};
     }
 
     .heading_regular_m {

@@ -76,6 +76,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       width: 100%;
       margin-left: 0;
       transform: translateX(0);
+      margin-top: ${calcRem(30)};
     }
   }
 
