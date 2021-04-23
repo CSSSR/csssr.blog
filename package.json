@@ -8,7 +8,9 @@
     "sitemap": "node scripts/generateSitemapXml.js",
     "build": "next build && next export && yarn robots && yarn sitemap",
     "lint:js": "eslint --ext .js,.jsx --fix --max-warnings=0 .",
-    "article": "node scripts/articleTemplate/scaffoldNewArticle.js"
+    "article": "node scripts/articleTemplate/scaffoldNewArticle.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@csssr/core-design": "^6.4.3",
@@ -41,9 +43,15 @@
     "sitemap": "^6.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.16",
     "@csssr/eslint-config-core": "^1.1.1",
     "@emotion/eslint-plugin": "^11.2.0",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9",
     "@svgr/webpack": "^5.5.0",
+    "babel-loader": "^8.2.2",
     "dotenv": "8.2.0",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.1.0",
