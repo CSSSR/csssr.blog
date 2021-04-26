@@ -6,10 +6,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     display: flex;
     flex-direction: column;
     margin-left: auto;
-    margin-top: 13px;
     margin-bottom: ${calcRem(67)};
     background-color: white;
-    transform: translate(${calcRem(19)}, ${calcRem(18)});
+    transform: translateX(${calcRem(18)});
   }
 
   .picture {
@@ -58,7 +57,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(22)};
       margin-left: auto;
       margin-right: auto;
       margin-bottom: ${calcRem(47)};

@@ -49,8 +49,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     }
 
     &.with_news_podcast {
-      margin-top: 57px;
-      top: 132px;
+      margin-top: 64px;
+      top: 166px;
     }
 
     .title {
@@ -115,7 +115,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     }
 
     &.with_news_podcast {
-      margin-top: ${calcRem(78)};
+      top: ${calcRem(134)};
+      margin-top: ${calcRem(24)};
     }
 
     .title {
