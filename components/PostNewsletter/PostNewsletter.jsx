@@ -7,6 +7,7 @@ import { Heading, Text } from '@csssr/core-design'
 import ContactForm from '../ContactForm'
 import PostShare from '../PostShare'
 import { postNewsletterData } from '../../data/newsletter'
+import { defaultTheme } from '@csssr/core-design'
 
 const PostNewsletter = ({
   className,
@@ -24,7 +25,7 @@ const PostNewsletter = ({
 
   useEffect(() => {
     const checkWindowWidth = () => {
-      if (window.matchMedia("(max-width: 767px)").matches) {
+      if (window.matchMedia(defaultTheme.breakpoints.mobile.all.slice('@media '.length)).matches) {
         setMobile(true)
       } else {
         setMobile(false)
