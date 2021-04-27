@@ -1,0 +1,38 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+
+<Meta title="Subtitle" />
+
+export const Subtitle = ({ content }) => {
+  return (
+    <>
+      {compilerMdx({
+        content: `<Subtitle>${content}</Subtitle>`,
+      })}
+    </>
+  );
+};
+
+# [`<Subtitle />`](http://s.csssr.ru/U31J879TR/20200527125943.jpg)
+
+Компонент подзаголовка, обычно он находится в самом начале статьи, между хедером статьи и первым параграфом.
+
+## Пример кода
+
+```jsx
+<Subtitle>
+  Cost-effectiveness, high-quality services and other reasons why so many
+  Singapore entrepreneurs are looking into offshoring web development services
+</Subtitle>
+```
+
+## Результат
+
+<Story
+  name="Default"
+  args={{
+    content: `Cost-effectiveness, high-quality services and other reasons why so many Singapore entrepreneurs are looking into offshoring web development services`,
+  }}
+>
+  {Subtitle.bind({})}
+</Story>

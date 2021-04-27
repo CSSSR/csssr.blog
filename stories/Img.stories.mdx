@@ -1,9 +1,7 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
-import {
-  dataByLanguagePostAndImageDontResize,
-  dataByLanguagePostAndImageResize,
-} from '../lib/allPostsImages';
+import { dataByLanguagePostAndImageDontResize } from '../lib/allPostsImages';
+import { getStringAttributes } from './utils/getStringAttributes';
 
 <Meta
   title="Img"
@@ -14,20 +12,22 @@ import {
     },
     imageName: {
       type: 'radio',
-      options: ['manWithCafeBg','mySampleImageSmall','peopleWithBasket','peopleWithDogBg','peopleWithGramophone'],
-    }
+      options: [
+        'manWithCafeBg',
+        'mySampleImageSmall',
+        'peopleWithBasket',
+        'peopleWithDogBg',
+        'peopleWithGramophone',
+      ],
+    },
   }}
 />
 
 export const Img = (args) => {
-  const attributes = Object.keys(args).reduce((acc, item) => {
-    acc += `${item}="${args[item]}" `;
-    return acc;
-  }, '');
   return (
     <>
       {compilerMdx({
-        content: `<Img ${attributes}/>`,
+        content: `<Img ${getStringAttributes(args)}/>`,
         images: dataByLanguagePostAndImageDontResize['en']['example'],
       })}
     </>

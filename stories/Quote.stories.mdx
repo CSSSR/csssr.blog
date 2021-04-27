@@ -1,0 +1,123 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import {
+  dataByLanguagePostAndImageDontResize,
+  dataByLanguagePostAndImageResize,
+} from '../lib/allPostsImages';
+import { getStringAttributes } from './utils/getStringAttributes';
+
+<Meta
+  title="Quote"
+  argTypes={{
+    imageName: {
+      type: 'radio',
+      options: ['india', 'china', 'europe', 'indonesia', 'summary', 'vietnam'],
+    },
+    type: {
+      type: 'select',
+      options: ['blue', 'black'],
+    },
+  }}
+/>
+
+export const Quote = ({ content, ...args }) => {
+  return (
+    <>
+      {compilerMdx({
+        content: `<Quote ${getStringAttributes(args)}>${content}</Quote>`,
+        images:
+          dataByLanguagePostAndImageDontResize['en'][
+            'offshore-web-development'
+          ],
+      })}
+    </>
+  );
+};
+
+# [`<Quote />`](http://s.csssr.ru/U31J879TR/20200527125130.jpg)
+
+Компонент цитаты. Имеет два вида, с изображением слева и с кавычками вместо изображения. Изображения для этого компонента лежат в папке `public/components/quote`. Принимает следующие пропсы
+
+## `imageName`
+
+Тип данных: `string`\
+Дефолтное значение: `undefined`
+
+Название изображения в папке, где лежит статика для этого компонента.
+
+## `author`
+
+Тип данных: `string`\
+Дефолтное значение: `undefined`
+
+Имя автора цитаты.
+
+## `position`
+
+Тип данных: `string`\
+Дефолтное значение: `undefined`
+
+Должность автора цитаты.
+
+## `withImage`
+
+Тип данных: `boolean`\
+Дефолтное значение: `false`
+
+Если `withImage` имеет значение `true`, то будет использован вид цитаты с изображением, если нет, то с кавычками.
+
+## `type`
+
+Тип данных: `blue` | `black`\
+Дефолтное значение: `black`
+
+Отвечает за внешний вид компонента цитаты без изображения. При `blue` цвет текста в цитате синий, а кавычки черные, при `black` наоборот.
+
+## `linkText`
+
+Тип данных: `string`\
+Дефолтное значение: `undefined`
+
+Текст ссылки под цитатой.
+
+## `linkHref`
+
+Тип данных: `string`\
+Дефолтное значение: `undefined`
+
+URL ссылки под цитатой.
+
+## Пример кода
+
+```jsx
+<Quote
+  author="Artyom Skatov"
+  position="Project Manager, Gazprom Neft"
+  withImage
+>
+  There’s one more thing you should consider if/when facing the problem. The
+  demotivated employees are often distracted, and they start distracting and
+  frustrating those around them affecting negatively the general working
+  atmosphere inside the team. If they have a client-facing position, then the
+  problem may have a killing impact on your relationship with both the existing
+  and potential customers.
+</Quote>
+```
+
+## Результат
+
+<Story
+  name="Default"
+  args={{
+    imageName: '',
+    withImage: true,
+    type: 'blue',
+    author: 'Artyom Skatov',
+    position: 'Project Manager, Gazprom Neft',
+    linkText: 'linkText',
+    linkHref: '#',
+    content: `There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.`,
+  }}
+>
+  {Quote.bind({})}
+</Story>

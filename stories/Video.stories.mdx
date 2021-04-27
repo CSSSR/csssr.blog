@@ -1,0 +1,64 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { getStringAttributes } from './utils/getStringAttributes';
+
+<Meta title="Video" />
+
+export const Video = ({ content, ...args }) => {
+  return (
+    <>
+      {compilerMdx({
+        content: `<Video ${getStringAttributes(args)} >${content}</Video>`,
+      })}
+    </>
+  );
+};
+
+# [`<Video />`](http://s.csssr.ru/U31J879TR/2021-04-08-18-03-49-2dkpy_.jpg)
+
+Компонент для вставки видео на страницу. Видео можно вставить с помощью `src` пропса или же как `embed` код внутрь данного компонента. Для компонента следует указывать `width` и `height`, с их помощью видео будет всегда приобретать правильные пропорции на различных разрешениях экрана.
+
+## `src`
+
+Тип данных: `string`\
+Дефолтное значение: `undefined`
+
+URL для видео.
+
+## Пример кода
+
+```jsx
+<Video width="560" height="315">
+    <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/7nrDctGYOIk"
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+    />
+</Video>
+
+<Video width="560" height="315" src='/video/camp-video.mp4' />
+```
+
+## Результат
+
+<Story
+  name="Default"
+  args={{
+    src: '',
+    width: '560',
+    height: '315',
+    content: `<iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/7nrDctGYOIk"
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+    />`,
+  }}
+>
+  {Video.bind({})}
+</Story>

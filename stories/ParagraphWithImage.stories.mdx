@@ -1,0 +1,64 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { dataByLanguagePostAndImageDontResize } from '../lib/allPostsImages';
+import { getStringAttributes } from './utils/getStringAttributes';
+
+<Meta
+  title="ParagraphWithImage"
+  argTypes={{
+    imageName: {
+      type: 'radio',
+      options: ['india', 'china', 'europe', 'indonesia', 'summary', 'vietnam'],
+    },
+  }}
+/>
+
+export const ParagraphWithImage = ({ content, ...args }) => {
+  return (
+    <>
+      {compilerMdx({
+        content: `<ParagraphWithImage ${getStringAttributes(
+          args
+        )}>${content}</ParagraphWithImage>`,
+        images:
+          dataByLanguagePostAndImageDontResize['en'][
+            'offshore-web-development'
+          ],
+      })}
+    </>
+  );
+};
+
+# [`<ParagraphWithImage />`](http://s.csssr.ru/U31J879TR/20200527123603.jpg)
+
+Компонент параграфа c изображением в левом углу. Изображения для параграфа должны находится в той же папке, что и для компонента [`<Img />`](#img-). Принимает следующие пропсы
+
+## `imageName`
+
+Тип данных: `string`\
+Дефолтное значение: `undefined`
+
+Название изображения в папке, где лежит статика для этого компонента.
+
+## Пример кода
+
+```jsx
+<ParagraphWithImage imageName="india">
+  ## Lorem Ipsum Venenatis cras sed felis eget velit. Consectetur libero id
+  faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci
+  phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id
+  aliquet risus feugiat in ante metus dictum at tempor.
+</ParagraphWithImage>
+```
+
+## Результат
+
+<Story
+  name="Default"
+  args={{
+    imageName: 'india',
+    content: `##Venenatis cras sed felis eget velit. <p>Consectetur libero id faucibus nisl tincidunt.</p>`,
+  }}
+>
+  {ParagraphWithImage.bind({})}
+</Story>

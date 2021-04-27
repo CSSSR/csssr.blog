@@ -1,0 +1,55 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { getStringAttributes } from './utils/getStringAttributes';
+
+<Meta
+  title="Caption"
+  argTypes={{
+    size: {
+      options: ['s', 'l'],
+      control: {
+        type: 'radio',
+      },
+    },
+  }}
+/>
+
+export const Caption = ({ content, ...args }) => {
+  return (
+    <>
+      {compilerMdx({
+        content: `<Caption ${getStringAttributes(args)} >${content}</Caption>`,
+      })}
+    </>
+  );
+};
+
+# [`<Caption />`](http://s.csssr.ru/U31J879TR/2021-04-08-14-35-57-558l7_.jpg)
+
+Компонент подписи для изображений и видеоматериалов.
+
+## `size`
+
+Тип данных: `s` | `l`\
+Дефолтное значение: `undefined`
+
+Размер текста подписи.
+
+## Пример кода
+
+````jsx
+<Caption size='l'>Lorem Ipsum</Caption>
+```>
+````
+
+## Результат
+
+<Story
+  name="Default"
+  args={{
+    size: 's',
+    content: `Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt.`,
+  }}
+>
+  {Caption.bind({})}
+</Story>
