@@ -1,6 +1,6 @@
 ---
 title: 'В этом выпуске: релиз Node.js 16 и Firefox 88, проектирование приложения с TypeScript и ООП, взгляд на Container Query, доклады с Я.Субботника.'
-soundcloudLink: 'https://soundcloud.com/csssr/'
+soundcloudLink: 'https://soundcloud.com/csssr/nodejs-16-firefox-88-proektirovanie-s-typescript-i-oop-container-query-doklady-s-yasubbotnika'
 date: '2021-04-23T00:00:00.000Z'
 episodeNumber: 165
 tag: 'news'
