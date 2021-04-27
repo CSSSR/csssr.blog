@@ -1,0 +1,63 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx'
+
+<Meta title="Heading" />
+
+export const Headings = (args) => {
+  return <>{compilerMdx({ content: Object.values(args).join('\n') })}</>
+}
+
+# Заголовки
+
+Заголовки первого, второго, третьего, четвертого и пятого уровней,
+выполненные с помощью символа («#»), выглядят следующим образом:
+
+<Story name="Heading H1" args={{
+  'Heading H1 text': '#Heading h1'
+}}>
+  {Headings.bind({})}
+</Story>
+
+```markdown
+# Заголовок первого уровня
+```
+
+<Story name="Heading H2" args={{
+  'Heading H2 text': '##Heading h2'
+}}>
+  {Headings.bind({})}
+</Story>
+
+```markdown
+## Заголовок второго уровня
+```
+
+<Story name="Heading H3" args={{
+  'Heading H3 text': '###Heading h3'
+}}>
+  {Headings.bind({})}
+</Story>
+
+```markdown
+### Заголовок третьего уровня
+```
+
+<Story name="Heading H4" args={{
+  'Heading H4 text': '####Heading h4'
+}}>
+  {Headings.bind({})}
+</Story>
+
+```markdown
+#### Заголовок четвертого уровня
+```
+
+<Story name="Heading H5" args={{
+  'Heading H5 text': '####Heading h5'
+}}>
+  {Headings.bind({})}
+</Story>
+
+```markdown
+##### Заголовок пятого уровня
+```

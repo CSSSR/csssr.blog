@@ -5,7 +5,9 @@ import { Root, defaultTheme } from '@csssr/core-design'
 
 import { Grid } from '../components/Grid'
 
-import styles from './styles/global'
+import stylesBody from '../components/Post/Body/Body.styles'
+import stylesLayout from '../components/Layout/Layout.styles'
+
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -16,14 +18,14 @@ export const parameters = {
     },
   },
 }
-
 export const decorators = [
   (Story) => (
     <Root>
       <ThemeProvider theme={defaultTheme}>
         <Grid>
-          <Story />
-          <Global styles={styles}/>
+          <Story/>
+          <Global styles={stylesLayout}/>
+          <Global styles={(theme)=>stylesBody({theme})}/>
         </Grid>
       </ThemeProvider>
     </Root>
