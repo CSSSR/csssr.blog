@@ -3,20 +3,10 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
   & {
-    margin-top: ${calcRem(50)};
-    transform: translateX(${calcRem(-10)});
+    margin-top: ${calcRem(40)};
     background-color: white;
     max-width: ${calcRem(89)};
     padding: ${calcRem(10)};
-
-    &.without_margin_top {
-      margin-top: 0;
-      transform: unset;
-    }
-
-    &.with_news_podcast {
-      margin-left: 10px;
-    }
   }
 
   .links {
@@ -101,41 +91,11 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
   }
 
   ${desktop.all} {
-    &.without_margin_top {
-      margin-left: auto;
-    }
-
-    &.with_news_podcast {
-      margin-left: 10px;
-      margin-top: 57px;
-    }
-
     &.without_aligning {
       margin-left: unset;
     }
   }
 
-  ${tablet.all} {
-    & {
-      padding-left: ${calcRem(12)};
-      padding-right: ${calcRem(12)};
-    }
-
-    &.without_margin_top {
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    &.without_margin_top.with_news_podcast {
-      margin: unset;
-      transform: translateX(${calcRem(7)});
-    }
-
-    &.without_aligning {
-      margin-right: unset;
-      margin-left: unset;
-    }
-  }
 
   ${mobile.all} {
     & {

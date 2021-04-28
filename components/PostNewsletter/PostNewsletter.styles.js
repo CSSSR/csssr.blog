@@ -11,20 +11,14 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     grid-row: 1 / span 5;
     width: ${calcRem(156)};
     height: max-content;
-    padding: ${calcRem(10)};
-    background-color: white;
     transition: top ease 0.5s, bottom ease 0.5s;
-  }
-
-  &.without_subscribe-form {
-    padding: 0;
-    background-color: transparent;
   }
 
   .container {
     display: flex;
     flex-direction: column;
-    max-width: ${calcRem(136)};
+    max-width: ${calcRem(156)};
+    padding: ${calcRem(10)};
   }
 
   .title {
@@ -38,6 +32,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   }
 
   .picture {
+    max-width: ${calcRem(136)};
+
     & img {
       width: 100%;
     }
@@ -45,11 +41,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${desktop.all} {
     & {
-      margin-top: 40px;
+      margin-top: 50px;
     }
 
     &.with_news_podcast {
-      margin-top: 64px;
       top: 166px;
     }
 
@@ -97,9 +92,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     & {
       left: 0;
       top: ${calcRem(112)};
-      width: ${calcRem(160)};
-      padding-left: ${calcRem(12)};
-      padding-right: ${calcRem(12)};
+      width: ${calcRem(156)};
       // http://s.csssr.ru/U31J879TR/2021-03-05-11-10-29-3f7ga_.jpg
       transform: translate(calc(((100vw - ${calcRem(624)}) / 2 - 100%) / -2 ), ${calcRem(29)});
       // using big span number, to prevent white spaces between grid rows
