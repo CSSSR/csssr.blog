@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: docker://quay.csssr.cloud/csssr/kuberta-init-workflow:v1
 
+      - uses: docker://quay.csssr.cloud/csssr/github-info:v1
+        id: gh
+
       - name: Download CSSSR actions
         uses: actions/checkout@v2
         with:
@@ -32,6 +35,8 @@ jobs:
 
       - run: yarn build-storybook
         working-directory: blog
+        env:
+          PUBLIC_PATH: https://${{ steps.gh.outputs.releaseID }}.csssr-blog-storybook.csssr.cloud/
 
       - uses: ./actions/upload-static/v1beta1
         with:
