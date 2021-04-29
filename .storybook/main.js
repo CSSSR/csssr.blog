@@ -10,14 +10,14 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials"
   ],
-  webpackFinal: (config, { configType, isServer }) => {
+  webpackFinal: (config, { configType }) => {
     const isDev = configType === 'DEVELOPMENT'
 
     const fileLoaderConfig = {
       loader: 'file-loader',
       options: {
         publicPath: 'static/media/',
-        outputPath: `${isServer ? '../' : ''}static/media/`,
+        outputPath: `${isDev ? '' : '/'}static/media/`,
         name: '[path][name]-[hash:8].[ext]',
         esModule: false,
       },
