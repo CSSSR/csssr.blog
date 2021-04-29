@@ -29,7 +29,7 @@ module.exports = {
       blogHost = `http://${ip.address()}:3000`
       imgproxyHost = 'http://localhost:8080'
     } else {
-      blogHost = `${process.env.BLOG_HOST}/` || 'https://blog.csssr.com'
+      blogHost = process.env.BLOG_HOST || 'https://blog.csssr.com'
       imgproxyHost = 'https://images.csssr.com'
     }
 
