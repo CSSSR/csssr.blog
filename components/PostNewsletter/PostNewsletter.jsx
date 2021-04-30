@@ -26,7 +26,7 @@ const PostNewsletter = ({
   useEffect(() => {
     const checkWindowWidth = () => {
       if (window.matchMedia(defaultTheme.breakpoints.mobile.all.slice('@media '.length)).matches) {
-        setMobile(true)
+        setMobile(true) 
       } else {
         setMobile(false)
       }
