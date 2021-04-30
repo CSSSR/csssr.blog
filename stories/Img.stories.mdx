@@ -12,13 +12,7 @@ import { getStringAttributes } from './utils/getStringAttributes';
     },
     imageName: {
       type: 'radio',
-      options: [
-        'manWithCafeBg',
-        'mySampleImageSmall',
-        'peopleWithBasket',
-        'peopleWithDogBg',
-        'peopleWithGramophone',
-      ],
+      options: ['mySampleImageSmall'],
     },
   }}
 />
@@ -45,28 +39,32 @@ export const Img = (args) => {
 
 ## `imageName`
 
-Тип данных: `string`\
+Тип данных: `string`
+
 Дефолтное значение: `undefined`
 
 Название изображения в папке, где лежит статика для статьи.
 
 ## `alt`
 
-Тип данных: `string`\
+Тип данных: `string`
+
 Дефолтное значение: `undefined`
 
 Должен содержать в себе текстовое описание изображения. Оно не обязательно, но невероятно полезно для доступности — программы чтения с экрана читают это описание своим пользователям. Лучше везде его указывать. Пишите такой текст, что бы слепой услышав его понял что изображено на изображении.
 
 ## `withBigMargin`
 
-Тип данных: `boolean`\
+Тип данных: `boolean`
+
 Дефолтное значение: `false`
 
 Указывает должны ли у изображения быть увеличенные отступы. Это нужно для изображений, которые отбивают текст.
 
 ## `align`
 
-Тип данных: `center` | `right` | `left`\
+Тип данных: `center` | `right` | `left`
+
 Дефолтное значение: `center`
 
 Отвечает за положение изображения на странице.

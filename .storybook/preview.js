@@ -8,8 +8,39 @@ import { Grid } from '../components/Grid'
 import stylesBody from '../components/Post/Body/Body.styles'
 import stylesLayout from '../components/Layout/Layout.styles'
 
+const customViewports = {
+  mobile: {
+    name: 'mobile.all 360px',
+    styles: {
+      width: '360px',
+      height: '640px',
+    },
+  },
+  tablet: {
+    name: 'tablet.all 1024px',
+    styles: {
+      width: '1024px',
+      height: '768px',
+    },
+  },
+  desktopM: {
+    name: 'desktop.m 1360px',
+    styles: {
+      width: '1360px',
+      height: '1000px',
+    },
+  },
+  desktopL: {
+    name: 'desktop.l 1920px',
+    styles: {
+      width: '1920px',
+      height: '1000px',
+    },
+  },
+};
 
 export const parameters = {
+  viewport: { viewports: customViewports },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {

@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Source, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 import { getStringAttributes } from './utils/getStringAttributes';
 
@@ -9,6 +9,11 @@ import { getStringAttributes } from './utils/getStringAttributes';
       options: ['s', 'l'],
       control: {
         type: 'radio',
+      },
+    },
+    docs: {
+      source: {
+        code: 'Some custom string here',
       },
     },
   }}
@@ -30,7 +35,8 @@ export const Caption = ({ content, ...args }) => {
 
 ## `size`
 
-Тип данных: `s` | `l`\
+Тип данных: `s` | `l`
+
 Дефолтное значение: `undefined`
 
 Размер текста подписи.
@@ -39,10 +45,10 @@ export const Caption = ({ content, ...args }) => {
 
 ````jsx
 <Caption size='l'>Lorem Ipsum</Caption>
-```>
 ````
 
 ## Результат
+
 
 <Story
   name="Default"
@@ -53,3 +59,10 @@ export const Caption = ({ content, ...args }) => {
 >
   {Caption.bind({})}
 </Story>
+
+
+<Source
+  language='css'
+>
+  {Caption.bind({})}
+</Source>
