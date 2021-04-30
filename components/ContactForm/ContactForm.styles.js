@@ -319,14 +319,26 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(20)};
     }
 
+    form {
+      display: flex;
+      flex-direction: column;
+
+      & div:nth-of-type(2) {
+        order: 3;
+      }
+
+      .policy {
+        margin-top: ${calcRem(8)};
+      }
+
+      .buttonWrapper_mobile .pending {
+        order: 2;
+      }
+    }
+
     &.post {
       position: static;
       margin-top: ${calcRem(20)};
-
-      form {
-        display: flex;
-        flex-direction: column;
-      }
 
       .buttonWrapper_mobile {
         display: flex;
