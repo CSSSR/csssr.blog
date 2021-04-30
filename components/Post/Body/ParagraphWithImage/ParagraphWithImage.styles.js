@@ -45,7 +45,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   &.with_right-side-image {
-    margin-top: ${calcRem(70)};
+    margin-top: ${calcRem(60)};
   }
 
   .img-wrap.side_right {

@@ -11,20 +11,14 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     grid-row: 1 / span 5;
     width: ${calcRem(156)};
     height: max-content;
-    padding: ${calcRem(10)};
-    background-color: white;
     transition: top ease 0.5s, bottom ease 0.5s;
-  }
-
-  &.without_subscribe-form {
-    padding: 0;
-    background-color: transparent;
   }
 
   .container {
     display: flex;
     flex-direction: column;
-    max-width: ${calcRem(136)};
+    max-width: ${calcRem(156)};
+    padding: ${calcRem(10)};
   }
 
   .title {
@@ -38,6 +32,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
   }
 
   .picture {
+    max-width: ${calcRem(136)};
+
     & img {
       width: 100%;
     }
@@ -45,7 +41,11 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${desktop.all} {
     & {
-      margin-top: 40px;
+      margin-top: 50px;
+    }
+
+    &.with_news_podcast {
+      top: 166px;
     }
 
     .title {
@@ -86,15 +86,13 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     &.without_subscribe-form {
       transform: translateX(69px);
     }
-    
   }
 
   ${tablet.all} {
     & {
       left: 0;
-      width: ${calcRem(160)};
-      padding-left: ${calcRem(12)};
-      padding-right: ${calcRem(12)};
+      top: ${calcRem(112)};
+      width: ${calcRem(156)};
       // http://s.csssr.ru/U31J879TR/2021-03-05-11-10-29-3f7ga_.jpg
       transform: translate(calc(((100vw - ${calcRem(624)}) / 2 - 100%) / -2 ), ${calcRem(29)});
       // using big span number, to prevent white spaces between grid rows
@@ -103,7 +101,15 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
     &.without_subscribe-form {
       grid-column: 1;
-      grid-row: 1;
+    }
+
+    &.without_subscribe-form.with_news_podcast {
+      grid-row: 1 / span 100;
+    }
+
+    &.with_news_podcast {
+      top: ${calcRem(134)};
+      margin-top: ${calcRem(24)};
     }
 
     .title {
@@ -130,6 +136,14 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
       top: 0;
       padding-top: 0;
       margin-top: ${calcRem(24)};
+    }
+
+    &.with_news_podcast {
+      margin-top: ${calcRem(30)};
+    }
+
+    &.with_news_podcast.hidden_desktop {
+      margin-top: ${calcRem(50)};
     }
 
     .container {
