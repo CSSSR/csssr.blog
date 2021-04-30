@@ -18,7 +18,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
     }
   }
 
-  &.type_blue { 
+  &.type_blue {
     .quotes {
       color: ${colors.secondary.darken100};
     }
@@ -84,6 +84,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
 
   .quote-text {
     color: ${withImage ? '#18191B' : '#0254D8'};
+  }
+
+  .quote-text > .text_regular_m:first-of-type {
+    margin-top: 0;
   }
 
   .author,
