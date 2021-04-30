@@ -1,21 +1,20 @@
 import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   & {
     display: flex;
     flex-direction: column;
     margin-left: auto;
-    margin-bottom: ${calcRem(67)};
     background-color: white;
-    transform: translateX(${calcRem(18)});
+    padding: ${calcRem(10)};
   }
 
   .picture {
-    max-width: ${calcRem(120)};
+    max-width: ${calcRem(136)};
 
     & img {
-      max-width: ${calcRem(120)};
+      max-width: ${calcRem(136)};
     }
   }
 
@@ -49,27 +48,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     text-decoration: underline;
   }
 
-  ${desktop.all} {
-    & {
-      margin-bottom: 69px;
-    }
-  }
-
   ${tablet.all} {
     & {
-      margin-left: auto;
       margin-right: auto;
-      margin-bottom: ${calcRem(47)};
-      transform: unset;
     }
 
     .picture {
       align-self: center;
-    }
-
-    .links {
-      margin-top: ${calcRem(20)};
-      margin-left: ${calcRem(20)};
     }
   }
 
