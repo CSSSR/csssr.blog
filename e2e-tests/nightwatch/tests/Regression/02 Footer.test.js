@@ -2,6 +2,7 @@ const pages = require('../data/pages')
 const footer = require('../pageObject/footer.js')
 const header = require('../pageObject/header.js')
 const { checkUrlInNewWindow } = require('../actions/window')
+const general = require('../pageObject/general')
 const ANIMATION_DURATION_IN_MS = 800
 
 testcase('Zooming pins on the map when hovering over the address (RU desktop)', () => {
@@ -9,7 +10,7 @@ testcase('Zooming pins on the map when hovering over the address (RU desktop)', 
     browser
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('hover over any address in the footer', () => {
@@ -29,7 +30,7 @@ testcase('Clickable e-mail under the logo (attribute check) (RU desktop)', () =>
     browser
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   expected('for launch@csssr.com the correct link to open the email client', () => {
@@ -46,7 +47,7 @@ testcase('Clickable phones(attribute check) (RU desktop)', () => {
     browser
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
       .setWindowSize(1920, 4000)
   })
 
@@ -78,7 +79,7 @@ testcase('Switching the Language (RU desktop)', () => {
     browser
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
       .setWindowSize(1920, 4000)
   })
 
@@ -105,7 +106,7 @@ testcase('Display contact information in the footer (RU desktop)', () => {
     browser
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('scrolling to the footer', () => {
@@ -154,7 +155,7 @@ testcase('Displaying social network icons in the footer (RU desktop)', () => {
       .setWindowSize(1920, 4000)
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   expected('in the footer the icon Facebook', () => {
@@ -204,7 +205,7 @@ testcase('Displaying links (RU desktop)', () => {
       .setWindowSize(1920, 4000)
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   expected('the footer displays the correct links', () => {
@@ -274,7 +275,7 @@ testcase('Clicking on links (RU desktop)', () => {
       .setWindowSize(1920, 4000)
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('click on the text link «Аутсорсинг»', () => {
@@ -379,7 +380,7 @@ testcase('Zooming pins on the map when hovering over the address (EN desktop)', 
     browser
       .url(`${browser.launch_url}${pages.enLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('hover over any address in the footer', () => {
@@ -399,7 +400,7 @@ testcase('Clickable e-mail under the logo (attribute check) (EN desktop)', () =>
     browser
       .url(`${browser.launch_url}${pages.enLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   expected('for launch@csssr.com the correct link to open the email client', () => {
@@ -416,7 +417,7 @@ testcase('Clickable phones(attribute check) (EN desktop)', () => {
     browser
       .url(`${browser.launch_url}${pages.enLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
       .setWindowSize(1920, 4000)
   })
 
@@ -449,7 +450,7 @@ testcase('Switching the Language (EN desktop)', () => {
       .setWindowSize(1920, 4000)
       .url(`${browser.launch_url}${pages.enLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('click RU switch button', () => {
@@ -473,7 +474,7 @@ testcase('Display contact information in the footer (EN desktop)', () => {
     browser
       .url(`${browser.launch_url}${pages.enLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('scrolling to the footer', () => {
@@ -522,7 +523,7 @@ testcase('Displaying social network icons in the footer (EN desktop)', () => {
       .setWindowSize(1920, 4000)
       .url(`${browser.launch_url}${pages.enLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   expected('in the footer the icon Facebook', () => {
@@ -552,13 +553,13 @@ testcase('Displaying links (EN desktop)', () => {
       .setWindowSize(1920, 4000)
       .url(`${browser.launch_url}${pages.enLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   expected('the footer displays the correct links', () => {
     browser
       .assert.containsText(
-        footer.link.outsourcing,
+        footer.link.outsourcingEn,
         'Outsourcing'
       )
       .assert.containsText(
@@ -630,11 +631,11 @@ testcase('Clicking on links (EN desktop)', () => {
       .setWindowSize(1920, 4000)
       .url(`${browser.launch_url}${pages.enLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('click on the text link «Outsourcing»', () => {
-    browser.click(footer.link.outsourcing)
+    browser.click(footer.link.outsourcingEn)
   })
 
   expected('the transition to the page triggered «Web Development Outsourcing»', () => {

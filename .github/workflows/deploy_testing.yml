@@ -5,6 +5,7 @@ on:
       - master
   pull_request:
     types: [opened, synchronize, reopened]
+concurrency: testing_environment
 
 jobs:
   deploy:
@@ -26,8 +27,8 @@ jobs:
 
       - uses: actions/setup-node@v2-beta
         with:
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@csssr'
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@csssr"
 
       - name: Install dependencies
         working-directory: new_blog

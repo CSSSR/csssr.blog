@@ -1,6 +1,7 @@
 const pages = require('../data/pages')
 const header = require('../pageObject/header.js')
 const { checkUrlInNewWindow } = require('../actions/window')
+const general = require('../pageObject/general')
 
 testcase('Contents of the header for the RU locale', () => {
   step(`go to the homepage ${pages.ruLocal.url}`, () => {
@@ -378,7 +379,7 @@ testcase('Transitions to pages(RU mobile)', () => {
       .setWindowSize(765, 1080)
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('click on the logo', () => {
@@ -986,7 +987,7 @@ testcase('Transitions to pages(EN mobile)', () => {
       .setWindowSize(765, 1080)
       .url(`${browser.launch_url}${pages.enLocal.url}`)
       .waitForElementVisible(header.block.header)
-      .click(header.button.closeCookiesAlert)
+      .click(general.button.closeCookiesAlert)
   })
 
   step('click on the logo', () => {

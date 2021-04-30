@@ -9,12 +9,12 @@ tag: 'culture'
 <Subtitle>В первом выпуске видеосерии «История фронтенда» мы попробовали погрузиться в атмосферу середины 1993 года — времени, когда в вебе ещё не было Microsoft, рекламы и JavaScript, а было порядка 130 веб-сайтов и дюжина разных браузеров, написанных энтузиастами в свободное время.</Subtitle>
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/7nrDctGYOIk" 
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        src="https://www.youtube.com/embed/7nrDctGYOIk"
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -32,12 +32,12 @@ tag: 'culture'
 Внимательный зритель, возможно, обратил внимание на качественную эмуляцию в видео двух первых браузеров, разработанных в ЦЕРН — графического WorldWideWeb (позже его переименовали в Nexus, по понятным причинам) и текстового Line Mode Browser. Зачастую программы из того времени не то что сложно сэмулировать — их вообще уже не найти!
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/3c3Rt6QbHDw?start=5" 
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        src="https://www.youtube.com/embed/3c3Rt6QbHDw?start=5"
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -55,10 +55,10 @@ tag: 'culture'
 
 Заслуживает внимания и сама машина, на которой Тиму Бернерсу-Ли удалось так быстро и сравнительно легко разработать свой браузер. Он сам это не раз отмечает — мол, именно благодаря простой и удобной экосистеме NeXTSTEP он смог быстро реализовать свою идею, не тратя драгоценное время на написание собственного интерфейса или текстового движка
 
-<Quote 
+<Quote
     type='black'
-    author="Тим Бернерс-Ли" 
-    linkText="Записка о браузере WorldWideWeb" 
+    author="Тим Бернерс-Ли"
+    linkText="Записка о браузере WorldWideWeb"
     linkHref="https://www.w3.org/People/Berners-Lee/WorldWideWeb.html"
 >
   Я написал программу на компьютере NeXT. Это дало мне преимущество в виде замечательных инструментов — классная была среда в целом. По сути, я мог за пару месяцев сделать то, что пришлось бы делать около года на других платформах, потому что на NeXT многое уже было сделано за меня. Там был конструктор приложений, где можно было делать меню быстрее, чем ты их придумываешь. Были все компоненты, чтобы сделать WYSIWYG («что вижу, то и будет», то есть прямое редактирование текста на экране, как он будет печататься или выводиться) текстовый процессор. Мне оставалось лишь добавить гипертекст (добавив подкласс объекта Text)
@@ -70,12 +70,12 @@ tag: 'culture'
 
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/J36lUowZn8A?start=36" 
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        src="https://www.youtube.com/embed/J36lUowZn8A?start=36"
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -88,12 +88,12 @@ tag: 'culture'
 Например, самый базовый класс для создания текста в macOS до сих пор <a href="https://developer.apple.com/documentation/appkit/nstext" target="_blank">называется NSText</a> (так же назывался стилевой движок, использованный Бернерсом-Ли). А входит он… правильно, в класс <a href="https://developer.apple.com/documentation/appkit/nsview" target="_blank">NSView</a>. И так далее — приставку NS довольно часто можно обнаружить в документации для разработки под Mac. И преемственность не только внешняя: так, <a href="https://developer.apple.com/library/archive/documentation/TextFonts/Conceptual/CocoaTextArchitecture/Introduction/Introduction.html" target="_blank">Cocoa text system</a>, система работы с текстом macOS, <a href="https://en.wikipedia.org/wiki/Cocoa_text_system" target="_blank">произошла</a> напрямую от NSText (посредством <a href="https://en.wikipedia.org/wiki/OpenStep" target="_blank">OpenStep</a> — официальной адаптации NeXTSTEP к другим платформам, которая в итоге сама <a href="https://en.wikipedia.org/wiki/Rhapsody_(operating_system)" target="_blank">легла в основу</a> Mac OS X).
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/0sOyuiPtlok" 
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        src="https://www.youtube.com/embed/0sOyuiPtlok"
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -102,9 +102,9 @@ tag: 'culture'
 
 **Да, а ещё на машинах NeXT разработали Doom и Quake.**
 
-<Img 
-    src='/images/dont-resize/ru/frontend-history-the-browser-that-could-do-everything/obama/all.gif' 
-    alt='Барак Обама дропает микрофон' 
+<Img
+    src='/images/dont-resize/ru/frontend-history-the-browser-that-could-do-everything/obama/all.gif'
+    alt='Барак Обама дропает микрофон'
     withOutProcessing
     align='left'
 >
@@ -113,7 +113,7 @@ tag: 'culture'
 
 Что имел в виду Кайю, когда говорил про эту эпоху «Мы хотели от браузеров большего»? Если процитировать точнее, то он <a href="https://www.youtube.com/watch?t=283&v=x2GylLq59rI&feature=youtu.be&ab_channel=ChuckSeverance" target="_blank">выразился так</a>:
 
-<Quote 
+<Quote
     type='black'
 >
   ...Вот так же и с Mosaic. Он был довольно дрянной —  но его легче было установить. И он сразу обошёл то, что мы пытались сделать, — он просто нас на корню убил в части браузеров! Потому что мы пытались сделать более сложные вещи с браузером, чем Mosaic. Вот вам пример, что порой лучшее решение задавливают — или оно появляется гораздо позже, потому что лёгкое решение… Ну, оно как вирус, растёт быстрее всех.
@@ -123,21 +123,21 @@ tag: 'culture'
 
 <Img imageName='photo_1' alt='Фотография Бернерса-Ли и Кайю' align='left'/>
 
-Ведь Бернерса-Ли и Кайю нет среди создателей тогдашних популярных графических браузеров. Да, Кайю в какой-то момент написал первый простенький браузер для Macintosh (Samba), но в остальном был скорее менеджером, опытным ЦЕРНовским бюрократом, улаживающим дела; а браузер Бернерса-Ли для NeXT (Nexus) так никуда и не портировали. 
+Ведь Бернерса-Ли и Кайю нет среди создателей тогдашних популярных графических браузеров. Да, Кайю в какой-то момент написал первый простенький браузер для Macintosh (Samba), но в остальном был скорее менеджером, опытным ЦЕРНовским бюрократом, улаживающим дела; а браузер Бернерса-Ли для NeXT (Nexus) так никуда и не портировали.
 
 То есть, если читать краткую версию истории Веба, всё выглядит так: изобретатели предложили стандарт, выложили базовый фреймворк, сделали Веб общественным достоянием (кстати, как раз в результате многомесячного бодания Кайю с юридическим отделом ЦЕРН) — а потом умыли руки и уступили сцену молодым.
 
-На самом деле у Бернерса-Ли было крайне чёткое и масштабное видение Веба как проекта — и очень сильные мнения по поводу того, какими должны быть веб-сайты, серверы и браузеры. Он крайне хотел «рулить» развитием Веба и пытался это делать. 
+На самом деле у Бернерса-Ли было крайне чёткое и масштабное видение Веба как проекта — и очень сильные мнения по поводу того, какими должны быть веб-сайты, серверы и браузеры. Он крайне хотел «рулить» развитием Веба и пытался это делать.
 
 Но увы, размер его команды никогда не превышал 3-4 человек: сам Тим, Кайю и по одному практиканту у каждого (именно таким студентом был Жан-Франсуа Грофф, который упоминался в видео, — он написал библиотеки libwww, на которых были построены почти все ранние браузеры). У них просто не было людей, времени и денег на разработку сложных продуктов. Да, ЦЕРН обладал уникальным интернет-оборудованием (он был центром первого в Европе <a href="https://cerncourier.com/a/gigabits-the-grid-and-the-guinness-book-of-records/" target="_blank">мегабитного</a> бэкбона, первым установил мегабитную связь с США, а в 1991 году пропускал через себя <a href="https://information-technology.web.cern.ch/sites/information-technology.web.cern.ch/files/02_The%20role%20of%20CERN%20is%20the%20Internet-v6-Timing%2010-Museum.pptx" target="_blank">80% мирового интернет-трафика</a>) — но Веб оставался личным проектом Бернерса-Ли (как бы побочным продуктом его деятельности по улучшению интранета ЦЕРН и созданию удобной адресной книги для сотрудников).
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/sBkY5NG3tck" 
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        src="https://www.youtube.com/embed/sBkY5NG3tck"
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -146,12 +146,12 @@ tag: 'culture'
 </Caption>
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/rKaAVobE-3k?start=1562" 
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        src="https://www.youtube.com/embed/rKaAVobE-3k?start=1562"
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -185,31 +185,31 @@ tag: 'culture'
 
 **Мало того, простота HTML имела стратегические и дипломатические цели**. Так Бернерс-Ли надеялся снизить «боль адаптации» внутри ЦЕРНа — то есть на первом рубеже внедрения технологии. А на более широком уровне — максимально устранить «боль» от потребления веб-контента на любых комбинациях «железа», операционных систем и программ.
 
-<Quote 
+<Quote
     type='black'
-    linkText="Weaving the Web, T. Berners-Lee, 2000, p. 41" 
+    linkText="Weaving the Web, T. Berners-Lee, 2000, p. 41"
     linkHref="https://www.w3.org/People/Berners-Lee/Weaving/Overview.html"
 >
   Так как я знал, что будет сложно убедить весь мир использовать новую информационную систему, я хотел перетянуть на свою сторону всех, кого мог.
 </Quote>
 
-Именно поэтому он сделал HTML внешне похожим на SGML (которым в виде SGML GUID пользовались в ЦЕРНе; <a href="https://www.w3.org/History/1992/nfs_dxcern_mirror/rpc/doc/User/rpcuser.sgml" target="_blank">пример</a>). Благодаря этому ЦЕРН столь безболезненно перешёл на WWW: порой уже существующие рабочие SGML-документы можно было превратить в читабельный HTML, просто <a href="https://www.w3.org/2012/08/history-of-the-web/origins.htm#c6p3" target="_blank">сменив</a> расширение файла с .sgml на .html! 
+Именно поэтому он сделал HTML внешне похожим на SGML (которым в виде SGML GUID пользовались в ЦЕРНе; <a href="https://www.w3.org/History/1992/nfs_dxcern_mirror/rpc/doc/User/rpcuser.sgml" target="_blank">пример</a>). Благодаря этому ЦЕРН столь безболезненно перешёл на WWW: порой уже существующие рабочие SGML-документы можно было превратить в читабельный HTML, просто <a href="https://www.w3.org/2012/08/history-of-the-web/origins.htm#c6p3" target="_blank">сменив</a> расширение файла с .sgml на .html!
 
 Поэтому же HTML так легко прощал ошибки: в отличие от идеологии SGML, он вообще не требовал строгого оформления документа (например, тегов `<body>` и `<head>` тогда ещё просто не было); а его интерпретатор просто обрабатывал знакомые теги, игнорировал и не отображал незнакомые — а всё, что осталось, выводил текстом.
 
-Брайан Карделл (<a href="https://dev.opera.com/authors/brian-kardell/" target="_blank">Brian Kardell</a>) в своей «Крат(ень)кой истории Вселенной Веба» <a href="https://bkardell.com/blog/Brief-ish-History-of-The-Web-Part-2.html" target="_blank">приводит</a> красноречивый пример — самый старый из сохранившихся HTML-документов от 3 декабря 1990 года (<a href="https://www.w3.org/2012/08/history-of-the-web/origins.htm#c6p3" target="_blank">ссылка</a>). 
+Брайан Карделл (<a href="https://dev.opera.com/authors/brian-kardell/" target="_blank">Brian Kardell</a>) в своей «Крат(ень)кой истории Вселенной Веба» <a href="https://bkardell.com/blog/Brief-ish-History-of-The-Web-Part-2.html" target="_blank">приводит</a> красноречивый пример — самый старый из сохранившихся HTML-документов от 3 декабря 1990 года (<a href="https://www.w3.org/2012/08/history-of-the-web/origins.htm#c6p3" target="_blank">ссылка</a>).
 
 В нём нет ни `doctype`, ни `<html>`, ни `<head>`, ни `<title>`, ни `<body>`. А в конце — закрывающий тег с перепутанными буквами (`</lo>` вместо `</ol>`). И ничего: он отображался тогда, и легко отобразится на любой машине сейчас, в 2020 году! **Вот поэтому HTML и был задуман столь простым**.
 
 ## Баллада про HyperCard
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
         src="https://www.youtube.com/embed/v9o5Ld8hpug"
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -234,7 +234,7 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
 .
 </Caption>
 
-## Beyond Cyberpunk
+### Beyond Cyberpunk
 
 Ещё одна культовая энциклопедия, на этот раз попытка собрать в одном месте всё про киберпанк, и сделать это круто — так же круто, как тогда ощущался сам этот… жанр? стиль? культура?
 
@@ -253,7 +253,7 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
 
 **Сегодня в сети существует <a href="http://www.streettech.com/bcp/" target="_blank">веб-версия Beyond Cyberpunk</a>: расширенная, дополненная… но совсем не такая волшебная.**
 
-## Myst и Cyan
+### Myst и Cyan
 
 Даже если бы в HyperCard, программе для создания презентаций и картотек, просто создали хоть сколько-то популярную игру — это уже было бы интересно. Но в ней создали Myst — самую успешно продаваемую в истории игру для PC (лишь через 9 лет её обошли The Sims), первый игровой killer app для CD-дисководов и одну из самых важных PC-игр в принципе.
 
@@ -262,12 +262,12 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
 Это был не первый опыт Cyan Inc. с HyperCard: до этого её основатели братья Миллер создали в программе целых три псевдоквеста. «Псевдо» они не потому, что плохие: идеей Миллеров было создавать «игры-игрушки» для детей, без концовки и условий победы. В этих играх (<a href="https://store.steampowered.com/app/63630/The_Manhole_Masterpiece_Edition/" target="_blank">The Manhole</a>, <a href="https://store.steampowered.com/app/63620/Cosmic_Osmo_and_the_Worlds_Beyond_the_Mackerel/" target="_blank">Cosmic Osmo and the Worlds Beyond the Mackerel</a> и <a href="https://store.steampowered.com/app/63640/Spelunx_and_the_Caves_of_Mr_Seudo/" target="_blank">Spelunx</a>) игрок просто путешествовал по забавным и сюрреалистичным закольцованным мирам, тыкал в предметы и персонажей и наблюдал за эффектом.
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
         src="https://www.youtube.com/embed/t4wqbzb1xc0"
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -275,15 +275,15 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
     Ремастер-версия игры The Manhole — с закадровой озвучкой и цветной графикой.
 </Caption>
 
-Делая Myst, Миллеры сохранили фирменную любовь к сюру, но добавили в рецепт сложные головоломки и более взрослую эстетику (и лишь потом, со скрипом — куцый сюжет). Игра нагрузила HyperCard до предела: из программы <a href="http://myst.patchallel.com/myst_fl.html" target="_blank">вырезали</a> все лишние модули и управляли ей через XCMD-команды. Всего в игре было больше 2500 карточек, с отдельными стопками для каждой из «Эпох» (миров). 
+Делая Myst, Миллеры сохранили фирменную любовь к сюру, но добавили в рецепт сложные головоломки и более взрослую эстетику (и лишь потом, со скрипом — куцый сюжет). Игра нагрузила HyperCard до предела: из программы <a href="http://myst.patchallel.com/myst_fl.html" target="_blank">вырезали</a> все лишние модули и управляли ей через XCMD-команды. Всего в игре было больше 2500 карточек, с отдельными стопками для каждой из «Эпох» (миров).
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
         src="https://www.youtube.com/embed/94pzx_9LkVI?start=666"
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -293,21 +293,21 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
 
 Создатели <a href="http://myst.patchallel.com/myst_fl.html" target="_blank">говорили</a>, что благодаря HyperCard они имели возможность быстро менять в программе что угодно до самого релиза — ведь HyperCard не компилировался, а содержимое карточек и стопок можно было в любой момент отредактировать напрямую.
 
-<Quote 
+<Quote
     type='black'
     author="Рэнд Миллер"
 >
   Чувствую, если бы мы писали Myst на C или Pascal, мы бы до сих пор над ним сидели.
 </Quote>
 
-## Сожаления Аткинсона
+### Сожаления Аткинсона
 
 В ролике упоминается, что Билл Аткинсон, создатель HyperCard, жалел о том, что не догадался сделать его сетевым. Об этом можно прочесть в <a href="https://www.wired.com/2002/08/hypercard-what-could-have-been/" target="_blank">статье</a> о нём в Wired:
 
-<Quote 
+<Quote
     type='black'
     author="Билл Аткинсон"
-    linkText="интервью WIRED, 2002" 
+    linkText="интервью WIRED, 2002"
     linkHref="https://www.wired.com/2002/08/hypercard-what-could-have-been/"
 >
   Со временем я осознал, что промахнулся с HyperCard. Я вырос в «Эпл», в «культуре коробочек». Если бы вырос бы в фирме Sun с её «культурой сетей», быть может, HyperCard стал бы первым веб-браузером. <...> Я думал, что связать всех людей по сети — это фантазёрство. Как же я ошибался.
@@ -316,12 +316,12 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
 Кто знает? Выйди HyperCard в интернет — может быть, Apple смог бы определить всю инфраструктуру и форматы будущего веба; а потом, используя это как рычаг, всё-таки опрокинул бы «Майкрософт»! Но вышло иначе.
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
         src="https://www.youtube.com/embed/ejdgTVj7ZG8?start=402"
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -330,23 +330,23 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
 
 >**Тёплый, ламповый апп**
 >
->Сегодня создатель HyperCard Билл Аткинсон — фотограф дикой природы. Он создал <a href="https://apps.apple.com/us/app/photocard-by-bill-atkinson/id333208430" target="_blank">собственное приложение для AppStore</a>, которое позволяет создать, распечатать и послать почтовую открытку по почте прямо из iPhone или iPad: внутри можно выбрать одну из фотографий Билла или загрузить свою, украсить это дело стикерами и шаблонами (его собственного дизайна) и написать послание. 
+>Сегодня создатель HyperCard Билл Аткинсон — фотограф дикой природы. Он создал <a href="https://apps.apple.com/us/app/photocard-by-bill-atkinson/id333208430" target="_blank">собственное приложение для AppStore</a>, которое позволяет создать, распечатать и послать почтовую открытку по почте прямо из iPhone или iPad: внутри можно выбрать одну из фотографий Билла или загрузить свою, украсить это дело стикерами и шаблонами (его собственного дизайна) и написать послание.
 >
 >Самое странное, что после этого макет отправляется на почту самому Аткинсону — тот каждый день встаёт в 5 утра, отсылает макеты в типографию, а потом рассылает конверты по почте. Он говорит, что больше всего в жизни гордится этим приложением и его возможностями. Такие дела.
 >
 >И сам Билл, и его жена <a href="https://www.wired.com/2002/08/hypercard-what-could-have-been/" target="_blank">до сих пор используют</a> HyperCard. Он написал себе адресную книгу и приложения для работы и обновления веб-сайта; а его жена, Сиу полностью управляет семейным бизнесом через большую стопку HyperCard собственной разработки..
 
-## HyperCard сегодня
+### HyperCard сегодня
 
 Множество случайно сохранившихся стопок можно найти в специальной коллекции на <a href="https://archive.org/details/hypercardstacks" target="_blank">archive.org</a>. Нет-нет и вспомнят о системе на YouTube:
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
         src="https://www.youtube.com/embed/_h92eJI33Gk"
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -357,12 +357,12 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
 А на инди-игровой платформе Itch.io даже провели тематический игровой джем, <a href="https://itch.io/jam/merveilles-hyperjam/entries" target="_blank">Merveilles HyperJam</a>. Одной из созданных игр стал стильный «демейк» культового Silent Hill P. T.:
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
         src="https://www.youtube.com/embed/f2ft1uovxaQ"
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
@@ -379,15 +379,15 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
 
 Начнём с мимоходом брошенной ремарки, из которой следует, что Пэй-Юань Вэй тогда чуть было не создал собственный Веб (т. е. инфраструктуру для сетевого гипертекста). Конкретно об этом пишут Р. Кайю и Ж. Жильи в книге «Как зарождался Веб»:
 
-<Quote 
+<Quote
     type='black'
-    linkText="How the Web Was Born, R. Cailliau & J. Gillies, 2000, p. 214" 
+    linkText="How the Web Was Born, R. Cailliau & J. Gillies, 2000, p. 214"
     linkHref="https://books.google.ru/books?id=pIH-JijUNS0C&pg=PA214&redir_esc=y#v=onepage&q&f=false"
 >
   Оболочка X Window была системой на базе Unix, поэтому TCP/IP в неё уже был встроен, и использовать Интернет было вполне логично. Теперь вопрос был в том, как пересылать его «Viola-страницы» через Интернет. [Вэй] был на грани того, чтобы независимо изобрести сетевой гипертекст. “И тут я читаю e-mail Тима про World Wide Web”, вспоминает он. “URL — это было очень, очень умно; это было точно то, что мне нужно”. Он послал Тиму письмо, мол, “хочу написать браузер под иксы”. “Хорошая идея”, ответил ему Тим в рассылке www-talk 9 декабря [1991 г.]. Через четыре дня Пэй Вэй объявил на www-talk о том, что создал браузер.
 </Quote>
 
-Эта догадка может показаться натянутой. Но, вчитываясь в историю Вэя и оценивая амбициозность его идей, становится даже странно — насколько резко и полностью он исчез из публичного пространства интернет-разработки. 
+Эта догадка может показаться натянутой. Но, вчитываясь в историю Вэя и оценивая амбициозность его идей, становится даже странно — насколько резко и полностью он исчез из публичного пространства интернет-разработки.
 
 <Img imageName='photo_11' alt='Фотография Тим Бернерс-Ли' align='left'/>
 
@@ -401,9 +401,9 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
 
 Глубину пиетета можно оценить и в книге «Сплетая Паутину» (Weaving the Web), где в рассказе о своём «паломничестве» в американские центры развития Веба (см. выше) Бернерс-Ли пишет следующее:
 
-<Quote 
+<Quote
     type='black'
-    linkText="Weaving the Web, T. Berners-Lee, 2000, p. 63" 
+    linkText="Weaving the Web, T. Berners-Lee, 2000, p. 63"
     linkHref="https://www.w3.org/People/Berners-Lee/Weaving/Overview.html"
 >
     ...Также я встретился с Пэй Вэем, он всё ещё учился в U.C. Berkeley. Хотя Viola уже привлекла к себе внимание, сложность в её установке мешала её популярности. Мы встретились в кафе близ Сан-Франциско: моей целью было убедить его сделать установку удобнее* и внедрить функцию редактирования (я всё держался за этот идеал). Но Вэя прежде всего интересовала Viola как язык программирования; Веб для него был лишь одной из сфер применения. Я пытался подбодрить его, но без нажима. В конце концов, Viola тогда невероятно активно расширяла охват Веба. Отчасти я хотел встретить его просто чтобы сказать: “Спасибо, ты молодец”.
@@ -430,17 +430,17 @@ Cоздатель WEC, <a href="https://en.wikipedia.org/wiki/Stewart_Brand" tar
 
 На этом всё. До следующей серии.
 
-## P. S.: дополнительные источники и материалы по ViolaWWW
+### P. S.: дополнительные источники и материалы по ViolaWWW
 
 Вот <a href="https://web.archive.org/web/20060820145711/http://www.xcf.berkeley.edu/~wei/viola/violaHome.html" target="_blank">здесь</a> (через архив зеркала архива!) можно увидеть старый сайт ViolaWWW, где автор демонстрирует его различные уникальные особенности — включая скриншоты работающих приложений-в-странице и других важных фич. Для особенно любопытных — <a href="https://web.archive.org/web/19990127141653/http://www-pcd.stanford.edu/workshop/slides/wei/talk.html" target="_blank">конспект доклада Вэя о расширяемости браузеров</a>, который он зачитал в Стэнфорде в 1994 году. Также <a href="https://en.wikipedia.org/wiki/ViolaWWW#Firsts" target="_blank">на странице браузера в «Википедии»</a> есть несколько примеров кода на Viola для самых инновационных функций ViolaWWW.
 
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
         src="https://www.youtube.com/embed/sbK8PNhDRVM?start=516"
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
