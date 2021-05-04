@@ -11,19 +11,14 @@ import { getStringAttributes } from './utils/getStringAttributes';
         type: 'radio',
       },
     },
-    docs: {
-      source: {
-        code: 'Some custom string here',
-      },
-    },
   }}
 />
 
-export const Caption = ({ content, ...args }) => {
+export const Caption = ({ contentMdx, ...args }) => {
   return (
     <>
       {compilerMdx({
-        content: `<Caption ${getStringAttributes(args)} >${content}</Caption>`,
+        content: `<Caption ${getStringAttributes(args)} >${contentMdx}</Caption>`,
       })}
     </>
   );
@@ -41,28 +36,16 @@ export const Caption = ({ content, ...args }) => {
 
 Размер текста подписи.
 
-## Пример кода
-
-````jsx
-<Caption size='l'>Lorem Ipsum</Caption>
-````
-
 ## Результат
 
-
-<Story
-  name="Default"
-  args={{
-    size: 's',
-    content: `Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt.`,
-  }}
->
-  {Caption.bind({})}
-</Story>
-
-
-<Source
-  language='css'
->
-  {Caption.bind({})}
-</Source>
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      size: 's',
+      contentMdx: `Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt.`,
+    }}
+  >
+    {Caption.bind({})}
+  </Story>
+</Canvas>

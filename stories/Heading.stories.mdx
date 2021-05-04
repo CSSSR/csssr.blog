@@ -1,63 +1,74 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
-import { compilerMdx } from '../components/Post/Body/utils/compilerMdx'
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { getLattices } from './utils/getLattices';
 
 <Meta title="Heading" />
 
-export const Headings = (args) => {
-  return <>{compilerMdx({ content: Object.values(args).join('\n') })}</>
-}
+export const Headings = ({ headingLevel, text }) => {
+  return <>{compilerMdx({ content: `${getLattices(headingLevel)}${text}` })}</>;
+};
 
 # Заголовки
 
 Заголовки первого, второго, третьего, четвертого и пятого уровней,
 выполненные с помощью символа («#»), выглядят следующим образом:
 
-<Story name="Heading H1" args={{
-  'Heading H1 text': '#Heading h1'
-}}>
-  {Headings.bind({})}
-</Story>
+<Canvas>
+  <Story
+    name="Heading H1"
+    args={{
+      headingLevel: 1,
+      text: 'Heading h1',
+    }}
+  >
+    {Headings.bind({})}
+  </Story>
+</Canvas>
 
-```markdown
-# Заголовок первого уровня
-```
+<Canvas>
+  <Story
+    name="Heading H2"
+    args={{
+      headingLevel: 2,
+      text: 'Heading h2',
+    }}
+  >
+    {Headings.bind({})}
+  </Story>
+</Canvas>
 
-<Story name="Heading H2" args={{
-  'Heading H2 text': '##Heading h2'
-}}>
-  {Headings.bind({})}
-</Story>
+<Canvas>
+  <Story
+    name="Heading H3"
+    args={{
+      headingLevel: 3,
+      text: 'Heading h3',
+    }}
+  >
+    {Headings.bind({})}
+  </Story>
+</Canvas>
 
-```markdown
-## Заголовок второго уровня
-```
+<Canvas>
+  <Story
+    name="Heading H4"
+    args={{
+      headingLevel: 4,
+      text: 'Heading h4',
+    }}
+  >
+    {Headings.bind({})}
+  </Story>
+</Canvas>
 
-<Story name="Heading H3" args={{
-  'Heading H3 text': '###Heading h3'
-}}>
-  {Headings.bind({})}
-</Story>
-
-```markdown
-### Заголовок третьего уровня
-```
-
-<Story name="Heading H4" args={{
-  'Heading H4 text': '####Heading h4'
-}}>
-  {Headings.bind({})}
-</Story>
-
-```markdown
-#### Заголовок четвертого уровня
-```
-
-<Story name="Heading H5" args={{
-  'Heading H5 text': '####Heading h5'
-}}>
-  {Headings.bind({})}
-</Story>
-
-```markdown
-##### Заголовок пятого уровня
-```
+<Canvas>
+  <Story
+    name="Heading H5"
+    args={{
+      headingLevel: 5,
+      text: 'Heading h5',
+    }}
+  >
+    {Headings.bind({})}
+  </Story>
+</Canvas>

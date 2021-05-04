@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 import { getStringAttributes } from './utils/getStringAttributes';
 
@@ -15,11 +15,11 @@ import { getStringAttributes } from './utils/getStringAttributes';
   }}
 />
 
-export const Table = ({ content, ...args }) => {
+export const Table = ({ contentMdx, ...args }) => {
   return (
     <>
       {compilerMdx({
-        content: `<Table ${getStringAttributes(args)}>${content}</Table>`,
+        content: `<Table ${getStringAttributes(args)}>${contentMdx}</Table>`,
       })}
     </>
   );
@@ -45,83 +45,17 @@ export const Table = ({ content, ...args }) => {
 
 Если `withBorders` имеет значение `true`, то в таблице появятся дополнительные бордеры.
 
-## Пример кода
-
-```jsx
-<Table color="purple" withBorders>
-  <thead>
-    <tr>
-      <th />
-      <th>Команда в вашем офисе</th>
-      <th>Команда в своем офисе</th>
-      <th>Распределенная команда</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th colspan="4">Цель</th>
-    </tr>
-    <tr>
-      <th>«Скорая помощь» проекту</th>
-      <td>++</td>
-      <td>+</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <th>Поддержка разработки или новый функционал</th>
-      <td>+</td>
-      <td>+</td>
-      <td>+</td>
-    </tr>
-    <tr>
-      <th>Старт разработки</th>
-      <td>+</td>
-      <td>+</td>
-      <td>+</td>
-    </tr>
-  </tbody>
-</Table>
-```
-
 ## Результат
 
-<Story
-  name="Default"
-  args={{
-    color: 'green',
-    withBorders: true,
-    content: `<thead>
-    <tr>
-      <th />
-      <th>Команда в вашем офисе</th>
-      <th>Команда в своем офисе</th>
-      <th>Распределенная команда</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th colspan="4">Цель</th>
-    </tr>
-    <tr>
-      <th>«Скорая помощь» проекту</th>
-      <td>++</td>
-      <td>+</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <th>Поддержка разработки или новый функционал</th>
-      <td>+</td>
-      <td>+</td>
-      <td>+</td>
-    </tr>
-    <tr>
-      <th>Старт разработки</th>
-      <td>+</td>
-      <td>+</td>
-      <td>+</td>
-    </tr>
-  </tbody>`,
-  }}
->
-  {Table.bind({})}
-</Story>
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      color: 'green',
+      withBorders: true,
+      contentMdx: `<thead><tr><th /><th>Команда в вашем офисе</th><th>Команда в своем офисе</th><th>Распределенная команда</th></tr></thead><tbody><tr><th colspan=\"4\">Цель</th></tr><tr><th>«Скорая помощь» проекту</th><td>++</td><td>+</td><td>-</td></tr><tr><th>Поддержка разработки или новый функционал</th><td>+</td><td>+</td><td>+</td></tr><tr><th>Старт разработки</th><td>+</td><td>+</td><td>+</td></tr></tbody>`,
+    }}
+  >
+    {Table.bind({})}
+  </Story>
+</Canvas>

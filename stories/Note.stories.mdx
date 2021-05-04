@@ -1,13 +1,13 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 
 <Meta title="Note" />
 
-export const Note = ({ content }) => {
+export const Note = ({ contentMdx }) => {
   return (
     <>
       {compilerMdx({
-        content: `<Note>${content}</Note>`,
+        content: `<Note>${contentMdx}</Note>`,
       })}
     </>
   );
@@ -17,24 +17,15 @@ export const Note = ({ content }) => {
 
 Оборачивает текст в блок с серым бекграундом
 
-## Пример кода
-
-```jsx
-<Note>
-  Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl
-  tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas
-  tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus
-  feugiat in ante metus dictum at tempor.
-</Note>
-```
-
 ## Результат
 
-<Story
-  name="Default"
-  args={{
-    content: `Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor.`,
-  }}
->
-  {Note.bind({})}
-</Story>
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      contentMdx: `Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor.`,
+    }}
+  >
+    {Note.bind({})}
+  </Story>
+</Canvas>

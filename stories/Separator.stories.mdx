@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 import { dataByLanguagePostAndImageDontResize } from '../lib/allPostsImages';
 import { getStringAttributes } from './utils/getStringAttributes';
@@ -61,21 +61,17 @@ export const Separator = (args) => {
 
 Если в `type` вы выбрали `color-line`, то с помощью этого пропса вы можете указать цвет линии на фоне. Цвет можно указывать [любым способом доступным в HTML](https://ru.wikipedia.org/wiki/%D0%A6%D0%B2%D0%B5%D1%82%D0%B0_HTML).
 
-## Пример кода
-
-```jsx
-<Separator imageName="peopleWithBasket" type="color-line" lineColor="#d3d3ff" />
-```
-
 ## Результат
 
-<Story
-  name="Default"
-  args={{
-    imageName: 'peopleWithBasket',
-    type: 'color-line',
-    lineColor: '#d3d3ff',
-  }}
->
-  {Separator.bind({})}
-</Story>
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      imageName: 'peopleWithBasket',
+      type: 'color-line',
+      lineColor: '#d3d3ff',
+    }}
+  >
+    {Separator.bind({})}
+  </Story>
+</Canvas>

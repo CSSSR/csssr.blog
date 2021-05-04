@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 import { dataByLanguagePostAndImageDontResize } from '../lib/allPostsImages';
 import { getStringAttributes } from './utils/getStringAttributes';
@@ -69,26 +69,18 @@ export const Img = (args) => {
 
 Отвечает за положение изображения на странице.
 
-## Пример кода
-
-```jsx
-<Img
-  imageName="digital-flowers"
-  alt="Digital flowers in a physical real-world view"
-  withBigMargin
-/>
-```
-
 ## Результат
 
-<Story
-  name="Default"
-  args={{
-    imageName: 'mySampleImageSmall',
-    alt: 'Digital flowers in a physical real-world view',
-    withBigMargin: true,
-    align: 'center',
-  }}
->
-  {Img.bind({})}
-</Story>
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      imageName: 'mySampleImageSmall',
+      alt: 'Digital flowers in a physical real-world view',
+      withBigMargin: true,
+      align: 'center',
+    }}
+  >
+    {Img.bind({})}
+  </Story>
+</Canvas>
