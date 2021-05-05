@@ -54,6 +54,7 @@ export const parameters = {
       const { args, kind } = storyContext;
       return getTransformSource(kind, args);
     },
+    inlineStories: false,
     source: {
       state: 'open',
     },

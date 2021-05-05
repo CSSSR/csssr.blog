@@ -1,7 +1,11 @@
+import prettier from 'prettier';
+import parserMdx from 'prettier/parser-markdown';
+import parserBabel from 'prettier/parser-babel';
+
 import { getLattices } from '../../stories/utils/getLattices';
 import { getStringAttributes } from '../../stories/utils/getStringAttributes';
 
-export const getTransformSource = (kind, args) => {
+export const getSource = (kind, args) => {
   if (kind === 'Heading') {
     const { text, headingLevel } = args;
 
@@ -14,6 +18,7 @@ export const getTransformSource = (kind, args) => {
 
   if (kind === 'Note' || kind === 'Subtitle') {
     const { contentMdx } = args;
+
     return `<${kind}>${contentMdx}</${kind}>`;
   }
 
@@ -25,9 +30,7 @@ export const getTransformSource = (kind, args) => {
   ) {
     const { contentMdx, ...rest } = args;
 
-    return `<${kind} ${getStringAttributes(rest)}>
-      ${contentMdx}
-    </${kind}>`;
+    return `<${kind} ${getStringAttributes(rest)}>${contentMdx}</${kind}>`;
   }
 
   if (kind === 'Video') {
@@ -38,3 +41,9 @@ export const getTransformSource = (kind, args) => {
       : `<Video ${getStringAttributes(rest)} />`;
   }
 };
+
+export const getTransformSource = (kind, args) =>
+  prettier.format(getSource(kind, args), {
+    parser: 'mdx',
+    plugins: [parserMdx, parserBabel],
+  });

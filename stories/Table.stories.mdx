@@ -1,3 +1,4 @@
+import dedent from 'dedent';
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 import { getStringAttributes } from './utils/getStringAttributes';
@@ -50,10 +51,42 @@ export const Table = ({ contentMdx, ...args }) => {
 <Canvas>
   <Story
     name="Default"
+    height="350px"
     args={{
       color: 'green',
       withBorders: true,
-      contentMdx: `<thead><tr><th /><th>Команда в вашем офисе</th><th>Команда в своем офисе</th><th>Распределенная команда</th></tr></thead><tbody><tr><th colspan=\"4\">Цель</th></tr><tr><th>«Скорая помощь» проекту</th><td>++</td><td>+</td><td>-</td></tr><tr><th>Поддержка разработки или новый функционал</th><td>+</td><td>+</td><td>+</td></tr><tr><th>Старт разработки</th><td>+</td><td>+</td><td>+</td></tr></tbody>`,
+      contentMdx: dedent`
+      <thead>
+        <tr>
+          <th />
+          <th>Команда в вашем офисе</th>
+          <th>Команда в своем офисе</th>
+          <th>Распределенная команда</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th colspan="4">Цель</th>
+        </tr>
+        <tr>
+          <th>«Скорая помощь» проекту</th>
+          <td>++</td>
+          <td>+</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <th>Поддержка разработки или новый функционал</th>
+          <td>+</td>
+          <td>+</td>
+          <td>+</td>
+        </tr>
+        <tr>
+          <th>Старт разработки</th>
+          <td>+</td>
+          <td>+</td>
+          <td>+</td>
+        </tr>
+      </tbody>`,
     }}
   >
     {Table.bind({})}
