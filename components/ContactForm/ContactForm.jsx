@@ -130,7 +130,7 @@ const Component = ({
             />
           </div>
         </div>
-        <Fade duration={400} collapse when={!isMessageHidden}>
+        <Fade duration={400} collapse when={!isMessageHidden}> 
           <p className="policy">
             Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и
             информационных материалов, а также факт своего ознакомления и согласия с
