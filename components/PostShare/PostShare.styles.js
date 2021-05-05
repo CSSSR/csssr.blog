@@ -100,6 +100,10 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
     &.without_margin_top {
       margin-left: auto;
     }
+
+    &.without_aligning {
+      margin-left: unset;
+    }
   }
 
   ${tablet.all} {
@@ -111,6 +115,11 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
     &.without_margin_top {
       margin-right: auto;
       margin-left: auto;
+    }
+
+    &.without_aligning {
+      margin-right: unset;
+      margin-left: unset;
     }
   }
 

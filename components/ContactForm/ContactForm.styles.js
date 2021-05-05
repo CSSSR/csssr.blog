@@ -340,9 +340,19 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       position: static;
       margin-top: ${calcRem(20)};
 
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      form div:nth-of-type(2) {
+        order: 3;
+      }
+
       .buttonWrapper_mobile {
         display: flex;
         flex-direction: row;
+        order: 2;
         align-items: center;
         margin-top: ${calcRem(24)};
       }
@@ -369,6 +379,17 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         }
       }
 
+      .submit button[status='pending'] > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        & span {
+          line-height: ${calcRem(12)};
+        }
+      }
+
       .submit > button {
         margin-top: 0;
       }
@@ -380,7 +401,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
       .input.field-input {
         padding-bottom: ${calcRem(3)};
-        padding-left: ${calcRem(14)};
+        padding-left: ${calcRem(12)};
         font-size: ${calcRem(16)};
         line-height: ${calcRem(24)};
       }
@@ -397,7 +418,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       }
 
       .policy {
-        order: 3;
         display: block;
         font-size: ${calcRem(10)};
         line-height: ${calcRem(14)};
@@ -457,8 +477,9 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
 
     .policy {
+      order: 3;
       width: 100%;
-      margin-top: ${calcRem(15)};
+      margin-top: ${calcRem(8)};
     }
   }
 
