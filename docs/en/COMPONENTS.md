@@ -1,6 +1,6 @@
 # Components
 
-All components can be viewed at [test staging](http://master.csssr-new-blog.csssr.cloud/en/article/example)
+All components can be viewed at [test staging](http://master.csssr-new-blog.csssr.cloud/en/article/example) and [Storybook](https://master.csssr-blog-storybook.csssr.cloud/) (only in Russian)
 
 ---
 #### [`<Img />`](http://s.csssr.ru/U31J879TR/20200527121033.jpg)
@@ -136,13 +136,13 @@ Responsible for the appearance of the component of the quote without images. Wit
 Data type: `string`\
 Default value: `undefined`
 
-The text of the link under the citation. 
+The text of the link under the citation.
 
 ##### `linkHref`
 Data type: `string`\
 Default value: `undefined`
 
-URL of link under citation. 
+URL of link under citation.
 
 ##### Example code
 ```jsx
@@ -243,12 +243,12 @@ URL for the video.
 ##### Example code
 ```jsx
 <Video width="560" height="315">
-    <iframe 
+    <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/7nrDctGYOIk" 
-        frameborder="0" 
-        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        src="https://www.youtube.com/embed/7nrDctGYOIk"
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
     />
 </Video>
