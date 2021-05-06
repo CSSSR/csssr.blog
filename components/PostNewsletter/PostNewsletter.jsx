@@ -25,11 +25,13 @@ const PostNewsletter = ({
 
   useEffect(() => {
     const checkWindowWidth = () => {
-      setMobile(window.matchMedia(defaultTheme.breakpoints.mobile.all.slice('@media '.length)).matches
+      setMobile(
+        window.matchMedia(defaultTheme.breakpoints.mobile.all.slice('@media '.length)).matches,
+      )
     }
 
     window.addEventListener('load', checkWindowWidth)
-    
+
     return () => window.removeEventListener('load', checkWindowWidth)
   }, [])
 

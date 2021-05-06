@@ -78,7 +78,6 @@ const Component = ({
   const handleTryToFillFormAgain = () => setSubmittedToServerStatus(false)
   const status = getStatus()
 
-  
   return (
     <div
       className={cn(`${className}`, {
