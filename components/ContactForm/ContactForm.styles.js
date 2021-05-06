@@ -25,7 +25,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         width: 100%;
         padding: 0;
         font-size: ${calcRem(12)};
-        line-height: ${calcRem(24)};
+        line-height: ${calcRem(19)};
         overflow: hidden;
         text-overflow: ellipsis;
 
@@ -34,7 +34,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
           line-height: ${calcRem(12)};
         }
       }
-      
+
       .submit > button {
         height: ${calcRem(30)};
         margin-top: ${calcRem(20)};
@@ -173,7 +173,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       border-color: transparent;
     }
 
-    .buttonWrapper:not(.submitting) .progress-circle, 
+    .buttonWrapper:not(.submitting) .progress-circle,
     .buttonWrapper_mobile:not(.submitting) .progress-circle {
       display: none;
     }
@@ -244,7 +244,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       height: ${calcRem(40)};
       margin-left: ${calcRem(-12)};
       transform: rotateZ(14deg) scale(1.2);
-      
+
       & path {
         stroke: ${colors.secondary.darken100} !important;
       }
@@ -495,7 +495,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         }
       }
     }
-    
   }
 `
 

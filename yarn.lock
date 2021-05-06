@@ -940,10 +940,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@csssr/core-design@^6.4.3":
-  version "6.4.3"
-  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-6.4.3.tgz#9dca85d1cbc62f49530d08699d4206a6ae82d2c4"
-  integrity sha512-0x4wGIU+W1LXNlWPzb5Bskn+P4uXVWb+/wf8hWGeMNwCE3xz9F66TtPVdG/rEik5zxcK2ApllGw1DZ9Sfmv0WA==
+"@csssr/core-design@^6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-6.5.1.tgz#363da7ac1f8faaa1d6c6f85e5c83d53fc0fa0364"
+  integrity sha512-zLTdonRdlo3d7dB/o3BGT/b7vKkouujOalFhwGJEJt+Hw8LA91t1497PtevwpR/o5wVKHAAD3U+ExISJyL3GeQ==
   dependencies:
     classnames "^2.2.6"
     color "^3.1.3"

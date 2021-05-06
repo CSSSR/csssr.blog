@@ -118,6 +118,12 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const posts = await getPostsByLanguage(['tag'])
+
+  const postsOrder = {
+    en: postsOrderEn,
+    ru: postsOrderRu,
+  }
+
   const paths = languages.reduce((memo, language) => {
     let indexShift = 0
 
@@ -152,7 +158,7 @@ export async function getStaticPaths() {
           }
         })
         .concat(
-          posts[language].map((post, index) => {
+          postsOrder[language].flat().map((post, index) => {
             const page = calculatePageNumberByPostIndex(index)
 
             return {

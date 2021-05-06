@@ -17,7 +17,7 @@ import { ReactComponent as VkIcon } from '../../public/icons/share/vk.svg'
 import { ReactComponent as EmailIcon } from '../../public/icons/share/mail.svg'
 import { ReactComponent as CopyIcon } from '../../public/icons/share/copy.svg'
 
-const PostShare = ({ className, language, type }) => {
+const PostShare = ({ className, language, type, HideShareLinksOnMobile }) => {
   const router = useRouter()
   const shareTitle = language === 'ru' ? 'Поделиться' : 'Share'
   const copyMessage = language === 'ru' ? 'Скопировано!' : 'Copied!'
@@ -49,6 +49,8 @@ const PostShare = ({ className, language, type }) => {
     <div
       className={cn(className, 'share', {
         without_margin_top: language !== 'ru' || type === 'news',
+        with_news_podcast: language === 'ru' || type === 'news',
+        without_share_links: HideShareLinksOnMobile,
         without_aligning: language !== 'ru',
       })}
     >

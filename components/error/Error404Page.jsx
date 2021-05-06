@@ -1,111 +1,76 @@
-import React, { Fragment } from 'react'
-import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
-import cn from 'classnames'
 import { useRouter } from 'next/router'
+import { Header, ErrorPage404 } from '@csssr/core-design'
+
+import Meta from '../Meta'
+import ErrorCategories from './ErrorCategories'
+import ErrorPosts from './ErrorPosts'
+import ErrorLeftContent from './ErrorLeftContent'
+
+import ruPathRegexp from '../../utils/ruPathRegexp'
+import getPostsCategories from '../../utils/getPostsCategories'
+import { errorText } from '../../data/errorByLanguage'
 
 import styles from './ErrorPage.styles'
-import { Grid } from '@csssr/core-design'
-import Meta from '../Meta'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
-
-import { ReactComponent as LogoIcon } from '../../public/components/error/icons/csssr_logo.svg'
-import { ReactComponent as LineFromTopToBottomIcon } from '../../public/components/error/icons/lineFromTopToBottom.svg'
-import { ReactComponent as NotFound } from '../../public/components/error/icons/notFound.svg'
-
-import { navItemsEn, navItemsRu } from '../../data/navItems'
-import ruPathRegexp from '../../utils/ruPathRegexp'
-
 import globalStyles from '../Layout/Layout.styles'
 
-const ErrorPage = ({ className }) => {
+const ErrorPage = ({ className, posts }) => {
+  const [language, setLanguage] = useState()
+
   const route = useRouter()
-  const isLanguageRu = ruPathRegexp.test(route.asPath)
-  const dynamicNavItems = isLanguageRu ? navItemsRu : navItemsEn
+  const { isReady, asPath } = route
 
-  const renderNav = ({ items: { title, id, links } }) => {
-    const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
+  useEffect(() => {
+    if (isReady) {
+      ruPathRegexp.test(asPath) ? setLanguage('ru') : setLanguage('en')
+    }
+  }, [isReady, asPath])
 
-    return (
-      <span key={id}>
-        <h3 className="font_burger-menu">{title}</h3>
-
-        {links && (
-          <ul className="menu">
-            {links.map(({ id, title, href }) => {
-              const testId = `ErrorPage:link:${id}`
-              return (
-                <li key={id}>
-                  {linkRegExp.test(href) ? (
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="menu-item"
-                      href={href}
-                      data-testid={testId}
-                    >
-                      {title}
-                    </a>
-                  ) : (
-                    <Link href={`/${href}`}>
-                      <a className="menu-item" data-testid={testId}>
-                        {title}
-                      </a>
-                    </Link>
-                  )}
-                </li>
-              )
-            })}
-          </ul>
-        )}
-      </span>
-    )
+  if (!language) {
+    return null
   }
 
-  const text404 = isLanguageRu ? 'Страница не найдена' : 'Not found'
+  const postsToLanguage = posts[language]
+  const categoriesToLanguage = getPostsCategories(postsToLanguage)
+
+  const presetByLanguage = {
+    en: 'defaultEn',
+    ru: 'defaultRu',
+  }
+
+  const { title, subTitle } = errorText[language]
 
   return (
     <>
+      <Header
+        preset={presetByLanguage[language]}
+        logo={{
+          testId: 'Header:link.logo',
+          href: `https://csssr.com/${language}`,
+          type: 'default',
+        }}
+      />
+
+      <Head>
+        <title>{title}</title>
+      </Head>
+
       <Global styles={globalStyles} />
 
       <Meta />
 
-      <Head>
-        <title>{text404}</title>
-      </Head>
-
-      <Grid as="header" className={className}>
-        <a className="logo" href="https://csssr.com/en" data-testid="Logo:link">
-          <LogoIcon width="100%" height="100%" />
-        </a>
-      </Grid>
-
-      <Grid as="main" className={cn(className, `error-code_404`)}>
-        <h1 className="font_h1-slab">{text404}</h1>
-
-        <PictureSmart
-          className="picture"
-          alt="404"
-          requireImages={require.context('../../public/components/error/images/404')}
-        />
-
-        <div className={'code-wrapper'}>
-          <NotFound width="auto" height="100%" />
-        </div>
-
-        <h2 className="font_subhead-slab">
-          {isLanguageRu ? 'Изучите наши разделы' : 'Explore other pages'}
-        </h2>
-        <Fragment>
-          <div className="arrow-wrapper">
-            <LineFromTopToBottomIcon width="100%" height="100%" />
-          </div>
-
-          <div className="navList">{dynamicNavItems.map((items) => renderNav({ items }))}</div>
-        </Fragment>
-      </Grid>
+      <ErrorPage404
+        title={title}
+        subTitle={subTitle}
+        className={className}
+        leftContent={<ErrorLeftContent />}
+      >
+        <ErrorCategories items={categoriesToLanguage} language={language} />
+        <ErrorPosts posts={postsToLanguage} language={language} />
+      </ErrorPage404>
     </>
   )
 }
