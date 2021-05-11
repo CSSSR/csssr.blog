@@ -133,8 +133,8 @@ const Component = ({
         </div>
         <Fade duration={400} collapse when={isMobile || !isMessageHidden}>
           <p className="policy">
-            Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и
-            информационных материалов, а также факт своего ознакомления и согласия с
+            Отправляя данную форму, я&nbsp;подтверждаю своё согласие на&nbsp;получение рекламных и&nbsp;информационных материалов,
+            а&nbsp;также факт своего ознакомления и согласия с
             <a
               className="subscribe-policy-link"
               href="https://csssr.com/ru/privacy-policy"
