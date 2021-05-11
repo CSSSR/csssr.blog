@@ -7,7 +7,7 @@ const ANIMATION_DURATION_IN_MS = 2000
 testcase('Displaying articles (RU local)', () => {
   step(`go to the article via a direct link`, () => {
     browser
-      .setWindowSize(1920, 4800)
+      .setWindowSize(1920, 4350)
       .url(`${browser.launch_url}${pages.ruLocal.url}${pages.articleRu.url}`)
       .waitForElementVisible(articles.block.post)
   })
@@ -30,7 +30,7 @@ testcase('Displaying articles (RU local)', () => {
 testcase('Contents of articles (RU local)', () => {
   step(`go to the article «Итоги 2019 от CSSSR»`, () => {
     browser
-      .setWindowSize(1920, 8000)
+      .setWindowSize(1920, 7600)
       .url(`${browser.launch_url}${pages.ruLocal.url}${pages.yearResume2019.url}`)
       .waitForElementVisible(articles.block.post)
   })
@@ -42,7 +42,7 @@ testcase('Contents of articles (RU local)', () => {
 
   step(`go to the article «Оценка задач. Как перестать гадать и начать угадывать»`, () => {
     browser
-      .setWindowSize(1920, 5000)
+      .setWindowSize(1920, 4800)
       .url(`${browser.launch_url}${pages.ruLocal.url}${pages.estimateLikeGod.url}`)
       .waitForElementVisible(articles.block.post)
   })
@@ -66,7 +66,7 @@ testcase('Contents of articles (RU local)', () => {
 
   step(`go to the article «Формальная и интуитивная семантика языка программирования на примерах JS и JSX»`, () => {
     browser
-      .setWindowSize(1920, 17400)
+      .setWindowSize(1920, 17300)
       .url(`${browser.launch_url}${pages.ruLocal.url}${pages.semanticsInProgramming.url}`)
       .waitForElementVisible(articles.block.post)
   })
@@ -90,7 +90,7 @@ testcase('Contents of articles (RU local)', () => {
 
   step(`go to the article «Стимуляторы работы программиста. Мотивация»`, () => {
     browser
-      .setWindowSize(1920, 6300)
+      .setWindowSize(1920, 5900)
       .url(`${browser.launch_url}${pages.ruLocal.url}${pages.workHarder.url}`)
       .waitForElementVisible(articles.block.post)
   })
@@ -102,7 +102,7 @@ testcase('Contents of articles (RU local)', () => {
 
   step(`go to the article «Стимуляторы работы программиста. Обстановка»`, () => {
     browser
-      .setWindowSize(1920, 5400)
+      .setWindowSize(1920, 5000)
       .url(`${browser.launch_url}${pages.ruLocal.url}${pages.workBetter.url}`)
       .waitForElementVisible(articles.block.post)
   })
@@ -128,6 +128,7 @@ testcase('Rolling boxes Newsletter and Share (RU local)', () => {
   step('scrolling to the middle of the page', () => {
     browser
       .moveToElement(articles.text.titleInCenterPage, 1, 1)
+      .pause(ANIMATION_DURATION_IN_MS)
       .click(articles.text.titleInCenterPage)
       .pause(ANIMATION_DURATION_IN_MS)
   })
@@ -143,7 +144,7 @@ testcase('Rolling boxes Newsletter and Share (RU local)', () => {
   })
 
   expected('the subscription block is located correctly on the page', () => {
-    browser.assert.screenshotElement(articles.block.fullPage, 'subscription block in the end page')
+    browser.assert.screenshotElement(articles.block.fullPage, 'subscription block in the end page', { hideSelectors: [articles.block.readMore] })
   })
 })
 
@@ -377,7 +378,7 @@ testcase('Contents of articles (EN local)', () => {
   })
 })
 
-testcase('Rolling boxes Newsletter and Share (EN local)', () => {
+testcase('Rolling Block Share (EN local)', () => {
   step(`go to the article «How Close Your Outsourced Team Should Be Located? Pros and Cons»`, () => {
     browser
       .setWindowSize(1920, 1200)
@@ -412,7 +413,7 @@ testcase('Rolling boxes Newsletter and Share (EN local)', () => {
   })
 })
 
-testcase('Layout of the Newsletter+Share block at different resolutions (EN local)', () => {
+testcase('Share block at different resolutions (EN local)', () => {
   step(`go to the article «How Close Your Outsourced Team Should Be Located? Pros and Cons»`, () => {
     browser
       .setWindowSize(1360, 1000)
@@ -420,23 +421,23 @@ testcase('Layout of the Newsletter+Share block at different resolutions (EN loca
       .waitForElementVisible(articles.block.post)
   })
 
-  expected('subscription and sharing block is displayed in 1360px', () => {
+  expected('sharing block is displayed in 1360px', () => {
     browser.assert.screenshotElement(articles.block.fullPage, 'How Close Your Outsourced Team 1360(EN)')
   })
 
-  expected('subscription and sharing block is displayed in 1280px', () => {
+  expected('sharing block is displayed in 1280px', () => {
     browser
       .setWindowSize(1280, 1000)
       .assert.screenshotElement(articles.block.fullPage, 'How Close Your Outsourced Team 1280(EN)')
   })
 
-  expected('subscription and sharing block is displayed in 768px', () => {
+  expected('sharing block is displayed in 768px', () => {
     browser
       .setWindowSize(768, 1000)
       .assert.screenshotElement(articles.block.fullPage, 'How Close Your Outsourced Team 768(EN)')
   })
 
-  expected('subscription and sharing block is displayed in 360px', () => {
+  expected('sharing block is displayed in 360px', () => {
     browser
       .setWindowSize(360, 6200)
       .assert.screenshotElement(articles.block.fullPage, 'How Close Your Outsourced Team 360(EN)')
@@ -615,6 +616,3 @@ testcase('Successful subscription to the Newsletter (Main Page)', () => {
       .waitForElementPresent(articles.block.newsletterBlock)
   })
 })
-
-
-
