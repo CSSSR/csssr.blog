@@ -1,0 +1,69 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { getStringAttributes } from './utils/getStringAttributes';
+
+<Meta title="Video" />
+
+export const Video = ({ content, ...args }) => {
+  return (
+    <>
+      {compilerMdx({
+        content: content
+          ? `<Video ${getStringAttributes(args)}>${content}</Video>`
+          : `<Video ${getStringAttributes(args)} />`,
+      })}
+    </>
+  );
+};
+
+# [`<Video />`](http://s.csssr.ru/U31J879TR/2021-04-08-18-03-49-2dkpy_.jpg)
+
+Компонент для вставки видео на страницу. Видео можно вставить с помощью `src` пропса или же как `embed` код внутрь данного компонента. Для компонента следует указывать `width` и `height`, с их помощью видео будет всегда приобретать правильные пропорции на различных разрешениях экрана.
+
+## `src`
+
+Тип данных: `string`
+
+Дефолтное значение: `undefined`
+
+URL для видео.
+
+## Результат
+
+### Embed
+
+<Canvas>
+  <Story
+    height="400px"
+    name="Embed"
+    args={{
+      src: '',
+      width: '560',
+      height: '315',
+      content: `<iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/7nrDctGYOIk"
+        frameborder="0"
+        allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+    />`,
+    }}
+  >
+    {Video.bind({})}
+  </Story>
+</Canvas>
+
+### Selfhost
+
+<Canvas>
+  <Story
+    height="500px"
+    name="Selfhost"
+    args={{
+      src: 'https://www.w3schools.com/html/movie.mp4',
+    }}
+  >
+    {Video.bind({})}
+  </Story>
+</Canvas>
