@@ -15,6 +15,7 @@ import rateFormValidationRules from '../../utils/validators/rateFormValidationRu
 const Component = ({
   className,
   kind,
+  isMobile,
   isMessageHidden,
   setMessageHidden,
   formName,
@@ -130,10 +131,10 @@ const Component = ({
             />
           </div>
         </div>
-        <Fade duration={400} collapse when={!isMessageHidden}>
+        <Fade duration={400} collapse when={isMobile || !isMessageHidden}>
           <p className="policy">
-            Отправляя данную форму, я подтверждаю своё согласие на получение рекламных и
-            информационных материалов, а также факт своего ознакомления и согласия с
+            Отправляя данную форму, я&nbsp;подтверждаю своё согласие на&nbsp;получение рекламных и&nbsp;информационных материалов,
+            а&nbsp;также факт своего ознакомления и согласия с
             <a
               className="subscribe-policy-link"
               href="https://csssr.com/ru/privacy-policy"
@@ -184,6 +185,7 @@ Component.propTypes = {
 const Form = ({
   className,
   kind,
+  isMobile,
   isMessageHidden,
   setMessageHidden,
   BENCHMARK_EMAIL_TOKEN,
@@ -244,6 +246,7 @@ const Form = ({
     <ReactFinalForm
       className={className}
       kind={kind}
+      isMobile={isMobile}
       isMessageHidden={isMessageHidden}
       setMessageHidden={setMessageHidden}
       formName="NewsletterForm"

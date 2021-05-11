@@ -63,6 +63,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       margin-top: 0;
       margin-bottom: 0;
       margin-left: unset;
+      padding-left: 0;
       transform: unset;
     }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './PostNewsletter.styles'
@@ -8,6 +8,7 @@ import ContactForm from '../ContactForm'
 import PostShare from '../PostShare'
 import NewsPodcast from './NewsPodcast'
 import { postNewsletterData } from '../../data/newsletter'
+import { defaultTheme } from '@csssr/core-design'
 
 const PostNewsletter = ({
   className,
@@ -24,6 +25,20 @@ const PostNewsletter = ({
   const [isMessageHidden, setMessageHidden] = useState(true)
   const withSubscribeForm = language === 'ru' && type !== 'news'
   const withNewsPodcast = type === 'news'
+  const [isMobile, setMobile] = useState(null)
+
+  useEffect(() => {
+    const checkWindowWidth = () => {
+      setMobile(
+        window.matchMedia(defaultTheme.breakpoints.mobile.all.slice('@media '.length)).matches,
+      )
+    }
+
+    window.addEventListener('load', checkWindowWidth)
+
+    return () => window.removeEventListener('load', checkWindowWidth)
+  }, [])
+
   return (
     <div
       className={cn(className, {
@@ -46,6 +61,7 @@ const PostNewsletter = ({
 
           <ContactForm
             kind={kind}
+            isMobile={isMobile}
             isMessageHidden={isMessageHidden}
             setMessageHidden={setMessageHidden}
             BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
