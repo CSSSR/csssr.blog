@@ -1,7 +1,7 @@
 import { css, keyframes } from '@emotion/react'
 import { calcRem } from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile }, colors }) => css`
+const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
   & {
     display: flex;
     flex-direction: column;
@@ -278,6 +278,13 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
 
     .formbox-button_LY6HH {
       margin-top: ${calcRem(40)};
+    }
+  }
+
+  ${tablet.all} {
+    .heading {
+      font-size: ${calcRem(40)};
+      line-height: ${calcRem(56)};
     }
   }
 `

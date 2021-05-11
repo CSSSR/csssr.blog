@@ -19,7 +19,7 @@ const base = ({ colors }) => css`
     font-weight: 300;
     color: ${colors.secondary.darken100};
     box-sizing: border-box;
-    padding: ${calcRem(4)} ${calcRem(14)};
+    padding: ${calcRem(4)} ${calcRem(12)};
     width: 100%;
     outline: none;
   }
