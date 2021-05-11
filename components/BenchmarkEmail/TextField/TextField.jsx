@@ -4,7 +4,7 @@ import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './TextField.styles'
 
-const TextField = ({ className, id, name, label, testId }) => {
+const TextField = ({ className, id, name, label, testId, autocomplete, type = 'text' }) => {
   const [inputValue, setInputValue] = useState('')
 
   const changeHandler = (e) => {
@@ -27,7 +27,7 @@ const TextField = ({ className, id, name, label, testId }) => {
     <div className={className}>
       <input
         className="formbox-field_LY6HH text-placeholder"
-        type="text"
+        type={type}
         value={inputValue}
         onFocus={focusPlaceHolder}
         onBlur={blurPlaceHolder}
@@ -36,6 +36,7 @@ const TextField = ({ className, id, name, label, testId }) => {
         name={name}
         maxLength="100"
         data-testid={testId}
+        autoComplete={autocomplete}
       />
       <label
         className={cn('label', { _active: inputValue })}
@@ -52,6 +53,8 @@ TextField.propTypes = {
   name: string,
   label: string,
   testId: string,
+  autocomplete: string,
+  type: string,
 }
 
 export default styled(TextField)`

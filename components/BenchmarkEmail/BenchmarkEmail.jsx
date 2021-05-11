@@ -224,12 +224,15 @@ const BenchmarkEmail = ({ className }) => {
                       name="fldname_LY6HH"
                       label="имя пользователя"
                       testId="BenchmarkEmail:field.name"
+                      autocomplete="name"
                     />
                     <TextField
                       id="fldemail_LY6HH"
                       name="fldemail_LY6HH"
                       label="e-mail"
                       testId="BenchmarkEmail:field.email"
+                      type="email"
+                      autocomplete="email"
                     />
                   </fieldset>
                   <fieldset className="fieldset">
