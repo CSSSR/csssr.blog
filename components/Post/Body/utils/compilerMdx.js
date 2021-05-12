@@ -1,7 +1,6 @@
 import { Fragment } from 'react'
 import { compiler } from 'markdown-to-jsx'
-import cn from 'classnames'
-import { Heading, Text, Link, ListItem } from '@csssr/core-design'
+import { Link, ListItem } from '@csssr/core-design'
 import Separator from '../Separator'
 import ParagraphWithImage from '../ParagraphWithImage'
 import Img from '../Img'
@@ -12,8 +11,10 @@ import Video from '../Video'
 import Caption from '../Caption'
 import Table from '../Table'
 import List from '../List'
+import Heading from '../Heading'
+import Text from '../Text'
 
-export const compilerMdx = ({ content, type, images }) =>
+export const compilerMdx = ({ content, images, language }) =>
   compiler(content, {
     wrapper: Fragment,
     forceWrapper: true,
@@ -21,7 +22,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h1: {
         component: Heading,
         props: {
-          className: 'heading_regular_l',
           type: 'regular',
           size: 'l',
         },
@@ -29,7 +29,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h2: {
         component: Heading.H2,
         props: {
-          className: 'heading_regular_m',
           type: 'regular',
           size: 'm',
         },
@@ -37,9 +36,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h3: {
         component: Heading.H3,
         props: {
-          className: cn('heading_regular_s', {
-            'is_scaled-down': type === 'news',
-          }),
           type: 'regular',
           size: 's',
         },
@@ -47,7 +43,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h4: {
         component: Heading.H4,
         props: {
-          className: 'heading_regular_s',
           type: 'regular',
           size: 's',
         },
@@ -55,7 +50,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h5: {
         component: Heading.H5,
         props: {
-          className: 'heading_regular_s',
           type: 'regular',
           size: 's',
         },
@@ -63,7 +57,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h6: {
         component: Heading.H6,
         props: {
-          className: 'heading_regular_s',
           type: 'regular',
           size: 's',
         },
@@ -83,11 +76,9 @@ export const compilerMdx = ({ content, type, images }) =>
           )
         },
         props: {
-          className: cn('text_regular_m paragraph', {
-            'is_scaled-down': type === 'news',
-          }),
           type: 'regular',
           size: 'm',
+          language: language,
         },
       },
       a: {

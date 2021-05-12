@@ -36,7 +36,7 @@ const Body = ({
       BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
       data-testid="Post:block"
     />
-    {compilerMdx({ content, type, images })}
+    {compilerMdx({ content, images, language })}
 
     <PostNewsletter
       className="post-newsletter hidden_desktop"

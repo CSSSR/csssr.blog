@@ -6,16 +6,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     margin: 0 auto;
   }
 
-  & > .text_regular_m:first-of-type strong:first-of-type {
-    font-style: normal;
-    font-weight: normal;
-    font-size: ${calcRem(76)};
-    line-height: ${calcRem(32)};
-    padding-top: ${calcRem(20)};
-    padding-left: ${calcRem(4)};
-    float: left;
-  }
-
   em {
     font-weight: normal;
   }
@@ -24,26 +14,8 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     font-weight: bold;
   }
 
-  .heading_regular_s {
-    margin-top: ${calcRem(30)};
-  }
-
-  .text_regular_m,
-  .heading_regular_l,
-  .heading_regular_m,
-  .heading_regular_s,
   .list_item_s {
     color: #18191B;
-  }
-
-  .text_regular_m a {
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-  }
-
-  .text_regular_m + .text_regular_m {
-    margin-top: 1rem;
   }
 
   .note + .text_regular_m {
@@ -104,15 +76,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     white-space: nowrap;
   }
 
-  .heading_regular_l,
-  .heading_regular_m,
-  .heading_regular_s {
-    .link_list_s {
-      font-size: inherit;
-      line-height: inherit;
-    }
-  }
-
   a.no-dot {
     &::after {
       display: none;
@@ -120,29 +83,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   }
 
   ${desktop.all} {
-    & > .text_regular_m:first-of-type {
-      margin-top: 50px;
-    }
-
-    .heading_regular_m {
-      margin-top: 40px;
-      font-weight: 900;
-      font-size: 24px;
-      line-height: 32px;
-    }
-
-    .text_regular_m + .heading_regular_m,
-    div +  .heading_regular_m {
-      margin-top: 50px;
-    }
-
-    .heading_regular_s {
-      font-weight: 900;
-      font-size: 16px;
-      line-height: 24px;
-    }
-
-    .text_regular_m,
     hr.grid-element  {
       margin-top: 25px;
     }
@@ -161,10 +101,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       margin-top: 50px;
     }
 
-    .text_regular_m,
-    .heading_regular_l,
-    .heading_regular_m,
-    .heading_regular_s,
     .list_s,
     .grid-element,
     .compare,
@@ -194,44 +130,9 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   }
 
   ${tablet.all} {
-    & > .text_regular_m:first-of-type  {
-      margin-top: ${calcRem(30)};
-    }
 
-    & > .text_regular_m:first-of-type strong:first-of-type {
-      padding-right: ${calcRem(11)};
-      padding-left: ${calcRem(2)};
-      font-size: ${calcRem(64)};
-      line-height: ${calcRem(32)};
-    }
-
-    .heading_regular_m {
-      margin-top: ${calcRem(30)};
-      font-size: ${calcRem(18)};
-      line-height: ${calcRem(24)};
-    }
-
-    .text_regular_m.is_scaled-down {
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
-    }
-
-    .heading_regular_s {
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
-    }
-
-    .text_regular_m + .text_regular_m {
-      margin-top: ${calcRem(9)};
-    }
-
-    .text_regular_m,
     hr.grid-element  {
       margin-top: ${calcRem(15)};
-    }
-
-    .picture + .text_regular_m {
-      margin-top: ${calcRem(30)};
     }
 
     picture.with_big_margin + .heading_regular_s,
@@ -252,10 +153,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       }
     }
 
-    .text_regular_m,
-    .heading_regular_l,
-    .heading_regular_m,
-    .heading_regular_s,
     .list_s,
     .grid-element,
     .compare,
@@ -272,34 +169,8 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   }
 
   ${mobile.all} {
-    & > .text_regular_m:first-of-type  {
-      margin-top: ${calcRem(40)};
-    }
-
-    & > .text_regular_m:first-of-type strong:first-of-type {
-      padding-right: ${calcRem(11)};
-      font-size: ${calcRem(64)};
-      line-height: ${calcRem(32)};
-    }
-
-    .heading_regular_m {
-      margin-top: ${calcRem(30)};
-      font-size: ${calcRem(18)};
-      line-height: ${calcRem(24)};
-    }
-
-    .heading_regular_s {
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
-    }
-
-    .text_regular_m,
     hr.grid-element {
       margin-top: ${calcRem(15)};
-    }
-
-    .picture + .text_regular_m {
-      margin-top: ${calcRem(20)};
     }
 
     picture.with_big_margin + .heading_regular_s,
@@ -320,10 +191,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       }
     }
 
-    .text_regular_m,
-    .heading_regular_l,
-    .heading_regular_m,
-    .heading_regular_s,
     .list_s,
     .line-numbers,
     .grid-element,
@@ -345,20 +212,11 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     }
   }
 `
-
-const dynamic = (language) =>  css`
-  & > .text_regular_m:first-of-type strong:first-of-type {
-    padding-right: ${language === 'ru' ? calcRem(23) : calcRem(7)};
-    font-family: ${language === 'ru' ? 'Sweet Mavka Script' : 'Amita'};
-  }
-`
-
 const StyledBody = props => {
-  const { theme: { breakpoints }, language } = props
+  const { theme: { breakpoints } } = props
 
   return css`
     ${base({ breakpoints })}
-    ${dynamic(language)}
   `
 }
 
