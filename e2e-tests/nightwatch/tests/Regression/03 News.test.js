@@ -128,7 +128,7 @@ testcase('Pagination on the news page', () => {
 testcase('The specific news page', () => {
   step(`go to the homepage ${pages.ruLocal.url}`, () => {
     browser
-      .setWindowSize(1920, 4700)
+      .setWindowSize(1920, 4500)
       .url(`${browser.launch_url}${pages.ruLocal.url}`)
       .waitForElementVisible(header.block.header)
       .click(general.button.closeCookiesAlert)
