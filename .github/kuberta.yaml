@@ -1,0 +1,14 @@
+version: 1-alpha.1
+
+releases:
+  csssr-blog-storybook:
+    name: csssr-blog-storybook
+    autodeploy-on: default
+    chart: csssr/static-site@~1.1.0
+    static-params:
+      projectID: csssr-blog-storybook
+      tlsSecret: csssr-blog-storybook-tls
+    builds:
+      - workflow: build-storybook.yaml
+        values:
+          buildID: build-{{ .Build.RunID }}

@@ -1,0 +1,78 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { dataByLanguagePostAndImageDontResize } from '../lib/allPostsImages';
+import { getStringAttributes } from './utils/getStringAttributes';
+
+<Meta
+  title="Separator"
+  argTypes={{
+    type: {
+      type: 'select',
+      options: ['color-line', 'bg-repeat'],
+    },
+    imageName: {
+      type: 'radio',
+      options: [
+        'manWithCafeBg',
+        'peopleWithBasket',
+        'peopleWithDogBg',
+        'peopleWithGramophone',
+      ],
+    },
+  }}
+/>
+
+export const Separator = (args) => {
+  return (
+    <>
+      {compilerMdx({
+        content: `<Separator ${getStringAttributes(args)}/>`,
+        images: dataByLanguagePostAndImageDontResize['en']['example'],
+      })}
+    </>
+  );
+};
+
+# [`<Separator />`](http://s.csssr.ru/U31J879TR/20200527121838.jpg)
+
+Используется для того, что бы разделять текст на логические составляющие. Может иметь разные изображения и разные цвета бекграунда. Изображения для этого компонента лежат в папке `public/components/separator`. Принимает следующие пропсы
+
+## `imageName`
+
+Тип данных: `string`
+
+Дефолтное значение: `undefined`
+
+Название изображения в папке, где лежит статика для этого компонента.
+
+## `type`
+
+Тип данных: `color-line` | `bg-repeat`
+
+Дефолтное значение: `undefined`
+
+Указывает в каком виде вы хотите отобразить изображение. `bg-repeat` если вы хотите изображение на репите, `color-line` если хотите одно изображение с цветной линией на фоне.
+
+## `lineColor`
+
+Тип данных: `string`
+
+Дефолтное значение: `undefined`
+
+Если в `type` вы выбрали `color-line`, то с помощью этого пропса вы можете указать цвет линии на фоне. Цвет можно указывать [любым способом доступным в HTML](https://ru.wikipedia.org/wiki/%D0%A6%D0%B2%D0%B5%D1%82%D0%B0_HTML).
+
+## Результат
+
+<Canvas>
+  <Story
+    height="350px"
+    name="Default"
+    args={{
+      imageName: 'peopleWithBasket',
+      type: 'color-line',
+      lineColor: '#d3d3ff',
+    }}
+  >
+    {Separator.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,46 @@
+name: Storybook
+on:
+  workflow_dispatch:
+    inputs:
+      kuberta_system:
+
+jobs:
+  build:
+    name: Build Storybook
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: docker://quay.csssr.cloud/csssr/kuberta-init-workflow:v1
+
+      - uses: docker://quay.csssr.cloud/csssr/github-info:v1
+        id: gh
+
+      - name: Download CSSSR actions
+        uses: actions/checkout@v2
+        with:
+          repository: CSSSR/actions
+          ssh-key: ${{ secrets.DOWNLOAD_ACTIONS_SSH_KEY }}
+          path: actions
+
+      - uses: actions/checkout@v2
+        with:
+          path: blog
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - run: yarn install --frozen-lockfile
+        working-directory: blog
+
+      - run: yarn build-storybook
+        working-directory: blog
+        env:
+          BLOG_HOST: https://${{ steps.gh.outputs.releaseID }}.csssr-blog-storybook.csssr.cloud/
+
+      - uses: ./actions/upload-static/v1beta1
+        with:
+          project-id: csssr-blog-storybook
+          files: ./blog/storybook-static
+          auth: ${{ secrets.CDN_UPLOAD_SECRET }}
+          token: ${{ secrets.GITHUB_TOKEN }}

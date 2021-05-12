@@ -113,6 +113,12 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     }
   }
 
+  a.no-dot {
+    &::after {
+      display: none;
+    }
+  }
+
   ${desktop.all} {
     & > .text_regular_m:first-of-type {
       margin-top: 50px;

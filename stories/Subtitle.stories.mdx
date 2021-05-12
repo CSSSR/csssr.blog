@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+
+<Meta title="Subtitle" />
+
+export const Subtitle = ({ contentMdx }) => {
+  return (
+    <>
+      {compilerMdx({
+        content: `<Subtitle>${contentMdx}</Subtitle>`,
+      })}
+    </>
+  );
+};
+
+# [`<Subtitle />`](http://s.csssr.ru/U31J879TR/20200527125943.jpg)
+
+Компонент подзаголовка, обычно он находится в самом начале статьи, между хедером статьи и первым параграфом.
+
+## Результат
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      contentMdx: `Cost-effectiveness, high-quality services and other reasons why so many Singapore entrepreneurs are looking into offshoring web development services`,
+    }}
+  >
+    {Subtitle.bind({})}
+  </Story>
+</Canvas>
