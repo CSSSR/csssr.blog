@@ -3,6 +3,8 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, width, height}) => css`
   & {
+    padding-top: ${calcRem(20)};
+    padding-bottom: ${calcRem(5)};
     width: 100%;
   }
 
@@ -22,21 +24,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, width, height}) => css
 
   ${desktop.all} {
     & {
-      margin-top: 25px;
-      grid-column: 4 / span 6; 
+      grid-column: 4 / span 6;
     }
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(25)};
       grid-column: 3 / span 8;
     }
   }
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(40)};
+      padding-top: ${calcRem(15)};
       grid-column: 1 / span 6;
       width: 100vw;
       margin-left: 50%;
