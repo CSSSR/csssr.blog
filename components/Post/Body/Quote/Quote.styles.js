@@ -3,7 +3,8 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) => css`
   & {
-    margin-top: ${calcRem(85)};
+    padding-top: ${calcRem(45)};
+    padding-bottom: ${calcRem(30)};
     grid-column: 1 / span 12;
   }
 
@@ -86,8 +87,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
     color: ${withImage ? '#18191B' : '#0254D8'};
   }
 
-  .quote-text > .text_regular_m:first-of-type {
-    margin-top: 0;
+  .quote-text > p:first-of-type {
+    padding-top: 0;
+  }
+
+  .quote-text > p:last-of-type {
+    padding-bottom: 0;
+  }
+
+  .author {
+    margin-top: ${calcRem(25)};
   }
 
   .author,
@@ -116,9 +125,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
       }
     }
 
-    .author {
-      margin-top: ${calcRem(30)};
-    }
+
 
     .autor-post {
       margin-top: ${calcRem(10)};
@@ -150,7 +157,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
 
   ${desktop.m} {
     .quote {
-
       &::after {
         bottom: 44px;
         width: ${calcRem(35)};
@@ -183,10 +189,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
   }
 
   ${tablet.all} {
-    & {
-      margin-top: ${calcRem(65)};
-    }
-
     .quote {
       grid-column: 6 / span 5;
 
@@ -237,7 +239,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(55)};
+      padding-top: ${calcRem(35)};
+      padding-bottom: ${calcRem(20)};
       grid-column: 1 / span 6;
     }
 
@@ -279,7 +282,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
     }
 
     .author {
-      margin-top: ${calcRem(20)};
+      margin-top: ${calcRem(15)};
     }
 
     .autor-post {
