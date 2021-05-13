@@ -422,6 +422,9 @@ There’s a perfect example. In 2017, Wayfair (online furniture retailer) launch
 Видео ниже:
 
 <Video src='/video/camp-video.mp4' />
+<Caption size="s">
+  Для сравнения — вот запись настоящего WorldWideWeb на «живом» NeXT Cube
+</Caption>
 
 <Note id='note2'>
   Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
