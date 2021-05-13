@@ -23,13 +23,14 @@ _Italic text_
 
 **_Italic & Bold text_**
 
->Сноска
+> **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining [essentially](#href) unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 - If ToR leave no hope for an accurate estimation
 - never be afraid to ask questions
+- never be afraid to ask questions
 
-  I need to add another paragraph below the second list item.
-
+I need to add another paragraph below the second list item.
+I need to add another paragraph below the second list item.
 
 - even if it takes additional time.
   - Indented item
@@ -39,7 +40,6 @@ _Italic text_
 1. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
 2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet.
 3. A team is fully distributed, all interaction is remote:
-
   1. Indented item
   2. Indented item
 

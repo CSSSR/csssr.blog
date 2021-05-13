@@ -13,8 +13,9 @@ import Table from '../Table'
 import List from '../List'
 import Heading from '../Heading'
 import Text from '../Text'
+import Blockquote from '../Blockquote'
 
-export const compilerMdx = ({ content, images, language }) =>
+export const compilerMdx = ({ content, images }) =>
   compiler(content, {
     wrapper: Fragment,
     forceWrapper: true,
@@ -78,7 +79,6 @@ export const compilerMdx = ({ content, images, language }) =>
         props: {
           type: 'regular',
           size: 'm',
-          language: language,
         },
       },
       a: {
@@ -87,17 +87,13 @@ export const compilerMdx = ({ content, images, language }) =>
         },
         props: {
           'data-testid': 'Post:link',
-          className: 'link_list_s',
-          type: 'list',
-          size: 's',
         },
+      },
+      blockquote: {
+        component: Blockquote,
       },
       ul: {
         component: List,
-        props: {
-          className: 'list_s',
-          size: 'm',
-        },
       },
       li: {
         component: ListItem,

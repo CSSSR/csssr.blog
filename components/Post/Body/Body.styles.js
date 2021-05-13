@@ -6,6 +6,16 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     margin: 0 auto;
   }
 
+  & > p:first-of-type strong:first-of-type {
+    font-style: normal;
+    font-weight: normal;
+    font-size: ${calcRem(76)};
+    line-height: ${calcRem(32)};
+    padding-top: ${calcRem(20)};
+    padding-left: ${calcRem(4)};
+    float: left;
+  }
+
   em {
     font-weight: normal;
   }
@@ -101,31 +111,10 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       margin-top: 50px;
     }
 
-    .list_s,
     .grid-element,
     .compare,
     .line-numbers {
       grid-column: 4 / span 6;
-    }
-  }
-
-
-  blockquote {
-    margin-top: ${calcRem(50)};
-    margin-bottom: ${calcRem(42)};
-    padding-left: ${calcRem(20)};
-    padding-top: ${calcRem(18)};
-    padding-bottom: ${calcRem(18)};
-    grid-column: 4 / span 6;
-    border-left: 4px solid  #E0E4EC;
-
-    & > .text_regular_m:first-of-type {
-      margin-top: 0;
-    }
-
-    & + *,
-    & + *[class] {
-      margin-top: 0;
     }
   }
 
@@ -153,11 +142,9 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       }
     }
 
-    .list_s,
     .grid-element,
     .compare,
-    .line-numbers,
-    blockquote {
+    .line-numbers {
       grid-column: 3 / span 8;
     }
   }
@@ -171,6 +158,12 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   ${mobile.all} {
     hr.grid-element {
       margin-top: ${calcRem(15)};
+    }
+
+    & > p:first-of-type strong:first-of-type {
+      padding-right: ${calcRem(11)};
+      font-size: ${calcRem(64)};
+      line-height: ${calcRem(32)};
     }
 
     picture.with_big_margin + .heading_regular_s,
@@ -191,11 +184,9 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       }
     }
 
-    .list_s,
     .line-numbers,
     .grid-element,
-    .compare,
-    blockquote {
+    .compare {
       grid-column: 1 / span 6;
     }
 
@@ -212,11 +203,20 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     }
   }
 `
+
+const dynamic = (language) =>  css`
+  & > p:first-of-type strong:first-of-type {
+    padding-right: ${language === 'ru' ? calcRem(23) : calcRem(7)};
+    font-family: ${language === 'ru' ? 'Sweet Mavka Script' : 'Amita'};
+  }
+`
+
 const StyledBody = props => {
-  const { theme: { breakpoints } } = props
+  const { theme: { breakpoints }, language } = props
 
   return css`
     ${base({ breakpoints })}
+    ${dynamic(language)}
   `
 }
 

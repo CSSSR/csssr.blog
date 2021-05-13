@@ -1,9 +1,10 @@
 import { css } from '@emotion/react';
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { mobile }}) => css`
   & {
     list-style: none;
+    grid-column: 4 / span 6;
 
     &.is_ordered {
       counter-reset: counter;
@@ -51,34 +52,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     & li p:first-of-type {
       margin-top: 0;
-    }
-  }
-
-  ${desktop.all} {
-    & {
-      grid-column: 4 / span 6;
-      margin-top: ${calcRem(16)};
-    }
-
-    & + .paragraph {
-      margin-top: ${calcRem(30)};
-    }
-  }
-
-  ${tablet.all} {
-    & {
-      grid-column: 3 / span 8;
-      margin-top: ${calcRem(9)};
-
-      & li.list_item:not(:first-of-type) {
-        margin-top: ${calcRem(8)};
-      }
-
-      & li::before {
-        font-size: ${calcRem(14)};
-        line-height: ${calcRem(24)};
-      }
-
     }
   }
 

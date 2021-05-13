@@ -5,19 +5,27 @@ const base = ({ breakpoints: { mobile }}) => css`
   & {
     padding-top: ${calcRem(20)};
     padding-bottom: ${calcRem(5)};
-    color: #18191B;
     grid-column: 4 / span 6;
 
-    a {
-      font-size: inherit;
-      line-height: inherit;
-      font-weight: inherit;
+    blockquote {
+      border-left: 4px solid  #E0E4EC;
+      padding-top: ${calcRem(18)};
+      padding-bottom: ${calcRem(18)};
+      padding-left: ${calcRem(20)};
+
+      & > *:first-of-type {
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      & > *:last-of-type {
+        padding-bottom: 0;
+      }
     }
   }
 
   ${mobile.all} {
     & {
-      padding-top: ${calcRem(15)};
       grid-column: 1 / span 6;
     }
   }
@@ -25,7 +33,7 @@ const base = ({ breakpoints: { mobile }}) => css`
 `
 
 export default props => {
-  const { theme: { breakpoints } } = props
+  const { theme: { breakpoints }} = props
 
   return css`
     ${base({ breakpoints })}

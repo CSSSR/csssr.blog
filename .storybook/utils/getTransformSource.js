@@ -40,6 +40,14 @@ export const getSource = (kind, args) => {
       ? `<Video ${getStringAttributes(rest)}>${content}</Video>`
       : `<Video ${getStringAttributes(rest)} />`;
   }
+
+  if (kind === 'Blockquote') {
+    const { contentMdx } = args;
+
+    return `> ${contentMdx}`;
+  }
+
+  return args?.contentMdx;
 };
 
 export const getTransformSource = (kind, args) =>

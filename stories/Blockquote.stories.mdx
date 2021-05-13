@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { getStringAttributes } from './utils/getStringAttributes';
+
+<Meta title="Blockquote" />
+
+export const Blockquote = ({ contentMdx }) => {
+  return (
+    <>
+      {compilerMdx({ content: `> ${contentMdx}` })}
+    </>
+  );
+};
+
+# [`<Blockquote />`](http://s.csssr.ru/UJ4QCUXM4/2021-05-13-12-09-08.jpg)
+
+Компонент сноска внутри статьи.
+
+## Результат
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      contentMdx: `**Lorem Ipsum** is simply dummy text of the printing and typesetting industry.`,
+    }}
+  >
+    {Blockquote.bind({})}
+  </Story>
+</Canvas>
