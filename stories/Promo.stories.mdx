@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { getStringAttributes } from './utils/getStringAttributes';
+
+<Meta title="Promo" />
+
+export const Promo = ({ contentMdx }) => {
+  return (
+    <>
+      {compilerMdx({ content: `<Promo> ${contentMdx}</Promo>` })}
+    </>
+  );
+};
+
+# [`<Promo />`](http://s.csssr.ru/UJ4QCUXM4/2021-05-13-15-48-40.jpg)
+
+Компонент обертка. Размещается в начале статьи до буквицы.
+
+Добавляет отступ снизу.
+
+## Результат
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      contentMdx: `<Subtitle>Во втором выпуске видеосерии «История фронтенда» мы проследили за историей языка JavaScript, его стандарта ECMAScript и выросшей вокруг него экосистемы, чтобы как в зеркале увидеть главные тенденции развития Веба в 2000-х годах.</Subtitle>`,
+    }}
+  >
+    {Promo.bind({})}
+  </Story>
+</Canvas>

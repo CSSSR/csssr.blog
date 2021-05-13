@@ -14,6 +14,7 @@ import List from '../List'
 import Heading from '../Heading'
 import Text from '../Text'
 import Blockquote from '../Blockquote'
+import Promo from '../Promo'
 
 export const compilerMdx = ({ content, images }) =>
   compiler(content, {
@@ -162,6 +163,9 @@ export const compilerMdx = ({ content, images }) =>
           type: 'regular',
           size: 'm',
         },
+      },
+      Promo: {
+        component: Promo,
       },
     },
   })

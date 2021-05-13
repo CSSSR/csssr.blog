@@ -5,17 +5,17 @@ import { Text } from '@csssr/core-design'
 import styles from './Note.styles'
 
 const Note = (props) => {
-  const { children, className, isQuoteLike } = props
+  const { children, className } = props
 
   if (children && children.length === 1) {
     return (
-      <Text as="section" className={cn(className, { is_quote_like: isQuoteLike })}>
+      <Text as="section" className={cn(className)}>
         {children}
       </Text>
     )
   }
 
-  return <section className={cn(className, { is_quote_like: isQuoteLike })}>{children}</section>
+  return <section className={cn(className)}>{children}</section>
 }
 
 Note.propTypes = {

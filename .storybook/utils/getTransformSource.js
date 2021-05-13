@@ -16,7 +16,7 @@ export const getSource = (kind, args) => {
     return `<${kind} ${getStringAttributes(args)}/>`;
   }
 
-  if (kind === 'Note' || kind === 'Subtitle') {
+  if (kind === 'Note' || kind === 'Subtitle' || kind === 'Promo') {
     const { contentMdx } = args;
 
     return `<${kind}>${contentMdx}</${kind}>`;
