@@ -24,6 +24,10 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     font-weight: bold;
   }
 
+  code {
+    font-family: Roboto Mono, monospace;
+  }
+
   .list_item_s {
     color: #18191B;
   }
@@ -33,7 +37,8 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   }
 
   .line-numbers {
-    margin-top: ${calcRem(30)};
+    margin-top: ${calcRem(20)};
+    margin-bottom: ${calcRem(5)};
 
     &::after,
     &::before {
@@ -124,12 +129,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       margin-top: ${calcRem(15)};
     }
 
-    picture.with_big_margin + .heading_regular_s,
-    picture.with_big_margin + .heading_regular_m,
-    picture.with_big_margin + .text_regular_m {
-      margin-top: ${calcRem(40)};
-    }
-
     .list_item_s {
       padding-left: ${calcRem(9)};
 
@@ -166,12 +165,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       line-height: ${calcRem(32)};
     }
 
-    picture.with_big_margin + .heading_regular_s,
-    picture.with_big_margin + .heading_regular_m,
-    picture.with_big_margin + .text_regular_m {
-      margin-top: ${calcRem(30)};
-    }
-
     .list_item_s {
       padding-left: ${calcRem(9)};
 
@@ -182,6 +175,10 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       &::before {
         top: calc(50% - ${calcRem(2)});
       }
+    }
+
+    .line-numbers {
+      margin-top: ${calcRem(15)};
     }
 
     .line-numbers,

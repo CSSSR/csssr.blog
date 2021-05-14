@@ -4,6 +4,7 @@ import { Root, defaultTheme } from '@csssr/core-design'
 import Router from 'next/router'
 import Prism from 'prismjs'
 import '../utils/sentry'
+import '../public/prism-themes/prism-material-light.css'
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
