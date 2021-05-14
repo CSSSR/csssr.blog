@@ -1,21 +1,17 @@
 import { string, node } from 'prop-types'
-import cn from 'classnames'
 import styled from '@emotion/styled'
 import { Text } from '@csssr/core-design'
 import styles from './Note.styles'
 
-const Note = (props) => {
-  const { children, className } = props
+const Note = ({ children, className }) => {
+  const isOneChildren = children?.length === 1
+  const Inner = isOneChildren ? Text : 'div'
 
-  if (children && children.length === 1) {
-    return (
-      <Text as="section" className={cn(className)}>
-        {children}
-      </Text>
-    )
-  }
-
-  return <section className={cn(className)}>{children}</section>
+  return (
+    <div className={className}>
+      <Inner className="inner">{children}</Inner>
+    </div>
+  )
 }
 
 Note.propTypes = {
