@@ -125,8 +125,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
       }
     }
 
-
-
     .autor-post {
       margin-top: ${calcRem(10)};
     }

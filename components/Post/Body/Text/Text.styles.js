@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile }}) => css`
+const base = ({ breakpoints: { mobile, tablet }}) => css`
   & {
     padding-top: ${calcRem(20)};
     padding-bottom: ${calcRem(5)};
@@ -12,6 +12,12 @@ const base = ({ breakpoints: { mobile }}) => css`
       font-size: inherit;
       line-height: inherit;
       font-weight: inherit;
+    }
+  }
+
+  ${tablet.all} {
+    & {
+      grid-column: 3 / span 8;
     }
   }
 
