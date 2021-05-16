@@ -1,59 +1,61 @@
-import styled from '@emotion/styled'
-import styles from './BenchmarkEmail.styles'
+/* eslint-disable camelcase */
 import { Heading, SubHeading } from '@csssr/core-design'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import styled from '@emotion/styled'
+
+import styles from './BenchmarkEmail.styles'
 import TextField from './TextField'
 
 const BenchmarkEmail = ({ className }) => {
   const isWindowContext = typeof window !== 'undefined'
 
   function rmspaces(x) {
-    var leftx = 0
-    var rightx = x.length - 1
-    while (x.charAt(leftx) == ' ') {
+    let leftx = 0
+    let rightx = x.length - 1
+    while (x.charAt(leftx) === ' ') {
       leftx++
     }
-    while (x.charAt(rightx) == ' ') {
+    while (x.charAt(rightx) === ' ') {
       --rightx
     }
-    var q = x.substr(leftx, rightx - leftx + 1)
-    if (leftx == x.length && rightx == -1) {
+    let q = x.substr(leftx, rightx - leftx + 1)
+    if (leftx === x.length && rightx === -1) {
       q = ''
     }
     return q
   }
   function checkfield(data) {
-    if (rmspaces(data) == '') {
+    if (rmspaces(data) === '') {
       return false
     } else {
       return true
     }
   }
   function isemail(data) {
-    var flag = false
+    let flag = false
     if (
-      data.indexOf('@', 0) == -1 ||
-      data.indexOf('\\', 0) != -1 ||
-      data.indexOf('/', 0) != -1 ||
+      data.indexOf('@', 0) === -1 ||
+      data.indexOf('\\', 0) !== -1 ||
+      data.indexOf('/', 0) !== -1 ||
       !checkfield(data) ||
-      data.indexOf('.', 0) == -1 ||
-      data.indexOf('@') == 0 ||
+      data.indexOf('.', 0) === -1 ||
+      data.indexOf('@') === 0 ||
       data.lastIndexOf('.') < data.lastIndexOf('@') ||
-      data.lastIndexOf('.') == data.length - 1 ||
-      data.lastIndexOf('@') != data.indexOf('@') ||
-      data.indexOf(',', 0) != -1 ||
-      data.indexOf(':', 0) != -1 ||
-      data.indexOf(';', 0) != -1
+      data.lastIndexOf('.') === data.length - 1 ||
+      data.lastIndexOf('@') !== data.indexOf('@') ||
+      data.indexOf(',', 0) !== -1 ||
+      data.indexOf(':', 0) !== -1 ||
+      data.indexOf(';', 0) !== -1
     ) {
       return flag
     } else {
-      var temp = rmspaces(data)
-      if (temp.indexOf(' ', 0) != -1) {
+      const temp = rmspaces(data)
+      if (temp.indexOf(' ', 0) !== -1) {
         flag = true
       }
-      var e2 = temp.length - temp.lastIndexOf('.') - 1
-      var i1 = temp.indexOf('@')
-      if (temp.charAt(i1 + 1) == '.' || e2 < 1) {
+      const e2 = temp.length - temp.lastIndexOf('.') - 1
+      const i1 = temp.indexOf('@')
+      if (temp.charAt(i1 + 1) === '.' || e2 < 1) {
         flag = true
       }
       return !flag
@@ -61,36 +63,36 @@ const BenchmarkEmail = ({ className }) => {
   }
 
   function submit_LY6HHClick() {
-    var retVal = true
-    var frm = isWindowContext && document.getElementById('formbox_screen_subscribe_LY6HH')
+    let retVal = true
+    let frm = isWindowContext && document.getElementById('formbox_screen_subscribe_LY6HH')
     if (!isemail(isWindowContext && document.getElementsByName('fldemail_LY6HH')[0].value)) {
       alert('Please enter the Email Address')
       isWindowContext && document.getElementsByName('fldemail_LY6HH')[0].classList.add('error')
       retVal = false
     }
-    if (retVal == true) {
+    if (retVal === true) {
       frm = '_LY6HH'
-      var f = isWindowContext && document.createElement('form')
+      const f = isWindowContext && document.createElement('form')
       f.setAttribute('accept-charset', 'UTF-8')
       f.setAttribute('method', 'post')
       f.setAttribute('action', 'https://lb.benchmarkemail.com//code/lbform')
-      var elms =
+      const elms =
         isWindowContext && document.getElementsByName('frmLB' + frm)[0].getElementsByTagName('*')
-      var ty = ''
-      for (var ei = 0; ei < elms.length; ei++) {
+      let ty = ''
+      for (let ei = 0; ei < elms.length; ei++) {
         ty = elms[ei].type
         if (
-          ty == 'hidden' ||
-          ty == 'text' ||
-          (ty == 'checkbox' && elms[ei].checked) ||
-          (ty == 'radio' && elms[ei].checked) ||
-          ty == 'textarea' ||
-          ty == 'select-one' ||
-          ty == 'button'
+          ty === 'hidden' ||
+          ty === 'text' ||
+          (ty === 'checkbox' && elms[ei].checked) ||
+          (ty === 'radio' && elms[ei].checked) ||
+          ty === 'textarea' ||
+          ty === 'select-one' ||
+          ty === 'button'
         ) {
-          var elm = elms[ei]
-          if (elm.id != '') {
-            var i = document.createElement('input')
+          const elm = elms[ei]
+          if (elm.id !== '') {
+            const i = document.createElement('input')
             i.type = 'hidden'
             i.name = elm.name.replace('_LY6HH', '')
             i.id = elm.id
@@ -119,18 +121,18 @@ const BenchmarkEmail = ({ className }) => {
   }
 
   function debounce_LY6HH(func, wait, immediate) {
-    var timeout
+    let timeout
 
     return function () {
-      var context = this,
-        args = arguments
-      var later = function () {
+      const context = this
+      const args = arguments
+      const later = function () {
         timeout = null
         if (!immediate) {
           func.apply(context, args)
         }
       }
-      var callNow = immediate && !timeout
+      const callNow = immediate && !timeout
       clearTimeout(timeout)
       timeout = setTimeout(later, wait)
       if (callNow) {
@@ -139,7 +141,7 @@ const BenchmarkEmail = ({ className }) => {
     }
   }
 
-  var hasVerticalCenter_LY6HH =
+  const hasVerticalCenter_LY6HH =
     isWindowContext && document.getElementsByClassName('position-centered')
   function verticalCenter_LY6HH(element) {
     if (element) {
@@ -148,15 +150,15 @@ const BenchmarkEmail = ({ className }) => {
     }
     setTimeout(function () {
       if (hasVerticalCenter_LY6HH.length > 0) {
-        var windowHeight = Math.max(
+        const windowHeight = Math.max(
           isWindowContext && document.documentElement.clientHeight,
           window.innerHeight || 0,
         )
-        var formElement_LY6HH =
+        const formElement_LY6HH =
           isWindowContext && document.getElementsByClassName('formbox-editor_LY6HH')[0]
-        var formHeight_LY6HH = formElement_LY6HH.clientHeight
+        const formHeight_LY6HH = formElement_LY6HH.clientHeight
         if (formHeight_LY6HH < windowHeight) {
-          var newPosition = 0
+          let newPosition = 0
           newPosition = (windowHeight - formHeight_LY6HH) / 2
           formElement_LY6HH.style.top = newPosition + 'px'
         } else {
@@ -170,7 +172,7 @@ const BenchmarkEmail = ({ className }) => {
   }
 
   if (hasVerticalCenter_LY6HH.length > 0) {
-    var resizeEvent_LY6HH = debounce_LY6HH(function () {
+    const resizeEvent_LY6HH = debounce_LY6HH(function () {
       verticalCenter_LY6HH()
     }, 250)
     window.addEventListener('resize', resizeEvent_LY6HH)
@@ -236,6 +238,7 @@ const BenchmarkEmail = ({ className }) => {
                     />
                   </fieldset>
                   <fieldset className="fieldset">
+                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                     <div
                       id="btnSubmit_LY6HH"
                       className="formbox-button_LY6HH"

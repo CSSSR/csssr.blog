@@ -1,7 +1,8 @@
 const { defaultTheme } = require('@csssr/core-design')
 
 const getImagesLoaderRules = (isDev, isStorybook, isServer) => {
-  let blogHost, imgproxyHost
+  let blogHost
+  let imgproxyHost
 
   if (isDev) {
     const ip = require('ip')
@@ -75,7 +76,7 @@ const getImagesLoaderRules = (isDev, isStorybook, isServer) => {
 
   return [
     {
-      test: /\.(jpe?g|png|gif|ico)$/,
+      test: /\.(?:jpe?g|png|gif|ico)$/,
       oneOf: [
         {
           resourceQuery: /dont-resize/,

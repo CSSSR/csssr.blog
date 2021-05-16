@@ -1,9 +1,10 @@
-import React from 'react'
+import { Text } from '@csssr/core-design'
 import styled from '@emotion/styled'
 import cn from 'classnames'
-import { string, oneOf, node } from 'prop-types'
+import { node, oneOf, string } from 'prop-types'
+import React from 'react'
+
 import styles from './Subtitle.styles'
-import { Text } from '@csssr/core-design'
 
 const Subtitle = ({ className, size, dangerouslySetInnerHTML, children }) =>
   children ? (

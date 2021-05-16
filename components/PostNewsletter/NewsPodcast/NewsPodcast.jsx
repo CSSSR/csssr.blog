@@ -1,8 +1,9 @@
-import React from 'react'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import React from 'react'
+
 import styles from './NewsPodcast.styles'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 const NewsPodcast = ({ className, HideNewsPodcastOnMobile }) => {
   const links = [
@@ -37,12 +38,12 @@ const NewsPodcast = ({ className, HideNewsPodcastOnMobile }) => {
         requireImages={require.context('../../../public/components/newsPodcast')}
       />
       <ul className="links">
-        {links.map(({ title, href }, index) => (
-          <li className="link-item" key={index}>
+        {links.map(({ title, href }) => (
+          <li className="link-item" key={title}>
             <a
               className="link font_link-list_16"
               href={href}
-              rel="nofollow noopener"
+              rel="nofollow noopener noreferrer"
               target="_blank"
             >
               {title}

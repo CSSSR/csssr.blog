@@ -1,15 +1,15 @@
-import React from 'react'
-import { string, number, arrayOf, shape, object } from 'prop-types'
-import Head from 'next/head'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
+import Head from 'next/head'
+import { arrayOf, number, object, shape, string } from 'prop-types'
+import React from 'react'
 
-import Layout from '../Layout'
-import Posts from './Posts'
-import Categories from './Categories'
-import Newsletter from '../Newsletter/'
-
-import Pagination from './Pagination/Pagination'
 import myImageData from '../../public/images/resize/en/offshore-web-development/mainCoverL/desktop.m.png'
+import Layout from '../Layout'
+import Newsletter from '../Newsletter'
+
+import Categories from './Categories'
+import Pagination from './Pagination/Pagination'
+import Posts from './Posts'
 
 const meta = {
   en: {

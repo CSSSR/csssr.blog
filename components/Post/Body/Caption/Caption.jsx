@@ -1,8 +1,9 @@
-import React from 'react'
-import cn from 'classnames'
-import styled from '@emotion/styled'
 import { Text } from '@csssr/core-design'
-import { string, node, oneOf } from 'prop-types'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import { node, oneOf, string } from 'prop-types'
+import React from 'react'
+
 import styles from './Caption.styles'
 
 const Caption = ({ className, size, children }) => (

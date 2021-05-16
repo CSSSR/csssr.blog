@@ -1,7 +1,8 @@
-import { string, node } from 'prop-types'
-import cn from 'classnames'
-import styled from '@emotion/styled'
 import { Text } from '@csssr/core-design'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import { node, string } from 'prop-types'
+
 import styles from './Note.styles'
 
 const Note = (props) => {

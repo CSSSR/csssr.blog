@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
-import { string } from 'prop-types'
-import styled from '@emotion/styled'
-import styles, { backgroundImagesStyles } from './Comments.styled'
-import { Global } from '@emotion/react'
 import { Heading } from '@csssr/core-design'
+import { Global } from '@emotion/react'
+import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
+import { string } from 'prop-types'
+import React, { useEffect } from 'react'
+
+import styles, { backgroundImagesStyles } from './Comments.styled'
 
 const insertScript = (src, id, parentElement) => {
   const script = window.document.createElement('script')

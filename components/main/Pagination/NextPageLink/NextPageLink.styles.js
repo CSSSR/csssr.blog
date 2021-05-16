@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+
 import { common } from '../PrevPageLink/PrevPageLink.styles'
 
 export default css`
