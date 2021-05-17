@@ -2,6 +2,18 @@ import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
+  @font-face {
+    font-family: 'Roboto Mono';
+    src: url('https://static.csssr.com/fonts-subsets/RobotoMono-Regular-c628ba94.woff2');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Roboto Mono';
+    src: url('https://static.csssr.com/fonts-subsets/RobotoMono-Bold-c00db536.woff2');
+    font-weight: 600;
+  }
+
   & {
     margin: 0 auto;
   }
