@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { compiler } from 'markdown-to-jsx'
-import { Link, ListItem } from '@csssr/core-design'
+import { Link } from '@csssr/core-design'
 import Separator from '../Separator'
 import ParagraphWithImage from '../ParagraphWithImage'
 import Img from '../Img'
@@ -11,6 +11,7 @@ import Video from '../Video'
 import Caption from '../Caption'
 import Table from '../Table'
 import List from '../List'
+import ListItem from '../ListItem'
 import Heading from '../Heading'
 import Text from '../Text'
 import Blockquote from '../Blockquote'
@@ -96,13 +97,14 @@ export const compilerMdx = ({ content, images }) =>
       ul: {
         component: List,
       },
+      ol: {
+        component: List,
+        props: {
+          isOrdered: true,
+        },
+      },
       li: {
         component: ListItem,
-        props: {
-          className: 'text_regular_m list_item',
-          type: 'regular',
-          size: 'm',
-        },
       },
       Quote: {
         component: Quote,
@@ -155,14 +157,6 @@ export const compilerMdx = ({ content, images }) =>
       },
       Table: {
         component: Table,
-      },
-      ol: {
-        component: List,
-        props: {
-          className: 'list_s is_ordered',
-          type: 'regular',
-          size: 'm',
-        },
       },
       Promo: {
         component: Promo,

@@ -34,16 +34,16 @@ _Italic text_
 I need to add another paragraph below the second list item.
 I need to add another paragraph below the second list item.
 
-- even if it takes additional time.
-  - Indented item
-  - Indented item
+- A team is fully distributed, all interaction is remote.
+  - All communications - face to face, external and internal developers participate in meetings and brainstorms together.
+  - Interaction with your team are done through regular meetings and the Internet.
 
 
 1. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
 2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet.
 3. A team is fully distributed, all interaction is remote:
-  1. Indented item
-  2. Indented item
+  1. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
+  2. Interaction with your team are done through regular meetings and the Internet.
 
 <Table>
   <thead>
