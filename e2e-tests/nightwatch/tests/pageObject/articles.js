@@ -4,6 +4,8 @@ module.exports = {
     fullPage: '[data-testid="Layout:block:main"]',
     newsletterForm: '#main > article > div > div.post-newsletter.hidden_mobile.css-1qf5xc9',
     newsletterBlock: '[data-testid="Newsletter:block"]',
+    readMore: '[data-testid="ReadMore:block"]',
+    subscription: '[data-testid="Post:block"] div',
   },
   link: {
     culture: '[data-testid="Post:link.category.culture"]',
