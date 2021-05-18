@@ -31,7 +31,7 @@ const Body = ({
       language={language}
       type={type}
       kind="post"
-      HideShareLinksOnMobile
+      isHideShareLinksOnMobile
       BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
       BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
       data-testid="Post:block"
@@ -42,7 +42,7 @@ const Body = ({
       className="post-newsletter hidden_desktop"
       language={language}
       type={type}
-      HideNewsPodcastOnMobile
+      isHideNewsPodcastOnMobile
       kind="post"
       BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
       BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
