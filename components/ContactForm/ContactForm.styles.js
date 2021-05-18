@@ -47,8 +47,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         top: 0;
       }
 
-
-
       .buttonWrapper span.submit-text {
         font-size: ${calcRem(10)};
         line-height: ${calcRem(30)};
@@ -149,9 +147,11 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         color: ${colors.secondary.darken100};
       }
 
+      .input:focus + .label,
       .label._active {
         font-size: ${calcRem(10)};
         line-height: ${calcRem(12)};
+        transform: translateX(${calcRem(2)}) translateY(${calcRem(25)});
       }
 
       .policy {
@@ -412,11 +412,14 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         font-size: ${calcRem(16)};
         line-height: ${calcRem(24)};
 
-        &._active {
+      }
+
+      .input.field-input:focus + .label,
+      .label._active {
           font-size: ${calcRem(12)};
           line-height: ${calcRem(24)};
+          transform: translateX(${calcRem(12)}) translateY(${calcRem(27)});
         }
-      }
 
       .policy {
         display: block;
