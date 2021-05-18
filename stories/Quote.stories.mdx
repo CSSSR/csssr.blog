@@ -5,9 +5,11 @@ import {
   dataByLanguagePostAndImageResize,
 } from '../lib/allPostsImages';
 import { getStringAttributes } from './utils/getStringAttributes';
+import { gridDecorator } from './utils/gridDecorator';
 
 <Meta
-  title="Quote"
+  title="Post/Quote"
+  decorators={[gridDecorator]}
   argTypes={{
     imageName: {
       type: 'radio',

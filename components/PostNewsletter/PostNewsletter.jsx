@@ -15,7 +15,7 @@ const PostNewsletter = ({
   language,
   kind,
   type,
-  HideShareLinksOnMobile,
+  isHideShareLinksOnMobile,
   HideNewsPodcastOnMobile,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
@@ -72,7 +72,11 @@ const PostNewsletter = ({
 
       {withNewsPodcast && <NewsPodcast HideNewsPodcastOnMobile={HideNewsPodcastOnMobile} />}
 
-      <PostShare language={language} type={type} HideShareLinksOnMobile={HideShareLinksOnMobile} />
+      <PostShare
+        language={language}
+        type={type}
+        isHideShareLinksOnMobile={isHideShareLinksOnMobile}
+      />
     </div>
   )
 }
