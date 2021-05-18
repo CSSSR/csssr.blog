@@ -2,11 +2,11 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 import { dataByLanguagePostAndImageDontResize } from '../lib/allPostsImages';
 import { getStringAttributes } from './utils/getStringAttributes';
-import { gridDecorator } from './utils/gridDecorator';
+import { GridDecorator } from './decorators/GridDecorator';
 
 <Meta
   title="Post/ParagraphWithImage"
-  decorators={[gridDecorator]}
+  decorators={[GridDecorator]}
   argTypes={{
     imageName: {
       type: 'radio',

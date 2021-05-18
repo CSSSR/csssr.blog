@@ -1,6 +1,6 @@
 import { Grid } from '../../components/Grid'
 
-export const gridDecorator = (Story) => (
+export const GridDecorator = (Story) => (
   <Grid>
     <Story />
   </Grid>

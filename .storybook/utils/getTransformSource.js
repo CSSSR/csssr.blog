@@ -44,7 +44,7 @@ export const getSource = (kind, args) => {
       : `<Video ${getStringAttributes(rest)} />`;
   }
 
-  if (kind === 'Blockquote') {
+  if ((/Blockquote/g).test(kind)) {
     const { contentMdx } = args;
 
     return `> ${contentMdx}`;

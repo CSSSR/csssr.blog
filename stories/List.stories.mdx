@@ -1,8 +1,8 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
-import { gridDecorator } from './utils/gridDecorator';
+import { GridDecorator } from './decorators/GridDecorator';
 
-<Meta title="Post/List" decorators={[gridDecorator]}/>
+<Meta title="Post/List" decorators={[GridDecorator]}/>
 
 export const List = ({ contentMdx }) => {
   return (

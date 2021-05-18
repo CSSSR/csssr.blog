@@ -1,9 +1,9 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 import { getStringAttributes } from './utils/getStringAttributes';
-import { gridDecorator } from './utils/gridDecorator';
+import { GridDecorator } from './decorators/GridDecorator';
 
-<Meta title="Post/Blockquote" decorators={[gridDecorator]} />
+<Meta title="Post/Blockquote" decorators={[GridDecorator]} />
 
 export const Blockquote = ({ contentMdx }) => {
   return (
