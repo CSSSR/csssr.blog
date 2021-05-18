@@ -1,18 +1,13 @@
 import { css } from '@emotion/react'
+
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
+const base = ({ breakpoints: { mobile, desktop }, colors }) => css`
   & {
-    margin-top: ${calcRem(50)};
-    transform: translateX(${calcRem(-10)});
+    margin-top: ${calcRem(40)};
     background-color: white;
     max-width: ${calcRem(89)};
     padding: ${calcRem(10)};
-
-    &.without_margin_top {
-      margin-top: 0;
-      transform: unset;
-    }
   }
 
   .links {
@@ -97,31 +92,11 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
   }
 
   ${desktop.all} {
-    &.without_margin_top {
-      margin-left: auto;
-    }
-
     &.without_aligning {
       margin-left: unset;
     }
   }
 
-  ${tablet.all} {
-    & {
-      padding-left: ${calcRem(12)};
-      padding-right: ${calcRem(12)};
-    }
-    
-    &.without_margin_top {
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    &.without_aligning {
-      margin-right: unset;
-      margin-left: unset;
-    }
-  }
 
   ${mobile.all} {
     & {
@@ -132,6 +107,14 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
 
       &._ru {
         margin-top: 0;
+      }
+
+      &.without_share_links .links {
+        display: none;
+      }
+
+      &.with_news_podcast {
+        margin-left: 0;
       }
     }
 

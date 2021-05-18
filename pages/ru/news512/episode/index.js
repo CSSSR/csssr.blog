@@ -6,4 +6,5 @@ const Index = () => (
     <script dangerouslySetInnerHTML={{ __html: 'window.location.replace("/ru/news512")' }} />
   </Head>
 )
+
 export default Index

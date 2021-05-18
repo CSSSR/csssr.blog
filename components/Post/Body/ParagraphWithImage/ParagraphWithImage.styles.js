@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+
 import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
@@ -45,7 +46,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   &.with_right-side-image {
-    margin-top: ${calcRem(70)};
+    margin-top: ${calcRem(60)};
   }
 
   .img-wrap.side_right {

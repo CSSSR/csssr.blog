@@ -1,6 +1,6 @@
 import React from 'react'
-import News from '../../../components/news512/News'
 
+import News from '../../../components/news512/News'
 import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
 import calculatePageNumberByNewsIndex from '../../../utils/calculatePageNumberByNewsIndex'
 import getPostsCategories from '../../../utils/getPostsCategories'
@@ -38,7 +38,7 @@ export async function getStaticProps({ params }) {
 
     return pageNumber === params.page
   })
-  const lastPostDate = orderedPostsNews[0]['date']
+  const lastPostDate = orderedPostsNews[0].date
 
   return {
     props: {
@@ -54,7 +54,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const postsNews = await getPostsNews()
-  const pageNumber = +calculatePageNumberByNewsIndex(postsNews.length)
+  const pageNumber = Number(calculatePageNumberByNewsIndex(postsNews.length))
   const paths = [...Array(pageNumber)]
     .map((item, index) => ({
       params: { page: (index + 1).toString() },

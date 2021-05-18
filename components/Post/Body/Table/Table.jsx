@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
-import { string, node, bool, oneOf } from 'prop-types'
 import cn from 'classnames'
+import { bool, node, oneOf, string } from 'prop-types'
+
 import styles from './Table.styles'
 
 const Table = ({ className, children, color, withBorders, ...props }) => (

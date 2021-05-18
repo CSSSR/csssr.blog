@@ -1,0 +1,67 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { dataByLanguagePostAndImageDontResize } from '../lib/allPostsImages';
+import { getStringAttributes } from './utils/getStringAttributes';
+
+<Meta
+  title="ParagraphWithImage"
+  argTypes={{
+    imageName: {
+      type: 'radio',
+      options: ['mySampleImageSmall'],
+    },
+    imageSide: {
+      type: 'radio',
+      options: ['left', 'right'],
+    },
+  }}
+/>
+
+export const ParagraphWithImage = ({ contentMdx, ...args }) => {
+  return (
+    <>
+      {compilerMdx({
+        content: `<ParagraphWithImage ${getStringAttributes(
+          args
+        )}>${contentMdx}</ParagraphWithImage>`,
+        images: dataByLanguagePostAndImageDontResize['en']['example'],
+      })}
+    </>
+  );
+};
+
+# [`<ParagraphWithImage />`](http://s.csssr.ru/U31J879TR/20200527123603.jpg)
+
+Компонент параграфа c изображением в левом углу. Изображения для параграфа должны находится в той же папке, что и для компонента [`<Img />`](#img-). Принимает следующие пропсы
+
+## `imageName`
+
+Тип данных: `string`
+
+Дефолтное значение: `undefined`
+
+Название изображения в папке, где лежит статика для этого компонента.
+
+## `imageSide`
+
+Тип данных: `left` | `right`
+
+Дефолтное значение: `left`
+
+Положение изображения относительно контентной части.
+
+## Результат
+
+<Canvas>
+  <Story
+    height="250px"
+    name="Default"
+    args={{
+      imageName: 'mySampleImageSmall',
+      contentMdx: `##Venenatis cras sed felis eget velit. <p>Consectetur libero id faucibus nisl tincidunt.</p>`,
+      imageSide: 'left',
+    }}
+  >
+    {ParagraphWithImage.bind({})}
+  </Story>
+</Canvas>

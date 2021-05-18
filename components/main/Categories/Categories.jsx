@@ -1,14 +1,13 @@
-import React, { useState, createRef, useEffect } from 'react'
+import styled from '@emotion/styled'
 import cn from 'classnames'
 import Link from 'next/link'
-import styled from '@emotion/styled'
-
-import ActiveLine from './ActiveLine'
-import { Grid } from '../../Grid'
-
-import styles from './Categories.styles'
+import React, { createRef, useEffect, useState } from 'react'
 
 import categoriesByLanguage, { categoriesOrder } from '../../../data/categoriesByLanguage'
+import { Grid } from '../../Grid'
+
+import ActiveLine from './ActiveLine'
+import styles from './Categories.styles'
 
 const Categories = ({ className, items, activeCategory, language }) => {
   const [activeWidth, setActiveWidth] = useState(0)

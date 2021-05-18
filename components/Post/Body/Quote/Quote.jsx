@@ -1,11 +1,13 @@
-import React from 'react'
-import cn from 'classnames'
-import { string, node, bool, oneOf } from 'prop-types'
 import { Link } from '@csssr/core-design'
-import styled from '@emotion/styled'
-import styles from './Quote.styles'
-import { Grid } from '../../../Grid'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import { bool, node, oneOf, string } from 'prop-types'
+import React from 'react'
+
+import { Grid } from '../../../Grid'
+
+import styles from './Quote.styles'
 
 const Quote = ({
   className,

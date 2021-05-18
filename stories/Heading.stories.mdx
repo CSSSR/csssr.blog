@@ -1,0 +1,74 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { getLattices } from './utils/getLattices';
+
+<Meta title="Heading" />
+
+export const Headings = ({ headingLevel, text }) => {
+  return <>{compilerMdx({ content: `${getLattices(headingLevel)}${text}` })}</>;
+};
+
+# Заголовки
+
+Заголовки первого, второго, третьего, четвертого и пятого уровней,
+выполненные с помощью символа («#»), выглядят следующим образом:
+
+<Canvas>
+  <Story
+    name="Heading H1"
+    args={{
+      headingLevel: 1,
+      text: 'Heading h1',
+    }}
+  >
+    {Headings.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Heading H2"
+    args={{
+      headingLevel: 2,
+      text: 'Heading h2',
+    }}
+  >
+    {Headings.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Heading H3"
+    args={{
+      headingLevel: 3,
+      text: 'Heading h3',
+    }}
+  >
+    {Headings.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Heading H4"
+    args={{
+      headingLevel: 4,
+      text: 'Heading h4',
+    }}
+  >
+    {Headings.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Heading H5"
+    args={{
+      headingLevel: 5,
+      text: 'Heading h5',
+    }}
+  >
+    {Headings.bind({})}
+  </Story>
+</Canvas>

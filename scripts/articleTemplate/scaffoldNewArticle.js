@@ -1,8 +1,12 @@
-const path = require('path')
 const fs = require('fs')
+const path = require('path')
+
+const { CLIEngine } = require('eslint')
 const fse = require('fs-extra')
-const languages = require('../../utils/languages')
+
 const capitalize = require('../../utils/capitalize')
+const languages = require('../../utils/languages')
+
 const { addNewPost } = require('./addNewPost')
 
 const language = process.argv[2]
@@ -26,11 +30,12 @@ const newPostsOrder = addNewPost(oldPostsOrder, slug)
 fs.writeFileSync(postsOrderFilePath, JSON.stringify(newPostsOrder))
 
 // Используем eslint для форматирования файла с порядком статей на главной
-const { CLIEngine } = require('eslint')
+
 const cli = new CLIEngine({ fix: true })
 const report = cli.executeOnFiles([`postsOrder${capitalize(language)}.json`])
 CLIEngine.outputFixes(report)
 
+// eslint-disable-next-line no-console
 console.log(
   [
     `Успех!`,

@@ -1,32 +1,53 @@
-import React, { useState } from 'react'
-import cn from 'classnames'
-import styled from '@emotion/styled'
-import styles from './PostNewsletter.styles'
+import { defaultTheme, Heading, Text } from '@csssr/core-design'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
-import { Heading, Text } from '@csssr/core-design'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import React, { useEffect, useState } from 'react'
+
+import { postNewsletterData } from '../../data/newsletter'
 import ContactForm from '../ContactForm'
 import PostShare from '../PostShare'
-import { postNewsletterData } from '../../data/newsletter'
+
+import NewsPodcast from './NewsPodcast'
+import styles from './PostNewsletter.styles'
 
 const PostNewsletter = ({
   className,
   language,
   kind,
   type,
+  HideShareLinksOnMobile,
+  HideNewsPodcastOnMobile,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
 }) => {
   const { title, subtitle, img, imgAlt } = postNewsletterData
 
   const [isMessageHidden, setMessageHidden] = useState(true)
-  const withoutSubscribeForm = language !== 'ru' || type === 'news'
+  const withSubscribeForm = language === 'ru' && type !== 'news'
+  const withNewsPodcast = type === 'news'
+  const [isMobile, setMobile] = useState(null)
+
+  useEffect(() => {
+    const checkWindowWidth = () => {
+      setMobile(
+        window.matchMedia(defaultTheme.breakpoints.mobile.all.slice('@media '.length)).matches,
+      )
+    }
+
+    window.addEventListener('load', checkWindowWidth)
+
+    return () => window.removeEventListener('load', checkWindowWidth)
+  }, [])
+
   return (
     <div
       className={cn(className, {
-        'without_subscribe-form': withoutSubscribeForm,
+        'without_subscribe-form': !withSubscribeForm,
+        with_news_podcast: withNewsPodcast,
       })}
     >
-      {!withoutSubscribeForm && (
+      {withSubscribeForm && (
         <div className="container">
           <PictureSmart requireImages={img} className="picture" alt={imgAlt} />
           <Heading.H2 type="regular" className="title">
@@ -41,6 +62,7 @@ const PostNewsletter = ({
 
           <ContactForm
             kind={kind}
+            isMobile={isMobile}
             isMessageHidden={isMessageHidden}
             setMessageHidden={setMessageHidden}
             BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
@@ -49,7 +71,9 @@ const PostNewsletter = ({
         </div>
       )}
 
-      <PostShare language={language} type={type} />
+      {withNewsPodcast && <NewsPodcast HideNewsPodcastOnMobile={HideNewsPodcastOnMobile} />}
+
+      <PostShare language={language} type={type} HideShareLinksOnMobile={HideShareLinksOnMobile} />
     </div>
   )
 }

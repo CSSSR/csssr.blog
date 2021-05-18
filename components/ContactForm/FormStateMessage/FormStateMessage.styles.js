@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+
 import { calcRem } from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile }}) => css`
@@ -86,4 +87,5 @@ const StyledFormStateMessage = (props) => {
     ${base({ breakpoints })}
   `
 }
+
 export default StyledFormStateMessage
