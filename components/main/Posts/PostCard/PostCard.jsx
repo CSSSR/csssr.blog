@@ -1,19 +1,21 @@
-import React from 'react'
-import { string, number, shape, object, oneOf } from 'prop-types'
-import cn from 'classnames'
-import styled from '@emotion/styled'
-import styles from './PostCard.styles'
-import DateFormatter from '../../../DateFormatter'
-import Link from 'next/link'
-import cleaningTitle from '../../../../utils/client/cleaningTitle'
-import categoriesByLanguage from '../../../../data/categoriesByLanguage'
 import { Picture, PictureSmart } from '@csssr/csssr.images/dist/react'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import Link from 'next/link'
+import { number, object, oneOf, shape, string } from 'prop-types'
+import React from 'react'
+
+import categoriesByLanguage from '../../../../data/categoriesByLanguage'
+import cleaningTitle from '../../../../utils/client/cleaningTitle'
+import DateFormatter from '../../../DateFormatter'
+
+import styles from './PostCard.styles'
 
 const PostCard = ({ className, language, post, size, type = 'regular' }) => {
   const imgCover = size === 'l' ? post.images.mainCoverL : post.images.mainCoverS
 
   return (
-    <li className={cn(`${className}`, { news: type === 'news' })}>
+    <li className={cn(String(className), { news: type === 'news' })}>
       <Link
         href={
           type === 'news' ? `/ru/news512/episode/${post.slug}` : `/${language}/article/${post.slug}`

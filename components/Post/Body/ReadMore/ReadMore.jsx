@@ -1,8 +1,10 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import styles from './ReadMore.styles'
 import { Heading } from '@csssr/core-design'
+import styled from '@emotion/styled'
+import React from 'react'
+
 import PostCard from '../../../main/Posts/PostCard'
+
+import styles from './ReadMore.styles'
 
 const ReadMore = ({ className, posts }) => {
   return (

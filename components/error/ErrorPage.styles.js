@@ -237,4 +237,5 @@ const StyledErrorPage = () => css`
   ${base}
   ${pictureStyles}
 `
+
 export default StyledErrorPage

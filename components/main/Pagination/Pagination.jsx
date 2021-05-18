@@ -1,14 +1,16 @@
-import React from 'react'
-import { string, number } from 'prop-types'
-import Link from 'next/link'
-import cn from 'classnames'
-import styled from '@emotion/styled'
-import styles from './Pagination.styles'
 import { Grid } from '@csssr/core-design'
-import PrevPageLink from './PrevPageLink'
-import NextPageLink from './NextPageLink'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import Link from 'next/link'
+import { number, string } from 'prop-types'
+import React from 'react'
+
 import { POSTS_PER_PAGE } from '../../../data/constants'
 import getPageNumbers from '../../../utils/getPageNumbers'
+
+import NextPageLink from './NextPageLink'
+import styles from './Pagination.styles'
+import PrevPageLink from './PrevPageLink'
 
 const Pagination = ({
   className,
@@ -34,10 +36,10 @@ const Pagination = ({
         activePageNumber={activePageNumber}
       />
 
-      {pageNumbers.map((pageNumber, index) => {
+      {pageNumbers.map((pageNumber) => {
         if (pageNumber === '...') {
           return (
-            <span key={index} className={cn('item', 'dots')}>
+            <span key={pageNumber} className={cn('item', 'dots')}>
               {pageNumber}
             </span>
           )
@@ -54,7 +56,7 @@ const Pagination = ({
         }
 
         return (
-          <Link key={index} href={href}>
+          <Link key={pageNumber} href={href}>
             <a
               className={cn('item', { active: pageNumber === activePageNumber })}
               data-testid={`Pagination:link:pageNumber.${pageNumber}`}

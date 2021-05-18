@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { string } from 'prop-types'
-import cn from 'classnames'
 import styled from '@emotion/styled'
+import cn from 'classnames'
+import { string } from 'prop-types'
+import React, { useState } from 'react'
+
 import styles from './TextField.styles'
 
 const TextField = ({ className, id, name, label, testId, autocomplete, type = 'text' }) => {

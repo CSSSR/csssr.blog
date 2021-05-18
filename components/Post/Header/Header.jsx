@@ -1,17 +1,18 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import Link from 'next/link'
-import { string, arrayOf, object } from 'prop-types'
-import { Picture, PictureSmart } from '@csssr/csssr.images/dist/react'
-import cn from 'classnames'
 import { Heading } from '@csssr/core-design'
-import Subtitle from '../Subtitle'
-import NewsAudioLink from './NewsAudioLink'
-import { Grid } from '../../Grid'
-import DateFormatter from '../../DateFormatter'
+import { Picture, PictureSmart } from '@csssr/csssr.images/dist/react'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import Link from 'next/link'
+import { arrayOf, object, string } from 'prop-types'
+import React from 'react'
+
 import categoriesByLanguage from '../../../data/categoriesByLanguage'
+import DateFormatter from '../../DateFormatter'
+import { Grid } from '../../Grid'
+import Subtitle from '../Subtitle'
 
 import styles from './Header.styles'
+import NewsAudioLink from './NewsAudioLink'
 
 const Header = ({
   className,
