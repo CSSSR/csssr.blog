@@ -6,14 +6,14 @@ date: '2019-03-16T05:35:07.322Z'
 tag: 'web-development'
 ---
 
-<Promo>
-  # Lorem Ipsum
-  ## Lorem Ipsum
-  ### Lorem Ipsum
-  #### Lorem Ipsum
-  ##### Lorem Ipsum
-  ###### Lorem Ipsum
-</Promo>
+# Lorem Ipsum
+## Lorem Ipsum
+### Lorem Ipsum
+#### Lorem Ipsum
+##### Lorem Ipsum
+###### Lorem Ipsum
+
+---
 
 **In**this digital era, a **website** comprising various UI/UX elements and features can reveal the ocean of opportunities and become even more effective and engaging. UI/UX  components and technologies not only make a website look great but also secure the brand’s marketing goals.
 

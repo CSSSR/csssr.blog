@@ -5,9 +5,9 @@ date: '2019-12-18T05:35:07.322Z'
 tag: 'business'
 ---
 
-<Promo>
-  <Subtitle>..and why partnerships are better than IT departments or subcontracting.</Subtitle>
-</Promo>
+<Subtitle>..and why partnerships are better than IT departments or subcontracting.</Subtitle>
+
+---
 
 **W**eb development and creative design have always gone hand-in-hand. In the beginning, websites and internet traffic were relatively simple, with only basic code and designs, and limited specialization. Simply put, there wasn’t much thought putinto making websites truly high performance. However, times have changed, and each field has become increasingly competitive. As budgets for web development have swelled, the challenge of bringing together creative agencies and web developers has become more important.
 

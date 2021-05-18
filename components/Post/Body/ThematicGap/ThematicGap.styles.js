@@ -5,6 +5,7 @@ const base = ({ breakpoints: { mobile, tablet } }) => css`
   & {
     grid-column: 4 / span 6;
     padding-bottom: ${calcRem(30)};
+    border: none;
   }
 
   ${mobile.all} {

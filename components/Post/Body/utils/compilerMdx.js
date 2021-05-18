@@ -15,7 +15,7 @@ import ListItem from '../ListItem'
 import Heading from '../Heading'
 import Text from '../Text'
 import Blockquote from '../Blockquote'
-import Promo from '../Promo'
+import ThematicGap from '../ThematicGap'
 
 export const compilerMdx = ({ content, images }) =>
   compiler(content, {
@@ -65,9 +65,7 @@ export const compilerMdx = ({ content, images }) =>
         },
       },
       hr: {
-        props: {
-          className: 'grid-element',
-        },
+        component: ThematicGap,
       },
       p: {
         // https://github.com/probablyup/markdown-to-jsx/issues/209
@@ -157,9 +155,6 @@ export const compilerMdx = ({ content, images }) =>
       },
       Table: {
         component: Table,
-      },
-      Promo: {
-        component: Promo,
       },
     },
   })

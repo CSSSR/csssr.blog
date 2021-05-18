@@ -5,11 +5,11 @@ date: '2020-03-16T05:35:07.322Z'
 tag: 'business'
 ---
 
-<Promo>
-  <Subtitle>
-  Cost-effectiveness, high-quality services and other reasons why so many Singapore entrepreneurs are looking into offshoring web development services
-  </Subtitle>
-</Promo>
+<Subtitle>
+Cost-effectiveness, high-quality services and other reasons why so many Singapore entrepreneurs are looking into offshoring web development services
+</Subtitle>
+
+---
 
 **W**eb development outsourcing has become an extremely popular trend in Singapore and worldwide. Standing behind it are the reduction and transparency of costs, the improvement of of service/code quality, financial flexibility and the ability to focus on core business projects. When it comes to offshore web development outsourcing, IT companies from Singapore definitely have a great choice, though it is difficult to decide on the best place to outsource web development.
 
