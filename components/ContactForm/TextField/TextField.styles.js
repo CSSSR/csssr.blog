@@ -61,7 +61,7 @@ const base = ({ colors }) => css`
 
   .input:focus + .label,
   .label._active {
-    transform: translate(${calcRem(12)}, ${calcRem(28)});
+    transform: translate(${calcRem(2)}, ${calcRem(25)});
     color: ${colors.secondary.darken100};
     font-weight: 300;
     text-transform: lowercase;
