@@ -281,16 +281,16 @@ testcase('Displaying articles (EN local)', () => {
 })
 
 testcase('Contents of articles (EN local)', () => {
-  step(`go to the article «How Close Your Outsourced Team Should Be Located? Pros and Cons»`, () => {
+  step.skip(`go to the article «How Close Your Outsourced Team Should Be Located? Pros and Cons»`, () => {
     browser
       .setWindowSize(1920, 4700)
       .url(`${browser.launch_url}${pages.enLocal.url}${pages.howCloseYourOutsourcedTeam.url}`)
       .waitForElementVisible(articles.block.post)
   })
 
-  expected('the article page is displayed correctly', () => {
+  expected.skip('the article page is displayed correctly', () => {
     browser
-      .assert.screenshotElement(articles.block.fullPage, 'How Close Your Outsourced Team (EN)', { hideSelectors: [articles.block.subscription] })
+      .assert.screenshotElement(articles.block.fullPage, 'How Close Your Outsourced Team (EN)', { hideSelectors: [articles.block.subscription, articles.block.comments] })
   })
 
   step(`go to the article «Augmented & Virtual Reality to Shape the Future of Web Development»`, () => {
@@ -307,14 +307,14 @@ testcase('Contents of articles (EN local)', () => {
 
   step(`go to the article «HTML CMS or Custom Development: Which is Better»`, () => {
     browser
-      .setWindowSize(1920, 4000)
+      .setWindowSize(1920, 3200)
       .url(`${browser.launch_url}${pages.enLocal.url}${pages.htmlOrCmsOrCustomDevelopment.url}`)
       .waitForElementVisible(articles.block.post)
   })
 
   expected('the article page is displayed correctly', () => {
     browser
-      .assert.screenshotElement(articles.block.fullPage, 'HTML CMS or Custom Development(EN)', { hideSelectors: [articles.block.subscription] })
+      .assert.screenshotElement(articles.block.fullPage, 'HTML CMS or Custom Development(EN)', { hideSelectors: [articles.block.comments] })
   })
 
   step(`go to the article «Offshore Web Development: Top Destinations For Singapore»`, () => {
@@ -343,14 +343,14 @@ testcase('Contents of articles (EN local)', () => {
 
   step(`go to the article «Ten Tips and Best Practices for Accurately Task Estimating»`, () => {
     browser
-      .setWindowSize(1920, 5500)
+      .setWindowSize(1920, 5000)
       .url(`${browser.launch_url}${pages.enLocal.url}${pages.tipsForTaskEstimating.url}`)
       .waitForElementVisible(articles.block.post)
   })
 
   expected('the article page is displayed correctly', () => {
     browser
-      .assert.screenshotElement(articles.block.fullPage, 'en Tips and Best Practices(EN)', { hideSelectors: [articles.block.subscription] })
+      .assert.screenshotElement(articles.block.fullPage, 'en Tips and Best Practices(EN)', { hideSelectors: [articles.block.subscription, articles.block.comments] })
   })
 
   step(`go to the article «The Baltic E-Success: A Brief Introduction to the Estonian IT Industry»`, () => {
@@ -441,22 +441,6 @@ testcase('Share block at different resolutions (EN local)', () => {
     browser
       .setWindowSize(360, 6200)
       .assert.screenshotElement(articles.block.fullPage, 'How Close Your Outsourced Team 360(EN)')
-  })
-})
-
-testcase('Redirects from old articles', () => {
-  expected(`Redirects from old articles work successfully`, () => {
-    browser
-      .url(`${pages.blogRu.url}${pages.oldUrl.qaCodex}`)
-      .assert.urlEquals(`${browser.launch_url}${pages.newUrl.qaCodex}`)
-      .url(`${pages.blogRu.url}${pages.oldUrl.yearResume2019}`)
-      .assert.urlEquals(`${browser.launch_url}${pages.newUrl.yearResume2019}`)
-      .url(`${pages.blogRu.url}${pages.oldUrl.estimateLikeGod}`)
-      .assert.urlEquals(`${browser.launch_url}${pages.newUrl.estimateLikeGod}`)
-      .url(`${pages.blogRu.url}${pages.oldUrl.unicornBusters}`)
-      .assert.urlEquals(`${browser.launch_url}${pages.newUrl.unicornBusters}`)
-      .url(`${pages.blogRu.url}${pages.oldUrl.semanticsInProgramming}`)
-      .assert.urlEquals(`${browser.launch_url}${pages.newUrl.semanticsInProgramming}`)
   })
 })
 
