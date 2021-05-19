@@ -31,8 +31,6 @@ const MainPage = ({
   activeCategory,
   activePageNumber,
   language,
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
 }) => (
   <>
     <Head>
@@ -49,12 +47,7 @@ const MainPage = ({
 
       <Categories items={categories} language={language} activeCategory={activeCategory} />
 
-      <Posts
-        language={language}
-        posts={posts}
-        BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-        BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-      />
+      <Posts language={language} posts={posts} />
 
       <Pagination
         language={language}
@@ -62,13 +55,7 @@ const MainPage = ({
         activePageNumber={activePageNumber}
         totalNumberOfPosts={totalNumberOfPosts}
       />
-      {language === 'ru' && (
-        <Newsletter
-          language={language}
-          BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-          BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-        />
-      )}
+      {language === 'ru' && <Newsletter language={language} />}
     </Layout>
   </>
 )

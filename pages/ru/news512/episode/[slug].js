@@ -2,24 +2,12 @@ import React from 'react'
 import Layout from '../../../../components/Layout'
 import Post from '../../../../components/Post'
 import { getPostNewsBySlug, getPostsNews } from '../../../../lib/api'
-import getBenchmarkEmailListId from '../../../../utils/getBenchmarkEmailListId'
 
-export default function PostNewsPage({
-  post,
-  /* morePosts, */ language,
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
-}) {
+export default function PostNewsPage({ post, /* morePosts, */ language }) {
   return (
     <>
       <Layout language={language} type="news">
-        <Post
-          language={language}
-          post={post}
-          type="news"
-          BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-          BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-        />
+        <Post language={language} post={post} type="news" />
       </Layout>
     </>
   )
@@ -42,8 +30,6 @@ export async function getStaticProps({ params }) {
     props: {
       post: post,
       language: 'ru',
-      BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
-      BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
     },
   }
 }

@@ -17,8 +17,6 @@ const PostNewsletter = ({
   type,
   HideShareLinksOnMobile,
   HideNewsPodcastOnMobile,
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
 }) => {
   const { title, subtitle, img, imgAlt } = postNewsletterData
 
@@ -64,8 +62,6 @@ const PostNewsletter = ({
             isMobile={isMobile}
             isMessageHidden={isMessageHidden}
             setMessageHidden={setMessageHidden}
-            BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-            BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
           />
         </div>
       )}

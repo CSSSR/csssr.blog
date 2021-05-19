@@ -25,6 +25,6 @@ const withImages = (nextConfig = {}) => ({
 })
 
 module.exports = withPlugins([withImages], {
-  env: { BLOG_HOST: process.env.BLOG_HOST },
+  env: { BLOG_HOST: process.env.BLOG_HOST, COM_HOST: process.env.COM_HOST },
   trailingSlash: true,
 })

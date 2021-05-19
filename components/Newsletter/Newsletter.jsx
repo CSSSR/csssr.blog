@@ -8,13 +8,7 @@ import { Grid } from '../Grid'
 import ContactForm from '../ContactForm'
 import { newsletterData } from '../../data/newsletter'
 
-const Newsletter = ({
-  className,
-  language,
-  kind,
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
-}) => {
+const Newsletter = ({ className, language, kind }) => {
   const { title, subtitle, img, imgAlt } = newsletterData
 
   return (
@@ -31,11 +25,7 @@ const Newsletter = ({
             dangerouslySetInnerHTML={{ __html: subtitle }}
           />
 
-          <ContactForm
-            kind={kind}
-            BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-            BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-          />
+          <ContactForm kind={kind} />
 
           <PictureSmart requireImages={img} className="picture" alt={imgAlt} />
 

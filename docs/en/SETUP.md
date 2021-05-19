@@ -29,11 +29,6 @@ This command will install all the dependencies the project needs.
 > ```
 > Solution: Make sure you've done step 4 of [dependencies](#dependencies) correctly
 
-Next, add a file `.env.development.local` to the root of the project with the following contents:
-```
-BENCHMARK_EMAIL_TOKEN=TOKEN
-```
-
 After that you can start the project:
 ``cmd
 yarn dev

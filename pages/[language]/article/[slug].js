@@ -2,7 +2,6 @@ import Layout from '../../../components/Layout'
 import Post from '../../../components/Post'
 import { getPostBySlugAndLanguage, getPostsByLanguage } from '../../../lib/api'
 import languages from '../../../utils/languages'
-import getBenchmarkEmailListId from '../../../utils/getBenchmarkEmailListId'
 import postsOrderEn from '../../../postsOrderEn.json'
 import postsOrderRu from '../../../postsOrderRu.json'
 
@@ -13,13 +12,7 @@ const postsOrder = {
 
 // const postsOrder = postsOrderRu.flat().filter((slug) => slug !== 'news512')
 
-export default function PostPage({
-  posts,
-  post,
-  language,
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
-}) {
+export default function PostPage({ posts, post, language }) {
   // const router = useRouter()
   // TODO: добавить ErrorPage из csssr.com
   // if (!router.isFallback && !post?.slug) {
@@ -32,13 +25,7 @@ export default function PostPage({
         не думаю что нам это пока нужно, но оставлю как пример создания фолбека
         router.isFallback ? <PostTitle>Loading…</PostTitle> : <Post post={post} />
       */}
-      <Post
-        language={language}
-        posts={posts}
-        post={post}
-        BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-        BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
-      />
+      <Post language={language} posts={posts} post={post} />
     </Layout>
   )
 }
@@ -88,8 +75,6 @@ export async function getStaticProps({ params }) {
       language,
       posts,
       post,
-      BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
-      BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
     },
   }
 }

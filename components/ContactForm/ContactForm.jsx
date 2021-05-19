@@ -56,7 +56,7 @@ const Component = ({
       setSubmittedToServerStatus(true)
 
       return submitResult.then((data) => {
-        if (!data['FINAL_FORM/form-error']) {
+        if (!data || !data['FINAL_FORM/form-error']) {
           reset()
         }
       })
@@ -133,8 +133,8 @@ const Component = ({
         </div>
         <Fade duration={400} collapse when={isMobile || !isMessageHidden}>
           <p className="policy">
-            Отправляя данную форму, я&nbsp;подтверждаю своё согласие на&nbsp;получение рекламных и&nbsp;информационных материалов,
-            а&nbsp;также факт своего ознакомления и согласия с
+            Отправляя данную форму, я&nbsp;подтверждаю своё согласие на&nbsp;получение рекламных
+            и&nbsp;информационных материалов, а&nbsp;также факт своего ознакомления и согласия с
             <a
               className="subscribe-policy-link"
               href="https://csssr.com/ru/privacy-policy"
@@ -182,21 +182,13 @@ Component.propTypes = {
   className: string,
 }
 
-const Form = ({
-  className,
-  kind,
-  isMobile,
-  isMessageHidden,
-  setMessageHidden,
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
-}) => {
+const Form = ({ className, kind, isMobile, isMessageHidden, setMessageHidden }) => {
   const onSubmit = async (values) => {
     let res
     const isTestEmail = testEmails.includes(values.email)
     const shouldSendDataLayerEvent = window.dataLayer && !isTestEmail
     const dataLayerEventNamePrefix = 'subscribe'
-    const submitUrl = `https://clientapi.benchmarkemail.com/Contact/${BENCHMARK_EMAIL_LIST_ID}/ContactDetails`
+    const submitUrl = `${process.env.COM_HOST}/api/subscribe-for-newsletter`
 
     try {
       res = await fetch(submitUrl, {
@@ -204,13 +196,9 @@ const Form = ({
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
-          AuthToken: BENCHMARK_EMAIL_TOKEN,
         },
         body: JSON.stringify({
-          Data: {
-            Email: values.email,
-            EmailPerm: 1,
-          },
+          email: values.email,
         }),
       })
     } catch {
@@ -221,7 +209,7 @@ const Form = ({
       return { [FORM_ERROR]: 'Что-то пошло не так.' }
     }
 
-    if (res.status === 201) {
+    if (res.status === 200) {
       if (shouldSendDataLayerEvent) {
         window.dataLayer.push({ event: dataLayerEventNamePrefix + '_success' })
       }

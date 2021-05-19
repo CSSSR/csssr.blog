@@ -12,17 +12,7 @@ import styles from './Body.styles'
 
 import { compilerMdx } from './utils/compilerMdx'
 
-const Body = ({
-  className,
-  posts,
-  content,
-  slug,
-  images,
-  language,
-  type,
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
-}) => (
+const Body = ({ className, posts, content, slug, images, language, type }) => (
   <Grid className={cn(`post-body ${className}`)} data-testid="Post:block">
     <PostNewsletter
       className={cn('post-newsletter', {
@@ -32,8 +22,6 @@ const Body = ({
       type={type}
       kind="post"
       HideShareLinksOnMobile
-      BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-      BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
       data-testid="Post:block"
     />
     {compilerMdx({ content, type, images })}
@@ -44,8 +32,6 @@ const Body = ({
       type={type}
       HideNewsPodcastOnMobile
       kind="post"
-      BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-      BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
     />
 
     {language === 'ru' && type !== 'news' && <ReadMore posts={posts} />}

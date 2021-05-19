@@ -11,15 +11,7 @@ import getDescription from '../../utils/client/getDescription'
 
 import newsPostOgImage from '../../public/images/og/news512/all.png'
 
-const Post = ({
-  posts,
-  post,
-  language,
-  className,
-  type = 'regular',
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
-}) => {
+const Post = ({ posts, post, language, className, type = 'regular' }) => {
   const isNews = type === 'news'
   const title = isNews ? 'Новости 512 | CSSSR' : cleaningTitle(post.title, 'meta')
   const description = getDescription(isNews, post)
@@ -77,8 +69,6 @@ const Post = ({
         images={post.images}
         language={language}
         type={type}
-        BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-        BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
       />
     </article>
   )

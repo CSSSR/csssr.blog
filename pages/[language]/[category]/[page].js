@@ -5,7 +5,6 @@ import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberBy
 import languages from '../../../utils/languages'
 import areEqualShallow from '../../../utils/areEqualShallow'
 import getPostsCategories from '../../../utils/getPostsCategories'
-import getBenchmarkEmailListId from '../../../utils/getBenchmarkEmailListId'
 import sortByDate from '../../../utils/sortByDate'
 import postsOrderEn from '../../../postsOrderEn.json'
 import postsOrderRu from '../../../postsOrderRu.json'
@@ -17,8 +16,6 @@ const Index = ({
   activeCategory,
   activePageNumber,
   language,
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
 }) => (
   <MainPage
     posts={posts}
@@ -27,8 +24,6 @@ const Index = ({
     activeCategory={activeCategory}
     activePageNumber={activePageNumber}
     language={language}
-    BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-    BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
   />
 )
 
@@ -110,8 +105,6 @@ export async function getStaticProps({ params }) {
       activeCategory: params.category,
       activePageNumber: Number(params.page),
       language,
-      BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
-      BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
     },
   }
 }
