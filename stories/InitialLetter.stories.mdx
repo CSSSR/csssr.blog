@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import * as stories from './InitialLetter.stories.js';
+
+<Meta title="Post/InitialLetter" />
+
+# Буквеница
+
+Начало тела статьи, основного текста, буква или несколько букв выделенные в первом обзаце статьи как жирный текст
+
+```
+**М**ы выяснили, что некоторые из вещей кажутся..
+```
+
+В `ru` версии выделяется шрифтом `Sweet Mavka Script`.
+
+<Canvas>
+  <Story story={stories.ru} />
+</Canvas>
+
+В `en` версии выделяется шрифтом `Amita`.
+
+<Canvas>
+  <Story story={stories.en} />
+</Canvas>

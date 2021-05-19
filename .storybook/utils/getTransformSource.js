@@ -8,6 +8,10 @@ import { getStringAttributes } from '../../stories/utils/getStringAttributes';
 export const getSource = (kind, args) => {
   const getComponentName = kind => kind.slice(kind.indexOf('/') + 1, kind.length)
 
+  if ((/InitialLetter/g).test(kind)){
+    return args?.content
+  }
+
   if ((/Heading/g).test(kind)) {
     const { text, headingLevel } = args;
 
