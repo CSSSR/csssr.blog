@@ -18,16 +18,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     margin: 0 auto;
   }
 
-  & > p:first-of-type strong:first-of-type {
-    font-style: normal;
-    font-weight: normal;
-    font-size: ${calcRem(76)};
-    line-height: ${calcRem(32)};
-    padding-top: ${calcRem(20)};
-    padding-left: ${calcRem(4)};
-    float: left;
-  }
-
   em {
     font-weight: normal;
   }
@@ -39,6 +29,8 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   code:not([class^="lang"]) {
     font-family: Roboto Mono, monospace;
     background-color: #F5F6FA;
+    padding-left: ${calcRem(3)};
+    padding-right: ${calcRem(3)};
   }
 
   .list_item_s {
@@ -172,12 +164,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       margin-top: ${calcRem(15)};
     }
 
-    & > p:first-of-type strong:first-of-type {
-      padding-right: ${calcRem(11)};
-      font-size: ${calcRem(64)};
-      line-height: ${calcRem(32)};
-    }
-
     .list_item_s {
       padding-left: ${calcRem(9)};
 
@@ -214,10 +200,25 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   }
 `
 
-const dynamic = (language) =>  css`
+export const getInitialLetterStyles = ({ breakpoints: { mobile }, language }) =>  css`
   & > p:first-of-type strong:first-of-type {
     padding-right: ${language === 'ru' ? calcRem(23) : calcRem(7)};
     font-family: ${language === 'ru' ? 'Sweet Mavka Script' : 'Amita'};
+    font-style: normal;
+    font-weight: normal;
+    font-size: ${calcRem(76)};
+    line-height: ${calcRem(32)};
+    padding-top: ${calcRem(20)};
+    padding-left: ${calcRem(4)};
+    float: left;
+  }
+
+  ${mobile.all} {
+    & > p:first-of-type strong:first-of-type {
+      padding-right: ${calcRem(11)};
+      font-size: ${calcRem(64)};
+      line-height: ${calcRem(32)};
+    }
   }
 `
 
@@ -226,7 +227,7 @@ const StyledBody = props => {
 
   return css`
     ${base({ breakpoints })}
-    ${dynamic(language)}
+    ${getInitialLetterStyles({language, breakpoints})}
   `
 }
 

@@ -8,21 +8,17 @@ import { getStringAttributes } from '../../stories/utils/getStringAttributes';
 export const getSource = (kind, args) => {
   const getComponentName = kind => kind.slice(kind.indexOf('/') + 1, kind.length)
 
-  if ((/Common/g).test(kind)) {
-    return `<${getComponentName(kind)} ${getStringAttributes(args)}/>`
-  }
-
   if ((/Heading/g).test(kind)) {
     const { text, headingLevel } = args;
 
     return `${getLattices(headingLevel)} ${text}`;
   }
 
-  if ((/(Img|Separator)/g).test(kind)) {
+  if ((/(Img|Separator|Common)/g).test(kind)) {
     return `<${getComponentName(kind)} ${getStringAttributes(args)}/>`;
   }
 
-  if ((/(Note|Subtitle|Promo)/g).test(kind)) {
+  if ((/(Note|Subtitle)/g).test(kind)) {
     const { contentMdx } = args;
     const componentName = getComponentName(kind)
 

@@ -3,7 +3,6 @@ import { Global, ThemeProvider, css } from '@emotion/react';
 import { Root, Fonts, defaultTheme } from '@csssr/core-design';
 import { getTransformSource } from './utils/getTransformSource';
 
-import stylesBody from '../components/Post/Body/Body.styles';
 import stylesLayout from '../components/Layout/Layout.styles';
 
 const customViewports = {
@@ -60,7 +59,6 @@ export const decorators = [
           <Fonts preset="blog" />
           <Story />
           <Global styles={stylesLayout} />
-          <Global styles={(theme) => stylesBody({ theme })} />
           {/* Для переопределения стилей блога, иначе код code source в одну строку */}
           <Global styles={css`code {
             white-space: pre;

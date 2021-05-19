@@ -1,7 +1,7 @@
-import { Grid } from '../../components/Grid'
+import PostWrap from './PostWrap'
 
 export const GridDecorator = (Story) => (
-  <Grid>
+  <PostWrap language="ru">
     <Story />
-  </Grid>
+  </PostWrap>
 )

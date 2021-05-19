@@ -3,9 +3,9 @@ import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 import { getStringAttributes } from './utils/getStringAttributes';
 import { GridDecorator } from './decorators/GridDecorator';
 
-<Meta title="Post/ThematicGap" decorators={[GridDecorator]}/>
+<Meta title="Post/VerticalGap" decorators={[GridDecorator]}/>
 
-export const ThematicGap = ({ contentMdx }) => {
+export const VerticalGap = ({ contentMdx }) => {
   return (
     <>
       {compilerMdx({ content: contentMdx })}
@@ -13,10 +13,11 @@ export const ThematicGap = ({ contentMdx }) => {
   );
 };
 
-# [`<ThematicGap />`](http://s.csssr.ru/UJ4QCUXM4/2021-05-13-15-48-40.jpg)
+# [`<VerticalGap />`](http://s.csssr.ru/UJ4QCUXM4/2021-05-13-15-48-40.jpg)
 
 Тематический разрыв `<hr>`
 
+Добавляет дополнительный вертикальный отступ в 30px на десктопе и 25 пикселей на мобильных.
 ## Результат
 
 <Canvas>
@@ -30,6 +31,6 @@ export const ThematicGap = ({ contentMdx }) => {
 `,
     }}
   >
-    {ThematicGap.bind({})}
+    {VerticalGap.bind({})}
   </Story>
 </Canvas>

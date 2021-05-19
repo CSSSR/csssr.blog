@@ -15,7 +15,7 @@ import ListItem from '../ListItem'
 import Heading from '../Heading'
 import Text from '../Text'
 import Blockquote from '../Blockquote'
-import ThematicGap from '../ThematicGap'
+import VerticalGap from '../VerticalGap'
 
 export const compilerMdx = ({ content, images }) =>
   compiler(content, {
@@ -65,7 +65,7 @@ export const compilerMdx = ({ content, images }) =>
         },
       },
       hr: {
-        component: ThematicGap,
+        component: VerticalGap,
       },
       p: {
         // https://github.com/probablyup/markdown-to-jsx/issues/209
