@@ -1,11 +1,17 @@
 import Prism from 'prismjs'
+import { Global } from '@emotion/react'
 import { useEffect } from 'react'
-import '../../public/prism-themes/prism-material-light.css'
+import { prismMaterialLight } from '../../components/Post/Body/Body.styles'
 
 export const PrismDecorator = (Story) => {
   useEffect(() => {
     Prism.highlightAll()
   })
 
-  return <Story />
+  return (
+    <>
+      <Global styles={prismMaterialLight} />
+      <Story />
+    </>
+  )
 }
