@@ -1,11 +1,9 @@
 import React from 'react'
 
 import News from '../../../components/news512/News'
-
+import { NEWS_PER_PAGE } from '../../../data/constants'
 import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
 import getPostsCategories from '../../../utils/getPostsCategories'
-
-import { NEWS_PER_PAGE } from '../../../data/constants'
 
 const News512 = ({ categories, language, posts, totalNumberOfPosts, lastPostDate }) => (
   <News
@@ -28,7 +26,7 @@ export async function getStaticProps() {
   const orderedPostsNews = postsNews.sort(
     (postA, postB) => new Date(postB.date) - new Date(postA.date),
   )
-  const lastPostDate = orderedPostsNews[0]['date']
+  const lastPostDate = orderedPostsNews[0].date
 
   return {
     props: {

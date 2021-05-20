@@ -1,12 +1,11 @@
-import React from 'react'
-import { string, shape, object, arrayOf } from 'prop-types'
 import styled from '@emotion/styled'
-
-import ErrorPostCard from './ErrorPostCard'
+import { arrayOf, object, shape, string } from 'prop-types'
+import React from 'react'
 
 import postsOrderEn from '../../../postsOrderEn.json'
 import postsOrderRu from '../../../postsOrderRu.json'
 
+import ErrorPostCard from './ErrorPostCard'
 import styles from './ErrorPosts.styles'
 
 const ErrorPosts = ({ className, posts, language }) => {
@@ -35,7 +34,7 @@ const ErrorPosts = ({ className, posts, language }) => {
 
 ErrorPosts.propTypes = {
   className: string,
-  post: arrayOf(
+  posts: arrayOf(
     shape({
       title: string,
       coverImageAlt: string,

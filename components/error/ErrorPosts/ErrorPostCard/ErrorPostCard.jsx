@@ -1,12 +1,12 @@
-import React from 'react'
-import { string, shape, object } from 'prop-types'
+import { Picture } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
-import { Picture } from '@csssr/csssr.images/dist/react'
+import { object, shape, string } from 'prop-types'
+import React from 'react'
 
-import DateFormatter from '../../../DateFormatter'
-import cleaningTitle from '../../../../utils/client/cleaningTitle'
 import categoriesByLanguage from '../../../../data/categoriesByLanguage'
+import cleaningTitle from '../../../../utils/client/cleaningTitle'
+import DateFormatter from '../../../DateFormatter'
 
 import styles from './ErrorPostCard.styles'
 

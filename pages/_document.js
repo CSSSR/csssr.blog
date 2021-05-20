@@ -1,7 +1,8 @@
-import { GtmNoScript, GtmScript } from 'react-gtm-components'
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import getGtmId from '../utils/getGtmId'
 import { Fonts } from '@csssr/core-design'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
+import { GtmNoScript, GtmScript } from 'react-gtm-components'
+
+import getGtmId from '../utils/getGtmId'
 
 export default class MyDocument extends Document {
   render() {

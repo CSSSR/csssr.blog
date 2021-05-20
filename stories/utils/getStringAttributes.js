@@ -3,14 +3,12 @@ export const getStringAttributes = (args) =>
     .reduce((acc, item) => {
       if (typeof args[item] === 'boolean') {
         if (args[item]) {
-          acc += `${item} `
+          return acc + `${item} `
         }
 
         return acc
       }
 
-      acc += `${item}="${args[item]}" `
-
-      return acc
+      return acc + `${item}="${args[item]}" `
     }, '')
     .trim()

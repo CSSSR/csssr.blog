@@ -1,8 +1,9 @@
-import React from 'react'
-import { string, number, bool } from 'prop-types'
-import Link from 'next/link'
-import cn from 'classnames'
 import styled from '@emotion/styled'
+import cn from 'classnames'
+import Link from 'next/link'
+import { bool, number, string } from 'prop-types'
+import React from 'react'
+
 import styles from './PrevPageLink.styles'
 
 const PrevPageLink = ({ className, language, disabled, activeCategory, activePageNumber }) => {
@@ -10,6 +11,7 @@ const PrevPageLink = ({ className, language, disabled, activeCategory, activePag
 
   if (activePageNumber === 1) {
     return (
+      // eslint-disable-next-line jsx-a11y/anchor-has-content
       <a
         className={cn(className, {
           _disabled: disabled,
@@ -31,6 +33,7 @@ const PrevPageLink = ({ className, language, disabled, activeCategory, activePag
 
   return (
     <Link href={href}>
+      {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
       <a
         className={cn(className, {
           _disabled: disabled,

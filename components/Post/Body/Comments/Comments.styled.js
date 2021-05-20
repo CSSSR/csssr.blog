@@ -1,6 +1,7 @@
-import { css } from '@emotion/react'
-import calcRem from '../../../../utils/style/calcRem'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
+import { css } from '@emotion/react'
+
+import calcRem from '../../../../utils/style/calcRem'
 
 const defaultAvatarImages = require.context('../../../../public/components/comments/defaultAvatar')
 

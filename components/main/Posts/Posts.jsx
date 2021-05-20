@@ -1,10 +1,11 @@
-import React from 'react'
-import { string, arrayOf, shape, object } from 'prop-types'
-import { Grid } from '../../Grid'
 import styled from '@emotion/styled'
-import styles from './Posts.styles'
+import { arrayOf, object, shape, string } from 'prop-types'
+import React from 'react'
+
+import { Grid } from '../../Grid'
 
 import PostCard from './PostCard'
+import styles from './Posts.styles'
 
 const Posts = ({ language, posts, className }) => (
   <Grid as="ul" className={className} data-testid="Posts:block">
@@ -31,7 +32,7 @@ const Posts = ({ language, posts, className }) => (
 Posts.propTypes = {
   className: string,
   language: string,
-  post: arrayOf(
+  posts: arrayOf(
     shape({
       title: string,
       coverImageAlt: string,

@@ -1,9 +1,8 @@
-import React, { useState, useRef } from 'react'
-import { useRouter } from 'next/router'
-import cn from 'classnames'
-import styled from '@emotion/styled'
-import styles from './PostShare.styles'
 import { Heading, Text } from '@csssr/core-design'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import { useRouter } from 'next/router'
+import React, { useRef, useState } from 'react'
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -11,11 +10,13 @@ import {
   VKShareButton,
 } from 'react-share'
 
+import { ReactComponent as CopyIcon } from '../../public/icons/share/copy.svg'
 import { ReactComponent as FacebookIcon } from '../../public/icons/share/facebook.svg'
+import { ReactComponent as EmailIcon } from '../../public/icons/share/mail.svg'
 import { ReactComponent as TwitterIcon } from '../../public/icons/share/twitter.svg'
 import { ReactComponent as VkIcon } from '../../public/icons/share/vk.svg'
-import { ReactComponent as EmailIcon } from '../../public/icons/share/mail.svg'
-import { ReactComponent as CopyIcon } from '../../public/icons/share/copy.svg'
+
+import styles from './PostShare.styles'
 
 const PostShare = ({ className, language, type, HideShareLinksOnMobile }) => {
   const router = useRouter()

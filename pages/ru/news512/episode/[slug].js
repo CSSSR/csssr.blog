@@ -1,15 +1,16 @@
 import React from 'react'
+
 import Layout from '../../../../components/Layout'
 import Post from '../../../../components/Post'
 import { getPostNewsBySlug, getPostsNews } from '../../../../lib/api'
 import getBenchmarkEmailListId from '../../../../utils/getBenchmarkEmailListId'
 
-export default function PostNewsPage({
+const PostNewsPage = ({
   post,
   /* morePosts, */ language,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
-}) {
+}) => {
   return (
     <>
       <Layout language={language} type="news">
@@ -24,6 +25,8 @@ export default function PostNewsPage({
     </>
   )
 }
+
+export default PostNewsPage
 
 export async function getStaticProps({ params }) {
   const post = await getPostNewsBySlug(params.slug, [
@@ -40,7 +43,7 @@ export async function getStaticProps({ params }) {
   ])
   return {
     props: {
-      post: post,
+      post,
       language: 'ru',
       BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
       BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
