@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+
 import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ colors }) => css`
@@ -61,7 +62,7 @@ const base = ({ colors }) => css`
 
   .input:focus + .label,
   .label._active {
-    transform: translate(${calcRem(12)}, ${calcRem(28)});
+    transform: translateX(${calcRem(0)}) translateY(${calcRem(28)});
     color: ${colors.secondary.darken100};
     font-weight: 300;
     text-transform: lowercase;

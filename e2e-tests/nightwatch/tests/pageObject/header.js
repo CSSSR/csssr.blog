@@ -44,5 +44,6 @@ module.exports = {
     portfolio: '[data-testid="Header:nav:button.portfolio"]',
     howWeWork: '[data-testid="Header:nav:button.howWeWork"]',
     products: '[data-testid="Header:nav:button.products"]',
+    closeCookiesAlert: '[data-testid="CookiesPopup:button.close"]',
   }
 }

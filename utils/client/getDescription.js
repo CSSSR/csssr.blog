@@ -20,7 +20,7 @@ export default (isNews, post) => {
       // eslint-disable-next-line no-irregular-whitespace
       .replace(/ /g, ' ')
       .replace(/<.*?>/g, '')
-      .replace(/\[|\]\(https?:\/\/?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\)/g, '')
+      .replace(/\[|]\(https?:\/\/?[\da-z.-]+\.[a-z.]{2,6}(?:[/\w .-]*)*\/?\)/g, '')
       .replace(/\s{2,}/g, ' ')
   )
 }

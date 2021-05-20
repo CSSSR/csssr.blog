@@ -1,5 +1,6 @@
-import ErrorPage from '../components/error/ErrorPage'
 import React from 'react'
+
+import ErrorPage from '../components/error/ErrorPage'
 
 class MyError extends React.Component {
   static getInitialProps({ res, err }) {

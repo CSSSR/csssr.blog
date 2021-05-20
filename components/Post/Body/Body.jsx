@@ -1,15 +1,14 @@
-import React from 'react'
-import { string, object } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import { object, string } from 'prop-types'
+import React from 'react'
 
 import { Grid } from '../../Grid'
 import PostNewsletter from '../../PostNewsletter'
-import Comments from './Comments'
-import ReadMore from './ReadMore'
 
 import styles from './Body.styles'
-
+import Comments from './Comments'
+import ReadMore from './ReadMore'
 import { compilerMdx } from './utils/compilerMdx'
 
 const Body = ({

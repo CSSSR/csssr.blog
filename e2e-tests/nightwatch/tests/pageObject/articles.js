@@ -1,9 +1,12 @@
 module.exports = {
   block: {
-    post: '[data-testid="Post:block:header"]',
+    post: '[data-testid="Post:block:header"] div',
     fullPage: '[data-testid="Layout:block:main"]',
     newsletterForm: '#main > article > div > div.post-newsletter.hidden_mobile.css-1qf5xc9',
     newsletterBlock: '[data-testid="Newsletter:block"]',
+    readMore: '[data-testid="ReadMore:block"]',
+    subscription: '[data-testid="Post:block"] div',
+    comments: '[data-testid="Comments:block"]',
   },
   link: {
     culture: '[data-testid="Post:link.category.culture"]',

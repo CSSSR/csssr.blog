@@ -1,9 +1,10 @@
-import React from 'react'
-import { string, node, arrayOf, object } from 'prop-types'
+import { Picture } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import { arrayOf, node, object, string } from 'prop-types'
+import React from 'react'
+
 import styles from './ParagraphWithImage.styles'
-import { Picture } from '@csssr/csssr.images/dist/react'
 
 const ParagraphWithImage = ({ children, className, imageSide = 'left', sources, alt }) => {
   return (

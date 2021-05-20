@@ -3,7 +3,9 @@ const path = require('path')
 const util = require('util')
 
 const { SitemapStream, streamToPromise } = require('sitemap')
+
 const languages = require('../utils/languages')
+
 const readdir = util.promisify(fs.readdir)
 
 const postsDirectory = path.resolve(__dirname, '../_posts')
@@ -44,7 +46,7 @@ const generateSitemap = async () => {
 
   stream.end()
 
-  streamToPromise(stream).then((data) =>
+  void streamToPromise(stream).then((data) =>
     fs.writeFileSync(path.resolve(__dirname, '../out/sitemap.xml'), data.toString()),
   )
 }

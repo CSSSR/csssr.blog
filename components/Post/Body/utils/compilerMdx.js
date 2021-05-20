@@ -1,14 +1,13 @@
 import { Fragment } from 'react'
 import { compiler } from 'markdown-to-jsx'
 import { Link } from '@csssr/core-design'
-import Separator from '../Separator'
-import ParagraphWithImage from '../ParagraphWithImage'
+import Subtitle from '../../Subtitle'
+import Caption from '../Caption'
 import Img from '../Img'
 import Note from '../Note'
+import ParagraphWithImage from '../ParagraphWithImage'
 import Quote from '../Quote'
-import Subtitle from '../../Subtitle'
-import Video from '../Video'
-import Caption from '../Caption'
+import Separator from '../Separator'
 import Table from '../Table'
 import List from '../List'
 import ListItem from '../ListItem'
@@ -16,6 +15,7 @@ import Heading from '../Heading'
 import Text from '../Text'
 import Blockquote from '../Blockquote'
 import VerticalGap from '../VerticalGap'
+import Video from '../Video'
 
 export const compilerMdx = ({ content, images }) =>
   compiler(content, {
@@ -83,6 +83,7 @@ export const compilerMdx = ({ content, images }) =>
       },
       a: {
         component: function LinkWrapper(props) {
+          // eslint-disable-next-line jsx-a11y/anchor-has-content
           return props.href.startsWith('/') ? <Link {...props} /> : <Link {...props} external />
         },
         props: {

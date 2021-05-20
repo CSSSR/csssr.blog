@@ -1,7 +1,8 @@
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 import { css } from '@emotion/react'
+
 import calcRem from '../../../../utils/style/calcRem'
 
-import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
 const soundtrackImages = require.context('../../../../public/components/newsAudioLink/images')
 

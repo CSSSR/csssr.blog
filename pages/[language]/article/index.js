@@ -1,7 +1,8 @@
 import Head from 'next/head'
+
 import languages from '../../../utils/languages'
 
-export async function getStaticProps({ params }) {
+export function getStaticProps({ params }) {
   const { language } = params
 
   return {
@@ -11,7 +12,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
+export function getStaticPaths() {
   return {
     paths: languages.map((language) => ({ params: { language } })),
     fallback: false,
@@ -24,4 +25,5 @@ const Index = ({ language }) => (
     <script dangerouslySetInnerHTML={{ __html: `window.location.replace("/${language}")` }} />
   </Head>
 )
+
 export default Index

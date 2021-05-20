@@ -1,12 +1,12 @@
-import React from 'react'
-import { string, arrayOf } from 'prop-types'
+import styled from '@emotion/styled'
 import cn from 'classnames'
 import Link from 'next/link'
-import styled from '@emotion/styled'
-
-import styles from './ErrorCategories.styles'
+import { arrayOf, string } from 'prop-types'
+import React from 'react'
 
 import categoriesByLanguage, { categoriesOrder } from '../../../data/categoriesByLanguage'
+
+import styles from './ErrorCategories.styles'
 
 const ErrorCategories = ({ className, language, items, activeCategory }) => {
   return (
