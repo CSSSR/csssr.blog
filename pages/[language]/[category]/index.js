@@ -1,11 +1,12 @@
 import React from 'react'
-import { getPostsByLanguage } from '../../../lib/api'
+
 import MainPage from '../../../components/main/MainPage'
-import languages from '../../../utils/languages'
-import getPostsCategories from '../../../utils/getPostsCategories'
 import { POSTS_PER_PAGE } from '../../../data/constants'
+import { getPostsByLanguage } from '../../../lib/api'
 import postsOrderEn from '../../../postsOrderEn.json'
 import postsOrderRu from '../../../postsOrderRu.json'
+import getPostsCategories from '../../../utils/getPostsCategories'
+import languages from '../../../utils/languages'
 
 const postsOrder = {
   en: postsOrderEn,

@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import { string } from 'prop-types'
-import Fade from 'react-reveal/Fade'
-import cn from 'classnames'
-import { Field, Form as ReactFinalForm } from 'react-final-form'
-import { FORM_ERROR } from 'final-form'
-import styled from '@emotion/styled'
-import styles from './ContactForm.styles'
 import { AnimatedButton } from '@csssr/core-design'
-import TextField from './TextField'
-import FormStateMessage from './FormStateMessage'
+import styled from '@emotion/styled'
+import cn from 'classnames'
+import { FORM_ERROR } from 'final-form'
+import { string } from 'prop-types'
+import { useState } from 'react'
+import { Field, Form as ReactFinalForm } from 'react-final-form'
+import Fade from 'react-reveal/Fade'
+
 import testEmails from '../../utils/testEmails'
 import rateFormValidationRules from '../../utils/validators/rateFormValidationRules'
+
+import styles from './ContactForm.styles'
+import FormStateMessage from './FormStateMessage'
+import TextField from './TextField'
 
 const Component = ({
   className,
@@ -80,7 +82,7 @@ const Component = ({
 
   return (
     <div
-      className={cn(`${className}`, {
+      className={cn(String(className), {
         news: kind === 'news',
         post: kind === 'post',
         mainPage: kind !== 'news' && kind !== 'post',
@@ -140,6 +142,7 @@ const Component = ({
               href="https://csssr.com/ru/privacy-policy"
               target="_blank"
               data-testid={`${formName}:link:privacyPolicy`}
+              rel="noreferrer"
             >
               {' '}
               Политикой конфиденциальности

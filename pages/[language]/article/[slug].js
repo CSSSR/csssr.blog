@@ -1,9 +1,9 @@
 import Layout from '../../../components/Layout'
 import Post from '../../../components/Post'
 import { getPostBySlugAndLanguage, getPostsByLanguage } from '../../../lib/api'
-import languages from '../../../utils/languages'
 import postsOrderEn from '../../../postsOrderEn.json'
 import postsOrderRu from '../../../postsOrderRu.json'
+import languages from '../../../utils/languages'
 
 const postsOrder = {
   en: postsOrderEn,
@@ -12,7 +12,7 @@ const postsOrder = {
 
 // const postsOrder = postsOrderRu.flat().filter((slug) => slug !== 'news512')
 
-export default function PostPage({ posts, post, language }) {
+const PostPage = ({ posts, post, language }) => {
   // const router = useRouter()
   // TODO: добавить ErrorPage из csssr.com
   // if (!router.isFallback && !post?.slug) {
@@ -29,6 +29,8 @@ export default function PostPage({ posts, post, language }) {
     </Layout>
   )
 }
+
+export default PostPage
 
 export async function getStaticProps({ params }) {
   const { language, slug } = params
@@ -89,7 +91,7 @@ export async function getStaticPaths() {
         ...posts[language].map((post) => ({
           params: {
             slug: post.slug,
-            language: language,
+            language,
           },
         })),
       ]

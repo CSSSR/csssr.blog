@@ -4,7 +4,7 @@ module.exports = {
   },
   link: {
     changeLocal: '#__next > footer > div.bottom-content > ul > li:nth-child(1) > a',
-    estonia: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_estonia > p.address.css-1ahemgd-Text.epkww9c0',
+    estonia: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_estonia > p.title.css-zw2p2c.e19nz7by0',
     email: '[data-testid="Footer:link:email"]',
     telSingapore: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_singapore > a',
     telRussia: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_russia > a',
@@ -40,10 +40,10 @@ module.exports = {
     map: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.map-wrapper > div > img',
   },
   text: {
-    singaporeAddress: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_singapore > p.address.css-1ahemgd-Text.epkww9c0',
-    russianAddress: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_russia > p.address.css-1ahemgd-Text.epkww9c0',
-    russianAddressTwo: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_russia_2 > p.address.css-1ahemgd-Text.epkww9c0',
-    estoniaAddress: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_estonia > p.address.css-1ahemgd-Text.epkww9c0',
+    singaporeAddress: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_singapore > p.address.css-awgmvn.epkww9c0',
+    russianAddress: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_russia > p.address.css-awgmvn.epkww9c0',
+    russianAddressTwo: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_russia_2 > p.address.css-awgmvn.epkww9c0',
+    estoniaAddress: '#__next > footer > div.css-1ltjtej.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_estonia >  p.address.css-awgmvn.epkww9c0',
     SingaporeTime: '#__next > footer > div.css-ojpjf3.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_singapore > p.time.css-1ahemgd-Text.epkww9c0',
     RussiaTime: '#__next > footer > div.css-ojpjf3.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_russia > p.time.css-1ahemgd-Text.epkww9c0',
     RussiaTimeTo: '#__next > footer > div.css-ojpjf3.e1mdmiv0 > div.css-ei2vbe.e19nbpye0 > div.address-item.address_russia_2 > p.time.css-1ahemgd-Text.epkww9c0',

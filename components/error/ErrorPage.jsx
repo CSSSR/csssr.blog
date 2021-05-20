@@ -1,20 +1,19 @@
-import React, { Fragment } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { Grid } from '@csssr/core-design'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { Fragment } from 'react'
 
-import styles from './ErrorPage.styles'
-import { Grid } from '@csssr/core-design'
-import Meta from '../Meta'
-
-import ruPathRegexp from '../../utils/ruPathRegexp'
 import { ReactComponent as LogoIcon } from '../../public/components/error/icons/csssr_logo.svg'
 import { ReactComponent as ServerError } from '../../public/components/error/icons/serverError.svg'
-
+import ruPathRegexp from '../../utils/ruPathRegexp'
 import globalStyles from '../Layout/Layout.styles'
+import Meta from '../Meta'
+
+import styles from './ErrorPage.styles'
 
 const possibleStatusCodes = [500]
 
@@ -53,7 +52,7 @@ const ErrorPage = ({ className, statusCode: statusCodeFromProps }) => {
       : defaultStatusCode
 
   return (
-    <Fragment>
+    <>
       <Global styles={globalStyles} />
 
       <Meta />
@@ -70,7 +69,7 @@ const ErrorPage = ({ className, statusCode: statusCodeFromProps }) => {
         <h1
           className="font_h1-slab"
           dangerouslySetInnerHTML={{
-            __html: `${titleLocalesByStatusCode[statusCode][language]}`,
+            __html: String(titleLocalesByStatusCode[statusCode][language]),
           }}
         />
 
@@ -85,7 +84,7 @@ const ErrorPage = ({ className, statusCode: statusCodeFromProps }) => {
           className="font_subhead-slab"
           dangerouslySetInnerHTML={{
             __html: [
-              `${subtitleLocalesByStatusCode[statusCode][language]}`,
+              String(subtitleLocalesByStatusCode[statusCode][language]),
               statusCode === 500
                 ? '<a style="color: #345eff" href="mailto:sales@csssr.io">sales@csssr.io</a>'
                 : null,
@@ -93,7 +92,7 @@ const ErrorPage = ({ className, statusCode: statusCodeFromProps }) => {
           }}
         />
       </Grid>
-    </Fragment>
+    </>
   )
 }
 

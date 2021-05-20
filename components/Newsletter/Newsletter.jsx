@@ -1,12 +1,14 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import styles, { dynamicFooterStyles } from './Newsletter.styles'
-import { Global } from '@emotion/react'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { Heading, Text } from '@csssr/core-design'
-import { Grid } from '../Grid'
-import ContactForm from '../ContactForm'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import { Global } from '@emotion/react'
+import styled from '@emotion/styled'
+import React from 'react'
+
 import { newsletterData } from '../../data/newsletter'
+import ContactForm from '../ContactForm'
+import { Grid } from '../Grid'
+
+import styles, { dynamicFooterStyles } from './Newsletter.styles'
 
 const Newsletter = ({ className, language, kind }) => {
   const { title, subtitle, img, imgAlt } = newsletterData

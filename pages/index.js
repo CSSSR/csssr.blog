@@ -6,4 +6,5 @@ const Index = () => (
     <script dangerouslySetInnerHTML={{ __html: 'window.location.replace("/en")' }} />
   </Head>
 )
+
 export default Index

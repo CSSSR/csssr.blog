@@ -44,7 +44,7 @@ jobs:
         run: yarn build
         env:
           BLOG_HOST: https://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud
-          COM_HOST: https://master.com.csssr.cloud/en
+          COM_HOST: https://master.com.csssr.cloud
 
       - name: Деплой на тестинг
         uses: ./actions/deploy-static-site/v1beta1

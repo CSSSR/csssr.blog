@@ -1,11 +1,11 @@
-import React from 'react'
+import styled from '@emotion/styled'
 import cn from 'classnames'
 import Link from 'next/link'
-import { string, number, arrayOf, shape } from 'prop-types'
-import styled from '@emotion/styled'
+import { arrayOf, number, shape, string } from 'prop-types'
+import React from 'react'
 
-import DateFormatter from '../../../DateFormatter'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
+import DateFormatter from '../../../DateFormatter'
 
 import styles from './NewsList.styles'
 

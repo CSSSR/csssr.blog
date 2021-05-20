@@ -1,8 +1,8 @@
-import { useEffect } from 'react'
+import { defaultTheme, Root } from '@csssr/core-design'
 import { ThemeProvider } from '@emotion/react'
-import { Root, defaultTheme } from '@csssr/core-design'
 import Router from 'next/router'
 import Prism from 'prismjs'
+import { useEffect } from 'react'
 import '../utils/sentry'
 
 const MyApp = ({ Component, pageProps }) => {

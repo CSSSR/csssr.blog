@@ -1,9 +1,10 @@
 import React from 'react'
+
 import Layout from '../../../../components/Layout'
 import Post from '../../../../components/Post'
 import { getPostNewsBySlug, getPostsNews } from '../../../../lib/api'
 
-export default function PostNewsPage({ post, /* morePosts, */ language }) {
+const PostNewsPage = ({ post, /* morePosts, */ language }) => {
   return (
     <>
       <Layout language={language} type="news">
@@ -12,6 +13,8 @@ export default function PostNewsPage({ post, /* morePosts, */ language }) {
     </>
   )
 }
+
+export default PostNewsPage
 
 export async function getStaticProps({ params }) {
   const post = await getPostNewsBySlug(params.slug, [
@@ -28,7 +31,7 @@ export async function getStaticProps({ params }) {
   ])
   return {
     props: {
-      post: post,
+      post,
       language: 'ru',
     },
   }

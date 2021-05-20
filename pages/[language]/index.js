@@ -1,12 +1,13 @@
 import React from 'react'
-import { getPostsByLanguage, getPostsNews } from '../../lib/api'
+
 import MainPage from '../../components/main/MainPage'
-import languages from '../../utils/languages'
-import getPostsCategories from '../../utils/getPostsCategories'
-import sortByDate from '../../utils/sortByDate'
 import { POSTS_PER_PAGE } from '../../data/constants'
+import { getPostsByLanguage, getPostsNews } from '../../lib/api'
 import postsOrderEn from '../../postsOrderEn.json'
 import postsOrderRu from '../../postsOrderRu.json'
+import getPostsCategories from '../../utils/getPostsCategories'
+import languages from '../../utils/languages'
+import sortByDate from '../../utils/sortByDate'
 
 const postsOrder = {
   en: postsOrderEn,
@@ -76,7 +77,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
+export function getStaticPaths() {
   return {
     paths: languages.map((language) => ({
       params: {

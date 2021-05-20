@@ -1,7 +1,7 @@
-import { parseISO, format } from 'date-fns'
-import { ru, enUS } from 'date-fns/locale'
+import { format, parseISO } from 'date-fns'
+import { enUS, ru } from 'date-fns/locale'
 
-export default function DateFormatter({ children, className, language }) {
+const DateFormatter = ({ children, className, language }) => {
   const date = parseISO(children)
   const locale = language === 'ru' ? ru : enUS
   const localeFormat = language === 'ru' ? 'd MMMM, yyyy' : 'LLLL d, yyyy'
@@ -11,3 +11,5 @@ export default function DateFormatter({ children, className, language }) {
     </time>
   )
 }
+
+export default DateFormatter

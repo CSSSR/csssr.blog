@@ -1,6 +1,7 @@
-const withPlugins = require('next-compose-plugins')
-const { getImagesLoaderRules } = require('./utils/getImagesLoaderRules')
 const { Plugin } = require('@csssr/csssr.images/dist/webpack/plugin')
+const withPlugins = require('next-compose-plugins')
+
+const { getImagesLoaderRules } = require('./utils/getImagesLoaderRules')
 
 const withImages = (nextConfig = {}) => ({
   ...nextConfig,

@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import Head from 'next/head'
+import { ErrorPage404, Header } from '@csssr/core-design'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Header, ErrorPage404 } from '@csssr/core-design'
+import React, { useEffect, useState } from 'react'
 
-import Meta from '../Meta'
-import ErrorCategories from './ErrorCategories'
-import ErrorPosts from './ErrorPosts'
-import ErrorLeftContent from './ErrorLeftContent'
-
-import ruPathRegexp from '../../utils/ruPathRegexp'
-import getPostsCategories from '../../utils/getPostsCategories'
 import { errorText } from '../../data/errorByLanguage'
-
-import styles from './ErrorPage.styles'
+import getPostsCategories from '../../utils/getPostsCategories'
+import ruPathRegexp from '../../utils/ruPathRegexp'
 import globalStyles from '../Layout/Layout.styles'
+import Meta from '../Meta'
+
+import ErrorCategories from './ErrorCategories'
+import ErrorLeftContent from './ErrorLeftContent'
+import styles from './ErrorPage.styles'
+import ErrorPosts from './ErrorPosts'
 
 const ErrorPage = ({ className, posts }) => {
   const [language, setLanguage] = useState()
