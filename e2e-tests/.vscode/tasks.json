@@ -19,6 +19,14 @@
     },
     {
       "type": "shell",
+      "label": "Nightwatch: запустить текущий файл в Safari на удалённом сервере",
+      "command": "yarn et nightwatch:run --browser remote_safari --test='${file}'",
+      "problemMatcher": [],
+      "presentation": { "showReuseMessage": false },
+      "group": "build"
+    },
+    {
+      "type": "shell",
       "label": "Nightwatch: запустить все тесты в Chrome на удалённом сервере",
       "command": "yarn et nightwatch:run --browser remote_chrome",
       "problemMatcher": [],
