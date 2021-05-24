@@ -48,6 +48,18 @@
             "moz:firefoxOptions": { "args": ["--headless"] }
           },
           "globals": { "skipScreenshotAssertions": false }
+        },
+        "remote_safari": {
+          "remote": true,
+          "type": "selenium",
+          "url": "https://safari1.selenium.csssr.cloud",
+          "basicAuth": {
+            "credentialsId": "chromedriver",
+            "username_env": "CHROMEDRIVER_USERNAME",
+            "password_env": "CHROMEDRIVER_PASSWORD"
+          },
+          "desiredCapabilities": { "browserName": "safari" },
+          "globals": { "skipScreenshotAssertions": false }
         }
       }
     }
