@@ -11,7 +11,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors}) => css
   }
 
   &.size_s {
-    padding-top: ${calcRem(10)};
+    padding-top: ${calcRem(5)};
     padding-bottom: ${calcRem(5)};
     font-size: ${calcRem(12)};
     line-height: ${calcRem(16)};
@@ -33,10 +33,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors}) => css
     & {
       margin-top: ${calcRem(60)};
       grid-column: 3 / span 8;
-    }
-
-    &.size_s {
-      margin-top: ${calcRem(10)};
     }
   }
 

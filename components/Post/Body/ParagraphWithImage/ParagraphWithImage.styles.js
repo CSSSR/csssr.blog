@@ -4,7 +4,7 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
-    padding-top: ${calcRem(50)};
+    padding-top: ${calcRem(55)};
     grid-column: 4 / span 6;
   }
 
@@ -78,7 +78,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${mobile.all} {
     & {
-      padding-top: ${calcRem(40)};
+      padding-top: ${calcRem(45)};
       grid-column: 1 / span 6;
     }
 

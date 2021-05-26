@@ -13,6 +13,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, width, height}) => css
     position: relative;
     padding-top: calc(100% * ${ height / width });
     height: 0;
+    margin-top: ${calcRem(20)};
+    margin-bottom: ${calcRem(5)};
   }
 
   .inner-box {

@@ -206,7 +206,7 @@ export const getInitialLetterStyles = ({ breakpoints: { mobile }, language }) =>
     padding-right: ${language === 'ru' ? calcRem(23) : calcRem(7)};
     font-family: ${language === 'ru' ? 'Sweet Mavka Script' : 'Amita'};
     font-style: normal;
-    font-weight: normal;
+    font-weight: ${language === 'ru' ? 500 : 400};
     font-size: ${calcRem(76)};
     line-height: ${calcRem(32)};
     padding-top: ${calcRem(20)};
@@ -223,7 +223,7 @@ export const getInitialLetterStyles = ({ breakpoints: { mobile }, language }) =>
   }
 `
 
-export const prismMaterialLight = css`
+export const prismMaterialLight = ({ breakpoints: { mobile } })=> css`
   pre:not([class^="prismjs"]) > code[class*="language-"],
   pre[class*="language-"] {
     text-align: left;
@@ -276,7 +276,8 @@ export const prismMaterialLight = css`
   pre[class*="language-"] {
     overflow: auto;
     position: relative;
-    margin: 0.5em 0;
+    margin-top: ${calcRem(20)};
+    margin-bottom: ${calcRem(5)};
     padding: 1.25em 1em;
   }
 
@@ -449,13 +450,19 @@ export const prismMaterialLight = css`
   .line-numbers-rows > span:before {
     color: #CECFDD;
   }
+
+  ${mobile.all} {
+    pre[class*="language-"] {
+      margin-top: ${calcRem(15)};
+    }
+  }
 `
 
 const StyledBody = props => {
   const { theme: { breakpoints }, language } = props
 
   return css`
-    ${prismMaterialLight}
+    ${prismMaterialLight({ breakpoints })}
     ${base({ breakpoints })}
     ${getInitialLetterStyles({language, breakpoints})}
   `
