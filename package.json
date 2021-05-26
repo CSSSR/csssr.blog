@@ -14,7 +14,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@csssr/core-design": "^7.1.0",
+    "@csssr/core-design": "^7.1.1",
     "@csssr/csssr.images": "^3.3.3",
     "@csssr/e2e-tools": "^1.4.2",
     "@emotion/react": "^11.4.0",
