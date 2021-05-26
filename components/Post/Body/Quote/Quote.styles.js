@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) => css`
+const base = ({ breakpoints: { tablet, mobile }, colors}) => css`
   & {
     font-family: 'Roboto', 'Arial', sans-serif;
     font-weight: 300;

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import PostShare from '../components/PostShare'
 
 const Template = (args) => <PostShare {...args} />
