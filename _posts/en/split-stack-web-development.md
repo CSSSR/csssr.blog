@@ -5,6 +5,8 @@ date: '2019-11-01T05:35:07.322Z'
 tag: 'business'
 ---
 
+---
+
 **W**ebsite (or&nbsp;web application) development strategies have been evolving continuously over the past decade. Today, web development companies fall into two broad groups&nbsp;– full-stack agencies and specialized, or&nbsp;niche, agencies. The first category, still dominating the Asian market, consists of&nbsp;full-service agencies used to&nbsp;offer a&nbsp;wide range of&nbsp;services (from back-end and design, to&nbsp;front-end development and&nbsp;QA), while specialized agencies are offering a&nbsp;limited range of&nbsp;services focusing on&nbsp;specific kind of&nbsp;works. Nowadays, it&nbsp;is&nbsp;a&nbsp;common practice worldwide to&nbsp;divide the development process into two parts. There are several reasons behind&nbsp;it, however, the key question is&nbsp;whether it&nbsp;is&nbsp;a&nbsp;good idea to&nbsp;have front-end part separated for a&nbsp;product.
 
 ## Specialize to&nbsp;stand out
@@ -44,7 +46,6 @@ Simple scaling. Keeping the front-end development separate can lessen the chance
 Deeper understanding. Full-stack agencies are the jack of&nbsp;all trades, and master of&nbsp;none, as&nbsp;the proverb goes. It’s more difficult for a&nbsp;full-stack agency to&nbsp;dig deeper into any of&nbsp;the front-end issues. They have little to&nbsp;no&nbsp;time for exploring something new and gaining wider expertise in&nbsp;everything they do&nbsp;or&nbsp;they can even outsource parts of&nbsp;the project.
 
 Cost-effective. Finally, when it&nbsp;comes to&nbsp;hiring a&nbsp;full-stack development agency, one should get ready to&nbsp;pay more since these agencies have higher expenses which force them to&nbsp;imply higher costs on&nbsp;the end-customers. Companies offering dedicated front-end development services do&nbsp;not spend more on&nbsp;hiring full-stack developers with higher salary rates. Besides, finding a&nbsp;jack of&nbsp;all trades itself is&nbsp;famously challenging in&nbsp;the tech industry.
-
 
 ## Conclusion
 

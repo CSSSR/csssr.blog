@@ -5,6 +5,8 @@ date: '2020-02-06T05:35:07.322Z'
 tag: 'web-development'
 ---
 
+---
+
 **In** this digital era, a website comprising various UI/UX elements and features can reveal the ocean of opportunities and become even more effective and engaging. UI/UX components and technologies not only make a website lookgreat but also secure the brand’s marketing goals.
 
 In recent years, we have witnessed a dramatic shift in website development. The innovative and futuristic technologies of augmented (AR) and virtual reality (VR) are transforming the internet and are capable of changing the way websites address users’ demands. Today, both technologies are considered as the most important trends in the IT sector, and with the help of desktops, tablets and smartphones have become more accessible, allowing millions of people to experience AR/VR applications across numerous business verticals. According to Goldman Sachs estimates, the AR/VR is projected to grow into a $95 billion market by 2025.

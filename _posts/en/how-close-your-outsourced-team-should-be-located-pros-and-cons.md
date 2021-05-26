@@ -5,6 +5,8 @@ date: '2020-07-28T05:35:07.322Z'
 tag: 'business'
 ---
 
+---
+
 **T**hose days when you could seriously argue whether it’s a bad or a good idea to bring outsourcers in your business are gone. Now the question is different: how to choose an outsourcing team so as to get maximum benefit and minimum risks.<br class="how-close-br" />
 First of all, you should consider from where exactly this team will be working.
 

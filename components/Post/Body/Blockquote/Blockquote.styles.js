@@ -9,8 +9,8 @@ const base = ({ breakpoints: { mobile, tablet }}) => css`
 
     blockquote {
       border-left: 4px solid  #E0E4EC;
-      padding-top: ${calcRem(18)};
-      padding-bottom: ${calcRem(18)};
+      padding-top: ${calcRem(16)};
+      padding-bottom: ${calcRem(16)};
       padding-left: ${calcRem(20)};
 
       & > *:first-of-type {
@@ -33,6 +33,11 @@ const base = ({ breakpoints: { mobile, tablet }}) => css`
   ${mobile.all} {
     & {
       grid-column: 1 / span 6;
+
+      blockquote {
+        padding-top: ${calcRem(18)};
+        padding-bottom: ${calcRem(18)};
+      }
     }
   }
 
