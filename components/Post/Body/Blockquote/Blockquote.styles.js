@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+
 import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile, tablet }}) => css`
@@ -32,6 +33,7 @@ const base = ({ breakpoints: { mobile, tablet }}) => css`
 
   ${mobile.all} {
     & {
+      padding-top: ${calcRem(15)};
       grid-column: 1 / span 6;
 
       blockquote {
