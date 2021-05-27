@@ -1,6 +1,8 @@
 import React from 'react'
-import PostWrap from './decorators/PostWrap'
+
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx'
+
+import PostWrap from './decorators/PostWrap'
 
 const Template = ({ content, language }) => (
   <PostWrap language={language}>{compilerMdx({ content })}</PostWrap>

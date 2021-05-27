@@ -1,11 +1,8 @@
 import { Link } from '@csssr/core-design'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
-import { bool, node, oneOf, string } from 'prop-types'
+import { node, oneOf, string } from 'prop-types'
 import React from 'react'
-
-import { Grid } from '../../../Grid'
 
 import styles from './Quote.styles'
 
@@ -14,27 +11,18 @@ const Quote = ({
   children,
   author,
   position,
-  withImage,
   linkHref,
   linkText,
   type = 'blue',
   testId = 'Quote:link',
 }) => {
   return (
-    <Grid
+    <div
       className={cn(className, {
         type_blue: type === 'blue',
         type_black: type === 'black',
       })}
     >
-      {withImage && (
-        <PictureSmart
-          className="image-wrapper"
-          alt="lady"
-          requireImages={require.context('../../../../public/components/quote/images')}
-        />
-      )}
-
       <blockquote className="quote">
         <svg
           className="quotes"
@@ -50,9 +38,12 @@ const Quote = ({
           />
         </svg>
 
-        <div className="quote-text font_p16-regular">{children}</div>
-        <span className="author font_h3-regular ">{author}</span>
-        {position && <span className="autor-post font_perforator-10-regular">{position}</span>}
+        <div className="quote-text">{children}</div>
+
+        <span className="author">{author}</span>
+
+        {position && <span className="author-post">{position}</span>}
+
         {linkText && (
           <Link
             className="quote-link"
@@ -66,7 +57,7 @@ const Quote = ({
           </Link>
         )}
       </blockquote>
-    </Grid>
+    </div>
   )
 }
 
@@ -75,7 +66,6 @@ Quote.propTypes = {
   children: node,
   author: string,
   position: string,
-  withImage: bool,
   linkHref: string,
   linkText: string,
   type: oneOf(['blue', 'black']),

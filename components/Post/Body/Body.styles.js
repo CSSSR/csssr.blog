@@ -34,14 +34,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     padding-right: ${calcRem(3)};
   }
 
-  .list_item_s {
-    color: #18191B;
-  }
-
-  .note + .text_regular_m {
-    margin-top: ${calcRem(50)};
-  }
-
   .line-numbers {
     margin-top: ${calcRem(20)};
     margin-bottom: ${calcRem(5)};
@@ -49,22 +41,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     &::after,
     &::before {
       content: none !important;
-    }
-  }
-
-  .list_item_s {
-    padding-left: ${calcRem(9)};
-
-    &:not(:first-of-type) {
-      margin-top: ${calcRem(16)};
-    }
-
-    &::before {
-      width: ${calcRem(4)};
-      height: ${calcRem(4)};
-      top: 50%;
-      background-color: #18191B;
-      border: none;
     }
   }
 
@@ -108,20 +84,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       margin-top: 25px;
     }
 
-    .picture + .text_regular_m {
-      margin-top: 30px;
-    }
-
-    .heading_regular_s + .text_regular_m {
-      margin-top: 15px;
-    }
-
-    picture.with_big_margin + .heading_regular_s,
-    picture.with_big_margin + .heading_regular_m,
-    picture.with_big_margin + .text_regular_m {
-      margin-top: 50px;
-    }
-
     .grid-element,
     .compare,
     .line-numbers {
@@ -133,18 +95,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
 
     hr.grid-element  {
       margin-top: ${calcRem(15)};
-    }
-
-    .list_item_s {
-      padding-left: ${calcRem(9)};
-
-      &:not(:first-of-type) {
-        margin-top: ${calcRem(8)};
-      }
-
-      &::before {
-        top: calc(50% - ${calcRem(2)});
-      }
     }
 
     .grid-element,
@@ -163,18 +113,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   ${mobile.all} {
     hr.grid-element {
       margin-top: ${calcRem(15)};
-    }
-
-    .list_item_s {
-      padding-left: ${calcRem(9)};
-
-      &:not(:first-of-type) {
-        margin-top: ${calcRem(8)};
-      }
-
-      &::before {
-        top: calc(50% - ${calcRem(2)});
-      }
     }
 
     .line-numbers {
@@ -206,7 +144,7 @@ export const getInitialLetterStyles = ({ breakpoints: { mobile }, language }) =>
     padding-right: ${language === 'ru' ? calcRem(23) : calcRem(7)};
     font-family: ${language === 'ru' ? 'Sweet Mavka Script' : 'Amita'};
     font-style: normal;
-    font-weight: normal;
+    font-weight: ${language === 'ru' ? 500 : 400};
     font-size: ${calcRem(76)};
     line-height: ${calcRem(32)};
     padding-top: ${calcRem(20)};
@@ -216,14 +154,13 @@ export const getInitialLetterStyles = ({ breakpoints: { mobile }, language }) =>
 
   ${mobile.all} {
     & > p:first-of-type strong:first-of-type {
-      padding-right: ${calcRem(11)};
       font-size: ${calcRem(64)};
       line-height: ${calcRem(32)};
     }
   }
 `
 
-export const prismMaterialLight = css`
+export const prismMaterialLight = ({ breakpoints: { mobile } })=> css`
   pre:not([class^="prismjs"]) > code[class*="language-"],
   pre[class*="language-"] {
     text-align: left;
@@ -276,7 +213,8 @@ export const prismMaterialLight = css`
   pre[class*="language-"] {
     overflow: auto;
     position: relative;
-    margin: 0.5em 0;
+    margin-top: ${calcRem(20)};
+    margin-bottom: ${calcRem(5)};
     padding: 1.25em 1em;
   }
 
@@ -449,13 +387,19 @@ export const prismMaterialLight = css`
   .line-numbers-rows > span:before {
     color: #CECFDD;
   }
+
+  ${mobile.all} {
+    pre[class*="language-"] {
+      margin-top: ${calcRem(15)};
+    }
+  }
 `
 
 const StyledBody = props => {
   const { theme: { breakpoints }, language } = props
 
   return css`
-    ${prismMaterialLight}
+    ${prismMaterialLight({ breakpoints })}
     ${base({ breakpoints })}
     ${getInitialLetterStyles({language, breakpoints})}
   `

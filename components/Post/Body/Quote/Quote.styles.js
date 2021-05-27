@@ -2,11 +2,13 @@ import { css } from '@emotion/react'
 
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) => css`
+const base = ({ breakpoints: { tablet, mobile }, colors}) => css`
   & {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 300;
     padding-top: ${calcRem(45)};
     padding-bottom: ${calcRem(30)};
-    grid-column: 1 / span 12;
+    grid-column: 4 / span 6;
   }
 
   &.type_black {
@@ -31,61 +33,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
   }
 
   .quote {
-    border: none;
-    padding: 0;
-    margin: 0;
+    padding-left: ${calcRem(226)};
     position: relative;
 
     .quotes {
-      display: none;
-    }
-
-    ${withImage ?
-      `&::before {
-        content: '';
-        position: absolute;
-        display: block;
-        height: 100%;
-        width: 4px;
-        background-color: #0254D8;
-      }`
-    :
-    `
-      .quotes {
-        content: '';
-        position: absolute;
-        display: block;
-        top: 0;
-        width: ${calcRem(48)};
-        height: ${calcRem(32)};
-      }
-    `
-    }
-    ${withImage &&
-      `&::after {
-        content: '';
-        position: absolute;
-        background-image: url(${require('../../../../public/components/quote/icons/angle.svg').default});
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: ${calcRem(7)} 100%;
-      }`
-    }
-  }
-
-  .image-wrapper {
-    display: flex;
-
-    img {
-      margin-top: auto;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: ${calcRem(141)};
+      width: ${calcRem(50)};
+      height: ${calcRem(34)};
     }
   }
 
   .quote-text {
-    color: ${withImage ? '#18191B' : '#0254D8'};
+    font-size: ${calcRem(20)};
+    line-height: ${calcRem(32)};
+    color: #0254D8;
   }
 
   .quote-text > p:first-of-type {
@@ -97,142 +62,33 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
   }
 
   .author {
+    display: inline-block;
+    width: 100%;
     margin-top: ${calcRem(25)};
+    font-size: ${calcRem(16)};
+    line-height: ${calcRem(24)};
+    font-weight: 900;
   }
 
-  .author,
-  .autor-post  {
-    display: block;
+  .author-post  {
+    display: inline-block;
+    width: 100%;
+    font-size: ${calcRem(12)};
+    line-height: ${calcRem(24)};
   }
 
-  .autor-post  {
-    padding-bottom: 0;
-  }
-
-  ${desktop.all} {
-    .quote {
-      grid-column: 6 / span 4;
-
-      &::before,
-      .quotes {
-        right: calc(100% + 40px);
-      }
-
-      &::after {
-        right: calc(100% + 40px);
-        bottom: 47px;
-        width: ${calcRem(34)};
-        height: ${calcRem(37)};
-      }
-    }
-
-    .autor-post {
-      margin-top: ${calcRem(10)};
-    }
-
-    .image-wrapper {
-      grid-column: 4 / span 1;
-      width: ${calcRem(108)};
-    }
-
-    .quote-link {
-      font-size: 12px;
-      font-weight: 300;
-      line-height: 24px;
-    }
-  }
-
-  ${desktop.l} {
-    .image-wrapper {
-      margin-left: ${calcRem(100)};
-    }
-
-    .quote {
-      &::after {
-        width: ${calcRem(32)};
-      }
-    }
-  }
-
-  ${desktop.m} {
-    .quote {
-      &::after {
-        bottom: 44px;
-        width: ${calcRem(35)};
-      }
-    }
-
-    .image-wrapper {
-      margin-left: ${calcRem(21)};
-    }
-  }
-
-  ${desktop.s} {
-    .quote {
-
-      &::before,
-      .quotes {
-        right: calc(100% + 38px);
-      }
-
-      &::after {
-        right: calc(100% + 38px);
-        bottom: 41px;
-        width: ${calcRem(31)};
-      }
-    }
-
-    .image-wrapper {
-      margin-left: ${calcRem(6)};
-    }
+  .quote-link {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    font-size: ${calcRem(12)};
+    line-height: ${calcRem(24)};
+    font-weight: 300;
   }
 
   ${tablet.all} {
-    .quote {
-      grid-column: 6 / span 5;
-
-      &::before,
-      .quotes {
-        top: ${withImage ? calcRem(-5) : '0'};
-        right: calc(100% +  ${calcRem(28)});
-        width: ${withImage ? calcRem(4) : calcRem(48)};
-        height: ${withImage ? '100%' : calcRem(32)};
-      }
-
-      &::after {
-        right: calc(100% + ${calcRem(28)});
-        bottom: 43px;
-        width: ${calcRem(38)};
-        height: ${calcRem(37)};
-      }
-    }
-
-    .image-wrapper {
-      grid-column: 4 / span 2;
-      max-width: ${calcRem(108)};
-      margin-left: ${calcRem(-23)};
-    }
-
-    .quote-text {
-      margin: 0;
-      padding: 0;
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
-    }
-
-    .author {
-      margin-top: ${calcRem(30)};
-    }
-
-    .autor-post {
-      margin-top: ${calcRem(5)};
-    }
-
-    .quote-link {
-      margin-top: ${calcRem(5)};
-      font-size: ${calcRem(10)};
-      font-weight: 400;
-      line-height: ${calcRem(16)};
+    & {
+      grid-column: 3 / span 8;
     }
   }
 
@@ -243,53 +99,29 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
       grid-column: 1 / span 6;
     }
 
-    .image-wrapper {
-      grid-column: 1 / span 2;
-      max-width: ${calcRem(91)};
-      margin-left: ${calcRem(-13)};
-
-      img {
-        margin-bottom: ${calcRem(112)};
-      }
-    }
-
     .quote {
-      grid-column: ${withImage ? '3 / span 4' : '2 / span 5'};
+      padding-left: ${calcRem(56)};
 
-      &::before,
       .quotes {
-        top: ${withImage ? calcRem(-6) : '0'};
-        right: calc(100% + ${calcRem(15)});
-        width: ${withImage ? calcRem(2) : calcRem(36)};
-        height: ${withImage ? '100%' : calcRem(24)};
-      }
-
-      &::after {
-        right: calc(100% + ${calcRem(4)});
-        bottom: ${calcRem(126)};
-        width: ${calcRem(39)};
-        height: ${calcRem(36)};
-        background-image: url(${require('../../../../public/components/quote/icons/mobile.all/angle.svg').default});
+        top: ${calcRem(4)};
+        left: 0;
+        width: ${calcRem(36)};
+        height: ${calcRem(24)};
       }
     }
 
     .quote-text {
-      margin: 0;
-      padding: 0;
-      font-size: ${calcRem(14)};
+      font-size: ${calcRem(16)};
       line-height: ${calcRem(24)};
     }
 
     .author {
       margin-top: ${calcRem(15)};
-    }
-
-    .autor-post {
-      margin-top: ${calcRem(5)};
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
 
     .quote-link {
-      margin-top: ${calcRem(5)};
       font-size: ${calcRem(10)};
       font-weight: 400;
       line-height: ${calcRem(16)};
@@ -300,10 +132,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, withImage, colors}) =>
 const StyledQuote = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const withImage = props.withImage
 
   return css`
-    ${base({ breakpoints, withImage, colors })}
+    ${base({ breakpoints, colors })}
   `
 }
 

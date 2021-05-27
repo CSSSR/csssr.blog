@@ -5,6 +5,8 @@ date: '2019-11-14T05:35:07.322Z'
 tag: 'business'
 ---
 
+---
+
 **E**stonia enjoys the reputation of a genuinely digital society. Today, it is Europe’s most ambitious country in terms of technological and IT development. Most of government services are delivered 24/7 and have been digitally linked across one platform, while blockchain technology is often used to secure data integrity. Estonia has the largest number of IT startups per capita, while the alumni of two leading Universities are behind the world-famous tech companies that have changed the market. Let’s have a look at the numbers that make the country claim it is the real E-success and IT leader.
 
 <Img imageName="flag" alt="flag" withBigMargin/>

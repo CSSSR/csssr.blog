@@ -1,6 +1,6 @@
-import React from 'react'
-import { string, node, boolean } from 'prop-types'
 import styled from '@emotion/styled'
+import { boolean, node, string } from 'prop-types'
+import React from 'react'
 
 import styles from './List.styles'
 

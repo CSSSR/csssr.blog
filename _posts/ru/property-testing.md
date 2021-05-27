@@ -6,6 +6,8 @@ date: '2017-04-25T00:00:00.000Z'
 tag: 'web-development'
 ---
 
+---
+
 **В**сем привет. Меня зовут Андрей, и сегодня я хотел бы обсудить тему оценки и доказательства свойств программных решений. В чем состоит задача программиста? Один из самых популярных ответов – предоставлять некоторое решение существующей проблемы. Неотъемлемой частью этого процесса является стадия анализа разработанного решения, в которой мы пытаемся понять, что за решение мы получили, какие у него ограничения, область применения, и на какие компромиссы оно идет, то есть насколько хорошо оно решает изначальную проблему и сколько других проблем добавляет.
 
 На сегодняшний день большая часть анализа протекает в неформальных терминах: «это ненадежное решение», «это плохо читаемый код», «плохо тестируется» и так далее. Для&nbsp;формального анализа в большинстве случаев мы используем различные виды тестов, основанные на <span class="no-wrap">тест-кейсах.</span> Неформальный анализ нас сейчас не интересует, так как он имеет большее отношение к философии и софистике, нежели к точным наукам. Поэтому давайте сконцентрируемся на тестировании, взглянув на него именно с точки зрения точной науки, то есть математики.
@@ -32,15 +34,15 @@ function(a, b) {
 
 Осталось только доказать это свойство. Какие у нас есть варианты:
 
- - Пойти математическим путем – обложиться Coq/Agda/TLA+/Lean Prover и другими штуками для доказательства теорем, и через пару лет мы, возможно, сможем проверить это свойство.
+- Пойти математическим путем – обложиться Coq/Agda/TLA+/Lean Prover и другими штуками для доказательства теорем, и через пару лет мы, возможно, сможем проверить это свойство.
 
- - Как и всегда в программировании, мы можем, в отличии от математиков, чуть срезать углы и просто проверить это свойство очень много раз на разных значениях.
+- Как и всегда в программировании, мы можем, в отличии от математиков, чуть срезать углы и просто проверить это свойство очень много раз на разных значениях.
 
 Сделать это довольно просто. Для начала напишем генератор необходимых значений:
 
 ```js
 function genPosNumber() {
-  return Math.random() * 10000000000;
+  return Math.random() * 10000000000
 }
 ```
 
@@ -48,13 +50,13 @@ function genPosNumber() {
 
 ```js
 function property(argGenerators, propertyFn) {
-  return function() {
-    var generatedArgs = argGenerators.map(gen => gen());
+  return function () {
+    var generatedArgs = argGenerators.map((gen) => gen())
 
     return {
       success: propertyFn(...generatedArgs),
-      args: generatedArgs
-    };
+      args: generatedArgs,
+    }
   }
 }
 ```
@@ -64,12 +66,9 @@ function property(argGenerators, propertyFn) {
 ```js
 function check(property, tries = 100) {
   for (var i = 0; i < tries; i++) {
-    var res = property();
+    var res = property()
     if (!res.success) {
-      throw new Error(
-        'Property hasnt held on arguments: '
-        + JSON.stringify(res.args, null, 2)
-      );
+      throw new Error('Property hasnt held on arguments: ' + JSON.stringify(res.args, null, 2))
     }
   }
 }
@@ -79,12 +78,11 @@ function check(property, tries = 100) {
 
 ```js
 it('forall a, b - a + b >= a && a + b >= b', () => {
-  check(property(
-    [genPosNumber, genPosNumber],
-    function (a, b) {
-      return a + b >= a && a + b >= b;
-    }
-  ))
+  check(
+    property([genPosNumber, genPosNumber], function (a, b) {
+      return a + b >= a && a + b >= b
+    }),
+  )
 })
 ```
 
@@ -93,16 +91,15 @@ it('forall a, b - a + b >= a && a + b >= b', () => {
 Данный подход называется property-based testing (а.к.a QuickCheck тесты, property тесты, генеративное тестирование), появился он в&nbsp;<a target="_blank" href="http://www.eecs.northwestern.edu/~robby/courses/395-495-2009-fall/quick.pdf">haskell сообществе</a>. На сегодняшний день его реализации есть практически для всех языков и,&nbsp;конечно же, для Javascript. В примерах я буду использовать встроенный в&nbsp;<a target="_blank" href="https://facebook.github.io/jest/">Jest</a> <a target="_blank" href="https://github.com/leebyron/testcheck-js">testcheck-js</a>, который на самом деле является биндингом к&nbsp;<a target="_blank" href="https://github.com/clojure/test.check">test.check написанному на ClojureScript</a>. Наш пример с его использованием запишется так:
 
 ```js
-var testcheck = require('testcheck');
-var gen = testcheck.gen;
+var testcheck = require('testcheck')
+var gen = testcheck.gen
 
 it('forall a, b - a + b >= a && a + b >= b', () => {
-  testcheck.check(testcheck.property(
-    [gen.posInt, gen.posInt],
-    function (a, b) {
-      return a + b >= a && a + b >= b;
-    }
-  ))
+  testcheck.check(
+    testcheck.property([gen.posInt, gen.posInt], function (a, b) {
+      return a + b >= a && a + b >= b
+    }),
+  )
 })
 ```
 
@@ -134,10 +131,10 @@ function convertTo(structForFrontend) {
 
 ```js
 function isRevertable(structFromBackend) {
-  var structForFrontend = convertFrom(structFromBackend);
-  var structForBackend = convertTo(structForFrontend);
+  var structForFrontend = convertFrom(structFromBackend)
+  var structForBackend = convertTo(structForFrontend)
 
-  expect(structFromBackend).toEqual(structForBackend);
+  expect(structFromBackend).toEqual(structForBackend)
 }
 ```
 
@@ -151,15 +148,14 @@ gen.array(gen.int) // генератор массивов целых чисел
 
 Из чего состоит наша структура (данные о семье):
 
- - `type` – может быть `espoused`, `single`, `common_law_marriage`, `undefined`;
- - `members` – массив объектов с такой структурой:
-   + `role` – может быть `sibling`, `child`, `parent`, `spouse`;
-   + `fio` – объект с ключами `firstname`, `lastname`, `middlename`;
-   + `dependant` – `boolean` или `undefined`.
+- `type` – может быть `espoused`, `single`, `common_law_marriage`, `undefined`;
+- `members` – массив объектов с такой структурой:
+  - `role` – может быть `sibling`, `child`, `parent`, `spouse`;
+  - `fio` – объект с ключами `firstname`, `lastname`, `middlename`;
+  - `dependant` – `boolean` или `undefined`.
 
 Начнем с `type`, воспользуемся <a target="_blank" href="https://github.com/leebyron/testcheck-js/blob/master/type-definitions/testcheck.d.ts#L113">документацией по&nbsp;генераторам</a>.
 Для перечислений используется генератор <a target="_blank" href="https://github.com/leebyron/testcheck-js/blob/master/type-definitions/testcheck.d.ts#L234">returnOneOf</a>:
-
 
 ```js
 gen.returnOneOf(['espoused', 'single', 'common_law_marriage', undefined])
@@ -183,9 +179,9 @@ gen.oneOf([gen.boolean, gen.undefined])
 
 ```js
 gen.object({
-    firstname: gen.oneOf([gen.string, gen.undefined]),
-    lastname: gen.oneOf([gen.string, gen.undefined]),
-    middlename: gen.oneOf([gen.string, gen.undefined])
+  firstname: gen.oneOf([gen.string, gen.undefined]),
+  lastname: gen.oneOf([gen.string, gen.undefined]),
+  middlename: gen.oneOf([gen.string, gen.undefined]),
 })
 ```
 
@@ -200,20 +196,20 @@ var familyInfoGen = gen.object({
       fio: gen.object({
         firstname: gen.oneOf([gen.string, gen.undefined]),
         lastname: gen.oneOf([gen.string, gen.undefined]),
-        middlename: gen.oneOf([gen.string, gen.undefined])
+        middlename: gen.oneOf([gen.string, gen.undefined]),
       }),
-      dependant: gen.oneOf([gen.boolean, gen.undefined])
-    })
-  )
-});
+      dependant: gen.oneOf([gen.boolean, gen.undefined]),
+    }),
+  ),
+})
 ```
 
 Проверяем:
 
 ```js
-var sample = require('testcheck').sample;
+var sample = require('testcheck').sample
 
-console.log(JSON.stringify(sample(familyInfoGen, {times: 2}), null, 2))
+console.log(JSON.stringify(sample(familyInfoGen, { times: 2 }), null, 2))
 /*
 [
   {
@@ -226,23 +222,24 @@ console.log(JSON.stringify(sample(familyInfoGen, {times: 2}), null, 2))
 ]
 */
 ```
+
 А вот и первая проблема. Иногда у нас генерятся структуры без супруги, но при этом с&nbsp;`type === 'espoused'`. Так быть не может – нам не могут прийти такие данные с бэкенда. Как можно ограничить или преобразовать нашу генерируемую последовательность по какому-то правилу? Варианта два:
 
- - <a target="_blank" href="https://github.com/leebyron/testcheck-js/blob/master/type-definitions/testcheck.d.ts#L125">suchThat</a> — фильтрует генерируемую последовательность по предикату. Не&nbsp;очень подходит, так как увеличивает число попыток генерации, что замедляет тесты;
- - <a target="_blank" href="https://github.com/leebyron/testcheck-js/blob/master/type-definitions/testcheck.d.ts#L146">map</a> — отображает элементы генерируемой последовательности согласно некоторой функции.
+- <a target="_blank" href="https://github.com/leebyron/testcheck-js/blob/master/type-definitions/testcheck.d.ts#L125">suchThat</a> — фильтрует генерируемую последовательность по предикату. Не&nbsp;очень подходит, так как увеличивает число попыток генерации, что замедляет тесты;
+- <a target="_blank" href="https://github.com/leebyron/testcheck-js/blob/master/type-definitions/testcheck.d.ts#L146">map</a> — отображает элементы генерируемой последовательности согласно некоторой функции.
 
 Давайте посмотрим, как мы можем применить `map` для наших целей. Для начала определимся с правилами:
 
- - Супруга может быть только одна;
- - Если она есть, то `type === 'espoused'`;
- - Если `type !== 'espoused'`, то ее быть не&nbsp;должно.
+- Супруга может быть только одна;
+- Если она есть, то `type === 'espoused'`;
+- Если `type !== 'espoused'`, то ее быть не&nbsp;должно.
 
 Так и запишем:
 
 ```js
 function mapFamily(familyObject) {
   // находим всех супруг
-  var spouse = familyObject.members.filter(member => member.role === 'spouse');
+  var spouse = familyObject.members.filter((member) => member.role === 'spouse')
   // если женат, а супруги нет
   if (familyObject.type === 'espoused' && spouse.length === 0) {
     return {
@@ -250,46 +247,49 @@ function mapFamily(familyObject) {
       members: [
         // то добавляем ее
         { role: 'spouse', fio: {} },
-        ...familyObject.members
-      ]
+        ...familyObject.members,
+      ],
     }
-  // если не женат, а супруга есть
+    // если не женат, а супруга есть
   } else if (familyObject.type !== 'espoused' && spouse.length !== 0) {
     return {
       type: familyObject.type,
       // убираем ее
-      members: familyObject.members.filter(member => member.role !== 'spouse')
+      members: familyObject.members.filter((member) => member.role !== 'spouse'),
     }
-  // если супруг больше одной, то оставляем только первую
+    // если супруг больше одной, то оставляем только первую
   } else if (spouse.length > 1) {
     return {
       type: familyObject.type,
-      members: familyObject.members.reduce((acc, member) => {
-        if (member.role !== 'spouse' && acc.hasSpouse) {
-          acc.members.push(member);
-        } else if (member.role === 'spouse' && !acc.hasSpouse) {
-          acc.members.push(member);
-          acc.hasSpouse = true;
-        }
-        return acc;
-      }, { members: [], hasSpouse: false }).members
+      members: familyObject.members.reduce(
+        (acc, member) => {
+          if (member.role !== 'spouse' && acc.hasSpouse) {
+            acc.members.push(member)
+          } else if (member.role === 'spouse' && !acc.hasSpouse) {
+            acc.members.push(member)
+            acc.hasSpouse = true
+          }
+          return acc
+        },
+        { members: [], hasSpouse: false },
+      ).members,
     }
   }
   // если структура верна, то возвращаем, ничего не меняя
-  return familyObject;
+  return familyObject
 }
 ```
 
 Применим эту операцию к нашему генератору:
 
 ```js
-var familyInfoGenFixed = gen.map(mapFamily, familyInfoGen);
+var familyInfoGenFixed = gen.map(mapFamily, familyInfoGen)
 ```
 
 Проверяем:
 
 ```js
-console.log(JSON.stringify(sample(familyInfoGenFixed, {times: 2}), null, 2))
+console.log(JSON.stringify(sample(familyInfoGenFixed, { times: 2 }), null, 2))
 /*
 [
   {
@@ -320,13 +320,9 @@ console.log(JSON.stringify(sample(familyInfoGenFixed, {times: 2}), null, 2))
 Теперь генерируемые объекты точно соответствуют нашим требованиям  –можно переходить непосредственно к проверке нашего свойства. Воспользуемся хелпером из пакета `jasmine-check` `check.it`  –он принимает описания свойства, массив генераторов и свойство в виде функции.
 
 ```js
-require('jasmine-check').install();
+require('jasmine-check').install()
 
-check.it(
-  'convertTo is revert function for convertFrom',
-  [familyInfoGenFixed],
-  isRevertable
-);
+check.it('convertTo is revert function for convertFrom', [familyInfoGenFixed], isRevertable)
 ```
 
 Однако проверка нашего свойства заканчивается безуспешно:
@@ -378,10 +374,10 @@ Difference:
 
 ```js
 function isSameShape(structFromBackend) {
-  var structForFrontend = convertFrom(structFromBackend);
-  var structForBackend = convertTo(structForFrontend);
+  var structForFrontend = convertFrom(structFromBackend)
+  var structForBackend = convertTo(structForFrontend)
 
-  expect(checkFamilyStruct(structForBackend)).toBe(true);
+  expect(checkFamilyStruct(structForBackend)).toBe(true)
 }
 ```
 
@@ -396,21 +392,25 @@ function isSameShape(structFromBackend) {
 Использование нашего API должно выглядеть так:
 
 ```js
-const makeFamilySpec = spec => spec.shape({
-  type: spec.oneOf(['espoused', 'single', 'common_law_marriage']),
-  members: spec.arrayOf(
-    spec.shape({
-      role: spec.oneOf(['sibling', 'child', 'parent', 'spouse']).isRequired,
-      fio: spec.shape({
-        firstname: spec.string,
-        lastname: spec.string,
-        middlename: spec.string
-      }),
-      dependant: spec.bool
-    }).isRequired
-  )
-}).invariant(mapFamily);
+const makeFamilySpec = (spec) =>
+  spec
+    .shape({
+      type: spec.oneOf(['espoused', 'single', 'common_law_marriage']),
+      members: spec.arrayOf(
+        spec.shape({
+          role: spec.oneOf(['sibling', 'child', 'parent', 'spouse']).isRequired,
+          fio: spec.shape({
+            firstname: spec.string,
+            lastname: spec.string,
+            middlename: spec.string,
+          }),
+          dependant: spec.bool,
+        }).isRequired,
+      ),
+    })
+    .invariant(mapFamily)
 ```
+
 Соответственно, теперь нам надо определить объект `spec` для валидатора и для генератора. Для валидации я буду использовать <a target="_blank" href="https://facebook.github.io/jest/docs/api.html#expectvalue)">expect</a> из Jest просто потому, что это единственное, что было под рукой. Очевидно, что для валидации можно использовать любую библиотеку для проверки данных, да и сам формат описания структуры может быть любым.
 
 Для начала определим общую структуру API для валидатора:
@@ -418,28 +418,24 @@ const makeFamilySpec = spec => spec.shape({
 ```js
 const jestSpec = {
   // specJest просто некоторая обертка, которая добавит все необходимые методы
-  string: specJest(
-    actual => expect(isString(actual)).toBe(true)
-  ), // для примитивов проверяем просто типы
-  bool: specJest(
-    actual => expect(isBoolean(actual)).toBe(true)
-  ),
-  oneOf: list => specJest(
-    actual => expect(list).toContainEqual(actual)
-  ),
-  shape: shape => specJest(actual => {
-    expect(isPlainObject(actual)).toBe(true);
-    keys(shape).forEach(key => {
-      // для объекта проверяем, что все ключи соответствуют описаниям
-      shape[key](actual[key]);
-    });
-  }),
-  arrayOf: itemSpec => specJest(actual => {
-    expect(isArray(actual)).toBe(true);
-    // для массива проверяем элементы, которые содержатся в нем
-    actual.forEach(item => itemSpec(item));
-  })
-};
+  string: specJest((actual) => expect(isString(actual)).toBe(true)), // для примитивов проверяем просто типы
+  bool: specJest((actual) => expect(isBoolean(actual)).toBe(true)),
+  oneOf: (list) => specJest((actual) => expect(list).toContainEqual(actual)),
+  shape: (shape) =>
+    specJest((actual) => {
+      expect(isPlainObject(actual)).toBe(true)
+      keys(shape).forEach((key) => {
+        // для объекта проверяем, что все ключи соответствуют описаниям
+        shape[key](actual[key])
+      })
+    }),
+  arrayOf: (itemSpec) =>
+    specJest((actual) => {
+      expect(isArray(actual)).toBe(true)
+      // для массива проверяем элементы, которые содержатся в нем
+      actual.forEach((item) => itemSpec(item))
+    }),
+}
 ```
 
 Теперь давайте сделаем то же самое для генератора:
@@ -449,73 +445,81 @@ export const genSpec = {
   // specGen просто некоторая обертка, которая добавит все необходимые методы
   string: specGen(gen.asciiString),
   bool: specGen(gen.boolean),
-  oneOf: list => specGen(gen.returnOneOf(list)),
-  shape: shape => specGen(gen.object(shape)),
-  arrayOf: itemSpec => specGen(gen.array(itemSpec))
-};
+  oneOf: (list) => specGen(gen.returnOneOf(list)),
+  shape: (shape) => specGen(gen.object(shape)),
+  arrayOf: (itemSpec) => specGen(gen.array(itemSpec)),
+}
 ```
 
 Далее необходимо реализовать сами обертки, которые будут добавлять необходимые методы. Так как большая часть кода и для валидатора, и для генератора будет общей – вынесем ее в&nbsp;функцию `makeSpecable`. Она будет принимать 2 функции, которые уже будут содержать логику, специфичную для генератора или валидатора:
 
- - `makeNotRequired` — определит, как сделать из того, что нам передали, необязательный генератор/валидатор.
+- `makeNotRequired` — определит, как сделать из того, что нам передали, необязательный генератор/валидатор.
 
 Здесь все довольно просто. Для валидатора:
 
 ```js
-check => actual => isUndefined(actual) || check(actual)
+;(check) => (actual) => isUndefined(actual) || check(actual)
 ```
+
 Для генератора:
 
 ```js
-generator => gen.oneOf([gen.undefined, generator])
+;(generator) => gen.oneOf([gen.undefined, generator])
 ```
- - `makeInvariant` — определит как добавить ограничение по некоторой кастомной функции для генератора/валидатора
+
+- `makeInvariant` — определит как добавить ограничение по некоторой кастомной функции для генератора/валидатора
 
 Для генератора мы такое уже делали – используем знакомый `.map`:
 
 ```js
-(generator, func) => gen.map(func, generator)
+;(generator, func) => gen.map(func, generator)
 ```
 
 А вот с валидатором все сложнее. Давайте вспомним, что, по сути, делает `mapFamily`? Приводит структуру к верному виду. А что она делает для структуры, которая не содержит нарушений? Правильно, ничего, она никак ее не меняет. Следовательно, мы можем сделать проверку  – если `mapFamily` ничего не изменила, значит, структура была верной:
 
 ```js
-expect(mapFamily(familyStruct)).toEqual(familyStruct);
+expect(mapFamily(familyStruct)).toEqual(familyStruct)
 ```
 
 Вооружившись этой идеей, напишем `makeInvariant` для валидатора:
 
 ```js
-(check, func) => actual => {
-    expect(func(actual)).toEqual(actual);
-    check(actual);
+;(check, func) => (actual) => {
+  expect(func(actual)).toEqual(actual)
+  check(actual)
 }
 ```
 
 Ну и теперь осталось написать только `makeSpecable`, которая будет добавлять необходимые методы:
 
 ```js
-const makeSpecable = (makeNotRequired, makeInvariant) => specable => {
-    const notRequired = makeNotRequired(specable);
-    notRequired.isRequired = specable;
-    notRequired.invariant = func => makeInvariant(specable, func);
-    return notRequired;
-};
+const makeSpecable = (makeNotRequired, makeInvariant) => (specable) => {
+  const notRequired = makeNotRequired(specable)
+  notRequired.isRequired = specable
+  notRequired.invariant = (func) => makeInvariant(specable, func)
+  return notRequired
+}
 ```
+
 Проверяем:
 
 ```js
-const checkFamilyStruct = makeFamilySpec(jestSpec);
-const generatorFamilyStruct = makeFamilySpec(genSpec);
+const checkFamilyStruct = makeFamilySpec(jestSpec)
+const generatorFamilyStruct = makeFamilySpec(genSpec)
 
 describe('convertFrom and convertTo properties', () => {
-  check.it('convertFrom -> convertTo save original shape', [generatorFamilyStruct], structFromBackend => {
-    const structForFrontend = convertFrom(structFromBackend);
-    const structForBackend = convertTo(structForFrontend);
-    checkFamilyStruct(structForBackend);
-  });
-});
+  check.it(
+    'convertFrom -> convertTo save original shape',
+    [generatorFamilyStruct],
+    (structFromBackend) => {
+      const structForFrontend = convertFrom(structFromBackend)
+      const structForBackend = convertTo(structForFrontend)
+      checkFamilyStruct(structForBackend)
+    },
+  )
+})
 ```
+
 Ура, заработало! <a target="_blank" href="https://gist.github.com/typeetfunc/ac4ed98d5014870c797ce138796f5cc4">Гист с полным кодом</a>
 
 Вообще, идея иметь одно описание данных и по нему получать и валидаторы, и генераторы придумана, конечно же, не мной.
@@ -525,7 +529,7 @@ describe('convertFrom and convertTo properties', () => {
 
 С другой стороны, в Haskell сообществе существуют подходы, при которых тесты, проверяющие свойства, генерируются по типам в программе. <a target="_blank" href="https://www.youtube.com/watch?v=y_auT62ycVc">Вот интересный доклад на эту тему</a>.
 
->Как типы могут помогать писать тесты, так и тесты могут помочь писать типы  –между ними явно есть какая-то связь.
+> Как типы могут помогать писать тесты, так и тесты могут помочь писать типы  –между ними явно есть какая-то связь.
 
 Такие решения позволяют проверять простые ограничения (например, что мы не передаем строки в функцию сложения чисел) статически  – и получать мгновенный отклик, а сложные свойства(вроде того, что при любых операциях баланс пользователя не должен быть отрицательным, или то, что сериализация и десериализация любого типа возвращает исходный объект) – проверять динамически при помощи генеративных тестов (что, конечно, более медленно, но зато без необходимости использовать сложные системы типов, включающие <a target="_blank" href="https://www.quora.com/Can-Haskell-theoretically-support-property-checking-as-in-Agda">dependant и refinement типы</a>).
 
@@ -536,36 +540,39 @@ describe('convertFrom and convertTo properties', () => {
 Сравните:
 
 ```js
-const makeFamilySpec = spec => spec.shape({
-  type: spec.oneOf(['espoused', 'single', 'common_law_marriage']),
-  members: spec.arrayOf(
-    spec.shape({
-      role: spec.oneOf(['sibling', 'child', 'parent', 'spouse']).isRequired,
-      fio: spec.shape({
-        firstname: spec.string,
-        lastname: spec.string,
-        middlename: spec.string
-      }),
-      dependant: spec.bool
-    }).isRequired
-  )
-}).invariant(mapFamily);
+const makeFamilySpec = (spec) =>
+  spec
+    .shape({
+      type: spec.oneOf(['espoused', 'single', 'common_law_marriage']),
+      members: spec.arrayOf(
+        spec.shape({
+          role: spec.oneOf(['sibling', 'child', 'parent', 'spouse']).isRequired,
+          fio: spec.shape({
+            firstname: spec.string,
+            lastname: spec.string,
+            middlename: spec.string,
+          }),
+          dependant: spec.bool,
+        }).isRequired,
+      ),
+    })
+    .invariant(mapFamily)
 ```
 
 С кодом на TypeScript:
 
 ```js
 interface familySpec {
-  type?: 'espoused' | 'single' | 'common_law_marriage',
+  type?: 'espoused' | 'single' | 'common_law_marriage';
   members: Array<{
     role: 'sibling' | 'child' | 'parent' | 'spouse',
     fio?: {
       firstname?: string,
       lastname?: string,
-      middlename?: string
+      middlename?: string,
     },
-    dependant?: boolean
-  }>
+    dependant?: boolean,
+  }>;
 }
 ```
 
@@ -586,11 +593,11 @@ type nat = {v : number | 0 ≤ v }
 
 В итоге вся разница статических и динамических спецификаций сводится к следующему:
 
- - Статические: проверяются при помощи инструментов статической верификации, дают 100% гарантии соотвествия спецификации. Но по умолчанию считают, что ваш код не соответствует спецификации и заставляют писать много дополнительного кода для того, чтобы доказать, что&nbsp;код все-таки ей соответствует.
+- Статические: проверяются при помощи инструментов статической верификации, дают 100% гарантии соотвествия спецификации. Но по умолчанию считают, что ваш код не соответствует спецификации и заставляют писать много дополнительного кода для того, чтобы доказать, что&nbsp;код все-таки ей соответствует.
 
- - Динамические: проверяются при помощи генеративного тестирования (и других его видов), дают только вероятностную гарантию. То есть по умолчанию считается, что наш код работает согласно спецификации, и только если тестирование покажет обратное — спецификация считается нарушенной. Также нет необходимости в написании какого-либо специального кода для доказательства корректности нашего кода.
+- Динамические: проверяются при помощи генеративного тестирования (и других его видов), дают только вероятностную гарантию. То есть по умолчанию считается, что наш код работает согласно спецификации, и только если тестирование покажет обратное — спецификация считается нарушенной. Также нет необходимости в написании какого-либо специального кода для доказательства корректности нашего кода.
 
->Нет никакого фундаментального противоречия между динамическими и статическими языками и системами типов.
+> Нет никакого фундаментального противоречия между динамическими и статическими языками и системами типов.
 
 Возможно, языки будущего вообще не будут разделяться на статические и динамические, а будут просто позволять управлять степенью строгости проверок и их количеством в процессе разработки программы.
 

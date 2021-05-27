@@ -1,6 +1,6 @@
-import { string, node } from 'prop-types'
-import styled from '@emotion/styled'
 import { Text } from '@csssr/core-design'
+import styled from '@emotion/styled'
+import { node, string } from 'prop-types'
 
 import styles from './Note.styles'
 
