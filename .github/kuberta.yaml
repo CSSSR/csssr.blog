@@ -5,6 +5,8 @@ releases:
     name: csssr-blog-storybook
     autodeploy-on: default
     chart: csssr/static-site@~1.1.0
+    slack:
+      - CKF42GD36 # #csssr_builds
     static-params:
       projectID: csssr-blog-storybook
       tlsSecret: csssr-blog-storybook-tls
