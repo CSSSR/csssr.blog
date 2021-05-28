@@ -14,3 +14,21 @@ releases:
       - workflow: build-storybook.yaml
         values:
           buildID: build-{{ .Build.RunID }}
+  static-site:
+    name: csssr-blog
+    autodeploy-on: default
+    chart: csssr/static-site@~1.1.0
+    slack:
+      - CKF42GD36 # #csssr_builds
+    static-params:
+      projectID: csssr-new-blog
+      tlsSecret: csssr-new-blog-tls
+      notFoundPagePath: 404/index.html
+      ingress:
+        annotations:
+          nginx.ingress.kubernetes.io/server-snippet: |
+            rewrite ^/$ /en redirect;
+    builds:
+      - workflow: deploy_testing.yml
+        values:
+          buildID: build-{{ .Build.RunID }}
