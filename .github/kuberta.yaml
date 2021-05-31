@@ -14,7 +14,7 @@ releases:
       - workflow: build-storybook.yaml
         values:
           buildID: build-{{ .Build.RunID }}
-  static-site:
+  csssr-new-blog:
     name: csssr-blog
     autodeploy-on: default
     chart: csssr/static-site@~1.1.0

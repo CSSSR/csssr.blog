@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: docker://quay.csssr.cloud/csssr/kuberta-init-workflow:v1
+
       - name: Download CSSSR actions
         uses: actions/checkout@v2
         with:
@@ -24,8 +26,8 @@ jobs:
 
       - uses: actions/setup-node@v2-beta
         with:
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@csssr"
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@csssr'
 
       - name: Install dependencies
         working-directory: new_blog
@@ -47,6 +49,6 @@ jobs:
         with:
           project-id: csssr-new-blog
           files: ./new_blog/out
-          no-previous-files: "true"
+          no-previous-files: 'true'
           auth: ${{ secrets.CDN_UPLOAD_SECRET }}
           token: ${{ secrets.GITHUB_TOKEN }}
