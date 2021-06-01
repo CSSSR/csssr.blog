@@ -1,11 +1,8 @@
 name: Деплой блога на тестинг
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    types: [opened, synchronize, reopened]
-concurrency: testing_environment
+  workflow_dispatch:
+    inputs:
+      kuberta_system:
 
 jobs:
   deploy:
@@ -13,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: docker://quay.csssr.cloud/csssr/kuberta-init-workflow:v1
+
       - name: Download CSSSR actions
         uses: actions/checkout@v2
         with:
@@ -27,8 +26,8 @@ jobs:
 
       - uses: actions/setup-node@v2-beta
         with:
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@csssr"
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@csssr'
 
       - name: Install dependencies
         working-directory: new_blog
@@ -46,19 +45,10 @@ jobs:
           BLOG_HOST: https://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud
           BENCHMARK_EMAIL_TOKEN: ${{ secrets.BENCHMARK_EMAIL_TOKEN }}
 
-      - name: Деплой на тестинг
-        uses: ./actions/deploy-static-site/v1beta1
+      - uses: ./actions/upload-static/v1beta1
         with:
-          auth: ${{ secrets.CSSSR_AUTH }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          site-type: mpa
           project-id: csssr-new-blog
           files: ./new_blog/out
-          no-previous-files: "true"
-          not-found-page: 404/index.html
-          tls-secret: csssr-new-blog-tls
-          values: |
-            ingress:
-              annotations:
-                nginx.ingress.kubernetes.io/server-snippet: |
-                  rewrite ^/$ /en redirect;
+          no-previous-files: 'true'
+          auth: ${{ secrets.CDN_UPLOAD_SECRET }}
+          token: ${{ secrets.GITHUB_TOKEN }}
