@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { Heading, SubHeading } from '@csssr/core-design'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
@@ -62,7 +61,7 @@ const BenchmarkEmail = ({ className }) => {
     }
   }
 
-  function submit_LY6HHClick() {
+  function handleSubmit() {
     let retVal = true
     let frm = isWindowContext && document.getElementById('formbox_screen_subscribe_LY6HH')
     if (!isemail(isWindowContext && document.getElementsByName('fldemail_LY6HH')[0].value)) {
@@ -120,7 +119,7 @@ const BenchmarkEmail = ({ className }) => {
     return retVal
   }
 
-  function debounce_LY6HH(func, wait, immediate) {
+  function handleDebounce(func, wait, immediate) {
     let timeout
 
     return function () {
@@ -141,28 +140,30 @@ const BenchmarkEmail = ({ className }) => {
     }
   }
 
-  const hasVerticalCenter_LY6HH =
-    isWindowContext && document.getElementsByClassName('position-centered')
-  function verticalCenter_LY6HH(element) {
+  const hasVerticalCenter = isWindowContext && document.getElementsByClassName('position-centered')
+  function verticalCenter(element) {
     if (element) {
       element.style.opacity = 0
       element.style.display = 'block'
     }
     setTimeout(function () {
-      if (hasVerticalCenter_LY6HH.length > 0) {
+      if (hasVerticalCenter.length > 0) {
         const windowHeight = Math.max(
           isWindowContext && document.documentElement.clientHeight,
           window.innerHeight || 0,
         )
-        const formElement_LY6HH =
+
+        const formElement =
           isWindowContext && document.getElementsByClassName('formbox-editor_LY6HH')[0]
-        const formHeight_LY6HH = formElement_LY6HH.clientHeight
-        if (formHeight_LY6HH < windowHeight) {
+
+        const formHeight = formElement.clientHeight
+
+        if (formHeight < windowHeight) {
           let newPosition = 0
-          newPosition = (windowHeight - formHeight_LY6HH) / 2
-          formElement_LY6HH.style.top = newPosition + 'px'
+          newPosition = (windowHeight - formHeight) / 2
+          formElement.style.top = newPosition + 'px'
         } else {
-          formElement_LY6HH.style.top = '0px'
+          formElement.style.top = '0px'
         }
       }
       if (element) {
@@ -171,11 +172,11 @@ const BenchmarkEmail = ({ className }) => {
     }, 100)
   }
 
-  if (hasVerticalCenter_LY6HH.length > 0) {
-    const resizeEvent_LY6HH = debounce_LY6HH(function () {
-      verticalCenter_LY6HH()
+  if (hasVerticalCenter.length > 0) {
+    const handleResize = handleDebounce(function () {
+      verticalCenter()
     }, 250)
-    window.addEventListener('resize', resizeEvent_LY6HH)
+    window.addEventListener('resize', handleResize)
   }
   return (
     <section className={className}>
@@ -238,14 +239,14 @@ const BenchmarkEmail = ({ className }) => {
                     />
                   </fieldset>
                   <fieldset className="fieldset">
-                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                    <div
+                    <button
+                      type="button"
                       id="btnSubmit_LY6HH"
                       className="formbox-button_LY6HH"
-                      onClick={submit_LY6HHClick}
+                      onClick={handleSubmit}
                     >
                       Подписаться
-                    </div>
+                    </button>
                   </fieldset>
                 </div>
               </div>

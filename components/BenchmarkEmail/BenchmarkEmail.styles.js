@@ -57,6 +57,8 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
   }
 
   .formbox-button_LY6HH {
+    background-color: transparent;
+    width: 100%;
     margin-top: ${calcRem(50)};
     padding-top: ${calcRem(9)};
     padding-bottom: ${calcRem(7)};
