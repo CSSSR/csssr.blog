@@ -7,6 +7,8 @@ tag: 'business'
 
 <Subtitle>..and why partnerships are better than IT departments or subcontracting.</Subtitle>
 
+---
+
 **W**eb development and creative design have always gone hand-in-hand. In the beginning, websites and internet traffic were relatively simple, with only basic code and designs, and limited specialization. Simply put, there wasn’t much thought putinto making websites truly high performance. However, times have changed, and each field has become increasingly competitive. As budgets for web development have swelled, the challenge of bringing together creative agencies and web developers has become more important.
 
 The history of digital advertising is a gradual trend towards increased specialization. At first, large companies wanted a full-service provider, so they typically turned to major advertising agencies to give them the full spectrum of communications services. Originally, there were two classifications for these services, above-the-line (ATL), focussing on a broad range of customers, or the more targeted <span class="no-wrap">below-the-line</span> (BTL), appealing to specific groups. At first, digital advertising was grouped in with BTL, but over time digital advertising became a separate field in its own right. Now, when a company seeks an advertising agency, they look for ATL, BTL and digital.

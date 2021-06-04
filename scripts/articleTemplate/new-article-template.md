@@ -5,6 +5,10 @@ date: '2020-05-16T06:48:07.322Z'
 tag: 'web-development'
 ---
 
+Promo description of the article
+
+---
+
 **For** a quick start, you can look at already created articles.
 
 ## {{slug}}

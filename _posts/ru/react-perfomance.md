@@ -6,9 +6,12 @@ date: '2016-12-07T00:00:00.000Z'
 tag: 'web-development'
 ---
 
+---
+
 **В**сем привет! Меня зовут Александр, и я ведущий Javascript-разработчик CSSSR. В данный момент я веду достаточно сложный и крупный проект на Реакте. На проекте есть разработчики разных уровней, некоторым из них было сложно привыкнуть к тому, как ведет себя Реакт и как на нем разрабатывать крупные приложения. Бóльшая часть недопониманий была с производительностью, о ней и пойдёт речь в статье.
 
 ## Как работает React
+
 React считается быстрым из-за VirtualDOM. В компоненте есть метод render, который вызывается при каждом обновлении компонента. Затем результат рендера (здесь и далее под рендером будет иметься в виду именно вызов функции render компонента, а не рендер в реальный DOM) обрабатывается Реактом, сравнивается результат текущего рендера с результатом предыдущего и в реальный DOM вносятся только необходимые изменения, а не целиком. Учитывая, что операции с реальным DOM медленные, это должно быть быстрее.
 
 Проблема в том, что операции с VirtualDOM тоже могут быть медленными. Результат рендера Реакта — это многоуровневый объект. Сравнение результатов рендера — это не сравнение двух объектов по ссылке, а их полное, глубокое сравнение. Казалось бы, стоит держать компоненты небольшими, и тогда их перерендер будет происходить быстро.
@@ -26,26 +29,27 @@ React считается быстрым из-за VirtualDOM. В компоне
 class Parent extends React.Component {
   state = {
     index: 0,
-  };
+  }
 
   render() {
-    console.log('Render Parent');
+    console.log('Render Parent')
 
-    return <div>
-      Parent: {this.state.index}
-      <button onClick={() => this.setState({ index: this.state.index + 1})}>
-        Rerender
-      </button>
-      <Child/>
-    </div>;
+    return (
+      <div>
+        Parent: {this.state.index}
+        <button onClick={() => this.setState({ index: this.state.index + 1 })}>Rerender</button>
+        <Child />
+      </div>
+    )
   }
 }
 
 const Child = () => {
-  console.log('Render Child');
-  return <div> Child </div>;
+  console.log('Render Child')
+  return <div> Child </div>
 }
 ```
+
 [CodePen](https://codepen.io/dzhiriki/pen/LRBQXE?editors=0010)
 
 В примере выше мы по нажатию на кнопку вызываем setState у компонента Parent, но если посмотреть в консоль, то можно увидеть, что Child тоже перерендеривается. Более того, если мы заменим обработчик на `() => this.setState({ index: this.state.index })` или даже `() => this.setState({})`, то у нас всё равно будут перерендериваться оба компонента. Причина в том, что Реакт из коробки никак не проверяет изменение стейта или пропсов компонента. Все проверки, что делает React — это сравнение результата рендера. Таким образом, если у вас большое приложение, и вы вызываете setState у корневого компонента, у вас всё приложение целиком будет перерендерено. Реакт построит VDOM для всего приложения, сравнит его с предыдущим результатов и в DOM поместит те самые незначительные правки (если они даже были). Всё это приведет к значительным потерям в производительности приложения.
@@ -57,8 +61,8 @@ const Child = () => {
 Правда, нужно учитывать, что `shouldComponentUpdate` должен отрабатывать быстро. Если трудозатраты будут сравнимы с трудозатратами по сравнению VDOM, то от `shouldComponentUpdate` будет лишь вред, а не польза. Самое быстрое сравнение — это сравнение через `===`, с которым можно пройти по всем ключам стейта \ пропсов и проверить каждое значение. Вопрос в том, будет ли оно давать верный результат? С типами данных, которые сравниваются по значению (числа, строки, булевые значения) проблемы нет, проверка всегда будет корректная. Проблема возникает, когда в стейте есть ссылочные типы. Если мутировать объект, то нет никакой возможности проверить, изменилось ли значение, так как объект в текущем и новом стейте будет ссылаться на один и тот же объект. Пример:
 
 ```js
-var a = {prop1: 1};
-var b = a;
+var a = { prop1: 1 }
+var b = a
 b.prop2 = 2
 console.log(a === b) // true
 console.log(a.prop2) // 2
@@ -68,18 +72,18 @@ console.log(a.prop2) // 2
 
 ```js
 // Объект
-const newValue = this.state.object;
-newValue.prop = 7;
+const newValue = this.state.object
+newValue.prop = 7
 this.setState({
   object: newValue,
-});
+})
 
 // Массив
-const newValue = this.state.array;
-newValue[1] = 7;
+const newValue = this.state.array
+newValue[1] = 7
 this.setState({
   array: newValue,
-});
+})
 ```
 
 Таким образом, сравнение через `===` будет давать ложноотрицательный результат: компонент не будет перерендериваться, хотя данные в действительности поменялись.
@@ -88,10 +92,10 @@ this.setState({
 
 ```js
 const currentRange = this.state.range // Допустим, [5, 10]
-const max = currentRange[1];
+const max = currentRange[1]
 
 this.setState({
-  range: [5, max]
+  range: [5, max],
 })
 ```
 
@@ -108,28 +112,28 @@ this.setState({
 // Создаем новый объект, сразу задавая свойство
 const newValue = {
   ...this.state.object,
-  prop: 7
-};
+  prop: 7,
+}
 
 // Аналогично примеру выше, но без использования spread-оператора
 // Обратите внимание, что первым аргументом передается пустой объект
 const newValue = Object.assign({}, this.state.object, {
-  prop: 7
-});
+  prop: 7,
+})
 
 // Или просто создаем новый объект, который потом мутируем
-const newValue = { ...this.state.object };
-newValue.prop = 7;
+const newValue = { ...this.state.object }
+newValue.prop = 7
 ```
 
 Аналогично и для массива:
 
 ```js
 // Создаем новый массив через map
-const newValue = this.state.array.map((item, index) => index === 1 ? 7 : item);
+const newValue = this.state.array.map((item, index) => (index === 1 ? 7 : item))
 // Создаем массив, который мутируем
-const newValue = [...this.state.array];
-newValue[1] = 7;
+const newValue = [...this.state.array]
+newValue[1] = 7
 ```
 
 Также хорошим вариантом является [использование линз](https://blog.csssr.com/ru/article/react-perfomance/lenses/).
@@ -140,11 +144,11 @@ newValue[1] = 7;
 if (this.state.object.prop !== 7) {
   const newValue = {
     ...this.state.object,
-    prop: 7
-  };
+    prop: 7,
+  }
   this.setState({
     array: newValue,
-  });
+  })
 }
 ```
 
@@ -153,7 +157,7 @@ if (this.state.object.prop !== 7) {
 ```js
 class Square extends PureComponent {
   render() {
-    const array = this.props.array.map(item => item * 2);
+    const array = this.props.array.map((item) => item * 2)
 
     return <Child array={array} />
   }
@@ -167,18 +171,18 @@ class Square extends PureComponent {
 ```js
 class Square extends PureComponent {
   componentWillMount() {
-    this.setArray(this.props.array);
+    this.setArray(this.props.array)
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.array !== this.props.array) {
-      this.setArray(nextProps.array);
+      this.setArray(nextProps.array)
     }
   }
 
   setArray(array) {
     this.setState({
-      array: array.map(item => item * 2)
+      array: array.map((item) => item * 2),
     })
   }
 
@@ -195,11 +199,11 @@ class Square extends PureComponent {
 С мемоизацией мы получим следующее:
 
 ```js
-const getArray = memoizee(array => array.map(item => item * 2));
+const getArray = memoizee((array) => array.map((item) => item * 2))
 
 class Square extends PureComponent {
   render() {
-    const array = getArray(this.props.array);
+    const array = getArray(this.props.array)
 
     return <Child array={array} />
   }
@@ -236,12 +240,12 @@ class Square extends PureComponent {
 ImmutableJS не позволит мутировать значения переменных и позволит избежать проверок на то, изменилось ли значение и нужно ли создавать новую ссылку:
 
 ```js
-const list1 = Immutable.List([ 1, 2, 3 ]);
-const list2 = list1.set(0, 1);
-console.log(list1 === list2); // true, задали такое же значение
-const map1 = Immutable.Map({a:1, b:2, c:3});
-const map2 = map1.set('b', 2);
-console.log(map1 === map2); // true, задали такое же значение
+const list1 = Immutable.List([1, 2, 3])
+const list2 = list1.set(0, 1)
+console.log(list1 === list2) // true, задали такое же значение
+const map1 = Immutable.Map({ a: 1, b: 2, c: 3 })
+const map2 = map1.set('b', 2)
+console.log(map1 === map2) // true, задали такое же значение
 ```
 
 ImmutableJS не поможет в тех местах, где нужна мемоизация данных, за этим по&nbsp;прежнему придется следить самому. К тому же ImmutableJS вводит еще один слой абстракции над данными. Стоит ли его использовать, решать вам.

@@ -4,7 +4,7 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
-    margin-top: ${calcRem(50)};
+    padding-top: ${calcRem(55)};
     grid-column: 4 / span 6;
   }
 
@@ -12,22 +12,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     display: inline;
   }
 
-  .heading_regular_m,
-  .heading_regular_s,
-  .text_regular_m {
-    margin-top: 0;
-  }
-
-  .text_regular_m + .text_regular_m {
-    margin-top: ${calcRem(25)};
-  }
-
-  .heading_regular_s + .text_regular_m {
-    margin-top: ${calcRem(20)};
-  }
-
-  .heading_regular_s.is_scaled-down + .text_regular_m {
-    margin-top: ${calcRem(15)};
+  & > h2:first-of-type:not(p+h2),
+  & > h3:first-of-type:not(p+h3),
+  & > p:first-of-type:not(h2+p):not(h3+p) {
+    padding-top: 0;
   }
 
   .img-wrap {
@@ -45,10 +33,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
-  &.with_right-side-image {
-    margin-top: ${calcRem(60)};
-  }
-
   .img-wrap.side_right {
     width: ${calcRem(184)};
     min-height: ${calcRem(128)};
@@ -58,19 +42,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${desktop.all} {
-    .heading_regular_m + .text_regular_m {
-      margin-top: 20px
-    }
-
     .img-wrap.side_right {
       transform: translateX(-32px);
     }
 
-    &.with_right-side-image + .text_regular_m {
-      margin-top: 20px;
-    }
-
-    &.with_right-side-image .heading_regular_s {
+    &.with_right-side-image h2{
       font-size: 18px;
       line-height: 24px;
     }
@@ -78,12 +54,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(30)};
       grid-column: 3 / span 8;
-    }
-
-    &.with_right-side-image {
-      margin-top: ${calcRem(50)};
     }
 
     .img-wrap {
@@ -93,25 +64,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-right: ${calcRem(40)};
     }
 
-    .text_regular_m + .text_regular_m {
-      margin-top: 0.9375rem;
-    }
-
-    .heading_regular_s + .text_regular_m {
-      margin-top: ${calcRem(15)};
-    }
-
-    &.with_right-side-image .heading_regular_s {
+    &.with_right-side-image h2 {
       margin-top: 0;
       font-size: ${calcRem(18)};
       line-height: ${calcRem(24)};
     }
 
-    &.with_right-side-image + .text_regular_m.is_scaled-down {
-      margin-top: ${calcRem(9)};
-    }
-
-    &.with_right-side-image > .text_regular_m {
+    &.with_right-side-image > p {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
     }
@@ -119,12 +78,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(30)};
+      padding-top: ${calcRem(45)};
       grid-column: 1 / span 6;
-    }
-
-    &.with_right-side-image {
-      margin-top: ${calcRem(50)};
     }
 
     .img-wrap {
@@ -143,22 +98,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-left: ${calcRem(6)};
     }
 
-    .heading_regular_m + .text_regular_m.paragraph {
-      margin-top: ${calcRem(15)};
-    }
-
-    .heading_regular_s + .text_regular_m {
-      margin-top: ${calcRem(15)};
-    }
-
-    &.with_right-side-image .heading_regular_s {
+    &.with_right-side-image h2 {
       margin-top: 0;
       font-size: ${calcRem(18)};
       line-height: ${calcRem(24)};
-    }
-
-    &.with_right-side-image + .text_regular_m.is_scaled-down {
-      margin-top: ${calcRem(16)};
     }
   }
 `

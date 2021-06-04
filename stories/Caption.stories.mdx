@@ -1,9 +1,11 @@
-import { Meta, Story, Source, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 import { getStringAttributes } from './utils/getStringAttributes';
+import { GridDecorator } from './decorators/GridDecorator';
 
 <Meta
-  title="Caption"
+  title="Post/Caption"
+  decorators={[GridDecorator]}
   argTypes={{
     size: {
       options: ['s', 'l'],

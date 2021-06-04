@@ -34,6 +34,19 @@ const base = ({ breakpoints: { mobile, desktop }, colors }) => css`
       position: relative;
     }
 
+    &.without_aligning {
+      max-width: ${calcRem(84)};
+      margin-left: unset;
+    }
+
+    &.without_aligning .links {
+      justify-content: space-between;
+    }
+
+    &.without_aligning .links .link-item {
+      margin-left: unset;
+    }
+
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         color: #0254D8;

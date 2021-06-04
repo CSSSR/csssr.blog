@@ -6,6 +6,8 @@ date: '2015-03-14T10:30:00.000Z'
 tag: 'web-development'
 ---
 
+---
+
 **У** npm есть превосходная команда `npm init`, которая поможет вам создавать
 `package.json` за секунды!
 
@@ -38,10 +40,8 @@ npm set init-version 0.0.0
 Я предпочитаю использовать версию `0.0.0` для старта; это позволяет мне протестировать код
 на CI ферме перед тем, как бампнуть первую мажорную версию.
 
-
 [npmrc]: https://docs.npmjs.com/files/npmrc
 [config]: https://docs.npmjs.com/cli/config
-
 
 ## Раскрытие сокращённой GitHub-нотации (user/repo)
 

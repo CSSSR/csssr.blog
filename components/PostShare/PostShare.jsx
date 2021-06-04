@@ -18,13 +18,13 @@ import { ReactComponent as VkIcon } from '../../public/icons/share/vk.svg'
 
 import styles from './PostShare.styles'
 
-const PostShare = ({ className, language, type, HideShareLinksOnMobile }) => {
+const PostShare = ({ className, language, type, isHideShareLinksOnMobile }) => {
   const router = useRouter()
   const shareTitle = language === 'ru' ? 'Поделиться' : 'Share'
   const copyMessage = language === 'ru' ? 'Скопировано!' : 'Copied!'
 
   const inputRef = useRef()
-  const currentUrl = `${process.env.BLOG_HOST || 'http://localhost:3000'}${router.asPath}`
+  const currentUrl = `${process.env.BLOG_HOST || 'http://localhost:3000'}${router?.asPath}`
 
   const copyHandler = () => {
     function timerFunction() {
@@ -51,7 +51,7 @@ const PostShare = ({ className, language, type, HideShareLinksOnMobile }) => {
       className={cn(className, 'share', {
         without_margin_top: language !== 'ru' || type === 'news',
         with_news_podcast: language === 'ru' || type === 'news',
-        without_share_links: HideShareLinksOnMobile,
+        without_share_links: isHideShareLinksOnMobile,
         without_aligning: language !== 'ru',
       })}
     >

@@ -4,81 +4,63 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
-    margin-top: ${calcRem(50)};
-    padding-top: ${calcRem(50)};
-    padding-right:${calcRem(112)};
-    padding-bottom: ${calcRem(50)};
-    padding-left:${calcRem(112)};
-    background-color: #F1F2F7;
+    margin-left: ${calcRem(-32)};
+    margin-right:  ${calcRem(-32)};
+    padding-top: ${calcRem(20)};
+    padding-bottom: ${calcRem(5)};
 
-    & * {
-      color: #18191B;
-    }
+    .inner {
+      padding-top: ${calcRem(40)};
+      padding-bottom: ${calcRem(40)};
+      padding-right:${calcRem(32)};
+      padding-left:${calcRem(32)};
+      background-color: #F1F2F7;
 
-    .heading_regular_s {
-      margin-top: 0;
-    }
+      & > h2:first-of-type:not(p+h2),
+      & > h3:first-of-type:not(p+h3),
+      & > p:first-of-type:not(h2+p):not(h3+p) {
+        padding-top: 0;
+      }
 
-    & > p:only-child {
-      margin-top: 0;
-    }
-
-    &.is_quote_like {
-      padding-top: ${calcRem(18)};
-      padding-bottom: ${calcRem(18)};
-      padding-left:${calcRem(24)};
-      border-left: ${calcRem(4)} solid #E0E4EC;
-      background-color: transparent;
+      & > p:only-child {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
     }
   }
 
   ${desktop.all} {
-    grid-column: 3 / span 8;
-
-    &.is_quote_like {
-      grid-column: 4 / span 6;
-    }
+    grid-column: 4 / span 6;
   }
 
   ${tablet.all} {
     & {
-      grid-column: 2 / span 10;
-      margin-top: ${calcRem(30)};
-      padding-top: ${calcRem(40)};
-      padding-right: ${calcRem(80)};
-      padding-bottom: ${calcRem(40)};
-      padding-left: ${calcRem(80)};
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
-    }
-
-    &.is_quote_like {
       grid-column: 3 / span 8;
+
+      .inner {
+        font-size: ${calcRem(14)};
+        line-height: ${calcRem(24)};
+      }
     }
   }
 
   ${mobile.all} {
     & {
       grid-column: 1 / span 6;
-      width: 100vw;
-      margin-top: ${calcRem(50)};
-      padding-top: ${calcRem(24)};
-      padding-right: ${calcRem(16)};
-      padding-bottom: ${calcRem(24)};
-      padding-left: ${calcRem(16)};
-      margin-left: 50%;
-      transform: translateX(-50%);
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
-    }
+      margin-left: ${calcRem(-16)};
+      margin-right:  ${calcRem(-16)};
+      padding-top: ${calcRem(15)};
 
-    &.is_quote_like {
-      width: 100%;
-      margin-left: 0;
-      transform: translateX(0);
+      .inner {
+        padding-top: ${calcRem(24)};
+        padding-bottom: ${calcRem(24)};
+        padding-right:${calcRem(16)};
+        padding-left:${calcRem(16)};
+        font-size: ${calcRem(14)};
+        line-height: ${calcRem(24)};
+      }
     }
   }
-
 `
 
 const StyledNote = props => {

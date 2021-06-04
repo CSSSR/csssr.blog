@@ -1,18 +1,16 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx'
 import {
   dataByLanguagePostAndImageDontResize,
   dataByLanguagePostAndImageResize,
-} from '../lib/allPostsImages';
-import { getStringAttributes } from './utils/getStringAttributes';
+} from '../lib/allPostsImages'
+import { getStringAttributes } from './utils/getStringAttributes'
+import { GridDecorator } from './decorators/GridDecorator'
 
 <Meta
-  title="Quote"
+  title="Post/Quote"
+  decorators={[GridDecorator]}
   argTypes={{
-    imageName: {
-      type: 'radio',
-      options: ['india', 'china', 'europe', 'indonesia', 'summary', 'vietnam'],
-    },
     type: {
       type: 'select',
       options: ['blue', 'black'],
@@ -25,14 +23,11 @@ export const Quote = ({ contentMdx, ...args }) => {
     <>
       {compilerMdx({
         content: `<Quote ${getStringAttributes(args)}>${contentMdx}</Quote>`,
-        images:
-          dataByLanguagePostAndImageDontResize['en'][
-            'offshore-web-development'
-          ],
+        images: dataByLanguagePostAndImageDontResize['en']['offshore-web-development'],
       })}
     </>
-  );
-};
+  )
+}
 
 # [`<Quote />`](http://s.csssr.ru/U31J879TR/20200527125130.jpg)
 
@@ -53,14 +48,6 @@ export const Quote = ({ contentMdx, ...args }) => {
 Дефолтное значение: `undefined`
 
 Должность автора цитаты.
-
-## `withImage`
-
-Тип данных: `boolean`
-
-Дефолтное значение: `false`
-
-Если `withImage` имеет значение `true`, то будет использован вид цитаты с изображением, если нет, то с кавычками.
 
 ## `type`
 
@@ -90,16 +77,13 @@ URL ссылки под цитатой.
 
 <Canvas>
   <Story
-    height="350px"
     name="Default"
     args={{
-      withImage: true,
-      type: 'blue',
-      author: 'Artyom Skatov',
-      position: 'Project Manager, Gazprom Neft',
-      linkText: 'linkText',
+      type: 'black',
+      author: 'Тим Бернерс-Ли',
+      linkText: 'Записка о браузере WorldWideWeb',
       linkHref: '#',
-      contentMdx: `There’s one more thing you should consider if/when facing the problem. The demotivated employees are often distracted, and they start distracting and frustrating those around them affecting negatively the general working atmosphere inside the team. If they have a client-facing position, then the problem may have a killing impact on your relationship with both the existing and potential customers.`,
+      contentMdx: `Я написал программу на компьютере NeXT. Это дало мне преимущество в виде замечательных инструментов — классная была среда в целом. По сути, я мог за пару месяцев сделать то, что пришлось бы делать около года на других платформах, потому что на NeXT многое уже было сделано за меня. `,
     }}
   >
     {Quote.bind({})}

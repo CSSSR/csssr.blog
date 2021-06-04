@@ -4,6 +4,8 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
+    padding-top: ${calcRem(20)};
+    padding-bottom: ${calcRem(5)};
     display: block;
     /* Максимальная ширина для картинки, вписанной в сетку на 1360px */
     max-width: 656px;
@@ -30,36 +32,34 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     & {
-      margin-top: 30px;
       grid-column: 4 / span 6;
     }
 
     &.with_big_margin {
-      margin-top: 80px;
+      padding-top: ${calcRem(80)};
     }
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(30)};
       grid-column: 3 / span 8;
       max-width: 100%;
     }
 
     &.with_big_margin {
-      margin-top: ${calcRem(60)};
+      padding-top: ${calcRem(60)};
     }
   }
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(20)};
+      padding-top: ${calcRem(15)};
       grid-column: 1 / span 6;
       width: 100%;
     }
 
     &.with_big_margin {
-      margin-top: ${calcRem(50)};
+      padding-top: ${calcRem(50)};
     }
 
   }
