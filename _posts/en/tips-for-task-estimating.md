@@ -6,6 +6,8 @@ tag: 'management'
 author: 'Alisa Matienko'
 ---
 
+---
+
 **T**ask estimating and time planning are both stress and responsibility, and some developers even come up with ideological excuses against them. However, whether they want it or not, it is all about terms and estimates in the IT-world, rather than code quality. Faster development provides certain advantage over competitors, while an adequate task estimation allows to calculate the costs more accurately. The customer is primarily interested in timing and the exact cost of work. Each of these parameters depends directly on the estimation done by a developer who has been digging into the project during presale. No doubt, the manager will include additional risks, but this will be useless if the developer has miscalculated 3 times before.
 
 Let’s face it — you can’t avoid task estimating, and if you do not estimate the tasks within a given project, then most likely someone else is doing it instead of you. At the same time, the developer able to estimate adequately and precisely is a sort of a godsend for his employer. Such specialists are valuable, they grow faster than those with poor estimating skills.
@@ -63,7 +65,6 @@ Eat an elephant one bite at a time. A good decomposition gives a powerful b
 ### Compare your estimates and time actually spent
 
 To upgrade the estimating skill, you need to receive feedback on how close to reality your previous estimates really were. You can set a special filter in Jira, or at least create a dedicated Google table.
-
 
 ### Mind the risks
 

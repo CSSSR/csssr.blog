@@ -2,9 +2,11 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
 import { dataByLanguagePostAndImageDontResize } from '../lib/allPostsImages';
 import { getStringAttributes } from './utils/getStringAttributes';
+import { GridDecorator } from './decorators/GridDecorator';
 
 <Meta
-  title="Img"
+  title="Post/Img"
+  decorators={[GridDecorator]}
   argTypes={{
     align: {
       type: 'select',

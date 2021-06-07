@@ -6,6 +6,8 @@ date: '2016-10-11T00:00:00.000Z'
 tag: 'culture'
 ---
 
+---
+
 **В**сем привет. Меня зовут Борис, я JavaScript-разработчик в команде Вега. Уже несколько лет я увлекаюсь теорией обучения и запоминания — тем, как работает мозг с новой информацией. Сегодня я поделюсь своим способом читать книги.
 
 Возможно вы слышали про алгоритм чтения книг, который позволяет сохранить в голове максимум информации. Про него мне рассказал тренер по скорочтению, а позднее я увидел этот алгоритм у Бюзана в книге «Супермышление».
@@ -74,8 +76,8 @@ tag: 'culture'
 
 ## Полезные ссылки
 
-* [Супермышление](http://www.ozon.ru/context/detail/id/2678641)
-* [Флэнэган. Javascript подробное руководство](http://www.ozon.ru/context/detail/id/19677670)
-* [ng-book](https://www.ng-book.com)
-* [Learn Ruby the hard way](http://learnrubythehardway.org)
-* [Coursera Learning how to learn](https://www.coursera.org/learn/learning-how-to-learn/home/welcome)
+- [Супермышление](http://www.ozon.ru/context/detail/id/2678641)
+- [Флэнэган. Javascript подробное руководство](http://www.ozon.ru/context/detail/id/19677670)
+- [ng-book](https://www.ng-book.com)
+- [Learn Ruby the hard way](http://learnrubythehardway.org)
+- [Coursera Learning how to learn](https://www.coursera.org/learn/learning-how-to-learn/home/welcome)

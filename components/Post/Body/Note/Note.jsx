@@ -1,22 +1,18 @@
 import { Text } from '@csssr/core-design'
 import styled from '@emotion/styled'
-import cn from 'classnames'
 import { node, string } from 'prop-types'
 
 import styles from './Note.styles'
 
-const Note = (props) => {
-  const { children, className, isQuoteLike } = props
+const Note = ({ children, className }) => {
+  const isOneChildren = children?.length === 1
+  const Inner = isOneChildren ? Text : 'div'
 
-  if (children && children.length === 1) {
-    return (
-      <Text as="section" className={cn(className, { is_quote_like: isQuoteLike })}>
-        {children}
-      </Text>
-    )
-  }
-
-  return <section className={cn(className, { is_quote_like: isQuoteLike })}>{children}</section>
+  return (
+    <div className={className}>
+      <Inner className="inner">{children}</Inner>
+    </div>
+  )
 }
 
 Note.propTypes = {

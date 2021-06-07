@@ -1,20 +1,24 @@
-import { Heading, Link, ListItem, Text } from '@csssr/core-design'
-import cn from 'classnames'
+import { Link } from '@csssr/core-design'
 import { compiler } from 'markdown-to-jsx'
 import { Fragment } from 'react'
 
 import Subtitle from '../../Subtitle'
+import Blockquote from '../Blockquote'
 import Caption from '../Caption'
+import Heading from '../Heading'
 import Img from '../Img'
 import List from '../List'
+import ListItem from '../ListItem'
 import Note from '../Note'
 import ParagraphWithImage from '../ParagraphWithImage'
 import Quote from '../Quote'
 import Separator from '../Separator'
 import Table from '../Table'
+import Text from '../Text'
+import VerticalGap from '../VerticalGap'
 import Video from '../Video'
 
-export const compilerMdx = ({ content, type, images }) =>
+export const compilerMdx = ({ content, images }) =>
   compiler(content, {
     wrapper: Fragment,
     forceWrapper: true,
@@ -22,7 +26,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h1: {
         component: Heading,
         props: {
-          className: 'heading_regular_l',
           type: 'regular',
           size: 'l',
         },
@@ -30,7 +33,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h2: {
         component: Heading.H2,
         props: {
-          className: 'heading_regular_m',
           type: 'regular',
           size: 'm',
         },
@@ -38,9 +40,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h3: {
         component: Heading.H3,
         props: {
-          className: cn('heading_regular_s', {
-            'is_scaled-down': type === 'news',
-          }),
           type: 'regular',
           size: 's',
         },
@@ -48,7 +47,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h4: {
         component: Heading.H4,
         props: {
-          className: 'heading_regular_s',
           type: 'regular',
           size: 's',
         },
@@ -56,7 +54,6 @@ export const compilerMdx = ({ content, type, images }) =>
       h5: {
         component: Heading.H5,
         props: {
-          className: 'heading_regular_s',
           type: 'regular',
           size: 's',
         },
@@ -64,15 +61,12 @@ export const compilerMdx = ({ content, type, images }) =>
       h6: {
         component: Heading.H6,
         props: {
-          className: 'heading_regular_s',
           type: 'regular',
           size: 's',
         },
       },
       hr: {
-        props: {
-          className: 'grid-element',
-        },
+        component: VerticalGap,
       },
       p: {
         // https://github.com/probablyup/markdown-to-jsx/issues/209
@@ -84,9 +78,6 @@ export const compilerMdx = ({ content, type, images }) =>
           )
         },
         props: {
-          className: cn('text_regular_m paragraph', {
-            'is_scaled-down': type === 'news',
-          }),
           type: 'regular',
           size: 'm',
         },
@@ -98,25 +89,22 @@ export const compilerMdx = ({ content, type, images }) =>
         },
         props: {
           'data-testid': 'Post:link',
-          className: 'link_list_s',
-          type: 'list',
-          size: 's',
         },
+      },
+      blockquote: {
+        component: Blockquote,
       },
       ul: {
         component: List,
+      },
+      ol: {
+        component: List,
         props: {
-          className: 'list_s',
-          size: 'm',
+          isOrdered: true,
         },
       },
       li: {
         component: ListItem,
-        props: {
-          className: 'text_regular_m list_item',
-          type: 'regular',
-          size: 'm',
-        },
       },
       Quote: {
         component: Quote,
@@ -169,14 +157,6 @@ export const compilerMdx = ({ content, type, images }) =>
       },
       Table: {
         component: Table,
-      },
-      ol: {
-        component: List,
-        props: {
-          className: 'list_s is_ordered',
-          type: 'regular',
-          size: 'm',
-        },
       },
     },
   })
