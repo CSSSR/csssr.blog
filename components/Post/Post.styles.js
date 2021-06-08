@@ -19,7 +19,7 @@ const base = ({ breakpoints: { mobile } }) => css`
 
   ${mobile.all} {
     & {
-      padding-top: ${calcRem(16)};
+      padding-top: 0;
       background: none;
     }
 

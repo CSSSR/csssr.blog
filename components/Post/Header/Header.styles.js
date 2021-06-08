@@ -2,15 +2,21 @@ import { css } from '@emotion/react'
 
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { tablet, mobile } }) => css`
+  & {
+    padding-top: ${calcRem(40)};
+  }
+
   .post-meta {
     grid-column: 4 / span 4;
     grid-row: 1;
+    margin-bottom: ${calcRem(-8)};
   }
 
   .tag,
   .date,
   .author {
+    vertical-align: top;
     display: inline-block;
     font-family: Roboto;
     font-style: normal;
@@ -18,6 +24,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     line-height: ${calcRem(16)};
     letter-spacing: ${calcRem(1.25)};
     text-transform: uppercase;
+    padding-bottom: ${calcRem(8)};
   }
 
   .title > i {
@@ -30,20 +37,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .author {
-    margin-left: ${calcRem(1)};
-    display: inline-block;
     font-weight: normal;
-    color: #7E8FA4;
+    color: #7e8fa4;
 
     &::after {
-      content: "•";
+      content: '•';
       margin-left: ${calcRem(8)};
       margin-right: ${calcRem(8)};
     }
   }
 
   .tag {
-    font-weight: 500;
     color: #5695ed;
     transition: color 150ms ease-in-out;
 
@@ -55,33 +59,38 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .date {
-    margin-right: ${calcRem(22)};
+    margin-right: ${calcRem(24)};
     display: inline-block;
     font-weight: normal;
-    color: #7E8FA4;
-  }
-
-  .title-wrapper {
-    display: flex;
-    position: relative;
-    z-index: 2;
-    grid-column: 4 / span 4;
-    grid-row: 2;
+    color: #7e8fa4;
   }
 
   .title {
+    margin-top: ${calcRem(35)};
     position: relative;
     z-index: 2;
     grid-column: 4 / span 4;
     grid-row: 2;
-    color: #18191B;
+    color: #18191b;
   }
 
   .episode-number {
-    margin-left: ${calcRem(10)};
     font-family: 'Sweet Mavka Script', sans-serif;
     font-weight: 700;
-    color: #18191B;
+    color: #18191b;
+  }
+
+  .news-cover {
+    z-index: 1;
+    grid-column: 7 / span 3;
+    grid-row: 2;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .news-cover-img {
+    width: ${calcRem(172)};
+    height: ${calcRem(91)};
   }
 
   .picture {
@@ -92,6 +101,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     z-index: 1;
     grid-column: 7 / span 3;
     grid-row: 2;
+    margin-top: ${calcRem(16)};
 
     & img {
       width: 100%;
@@ -99,98 +109,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
-  &.type_news {
-    .title {
-      margin-top: 0 !important;
-    }
-
-    .picture {
-      grid-column: 9 / span 2;
-      width: ${calcRem(120)};
-      min-height: auto;
-    }
-  }
-
-  ${desktop.all} {
-    & {
-      padding-top: 37px;
-    }
-
-    .title {
-      margin-top: 35px;
-    }
-
-    .title-wrapper {
-      margin-top: 30px;
-    }
-
-    .picture {
-      margin-top: 27px;
-    }
-
-    &.type_news {
-      .picture {
-        margin-top: 2px;
-        margin-left: -23px;
-      }
-    }
-  }
-
   ${tablet.all} {
-    & {
-      padding-top: ${calcRem(25)};
-    }
-
-    .post-meta {
-      grid-column: 3 / span 5;
-    }
-
+    .post-meta,
     .title {
-      margin-top: ${calcRem(20)};
-      font-size: ${calcRem(40)};
-      line-height: ${calcRem(56)};
       grid-column: 3 / span 5;
     }
 
-    .episode-number {
-      font-size: ${calcRem(40)};
-      line-height: ${calcRem(56)};
-    }
-
-    .title-wrapper {
-      margin-top: ${calcRem(20)};
-      grid-column: 3 / span 5;
-    }
-
-    .picture {
-      min-height: ${calcRem(235)};
-      margin-top: ${calcRem(12)};
+    .picture, .news-cover {
       grid-column: 7 / span 4;
-    }
-
-    &.type_news {
-      .picture {
-        grid-column: 10 / span 2;
-        width: ${calcRem(96)};
-        height: ${calcRem(101)};
-        margin-top: 0;
-        min-height: auto;
-        transform: translateY(${calcRem(-4)});
-      }
     }
   }
 
   ${mobile.all} {
-    .picture {
-      min-height: ${calcRem(150)};
-      grid-column: 1 / span 6;
-      grid-row: 1;
-    }
-
-    .title-wrapper {
-      margin-top: ${calcRem(30)};
-      grid-column: 1 / span 6;
-      grid-row: 1;
+    & {
+      padding-top: 0;
     }
 
     .title {
@@ -201,14 +133,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       line-height: ${calcRem(44)};
     }
 
-    .episode-number {
-      font-size: ${calcRem(40)};
-      line-height: ${calcRem(56)};
-    }
-
-    .title-wrapper {
-      margin-top: 0;
+    .picture {
+      min-height: ${calcRem(150)};
       grid-column: 1 / span 6;
+      grid-row: 1;
     }
 
     .post-meta {
@@ -219,29 +147,36 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     &.type_news {
       .title {
-        font-size: ${calcRem(40)};
-        line-height: ${calcRem(56)};
+        grid-row: 1;
+
+        .episode-number {
+          font-size: ${calcRem(36)};
+          line-height: ${calcRem(44)};
+        }
       }
 
       .post-meta {
         grid-row: 2;
       }
 
-      .picture {
+      .news-cover {
         display: none;
       }
     }
   }
 `
 
-const dynamic = (language) =>  css`
+const dynamic = (language) => css`
   .title > i {
     font-family: ${language === 'ru' ? 'Sweet Mavka Script' : 'Amita'};
   }
 `
 
-const StyledHeader = props => {
-  const { theme: { breakpoints }, language } = props
+const StyledHeader = (props) => {
+  const {
+    theme: { breakpoints },
+    language,
+  } = props
 
   return css`
     ${base({ breakpoints })}
