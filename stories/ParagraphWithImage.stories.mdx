@@ -10,7 +10,7 @@ import { GridDecorator } from './decorators/GridDecorator';
   argTypes={{
     imageName: {
       type: 'radio',
-      options: ['mySampleImageSmall'],
+      options: ['manWithLaptop', 'laptopNews', 'laptopDialog'],
     },
     imageSide: {
       type: 'radio',
@@ -38,19 +38,19 @@ export const ParagraphWithImage = ({ contentMdx, ...args }) => {
 
 ## `imageName`
 
-Тип данных: `string`
+Тип данных: `manWithLaptop` | `laptopNews` | `laptopDialog`
 
 Дефолтное значение: `undefined`
 
 Название изображения в папке, где лежит статика для этого компонента.
 
-## `imageSide`
+## `postImageName`
 
-Тип данных: `left` | `right`
+Тип данных: `string`
 
-Дефолтное значение: `left`
+Дефолтное значение: `undefined`
 
-Положение изображения относительно контентной части.
+Название изображения в папке, где лежат изображения для статьи.
 
 ## Результат
 
@@ -59,9 +59,8 @@ export const ParagraphWithImage = ({ contentMdx, ...args }) => {
     height="250px"
     name="Default"
     args={{
-      imageName: 'mySampleImageSmall',
+      imageName: 'manWithLaptop',
       contentMdx: `##Venenatis cras sed felis eget velit. <p>Consectetur libero id faucibus nisl tincidunt.</p>`,
-      imageSide: 'left',
     }}
   >
     {ParagraphWithImage.bind({})}

@@ -32,16 +32,19 @@ _Italic text_
 
 > **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining [essentially](#href) unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
+I need to add another paragraph below the second list item.
+
 - If ToR leave no hope for an accurate estimation
 - never be afraid to ask questions
 - never be afraid to ask questions
 
 I need to add another paragraph below the second list item.
-I need to add another paragraph below the second list item.
 
 - A team is fully distributed, all interaction is remote.
   - All communications - face to face, external and internal developers participate in meetings and brainstorms together.
   - Interaction with your team are done through regular meetings and the Internet.
+
+I need to add another paragraph below the second list item.
 
 1. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
 2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet.
@@ -407,7 +410,7 @@ const func = () => {
 </html>
 ```
 
-<ParagraphWithImage imageName="mySampleImageSmall">
+<ParagraphWithImage postImageName="mySampleImageSmall">
   ## HTML
   <p>Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for e-commerce. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.</p>
 </ParagraphWithImage>

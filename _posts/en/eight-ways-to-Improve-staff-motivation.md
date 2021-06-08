@@ -21,7 +21,7 @@ There are multiple factors that cause workplace demotivation. The key reason so�
 
 Your teammates always want to know that their efforts are valued and recognised. When they’re consistently performing and get no appreciation or recognition, employees start wondering, “what’s that all about”, nobody cares and notices anyway.
 
-<ParagraphWithImage imageName="mencircle">
+<ParagraphWithImage postImageName="mencircle">
 ### Working without purpose
 <p>Living without goals or intent may be the biggest reason to feel demotivated. No purpose means no sense of direction, when things are done just for the sake of doing things, instead of working towards something desirable. This sense of direction often comes from a company vision. If your employees do not connect to the vision, they will not understand how they contribute to reaching it.</p>
 </ParagraphWithImage>
@@ -38,7 +38,7 @@ Your goals can also be a source of your current motivation problem. If they�
 
 Lack of trust decreases the speed and productivity of the team and increases the costs. Trust level breaks if a manager fails to keep his promises and commitments, which apply to promotion or other promised benefits, including advance of wages. If you are not delegating tasks because you believe only you can do them correctly, communicates a lack of trust as well.
 
-<ParagraphWithImage imageName="menbla">
+<ParagraphWithImage postImageName="menbla">
 <p>Poor time management can cause a wide range of problems such as inefficient time allocation, distraction and procrastination. Employees who don’t have control over their time end up letting tasks sit until the last minute, a lot of stress when they try to play catch up and finally miss the deadlines entirely.</p>
 </ParagraphWithImage>
 
@@ -96,7 +96,7 @@ Dealing with budgeting is hard. Yet, if there’s a need to increase your te
 
 Finally, implement various morale-building programs or spirit-lifting team initiatives. These may be employee appreciation plans and company/team awards. Celebrate birthdays, acknowledge even small contributions and encourage staffers to continually submit ideas for how to improve the overall workplace dynamic. Regularly ask for feedback to help maintain morale.
 
-<ParagraphWithImage imageName="red-pants">
+<ParagraphWithImage postImageName="red-pants">
 ## Keep in mind
 
 <p>Even the best employees become demotivated but it is necessary to get back their drive to push forward. These 8 points above will help you to find the reasons behind your lack of motivation and the next steps you need to take to recover that drive and passion. Follow simple rules to handle the demotivation problem and never forget to:</p>
