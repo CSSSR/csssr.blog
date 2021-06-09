@@ -5,6 +5,8 @@ date: '2020-01-30T05:35:07.322Z'
 tag: 'web-development'
 ---
 
+---
+
 **F**irst and foremost, you should know that there’s no one right way to build a website. What you use in the end all depends on your needs and business demands. Sometimes a basic HTML site is all you need, other times you may need to develop a completely bespoke site to appeal to your customer base, while standard CMS sites allow you to make basic updates easily.
 
 To help you decide which web development strategy is best for you, let’s look at the advantages and disadvantages of each.

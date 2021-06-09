@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { GridDecorator } from './decorators/GridDecorator';
+import { PrismDecorator } from './decorators/PrismDecorator';
+
+<Meta title="Post/Code" decorators={[PrismDecorator, GridDecorator]}/>
+
+export const Code = ({ contentMdx }) => {
+  return (
+    <>
+      {compilerMdx({
+        content: contentMdx,
+      })}
+    </>
+  );
+};
+
+# [`code`](http://s.csssr.ru/UJ4QCUXM4/2021-05-17-17-53-20.jpg)
+
+Блок кода c подсветкой
+
+## Блок кода
+
+<Canvas>
+  <Story
+    name="Block"
+    args={{
+      contentMdx: `\`\`\`css
+  .class {
+    color: green;
+    border: 1px solid red;
+  }
+\`\`\``
+    }}
+  >
+    {Code.bind({})}
+  </Story>
+</Canvas>
+
+## Строка кода в контенте
+
+<Canvas>
+  <Story
+    name="Line"
+    args={{
+      contentMdx: `<p>С помощью \`grid-template-areas \` можно разделить страницу на области, а части страницы раскидать по этим областям:</p>`
+    }}
+  >
+    {Code.bind({})}
+  </Story>
+</Canvas>

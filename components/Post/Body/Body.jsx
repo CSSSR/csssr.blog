@@ -20,16 +20,16 @@ const Body = ({ className, posts, content, slug, images, language, type }) => (
       language={language}
       type={type}
       kind="post"
-      HideShareLinksOnMobile
+      isHideShareLinksOnMobile
       data-testid="Post:block"
     />
-    {compilerMdx({ content, type, images })}
+    {compilerMdx({ content, images })}
 
     <PostNewsletter
       className="post-newsletter hidden_desktop"
       language={language}
       type={type}
-      HideNewsPodcastOnMobile
+      isHideNewsPodcastOnMobile
       kind="post"
     />
 

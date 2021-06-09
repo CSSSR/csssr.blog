@@ -6,6 +6,8 @@ date: '2016-07-08T00:00:00.000Z'
 tag: 'web-development'
 ---
 
+---
+
 **В**сем привет! Меня зовут Андрей, и я Javascript-разработчик команды «Восход». В своей работе мне часто приходится иметь дело с иммутабельными данными, имеющими сложную иерархическую структуру, и использование стандартных средств для этого мне показалось довольно неудобным. В итоге в поисках лучшего решения я пришел к такой интересной концепции как линзы.
 
 ### Про иммутабельные данные
@@ -24,9 +26,9 @@ tag: 'web-development'
 const setProps = (state, action) => ({
   ...state,
   rangeSlider: {
-      ...state.rangeSlider,
-      ...pick(['from', 'to', 'left', 'right'], action.payload)
-  }
+    ...state.rangeSlider,
+    ...pick(['from', 'to', 'left', 'right'], action.payload),
+  },
 })
 ```
 
@@ -37,10 +39,7 @@ const setProps = (state, action) => ({
 Сравните запись выше и обычное мутабельное присваивание:
 
 ```js
-Object.assign(
-  state.rangeSlider,
-  pick(['from', 'to', 'left', 'right'], action.payload)
-)
+Object.assign(state.rangeSlider, pick(['from', 'to', 'left', 'right'], action.payload))
 ```
 
 То есть, переходя от мутабельных структур к иммутабельным, мы теряем в лаконичности и читабельности кода. Естественно, функциональное сообщество не могло этого допустить, и в нем родилась такая концепция, как линзы.
@@ -59,12 +58,13 @@ Object.assign(
 Для создания линз мы будем использовать функцию `lens` из библиотеки [ramda](http://ramdajs.com/0.21.0/docs/#lens"). Первый её аргумент — `getter`, второй — `setter`. Простой пример — определение линзы `lensProp` для атрибута объекта:
 
 ```js
-const lensProp = prop => lens(
-  // getter - получаем свойство
-  obj => obj[prop],
-  // setter - ставим свойство иммутабельно
-  (newVal, obj) => ({...obj, [prop]: newVal})
-)
+const lensProp = (prop) =>
+  lens(
+    // getter - получаем свойство
+    (obj) => obj[prop],
+    // setter - ставим свойство иммутабельно
+    (newVal, obj) => ({ ...obj, [prop]: newVal }),
+  )
 ```
 
 ### Использование линзы
@@ -74,15 +74,15 @@ const lensProp = prop => lens(
 - `view` — получить данные по линзе, где первый аргумент линза, а второй — структура, из которой надо получить данные:
 
 ```js
-const a = {key: 2},
-      val = view(lensProp('key'), a) // val - 2
+const a = { key: 2 },
+  val = view(lensProp('key'), a) // val - 2
 ```
 
 - `set` — установить данные по линзе, где первый аргумент линза, второй — значение, которое надо установить, а третий — данные, куда установить&nbsp;значение:
 
 ```js
-const a = {key: 2},
-      newA = set(lensProp('key'), 4, a) // newA - {key: 4}
+const a = { key: 2 },
+  newA = set(lensProp('key'), 4, a) // newA - {key: 4}
 ```
 
 - `over` — операция, которая вытаскивает через `view` по линзе значение, применяет к нему некотoрую функцию и устанавливает его обратно:
@@ -99,19 +99,19 @@ const over = (someLens, func, data) => {
 ### Тренировка
 
 ```js
-const a = {key: 2},
-      changedA = over(lensProp('key'),
-      val => val + 1, a) // changedA - {key: 3}
+const a = { key: 2 },
+  changedA = over(lensProp('key'), (val) => val + 1, a) // changedA - {key: 3}
 ```
 
 Вроде всё есть, теперь вернемся к примеру. Напишем наше преобразование, используя `lensProp`:
 
 ```js
-const setProps = (state, action) => over(
-  lensProp('rangeSlider'),
-  slider => ({...slider, ...pick(['from', 'to', 'left', 'right'], action.payload)}),
-  state
-)
+const setProps = (state, action) =>
+  over(
+    lensProp('rangeSlider'),
+    (slider) => ({ ...slider, ...pick(['from', 'to', 'left', 'right'], action.payload) }),
+    state,
+  )
 ```
 
 Получается чуть-чуть лаконичнее и, что очень важно, без каких-либо повторений: нет дублирования имени атрибута объекта(`rangeSlider`). Это просто следствие главного свойства линз — композируемости. Линзы — это пример отлично композируемой абстракции.
@@ -121,6 +121,7 @@ const setProps = (state, action) => over(
 ```js
 const lensRangeSlider = lensProp('rangeSlider')
 ```
+
 Можно определить линзу для работы с атрибутом `from` у любого объекта, используя все тот же `lensProp`:
 
 ```js
@@ -130,10 +131,7 @@ const lensFrom = lensProp('from')
 А теперь чудеса композиции! Чтобы получить линзу для `from` у `rangeSlider`, нужно просто скомпозировать две уже определенныe нами линзы:
 
 ```js
-const lensRangeSliderFrom = compose(
-  lensRangeSlider,
-  lensFrom
-)
+const lensRangeSliderFrom = compose(lensRangeSlider, lensFrom)
 ```
 
 Пробуем:
@@ -142,8 +140,8 @@ const lensRangeSliderFrom = compose(
 const state = {
   rangeSlider: {
     from: 3,
-    to: 4
-  }
+    to: 4,
+  },
 }
 
 view(lensRangeSliderFrom, state) // 3
@@ -155,7 +153,7 @@ set(lensRangeSliderFrom, 5, state)
   }
 } */
 
-over(lensRangeSliderFrom, val => val * 100, state)
+over(lensRangeSliderFrom, (val) => val * 100, state)
 /* {
   rangeSlider: {
     from: 300,
@@ -186,19 +184,19 @@ const struct = {
     {
       id: 1,
       fio: {
-        name: 'Ivan'
+        name: 'Ivan',
       },
       familyMembers: [
         {
           id: 5,
           role: 'sister',
           fio: {
-              name: 'Olga'
-          }
-        }
-      ]
-    }
-  ]
+            name: 'Olga',
+          },
+        },
+      ],
+    },
+  ],
 }
 ```
 
@@ -221,36 +219,35 @@ const lensUsers = lensProp('users')
 - `getter` должен получать на вход массив и возвращать юзера с определенным `id`. Напишем функцию, которая создает такую функцию для определенного `id`:
 
 ```js
-const makeGetterById = id => array =>
-  array.find(item => item.id === id)
+const makeGetterById = (id) => (array) => array.find((item) => item.id === id)
 ```
 
 - `setter` должен получать на вход нового юзера и массив и устанавливать нового юзера на место старого с определенным `id`:
 
 ```js
-const makeSetterById = id => (newItem, array) =>
-  array.map(item => item.id === id ? newItem : item)
+const makeSetterById = (id) => (newItem, array) =>
+  array.map((item) => (item.id === id ? newItem : item))
 ```
 
 Теперь определим саму функцию, создающую линзу:
 
 ```js
-const lensById = id => lens(
-  makeGetterById(id),
-  makeSetterById(id)
-)
+const lensById = (id) => lens(makeGetterById(id), makeSetterById(id))
 ```
 
 Проверим работоспособность функции в [Ramda&nbsp;REPL](http://goo.gl/fZr446):
 
 ```js
-const users = [{id:1, name: 'Ivan'}, {id:2, name: 'Oleg'}]
+const users = [
+  { id: 1, name: 'Ivan' },
+  { id: 2, name: 'Oleg' },
+]
 
 view(lensById(1), users)
 // {"id": 1, "name": "Ivan"}
-set(lensById(2), {id:2, name: 'Olga'}, users)
+set(lensById(2), { id: 2, name: 'Olga' }, users)
 // [{"id": 1, "name": "Ivan"}, {"id": 2, "name": "Olga"}]
-over(lensById(2), user => assoc('name', 'Fillip', user), users)
+over(lensById(2), (user) => assoc('name', 'Fillip', user), users)
 // [{"id": 1, "name": "Ivan"}, {"id": 2, "name": "Fillip"}]
 ```
 
@@ -266,12 +263,7 @@ const lensName = lensProp('name')
 Сведём всё это вместе. Определим саму функцию, которая по `id` юзера будет создавать линзу для работы с его именем:
 
 ```js
-const lensUserNameById = id => compose(
-  lensUsers,
-  lensById(id),
-  lensFio,
-  lensName
-)
+const lensUserNameById = (id) => compose(lensUsers, lensById(id), lensFio, lensName)
 ```
 
 Выглядит довольно декларативно. Давайте попробуем функцию в деле:
@@ -304,7 +296,7 @@ set(lensUserNameById(1), 'Petr', struct)
 }
 */
 
-over(lensUserNameById(1), name => name + '!!!', struct)
+over(lensUserNameById(1), (name) => name + '!!!', struct)
 /* ->
 {
   "description": "Some cool thing",
@@ -349,14 +341,8 @@ const lensFamilyMembers = lensProp('familyMembers')
 Итак, у нас есть все необходимые составляющие. Давайте определим функцию, создающую нужную нам линзу:
 
 ```js
-const lensUserMemberFioNameById = (userId, memberId) => compose(
-  lensUsers,
-  lensById(userId),
-  lensFamilyMembers,
-  lensById(memberId),
-  lensFio,
-  lensName
-)
+const lensUserMemberFioNameById = (userId, memberId) =>
+  compose(lensUsers, lensById(userId), lensFamilyMembers, lensById(memberId), lensFio, lensName)
 ```
 
 Протестируем:
@@ -388,7 +374,7 @@ set(lensUserMemberFioNameById(1, 5), 'Tanya', struct)
   ]
 }
 */
-over(lensUserMemberFioNameById(1, 5), name => name + '!!!', struct)
+over(lensUserMemberFioNameById(1, 5), (name) => name + '!!!', struct)
 /* ->
 {
   "description": "Some cool thing",
@@ -423,24 +409,20 @@ over(lensUserMemberFioNameById(1, 5), name => name + '!!!', struct)
 Определяем функцию для создания геттера:
 
 ```js
-const makeGetterByRole = role => array =>
-  array.find(item => item.role === role)
+const makeGetterByRole = (role) => (array) => array.find((item) => item.role === role)
 ```
 
 Определяем функцию для создания сеттера:
 
 ```js
-const makeSetterByRole = role => (newItem, array) =>
-  array.map(item => item.role === role ? newItem : item)
+const makeSetterByRole = (role) => (newItem, array) =>
+  array.map((item) => (item.role === role ? newItem : item))
 ```
 
 Теперь определим саму функцию, создающую линзу:
 
 ```js
-const lensByRole = role => lens(
-    makeGetterByRole(role),
-    makeSetterByRole(role)
-)
+const lensByRole = (role) => lens(makeGetterByRole(role), makeSetterByRole(role))
 ```
 
 ### Избавление от копипасты
@@ -450,24 +432,20 @@ const lensByRole = role => lens(
 Определяем функцию для создания геттера:
 
 ```js
-const makeGetterBy = (attr, val) => array =>
-  array.find(item => item[attr] === val)
+const makeGetterBy = (attr, val) => (array) => array.find((item) => item[attr] === val)
 ```
 
 Определяем функцию для создания сеттера:
 
 ```js
 const makeSetterBy = (attr, val) => (newItem, array) =>
-  array.map(item => item[attr] === val ? newItem : item)
+  array.map((item) => (item[attr] === val ? newItem : item))
 ```
 
 Теперь определим саму функцию создающую линзу:
 
 ```js
-const lensBy = attr => val => lens(
-  makeGetterBy(attr, val),
-  makeSetterBy(attr, val)
-)
+const lensBy = (attr) => (val) => lens(makeGetterBy(attr, val), makeSetterBy(attr, val))
 ```
 
 При помощи нее переопределим `lensById` и&nbsp;`lensByRole`:
@@ -481,14 +459,7 @@ const lensByRole = lensBy('role')
 
 ```js
 const lensUserMemberFioNameByRole = (userId, memberRole) =>
-  compose(
-    lensUsers,
-    lensById(userId),
-    lensFamilyMembers,
-    lensByRole(memberRole),
-    lensFio,
-    lensName
-)
+  compose(lensUsers, lensById(userId), lensFamilyMembers, lensByRole(memberRole), lensFio, lensName)
 ```
 
 Протестируем:
@@ -496,7 +467,7 @@ const lensUserMemberFioNameByRole = (userId, memberRole) =>
 ```js
 view(lensUserMemberFioNameByRole(1, 'sister'), struct)
 set(lensUserMemberFioNameByRole(1, 'sister'), 'Tanya', struct)
-over(lensUserMemberFioNameByRole(1, 'sister'), name => name + '!!!', struct)
+over(lensUserMemberFioNameByRole(1, 'sister'), (name) => name + '!!!', struct)
 ```
 
 Результат будет точно такой же, как в предыдущем примере, можете [убедиться&nbsp;сами](http://goo.gl/WtBfvj").
@@ -509,11 +480,12 @@ over(lensUserMemberFioNameByRole(1, 'sister'), name => name + '!!!', struct)
 Вспомним, что у нас получилось в первом примере:
 
 ```js
-const setProps = (state, action) =>  over(
-  lensProp('rangeSlider'), slider => (
-    {...slider, ...pick(['from', 'to', 'left', 'right'], action.payload)}
-  ), state
-)
+const setProps = (state, action) =>
+  over(
+    lensProp('rangeSlider'),
+    (slider) => ({ ...slider, ...pick(['from', 'to', 'left', 'right'], action.payload) }),
+    state,
+  )
 ```
 
 Мы немного схитрили и использовали `over`, чтобы смержить значение из `state.rangeSlider` со значениями из `action.payload`. Эту операцию также можно вынести в отдельную линзу, так как любую операцию с данными можно вынести в линзу.
@@ -530,11 +502,7 @@ const data = {
 }
 view(lensByPick(['key1', 'key2']), data)
 // -> {key1: 'value1', key2: 'value2'}
-set(
-  lensByPick(['key1', 'key2']),
-  {key1: 'newValue1', key2: 'newValue2', key3: 'newValue3'},
-  data
-)
+set(lensByPick(['key1', 'key2']), { key1: 'newValue1', key2: 'newValue2', key3: 'newValue3' }, data)
 /* ->
 {
   key: 'value',
@@ -542,11 +510,7 @@ set(
   key2: 'newValue2',
 }
 */
-over(
-  lensByPick(['key1', 'key2']),
-  obj => mapObjIndexed(val => val + '!!!', obj),
-  data
-)
+over(lensByPick(['key1', 'key2']), (obj) => mapObjIndexed((val) => val + '!!!', obj), data)
 /* ->
 {
   key: 'value',
@@ -561,16 +525,10 @@ over(
 При помощи созданной вами линзы можно будет переписать наш пример вот так:
 
 ```js
-const lensRangeSliderByPick = keys => compose(
-  lensProp('rangeSlider'),
-  lensByPick(keys)
-)
+const lensRangeSliderByPick = (keys) => compose(lensProp('rangeSlider'), lensByPick(keys))
 
-const setProps = (state, action) => set(
-  lensRangeSliderByPick(['from', 'to', 'left', 'right']),
-  action.payload,
-  state
-)
+const setProps = (state, action) =>
+  set(lensRangeSliderByPick(['from', 'to', 'left', 'right']), action.payload, state)
 ```
 
 ## Полезные ссылки про работу с данными

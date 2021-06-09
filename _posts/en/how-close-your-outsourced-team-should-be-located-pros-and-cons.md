@@ -5,6 +5,8 @@ date: '2020-07-28T05:35:07.322Z'
 tag: 'business'
 ---
 
+---
+
 **T**hose days when you could seriously argue whether it’s a bad or a good idea to bring outsourcers in your business are gone. Now the question is different: how to choose an outsourcing team so as to get maximum benefit and minimum risks.<br class="how-close-br" />
 First of all, you should consider from where exactly this team will be working.
 
@@ -35,13 +37,9 @@ In any case, it is important to remember that it will take time for a new 
 You would like the outsourced team to follow your internal procedures. The following shall be taken into consideration:
 
 - Level of control. If your management keeps a strict record of all your employees’ activities, and this is critical for you, the most convenient option would be an outsourced team working in your office. Alternatively, desktop monitoring systems for employees can be considered, but such solutions are often expensive and greatly reduce motivation.
-
 - Well-tuned, clear and structured processes. The clearer the mechanisms within your team work, the less risk of losing time, data and information when working with outsourcers. In small teams, where processes are not yet regulated, outsourcers working close to their office colleagues will be able to handle tasks more efficiently.
-
 - Documentation. Although a project coverage with up-to-date and comprehensive documentation is the generally recognized best practice, reality is not ideal. If your project lacks well-functioning documentation support — the farther the developers are from the team, the more painful their work will be.
-
 - Main communication channels. Take note how your employees communicate. Nowadays, many companies use messengers and video communication inside the office — it is quick, convenient, saves the history of communication, and does not knock out of the “stream” the developers deeply immersed in the problem. If this is your story, then the connection with a distributed team will go seamless. And vice versa, teams that meet three times a day in a meeting room will hardly work smoothly with remote developers or a team from another office.
-
 
 These points are a “quick test” of your in-house IT department’s readiness for expansion through outsourcing. In order to get the full picture you need to analyze a lot more factors and we’re ready to help with that. Email us and we will give you free advice on all the particulars of connecting the outsourcing team to your development.
 

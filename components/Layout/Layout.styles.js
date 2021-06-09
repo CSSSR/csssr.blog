@@ -9,6 +9,10 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     padding: 0;
   }
 
+  html {
+    height: 100%;
+  }
+
   html:not(.disable-smooth-scroll) {
     scroll-behavior: smooth;
   }
@@ -30,6 +34,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     margin: 0;
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
   }
 
   body:not(.outline) * {
@@ -50,6 +55,9 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
 
   #__next {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
   }
 
   .grid-container {
@@ -79,13 +87,14 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     }
   }
 
+  .footer {
+    margin-top: auto;
+  }
+
   ${desktop.all} {
     .main {
       padding-top: 4rem;
-    }
-
-    .footer {
-      margin-top: ${calcRem(100)};
+      margin-bottom: ${calcRem(100)};
     }
   }
 
@@ -99,16 +108,13 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
       grid-gap: 0 16px;
     }
 
-    .footer {
-      margin-top: ${calcRem(60)};
-    }
-
     .post-body .text_regular_m {
       font-size: ${calcRem(16)};
     }
 
     .main {
       padding-top: 4rem;
+      margin-bottom: ${calcRem(60)};
     }
   }
 
@@ -308,10 +314,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     .main {
       padding-top: 3.5rem;
       overflow: hidden;
-    }
-
-    .footer {
-      margin-top: ${calcRem(64)};
+      margin-bottom: ${calcRem(64)};
     }
 
     .visible {

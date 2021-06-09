@@ -9,15 +9,15 @@ import styles, { bodyDynamicStyle } from './Separator.styles'
 
 const Separator = ({ className, sources, type, imageName }) => {
   return (
-    <>
-      <hr className={cn(className, `${className}_${imageName}`, type)} />
+    <div className={cn(className)}>
+      <hr className={cn('hr', `hr_${imageName}`, type)} />
       <Global
         styles={css`
-          ${backgroundCss(`.${className}::after`, sources)}
+          ${backgroundCss(`.hr_${imageName}::after`, sources)}
         `}
       />
       <Global styles={bodyDynamicStyle} />
-    </>
+    </div>
   )
 }
 

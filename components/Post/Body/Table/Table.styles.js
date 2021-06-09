@@ -7,6 +7,11 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
     border-collapse: collapse;
   }
 
+  & {
+    margin-top: ${calcRem(20)};
+    margin-bottom: ${calcRem(5)};
+  }
+
   &.color_green tbody th:only-child {
     color: #39724E;
     background-color: #87DCB7;
@@ -89,7 +94,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${desktop.all} {
     & {
-      margin-top: 50px;
       grid-column: 4 / span 6;
     }
 
@@ -125,7 +129,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(30)};
       grid-column: 3 / span 8;
     }
 
@@ -150,7 +153,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop } }) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(30)};
+      margin-top: ${calcRem(15)};
       grid-column: 1 / span 6;
       border: ${calcRem(1)} solid #e2e7ef;
       border-bottom: none;

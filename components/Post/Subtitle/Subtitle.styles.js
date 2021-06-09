@@ -9,7 +9,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     & {
-      margin-top: 66px;
+      margin-top: 40px;
       grid-column: 4 / span 6;
       color: #18191B;
     }

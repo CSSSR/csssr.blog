@@ -6,6 +6,8 @@ date: '2016-06-24T00:00:00.000Z'
 tag: 'web-development'
 ---
 
+---
+
 **П**риём-приём! На связи Игорь — <span style="white-space:nowrap">JS-разработчик</span> команды «Восток». Представляю вам рассказ о том, как я, работая над задачей по [нашему&nbsp;сайту](https://csssr.ru), вынес решение в публичный NPM пакет.
 
 ## Проблема
@@ -35,39 +37,39 @@ tag: 'web-development'
 ```js
 // Формирует строку с путём, включая родительский путь, если он есть.
 const generatePath = (base, path = '') => {
-  base = (base.length && base[base.length - 1] !== '/') ? base + '/' : base;
+  base = base.length && base[base.length - 1] !== '/' ? base + '/' : base
 
-  return base + path;
-};
+  return base + path
+}
 
 // Парсит отдельный объект массива. Записывает путь в результирующий массив,
 // если у этого пути есть вложенные пути, то для них вызывается функция parseRoutes.
 // И так рекурсивно в глубину.
 const processRoute = (store = [], baseRoute = '', route) => {
-  const path = generatePath(baseRoute, route.path);
-  const childRoutes = route.childRoutes;
+  const path = generatePath(baseRoute, route.path)
+  const childRoutes = route.childRoutes
 
   if (childRoutes && childRoutes.length) {
-    parseRoutes(store, path, childRoutes);
+    parseRoutes(store, path, childRoutes)
   }
 
-  store.push(path);
-};
+  store.push(path)
+}
 
 // Обходит массивы с объектами и возвращает массив с путями.
 const parseRoutes = (store = [], baseRoute = '', routes) => {
-  const isArray = Array.isArray(routes);
+  const isArray = Array.isArray(routes)
 
   if (!isArray) {
-    store.push(generatePath(baseRoute, routes.path));
+    store.push(generatePath(baseRoute, routes.path))
   } else {
-    routes.forEach(processRoute.bind(null, store, baseRoute));
+    routes.forEach(processRoute.bind(null, store, baseRoute))
   }
 
-  return store;
-};
+  return store
+}
 
-export default parseRoutes;
+export default parseRoutes
 ```
 
 Результат, который возвращает этот модуль, можно подавать в Webpack плагин, но есть несколько нюансов.
@@ -83,28 +85,23 @@ export default parseRoutes;
 ```js
 const filterPaths = (paths, rules) => {
   return paths.filter((path) => {
-
     if (!path.length) {
-      return false;
+      return false
     }
 
-    return !rules.some((regex) => regex.test(path));
-  });
+    return !rules.some((regex) => regex.test(path))
+  })
+}
 
-};
-
-export default filterPaths;
+export default filterPaths
 ```
 
 Пример работы этой функции:
 
 ```js
-const paths = ['/', '/auth', '/offert'];
-const config = [
-  /^\/auth/,
-  /^\/offert/,
-];
-const result = filterPaths(paths, config); // ['/']
+const paths = ['/', '/auth', '/offert']
+const config = [/^\/auth/, /^\/offert/]
+const result = filterPaths(paths, config) // ['/']
 ```
 
 С заменой параметров только один вопрос — как получить параметры для динамических путей? Так как сайт статичный и данные для таких путей у нас хранятся в&nbsp;JSON файлах, то проблем с этим не возникло. Была написана такая&nbsp;функция:
@@ -113,36 +110,32 @@ const result = filterPaths(paths, config); // ['/']
 
 ```js
 const replaceParams = (paths, rules) => {
-  const regexRules = (
-    Object.keys(rules).map((key) => {
-      return new RegExp(':' + rules[key].param);
-    })
-  );
+  const regexRules = Object.keys(rules).map((key) => {
+    return new RegExp(':' + rules[key].param)
+  })
 
   return paths.reduce((result, path, index) => {
-    let current = [path];
+    let current = [path]
 
     if (index === 1) {
-      result = [result];
+      result = [result]
     }
 
     regexRules.forEach((regex) => {
       if (!regex.test(path)) {
-        return;
+        return
       }
 
-      const { values } = rules[path];
+      const { values } = rules[path]
 
-      current = (
-        values.map((value) => {
-          return path.replace(regex, value);
-        })
-      );
-    });
+      current = values.map((value) => {
+        return path.replace(regex, value)
+      })
+    })
 
-    return result.concat(current);
-  });
-};
+    return result.concat(current)
+  })
+}
 ```
 
 На вход она принимает массив путей и конфигурацию такого вида:
@@ -159,14 +152,14 @@ const replaceParams = (paths, rules) => {
 Пример работы этой функции:
 
 ```js
-const paths = ['projects/:projectName'];
+const paths = ['projects/:projectName']
 const config = {
   'projects/:projectName': {
     param: 'projectName',
     values: ['foo', 'bar'],
   },
-};
-const result = replaceParams(paths, config); // [’projects/foo’, ’projects/bar’]
+}
+const result = replaceParams(paths, config) // [’projects/foo’, ’projects/bar’]
 ```
 
 Нужные функции написаны, осталось объединить их в один модуль и внедрить в сборку.
@@ -176,34 +169,30 @@ const result = replaceParams(paths, config); // [’projects/foo’, ’projects
 `sitemap/paths-builder.js`
 
 ```js
-import { createRoutes } from 'react-router';
-import routes from './routes';
-import parser from './react-router-parser';
-import filterPaths from './filter-paths';
-import replaceParams from './replace-params';
-import { vacancies } from './data-routes';
+import { createRoutes } from 'react-router'
+import routes from './routes'
+import parser from './react-router-parser'
+import filterPaths from './filter-paths'
+import replaceParams from './replace-params'
+import { vacancies } from './data-routes'
 
-const filterConfig = [
-  /\*/,
-  /^\/order\/.+/,
-  /^\/offert/,
-  /^\/jobs\/.+\/.+/,
-];
+const filterConfig = [/\*/, /^\/order\/.+/, /^\/offert/, /^\/jobs\/.+\/.+/]
 
 const paramsConfig = {
   '/jobs/:jobName': {
     param: 'jobName',
     values: vacancies,
   },
-};
+}
 
-const rawRoutes = createRoutes(routes);
-const paths = parser([], '', rawRoutes);
-const filteredPaths = filterPaths(paths, filterConfig);
-const result = replaceParams(filteredPaths, paramsConfig);
+const rawRoutes = createRoutes(routes)
+const paths = parser([], '', rawRoutes)
+const filteredPaths = filterPaths(paths, filterConfig)
+const result = replaceParams(filteredPaths, paramsConfig)
 
-export default result;
+export default result
 ```
+
 Так как мы используем ES2015 синтаксис, то пришлось обернуть этот модуль ещё в один скрипт, чтобы траспайлить его:
 
 `sitemap/index.js`
@@ -213,16 +202,16 @@ export default result;
 // по цепочке, начинают импортироваться стили, и node.js кидает ошибки.
 // Было решено просто игнорировать эти импорты.
 require.extensions['.css'] = function () {
-  return null;
-};
+  return null
+}
 
 // Включаем транспайлинг и полифил для использования новых методов,
 // которых нет в ES5.
-require('babel-register');
-require('babel-polyfill');
+require('babel-register')
+require('babel-polyfill')
 
 // Экспортируем результат выполнения нашего модуля.
-module.exports = require('./paths-builder').default;
+module.exports = require('./paths-builder').default
 ```
 
 Приступаем к внедрению в сборку. Ниже представлена часть Webpack конфига, которая отвечает за создание карты сайта:
@@ -259,21 +248,21 @@ const config = {
 
 ```js
 require.extensions['.css'] = function () {
-  return null;
-};
-require('babel-register');
-require('babel-polyfill');
+  return null
+}
+require('babel-register')
+require('babel-polyfill')
 
-const fs = require('fs');
-const sm = require('sitemap');
-const paths = require('./paths-builder').default;
+const fs = require('fs')
+const sm = require('sitemap')
+const paths = require('./paths-builder').default
 
 const sitemap = sm.createSitemap({
   hostname: process.env.BASE_URL,
   urls: paths.map((_path) => ({ url: _path })),
-});
+})
 
-fs.writeFileSync('./static/sitemap.xml', sitemap.toString());
+fs.writeFileSync('./static/sitemap.xml', sitemap.toString())
 ```
 
 Для запуска модуля был объявлен скрипт в&nbsp;`package.json`:

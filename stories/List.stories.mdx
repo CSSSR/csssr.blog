@@ -1,0 +1,54 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
+import { GridDecorator } from './decorators/GridDecorator';
+
+<Meta title="Post/List" decorators={[GridDecorator]}/>
+
+export const List = ({ contentMdx }) => {
+  return (
+    <>
+      {compilerMdx({
+        content: contentMdx,
+      })}
+    </>
+  );
+};
+
+# [`<List />`](http://s.csssr.ru/UJ4QCUXM4/2021-05-17-16-50-15.jpg)
+
+## Маркированный список
+
+<Canvas>
+  <Story
+    height="250px"
+    name="Marked"
+    args={{
+      contentMdx: `- A team is fully distributed, all interaction is remote.
+  - All communications - face to face, external and internal developers participate in meetings and brainstorms together.
+  - Interaction with your team are done through regular meetings and the Internet.
+`,
+    }}
+  >
+    {List.bind({})}
+  </Story>
+</Canvas>
+
+## Нумерованный  список
+
+<Canvas>
+  <Story
+    height="250px"
+    name="Numbered"
+    args={{
+      contentMdx: `
+1. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
+2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet.
+3. A team is fully distributed, all interaction is remote:
+    1. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
+    2. Interaction with your team are done through regular meetings and the Internet.
+`,
+    }}
+  >
+    {List.bind({})}
+  </Story>
+</Canvas>
