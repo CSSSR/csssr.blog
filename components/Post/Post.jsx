@@ -15,7 +15,7 @@ import styles from './Post.styles'
 const Post = ({ posts, post, language, className, type = 'regular' }) => {
   const isNews = type === 'news'
   const title = isNews ? 'Новости 512 | CSSSR' : cleaningTitle(post.title, 'meta')
-  const description = getDescription(isNews, post)
+  const description = getDescription(post, isNews)
 
   return (
     <article
