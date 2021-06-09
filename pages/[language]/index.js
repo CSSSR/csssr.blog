@@ -37,7 +37,7 @@ export async function getStaticProps({ params }) {
     'title',
     'date',
     'slug',
-    'author',
+    'content',
     'coverImageAlt',
     'tag',
     'images',

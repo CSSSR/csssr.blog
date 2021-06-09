@@ -1,6 +1,6 @@
 import cleaningTitle from './cleaningTitle'
 
-export default (isNews, post) => {
+export default (post, isNews) => {
   if (post?.description) {
     return post?.description
   }
@@ -9,7 +9,7 @@ export default (isNews, post) => {
     return cleaningTitle(post.title, 'meta')
   }
 
-  const { content } = post
+  const content = post?.content || post
 
   return (
     content
