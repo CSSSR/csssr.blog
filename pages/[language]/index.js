@@ -5,7 +5,6 @@ import { POSTS_PER_PAGE } from '../../data/constants'
 import { getPostsByLanguage, getPostsNews } from '../../lib/api'
 import postsOrderEn from '../../postsOrderEn.json'
 import postsOrderRu from '../../postsOrderRu.json'
-import getBenchmarkEmailListId from '../../utils/getBenchmarkEmailListId'
 import getPostsCategories from '../../utils/getPostsCategories'
 import languages from '../../utils/languages'
 import sortByDate from '../../utils/sortByDate'
@@ -15,14 +14,7 @@ const postsOrder = {
   ru: postsOrderRu,
 }
 
-const Index = ({
-  posts,
-  categories,
-  totalNumberOfPosts,
-  language,
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
-}) => {
+const Index = ({ posts, categories, totalNumberOfPosts, language }) => {
   return (
     <MainPage
       posts={posts}
@@ -31,8 +23,6 @@ const Index = ({
       activeCategory="all"
       activePageNumber={1}
       language={language}
-      BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
-      BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
     />
   )
 }
@@ -83,8 +73,6 @@ export async function getStaticProps({ params }) {
       categories,
       totalNumberOfPosts: posts.length,
       language,
-      BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
-      BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
     },
   }
 }

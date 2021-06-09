@@ -43,7 +43,7 @@ jobs:
         run: yarn build
         env:
           BLOG_HOST: https://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud
-          BENCHMARK_EMAIL_TOKEN: ${{ secrets.BENCHMARK_EMAIL_TOKEN }}
+          COM_HOST: https://master.com.csssr.cloud
 
       - uses: ./actions/upload-static/v1beta1
         with:
