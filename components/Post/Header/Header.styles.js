@@ -10,7 +10,6 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
   .post-meta {
     grid-column: 4 / span 4;
     grid-row: 1;
-    margin-bottom: ${calcRem(-8)};
   }
 
   .tag,
@@ -24,7 +23,6 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
     line-height: ${calcRem(16)};
     letter-spacing: ${calcRem(1.25)};
     text-transform: uppercase;
-    padding-bottom: ${calcRem(8)};
   }
 
   .title > i {
@@ -115,7 +113,8 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
       grid-column: 3 / span 5;
     }
 
-    .picture, .news-cover {
+    .picture,
+    .news-cover {
       grid-column: 7 / span 4;
     }
   }
@@ -128,6 +127,7 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
     .title {
       grid-column: 1 / span 6;
       grid-row: 2;
+      font-weight: 700;
       margin-top: ${calcRem(30)};
       font-size: ${calcRem(36)};
       line-height: ${calcRem(44)};
@@ -143,6 +143,13 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
       margin-top: ${calcRem(20)};
       grid-column: 1 / span 6;
       grid-row: 3;
+      margin-bottom: ${calcRem(-6)};
+    }
+
+    .tag,
+    .date,
+    .author {
+      padding-bottom: ${calcRem(6)};
     }
 
     &.type_news {
