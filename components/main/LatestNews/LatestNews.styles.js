@@ -2,8 +2,8 @@ import { css } from '@emotion/react'
 
 import { calcRem } from '../../../utils/style/calcRem'
 
-const radioDesktop = require('../../../public/components/LatestNews/radio/desktop.all.svg').default
-const radioMobile = require('../../../public/components/LatestNews/radio/mobile.all.svg').default
+const radioDesktop = require('../../../public/components/latestNews/radio/desktop.all.svg').default
+const radioMobile = require('../../../public/components/latestNews/radio/mobile.all.svg').default
 
 const base = ({ breakpoints: { mobile }, colors }) => css`
   & {
