@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { arrayOf, number, object, shape, string } from 'prop-types'
 import React from 'react'
 
-import myImageData from '../../public/images/resize/en/offshore-web-development/mainCoverL/desktop.m.png'
+import myImageData from '../../public/images/og/main/desktop.m.png'
 import Layout from '../Layout'
 import Newsletter from '../Newsletter'
 
