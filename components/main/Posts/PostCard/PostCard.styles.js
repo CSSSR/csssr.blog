@@ -12,10 +12,6 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     border-top: 1px solid rgba(155, 155, 155, 0.5);
   }
 
-  &:first-of-type .wrap {
-    border-top: 1px solid rgba(241, 242, 247, 0.5);
-  }
-
   .picture {
     grid-column: 1 / span 3;
     width: ${calcRem(216)};
