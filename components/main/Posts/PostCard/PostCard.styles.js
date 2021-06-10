@@ -66,6 +66,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     font-weight: 300;
     font-size: ${calcRem(16)};
     line-height: ${calcRem(24)};
+    margin-top: ${calcRem(10)};
   }
 
   ${mobile.all} {
