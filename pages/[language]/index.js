@@ -10,6 +10,7 @@ import sortByDate from '../../utils/sortByDate'
 
 const Index = ({
   posts,
+  latestNews,
   categories,
   totalNumberOfPosts,
   language,
@@ -26,6 +27,7 @@ const Index = ({
       language={language}
       BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
       BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+      latestNews={latestNews}
     />
   )
 }
@@ -45,24 +47,15 @@ export async function getStaticProps({ params }) {
   const language = params.language
   const categories = getPostsCategories(postsByLanguage[language])
 
-  const news = await getPostsNews([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImageAlt',
-    'tag',
-    'images',
-    'episodeNumber',
-  ])
+  const news = await getPostsNews(['title', 'date', 'slug', 'episodeNumber'])
 
-  const lastNewsPost = sortByDate(news)[0]
+  const latestNews = sortByDate(news)[0]
   const posts = sortByDate(postsByLanguage[language])
 
   return {
     props: {
       posts: posts.slice(0, POSTS_PER_PAGE),
-      lastNewsPost,
+      latestNews,
       categories,
       totalNumberOfPosts: posts.length,
       language,

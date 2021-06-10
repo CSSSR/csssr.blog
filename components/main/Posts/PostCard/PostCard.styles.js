@@ -107,6 +107,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
 
     .tag:hover {
       color: #0254d8;
+      transition: color 150ms ease-in-out;
     }
   }
 `
