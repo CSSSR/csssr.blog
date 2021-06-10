@@ -25,6 +25,11 @@ const Post = ({
   const title = isNews ? 'Новости 512 | CSSSR' : cleaningTitle(post.title, 'meta')
   const description = getDescription(post, isNews)
 
+  const ogImage = getOriginal(
+    // В для всех новостей используем одинаковое изображение для обычных статей мобильную версию postCover
+    isNews ? newsPostOgImage : post.images.postCover[1],
+  )
+
   return (
     <article
       className={cn(className, {
@@ -46,12 +51,7 @@ const Post = ({
               : `${process.env.BLOG_HOST}/${language}/article/${post.slug}`
           }
         />
-        <meta
-          property="og:image"
-          content={getOriginal(
-            isNews ? newsPostOgImage : post.images.mainCoverL[post.images.mainCoverL.length - 1],
-          )}
-        />
+        <meta property="og:image" content={ogImage} />
 
         <meta property="article:section" content={post.tag} />
         <meta property="article:published_time" content={post.date} />
