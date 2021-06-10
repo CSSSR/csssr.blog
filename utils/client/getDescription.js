@@ -12,17 +12,24 @@ export default (post, isNews) => {
   const content = post?.content || post
 
   if (content) {
-    return (
-      content
-        .slice(content.indexOf('**'), content.indexOf('\n', content.indexOf('**')))
-        .replace('\n', '')
-        .replace(/\**/g, '')
-        .replace(/&nbsp;/g, ' ')
-        // eslint-disable-next-line no-irregular-whitespace
-        .replace(/ /g, ' ')
-        .replace(/<.*?>/g, '')
-        .replace(/\[|]\(https?:\/\/?[\da-z.-]+\.[a-z.]{2,6}(?:[/\w .-]*)*\/?\)/g, '')
-        .replace(/\s{2,}/g, ' ')
-    )
+    const endCharacter = '...'
+    const descriptionLength = 250 - endCharacter.length
+
+    const cleanDescription = content
+      .slice(content.indexOf('**'), content.indexOf('\n', content.indexOf('**')))
+      .replace('\n', '')
+      .replace(/\**/g, '')
+      .replace(/&nbsp;/g, ' ')
+      // eslint-disable-next-line no-irregular-whitespace
+      .replace(/ /g, ' ')
+      .replace(/<.*?>/g, '')
+      .replace(/\[|]\(https?:\/\/?[\da-z.-]+\.[a-z.]{2,6}(?:[/\w .-]*)*\/?\)/g, '')
+      .replace(/\s{2,}/g, ' ')
+
+    if (cleanDescription?.length > descriptionLength) {
+      return `${cleanDescription.slice(0, descriptionLength)}${endCharacter}`
+    }
+
+    return cleanDescription
   }
 }
