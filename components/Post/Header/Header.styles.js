@@ -74,7 +74,7 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
 
   .episode-number {
     font-family: 'Sweet Mavka Script', sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     color: #18191b;
   }
 
