@@ -60,6 +60,10 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     min-height: 100%;
   }
 
+  .main {
+    background-color: white;
+  }
+
   .grid-container {
     display: grid;
     align-content: start;
