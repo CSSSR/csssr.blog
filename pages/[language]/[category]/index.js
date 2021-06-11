@@ -2,17 +2,11 @@ import React from 'react'
 
 import MainPage from '../../../components/main/MainPage'
 import { POSTS_PER_PAGE } from '../../../data/constants'
-import { getPostsByLanguage } from '../../../lib/api'
-import postsOrderEn from '../../../postsOrderEn.json'
-import postsOrderRu from '../../../postsOrderRu.json'
+import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
 import getBenchmarkEmailListId from '../../../utils/getBenchmarkEmailListId'
 import getPostsCategories from '../../../utils/getPostsCategories'
 import languages from '../../../utils/languages'
-
-const postsOrder = {
-  en: postsOrderEn,
-  ru: postsOrderRu,
-}
+import sortByDate from '../../../utils/sortByDate'
 
 const Index = ({
   posts,
@@ -22,6 +16,7 @@ const Index = ({
   language,
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
+  latestNews,
 }) => (
   <MainPage
     posts={posts}
@@ -32,6 +27,7 @@ const Index = ({
     language={language}
     BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
     BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+    latestNews={latestNews}
   />
 )
 
@@ -41,26 +37,21 @@ export async function getStaticProps({ params }) {
     'title',
     'date',
     'slug',
-    'author',
+    'content',
     'coverImageAlt',
     'tag',
     'images',
   ])
 
+  const news = await getPostsNews(['title', 'date', 'slug', 'episodeNumber'])
+
   const language = params.language
   const categories = getPostsCategories(postsByLanguage[language])
-  const postsBySlug = postsByLanguage[language].reduce((acc, post) => {
-    acc[post.slug] = post
-
-    return acc
-  }, {})
-
-  const postsByLanguageAndCategory = postsOrder[language]
-    .flat()
+  const postsSorted = sortByDate(postsByLanguage[language])
+  const postsByLanguageAndCategory = postsSorted
     .filter((slug) => slug !== 'news512')
-    .map((slug) => postsBySlug[slug])
     .filter((post) => post.tag.toLowerCase() === params.category)
-    .sort((postA, postB) => new Date(postB.date) - new Date(postA.date))
+  const latestNews = sortByDate(news)[0]
 
   return {
     props: {
@@ -71,6 +62,7 @@ export async function getStaticProps({ params }) {
       language,
       BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
       BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
+      latestNews,
     },
   }
 }

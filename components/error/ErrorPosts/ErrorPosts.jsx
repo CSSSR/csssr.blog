@@ -2,30 +2,18 @@ import styled from '@emotion/styled'
 import { arrayOf, object, shape, string } from 'prop-types'
 import React from 'react'
 
-import postsOrderEn from '../../../postsOrderEn.json'
-import postsOrderRu from '../../../postsOrderRu.json'
+import sortByDate from '../../../utils/sortByDate'
 
 import ErrorPostCard from './ErrorPostCard'
 import styles from './ErrorPosts.styles'
 
 const ErrorPosts = ({ className, posts, language }) => {
-  const postsOrderByLanguage = {
-    en: postsOrderEn,
-    ru: postsOrderRu,
-  }
   const lastPostCount = 6
-  const newsSlug = 'news512'
-
-  const postsOrder = postsOrderByLanguage[language]
-    .flat()
-    .filter((slug) => slug !== newsSlug)
-    .slice(0, lastPostCount)
-
-  const postsFiltered = postsOrder.map((slug) => posts.find((post) => post.slug === slug))
+  const postsSorted = sortByDate(posts).slice(0, lastPostCount)
 
   return (
     <ul className={className} data-testid="ErrorPage404:block:posts.list">
-      {postsFiltered.map((post) => (
+      {postsSorted.map((post) => (
         <ErrorPostCard key={post.slug} post={post} language={language} />
       ))}
     </ul>

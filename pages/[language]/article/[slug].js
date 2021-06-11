@@ -1,17 +1,9 @@
 import Layout from '../../../components/Layout'
 import Post from '../../../components/Post'
 import { getPostBySlugAndLanguage, getPostsByLanguage } from '../../../lib/api'
-import postsOrderEn from '../../../postsOrderEn.json'
-import postsOrderRu from '../../../postsOrderRu.json'
 import getBenchmarkEmailListId from '../../../utils/getBenchmarkEmailListId'
 import languages from '../../../utils/languages'
-
-const postsOrder = {
-  en: postsOrderEn,
-  ru: postsOrderRu,
-}
-
-// const postsOrder = postsOrderRu.flat().filter((slug) => slug !== 'news512')
+import sortByDate from '../../../utils/sortByDate'
 
 const PostPage = ({ posts, post, language, BENCHMARK_EMAIL_TOKEN, BENCHMARK_EMAIL_LIST_ID }) => {
   // const router = useRouter()
@@ -51,22 +43,6 @@ export async function getStaticProps({ params }) {
     'tag',
     'images',
   ])
-
-  const postsBySlug = postsByLanguage[language].reduce((acc, post) => {
-    acc[post.slug] = post
-    return acc
-  }, {})
-
-  const posts = postsOrder[language]
-    .flat()
-    .filter((post) => {
-      return post !== slug && post !== 'news512'
-    })
-    .slice(0, 2)
-    .map((post) => {
-      return postsBySlug[post]
-    })
-
   const post = await getPostBySlugAndLanguage(slug, language, [
     'title',
     'description',
@@ -78,6 +54,14 @@ export async function getStaticProps({ params }) {
     'coverImageAlt',
     'images',
   ])
+
+  // Передаем 2 крайних статьи за исключением текущей
+  // для отображения в конце статьи в блоке "Читайте также"
+  const posts = sortByDate(postsByLanguage[language])
+    .filter((item) => {
+      return item.slug !== post.slug
+    })
+    .slice(0, 2)
 
   return {
     props: {
