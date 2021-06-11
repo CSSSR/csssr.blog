@@ -39,6 +39,7 @@
     "react-gtm-components": "^0.5.0",
     "react-reveal": "^1.2.2",
     "react-share": "^4.4.0",
+    "react-transition-group": "^4.4.2",
     "remark": "13.0.0",
     "remark-html": "13.0.1",
     "sitemap": "^7.0.0"

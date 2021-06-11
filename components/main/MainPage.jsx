@@ -11,6 +11,7 @@ import Categories from './Categories'
 import LatestNews from './LatestNews'
 import Pagination from './Pagination/Pagination'
 import Posts from './Posts'
+import SelectedPosts from './SelectedPosts'
 
 const meta = {
   en: {
@@ -35,6 +36,7 @@ const MainPage = ({
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
   latestNews,
+  selectedPosts,
 }) => {
   const isLanguageRu = language === 'ru'
 
@@ -53,6 +55,8 @@ const MainPage = ({
         <h1 className="visual-hidden">{meta[language].title}</h1>
 
         <Categories items={categories} language={language} activeCategory={activeCategory} />
+
+        {selectedPosts && <SelectedPosts posts={selectedPosts} language={language} />}
 
         {isLanguageRu && <LatestNews latestNews={latestNews} />}
 
@@ -91,6 +95,17 @@ MainPage.propTypes = {
       slug: string,
       date: string,
       tag: string,
+    }),
+  ),
+  selectedPosts: arrayOf(
+    shape({
+      title: string,
+      date: string,
+      slug: string,
+      content: string,
+      tag: string,
+      coverImageAlt: string,
+      images: object,
     }),
   ),
   latestNews: shape({

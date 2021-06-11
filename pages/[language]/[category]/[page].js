@@ -2,6 +2,8 @@ import React from 'react'
 
 import MainPage from '../../../components/main/MainPage'
 import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
+import selectedPostsEn from '../../../selectedPostsEn.json'
+import selectedPostsRu from '../../../selectedPostsRu.json'
 import areEqualShallow from '../../../utils/areEqualShallow'
 import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberByPostIndex'
 import getBenchmarkEmailListId from '../../../utils/getBenchmarkEmailListId'
@@ -19,6 +21,7 @@ const Index = ({
   BENCHMARK_EMAIL_TOKEN,
   BENCHMARK_EMAIL_LIST_ID,
   latestNews,
+  selectedPosts,
 }) => (
   <MainPage
     posts={posts}
@@ -30,17 +33,25 @@ const Index = ({
     BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
     BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
     latestNews={latestNews}
+    selectedPosts={selectedPosts}
   />
 )
 
 export default Index
+
 export async function getStaticProps({ params }) {
+  const selectedPostsByLanguage = {
+    en: selectedPostsEn,
+    ru: selectedPostsRu,
+  }
+
   const postsByLanguage = await getPostsByLanguage([
     'title',
     'date',
     'slug',
     'content',
     'coverImageAlt',
+    'description',
     'tag',
     'images',
   ])
@@ -55,7 +66,6 @@ export async function getStaticProps({ params }) {
   })
 
   const news = await getPostsNews(['title', 'date', 'slug', 'episodeNumber'])
-
   const latestNews = sortByDate(news)[0]
 
   const sortedPostsByLanguageAndCategory = sortByDate(postsByLanguageAndCategory)
@@ -71,6 +81,10 @@ export async function getStaticProps({ params }) {
     },
   )
 
+  const selectedPosts = selectedPostsByLanguage[language]?.map((slug) =>
+    postsByLanguage[language].find((post) => post.slug === slug),
+  )
+
   return {
     props: {
       posts: postsByLanguageAndCategoryAndPage,
@@ -82,6 +96,7 @@ export async function getStaticProps({ params }) {
       language,
       BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
       BENCHMARK_EMAIL_LIST_ID: getBenchmarkEmailListId(),
+      selectedPosts,
     },
   }
 }
