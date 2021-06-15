@@ -4,11 +4,12 @@ import cn from 'classnames'
 import Link from 'next/link'
 import { bool, object, oneOf, shape, string } from 'prop-types'
 import React from 'react'
-import { CSSTransition } from 'react-transition-group'
+import Fade from 'react-reveal/Fade'
 
 import categoriesByLanguage from '../../../../data/categoriesByLanguage'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
 import getDescription from '../../../../utils/client/getDescription'
+import calcRem from '../../../../utils/style/calcRem'
 import DateFormatter from '../../../DateFormatter'
 import MainGrid from '../../MainGrid'
 
@@ -31,7 +32,14 @@ const Slide = ({
   language,
 }) => {
   return (
-    <CSSTransition in={isActive} unmountOnExit timeout={400}>
+    <Fade
+      when={isActive}
+      duration={200}
+      opposite
+      left={direction === 'right'}
+      right={direction === 'left'}
+      distance={calcRem(100)}
+    >
       <li
         className={cn(className, {
           left: direction === 'left',
@@ -72,7 +80,7 @@ const Slide = ({
           </span>
         </MainGrid>
       </li>
-    </CSSTransition>
+    </Fade>
   )
 }
 

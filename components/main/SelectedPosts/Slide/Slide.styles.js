@@ -15,42 +15,6 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     z-index: 1;
   }
 
-  &.exit-active.left,
-  &.exit-active.right {
-    z-index: 2;
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-    opacity: 0;
-  }
-
-  &.exit-active.left {
-    transform: translateX(${calcRem(-100)});
-  }
-
-  &.exit-active.right {
-    transform: translateX(${calcRem(100)});
-  }
-
-  &.enter.left,
-  &.enter.right {
-    z-index: 2;
-    opacity: 0;
-  }
-
-  &.enter.left {
-    transform: translateX(${calcRem(100)});
-  }
-
-  &.enter.right {
-    transform: translateX(${calcRem(-100)});
-  }
-
-  &.enter-active.left,
-  &.enter-active.right {
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-    transform: translateX(0);
-    opacity: 1;
-  }
-
   .slide-picture {
     grid-column: 1 / span 5;
 
