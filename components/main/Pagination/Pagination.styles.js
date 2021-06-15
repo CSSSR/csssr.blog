@@ -34,7 +34,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.all} {
     & {
-      margin-top: ${calcRem(100)};
+      margin-top: ${calcRem(56)};
     }
 
     .item {
@@ -49,7 +49,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(80)};
+      margin-top: ${calcRem(56)};
     }
 
     .item {
