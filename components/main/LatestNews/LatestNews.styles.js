@@ -20,6 +20,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     padding-top: ${calcRem(24)};
     padding-bottom: ${calcRem(24)};
     background-color: #f1f2f7;
+    height: ${calcRem(161)};
 
     &::before {
       content: '';
@@ -76,6 +77,8 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
 
     .wrap {
       background-color: transparent;
+      height: ${calcRem(244)};
+
       &::before {
         content: '';
         position: absolute;
