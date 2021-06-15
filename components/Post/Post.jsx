@@ -1,4 +1,3 @@
-import { getOriginal } from '@csssr/csssr.images/dist/utils'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import Head from 'next/head'
@@ -7,6 +6,7 @@ import { object, shape, string } from 'prop-types'
 import newsPostOgImage from '../../public/images/og/news512/all.png'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
+import getOgImage from '../../utils/client/getOgImage'
 
 import Body from './Body'
 import Header from './Header'
@@ -40,7 +40,7 @@ const Post = ({ posts, post, language, className, type = 'regular' }) => {
         />
         <meta
           property="og:image"
-          content={getOriginal(
+          content={getOgImage(
             isNews ? newsPostOgImage : post.images.mainCoverL[post.images.mainCoverL.length - 1],
           )}
         />
