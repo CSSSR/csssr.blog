@@ -2,12 +2,12 @@ import React from 'react'
 
 import MainPage from '../../../components/main/MainPage'
 import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
-import selectedPostsEn from '../../../selectedPostsEn.json'
-import selectedPostsRu from '../../../selectedPostsRu.json'
+import selectedPostsByLanguage from '../../../selectedPostsByLanguage.json'
 import areEqualShallow from '../../../utils/areEqualShallow'
 import calculatePageNumberByPostIndex from '../../../utils/calculatePageNumberByPostIndex'
 import getBenchmarkEmailListId from '../../../utils/getBenchmarkEmailListId'
 import getPostsCategories from '../../../utils/getPostsCategories'
+import getSelectedPosts from '../../../utils/getSelectedPosts'
 import languages from '../../../utils/languages'
 import sortByDate from '../../../utils/sortByDate'
 
@@ -40,11 +40,6 @@ const Index = ({
 export default Index
 
 export async function getStaticProps({ params }) {
-  const selectedPostsByLanguage = {
-    en: selectedPostsEn,
-    ru: selectedPostsRu,
-  }
-
   const postsByLanguage = await getPostsByLanguage([
     'title',
     'date',
@@ -81,8 +76,9 @@ export async function getStaticProps({ params }) {
     },
   )
 
-  const selectedPosts = selectedPostsByLanguage[language]?.map((slug) =>
-    postsByLanguage[language].find((post) => post.slug === slug),
+  const selectedPosts = getSelectedPosts(
+    selectedPostsByLanguage[language],
+    postsByLanguage[language],
   )
 
   return {

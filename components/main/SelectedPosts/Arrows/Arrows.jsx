@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { func, string } from 'prop-types'
 import React from 'react'
 
-import { ReactComponent as Arrow } from '../../../../public/icons/arrow-right.svg'
+import { ReactComponent as Arrow } from '../../../../public/components/arrows/arrow-right.svg'
 
 import styles from './Arrows.styles'
 

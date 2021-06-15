@@ -3,10 +3,10 @@ import React from 'react'
 import MainPage from '../../components/main/MainPage'
 import { POSTS_PER_PAGE } from '../../data/constants'
 import { getPostsByLanguage, getPostsNews } from '../../lib/api'
-import selectedPostsEn from '../../selectedPostsEn.json'
-import selectedPostsRu from '../../selectedPostsRu.json'
+import selectedPostsByLanguage from '../../selectedPostsByLanguage.json'
 import getBenchmarkEmailListId from '../../utils/getBenchmarkEmailListId'
 import getPostsCategories from '../../utils/getPostsCategories'
+import getSelectedPosts from '../../utils/getSelectedPosts'
 import languages from '../../utils/languages'
 import sortByDate from '../../utils/sortByDate'
 
@@ -39,11 +39,6 @@ const Index = ({
 export default Index
 
 export async function getStaticProps({ params }) {
-  const selectedPostsByLanguage = {
-    en: selectedPostsEn,
-    ru: selectedPostsRu,
-  }
-
   const postsByLanguage = await getPostsByLanguage([
     'title',
     'description',
@@ -62,9 +57,7 @@ export async function getStaticProps({ params }) {
   const latestNews = sortByDate(news)[0]
   const posts = sortByDate(postsByLanguage[language])
 
-  const selectedPosts = selectedPostsByLanguage[language]?.map((slug) =>
-    posts.find((post) => post.slug === slug),
-  )
+  const selectedPosts = getSelectedPosts(selectedPostsByLanguage[language], posts)
 
   return {
     props: {

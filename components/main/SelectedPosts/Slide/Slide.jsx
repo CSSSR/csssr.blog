@@ -2,7 +2,7 @@ import { Picture } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import Link from 'next/link'
-import { number, object, oneOf, shape, string } from 'prop-types'
+import { bool, object, oneOf, shape, string } from 'prop-types'
 import React from 'react'
 import { CSSTransition } from 'react-transition-group'
 
@@ -16,8 +16,7 @@ import styles from './Slide.styles'
 
 const Slide = ({
   className,
-  activeIndex,
-  slideIndex,
+  isActive,
   direction,
   post: {
     slug,
@@ -32,7 +31,7 @@ const Slide = ({
   language,
 }) => {
   return (
-    <CSSTransition in={activeIndex === slideIndex} unmountOnExit timeout={400}>
+    <CSSTransition in={isActive} unmountOnExit timeout={400}>
       <li
         className={cn(className, {
           left: direction === 'left',
@@ -40,41 +39,38 @@ const Slide = ({
         })}
         data-testid={`SelectedPosts:block:slide.${slug}`}
       >
-        <Link href={`/${language}/article/${slug}`} className="slide-link">
-          <a className="slide-link" data-testid={`SelectedPosts:link:article.${slug}`}>
-            <MainGrid as="span" className="slide-wrap">
-              <Picture className="slide-picture" sources={postCover} alt={coverImageAlt} />
+        <MainGrid as="span" className="slide-wrap">
+          <Picture className="slide-picture" sources={postCover} alt={coverImageAlt} />
 
-              <span className="slide-content">
-                <span className="slide-top">
-                  <object>
-                    <Link href={`/${language}/${tag.toLowerCase()}`}>
-                      <a
-                        className="slide-tag"
-                        data-testid={`SelectedPosts:link:category.${tag.toLowerCase()}`}
-                      >
-                        {categoriesByLanguage[language][tag.toLowerCase()]}
-                      </a>
-                    </Link>
-                  </object>
+          <span className="slide-content">
+            <span className="slide-top">
+              <Link href={`/${language}/${tag.toLowerCase()}`}>
+                <a
+                  className="slide-tag"
+                  data-testid={`SelectedPosts:link:category.${tag.toLowerCase()}`}
+                >
+                  {categoriesByLanguage[language][tag.toLowerCase()]}
+                </a>
+              </Link>
 
-                  <DateFormatter language={language} className="slide-date">
-                    {date}
-                  </DateFormatter>
-                </span>
-
+              <DateFormatter language={language} className="slide-date">
+                {date}
+              </DateFormatter>
+            </span>
+            <Link href={`/${language}/article/${slug}`} className="slide-link">
+              <a className="slide-link" data-testid={`SelectedPosts:link:article.${slug}`}>
                 <h2
                   className="slide-title"
                   dangerouslySetInnerHTML={{
                     __html: cleaningTitle(title),
                   }}
                 />
+              </a>
+            </Link>
 
-                <span className="slide-description">{description || getDescription(content)}</span>
-              </span>
-            </MainGrid>
-          </a>
-        </Link>
+            <span className="slide-description">{description || getDescription(content)}</span>
+          </span>
+        </MainGrid>
       </li>
     </CSSTransition>
   )
@@ -83,8 +79,7 @@ const Slide = ({
 Slide.propsTypes = {
   className: string,
   language: string,
-  activeIndex: number,
-  slideIndex: number,
+  isActive: bool,
   direction: oneOf[('left', 'right')],
   post: shape({
     title: string,

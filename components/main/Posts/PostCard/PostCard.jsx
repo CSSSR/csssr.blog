@@ -28,38 +28,36 @@ const PostCard = ({
 }) => {
   return (
     <li className={className}>
-      <Link href={`/${language}/article/${slug}`}>
-        <a className="link" data-testid={`PostCard:link:article.${slug}`}>
-          <MainGrid as="span" className="wrap">
-            <Picture className="picture" sources={postCover} alt={coverImageAlt} />
+      <MainGrid as="span" className="wrap">
+        <Picture className="picture" sources={postCover} alt={coverImageAlt} />
 
-            <span className="content">
-              <span className="top">
-                <object>
-                  <Link href={`/${language}/${tag.toLowerCase()}`}>
-                    <a className="tag" data-testid={`PostCard:link:category.${tag.toLowerCase()}`}>
-                      {categoriesByLanguage[language][tag.toLowerCase()]}
-                    </a>
-                  </Link>
-                </object>
+        <span className="content">
+          <span className="top">
+            <Link href={`/${language}/${tag.toLowerCase()}`}>
+              <a className="tag" data-testid={`PostCard:link:category.${tag.toLowerCase()}`}>
+                {categoriesByLanguage[language][tag.toLowerCase()]}
+              </a>
+            </Link>
 
-                <DateFormatter className="date" language={language}>
-                  {date}
-                </DateFormatter>
-              </span>
+            <DateFormatter className="date" language={language}>
+              {date}
+            </DateFormatter>
+          </span>
 
+          <Link href={`/${language}/article/${slug}`}>
+            <a className="link" data-testid={`PostCard:link:article.${slug}`}>
               <h2
                 className="title"
                 dangerouslySetInnerHTML={{
                   __html: cleaningTitle(title),
                 }}
               />
+            </a>
+          </Link>
 
-              <p className="description">{description || getDescription(content)}</p>
-            </span>
-          </MainGrid>
-        </a>
-      </Link>
+          <p className="description">{description || getDescription(content)}</p>
+        </span>
+      </MainGrid>
     </li>
   )
 }

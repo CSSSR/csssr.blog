@@ -5,17 +5,17 @@ import React from 'react'
 
 import styles from './Dots.styles'
 
-const Dots = ({ className, activeIndex, onClick, slidesCount }) => {
+const Dots = ({ className, activeIndex, onClick, slidesAmount }) => {
   return (
     <div className={className} data-testid="SelectedPosts:block:slider.dots">
-      {[...Array(slidesCount)].map((_item, index) => (
+      {[...Array(slidesAmount).keys()].map((item) => (
         <button
           // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          className={cn('dot', { active: activeIndex === index })}
+          key={item}
+          className={cn('dot', { active: activeIndex === item })}
           type="button"
-          onClick={() => onClick(index)}
-          data-testid={`SelectedPosts:button:slider.dot.${index}`}
+          onClick={() => onClick(item)}
+          data-testid={`SelectedPosts:button:slider.dot.${item}`}
         />
       ))}
     </div>
@@ -24,7 +24,7 @@ const Dots = ({ className, activeIndex, onClick, slidesCount }) => {
 
 Dots.propsTypes = {
   className: string,
-  slidesCount: number,
+  slidesAmount: number,
   activeIndex: number,
   onClick: func,
 }

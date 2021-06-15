@@ -29,11 +29,22 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
 
   .link {
     color: ${colors.secondary.darken100};
+
+    &::before{
+      z-index: 1;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .wrap {
     padding-top: ${calcRem(24)};
     padding-bottom: ${calcRem(24)};
+    position: relative;
   }
 
   .tag {
@@ -41,6 +52,8 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     font-size: ${calcRem(16)};
     line-height: ${calcRem(24)};
     color: ${colors.secondary.darken100};
+    z-index: 2;
+    position: relative;
   }
 
   .date {
