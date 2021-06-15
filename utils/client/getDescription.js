@@ -1,4 +1,5 @@
 import cleaningTitle from './cleaningTitle'
+import sliceDescription from './sliceDescription'
 
 export default (post, isNews) => {
   if (post?.description) {
@@ -12,9 +13,6 @@ export default (post, isNews) => {
   const content = post?.content || post
 
   if (content) {
-    const endCharacter = '...'
-    const descriptionLength = 250 - endCharacter.length
-
     const cleanDescription = content
       .slice(content.indexOf('**'), content.indexOf('\n', content.indexOf('**')))
       .replace('\n', '')
@@ -26,10 +24,6 @@ export default (post, isNews) => {
       .replace(/\[|]\(https?:\/\/?[\da-z.-]+\.[a-z.]{2,6}(?:[/\w .-]*)*\/?\)/g, '')
       .replace(/\s{2,}/g, ' ')
 
-    if (cleanDescription?.length > descriptionLength) {
-      return `${cleanDescription.slice(0, descriptionLength)}${endCharacter}`
-    }
-
-    return cleanDescription
+    return sliceDescription(cleanDescription, 250)
   }
 }

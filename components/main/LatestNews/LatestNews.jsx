@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { number, shape, string } from 'prop-types'
 import React from 'react'
 
+import sliceDescription from '../../../utils/client/sliceDescription'
 import DateFormatter from '../../DateFormatter'
 import MainGrid from '../MainGrid'
 
@@ -29,7 +30,7 @@ const LatestNews = ({ className, latestNews: { title, date, slug, episodeNumber 
 
           <span className="episode">Выпуск #{episodeNumber}</span>
 
-          <span className="title">{title}</span>
+          <span className="title">{sliceDescription(title, 164)}</span>
         </MainGrid>
       </a>
     </Link>
