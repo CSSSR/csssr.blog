@@ -21,7 +21,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
   &.exit-active.left,
   &.exit-active.right {
     z-index: 2;
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
     opacity: 0;
   }
 
@@ -49,7 +49,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
 
   &.enter-active.left,
   &.enter-active.right {
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
     transform: translateX(0);
     opacity: 1;
   }
