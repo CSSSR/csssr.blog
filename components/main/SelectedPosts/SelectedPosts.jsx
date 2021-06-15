@@ -12,6 +12,7 @@ import Slide from './Slide'
 const SelectedPosts = ({ className, posts, language }) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState('left')
+  const [clientXStart, setClientXStart] = useState(0)
   const slidesCount = posts.length
 
   const goToSlide = (index) => {
@@ -38,10 +39,29 @@ const SelectedPosts = ({ className, posts, language }) => {
     setDirection('right')
   }
 
+  const handleTouchStart = (event) => {
+    const { clientX } = event.changedTouches[0]
+    setClientXStart(clientX)
+  }
+
+  const handleTouchEnd = (event) => {
+    const { clientX } = event.changedTouches[0]
+    if (clientX < clientXStart) {
+      handleNext()
+    } else {
+      handlePrev()
+    }
+  }
+
   return (
     <div className={className}>
       <MainGrid data-testid="SelectedPosts:block" className="wrap">
-        <ul className="slider" data-testid="SelectedPosts:block:slider">
+        <ul
+          className="slider"
+          data-testid="SelectedPosts:block:slider"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {posts.map((post, index) => (
             <Slide
               key={post.slug}
