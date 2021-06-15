@@ -27,7 +27,7 @@ const LatestNews = ({ className, latestNews: { title, date, slug, episodeNumber 
             </DateFormatter>
           </span>
 
-          <span className="episode">Выпуск {episodeNumber}</span>
+          <span className="episode">Выпуск #{episodeNumber}</span>
 
           <span className="title">{title}</span>
         </MainGrid>
