@@ -18,23 +18,40 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     z-index: 1;
   }
 
-  &.exit-active.left {
-    z-index: 2;
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-    transform: translateX(${calcRem(-100)});
-    opacity: 0;
-  }
-
+  &.exit-active.left,
   &.exit-active.right {
     z-index: 2;
     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-    transform: translateX(${calcRem(100)});
     opacity: 0;
   }
 
-  &.outLeft {
+  &.exit-active.left {
+    transform: translateX(${calcRem(-100)});
+  }
+
+  &.exit-active.right {
+    transform: translateX(${calcRem(100)});
+  }
+
+  &.enter.left,
+  &.enter.right {
     z-index: 2;
-    animation: 0.4s outLeft alternate linear;
+    opacity: 0;
+  }
+
+  &.enter.left {
+    transform: translateX(${calcRem(100)});
+  }
+
+  &.enter.right {
+    transform: translateX(${calcRem(-100)});
+  }
+
+  &.enter-active.left,
+  &.enter-active.right {
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    transform: translateX(0);
+    opacity: 1;
   }
 
   .slide-picture {
