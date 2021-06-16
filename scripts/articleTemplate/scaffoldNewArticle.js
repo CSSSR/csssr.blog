@@ -1,13 +1,9 @@
 const fs = require('fs')
 const path = require('path')
 
-const { CLIEngine } = require('eslint')
 const fse = require('fs-extra')
 
-const capitalize = require('../../utils/capitalize')
 const languages = require('../../utils/languages')
-
-const { addNewPost } = require('./addNewPost')
 
 const language = process.argv[2]
 const slug = process.argv[3]
@@ -24,25 +20,12 @@ fs.writeFileSync(outputMdFilePath, newMdFileContent)
 const outputImagesDirPath = path.resolve(__dirname, `../../public/images/resize`, language, slug)
 fse.copySync(path.resolve(__dirname, 'images'), outputImagesDirPath)
 
-const postsOrderFilePath = path.resolve(__dirname, `../../postsOrder${capitalize(language)}.json`)
-const oldPostsOrder = JSON.parse(fs.readFileSync(postsOrderFilePath, 'utf8'))
-const newPostsOrder = addNewPost(oldPostsOrder, slug)
-fs.writeFileSync(postsOrderFilePath, JSON.stringify(newPostsOrder))
-
-// Используем eslint для форматирования файла с порядком статей на главной
-
-const cli = new CLIEngine({ fix: true })
-const report = cli.executeOnFiles([`postsOrder${capitalize(language)}.json`])
-CLIEngine.outputFixes(report)
-
 // eslint-disable-next-line no-console
 console.log(
   [
     `Успех!`,
     `- создан файл статьи ${outputMdFilePath}`,
     `- создана папка с изображениями статьи ${outputImagesDirPath}`,
-    '- статья добавлен на главную в двух вариантах',
-    `Чтобы правильно расположить статью на главной надо отредактировать файл ${postsOrderFilePath}`,
     `Статья доступна по url http://localhost:3000/${language}/article/${slug}`,
   ].join('\n'),
 )
