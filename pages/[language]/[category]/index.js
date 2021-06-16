@@ -3,11 +3,21 @@ import React from 'react'
 import MainPage from '../../../components/main/MainPage'
 import { POSTS_PER_PAGE } from '../../../data/constants'
 import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
+import selectedPostsEn from '../../../selectedPostsEn.json'
+import selectedPostsRu from '../../../selectedPostsRu.json'
 import getPostsCategories from '../../../utils/getPostsCategories'
 import languages from '../../../utils/languages'
 import sortByDate from '../../../utils/sortByDate'
 
-const Index = ({ posts, categories, totalNumberOfPosts, activeCategory, language, latestNews }) => (
+const Index = ({
+  posts,
+  categories,
+  totalNumberOfPosts,
+  activeCategory,
+  language,
+  latestNews,
+  selectedPosts,
+}) => (
   <MainPage
     posts={posts}
     categories={categories}
@@ -16,13 +26,21 @@ const Index = ({ posts, categories, totalNumberOfPosts, activeCategory, language
     activePageNumber={1}
     language={language}
     latestNews={latestNews}
+    selectedPosts={selectedPosts}
   />
 )
 
 export default Index
+
 export async function getStaticProps({ params }) {
+  const selectedPostsByLanguage = {
+    en: selectedPostsEn,
+    ru: selectedPostsRu,
+  }
+
   const postsByLanguage = await getPostsByLanguage([
     'title',
+    'description',
     'date',
     'slug',
     'content',
@@ -32,14 +50,19 @@ export async function getStaticProps({ params }) {
   ])
 
   const news = await getPostsNews(['title', 'date', 'slug', 'episodeNumber'])
-
+  const latestNews = sortByDate(news)[0]
   const language = params.language
+
   const categories = getPostsCategories(postsByLanguage[language])
   const postsSorted = sortByDate(postsByLanguage[language])
+
   const postsByLanguageAndCategory = postsSorted
     .filter((slug) => slug !== 'news512')
     .filter((post) => post.tag.toLowerCase() === params.category)
-  const latestNews = sortByDate(news)[0]
+
+  const selectedPosts = selectedPostsByLanguage[language]?.map((slug) =>
+    postsSorted.find((post) => post.slug === slug),
+  )
 
   return {
     props: {
@@ -49,6 +72,7 @@ export async function getStaticProps({ params }) {
       activeCategory: params.category,
       language,
       latestNews,
+      selectedPosts,
     },
   }
 }
