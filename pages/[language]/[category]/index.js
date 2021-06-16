@@ -2,12 +2,12 @@ import React from 'react'
 
 import MainPage from '../../../components/main/MainPage'
 import { POSTS_PER_PAGE } from '../../../data/constants'
-import { getPostsByLanguage } from '../../../lib/api'
+import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
 import getPostsCategories from '../../../utils/getPostsCategories'
 import languages from '../../../utils/languages'
 import sortByDate from '../../../utils/sortByDate'
 
-const Index = ({ posts, categories, totalNumberOfPosts, activeCategory, language }) => (
+const Index = ({ posts, categories, totalNumberOfPosts, activeCategory, language, latestNews }) => (
   <MainPage
     posts={posts}
     categories={categories}
@@ -15,6 +15,7 @@ const Index = ({ posts, categories, totalNumberOfPosts, activeCategory, language
     activeCategory={activeCategory}
     activePageNumber={1}
     language={language}
+    latestNews={latestNews}
   />
 )
 
@@ -24,12 +25,13 @@ export async function getStaticProps({ params }) {
     'title',
     'date',
     'slug',
-    'author',
     'content',
     'coverImageAlt',
     'tag',
     'images',
   ])
+
+  const news = await getPostsNews(['title', 'date', 'slug', 'episodeNumber'])
 
   const language = params.language
   const categories = getPostsCategories(postsByLanguage[language])
@@ -37,6 +39,7 @@ export async function getStaticProps({ params }) {
   const postsByLanguageAndCategory = postsSorted
     .filter((slug) => slug !== 'news512')
     .filter((post) => post.tag.toLowerCase() === params.category)
+  const latestNews = sortByDate(news)[0]
 
   return {
     props: {
@@ -45,6 +48,7 @@ export async function getStaticProps({ params }) {
       totalNumberOfPosts: postsByLanguageAndCategory.length,
       activeCategory: params.category,
       language,
+      latestNews,
     },
   }
 }

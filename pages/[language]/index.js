@@ -7,7 +7,7 @@ import getPostsCategories from '../../utils/getPostsCategories'
 import languages from '../../utils/languages'
 import sortByDate from '../../utils/sortByDate'
 
-const Index = ({ posts, categories, totalNumberOfPosts, language }) => {
+const Index = ({ posts, categories, totalNumberOfPosts, language, latestNews }) => {
   return (
     <MainPage
       posts={posts}
@@ -16,6 +16,7 @@ const Index = ({ posts, categories, totalNumberOfPosts, language }) => {
       activeCategory="all"
       activePageNumber={1}
       language={language}
+      latestNews={latestNews}
     />
   )
 }
@@ -35,24 +36,15 @@ export async function getStaticProps({ params }) {
   const language = params.language
   const categories = getPostsCategories(postsByLanguage[language])
 
-  const news = await getPostsNews([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImageAlt',
-    'tag',
-    'images',
-    'episodeNumber',
-  ])
+  const news = await getPostsNews(['title', 'date', 'slug', 'episodeNumber'])
 
-  const lastNewsPost = sortByDate(news)[0]
+  const latestNews = sortByDate(news)[0]
   const posts = sortByDate(postsByLanguage[language])
 
   return {
     props: {
       posts: posts.slice(0, POSTS_PER_PAGE),
-      lastNewsPost,
+      latestNews,
       categories,
       totalNumberOfPosts: posts.length,
       language,

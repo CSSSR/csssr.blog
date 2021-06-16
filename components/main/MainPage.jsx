@@ -8,6 +8,7 @@ import Layout from '../Layout'
 import Newsletter from '../Newsletter'
 
 import Categories from './Categories'
+import LatestNews from './LatestNews'
 import Pagination from './Pagination/Pagination'
 import Posts from './Posts'
 
@@ -31,34 +32,55 @@ const MainPage = ({
   activeCategory,
   activePageNumber,
   language,
-}) => (
-  <>
-    <Head>
-      <title>{meta[language].title}</title>
-      <meta name="description" content={meta[language].description} />
-      <meta property="og:title" content={meta[language].title} />
-      <meta property="og:description" content={meta[language].description} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${process.env.BLOG_HOST}/${language}`} />
-      <meta property="og:image" content={getOriginal(myImageData)} />
-    </Head>
-    <Layout language={language}>
-      <h1 className="visual-hidden">{meta[language].title}</h1>
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
+  latestNews,
+}) => {
+  const isLanguageRu = language === 'ru'
 
-      <Categories items={categories} language={language} activeCategory={activeCategory} />
+  return (
+    <>
+      <Head>
+        <title>{meta[language].title}</title>
+        <meta name="description" content={meta[language].description} />
+        <meta property="og:title" content={meta[language].title} />
+        <meta property="og:description" content={meta[language].description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${process.env.BLOG_HOST}/${language}`} />
+        <meta property="og:image" content={getOriginal(myImageData)} />
+      </Head>
+      <Layout language={language}>
+        <h1 className="visual-hidden">{meta[language].title}</h1>
 
-      <Posts language={language} posts={posts} />
+        <Categories items={categories} language={language} activeCategory={activeCategory} />
 
-      <Pagination
-        language={language}
-        activeCategory={activeCategory}
-        activePageNumber={activePageNumber}
-        totalNumberOfPosts={totalNumberOfPosts}
-      />
-      {language === 'ru' && <Newsletter language={language} />}
-    </Layout>
-  </>
-)
+        {isLanguageRu && <LatestNews latestNews={latestNews} />}
+
+        <Posts
+          language={language}
+          posts={posts}
+          BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+          BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+        />
+
+        <Pagination
+          language={language}
+          activeCategory={activeCategory}
+          activePageNumber={activePageNumber}
+          totalNumberOfPosts={totalNumberOfPosts}
+        />
+
+        {isLanguageRu && (
+          <Newsletter
+            language={language}
+            BENCHMARK_EMAIL_TOKEN={BENCHMARK_EMAIL_TOKEN}
+            BENCHMARK_EMAIL_LIST_ID={BENCHMARK_EMAIL_LIST_ID}
+          />
+        )}
+      </Layout>
+    </>
+  )
+}
 
 MainPage.propTypes = {
   posts: arrayOf(
@@ -71,6 +93,13 @@ MainPage.propTypes = {
       tag: string,
     }),
   ),
+  latestNews: shape({
+    title: string,
+    date: string,
+    slug: string,
+    episodeNumber: number,
+  }),
+
   categories: arrayOf(string),
   totalNumberOfPosts: number,
   activeCategory: string,

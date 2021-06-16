@@ -15,6 +15,7 @@ const Index = ({
   activeCategory,
   activePageNumber,
   language,
+  latestNews,
 }) => (
   <MainPage
     posts={posts}
@@ -23,6 +24,7 @@ const Index = ({
     activeCategory={activeCategory}
     activePageNumber={activePageNumber}
     language={language}
+    latestNews={latestNews}
   />
 )
 
@@ -32,7 +34,6 @@ export async function getStaticProps({ params }) {
     'title',
     'date',
     'slug',
-    'author',
     'content',
     'coverImageAlt',
     'tag',
@@ -48,18 +49,9 @@ export async function getStaticProps({ params }) {
     return post.tag.toLowerCase() === params.category
   })
 
-  const news = await getPostsNews([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImageAlt',
-    'tag',
-    'images',
-    'episodeNumber',
-  ])
+  const news = await getPostsNews(['title', 'date', 'slug', 'episodeNumber'])
 
-  const lastNewsPost = sortByDate(news)[0]
+  const latestNews = sortByDate(news)[0]
 
   const sortedPostsByLanguageAndCategory = sortByDate(postsByLanguageAndCategory)
 
@@ -78,7 +70,7 @@ export async function getStaticProps({ params }) {
     props: {
       posts: postsByLanguageAndCategoryAndPage,
       categories,
-      lastNewsPost,
+      latestNews,
       totalNumberOfPosts: sortedPostsByLanguageAndCategory.length,
       activeCategory: params.category,
       activePageNumber: Number(params.page),
