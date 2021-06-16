@@ -1,5 +1,5 @@
 import { Heading } from '@csssr/core-design'
-import { Picture, PictureSmart } from '@csssr/csssr.images/dist/react'
+import { Picture } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import Link from 'next/link'
@@ -7,6 +7,7 @@ import { arrayOf, object, string } from 'prop-types'
 import React from 'react'
 
 import categoriesByLanguage from '../../../data/categoriesByLanguage'
+import { ReactComponent as NewsCoverImg } from '../../../public/components/post/header/news-cover-img.svg'
 import DateFormatter from '../../DateFormatter'
 import { Grid } from '../../Grid'
 import Subtitle from '../Subtitle'
@@ -27,11 +28,13 @@ const Header = ({
   language,
   type,
 }) => {
+  const isNews = type === 'news'
+
   return (
     <Grid
       as="header"
       className={cn(className, {
-        type_news: type === 'news',
+        type_news: isNews,
       })}
       data-testid="Post:block:header"
     >
@@ -42,7 +45,7 @@ const Header = ({
           {date}
         </DateFormatter>
 
-        {type === 'news' ? (
+        {isNews ? (
           <Link href={`/${language}/${tag}512`}>
             <a className="tag" data-testid="Post:link.category.news">
               {categoriesByLanguage[language][tag]}
@@ -57,21 +60,13 @@ const Header = ({
         )}
       </div>
 
-      {type === 'news' ? (
+      {isNews ? (
         <>
-          <div className="title-wrapper">
-            <Heading type="regular" size="l" className="title">
-              Новости 512
-            </Heading>
+          <Heading type="regular" size="l" className="title">
+            Новости 512 {episodeNumber && <span className="episode-number">#{episodeNumber}</span>}
+          </Heading>
 
-            {episodeNumber && (
-              <Heading.H2 type="regular" size="l" className="episode-number">
-                #{episodeNumber}
-              </Heading.H2>
-            )}
-          </div>
-
-          <Subtitle dangerouslySetInnerHTML={{ __html: title }} size="l" />
+          <Subtitle dangerouslySetInnerHTML={{ __html: title }} />
 
           {soundcloudLink && (
             <NewsAudioLink
@@ -90,12 +85,10 @@ const Header = ({
         />
       )}
 
-      {type === 'news' ? (
-        <PictureSmart
-          className="picture"
-          requireImages={require.context('../../../public/components/post/header/postCover')}
-          alt="Человек с громкоговорителем оглашающий новости"
-        />
+      {isNews ? (
+        <div className="news-cover">
+          <NewsCoverImg className="news-cover-img" />
+        </div>
       ) : (
         <Picture className="picture" sources={coverImage} alt={alt} />
       )}
