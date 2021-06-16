@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { arrayOf, object, shape, string } from 'prop-types'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 import MainGrid from '../MainGrid'
 
@@ -11,18 +11,19 @@ import Slide from './Slide'
 
 const SelectedPosts = ({ className, posts, language }) => {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [direction, setDirection] = useState('left')
-  const [clientXStart, setClientXStart] = useState(0)
-  const slidesCount = posts.length
+
+  const clientXStartRef = useRef()
+  const directionRef = useRef()
+  const slidesAmount = posts.length
 
   const goToSlide = (index) => {
-    setActiveIndex((prevActiveIndex) => {
-      if (index === slidesCount) {
+    setActiveIndex(() => {
+      if (index === slidesAmount) {
         return 0
       }
 
-      if (prevActiveIndex === 0 && index < 0) {
-        return slidesCount - 1
+      if (index < 0) {
+        return slidesAmount - 1
       }
 
       return index
@@ -31,22 +32,22 @@ const SelectedPosts = ({ className, posts, language }) => {
 
   const handleNext = () => {
     goToSlide(activeIndex + 1)
-    setDirection('left')
+    directionRef.current = 'left'
   }
 
   const handlePrev = () => {
     goToSlide(activeIndex - 1)
-    setDirection('right')
+    directionRef.current = 'right'
   }
 
   const handleTouchStart = (event) => {
     const { clientX } = event.changedTouches[0]
-    setClientXStart(clientX)
+    clientXStartRef.current = clientX
   }
 
   const handleTouchEnd = (event) => {
     const { clientX } = event.changedTouches[0]
-    if (clientX < clientXStart) {
+    if (clientX < clientXStartRef.current) {
       handleNext()
     } else {
       handlePrev()
@@ -67,9 +68,8 @@ const SelectedPosts = ({ className, posts, language }) => {
               key={post.slug}
               post={post}
               language={language}
-              activeIndex={activeIndex}
-              slideIndex={index}
-              direction={direction}
+              isActive={activeIndex === index}
+              direction={directionRef.current}
             />
           ))}
         </ul>
@@ -79,7 +79,7 @@ const SelectedPosts = ({ className, posts, language }) => {
         <Dots
           className="dots"
           activeIndex={activeIndex}
-          slidesCount={slidesCount}
+          slidesAmount={slidesAmount}
           onClick={goToSlide}
         />
       </MainGrid>

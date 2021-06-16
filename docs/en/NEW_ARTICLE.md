@@ -64,4 +64,4 @@ Articles are sorted by date of publication. From the earliest to the latest.
 
 ## Selected articles
 
-In order for an article to appear on the main ["Selected Articles"] block (http://s.csssr.ru/UJ4QCUXM4/2021-06-11-17-33-45.jpg), you need to add the name of the article to the file `selectedPostsEn.json` or `selectedPostsRu.json`. The order and number determines the order and number of articles in the block.
+In order for an article to appear on the main ["Selected Articles"] block (http://s.csssr.ru/UJ4QCUXM4/2021-06-11-17-33-45.jpg), you need to add the name of the article to the file `selectedPostsByLanguage.json`. The order and number determines the order and number of articles in the block.

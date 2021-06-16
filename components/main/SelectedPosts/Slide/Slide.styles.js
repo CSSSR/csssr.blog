@@ -12,9 +12,6 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     font-size: ${calcRem(16)};
     line-height: ${calcRem(24)};
     background-color: #ffffff;
-  }
-
-  &.active {
     z-index: 1;
   }
 
@@ -71,11 +68,23 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
 
   .slide-link {
     color: ${colors.secondary.darken100};
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
   }
 
   .slide-tag {
     font-weight: 300;
     color: ${colors.secondary.darken100};
+    position: relative;
+    z-index: 2;
   }
 
   .slide-date {
@@ -120,7 +129,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .slide-link:hover {
+    &:hover {
       .slide-title {
         color: ${colors.primary.origin};
         transition: color 150ms ease-in-out;
