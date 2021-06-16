@@ -46,7 +46,14 @@ const SelectedPosts = ({ className, posts, language }) => {
   }
 
   const handleTouchEnd = (event) => {
+    const swipeFactor = 50
+
     const { clientX } = event.changedTouches[0]
+
+    if (Math.abs(clientX - clientXStartRef.current) < swipeFactor) {
+      return
+    }
+
     if (clientX < clientXStartRef.current) {
       handleNext()
     } else {
