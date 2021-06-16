@@ -131,9 +131,7 @@ export const compilerMdx = ({ content, images }) =>
         },
       },
       ParagraphWithImage: {
-        component: function ParagraphWithImageWrapper({ postImageName, ...rest }) {
-          return <ParagraphWithImage sources={postImageName && images[postImageName]} {...rest} />
-        },
+        component: ParagraphWithImage,
       },
       Separator: {
         component: function SeparatorWrapper({ imageName, ...rest }) {

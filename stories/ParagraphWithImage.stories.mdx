@@ -1,17 +1,13 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { compilerMdx } from '../components/Post/Body/utils/compilerMdx';
-import { dataByLanguagePostAndImageDontResize } from '../lib/allPostsImages';
-import { getStringAttributes } from './utils/getStringAttributes';
-import { GridDecorator } from './decorators/GridDecorator';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+import { compilerMdx } from '../components/Post/Body/utils/compilerMdx'
+import { dataByLanguagePostAndImageDontResize } from '../lib/allPostsImages'
+import { getStringAttributes } from './utils/getStringAttributes'
+import { GridDecorator } from './decorators/GridDecorator'
 
 <Meta
   title="Post/ParagraphWithImage"
   decorators={[GridDecorator]}
   argTypes={{
-    imageName: {
-      type: 'radio',
-      options: ['manWithLaptop', 'laptopNews', 'laptopDialog'],
-    },
     imageSide: {
       type: 'radio',
       options: ['left', 'right'],
@@ -24,33 +20,32 @@ export const ParagraphWithImage = ({ contentMdx, ...args }) => {
     <>
       {compilerMdx({
         content: `<ParagraphWithImage ${getStringAttributes(
-          args
+          args,
         )}>${contentMdx}</ParagraphWithImage>`,
-        images: dataByLanguagePostAndImageDontResize['en']['example'],
       })}
     </>
-  );
-};
+  )
+}
 
 # [`<ParagraphWithImage />`](http://s.csssr.ru/U31J879TR/20200527123603.jpg)
 
-Компонент параграфа c изображением в левом углу. Изображения для параграфа должны находится в той же папке, что и для компонента [`<Img />`](#img-). Принимает следующие пропсы
+Компонент параграфа c изображением в левом углу. Изображения для параграфа должны находится в папке `public/components/paragraphWithImage`. Принимает следующие пропсы
 
 ## `imageName`
-
-Тип данных: `manWithLaptop` | `laptopNews` | `laptopDialog`
-
-Дефолтное значение: `undefined`
-
-Название изображения в папке, где лежит статика для этого компонента.
-
-## `postImageName`
 
 Тип данных: `string`
 
 Дефолтное значение: `undefined`
 
-Название изображения в папке, где лежат изображения для статьи.
+Название папки с изображениями в `public/components/paragraphWithImage`.
+
+## `alt`
+
+Тип данных: `string`
+
+Дефолтное значение: `undefined`
+
+`alt` текст для изображения.
 
 ## Результат
 

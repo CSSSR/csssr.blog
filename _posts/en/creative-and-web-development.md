@@ -25,7 +25,7 @@ What are the main challenges of building your own IT department? Well, it tak
 
 So, often developing internal technical skills is a <span class="no-wrap">less-than-appealing</span> idea for creative agencies. However, the good news is that when agencies choose to forgo developing their own IT departments, there are several alternatives, better models for web development services:
 
-<ParagraphWithImage postImageName="clockwork-bird">
+<ParagraphWithImage imageName="clockwork-bird">
 ### Option 2: Subcontractor / Freelance
 <p>While a simple solution, subcontracting or hiring freelancers lacks predictability and transparency. To win tenders and avoid losing clients, companies often understate costs, without bothering to understand the actual expenses and labor required. Only after they win the bid do they start thinking about who they could give the project to at the price they negotiated.</p>
 </ParagraphWithImage>
@@ -34,7 +34,7 @@ Reputable agencies refuse to work under these conditions, while freelancers mig
 
 Alternatively, and less pessimistically, an experienced agency might design an appropriate campaign, but make a poor choice of developer, something difficult to avoid if you use a different contractor for each project. As a result, the end-customer gets a strong creative idea, with poor implementation and/or a postponed launch date.
 
-<ParagraphWithImage postImageName="horse-man">
+<ParagraphWithImage imageName="horse-man">
 <p>If you, as a client, are offered development work by an agency through a subcontractor, we recommend you instead take on the task of finding a suitable contractor yourself. Try to find a separate contractor for the web development part of the project, compare the expertise levels of different teams and choose the best one for you. Tech recruiters can be helpful for this task, as they have plenty of experience in identifying tech talent.</p>
 </ParagraphWithImage>
 
@@ -77,7 +77,6 @@ One of the main advantages of an alliance is that the partners clearly under
 You can build a successful alliance with a partner from any country. What is more important is understanding that creative agencies should consider the specific features of each country and region. It can be challenging to build an idea that will be successful in an unfamiliar market if your team is immersed in the specifics of its local market. For this reason, it is often best to seek out partnerships with creative agencies based close to clients and who speak the same language, with deep understanding of the local market.
 
 Web development agencies, on the other hand, can be based on different continents, with little-to-no specification for local markets, because code is written in the same languages all over the world and differences in mentality have little effect on end results.
-
 
 <Img imageName="high-five" alt="high-five" withBigMargin/>
 

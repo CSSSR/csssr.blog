@@ -11,7 +11,7 @@ tag: 'web-development'
 
 To help you decide which web development strategy is best for you, let’s look at the advantages and disadvantages of each.
 
-<ParagraphWithImage postImageName="html">
+<ParagraphWithImage imageName="html">
 ## HTML
 
 <p>Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for <span class="no-wrap">e-commerce</span>. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.</p>
@@ -23,7 +23,7 @@ To help you decide which web development strategy is best for you, let’s loo
 <p>Who it’s best for: companies looking for a basic online presence with company description and contact details.</p>
 </ParagraphWithImage>
 
-<ParagraphWithImage postImageName="cms">
+<ParagraphWithImage imageName="cms">
 ## Standard CMS
 
 <p>Description: A Content Management System (CMS) website is quite simple to set up. There are standard site layouts that you can purchase and you can buy a design to fill it in. You can hire a company to do this for you, but they’ll charge quite a high premium to develop them for you. However, CMS sites can be good for standard <span class="no-wrap">e-commerce</span> sites, and it can be useful to hire a developer to help you with this. You should also remember that because most <span class="no-wrap">e-commerce</span> sites have some custom elements, CMS is usually best for MVPs, while you’d have to hire a developer to build your final product from scratch.</p>
@@ -37,7 +37,7 @@ To help you decide which web development strategy is best for you, let’s loo
 <p>Who it’s best for: companies building MVPs to be rebuilt once bigger investment is secured, basic <span class="no-wrap">e-commerce</span>, blogs</p>
 </ParagraphWithImage>
 
-<ParagraphWithImage postImageName="custom-development">
+<ParagraphWithImage imageName="custom-development">
 ## Custom Development
 
 <p>Description: custom web development is the most useful way of building a website if you want to build a long-term business through an internet presence — basically everyone these days. For some businesses, like a local car dealership, this may be too much, because you sell most of your cars in person. However, if you want to make sales over the internet, you need at least a CMS website.</p>

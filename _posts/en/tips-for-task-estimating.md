@@ -28,7 +28,7 @@ This is an important and painstaking thing, and if a developer has only 15 
 
 You will fail to upgrade your estimating skills to a top-level being in the middle of a complete mess: i.e. when tasks are estimated on a case-by-case basis, or you are suddenly forced to estimate one task while working on another, or it is generally unclear whether you should estimate any or not. The first step towards effective task estimating would be fostering the culture of estimation within your team. A high-level team discipline, among other factors, guaranteers efficiency. Having precise regulation of estimation stages can be helpful, and if the developer can draw the conclusions about the quality of his estimate in the end of the project, then the confusion will be minimal resulting in work efficiency increase. In this case, quality improvement will be just a matter of time.
 
-<ParagraphWithImage postImageName="man-and-astronauts">
+<ParagraphWithImage imageName="man-and-astronauts">
 ### Tasks are set correctly
 <p>No matter how vast your experience is, you cannot include an estimate into those parts of the functionality that you don’t even have an idea of. To consider the task in detail (both hidden at the initial stage, and those that will emerge later) you need to have a third eye, which is, unfortunately, unrealistic. Nevertheless, you can minimize these risks by preparing reasonable (if not brilliant) Terms of Reference (ToR).</p>
 </ParagraphWithImage>
@@ -53,7 +53,7 @@ But the truth would be more like this:
 
 The process can be delayed, however, these time costs will bring more value. By the way, at this stage we often involve testers instead of developers. Mistakes made while stating the problem are expensive, and the more people participate in bugs hunting, the better results you would achieve.
 
-<ParagraphWithImage postImageName="man-and-ladder">
+<ParagraphWithImage imageName="man-and-ladder">
 ## Work on Yourself
 <p>Let’s move on to the estimation rules and focus on what you, personally, can do to improve the team’s performance.</p>
 </ParagraphWithImage>

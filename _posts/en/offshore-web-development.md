@@ -15,7 +15,7 @@ Cost-effectiveness, high-quality services and other reasons why so many Singapo
 
 Aside from geographical location and time differences, outsourcing destinations are usually characterized by numerous criteria: tech-literacy and qualification, service costs, communication skills, legal and intellectual property protection, etc. East European countries, like Ukraine and Russia, are well known for being the top destinations for web development outsourcing services in Singapore. Their Asian contenders are India, Indonesia, China and Vietnam. Read on to find out their pros and cons.
 
-<ParagraphWithImage postImageName="india">
+<ParagraphWithImage imageName="india">
 ## India
 
 <p>India is one of the top choices for web development outsourcing globally. Nowadays, it is the world’s second-largest English-speaking country with mature IT industry, developed IT infrastructure, educated urban population and a huge number of IT professionals.</p>
@@ -30,7 +30,7 @@ Aside from geographical location and time differences, outsourcing destinations 
 <span class="compare-item cons">cons: unpredictable quality, future refactoring costs</span>
 </div>
 
-<ParagraphWithImage postImageName="china">
+<ParagraphWithImage imageName="china">
 ## China
 
 <p>China is the second most popular web development outsourcing destination behind India. The country is a powerhouse for math science both in primary and high schools, resulting in many young specialists obtaining high-quality programming skills. Chinese IT companies provide Singapore outsourcers comparatively fine code quality and a lower cost option for their web development services.</p>
@@ -43,7 +43,7 @@ Aside from geographical location and time differences, outsourcing destinations 
 <span class="compare-item cons">cons: language barrier, dealing with chinese laws on intellectual property transferring</span>
 </div>
 
-<ParagraphWithImage postImageName="indonesia">
+<ParagraphWithImage imageName="indonesia">
 ## Indonesia
 
 <p>India is one of the top choices for web development outsourcing globally. Nowadays, it is the world’s second-largest English-speaking country with mature IT industry, developed IT infrastructure, educated urban population and a huge number of IT professionals.</p>
@@ -56,7 +56,7 @@ Aside from geographical location and time differences, outsourcing destinations 
 <span class="compare-item cons">cons: currently relatively small pool of programmers</span>
 </div>
 
-<ParagraphWithImage postImageName="vietnam">
+<ParagraphWithImage imageName="vietnam">
 ## Vietnam
 
 <p>Modern-day Vietnam is a country continuously growing to become one of the most prominent destinations on the web development outsourcing market. Two factors have normally contributed to that: skilled and productive labor force plus low costs. Both are making Vietnam a powerful IT hub and a front-runner in this offshore outsourcing race among the Asian countries.</p>
@@ -69,7 +69,7 @@ Aside from geographical location and time differences, outsourcing destinations 
 <span class="compare-item cons">cons: undeveloped market , lack of expertise in related areas such as QA</span>
 </div>
 
-<ParagraphWithImage postImageName="europe">
+<ParagraphWithImage imageName="europe">
 ## Eastern Europe
 
 <p>Eastern Europe also ranks as the leading and promising destination for web development outsourcing with Ukraine and Russia being the top choices.Ukraine is gaining popularity as an outsourcing country that has plenty of skilled tech talents and engineering expertise. With relatively low hourly rates, Ukrainian companies deliver a wide range of web development outsourcing services, including turnkey solutions.</p>
@@ -84,7 +84,7 @@ Aside from geographical location and time differences, outsourcing destinations 
 <span class="compare-item cons">cons: offshore, language barrier</span>
 </div>
 
-<ParagraphWithImage postImageName="summary">
+<ParagraphWithImage imageName="summary">
 ## Summary
 
 <p>Offshore web development is an important IT segment: it costs less, there are more talents available, and they are often more qualified than locals. Singapore clearly lacks IT talents to address the growing needs of its IT industry and chooses to outsource web development offshore. Today the national IT market is characterized by the rising demand for professional tech teams that can handle numerous tasks and reduce spending.</p>

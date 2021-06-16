@@ -20,14 +20,14 @@ Each type has its own peculiarities. At a contractor’s search stage, your ke
 
 If one collects opinions about working with outsourced teams from different companies, he or she can learn that sometimes the same initial conditions may result in the opposite outcomes. Some say that a fully distributed outsourced team shows a higher result than a team working from an office. Others recall their experience with remote developers as a complete failure, but note the increase in productivity after inviting the outsourcers to work in their office. The easiest way is to blame the professionalism of the outsourced team for everything. But in fact the truth is that the environment and conditions play a significant role in how effectively a team can work. Let us look into what those conditions are and how to take them into account when choosing a contractor.
 
-<ParagraphWithImage postImageName="skydiving-people">
+<ParagraphWithImage imageName="skydiving-people">
 ## Team Goals
 <p>The correctly defined goals are 90% of success. Make your mind what you would like to achieve outsourcing some job from your in-house IT department: to speed up on-going development, to launch a new one, or to ease the pressure on the supporting team of an already operating product.</p>
 
 In any case, it is important to remember that it will take time for a new team to adapt to your processes and get familiar with the context. The more “legacy” there is in the tasks they will have to perform, the longer this period will be. In critical situations, it can be greatly reduced by placing the developers in the epicenter of events right in the office. This is especially true for a pre-release stage products or those at support, i.e. in all cases when information exchange between yours and the outsourced team should be as fast as possible. However, if you are only planning to launch development, this option may bring no benefits, as new information will be distributed as it generated, but the office costs will certainly increase.
 </ParagraphWithImage>
 
-<ParagraphWithImage postImageName="skydiving-man">
+<ParagraphWithImage imageName="skydiving-man">
 ## Special Teams
 <p>If you need a team of HTML developers to quickly launch a batch of typical landings, you can find suitable candidates almost anywhere in the world. But if you’re looking for developers with deep expertise by choosing a team to be located in the office, you limit your choice. Professional distributed teams are able to recruit the best specialists from all over the world, which means you can engage in your project, for example, five signor-developers within one team.</p>
 </ParagraphWithImage>
@@ -49,7 +49,7 @@ The good news is that including the team “inside” your processes is not al
 
 There’s a security issue worths mentioned separately. We can assume that distributed teams definitely lose out when it comes to working on projects that require a high level of data access control. But in reality, it’s a question of experience and the right tools: we’ve been working with banks and companies dealing with cybersecurity for many years and have learned to adjust to almost any requirements.
 
-<ParagraphWithImage postImageName="laptop-work">
+<ParagraphWithImage imageName="laptop-work">
 ## Project Completion
 <p>Any project comes to an end at some point and at that point one have to decide what to do with the people who no longer have assignments. Having an outsourced team is like an insurance against the necessity to fire or transfer employees to other departments. The costs of “shutting down” distributed teams or those in own office are lower — one doesn’t have to think about abandoned workplaces, passes cancellation and empty spaces. This also applies to putting work on hold: for your in-house developers such standstill is often too much to bear and it is definitely expensive for you.</p>
 </ParagraphWithImage>

@@ -1,18 +1,16 @@
-import { Picture, PictureSmart } from '@csssr/csssr.images/dist/react'
+import { Picture } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
-import { arrayOf, node, object, oneOf, string } from 'prop-types'
+import { node, string } from 'prop-types'
 import React from 'react'
 
-import { defaultImages } from './constants'
+import defaultImages from './constants/images'
 import styles from './ParagraphWithImage.styles'
 
-const ParagraphWithImage = ({ children, className, sources, alt, imageName }) => {
+const ParagraphWithImage = ({ children, className, alt, imageName }) => {
   return (
     <div className={className}>
-      {imageName ? (
-        <PictureSmart requireImages={defaultImages[imageName]} className="img-wrap" alt={alt} />
-      ) : (
-        <Picture sources={sources} className="img-wrap" alt={alt} />
+      {defaultImages[imageName] && (
+        <Picture sources={defaultImages[imageName]} className="img-wrap" alt={alt} />
       )}
       {children}
     </div>
@@ -22,9 +20,8 @@ const ParagraphWithImage = ({ children, className, sources, alt, imageName }) =>
 ParagraphWithImage.propTypes = {
   children: node,
   className: string,
-  sources: arrayOf(object),
   alt: string,
-  imageName: oneOf(['manWithLaptop', 'laptopNews', 'laptopDialog']),
+  imageName: string,
 }
 
 export default styled(ParagraphWithImage)`

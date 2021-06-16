@@ -49,8 +49,8 @@ I need to add another paragraph below the second list item.
 1. A team works together with yours in the same office. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
 2. A team works from its own office. Communication within the team takes place offline, and interaction with your team are done through regular meetings and the Internet.
 3. A team is fully distributed, all interaction is remote:
-  4. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
-  5. Interaction with your team are done through regular meetings and the Internet.
+4. All communications - face to face, external and internal developers participate in meetings and brainstorms together.
+5. Interaction with your team are done through regular meetings and the Internet.
 
 <Table>
   <thead>
@@ -410,7 +410,7 @@ const func = () => {
 </html>
 ```
 
-<ParagraphWithImage postImageName="mySampleImageSmall">
+<ParagraphWithImage imageName="mySampleImageSmall">
   ## HTML
   <p>Description: HTML sites are best for the most basic types of sites. Static in nature, they offer a quick and cheap way to build an online presence that you can use to market your company. Development skills for this type of website are relatively simple, meaning you can hire a relatively junior developer to maintain the site as you grow. However, HTML really only works for smaller sites, and isn’t an effective tool for e-commerce. To get an idea of how much it would cost to build a basic HTML site, you can use this quick calculation tool.</p>
 </ParagraphWithImage>
