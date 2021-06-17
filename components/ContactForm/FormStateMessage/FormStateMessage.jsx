@@ -42,12 +42,11 @@ const FormStateMessage = ({ className, kind, status, testId, onTryAgain }) => {
           </span>
           {status === 'fail' && (
             <>
-              {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-              <span className="reset-button" onClick={onTryAgain}>
+              <button type="button" className="reset-button" onClick={onTryAgain}>
                 Попробуйте
                 <br /> еще раз
                 <span className="dot">.</span>
-              </span>
+              </button>
             </>
           )}
         </Text>
