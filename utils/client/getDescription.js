@@ -1,6 +1,7 @@
 import cleaningTitle from './cleaningTitle'
+import sliceDescription from './sliceDescription'
 
-export default (isNews, post) => {
+export default (post, isNews) => {
   if (post?.description) {
     return post?.description
   }
@@ -9,10 +10,10 @@ export default (isNews, post) => {
     return cleaningTitle(post.title, 'meta')
   }
 
-  const { content } = post
+  const content = post?.content || post
 
-  return (
-    content
+  if (content) {
+    const cleanDescription = content
       .slice(content.indexOf('**'), content.indexOf('\n', content.indexOf('**')))
       .replace('\n', '')
       .replace(/\**/g, '')
@@ -22,5 +23,7 @@ export default (isNews, post) => {
       .replace(/<.*?>/g, '')
       .replace(/\[|]\(https?:\/\/?[\da-z.-]+\.[a-z.]{2,6}(?:[/\w .-]*)*\/?\)/g, '')
       .replace(/\s{2,}/g, ' ')
-  )
+
+    return sliceDescription(cleanDescription, 250)
+  }
 }

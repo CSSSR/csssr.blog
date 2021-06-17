@@ -2,37 +2,18 @@ import { css } from '@emotion/react'
 
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
-  ${desktop.all} {
-    margin-top: 50px;
-  }
-
-  ${tablet.all} {
-    margin-top: ${calcRem(58)};
-  }
-
-  ${mobile.all} {
-    margin-top: ${calcRem(44)};
+const base = () => css`
+  & {
+    display: flex;
+    flex-direction: column;
+    margin-top: ${calcRem(26)};
   }
 `
 
-const dynamic = ({ breakpoints: { mobile }, size, side }) => {
-  return css`
-    grid-column-end: ${size === 'l' ? 'span 7' : 'span 3'};
-    grid-column-start: ${side === 'r' ? size === 'l' ? 5 : 9 : 2};
-
-    ${mobile.all} {
-      grid-column: 1 / span 6;
-    }
-  `
-}
-
-const StyledPosts = props => {
-  const { theme: { breakpoints, colors }, size, side } = props
+const StyledPosts = () => {
 
   return css`
-    ${base({ breakpoints, colors })}
-    ${dynamic({ breakpoints, size, side})}
+    ${base()}
   `
 }
 

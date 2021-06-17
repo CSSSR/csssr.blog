@@ -4,128 +4,114 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile }, colors }) => css`
   & {
+    position: absolute;
+    top: 0;
+    left: 0;
     font-family: 'Roboto', 'Arial', sans-serif;
     color: ${colors.secondary.darken100};
+    font-size: ${calcRem(16)};
+    line-height: ${calcRem(24)};
+    background-color: #ffffff;
+    z-index: 1;
   }
 
-  & + & .wrap {
-    border-top: 1px solid rgba(155, 155, 155, 0.5);
+  &.active {
+    z-index: 2;
   }
 
-  .picture {
-    grid-column: 1 / span 3;
-    width: ${calcRem(216)};
-    height: ${calcRem(168)};
+  .slide-picture {
+    grid-column: 1 / span 5;
 
     img {
-      width: 100%;
-      height: 100%;
+      width: ${calcRem(348)};
+      height: ${calcRem(268)};
     }
   }
 
-  .content {
-    grid-column: 4 / span 9;
+  .slide-content {
+    grid-column: 6 / span 6;
+    display: flex;
+    flex-direction: column;
   }
 
-  .link {
+  .slide-link {
     color: ${colors.secondary.darken100};
 
-    &::before{
-      z-index: 1;
+    &::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: 1;
     }
   }
 
-  .wrap {
-    padding-top: ${calcRem(24)};
-    padding-bottom: ${calcRem(24)};
-    position: relative;
-  }
-
-  .tag {
+  .slide-tag {
     font-weight: 300;
-    font-size: ${calcRem(16)};
-    line-height: ${calcRem(24)};
     color: ${colors.secondary.darken100};
-    z-index: 2;
     position: relative;
+    z-index: 2;
   }
 
-  .date {
+  .slide-date {
     font-weight: 300;
-    font-size: ${calcRem(16)};
-    line-height: ${calcRem(24)};
     padding-left: ${calcRem(15)};
     color: #9b9b9b;
   }
 
-  .title {
+  .slide-title {
     margin-top: ${calcRem(10)};
     font-weight: 900;
     font-size: ${calcRem(24)};
     line-height: ${calcRem(32)};
   }
 
-  .description {
+  .slide-description {
     font-weight: 300;
-    font-size: ${calcRem(16)};
-    line-height: ${calcRem(24)};
-    margin-top: ${calcRem(10)};
+    margin-top: ${calcRem(15)};
   }
 
   ${mobile.all} {
-    .wrap {
-      padding-top: ${calcRem(20)};
-      padding-bottom: ${calcRem(20)};
-    }
-
-    .picture {
-      width: ${calcRem(328)};
-      height: ${calcRem(150)};
-      grid-column: 1 / span 6;
-      grid-row: 1;
-    }
-
-    .content {
-      grid-column: 1 / span 6;
-      grid-row: 2;
-    }
-
-    .tag,
-    .date {
+    & {
       font-size: ${calcRem(14)};
     }
 
-    .title {
+    .slide-picture {
+      grid-column: 1 / span 6;
+
+      img {
+        width: ${calcRem(328)};
+        height: ${calcRem(150)};
+      }
+    }
+
+    .slide-title {
       font-size: ${calcRem(22)};
     }
 
-    .description {
-      display: none;
+    .slide-content {
+      grid-column: 1 / span 6;
     }
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .link:hover {
-      .title {
+    &:hover {
+      .slide-title {
         color: ${colors.primary.origin};
         transition: color 150ms ease-in-out;
       }
     }
 
-    .tag:hover {
+    .slide-tag:hover {
       color: #0254d8;
       transition: color 150ms ease-in-out;
     }
   }
 `
 
-const StyledPostCard = (props) => {
+const StyledSlide = (props) => {
   const {
     theme: { breakpoints, colors },
   } = props
@@ -135,4 +121,4 @@ const StyledPostCard = (props) => {
   `
 }
 
-export default StyledPostCard
+export default StyledSlide
