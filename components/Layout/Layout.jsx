@@ -29,6 +29,7 @@ const Layout = ({ children, language, type }) => {
       </main>
 
       <Footer
+        baseNavUrl={process.env.COM_HOST}
         className="footer"
         preset={presetByLanguage[language]}
         language={language}
