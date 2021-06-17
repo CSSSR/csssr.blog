@@ -4,7 +4,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile }, colors }) => css`
   & {
-    margin-top: ${calcRem(50)};
+    margin-top: ${calcRem(28)};
     overflow: hidden;
   }
 
@@ -37,6 +37,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
   ${mobile.all} {
     & {
       margin-top: ${calcRem(24)};
+      margin-bottom: ${calcRem(60)};
     }
 
     .slider {

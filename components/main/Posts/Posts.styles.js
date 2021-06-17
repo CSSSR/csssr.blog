@@ -6,7 +6,7 @@ const base = () => css`
   & {
     display: flex;
     flex-direction: column;
-    margin-top: ${calcRem(50)};
+    margin-top: ${calcRem(26)};
   }
 `
 
