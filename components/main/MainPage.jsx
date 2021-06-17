@@ -1,9 +1,9 @@
-import { getOriginal } from '@csssr/csssr.images/dist/utils'
 import Head from 'next/head'
 import { arrayOf, number, object, shape, string } from 'prop-types'
 import React from 'react'
 
 import myImageData from '../../public/images/og/main/desktop.m.png'
+import getOgImage from '../../utils/client/getOgImage'
 import Layout from '../Layout'
 import Newsletter from '../Newsletter'
 
@@ -33,10 +33,10 @@ const MainPage = ({
   activeCategory,
   activePageNumber,
   language,
-  BENCHMARK_EMAIL_TOKEN,
-  BENCHMARK_EMAIL_LIST_ID,
   latestNews,
   selectedPosts,
+  BENCHMARK_EMAIL_TOKEN,
+  BENCHMARK_EMAIL_LIST_ID,
 }) => {
   const isLanguageRu = language === 'ru'
 
@@ -49,7 +49,7 @@ const MainPage = ({
         <meta property="og:description" content={meta[language].description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${process.env.BLOG_HOST}/${language}`} />
-        <meta property="og:image" content={getOriginal(myImageData)} />
+        <meta property="og:image" content={getOgImage(myImageData)} />
       </Head>
       <Layout language={language}>
         <h1 className="visual-hidden">{meta[language].title}</h1>

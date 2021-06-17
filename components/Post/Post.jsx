@@ -1,4 +1,3 @@
-import { getOriginal } from '@csssr/csssr.images/dist/utils'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import Head from 'next/head'
@@ -7,6 +6,7 @@ import { object, shape, string } from 'prop-types'
 import newsPostOgImage from '../../public/images/og/news512/all.png'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
+import getOgImage from '../../utils/client/getOgImage'
 
 import Body from './Body'
 import Header from './Header'
@@ -17,7 +17,7 @@ const Post = ({ posts, post, language, className, type = 'regular' }) => {
   const title = isNews ? 'Новости 512 | CSSSR' : cleaningTitle(post.title, 'meta')
   const description = getDescription(post, isNews)
 
-  const ogImage = getOriginal(
+  const ogImage = getOgImage(
     // В для всех новостей используем одинаковое изображение для обычных статей мобильную версию postCover
     isNews ? newsPostOgImage : post.images.postCover[1],
   )
