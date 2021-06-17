@@ -15,6 +15,10 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     z-index: 1;
   }
 
+  &.active {
+    z-index: 2;
+  }
+
   .slide-picture {
     grid-column: 1 / span 5;
 

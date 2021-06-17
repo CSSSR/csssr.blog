@@ -42,8 +42,7 @@ const Slide = ({
     >
       <li
         className={cn(className, {
-          left: direction === 'left',
-          right: direction === 'right',
+          active: isActive,
         })}
         data-testid={`SelectedPosts:block:slide.${slug}`}
       >
