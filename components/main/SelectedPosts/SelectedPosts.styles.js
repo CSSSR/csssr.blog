@@ -28,7 +28,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
 
   .dots {
     position: absolute;
-    bottom: ${calcRem(15)};
+    bottom: 0;
     grid-column: 6 / span 6;
     grid-row: 1;
     z-index: 2;
