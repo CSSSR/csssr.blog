@@ -1,4 +1,3 @@
-import { getOriginal } from '@csssr/csssr.images/dist/utils'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import Head from 'next/head'
@@ -7,6 +6,7 @@ import { object, shape, string } from 'prop-types'
 import newsPostOgImage from '../../public/images/og/news512/all.png'
 import cleaningTitle from '../../utils/client/cleaningTitle'
 import getDescription from '../../utils/client/getDescription'
+import getOgImage from '../../utils/client/getOgImage'
 
 import Body from './Body'
 import Header from './Header'
@@ -15,7 +15,12 @@ import styles from './Post.styles'
 const Post = ({ posts, post, language, className, type = 'regular' }) => {
   const isNews = type === 'news'
   const title = isNews ? 'Новости 512 | CSSSR' : cleaningTitle(post.title, 'meta')
-  const description = getDescription(isNews, post)
+  const description = getDescription(post, isNews)
+
+  const ogImage = getOgImage(
+    // В для всех новостей используем одинаковое изображение для обычных статей мобильную версию postCover
+    isNews ? newsPostOgImage : post.images.postCover[1],
+  )
 
   return (
     <article
@@ -38,12 +43,7 @@ const Post = ({ posts, post, language, className, type = 'regular' }) => {
               : `${process.env.BLOG_HOST}/${language}/article/${post.slug}`
           }
         />
-        <meta
-          property="og:image"
-          content={getOriginal(
-            isNews ? newsPostOgImage : post.images.mainCoverL[post.images.mainCoverL.length - 1],
-          )}
-        />
+        <meta property="og:image" content={ogImage} />
 
         <meta property="article:section" content={post.tag} />
         <meta property="article:published_time" content={post.date} />

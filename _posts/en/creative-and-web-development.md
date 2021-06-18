@@ -78,7 +78,6 @@ You can build a successful alliance with a partner from any country. What is 
 
 Web development agencies, on the other hand, can be based on different continents, with little-to-no specification for local markets, because code is written in the same languages all over the world and differences in mentality have little effect on end results.
 
-
 <Img imageName="high-five" alt="high-five" withBigMargin/>
 
 **In conclusion,** when these four rules are followed, alliances between creative agencies and web developers can be the most efficient and effective way for clients to develop their digital presence. Keep them in mind when forming partnerships between web developers and creative design teams, and you will find success in your future projects.

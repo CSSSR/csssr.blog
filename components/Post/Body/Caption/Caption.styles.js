@@ -38,7 +38,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors}) => css
 
   ${above.mobile} {
     &.size_l {
-      margin-top: ${calcRem(15)};
+      margin-top: ${calcRem(10)};
       font-size: ${calcRem(16)};
       line-height: ${calcRem(24)};
     }
@@ -55,9 +55,9 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors}) => css
     }
 
     &.size_l {
-      margin-top: ${calcRem(10)};
-      font-size: ${calcRem(12)};
-      line-height: ${calcRem(16)};
+      margin-top: ${calcRem(5)};
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(20)};
     }
   }
 `

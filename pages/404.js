@@ -19,7 +19,6 @@ export async function getStaticProps() {
     'tag',
     'images',
   ])
-
   return {
     props: {
       posts,

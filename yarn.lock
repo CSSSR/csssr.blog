@@ -1570,10 +1570,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@csssr/core-design@^7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-7.2.0.tgz#5e1abc09d33340031c7298ec069885041e43cea4"
-  integrity sha512-70AgC1Y5+e3cDlG5D6fBqcM/0l29vB9+jAS1hLgjIIsasN0YHUFqCoCPIAXgQ6BwE8yx4ZmgBlN+OaoZGTJ6WQ==
+"@csssr/core-design@^7.2.1":
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-7.2.1.tgz#f27049c49a40159a31952d779bc6464c58d00f15"
+  integrity sha512-hM0djEEUmDNy5oH1DUpIIYk74CNvma25p6BsWZP/9pl0TYZ9WUF8WHQevy4YG19UAQe+STefe5HJ/Odc2TZOKQ==
   dependencies:
     classnames "^2.2.6"
     react-reveal "^1.2.2"
@@ -10023,9 +10023,9 @@ normalize-range@^0.1.2:
   integrity sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=
 
 normalize-url@^4.1.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
-  integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.1.tgz#0dd90cf1288ee1d1313b87081c9a5932ee48518a"
+  integrity sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA==
 
 npm-run-path@^2.0.0:
   version "2.0.2"

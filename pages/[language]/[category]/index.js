@@ -2,18 +2,22 @@ import React from 'react'
 
 import MainPage from '../../../components/main/MainPage'
 import { POSTS_PER_PAGE } from '../../../data/constants'
-import { getPostsByLanguage } from '../../../lib/api'
-import postsOrderEn from '../../../postsOrderEn.json'
-import postsOrderRu from '../../../postsOrderRu.json'
+import { getPostsByLanguage, getPostsNews } from '../../../lib/api'
+import selectedPostsByLanguage from '../../../selectedPostsByLanguage.json'
 import getPostsCategories from '../../../utils/getPostsCategories'
+import getSelectedPosts from '../../../utils/getSelectedPosts'
 import languages from '../../../utils/languages'
+import sortByDate from '../../../utils/sortByDate'
 
-const postsOrder = {
-  en: postsOrderEn,
-  ru: postsOrderRu,
-}
-
-const Index = ({ posts, categories, totalNumberOfPosts, activeCategory, language }) => (
+const Index = ({
+  posts,
+  categories,
+  totalNumberOfPosts,
+  activeCategory,
+  language,
+  latestNews,
+  selectedPosts,
+}) => (
   <MainPage
     posts={posts}
     categories={categories}
@@ -21,35 +25,37 @@ const Index = ({ posts, categories, totalNumberOfPosts, activeCategory, language
     activeCategory={activeCategory}
     activePageNumber={1}
     language={language}
+    latestNews={latestNews}
+    selectedPosts={selectedPosts}
   />
 )
 
 export default Index
+
 export async function getStaticProps({ params }) {
   const postsByLanguage = await getPostsByLanguage([
     'title',
+    'description',
     'date',
     'slug',
-    'author',
+    'content',
     'coverImageAlt',
     'tag',
     'images',
   ])
 
+  const news = await getPostsNews(['title', 'date', 'slug', 'episodeNumber'])
+  const latestNews = sortByDate(news)[0]
   const language = params.language
+
   const categories = getPostsCategories(postsByLanguage[language])
-  const postsBySlug = postsByLanguage[language].reduce((acc, post) => {
-    acc[post.slug] = post
+  const postsSorted = sortByDate(postsByLanguage[language])
 
-    return acc
-  }, {})
-
-  const postsByLanguageAndCategory = postsOrder[language]
-    .flat()
+  const postsByLanguageAndCategory = postsSorted
     .filter((slug) => slug !== 'news512')
-    .map((slug) => postsBySlug[slug])
     .filter((post) => post.tag.toLowerCase() === params.category)
-    .sort((postA, postB) => new Date(postB.date) - new Date(postA.date))
+
+  const selectedPosts = getSelectedPosts(selectedPostsByLanguage[language], postsSorted)
 
   return {
     props: {
@@ -58,6 +64,8 @@ export async function getStaticProps({ params }) {
       totalNumberOfPosts: postsByLanguageAndCategory.length,
       activeCategory: params.category,
       language,
+      latestNews,
+      selectedPosts,
     },
   }
 }

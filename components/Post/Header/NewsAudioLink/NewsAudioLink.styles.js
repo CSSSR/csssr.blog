@@ -7,6 +7,10 @@ import calcRem from '../../../../utils/style/calcRem'
 const soundtrackImages = require.context('../../../../public/components/newsAudioLink/images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+  & {
+    margin-top: ${calcRem(40)};
+  }
+
   .soundtrack-wrapper {
     position: relative;
   }
@@ -17,6 +21,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 100%;
+    height: ${calcRem(21)};
   }
 
   .links-wrapper {
@@ -44,28 +49,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${desktop.all} {
     & {
       grid-column: 4 / span 6;
-      margin-top: 60px;
-    }
-
-    .soundtrack-image {
-      height: 21px;
     }
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(40)};
       grid-column: 3 / span 8;
-    }
-
-    .soundtrack-image {
-      height: ${calcRem(21)};
     }
   }
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(43)};
       grid-column: 1 / span 6;
       width: 100%;
     }
