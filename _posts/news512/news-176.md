@@ -1,5 +1,5 @@
 ---
-title: 'Всем привет, в эфире «Новости 512» от CSSSR. В этом выпуске: Canvas Rendering, Lighthouse 8, пропорции в CSS, PHP 8.1 alpha, Next.js 11 и Линус Торвальдс против антипрививочника.'
+title: 'В этом выпуске: Canvas Rendering, Lighthouse 8, пропорции в CSS, PHP 8.1 alpha, Next.js 11 и Линус Торвальдс против антипрививочника.'
 soundcloudLink: 'https://soundcloud.com/csssr/canvas-rendering-lighthouse-8-proportsii-v-css-php-81-alpha-nextjs-11-linus-i-antiprivivochnik'
 date: '2021-06-18T00:00:00.000Z'
 episodeNumber: 176
