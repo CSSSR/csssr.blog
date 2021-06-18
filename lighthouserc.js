@@ -6,7 +6,7 @@ module.exports = {
     upload: {
       target: 'lhci',
       serverBaseUrl: 'https://lighthouse.csssr.cloud',
-      token: '4f1afffc-7983-4e24-aee7-9c446cb2fe25',
+      token: '61bcff51-0978-40ad-a6f1-9c26511520d5',
     },
     assert: {
       assertions: {
