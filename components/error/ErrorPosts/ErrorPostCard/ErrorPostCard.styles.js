@@ -73,7 +73,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.all} {
     .post-img {
-      height: 120px;
+      height: ${calcRem(216)};
     }
 
     .post-title {
@@ -82,9 +82,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${tablet.all} {
-    .post-img {
-      height: ${calcRem(120)};
-    }
 
     .post-title {
       font-size: ${calcRem(18)};
