@@ -17,7 +17,7 @@ const ErrorPostCard = ({ className, language, post }) => {
         <a className="link" data-testid={`ErrorPostCard:link:article.${post.slug}`}>
           <Picture
             className="post-img"
-            sources={post.images.mainCoverL}
+            sources={post.images.postCover}
             alt={post.coverImageAlt}
             testId={`ErrorPostCard:block:img.${post.slug}`}
           />

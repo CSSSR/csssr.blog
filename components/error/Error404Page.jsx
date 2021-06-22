@@ -52,15 +52,11 @@ const ErrorPage = ({ className, posts }) => {
           type: 'default',
         }}
       />
-
       <Head>
         <title>{title}</title>
       </Head>
-
       <Global styles={globalStyles} />
-
       <Meta />
-
       <ErrorPage404
         title={title}
         subTitle={subTitle}

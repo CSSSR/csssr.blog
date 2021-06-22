@@ -284,6 +284,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .subscribe-policy-link {
     color: ${colors.primary.origin};
+    display: inline;
   }
 
   ${tablet.all} {

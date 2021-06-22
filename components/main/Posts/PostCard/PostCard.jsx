@@ -1,73 +1,63 @@
-import { Picture, PictureSmart } from '@csssr/csssr.images/dist/react'
+import { Picture } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
-import cn from 'classnames'
 import Link from 'next/link'
-import { number, object, oneOf, shape, string } from 'prop-types'
+import { object, shape, string } from 'prop-types'
 import React from 'react'
 
 import categoriesByLanguage from '../../../../data/categoriesByLanguage'
 import cleaningTitle from '../../../../utils/client/cleaningTitle'
+import getDescription from '../../../../utils/client/getDescription'
 import DateFormatter from '../../../DateFormatter'
+import MainGrid from '../../MainGrid'
 
 import styles from './PostCard.styles'
 
-const PostCard = ({ className, language, post, size, type = 'regular' }) => {
-  const imgCover = size === 'l' ? post.images.mainCoverL : post.images.mainCoverS
-
+const PostCard = ({
+  className,
+  language,
+  post: {
+    title,
+    description,
+    content,
+    slug,
+    coverImageAlt,
+    date,
+    tag,
+    images: { postCover },
+  },
+}) => {
   return (
-    <li className={cn(String(className), { news: type === 'news' })}>
-      <Link
-        href={
-          type === 'news' ? `/ru/news512/episode/${post.slug}` : `/${language}/article/${post.slug}`
-        }
-      >
-        <a className="link" data-testid={`PostCard:link:article.${post.slug}`}>
-          <div className="title-wrapper">
-            {type === 'news' ? (
-              <PictureSmart
-                className="picture picture_size_s"
-                requireImages={require.context('../../../../public/components/postCard')}
-                alt={post.coverImageAlt}
-              />
-            ) : (
-              <Picture
-                className={cn('picture', {
-                  picture_size_l: size === 'l',
-                  picture_size_s: size === 's',
-                })}
-                sources={imgCover}
-                alt={post.coverImageAlt}
-              />
-            )}
-            <h2
-              className={cn('title', { title_size_l: size === 'l', title_size_s: size === 's' })}
-              dangerouslySetInnerHTML={{
-                __html: type === 'news' ? 'Новости 512' : cleaningTitle(post.title),
-              }}
-            />
-          </div>
+    <li className={className}>
+      <MainGrid as="span" className="wrap">
+        <Picture className="picture" sources={postCover} alt={coverImageAlt} />
 
-          {type === 'news' && <span className="news-number">#{post.episodeNumber}</span>}
-
-          <div className="data-wrapper">
-            {post.author && <span className="author">{post.author}</span>}
+        <span className="content">
+          <span className="top">
+            <Link href={`/${language}/${tag.toLowerCase()}`}>
+              <a className="tag" data-testid={`PostCard:link:category.${tag.toLowerCase()}`}>
+                {categoriesByLanguage[language][tag.toLowerCase()]}
+              </a>
+            </Link>
 
             <DateFormatter className="date" language={language}>
-              {post.date}
+              {date}
             </DateFormatter>
+          </span>
 
-            <object>
-              <Link
-                href={type === 'news' ? '/ru/news512' : `/${language}/${post.tag.toLowerCase()}`}
-              >
-                <a className="tag" data-testid={`PostCard:link:category.${post.tag.toLowerCase()}`}>
-                  {categoriesByLanguage[language][post.tag.toLowerCase()]}
-                </a>
-              </Link>
-            </object>
-          </div>
-        </a>
-      </Link>
+          <Link href={`/${language}/article/${slug}`}>
+            <a className="link" data-testid={`PostCard:link:article.${slug}`}>
+              <h2
+                className="title"
+                dangerouslySetInnerHTML={{
+                  __html: cleaningTitle(title),
+                }}
+              />
+            </a>
+          </Link>
+
+          <p className="description">{description || getDescription(content)}</p>
+        </span>
+      </MainGrid>
     </li>
   )
 }
@@ -79,16 +69,9 @@ PostCard.propTypes = {
     coverImageAlt: string,
     images: object,
     date: string,
-    author: string,
-    ogImage: shape({
-      url: string,
-    }),
     tag: string,
-    slug: string,
-    episodeNumber: number,
+    description: string,
   }),
-  size: oneOf(['l', 's']),
-  type: oneOf(['regular', 'news']),
 }
 
 export default styled(PostCard)`

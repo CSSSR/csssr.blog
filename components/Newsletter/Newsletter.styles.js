@@ -7,7 +7,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     position: relative;
     grid-column: 1 / span 12;
     width: 100%;
-    margin-top: ${calcRem(75)};
+    margin-top: ${calcRem(72)};
     padding-bottom: ${calcRem(30)};
     background-color: white;
     z-index: 9000;
@@ -51,7 +51,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 
   ${desktop.all} {
     & {
-      margin-top: ${calcRem(140)};
       padding-bottom: 26px;
     }
   }
@@ -69,10 +68,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   }
 
   ${tablet.all} {
-    & {
-      margin-top: ${calcRem(60)};
-    }
-
     .subtitle {
       font-size: ${calcRem(14)};
     }
@@ -86,7 +81,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(50)};
+      margin-top: ${calcRem(70)};
       background-color: #F5F6FA;
     }
 
