@@ -27,10 +27,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     font-weight: bold;
   }
 
-  p > a {
-    display: inline-block;
-  }
-
   code:not([class^="lang"]) {
     font-family: Roboto Mono, monospace;
     background-color: #F5F6FA;
