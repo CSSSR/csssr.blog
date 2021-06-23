@@ -19,6 +19,12 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     margin: 0 auto;
   }
 
+  & p > a:hover::after {
+    display: inline;
+    font-size: 0;
+    line-height: 0;
+  }
+
   em {
     font-weight: normal;
   }
