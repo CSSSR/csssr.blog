@@ -1,8 +1,8 @@
 ---
 title: 'В этом выпуске: Import Assertions, потребление оперативной памяти веб-приложениями, стримы в Node.js, голосовые интерфейсы, Rust 1.53, оптимизация изображений, библиотека microzord от Тинькофф, а также прекращение работы Opera VPN в России.'
 soundcloudLink: 'https://soundcloud.com/csssr/import-assertions-strimy-v-nodejs-veb-i-potreblenie-pamyati-golosovye-interfeysy-rust-153'
-date: '2021-06-18T00:00:00.000Z'
-episodeNumber: 176
+date: '2021-06-22T00:00:00.000Z'
+episodeNumber: 177
 tag: 'news'
 author: 'Ислам Виндижев'
 ---
