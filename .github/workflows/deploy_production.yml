@@ -25,8 +25,8 @@ jobs:
 
       - uses: actions/setup-node@v2-beta
         with:
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@csssr"
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@csssr'
 
       - name: Install dependencies
         working-directory: new_blog_prod
@@ -50,7 +50,7 @@ jobs:
           site-type: mpa
           project-id: csssr-new-blog
           files: ./new_blog_prod/out
-          no-previous-files: "true"
+          no-previous-files: 'true'
           not-found-page: 404/index.html
           host: blog.csssr.com
           environment: production
@@ -60,4 +60,4 @@ jobs:
             ingress:
               annotations:
                 nginx.ingress.kubernetes.io/server-snippet: |
-                  rewrite ^/$ /en redirect;
+                  rewrite ^/$ https://$http_host/en redirect;
