@@ -57,6 +57,7 @@ jobs:
           values: |
             cache: clouflare-worker
             invalidateCache: true
+            reduceHttpRedirects: enabled
             ingress:
               annotations:
                 nginx.ingress.kubernetes.io/server-snippet: |
