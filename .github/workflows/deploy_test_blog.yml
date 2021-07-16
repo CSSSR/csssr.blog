@@ -1,9 +1,9 @@
-name: Деплой блога на прод
+name: Деплой блога на test-blog.csssr.com
 on:
   push:
     branches:
-      - master
-concurrency: production_environment
+      - test-blog
+concurrency: test_blog_environment
 
 jobs:
   deploy:
@@ -39,7 +39,7 @@ jobs:
         run: yarn build
         env:
           IS_PRODUCTION: 'TRUE'
-          BLOG_HOST: https://blog.csssr.com
+          BLOG_HOST: https://test-blog.csssr.com
           COM_HOST: https://csssr.com
 
       - name: Деплой на продакшен
@@ -48,11 +48,11 @@ jobs:
           auth: ${{ secrets.CSSSR_AUTH }}
           token: ${{ secrets.GITHUB_TOKEN }}
           site-type: mpa
-          project-id: csssr-new-blog
+          project-id: csssr-test-blog
           files: ./new_blog_prod/out
           no-previous-files: 'true'
           not-found-page: 404/index.html
-          host: blog.csssr.com
+          host: test-blog.csssr.com
           environment: production
           values: |
             cache: cloudflare-worker
@@ -61,4 +61,5 @@ jobs:
             ingress:
               annotations:
                 nginx.ingress.kubernetes.io/server-snippet: |
+                  more_set_headers 'X-Robots-Tag: noindex, nofollow';
                   rewrite ^/$ https://$http_host/en redirect;
