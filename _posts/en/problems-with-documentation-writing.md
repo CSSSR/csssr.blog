@@ -11,7 +11,7 @@ description: "It's hard to find anyone who hasn't heard of Stonehenge, yet nobod
 
 In the picture down below is Stonehenge, one of the most famous architectural monuments in the world!
 
-![Stonehenge](/images/dont-resize/en/problems-with-documentation-writing/stonehenge/all.jpg)
+![Stonehenge](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Stonehenge2007_07_30.jpg/2560px-Stonehenge2007_07_30.jpg)
 
 It's hard to find anyone who hasn't heard of Stonehenge, yet nobody can say for sure what was the original purpose pursued by the ancient people who built it. In fact, the scientists would be grateful for any text or graphical description from the builders of this monument.
 
