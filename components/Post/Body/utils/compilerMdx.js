@@ -85,7 +85,17 @@ export const compilerMdx = ({ content, images }) =>
       a: {
         component: function LinkWrapper(props) {
           // eslint-disable-next-line jsx-a11y/anchor-has-content
-          return props.href.startsWith('/') ? <Link {...props} /> : <Link {...props} external />
+          const isExternal = !props.href.startsWith('/')
+          
+          if (props.children.some((child) => child && child.type && child.type === Img)) {
+            return isExternal ? (
+              <a {...props} target='_blank' rel='noopener noreferrer'/> 
+            ) : (
+              <a {...props} />
+            )
+          }
+
+          return isExternal ? <Link {...props} external /> : <Link {...props} />
         },
         props: {
           'data-testid': 'Post:link',
