@@ -11,7 +11,8 @@ description: "It's hard to find anyone who hasn't heard of Stonehenge, yet nobod
 
 In the picture down below is Stonehenge, one of the most famous architectural monuments in the world!
 
-![Stonehenge](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Stonehenge2007_07_30.jpg/2560px-Stonehenge2007_07_30.jpg)
+<Img imageName='stonehenge' alt='Stonehenge photo' />
+
 <Caption size='s'>
     © 2007 by thegarethwiscombe
 </Caption>
@@ -26,7 +27,8 @@ However, a lack of understanding regarding the original reason behind implementi
 
 While many developers truly enjoy making and working with projects that have good documentation, they still tend to feel reluctant to write it. This paradox of a situation exists despite us, developers, understanding the importance of documentation. Still, the difficulty of writing and supporting a detailed description of the code does bear its burden. But is there a way to make it easier? I think there is! Let me show you it in this article!
 
-[![A tweet about documentation](/images/dont-resize/en/problems-with-documentation-writing/tweet-about-documentation/all.png)](https://twitter.com/mit_csail/status/1405559612326105090?s=28)
+[<Img imageName='tweet-about-documentation' alt='A tweet about documentation' />](https://twitter.com/mit_csail/status/1405559612326105090?s=28)
+
 
 ## Main problems of documentation writing
 
@@ -156,7 +158,7 @@ I tried finding something which could solve all of these problems, but unfortuna
 
 So what can Fundoc do? It can generate documentation in two formats: raw markdown files (maybe later I'll add Org Mode support) and [mdBook](https://github.com/rust-lang/mdBook). The main idea behind this tool is to be as straightforward and uncomplicated to use as possible while providing all of the required functionality like search through documentation, documentation editing without the necessity to know the structure of a project, using one version control system, and so on.
 
-![An example that shows how Fundoc generates documentation from different files](/images/dont-resize/en/problems-with-documentation-writing/fundoc-example/all.png)
+<Img imageName='fundoc-example' alt='An example that shows how Fundoc generates documentation from different files' />
 
 But what do I use to keep the simplicity of a tool and the possibility to work with it for non-programmers? I use Github, that's it. Of course, in the future, it's possible to extend support of different services like GitLab, Bitbucket, or something like that. Let me explain how it works. Developers write documentation in source files or in markdown files marking every single documentation part with a simple marker that describes a result article title such as:
 

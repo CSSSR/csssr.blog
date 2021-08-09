@@ -84,17 +84,19 @@ export const compilerMdx = ({ content, images }) =>
       },
       a: {
         component: function LinkWrapper(props) {
-          // eslint-disable-next-line jsx-a11y/anchor-has-content
           const isExternal = !props.href.startsWith('/')
-          
-          if (props.children.some((child) => child && child.type && child.type === Img)) {
+
+          if (props.children.some((child) => child && child.componentID === Img.componentID)) {
             return isExternal ? (
-              <a {...props} target='_blank' rel='noopener noreferrer'/> 
+              // eslint-disable-next-line jsx-a11y/anchor-has-content
+              <a {...props} target="_blank" rel="noopener noreferrer" />
             ) : (
+              // eslint-disable-next-line jsx-a11y/anchor-has-content
               <a {...props} />
             )
           }
 
+          // eslint-disable-next-line jsx-a11y/anchor-has-content
           return isExternal ? <Link {...props} external /> : <Link {...props} />
         },
         props: {
