@@ -48,6 +48,8 @@ Img.propTypes = {
   withOutProcessing: bool,
 }
 
+Img.componentID = Symbol('@csssr/blog/Img')
+
 export default styled(Img)`
   ${styles}
 `
