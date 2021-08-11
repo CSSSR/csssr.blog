@@ -219,7 +219,7 @@ To log out, use the `logout` method. It will invalidate the auth-token and delet
 Only authorized users can see their balance in the header. [[~]](https://github.com/username/repository/blob/master/src/components/header.js#L6-L10)
 ```
 
-> To see more realistic documentation examples you can check out [documentation of Fundoc itself](https://daynin.github.io/fundoc/) or [another project](https://github.com/CSSSR/linters) that used Fundoc.
+> To see more realistic documentation examples you can check out [documentation of Fundoc itself](https://csssr.github.io/fundoc/) or [another project](https://github.com/CSSSR/linters) that used Fundoc.
 
 In the compiled markdown file, you can see references to the particular parts of the source code. It allows you to find the exact source of every single part of the documentation. It can be useful for non-programmers if they want to edit documentation. If you believe they should still work with git to push their changes, they actually should not. Here's the example of editing documentation in the repository of Fundoc:
 
