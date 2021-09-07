@@ -40,7 +40,7 @@
     "react-reveal": "^1.2.2",
     "react-share": "^4.4.0",
     "remark": "13.0.0",
-    "remark-html": "13.0.1",
+    "remark-html": "13.0.2",
     "sitemap": "^7.0.0"
   },
   "devDependencies": {
