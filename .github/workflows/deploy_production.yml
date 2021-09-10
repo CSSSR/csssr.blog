@@ -55,7 +55,8 @@ jobs:
           host: blog.csssr.com
           environment: production
           values: |
-            cache: etag-only
+            cache: cloudflare-worker
+            invalidateCache: true
             reduceHttpRedirects: enabled
             ingress:
               annotations:
