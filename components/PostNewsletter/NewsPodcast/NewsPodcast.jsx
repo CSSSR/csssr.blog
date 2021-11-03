@@ -5,7 +5,7 @@ import React from 'react'
 
 import styles from './NewsPodcast.styles'
 
-const NewsPodcast = ({ className, HideNewsPodcastOnMobile }) => {
+const NewsPodcast = ({ className, isHideNewsPodcastOnMobile }) => {
   const links = [
     {
       title: 'Apple Podcasts',
@@ -28,7 +28,7 @@ const NewsPodcast = ({ className, HideNewsPodcastOnMobile }) => {
   return (
     <div
       className={cn(className, {
-        hidden_mobile: HideNewsPodcastOnMobile,
+        hidden_mobile: isHideNewsPodcastOnMobile,
       })}
       data-testid="NewsPodcast:block"
     >
