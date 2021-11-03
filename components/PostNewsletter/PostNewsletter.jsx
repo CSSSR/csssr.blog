@@ -17,7 +17,7 @@ const PostNewsletter = ({
   kind,
   type,
   isHideShareLinksOnMobile,
-  HideNewsPodcastOnMobile,
+  isHideNewsPodcastOnMobile,
 }) => {
   const { title, subtitle, img, imgAlt } = postNewsletterData
 
@@ -67,7 +67,7 @@ const PostNewsletter = ({
         </div>
       )}
 
-      {withNewsPodcast && <NewsPodcast HideNewsPodcastOnMobile={HideNewsPodcastOnMobile} />}
+      {withNewsPodcast && <NewsPodcast isHideNewsPodcastOnMobile={isHideNewsPodcastOnMobile} />}
 
       <PostShare
         language={language}
