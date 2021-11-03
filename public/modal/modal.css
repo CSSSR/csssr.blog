@@ -6,7 +6,7 @@
 
 .modal-browser {
   display: table;
-  font-family: 'Roboto','Georgia', sans-serif;
+  font-family: 'Roboto', 'Georgia', sans-serif;
   box-sizing: border-box;
   position: fixed;
   z-index: 999999;
@@ -68,11 +68,14 @@
   padding-top: 16px;
   padding-bottom: 44px;
   overflow: hidden;
+  text-align: center;
+  font-size: 0;
 }
 
 .modal-browser__browser {
-  float: left;
+  display: inline-block;
   width: 20%;
+  vertical-align: top;
 }
 
 .modal-browser__browser-link {
@@ -164,5 +167,11 @@
 
   .modal-browser__browser-image {
     width: 40px;
+  }
+}
+
+@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .modal-browser__browser--safari {
+    display: none;
   }
 }
