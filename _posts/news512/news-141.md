@@ -17,7 +17,7 @@ author: 'Ислам Виндижев'
 
 Пока мы отдыхали, Ахмад Шадид (Ahmad Shadeed) написал статью [о создании компонентов в реальной жизни](https://ishadeed.com/article/building-real-life-components/). Ахмад реализует элемент списка диалогов из Facebook Messenger. Делает он это для того, чтобы показать, как всё непросто и как много факторов нужно учесть при проектировании и разработке даже такого, казалось бы, маленького компонента. В статье вас ждут разные состояния аватаров и статусов сообщений, размещение контента в компоненте, лучший способ стилизации и даже кейс с RTL-текстом. Осторожно, статья довольно длинная, но интересная.
 
-Нолан Лоусон (Nolan Lawson) в своем блоге написал заметку [о стилизации веб-компонентов](https://nolanlawson.com/2021/01/03/options-for-styling-web-components/). Автор рассматривает 4 подхода: CSS-переменные, классы и shadow parts. Я сказал 4? Четвертым автор называет escape hatch, и это точно не тот, который вы захотите использовать. Он заключается в том, что к shadowRoot просто присоединяется тег <style></style> с любыми стилями внутри. Нолан не выбирает лучший из них, а просто приводит плюсы и минусы.
+Нолан Лоусон (Nolan Lawson) в своем блоге написал заметку [о стилизации веб-компонентов](https://nolanlawson.com/2021/01/03/options-for-styling-web-components/). Автор рассматривает 4 подхода: CSS-переменные, классы и shadow parts. Я сказал 4? Четвертым автор называет escape hatch, и это точно не тот, который вы захотите использовать. Он заключается в том, что к shadowRoot просто присоединяется тег `<style></style>` с любыми стилями внутри. Нолан не выбирает лучший из них, а просто приводит плюсы и минусы.
 
 На Mozilla Hacks вышла статья, посвященная кросс-браузерному тестированию веб-приложений. Если конкретно, она посвящена обзору текущей ситуации и рассказу о том, что Mozilla делает, чтобы тестирование стало лучше и удобнее в Firefox. [В первой части](https://hacks.mozilla.org/2020/12/cross-browser-testing-part-1-web-app-testing-today/) — обзор стандарта WebDriver, DevTools Protocols. [Во второй](https://hacks.mozilla.org/2021/01/improving-cross-browser-testing-part-2-new-automation-features-in-firefox-nightly/) рассказывается о новых фичах в Firefox Nightly для тестирования. Появилась частичная поддержка Chrome DevTools Protocol, благодаря этому можно будет использовать Puppeteer и Selenium 4, а также удаленную отладку.
 
@@ -65,11 +65,11 @@ author: 'Ислам Виндижев'
   ### Пишите нам и читайте
   [Telegram—канал CSSSR](https://t.me/csssr)
 
-  [Twitter CSSSR](https://twitter.com/csssr_dev)
+[Twitter CSSSR](https://twitter.com/csssr_dev)
 
-  [Twitter новостей](https://twitter.com/csssr_news)
+[Twitter новостей](https://twitter.com/csssr_news)
 
-  [Telegram ведущего](https://t.me/Vindizh)
+[Telegram ведущего](https://t.me/Vindizh)
 
-  [Twitter ведущего](https://twitter.com/Vindizh)
+[Twitter ведущего](https://twitter.com/Vindizh)
 </Note>

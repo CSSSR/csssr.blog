@@ -29,24 +29,22 @@ While many developers truly enjoy making and working with projects that have goo
 
 [<Img imageName='tweet-about-documentation' alt='A tweet about documentation' />](https://twitter.com/mit_csail/status/1405559612326105090?s=28)
 
-
 ## Main problems of documentation writing
 
 The main problem and, perhaps, the root of the rest of the problems is the separation of code and documentation. When we write our code and documentation in different systems (e.g. GitHub and Confluence), we have two different versioning systems for code and documentation. But what does this mean? Well, it can lead to the growth of project support complexity. For instance, every single change in a source code should be manually synchronized with documentation, while every single change in the documentation is to be connected to the source code.
 
 This complexity often stops people from writing documentation at all, they may ask, "Why should we spend our time trying to write documentation for a project in development status?", adding, "We'll write the documentation when we get the completed product". This is possible, but, unfortunately, in real life, a "completed" project is a dead project. All live projects are in continuous development status. Thus, the only way to have good documentation is to write it in parallel with development, making this process as easy as possible with minimal overhead.
 
-
 Take for example this, at different times and in different places, developers tried to solve this. For instance, Racket language has its own way to keep source code and documentation as close as possible by using [Scribble](https://docs.racket-lang.org/scribble/), which allows us to integrate Racket code, including evaluating it inside the documentation:
 
 ```racket
 #lang scribble/manual
 @(require (for-label racket))
- 
+
 @title{My Library}
- 
+
 An example of the Racket code:
- 
+
 @racketblock[
 
 (define (nobody-understands-me what)
@@ -77,7 +75,7 @@ The /beauty/ of org *must* be shared.
 Go through [[file:style.scss][stylesheet]]
 
 
-** TODO Check CSS on main pages 
+** TODO Check CSS on main pages
 
 * Learn Org
 
@@ -86,7 +84,7 @@ Org makes easy things trivial and complex things practical.
 You don't need to learn Org before using Org: read the quickstart
 page and you should be good to go.  If you need more, Org will be
 here for you as well: dive into the manual and join the community!
-    
+
 ** Feedback
 
 #+include: "other/feedback.org*manual" :only-contents t
@@ -113,7 +111,7 @@ return cssRatios
 
 Org Mode is a great solution if your team is familiar with Org Mode and Emacs. Even Github supports Org Mode, and you can use `*.org` files instead of `*.md` ones.
 
-On the other hand, another problem arising from the separation of code and documentation is the weak cohesion between code and documentation parts. For example, we can describe a feature in our system, but every single part of the description is about different parts in our source files. This issue leads us to an inability to update certain parts of documentation after changing files connected to the source code or editing specific  parts of those source files. Vice versa, while reading documentation, it's difficult to quickly find related source code for a certain paragraph of documentation. Without solving this issue, the complexity of documentation support will grow increasingly with the growth of project size.
+On the other hand, another problem arising from the separation of code and documentation is the weak cohesion between code and documentation parts. For example, we can describe a feature in our system, but every single part of the description is about different parts in our source files. This issue leads us to an inability to update certain parts of documentation after changing files connected to the source code or editing specific parts of those source files. Vice versa, while reading documentation, it's difficult to quickly find related source code for a certain paragraph of documentation. Without solving this issue, the complexity of documentation support will grow increasingly with the growth of project size.
 
 But you may disagree and say, "That’s not true.Our API documentation doesn't have problems like that!" and you'll be right! You don't have such problems with API documentation or your Storybook documentation because it's generated from source code or with huge involvement of your source code in it. It has strong cohesion with source code and uses the same version control system as your source code. The only way to make writing project documentation easier, is to use the same set of tools as for code writing.
 
@@ -166,21 +164,21 @@ But what do I use to keep the simplicity of a tool and the possibility to work w
 // src/api/auth.js
 
 /**
-* @Article Authentication
-*
-* To get authenticated, you should use the `login` function, which returns auth-token to pass it with API requests that require authentication.
-*/
+ * @Article Authentication
+ *
+ * To get authenticated, you should use the `login` function, which returns auth-token to pass it with API requests that require authentication.
+ */
 const login = (username, password) => {
-    // some code here
+  // some code here
 }
 
 /**
-* @Article Authentication
-* 
-* To log out, use the `logout` method. It will invalidate the auth-token and delete it from cookies.
-*/
+ * @Article Authentication
+ *
+ * To log out, use the `logout` method. It will invalidate the auth-token and delete it from cookies.
+ */
 const logout = () => {
-    // some code here
+  // some code here
 }
 ```
 
@@ -189,21 +187,21 @@ And some description for a UI-part:
 ```javascript
 // src/components/header.js
 
-const Header = props => {
-    const { isUserAuthorized } = props
-    
-    /**
-    * @Article Authentication
-    *
-    * Only authorized users can see their balance in the header
-    */
-    return (
-        <div>
-            ...
-            {isUserAuthorized && <UserBalance />}
-            ...
-        </div>
-    )
+const Header = (props) => {
+  const { isUserAuthorized } = props
+
+  /**
+   * @Article Authentication
+   *
+   * Only authorized users can see their balance in the header
+   */
+  return (
+    <div>
+      ...
+      {isUserAuthorized && <UserBalance />}
+      ...
+    </div>
+  )
 }
 ```
 
@@ -228,4 +226,3 @@ In the compiled markdown file, you can see references to the particular parts of
 So on the gif, we can see that the only thing we need to edit our documentation is GitHub itself. Yes, it still requires an understanding of what GitHub is and the fundamental terms like "commit" and "branch". As practice shows, QAs, managers, designers, and analysts can handle it without any problems. At the same time, this way of working with documentation doesn't require knowing the file structure of a project from non-developers. It's definitely much easier than working with CLI-tools and dramatically easier than trying to synchronize Confluence and source code.
 
 At the end of the article, I wanted to remind you that Fundoc now is in the beta state, and some APIs can change in the future. Otherwise, it already solves many problems and is used in different projects, so you can try to use it as well. If you have any questions or suggestions, feel free to send me them via Github issues or PRs. I'll be glad to make it better with your help!
-
