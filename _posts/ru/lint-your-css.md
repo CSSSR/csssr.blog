@@ -73,20 +73,20 @@ tag: 'web-development'
 
 ```stylus
 body
-	font-family PTSansBold
+ font-family PTSansBold
 .wrap
-	width 1000px
+ width 1000px
         margin 0 auto
-	background-image url(../images/background.png)
+ background-image url(../images/background.png)
 .wrap__header
-	display flex
-	justify-content space-between
+ display flex
+ justify-content space-between
 .wrap__logo
-	padding 62px 0 0 112px
+ padding 62px 0 0 112px
 .wrap__secret
-	padding 48px 54px 0 0
+ padding 48px 54px 0 0
 .wrap__content
-	padding 0 112px 73px 112px
+ padding 0 112px 73px 112px
 ```
 
 <p class="image-caption">Абсолютно разные подходы к форматированию стилевых файлов</p>
@@ -198,7 +198,7 @@ npm install stylelint-order --save-dev
 
 Так же как и одинаковый порядок свойств в селекторе, одинаковая очерёдность в нестинге позволяет облегчить работу с кодом, который писал другой разработчик команды, так как вы всегда уверены, в каком именно месте искать определенные вложенные правила. Плюс это страхует от ошибок при поддержке кода, когда, к примеру, к уже существующим media добавляется ещё одно, но в неправильной очерёдности. Добавьте к этому правило о максимальной глубине вложенности и запрет на любые селекторы внутри media (то есть чтобы изменить эффект при наведении на планшетах, вы обязываете своих разработчиков вкладывать media в hover, а не наоборот) — и на выходе получите очень мощный инструмент стандартизации кода.
 
-### Реализация сортировки
+### Сортировка
 
 Данная сортировка достигается за счёт использования упомянутого выше плагина stylelint-order, возможный конфиг `.stylelintrc` может выглядеть так:
 

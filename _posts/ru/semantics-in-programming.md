@@ -6,9 +6,7 @@ date: '2019-05-26T00:00:00.000Z'
 tag: 'web-development'
 ---
 
-<blockquote>
-  <p>Эта статья — расширенная версия [доклада](https://youtu.be/rVFW009olAI) на PiterJS tour#1.</p>
-</blockquote>
+> Эта статья — расширенная версия [доклада](https://youtu.be/rVFW009olAI) на PiterJS tour#1.
 
 ---
 
@@ -42,7 +40,7 @@ instruction = { type: 'filter', target: array, arguments: [predicate] }
 
 ```js
 for (let i = 0; i < array.length; i++) {
-  if (predicate(array[i])) result.push(array[i])
+  if (predicate(array[i])) result.push(array[i])
 }
 ```
 
@@ -55,62 +53,58 @@ for (let i = 0; i < array.length; i++) {
 Как-то на ревью PR на работе я увидел чрезмерно «функциональный» подход в написании определённого набора действий и попробовал переписать этот код на «императивщину». Детали кода не важны, с первого взгляда видно, что «императивный» код (снизу) короче и в нём лучше выделены смысловые конструкции за счет их подсветки, а ещё он производительнее.
 
 ```js
-export const validateFormFields = state => {
+export const validateFormFields = (state) => {
   const displayedFields = selectFormFieldsNames(state)
-    .map(name => selectFormField(state, name))
-    .filter(isSystem);
+    .map((name) => selectFormField(state, name))
+    .filter(isSystem)
 
-  const arrayFields = displayedFields.filter(isArray);
+  const arrayFields = displayedFields.filter(isArray)
 
   const emptyRequiredArraysErrors = arrayFields
-    .filter(field => isArrayEmpty(field) && field.required)
-    .map(field => selectFriendlyText(state, field.title, field.name));
+    .filter((field) => isArrayEmpty(field) && field.required)
+    .map((field) => selectFriendlyText(state, field.title, field.name))
 
   const arrayCellsErrors = arrayFields
-    .filter(field => !isArrayEmpty(field) && isTable(field))
-    .reduce((acc, field) => [...acc, ...validateArrayCells(state, field)], []);
+    .filter((field) => !isArrayEmpty(field) && isTable(field))
+    .reduce((acc, field) => [...acc, ...validateArrayCells(state, field)], [])
 
-  const notArrayFields = displayedFields.filter(field => !isArray(field));
+  const notArrayFields = displayedFields.filter((field) => !isArray(field))
   const notArrayFieldsErrors = notArrayFields
-    .filter(field => field.required && isValueExist(field.value))
-    .map(field => selectFriendlyText(state, field.title, field.name));
+    .filter((field) => field.required && isValueExist(field.value))
+    .map((field) => selectFriendlyText(state, field.title, field.name))
 
-  return [
-    ...notArrayFieldsErrors,
-    ...emptyRequiredArraysErrors,
-    ...arrayCellsErrors
-  ];
-};
+  return [...notArrayFieldsErrors, ...emptyRequiredArraysErrors, ...arrayCellsErrors]
+}
 ```
 
 VS
 
 ```js
 function validateFormFields(state) {
-  const fieldsNames = selectFormFieldsNames(state);
-  const result = [];
+  const fieldsNames = selectFormFieldsNames(state)
+  const result = []
 
   for (let i = 0; i < fieldsNames.length; i++) {
-    const field = selectFormField(state, fieldsNames[i]);
+    const field = selectFormField(state, fieldsNames[i])
 
-    if (isSystem(field)) continue;
+    if (isSystem(field)) continue
 
-    if (!isArray(field) && field.required && isValueExist(field.value)) {
-      result.push(selectFriendlyText(state, field.title, field.name));
+    if (!isArray(field) && field.required && isValueExist(field.value)) {
+      result.push(selectFriendlyText(state, field.title, field.name))
     }
 
-    if (!isArray(field)) continue;
+    if (!isArray(field)) continue
 
-    if (isArrayEmpty(field) && field.required) {
-      result.push(selectFriendlyText(state, field.title, field.name));
+    if (isArrayEmpty(field) && field.required) {
+      result.push(selectFriendlyText(state, field.title, field.name))
     }
 
-    if (!isArrayEmpty(field) && isTable(field)) {
-      result.push(...validateArrayCells(state, field));
+    if (!isArrayEmpty(field) && isTable(field)) {
+      result.push(...validateArrayCells(state, field))
     }
   }
 
-  return result;
+  return result
 }
 ```
 
@@ -183,9 +177,9 @@ setTimeout(() => f(prop), time)
 
 ```js
 // [1]
-console.log({ '2': null, ...({ '1': null, '2': null }) })
+console.log({ 2: null, ...{ 1: null, 2: null } })
 // [2]
-console.log({ '2.0': null, ...({ '1.0': null, '2.0': null }) })
+console.log({ '2.0': null, ...{ '1.0': null, '2.0': null } })
 ```
 
 С первого взгляда может показаться, что это очень похожий код, результаты которого тоже будет похожи. Но, согласно спецификации, сортировка свойств объекта имеет некоторые особенности, поэтому в первом случае результат будет `{1: null, 2: null}`, а во втором `{2.0: null, 1.0: null}` — первыми свойствами всегда идут валидные индексы. Как можно заметить, во втором варианте порядок свойств поменялся. Эта логика не интуитивна и описывается в дебрях спецификации ЯП — формальной семантикой.
@@ -196,29 +190,29 @@ console.log({ '2.0': null, ...({ '1.0': null, '2.0': null }) })
 // [1]
 function include(array, target) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] === target) return true;
+    if (array[i] === target) return true
   }
 
-  return false;
+  return false
 }
 
 // [2]
 function include(array, target) {
-  for (const element of array) {
-    if (element === target) return true;
+  for (const element of array) {
+    if (element === target) return true
   }
 
-  return false;
+  return false
 }
 ```
 
 Вот ещё похожий код. Интересный вопрос: какая у него может быть разница в производительности и почему? Продвинутые знания ЯП о работе итераторов могут подсказать, что `for`&nbsp;`of` должен быть немного медленнее, но здесь скрывается ещё одна хитрая проблема.
 
-Proxy, get и set реализуют паттерн «заместитель», при котором возможно перехватить обращение к свойствам целевого объекта для выполнения какой-то дополнительной логики. Проблема этого паттерна в том, что он воздействует на поведение программы, но это воздействие никак не отражается *визуально*. То есть, говоря о формальной семантике: в этом паттерне она вообще никак не отображается, соответственно, не сходится с интуитивной семантикой.
+Proxy, get и set реализуют паттерн «заместитель», при котором возможно перехватить обращение к свойствам целевого объекта для выполнения какой-то дополнительной логики. Проблема этого паттерна в том, что он воздействует на поведение программы, но это воздействие никак не отражается _визуально_. То есть, говоря о формальной семантике: в этом паттерне она вообще никак не отображается, соответственно, не сходится с интуитивной семантикой.
 
 Если сравнить код `1` и `2`, то станет понятно, что с функциональной точки зрения разницы в нём нет, но если `array` будет обёрнут в прокси, то каждый вызов `array[i]` будет «утяжелён» перехватчиком, поэтому у этого, казалось бы, одинакового кода может быть заметная разница в производительности в пользу варианта с `for`&nbsp;`of` (там перехватчик отработает лишь один раз на&nbsp;`Symbol.iterator`).
 
-Если в проекте используются прокси или геттеры и сеттеры, то в любой случайной точке кодовой базы никогда нельзя быть до конца уверенным, есть здесь они или нет. Это невидимый контекст, чтобы узнать о котором иногда, особенно в больших проектах, требуется исследовать большое количество связанного кода. Таким образом, приходится либо постоянно быть неуверенным в читаемом коде, либо производить его многочисленные инспекции. Решением проблемы может быть использование паттерна «декоратор» или любое *явное* использование контекста и зависимостей.
+Если в проекте используются прокси или геттеры и сеттеры, то в любой случайной точке кодовой базы никогда нельзя быть до конца уверенным, есть здесь они или нет. Это невидимый контекст, чтобы узнать о котором иногда, особенно в больших проектах, требуется исследовать большое количество связанного кода. Таким образом, приходится либо постоянно быть неуверенным в читаемом коде, либо производить его многочисленные инспекции. Решением проблемы может быть использование паттерна «декоратор» или любое _явное_ использование контекста и зависимостей.
 
 ### JSX vs JS
 
@@ -227,17 +221,16 @@ JSX должен быть в JS, а не JS в JSX. Top level синтакс
 </Note>
 
 ```jsx
-<Component />
+;<Component />
 // babel ->
 React.createElement(Component, null)
 ```
 
-JSX с точки зрения интуитивной семантики — вёрстка, он отвечает за то, ***что*** будет отображаться, а не ***как***, потому что его задача именно в инкапсуляции логики `document.createElement` (формальной семантики). И на этом примере можно понять, что хорошая декларативность / метапрограммирование — это когда фактической разницы в результате работы кода с точки зрения интуитивной и формальной семантики нет. Но возвращаясь к JSX: он, как и результат самого HTML, всегда должен быть статичен, независимо от данных. В подтверждение этому выступает API хуков жизненного цикла в классах или хуков в функциональных компонентах — они описываются в JS, до блока с JSX, это наглядно.
+JSX с точки зрения интуитивной семантики — вёрстка, он отвечает за то, **_что_** будет отображаться, а не **_как_**, потому что его задача именно в инкапсуляции логики `document.createElement` (формальной семантики). И на этом примере можно понять, что хорошая декларативность / метапрограммирование — это когда фактической разницы в результате работы кода с точки зрения интуитивной и формальной семантики нет. Но возвращаясь к JSX: он, как и результат самого HTML, всегда должен быть статичен, независимо от данных. В подтверждение этому выступает API хуков жизненного цикла в классах или хуков в функциональных компонентах — они описываются в JS, до блока с JSX, это наглядно.
 
 ```jsx
 import { Switch, Route, Redirect } from 'react-router'
-
-<Switch>
+;<Switch>
   <Route exact path="/" component={Home} />
   <Route path="/about" component={About} />
   <Redirect to="/" />
@@ -247,7 +240,7 @@ import { Switch, Route, Redirect } from 'react-router'
 Например, `react-router` является примером очень плохого API, т.к. через компонент `<Switch>` он предлагает описывать логику зависимостей от данных прямо в JSX, более того, сам элемент превращается в управляющий блок. При этом классическая семантика полностью рушится, что ведет к ментальному усложнению чтения кода — в JSX может быть спрятана не только вёрстка, и его уже нужно читать вдумчивее, в голове нужно держать больше контекста. Правильнее в JS в начале блока функционального компонента или метода `render` описывать все зависимости, высчитывать их и потом в конечный возвращаемый JSX вставлять всё необходимое. Это и есть декларативное описание.
 
 ```jsx
-title = predicate ? 'first' : 'second';
+title = predicate ? 'first' : 'second'
 return <span>{title}</span>
 ```
 
@@ -295,7 +288,7 @@ return <span>{title}</span>
 
 Render Props через `children` тоже подходит как явный пример антипаттерна семантики. Да, сам подход хорошо решает технические проблемы, но сильно ухудшает читаемость кода, нарушая принципы ответственности JSX. Решением может быть использование <a href="https://github.com/pedronauck/react-adopt" target="_blank">сведе’ния</a> render-props.
 
-Даже на популярном ресурсе ***css-tricks*** дают <a href="https://css-tricks.com/an-overview-of-render-props-in-react/" target="_blank">плохие советы</a> по render-props:
+Даже на популярном ресурсе **_css-tricks_** дают <a href="https://css-tricks.com/an-overview-of-render-props-in-react/" target="_blank">плохие советы</a> по render-props:
 
 ```jsx
 const App = () => {
@@ -330,7 +323,7 @@ const App = () => {
     { link: 'https://jsonplaceholder.typicode.com/users' },
     ({ list, isLoading, error }) => {
       const errorView = error && <p>{error.message}</p>
-      const listView = list.map(user => <li key={user.id}>{user.name}</li>)
+      const listView = list.map((user) => <li key={user.id}>{user.name}</li>)
       const bodyView = isLoading ? <h2>Loading...</h2> : <ul>{listView}</ul>
 
       return (
@@ -340,7 +333,7 @@ const App = () => {
           {bodyView}
         </div>
       )
-    }
+    },
   )
 }
 ```

@@ -25,7 +25,13 @@
       "div",
       "p",
       "iframe",
-      "br"
+      "br",
+      "sub",
+      "style",
+      "em",
+      "blockquote",
+      "script",
+      "nobr"
     ]
   }
 }

@@ -213,10 +213,10 @@ $scope.setDefaultCage = function () {
 
 ```html
 <div class="form-group">
-	<select ng-model="request.volary" ng-change="setDefaultCage()" ng-options="volary.text for volary in volaries track by volary.volary_id" class="form-control"></select>
+ <select ng-model="request.volary" ng-change="setDefaultCage()" ng-options="volary.text for volary in volaries track by volary.volary_id" class="form-control"></select>
 </div>
 <div class="form-group">
-	<select ng-model="request.cage" ng-options="cage.text for cage in request.volary.cages track by cage.cage_id" class="form-control">
+ <select ng-model="request.cage" ng-options="cage.text for cage in request.volary.cages track by cage.cage_id" class="form-control">
 </div>
 ```
 
