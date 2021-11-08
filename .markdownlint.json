@@ -1,0 +1,31 @@
+{
+  "default": true,
+  "MD013": false,
+  "MD026": {
+    "punctuation": "."
+  },
+  "MD033": {
+    "allowed_elements": [
+      "Quote",
+      "Img",
+      "ParagraphWithImage",
+      "Separator",
+      "Note",
+      "Subtitle",
+      "Video",
+      "Caption",
+      "Table",
+      "thead",
+      "tr",
+      "th",
+      "tbody",
+      "td",
+      "a",
+      "span",
+      "div",
+      "p",
+      "iframe",
+      "br"
+    ]
+  }
+}
