@@ -4,9 +4,9 @@ import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import React from 'react'
 
-import { newsletterData } from '../../data/newsletter'
-import ContactForm from '../ContactForm'
-import { Grid } from '../Grid'
+import { newsletterData } from '../../../data/newsletter'
+import ContactForm from '../../ContactForm'
+import MainGrid from '../MainGrid'
 
 import styles, { dynamicFooterStyles } from './Newsletter.styles'
 
@@ -15,7 +15,7 @@ const Newsletter = ({ className, language, kind }) => {
 
   return (
     <div className={className} data-testid="Newsletter:block">
-      <Grid as="section" className="section">
+      <MainGrid className="grid">
         <div className="container">
           <Heading.H2 type="regular" className="title">
             {title}
@@ -33,7 +33,7 @@ const Newsletter = ({ className, language, kind }) => {
 
           {language === 'ru' && <Global styles={dynamicFooterStyles} />}
         </div>
-      </Grid>
+      </MainGrid>
     </div>
   )
 }

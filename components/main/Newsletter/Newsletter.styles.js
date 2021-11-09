@@ -1,28 +1,24 @@
 import { css } from '@emotion/react'
 
-import calcRem from '../../utils/style/calcRem'
+import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   & {
     position: relative;
-    grid-column: 1 / span 12;
     width: 100%;
     margin-top: ${calcRem(72)};
     padding-bottom: ${calcRem(30)};
-    background-color: white;
     z-index: 9000;
+    background-color: #F5F6FA;
   }
 
-  .section {
-    width: 100%;
-    justify-content: center;
+  .grid {
     padding: ${calcRem(30)} 0;
-    background-color: #F5F6FA;
   }
 
   .container {
     position: relative;
-    grid-column: 2 / span 10;
+    grid-column: 1 / span 12;
   }
 
   .title {
@@ -51,29 +47,41 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 
   ${desktop.all} {
     & {
-      padding-bottom: 26px;
+      margin-bottom: 26px;
+      padding-bottom: 0;
+    }
+
+    .grid {
+      padding-bottom: 16px;
+    }
+
+    .picture {
+      margin-right: -84px;
+      margin-bottom: 14px;
     }
   }
 
-  ${desktop.l} {
-    --width-container: 1328px;
-  }
-
-  ${desktop.m} {
-    --width-container: 1328px;
-  }
-
-  ${desktop.s}{
-    --width-container: 1232px;
-  }
 
   ${tablet.all} {
+    & {
+      padding-bottom: 0;
+      margin-bottom: ${calcRem(37)};
+    }
+
+    .container {
+      grid-column: 2 / span 10 ;
+    }
+
+    .grid {
+      padding-bottom: 0;
+    }
+
     .subtitle {
       font-size: ${calcRem(14)};
     }
 
     .picture {
-      bottom: ${calcRem(-50)};
+      bottom: ${calcRem(-37)};
       width: ${calcRem(224)};
       height: ${calcRem(114)};
     }
@@ -82,12 +90,6 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   ${mobile.all} {
     & {
       margin-top: ${calcRem(70)};
-      background-color: #F5F6FA;
-    }
-
-    .section {
-      padding-left: ${calcRem(16)};
-      padding-right: ${calcRem(16)};
     }
 
     .container {
@@ -115,8 +117,14 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 `
 
 export const dynamicFooterStyles = css`
+  // Когда используется этот компонент, у футера не должно быть отступа
+
   footer.footer {
-    margin-top: 0; // Когда использьуется этот компонент, у футера не должно быть отступа
+    margin-top: 0;
+  }
+
+  main.main {
+    margin-bottom: 0;
   }
 `
 
