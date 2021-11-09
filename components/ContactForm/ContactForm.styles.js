@@ -326,7 +326,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       flex-direction: column;
 
       & div:nth-of-type(2) {
-        order: 3;
+        margin-top: 7px;
+        order: 0;
       }
 
       .policy {
