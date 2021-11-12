@@ -1,6 +1,6 @@
 ---
 title: 'В этом выпуске: Angular 13, Firefox 94, реактивность, лекции Школы разработки интерфейсов Яндекса, ReactConf 2021 и большой шаг для Svelte. Также: ряд практических материалов, несколько релизов и другие события уходящей недели.'
-soundcloudLink: 'https://soundcloud.com/csssr/'
+soundcloudLink: 'https://soundcloud.com/csssr/angular-13-firefox-94-reaktivnost-lektsii-shri-yandeksa-2021-reactconf-2021-razvitie-svelte'
 date: '2021-11-12T00:00:00.000Z'
 episodeNumber: 198
 tag: 'news'
