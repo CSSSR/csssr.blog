@@ -221,7 +221,8 @@ JSX должен быть в JS, а не JS в JSX. Top level синтакс
 </Note>
 
 ```jsx
-;<Component />
+<Component />
+
 // babel ->
 React.createElement(Component, null)
 ```

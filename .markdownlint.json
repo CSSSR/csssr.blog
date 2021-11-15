@@ -31,7 +31,8 @@
       "em",
       "blockquote",
       "script",
-      "nobr"
+      "nobr",
+      "cite"
     ]
   }
 }
