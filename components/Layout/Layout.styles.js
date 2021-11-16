@@ -58,6 +58,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    z-index: 1;
   }
 
   .main {
