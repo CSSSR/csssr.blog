@@ -52,19 +52,19 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     }
 
     .grid {
-      padding-bottom: 16px;
+      padding-bottom: 26px;
     }
 
     .picture {
-      margin-right: -84px;
-      margin-bottom: 14px;
+      margin-right: -83px;
+      margin-bottom: 4px;
     }
   }
 
 
   ${tablet.all} {
     & {
-      padding-bottom: 0;
+      padding-bottom: 26px;
       margin-bottom: ${calcRem(37)};
     }
 
@@ -81,7 +81,8 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     }
 
     .picture {
-      bottom: ${calcRem(-37)};
+      bottom: ${calcRem(-47)};
+      right: ${calcRem(-4)};
       width: ${calcRem(224)};
       height: ${calcRem(114)};
     }
@@ -90,6 +91,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   ${mobile.all} {
     & {
       margin-top: ${calcRem(70)};
+      padding-bottom: 0;
     }
 
     .container {
