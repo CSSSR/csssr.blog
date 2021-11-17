@@ -274,7 +274,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .policy {
     width: ${calcRem(504)};
-    margin-top: ${calcRem(9)};
+    margin-top: ${calcRem(4)};
     font-family: Roboto, sans-serif;
     font-weight: 300;
     font-size: ${calcRem(10)};
@@ -300,6 +300,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
           }
         }
         .policy {
+          margin-top: ${calcRem(9)};
           display: block;
         }
       }
