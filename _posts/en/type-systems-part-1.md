@@ -1,7 +1,8 @@
 ---
 title: 'Comparison of <i>Type Systems</i> in Front-end Languages'
 coverImageAlt: 'Type Systems'
-date: '2021-10-10T05:35:07.322Z'
+author: 'Mikhail Medvedev'
+date: '2021-11-17T05:35:07.322Z'
 tag: 'web-development'
 ---
 
@@ -616,7 +617,7 @@ let values = [id(10), id("Hello")] as const
 
 We can apply [as const](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions) assertion and many different type will be inferred for us. Without it, we had `(string | number)[]` and with it, we get `[10, ’Hello’]` tuple, and literals didn’t get widened to their supertypes (number and string). This is another example where literal types can do their job.
 
-ReqasonML is a dialect of OCaml which is based on an extension of Standart ML, which in its turn uses the Hindley-Milner system — [ML<sup>F</sup>](http://www.cs.nott.ac.uk/~pszgmh/appsem-papers/lebotlan.pdf).
+ReasonML is a dialect of OCaml which is based on an extension of Standart ML, which in its turn uses the Hindley-Milner system — [ML<sup>F</sup>](http://www.cs.nott.ac.uk/~pszgmh/appsem-papers/lebotlan.pdf).
 
 ML<sup>F</sup> differs from Hindley-Milner in a close way to how HMF differs from it. The main idea of ML<sup>F</sup> is to add support for first-class polymorphism into the Hindley-Milner system.
 
