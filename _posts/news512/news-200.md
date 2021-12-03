@@ -1,6 +1,6 @@
 ---
 title: 'В этом выпуске: TSConf 2021, property-based тестирование, .NET 6 и Visual Studio 2022, продолжение гайда по Next.js, где следить за новыми фичами ECMAScript, как подступиться к контейнеризации, security-обновление PHP и основание PHP Foundation.'
-soundcloudLink: 'https://soundcloud.com/csssr/tsconf-2021-property-based-testing-net-6-visual-studio-2022-konteynerizatsiya-php-foundation'
+soundcloudLink: 'https://soundcloud.com/csssr/tsconf-2021-property-based-testing-net-6-visual-studio-2022-konteynerizatsiya-php-foundationp'
 date: '2021-11-26T00:00:00.000Z'
 episodeNumber: 200
 tag: 'news'
