@@ -1,7 +1,7 @@
 ---
 title: 'В этом выпуске: Chrome 97 и Firefox 96, пора ли переходить на Vite и pnpm, чего ждать от CSS в 2022, немного обучающих материалов, итоги года по версии Rising Stars и немного о colors.js и теории заговора.'
 soundcloudLink: 'https://soundcloud.com/csssr/chrome-97-firefox-96-pora-li-perekhodit-na-vite-i-pnpm-css-v-2022-rising-stars-2021'
-date: '2021-01-17T00:00:00.000Z'
+date: '2022-01-17T00:00:00.000Z'
 episodeNumber: 205
 tag: 'news'
 author: 'Ислам Виндижев'

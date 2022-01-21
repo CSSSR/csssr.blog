@@ -1,7 +1,7 @@
 ---
 title: 'В этом выпуске: конспект о микрофронтендах, сравнение Remix и Next.js, релиз Parcel CSS, обновления браузеров, Node.js 17.4.0, Deno 1.18, бесплатный курс по Linux для разработчиков и, кажется, завершение истории с faker.js.'
 soundcloudLink: 'https://soundcloud.com/csssr/konspekt-o-mikrofrontendakh-remix-vs-nextjs-parcel-css-nodejs-1740-deno-118-kurs-po-linux'
-date: '2021-01-21T00:00:00.000Z'
+date: '2022-01-21T00:00:00.000Z'
 episodeNumber: 206
 tag: 'news'
 author: 'Ислам Виндижев'
