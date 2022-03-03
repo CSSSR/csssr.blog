@@ -1,0 +1,65 @@
+# Этот файл сгенерирован автоматически, не редактируйте его вручную
+
+name: Run Nightwatch e2e tests
+concurrency: e2e-tests
+on:
+  workflow_dispatch:
+    inputs:
+      launchUrl:
+        description: Базовый URL сайта
+        default: 'https://blog.csssr.com/'
+        required: true
+      browserName:
+        description: Название браузера как в e2e-tools.json
+        default: remote_chrome
+        required: true
+      checkScreenshots:
+        description: Проверка скриншотов
+        default: 'true'
+        required: true
+permissions:
+  actions: read
+  checks: none
+  contents: read
+  deployments: none
+  issues: none
+  packages: none
+  pull-requests: none
+  repository-projects: none
+  security-events: none
+  statuses: none
+jobs:
+  run-tests:
+    name: Run tests
+    runs-on:
+      - self-hosted
+      - e2e-tests
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+      - run: yarn install --frozen-lockfile
+        working-directory: e2e-tests
+      - run: 'yarn et nightwatch:run --browser ${{ github.event.inputs.browserName }} --checkScreenshots=${{ github.event.inputs.checkScreenshots }}'
+        working-directory: e2e-tests
+        env:
+          REMOTE_CHROME_SELENIUM_USERNAME: '${{ secrets.SELENIUM_USERNAME }}'
+          REMOTE_CHROME_SELENIUM_PASSWORD: '${{ secrets.SELENIUM_PASSWORD }}'
+          REMOTE_FIREFOX_SELENIUM_USERNAME: '${{ secrets.SELENIUM_USERNAME }}'
+          REMOTE_FIREFOX_SELENIUM_PASSWORD: '${{ secrets.SELENIUM_PASSWORD }}'
+          REMOTE_SAFARI_SELENIUM_USERNAME: '${{ secrets.SELENIUM_USERNAME }}'
+          REMOTE_SAFARI_SELENIUM_PASSWORD: '${{ secrets.SELENIUM_PASSWORD }}'
+          LAUNCH_URL: '${{ github.event.inputs.launchUrl }}'
+          ENABLE_ALLURE_REPORT: 'true'
+      - if: always()
+        name: Generate Allure report
+        run: node -e 'require("@csssr/e2e-tools/upload-allure-report")'
+        working-directory: e2e-tests
+        id: allure
+        env:
+          LAUNCH_URL: '${{ github.event.inputs.launchUrl }}'
+          RUN_COMMAND: 'yarn et nightwatch:run --browser ${{ github.event.inputs.browserName }} --checkScreenshots=${{ github.event.inputs.checkScreenshots }}'
+          ALLURE_REPORT_DIRECTORIES: 'codecept/report/allure-reports/,nightwatch/report/allure-reports/'
+          AWS_ACCESS_KEY_ID: '${{ secrets.TEST_REPORTS_AWS_ACCESS_KEY_ID }}'
+          AWS_SECRET_ACCESS_KEY: '${{ secrets.TEST_REPORTS_AWS_SECRET_ACCESS_KEY }}'

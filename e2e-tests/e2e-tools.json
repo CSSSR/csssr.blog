@@ -1,6 +1,7 @@
 {
   "tools": {
     "@csssr/e2e-tools-nightwatch": {
+      "githubActions": { "enabled": true },
       "browsers": {
         "local_chrome": {
           "default": true,
@@ -15,10 +16,9 @@
           "remote": true,
           "type": "selenium",
           "url": "https://chrome.selenium.csssr.cloud/",
-          "basicAuth": {
-            "credentialsId": "chromedriver",
-            "username_env": "CHROMEDRIVER_USERNAME",
-            "password_env": "CHROMEDRIVER_PASSWORD"
+          "seleniumBasicAuth": {
+            "username_env": "SELENIUM_USERNAME",
+            "password_env": "SELENIUM_PASSWORD"
           },
           "desiredCapabilities": {
             "browserName": "chrome",
@@ -38,10 +38,9 @@
           "remote": true,
           "type": "selenium",
           "url": "https://firefox.selenium.csssr.cloud",
-          "basicAuth": {
-            "credentialsId": "chromedriver",
-            "username_env": "CHROMEDRIVER_USERNAME",
-            "password_env": "CHROMEDRIVER_PASSWORD"
+          "seleniumBasicAuth": {
+            "username_env": "SELENIUM_USERNAME",
+            "password_env": "SELENIUM_PASSWORD"
           },
           "desiredCapabilities": {
             "browserName": "firefox",
@@ -52,11 +51,10 @@
         "remote_safari": {
           "remote": true,
           "type": "selenium",
-          "url": "https://safari1.selenium.csssr.cloud",
-          "basicAuth": {
-            "credentialsId": "chromedriver",
-            "username_env": "CHROMEDRIVER_USERNAME",
-            "password_env": "CHROMEDRIVER_PASSWORD"
+          "url": "https://safari.selenium.csssr.cloud",
+          "seleniumBasicAuth": {
+            "username_env": "SELENIUM_USERNAME",
+            "password_env": "SELENIUM_PASSWORD"
           },
           "desiredCapabilities": { "browserName": "safari" },
           "globals": { "skipScreenshotAssertions": false }
