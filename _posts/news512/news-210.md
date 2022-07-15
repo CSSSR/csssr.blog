@@ -1,7 +1,7 @@
 ---
 title: 'В этом выпуске мы продолжим говорить о новостях за время перерыва.'
 soundcloudLink: 'https://soundcloud.com/csssr/the-state-of-js-2021-gh-copilot-relizy-yazykov-programmirovaniya-redis-7-ubuntu-2204-moduli-js'
-date: '2022-07-08T00:00:00.000Z'
+date: '2022-07-15T00:00:00.000Z'
 episodeNumber: 210
 tag: 'news'
 author: 'Ислам Виндижев'
