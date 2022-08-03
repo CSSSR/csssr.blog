@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: 14
           cache: yarn
@@ -23,7 +23,7 @@ jobs:
           yarn
           yarn et upgrade
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v2
+        uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Обновление зависимостей @csssr/e2e-tools
@@ -34,3 +34,5 @@ jobs:
             - [@csssr/e2e-tools-nightwatch](https://github.com/CSSSR/e2e-tools/blob/master/modules/nightwatch/CHANGELOG.md):
           labels: dependencies,e2e
           branch: upgrade-e2e-tests-dependencies
+          add-paths: |
+            e2e-tests
