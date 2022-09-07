@@ -419,7 +419,7 @@ data Tuple a b = Tuple a b
 pets = Tuple myPet myPet2
 ```
 
-and a type class to be able to logShow them
+and a type class to be able to `logShow` them
 
 ```TypeScript
 instance showTuple :: (Show a, Show b) => Show (Tuple a b) where
@@ -428,7 +428,7 @@ instance showTuple :: (Show a, Show b) => Show (Tuple a b) where
 
 and that would work. But if you'd like to do `pets = Tuple myPet myPet2 myPet2`, the compiler will notify you of an error instead of inferring 3 items tuple type.
 
-In this example of PureScript code, you can check different things (types inferred for variables, uncomment `showsAnimal)` and see the type checker reporting an error because you haven’t covered all cases of the pattern).
+In this example of PureScript code, you can check different things (types inferred for variables, uncomment `showsAnimal`) and see the type checker reporting an error because you haven’t covered all cases of the pattern).
 
 If you fix `showsAnimal` to make it cover the whole pattern
 
