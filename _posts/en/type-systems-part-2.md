@@ -126,7 +126,7 @@ We've already used some product types in previous examples . We can create recor
 In general, product types open up an opportunity for us to create complex structures.
 
 
-###**Note on TypeScript Simulatiting Pattern Matching in TypeScript**
+###**Note on Simulatiting Pattern Matching in TypeScript**
 
 We have shown some examples of pattern matching in PureScript and ReasonML. Here is an example of how we can simulate it in TypeScript using [discriminated unions](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions).
 
