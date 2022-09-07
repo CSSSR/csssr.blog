@@ -8,8 +8,6 @@ tag: 'web-development'
 
 ---
 
-##**General Information**
-
 **W**e've already come across such types as `string` or `number`. They are called primitive. These types describe the simplest units of data available in our language. But how do we describe the things listed below?
 
 * Value which can be of different types
