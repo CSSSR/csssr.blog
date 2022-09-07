@@ -8,7 +8,7 @@ tag: 'web-development'
 
 ---
 
-**W**e've already come across such types as **string** or **number**. They are called primitive. These types describe the simplest units of data available in our language. But how do we describe the things listed below?
+**W**e've already come across such types as **string** or **number**. They are called primitive. These types describe the simplest units of data available in our language. But how do we describe the things listed below? [Beforehand you might want to read first part of the series.](https://blog.csssr.com/en/article/type-systems-part-1/)
 
 * Value which can be of different types
 * Some sequence of values (lists or tuples, for example)
