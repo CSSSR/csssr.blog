@@ -210,14 +210,14 @@ type A<T> = T | never // == T
 type B<U> = U & unknown // == U
 ```
 
-If you check the [online compiler](https://www.typescriptlang.org/play?#code/C4TwDgpgBAggPAFQHxQLxQVAPlAdhANwgCcAoUSKAITgFUV1aoAyKAV1wGtcB7Ad1xA), you'll see that `A&lt;T> = T` and `B&lt;U> = U` — the operation is simplified to `T` and `U` with identity elements removed from it, as in these cases, they don't bring any useful type information. And if we change the operators, we get the opposite:
+If you check the [online compiler](https://www.typescriptlang.org/play?#code/C4TwDgpgBAggPAFQHxQLxQVAPlAdhANwgCcAoUSKAITgFUV1aoAyKAV1wGtcB7Ad1xA), you'll see that `A&<T> = T` and `B<U> = U` — the operation is simplified to `T` and `U` with identity elements removed from it, as in these cases, they don't bring any useful type information. And if we change the operators, we get the opposite:
 
 ```TypeScript
 type A<T> = T & never
 type B<U> = U | unknown
 ```
 
-`A&lt;T> = never` and `B&lt;U> = unknown` - [no information on T and U saved](https://www.typescriptlang.org/play?#code/C4TwDgpgBAggPAFQHxQLxQVAZFAdhANwgCcAoUSKAITgFUV1aoAfKAV1wGtcB7Ad1xA).
+`A<T> = never` and `B<U> = unknown` - [no information on T and U saved](https://www.typescriptlang.org/play?#code/C4TwDgpgBAggPAFQHxQLxQVAZFAdhANwgCcAoUSKAITgFUV1aoAfKAV1wGtcB7Ad1xA).
 
 ##**Interaction of Subtyping and Type Algebra**
 
