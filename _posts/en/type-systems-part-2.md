@@ -8,7 +8,7 @@ tag: 'web-development'
 
 ---
 
-**W**e've already come across such types as **string** or **number**. They are called primitive. These types describe the simplest units of data available in our language. But how do we describe the things listed below?
+**W**e've already come across such types as `string` or `number`. They are called primitive. These types describe the simplest units of data available in our language. But how do we describe the things listed below? [Beforehand you might want to read first part of the series.](https://blog.csssr.com/en/article/type-systems-part-1/)
 
 * Value which can be of different types
 * Some sequence of values (lists or tuples, for example)
@@ -16,7 +16,7 @@ tag: 'web-development'
 
 This is where algebraic data types (ADTs) come in. These types are created by a combination of primitive or other algebraic types. In terms of the type system, all types that aren't primitive appear as algebraic. Two common classes of algebraic types are product types (a product, also known as a tuple, or a record, which is just a special case of a record) and sum types (disjointed or disjunctive unions, variant-type.) So, the type algebra is about creating some composite types based on a more primitive one with the help of allowed operators.
 
-We are going to use some speculative metaphor and say that sum and product types (especially in presence of subtyping relations) are a very close equivalent to the sum and product from set theory. Here is some explanation for those who are not familiar with set theory. If we have some finite set of values, for example **a = [1, 2, 3]** and **b = [4, 5, 6]**, than Sum(a, b) will be **c = Sum(a, b) = [1, 2, 3, 4, 5, 6]** (which is also called a union), where the value of type **c** can be any of the given ones. The product is a Casterian product, which means that for our **a** and **b**, **c = Product(a, b) = [[1, 4], [1, 5], [1, 6], [2, 4], [2, 5], [2, 6], [3, 4], [3, 5], [3, 6]],** so the values of the type **c** can be any of the given pairs. Looking ahead, `|` operators in TypeScript let us make unions, and both ReasonML and PureScript only allow us to make disjoint (or tagged) unions which differ from simple unions in a way that they save information about which set the given element appeared in the sum from.
+We are going to use some speculative metaphor and say that sum and product types (especially in presence of subtyping relations) are a very close equivalent to the sum and product from set theory. Here is some explanation for those who are not familiar with set theory. If we have some finite set of values, for example **a = [1, 2, 3]** and **b = [4, 5, 6]**, then **Sum(a, b)** will be **c = Sum(a, b) = [1, 2, 3, 4, 5, 6]** (which is also called a union), where the value of type **c** can be any of the given ones. The product is a Casterian product, which means that for our **a** and **b**, **c = Product(a, b) = [[1, 4], [1, 5], [1, 6], [2, 4], [2, 5], [2, 6], [3, 4], [3, 5], [3, 6]],** so the values of the type **c** can be any of the given pairs. Looking ahead, `|` operators in TypeScript let us make unions, and both ReasonML and PureScript only allow us to make disjoint (or tagged) unions which differ from simple unions in a way that they save information about which set the given element appeared in the sum from.
 
 All the languages mentioned in our article have good support for ADTs.
 
@@ -43,7 +43,7 @@ type CollectionItem = string | number | { flag: boolean };
 const collection: CollectionItem[] = ['a', 10, {flag: true}]
 ```
 
-And with that typing, when we access a collection of items with iteration or by index (which is a trickier thing to do), to work with that value as an item of the exact type, we should remove ambiguity by checking, for example, that **typeof collection[index] === 'string'**. Only after such a check, the type system would allow you to pass that value where **string** type is expected. Such checks are still runtime, but the type checker forces you to put such checks in your code.
+And with that typing, when we access a collection of items with iteration or by index (which is a trickier thing to do), to work with that value as an item of the exact type, we should remove ambiguity by checking, for example, that `typeof collection[index] === 'string'`. Only after such a check, the type system would allow you to pass that value where `string` type is expected. Such checks are still runtime, but the type checker forces you to put such checks in your code.
 
 Also, if the structure of a collection is always the same as in the example, it could be typed as a tuple
 
@@ -53,7 +53,7 @@ type Collection = [string, number, { flag: boolean }];
 const collection: Collection = ['a', 10, { flag: true }];
 ```
 
-In that case, we can create arrays of type **Collection** only with the exact order of values (the string value goes first, then a number, and the last one is { flag: boolean }) that need to be exactly the same size. When accessed by index, it will check that the accessed index is not out of bounds, and the type of access value will be inferred without ambiguity. On the other side, if you try to iterate over an array of this type, you'll get the same result as in the previous example — the type of variable will be **string | number | { flag: boolean };** and you will have the same capabilities as in the case of manually defined union. What is more, TypeScript enables you to use **switch/case** as a very poor variant of pattern matching. With its help, we can also remove ambiguity (sadly, for a union of some different record types, you have to add some field that will work as a tag to imitate pattern matching on them)
+In that case, we can create arrays of type `Collection` only with the exact order of values (the string value goes first, then a number, and the last one is { flag: boolean }) that need to be exactly the same size. When accessed by index, it will check that the accessed index is not out of bounds, and the type of access value will be inferred without ambiguity. On the other side, if you try to iterate over an array of this type, you'll get the same result as in the previous example — the type of variable will be `string | number | { flag: boolean };` and you will have the same capabilities as in the case of manually defined union. What is more, TypeScript enables you to use `switch/case` as a very poor variant of pattern matching. With its help, we can also remove ambiguity (sadly, for a union of some different record types, you have to add some field that will work as a tag to imitate pattern matching on them)
 
 Variant types are analogs of unions in ReasonML and PureScript. They are close to TypeScript (but closer to the PureScript ones) but different in the following way: you should always define tags (constructors) for each item included into a variant, you can't reuse the already created variant, they involve nominative typing (where TypeScript unions are pure structural). Untagged unions are not allowed, and if you can read them as **some value of type C can have features of type B or type A with type C = A | B syntax** in TypeScript, in ReasonML and PureScript they read as **some value that can be created by one of the constructors from target type**. This is because structural typing is not present in the variants.
 
@@ -121,7 +121,7 @@ Tuples are defined like this, they are not much different from ReasonML. They do
 
 ###**Product Types**
 
-We've already used some product types in previous examples . We can create records with braces syntax (like **{ flag :: Boolean }**). As we said before, they are just some cases of tuples, but their elements can be accessed via some tag or a key. Tuples are created with square brackets syntax in TypeScript, round brackets in ReasonML, and just by listing items separated by a space.
+We've already used some product types in previous examples . We can create records with braces syntax (like `{ flag :: Boolean }`). As we said before, they are just some cases of tuples, but their elements can be accessed via some tag or a key. Tuples are created with square brackets syntax in TypeScript, round brackets in ReasonML, and just by listing items separated by a space.
 
 In general, product types open up an opportunity for us to create complex structures.
 
@@ -159,9 +159,9 @@ function foo(param: C) {
 
 ##**TypeScript ADTs**
 
-Here is a set of examples of different ADTs in TypeScript. TypeScript allows you to create intersection types. In set theory, intersections operate like logic **and** — if you have two sets, the intersection between them will only contain elements that belong to both sets. In TypeScript, an intersection operator **&** makes a new type by merging all fields of the two types. ReasonML and PureScript don’t have this operation. Practically, intersections in TypeScript combine all properties from two types into a new type. It's like combining two interfaces via the **extend** keyword. The intersection is useless for primitive types (including literal types) as that will lead to **unknown** or to a type that is impossible to create. For example, **type NumberString = number & string** is **unknown**, same for **type OneAndTwo = 1 & 2**, as there is no value that is string and number (belongs to both sets at one time) or value that is both numbers one and two at the same time.
+Here is a set of examples of different ADTs in TypeScript. TypeScript allows you to create intersection types. In set theory, intersections operate like logic `and` — if you have two sets, the intersection between them will only contain elements that belong to both sets. In TypeScript, an intersection operator `&` makes a new type by merging all fields of the two types. ReasonML and PureScript don’t have this operation. Practically, intersections in TypeScript combine all properties from two types into a new type. It's like combining two interfaces via the `extend` keyword. The intersection is useless for primitive types (including literal types) as that will lead to `unknown` or to a type that is impossible to create. For example, `type NumberString = number & string` is `unknown`, same for `type OneAndTwo = 1 & 2`, as there is no value that is string and number (belongs to both sets at one time) or value that is both numbers one and two at the same time.
 
-But if we create some union with common properties from literals, their intersection will not be empty: **type Two = (1 | 2) & (2 | 3)** will be literal type **2**.
+But if we create some union with common properties from literals, their intersection will not be empty: `type Two = (1 | 2) & (2 | 3)` will be literal type `2`.
 
 ```TypeScript
 type A = {
@@ -203,14 +203,14 @@ const tupleValue2: tuple = [{ field1: "Hello" }, { field2: "World" }, { field2: 
 
 [Here](https://www.typescriptlang.org/play?ssl=35&ssc=92&pln=1&pc=1#code/C4TwDgpgBAglC8UDeAoK6oDMCWEA2AJgIwBcUAzsAE7YB2A5gNwoC+KKokUAQgsmhhz4CAJjKUaDZmw7hodYBCrkIAY2DYA9rT5wAZD2ayuAV1padiOAB9D7TtGAmweaIgDaMADQ8AukdVtSigFJRV1CwA1AEM8EwgyUOU1DW0+VAwsXEJSKAByAAl8PE08rwF0IUIxfIB1TSpCMtZ2QNpgsyjY+NzOtMQk8NTaGLiIIz6R7ogiADoq4kYoAHplqFpNYChYkoB3CAIoACM1aJMVba3gAAtscigXaNVoEE0TKAJtPK2Aaw3dqC7a7RLZgaJULaaTBQSZQV4mKhQABu02O+G09HuwE0rSCW0mo3iNVhiAygmyxDIACIingSlTyjI2h1zNpCRAAMxkEn8TILGpU+qNAgMlooZn41lTMYAFm5UvSTLxUCcLgg7LIqtcfHcSCywlyNOKmipUBYPj1-OpQsIppY-nFyq16umNWdOstFMNtPpZot+uq1oatr9yADoiDwrt-iAA) you can check how the compiler will or won't allow you something based on the composite types you create.
 
-Also, TypeScript's special types **never** and **unknown** have some interesting capabilities related to union and intersection. Again, if we refer to set theory, **unknown** will behave like a set that contains all other values and will be the supertype for all other types. And **never** is a set which contains no values, or an **empty set**. So in case of respective operations, they work as identity elements (an identity element is an element that leaves the second element unchanged when being used in some binary operation):
+Also, TypeScript's special types `never` and `unknown` have some interesting capabilities related to union and intersection. Again, if we refer to set theory, `unknown` will behave like a set that contains all other values and will be the supertype for all other types. And `never` is a set which contains no values, or an `empty set`. So in case of respective operations, they work as identity elements (an identity element is an element that leaves the second element unchanged when being used in some binary operation):
 
 ```TypeScript
 type A<T> = T | never // == T
 type B<U> = U & unknown // == U
 ```
 
-If you check the [online compiler](https://www.typescriptlang.org/play?#code/C4TwDgpgBAggPAFQHxQLxQVAPlAdhANwgCcAoUSKAITgFUV1aoAyKAV1wGtcB7Ad1xA), you'll see that **A = T** and **B = U** — the operation is simplified to **T** and **U** with identity elements removed from it, as in these cases, they don't bring any useful type information. And if we change the operators, we get the opposite:
+If you check the [online compiler](https://www.typescriptlang.org/play?#code/C4TwDgpgBAggPAFQHxQLxQVAPlAdhANwgCcAoUSKAITgFUV1aoAyKAV1wGtcB7Ad1xA), you'll see that `A = T` and `B = U` — the operation is simplified to `T` and `U` with identity elements removed from it, as in these cases, they don't bring any useful type information. And if we change the operators, we get the opposite:
 
 ```TypeScript
 type A<T> = T & never
@@ -221,13 +221,13 @@ type B<U> = U | unknown
 
 ##**Interaction of Subtyping and Type Algebra**
 
-Such behavior can be easily described using set theory. Let's start with **never**. A union of two sets is a set where each element belongs to one of the parent sets or to both at once. So **unknown** is the set of all possible values, a union with it will always be the same set, as any value belongs at least to unknown, practically losing all useful information about the more restrictive one. This happens because, as you might have noticed, in values typed as a union of some types, you can access the only intersection of its properties (fields), and property **containing all the possible values** does not intersect with any other one. There is a good example of that behavior in the TypeScript documentation:
+Such behavior can be easily described using set theory. Let's start with `never`. A union of two sets is a set where each element belongs to one of the parent sets or to both at once. So `unknown` is the set of all possible values, a union with it will always be the same set, as any value belongs at least to unknown, practically losing all useful information about the more restrictive one. This happens because, as you might have noticed, in values typed as a union of some types, you can access the only intersection of its properties (fields), and property `containing all the possible values` does not intersect with any other one. There is a good example of that behavior in the TypeScript documentation:
 
 It might be confusing that a union of types appears to have the intersection of those types’ properties. This is not an accident — the name union comes from type theory. The union number | string is composed by taking the union of the values from each type. Notice that given two sets with corresponding facts about each set, only the intersection of those facts applies to the union of the sets themselves. For example, if we had a room of tall people wearing hats, and another room of Spanish speakers wearing hats, after combining those rooms, the only thing we know about every person is that they must be wearing a hat.
 
-An opposite effect is observed for intersection with **unknown** — as it is the set of all values that belong to both parent sets, an intersection of any type with **unknown** is like an intersection of some set with the set of all values, thus only values from the more restrictive one go into the resulting set.
+An opposite effect is observed for intersection with `unknown` — as it is the set of all values that belong to both parent sets, an intersection of any type with `unknown` is like an intersection of some set with the set of all values, thus only values from the more restrictive one go into the resulting set.
 
-Now let's get to **never** and the empty set. A union of some non-empty set **A** with an empty set will always result in a set that is equivalent to `A`, as there is nothing to take from the empty one. An intersection will always result in the empty set itself, as there is no value that can satisfy the rule to be in both sets at once (if it could, the empty set would not really be empty.) So `never` behaves exactly the same way as the empty set when combined with other types.
+Now let's get to `never` and the empty set. A union of some non-empty set `A` with an empty set will always result in a set that is equivalent to `A`, as there is nothing to take from the empty one. An intersection will always result in the empty set itself, as there is no value that can satisfy the rule to be in both sets at once (if it could, the empty set would not really be empty.) So `never` behaves exactly the same way as the empty set when combined with other types.
 
 There is also a more general rule (it also works for the TypeScript types): an intersection of a subset and a superset always consumes a supertype, and a union of such types always consumes a subtype. And here is the last thing: an intersection of two sets creates a subset of both (it is valid for the TypeScript types) and a union of two sets creates a superset of both sets (it is also valid for types.)
 
