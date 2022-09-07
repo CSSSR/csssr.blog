@@ -8,7 +8,7 @@ tag: 'web-development'
 
 ---
 
-**W**e've already come across such types as **string** or **number**. They are called primitive. These types describe the simplest units of data available in our language. But how do we describe the things listed below? [Beforehand you might want to read first part of the series.](https://blog.csssr.com/en/article/type-systems-part-1/)
+**W**e've already come across such types as **string** or **number**. They are called primitive. These types describe the simplest units of data available in our language. But how do we describe the things listed below?
 
 * Value which can be of different types
 * Some sequence of values (lists or tuples, for example)
@@ -210,7 +210,7 @@ type A<T> = T | never // == T
 type B<U> = U & unknown // == U
 ```
 
-If you check the [online compiler](https://www.typescriptlang.org/play?#code/C4TwDgpgBAggPAFQHxQLxQVAPlAdhANwgCcAoUSKAITgFUV1aoAyKAV1wGtcB7Ad1xA), you'll see that **A&<T> = T** and **B<U> = U** — the operation is simplified to **T** and **U** with identity elements removed from it, as in these cases, they don't bring any useful type information. And if we change the operators, we get the opposite:
+If you check the [online compiler](https://www.typescriptlang.org/play?#code/C4TwDgpgBAggPAFQHxQLxQVAPlAdhANwgCcAoUSKAITgFUV1aoAyKAV1wGtcB7Ad1xA), you'll see that **A = T** and **B = U** — the operation is simplified to **T** and **U** with identity elements removed from it, as in these cases, they don't bring any useful type information. And if we change the operators, we get the opposite:
 
 ```TypeScript
 type A<T> = T & never
@@ -227,7 +227,7 @@ It might be confusing that a union of types appears to have the intersection of 
 
 An opposite effect is observed for intersection with **unknown** — as it is the set of all values that belong to both parent sets, an intersection of any type with **unknown** is like an intersection of some set with the set of all values, thus only values from the more restrictive one go into the resulting set.
 
-Now let's get to **never** and the empty set. A union of some non-empty set **A** with an empty set will always result in a set that is equivalent to `A`, as there is nothing to take from the empty one. An intersection will always result in the empty set itself, as there is no value that can satisfy the rule to be in both sets at once (if it could, the empty set would not really be empty.) So **never** behaves exactly the same way as the empty set when combined with other types.
+Now let's get to **never** and the empty set. A union of some non-empty set **A** with an empty set will always result in a set that is equivalent to `A`, as there is nothing to take from the empty one. An intersection will always result in the empty set itself, as there is no value that can satisfy the rule to be in both sets at once (if it could, the empty set would not really be empty.) So `never` behaves exactly the same way as the empty set when combined with other types.
 
 There is also a more general rule (it also works for the TypeScript types): an intersection of a subset and a superset always consumes a supertype, and a union of such types always consumes a subtype. And here is the last thing: an intersection of two sets creates a subset of both (it is valid for the TypeScript types) and a union of two sets creates a superset of both sets (it is also valid for types.)
 
@@ -255,9 +255,9 @@ expectA(aB)
 expectB(aB)
 ```
 
-With some type **A** and its supertype **B**, we are allowed to pass **A**, where **B** is expected. So the example above underlies this rule and shows us that an intersection is a subtype of other types.
+With some type `A` and its supertype `B`, we are allowed to pass `A`, where `B` is expected. So the example above underlies this rule and shows us that an intersection is a subtype of other types.
 
-If we change **type AB = A & B** to **type AB = A | B**, checks won't pass anymore as a type **AB** will become a supertype of **A** and **B**. Here is a [Playground if you want to check yourself](https://www.typescriptlang.org/play?#code/C4TwDgpgBAglC8UDeUBmBLCAbAJgRgC4oBnYAJ3QDsBzKAXwCgHRIoAhBZNTXAJiNIUa9Ji2gwOiOADJ2TVAFdKAY2DoA9pSgQAHpFUwAFADcAhliIwAlMgZR7UMhGAKyWs1gaMGilWs3aehCqbCbmRGw2SHYOTi5uUB5eTMqapFCmbJaStg7c2PhEAEQAEthY6kUANDH2GAX8UEUA6upkuNXJDLr6wEaZVt1BIYYDQA).
+If we change `type AB = A & B` to `type AB = A | B`, checks won't pass anymore as a type `AB` will become a supertype of `A` and `B`. Here is a [Playground if you want to check yourself](https://www.typescriptlang.org/play?#code/C4TwDgpgBAglC8UDeUBmBLCAbAJgRgC4oBnYAJ3QDsBzKAXwCgHRIoAhBZNTXAJiNIUa9Ji2gwOiOADJ2TVAFdKAY2DoA9pSgQAHpFUwAFADcAhliIwAlMgZR7UMhGAKyWs1gaMGilWs3aehCqbCbmRGw2SHYOTi5uUB5eTMqapFCmbJaStg7c2PhEAEQAEthY6kUANDH2GAX8UEUA6upkuNXJDLr6wEaZVt1BIYYDQA).
 
 These rules show us the relation between the TypeScript type system and set theory. They also show us that type algebra operation relates to subtyping as well (we'll have a more precise look at it in the next chapter) and ADT's are in a sub/supertype relation with their parent types.
 
@@ -297,7 +297,7 @@ let idLower = (value: [> alignment]) => value;
 idLower(x3)
 ```
 
-Types **alignment** and **reversedAlignment** show how you can define a polymorphic variant. For example, we are passing the value of type **reversedAlignment** into **id** functions that wait for the value of the **alignment** type, but we won't get an error (you can check the [online compiler](https://reasonml.github.io/en/try?rrjsx=true&reason=C4TwDgpgBAhgNgSwOYDsC2EXCgXigbQAMBxAe1IBMoAfKQgOQgFdgAneGugUQDcE4AugG4AUCNCQorCDwisAzhAoBBRKgxZcBQr36cS5KrQbM28AWLgRsCKngAUPeEwgAuWGvSZgASlwA+KCc4F1ERK2wAD3dpWQUlVWQvTTwdPjgxW3tInyA)), which won't be true for normal variants — with them, we would only be able to pass an exact value type. That's because the polymorphic variants only let you pass the value of any type that has the same constructors (not more, not less, exactly the same). The next part of the example with **x2** works because ReasonML didn't infer an exact type for it. Instead, it infers a type constraint **[> `Good ]** which is a so-called lower bound that means all the types that have at least the constructor **Good**. Passing **x3** to **id** will result in an error because, as we have said before, we need the same constructors. But if we change the signature for the value to be a constraint, that will mean that we need a type with at least all the needed constructors.
+Types `alignment` and `reversedAlignment` show how you can define a polymorphic variant. For example, we are passing the value of type `reversedAlignment` into `id` functions that wait for the value of the `alignment` type, but we won't get an error (you can check the [online compiler](https://reasonml.github.io/en/try?rrjsx=true&reason=C4TwDgpgBAhgNgSwOYDsC2EXCgXigbQAMBxAe1IBMoAfKQgOQgFdgAneGugUQDcE4AugG4AUCNCQorCDwisAzhAoBBRKgxZcBQr36cS5KrQbM28AWLgRsCKngAUPeEwgAuWGvSZgASlwA+KCc4F1ERK2wAD3dpWQUlVWQvTTwdPjgxW3tInyA)), which won't be true for normal variants — with them, we would only be able to pass an exact value type. That's because the polymorphic variants only let you pass the value of any type that has the same constructors (not more, not less, exactly the same). The next part of the example with `x2` works because ReasonML didn't infer an exact type for it. Instead, it infers a type constraint `[> Good ]` which is a so-called lower bound that means all the types that have at least the constructor `Good`. Passing `x3` to `id` will result in an error because, as we have said before, we need the same constructors. But if we change the signature for the value to be a constraint, that will mean that we need a type with at least all the needed constructors.
 
 Here is another thing about polymorphic variants constraints: there is a hidden type parameter. If you try to
 
@@ -324,7 +324,7 @@ and a computed type would be
 type good('a) = 'a constraint 'a = [> `Good ];
 ```
 
-Such definition with the polymorphic parameter will cause some discomfort when using — you'll need to provide some type in place of **a** when using it in definitions (this is a basic parametric polymorphism rule for ReasonML, we'll talk about it in the next chapter)
+Such definition with the polymorphic parameter will cause some discomfort when using — you'll need to provide some type in place of `a` when using it in definitions (this is a basic parametric polymorphism rule for ReasonML, we'll talk about it in the next chapter)
 
 ```TypeScript
 type alignment = [`Good | `Neutral | `Evil];
@@ -426,11 +426,11 @@ instance showTuple :: (Show a, Show b) => Show (Tuple a b) where
   show (Tuple a b) = "(Tuple " <> show a <> " " <> show b <> ")"
 ```
 
-and that would work. But if you'd like to do **pets = Tuple myPet myPet2 myPet2**, the compiler will notify you of an error instead of inferring 3 items tuple type.
+and that would work. But if you'd like to do `pets = Tuple myPet myPet2 myPet2`, the compiler will notify you of an error instead of inferring 3 items tuple type.
 
-In this example of PureScript code, you can check different things (types inferred for variables, uncomment **showsAnimal**) and see the type checker reporting an error because you haven’t covered all cases of the pattern).
+In this example of PureScript code, you can check different things (types inferred for variables, uncomment `showsAnimal)` and see the type checker reporting an error because you haven’t covered all cases of the pattern).
 
-If you fix **showsAnimal** to make it cover the whole pattern
+If you fix `showsAnimal` to make it cover the whole pattern
 
 ```TypeScript
 showsAnimal :: Animal -> String -- Compile error: not all cases covered
@@ -439,7 +439,7 @@ showsAnimal (Dog a) = "Animal is Dog, it has " <> show a
 showsAnimal (Spider a) = "Animal is Spider, it has " <> show a
 ```
 
-You may see that there is another error — **No type class instance was found for Data.Show.Show Legs**. Type classes are another feature of PureScript which we will cover in the next chapter of this article.
+You may see that there is another error — `No type class instance was found for Data.Show.Show Legs`. Type classes are another feature of PureScript which we will cover in the next chapter of this article.
 
 If you want to check what it looks like, you can add the following lines to the previous code:
 
@@ -460,9 +460,9 @@ main = render =<< withConsole do
   logShow $ myPet5
 ```
 
-where **myPet5** can be replaced with an Animal instance of your choice.
+where `myPet5` can be replaced with an Animal instance of your choice.
 
-As you can see, all the three languages have support for ADT's and some kind of pattern matching (with TypeScript having a very poor variant with **switch**). Some have more flexibility at the creation stage, others let you do some cool stuff at the pattern matching stage.
+As you can see, all the three languages have support for ADT's and some kind of pattern matching (with TypeScript having a very poor variant with `switch`). Some have more flexibility at the creation stage, others let you do some cool stuff at the pattern matching stage.
 
 Another kind of ADT is the recursive type. Their use cases look obvious — values with recursive structure.
 
