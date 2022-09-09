@@ -8,6 +8,9 @@ jobs:
   build:
     name: Build Storybook
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
       - uses: docker://quay.csssr.cloud/csssr/kuberta-init-workflow:v1
@@ -38,9 +41,22 @@ jobs:
         env:
           BLOG_HOST: https://${{ steps.gh.outputs.releaseID }}.csssr-blog-storybook.csssr.cloud/
 
+      - name: Import secrets
+        id: secrets
+        uses: hashicorp/vault-action@v2.4.0
+        with:
+          url: https://vault.csssr.com:8200
+          jwtGithubAudience: ${{secrets.VAULT_JWT_KEY}}
+          role: s3-cdn-upload
+          method: jwt
+          exportEnv: false
+          secrets: |
+            aws/sts/s3-cdn-upload access_key | AWS_ACCESS_KEY_ID ;
+            aws/sts/s3-cdn-upload secret_key | AWS_SECRET_ACCESS_KEY ;
+            aws/sts/s3-cdn-upload security_token | AWS_SESSION_TOKEN ;
+
       - uses: ./actions/upload-static/v1beta1
         with:
           project-id: csssr-blog-storybook
           files: ./blog/storybook-static
-          auth: ${{ secrets.CDN_UPLOAD_SECRET }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          auth: 'aws:${{steps.secrets.outputs.AWS_ACCESS_KEY_ID}}:${{steps.secrets.outputs.AWS_SECRET_ACCESS_KEY}}:${{steps.secrets.outputs.AWS_SESSION_TOKEN}}'

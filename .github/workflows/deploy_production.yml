@@ -9,6 +9,10 @@ jobs:
   deploy:
     name: Сборка прода
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      deployments: write
 
     steps:
       - name: Download CSSSR actions
@@ -42,10 +46,24 @@ jobs:
           BLOG_HOST: https://blog.csssr.com
           COM_HOST: https://csssr.com
 
+      - name: Import secrets
+        id: secrets
+        uses: hashicorp/vault-action@v2.4.0
+        with:
+          url: https://vault.csssr.com:8200
+          jwtGithubAudience: ${{secrets.VAULT_JWT_KEY}}
+          role: s3-cdn-upload
+          method: jwt
+          exportEnv: false
+          secrets: |
+            aws/sts/s3-cdn-upload access_key | AWS_ACCESS_KEY_ID ;
+            aws/sts/s3-cdn-upload secret_key | AWS_SECRET_ACCESS_KEY ;
+            aws/sts/s3-cdn-upload security_token | AWS_SESSION_TOKEN ;
+
       - name: Деплой на продакшен
         uses: ./actions/deploy-static-site/v1beta1
         with:
-          auth: ${{ secrets.CSSSR_AUTH }}
+          auth: 'aws:${{steps.secrets.outputs.AWS_ACCESS_KEY_ID}}:${{steps.secrets.outputs.AWS_SECRET_ACCESS_KEY}}:${{steps.secrets.outputs.AWS_SESSION_TOKEN}}'
           token: ${{ secrets.GITHUB_TOKEN }}
           site-type: mpa
           project-id: csssr-new-blog
