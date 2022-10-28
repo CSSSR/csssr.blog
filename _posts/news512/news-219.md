@@ -1,5 +1,5 @@
 ---
-title: ''
+title: 'В этом выпуске мы поговорим про новую мажорную версию Next.js и бандлере Turbopack, завершение цикла статей о многопоточности, почему может быть пора отказываться от CSS-in-JS, коснёмся релизов браузеров и публичного превью редактора кода Fleet от JetBrains.'
 soundcloudLink: 'https://soundcloud.com/csssr/chrome-107-firefox-106-nextjs-13-i-turbopack-publichnoe-prevyu-fleet'
 date: '2022-10-28T00:00:00.000Z'
 episodeNumber: 219
