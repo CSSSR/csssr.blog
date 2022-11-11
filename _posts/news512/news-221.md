@@ -1,7 +1,7 @@
 ---
 title: 'В этом выпуске: сравнение скоростей Turbo и Vite от Эвана Ю, типизация в React-приложениях и стратегии выбора подхода для организации микрофронтендов. Также, присоединение Remix к Shopify и судебный иск из-за Copilot.'
 soundcloudLink: 'https://soundcloud.com/csssr/turbo-vs-vite-mikrofrontendy-isk-iz-za-copilot'
-date: '2022-11-03T00:00:00.000Z'
+date: '2022-11-11T00:00:00.000Z'
 episodeNumber: 221
 tag: 'news'
 author: 'Ислам Виндижев'
