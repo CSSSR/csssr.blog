@@ -4,7 +4,7 @@ releases:
   csssr-blog-storybook:
     name: csssr-blog-storybook
     autodeploy-on: default
-    chart: csssr/static-site@~1.1.0
+    chart: oci://quay.csssr.cloud/charts/static-site@~1.1.0
     slack:
       - CKF42GD36 # #csssr_builds
     static-params:
@@ -17,7 +17,7 @@ releases:
   csssr-new-blog:
     name: csssr-blog
     autodeploy-on: default
-    chart: csssr/static-site@~1.1.0
+    chart: oci://quay.csssr.cloud/charts/static-site@~1.1.0
     slack:
       - CKF42GD36 # #csssr_builds
     static-params:
