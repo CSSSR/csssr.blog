@@ -1,6 +1,6 @@
 ---
 title: 'В это выпуске мы коротко подведём итоги уходящего 2022-го года.'
-soundcloudLink: 'https://soundcloud.com/csssr/firefox-108-vite-4-rtk-query-php-82-ruby-32-masshtabirovanie-s-nests-bdd-s-cucumber'
+soundcloudLink: 'https://soundcloud.com/csssr/novogodniy-spetsvypusk-itogi-goda'
 date: '2022-12-31T00:00:00.000Z'
 episodeNumber: 226
 tag: 'news'
