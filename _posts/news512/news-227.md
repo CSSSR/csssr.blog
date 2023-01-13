@@ -1,6 +1,6 @@
 ---
 title: 'В этом выпуске: релиз Chrome 109, релизы Node.js, результаты опроса State of JS 2022, материалы по TypeScript, особенности типов данных в JS, создание виджетов для Figma и аутентификация.'
-soundcloudLink: 'https://soundcloud.com/csssr/'
+soundcloudLink: 'https://soundcloud.com/csssr/chrome-109-itogi-state-of-js-2022-nodejs-1830-autentifikatsiya-postgresql-15-iznutri'
 date: '2023-01-13T00:00:00.000Z'
 episodeNumber: 227
 tag: 'news'
