@@ -3,6 +3,7 @@ version: 1-alpha.1
 releases:
   csssr-blog-storybook:
     name: csssr-blog-storybook
+    cluster: gke-csssr-testing
     autodeploy-on: default
     chart: oci://quay.csssr.cloud/charts/static-site@~1.1.0
     slack:
@@ -16,6 +17,7 @@ releases:
           buildID: build-{{ .Build.RunID }}
   csssr-new-blog:
     name: csssr-blog
+    cluster: gke-csssr-testing
     autodeploy-on: default
     chart: oci://quay.csssr.cloud/charts/static-site@~1.1.0
     slack:
