@@ -1,14 +1,11 @@
 ---
 title: 'В этом выпуске мы поговорим о релизах Chrome 118, Java SE 21 и Python 3.12. Мы поговорим о применении Redis и Memcached, разработке коллаборативных инструментов, новом выпуске TechRadar, веб-версии Photoshop, паттернах React и React Concurrent и других интересных материалах. Также сегодня пачка мини-релизов.'
-soundcloudLink: 'https://soundcloud.com/csssr/'
+soundcloudLink: 'https://soundcloud.com/csssr/chrome-118-java-se-21-python-312-redis-i-memcached-sila-crdt-photoshop-v-vebe'
 date: '2023-10-13T00:00:00.000Z'
 episodeNumber: 242
 tag: 'news'
 author: 'Ислам Виндижев'
 ---
-
-#242
-Заголовок: Chrome 118, Java SE 21, Python 3.12, Redis и Memcached, сила CRDT, Photoshop в вебе
 
 Всем привет, это «Новости 512» от CSSSR. В этом выпуске мы поговорим о релизах Chrome 118, Java SE 21 и Python 3.12. Мы поговорим о применении Redis и Memcached, разработке коллаборативных инструментов, новом выпуске TechRadar, веб-версии Photoshop, паттернах React и React Concurrent и других интересных материалах. Также сегодня пачка мини-релизов.
 
