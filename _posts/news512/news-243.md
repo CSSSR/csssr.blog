@@ -1,5 +1,5 @@
 ---
-title: 'Поэтому в этом выпуске: релизы Next.js 14, Chrome 119 и Firefox 119, Yarn 4 и Node.js 21. Также в выпуске будет о воркерах, работе с монорепами, об управлении несколькими git-идентичностями и очередном сравнении фреймворков, а также старте опроса State of React.'
+title: 'В этом выпуске: релизы Next.js 14, Chrome 119 и Firefox 119, Yarn 4 и Node.js 21. Также в выпуске будет о воркерах, работе с монорепами, об управлении несколькими git-идентичностями и очередном сравнении фреймворков, а также старте опроса State of React.'
 soundcloudLink: 'https://soundcloud.com/csssr/nextjs-14-chrome-119-firefox-119-workers-formatirovanie-bez-eslint-start-state-of-react'
 date: '2023-11-03T00:00:00.000Z'
 episodeNumber: 243
