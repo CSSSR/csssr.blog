@@ -1,6 +1,6 @@
 ---
 title: 'В этом выпуске: явное управление ресурсами в TS и JS, лучшие практики TS, типы данных JavaScript и аналитика по Vue.js, релизы TypeScript 5.3 и Vite 5, а также старт State of JS 2023 и странная история с конференцией DevTernity.'
-soundcloudLink: 'https://soundcloud.com/csssr/'
+soundcloudLink: 'https://soundcloud.com/csssr/typescript-53-ts-praktiki-vite-5-analitika-po-vue-ekosisteme-state-of-js-2023'
 date: '2023-12-01T00:00:00.000Z'
 episodeNumber: 245
 tag: 'news'
