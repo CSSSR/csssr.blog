@@ -1,12 +1,12 @@
-name: Build storybook
+name: Build static testing
 on:
   workflow_dispatch:
     inputs:
       kuberta_system:
 
 jobs:
-  build:
-    name: Build storybook
+  deploy:
+    name: Build testing
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -14,9 +14,6 @@ jobs:
 
     steps:
       - uses: docker://quay.csssr.cloud/csssr/kuberta-init-workflow:v1
-
-      - uses: docker://quay.csssr.cloud/csssr/github-info:v1
-        id: gh
 
       - name: Download CSSSR actions
         uses: actions/checkout@v4
@@ -31,15 +28,25 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '14.x'
+          node-version: 16
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@csssr'
 
-      - run: yarn install --frozen-lockfile
+      - name: Install dependencies
         working-directory: blog
-
-      - run: yarn build-storybook
-        working-directory: blog
+        run: yarn install --frozen-lockfile
         env:
-          BLOG_HOST: https://${{ steps.gh.outputs.releaseID }}.csssr-blog-storybook.csssr.cloud/
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_REGISTRY_TOKEN }}
+
+      - uses: docker://quay.csssr.cloud/csssr/github-info:v1
+        id: gh
+
+      - name: Build testing
+        working-directory: blog
+        run: yarn build
+        env:
+          BLOG_HOST: https://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud
+          COM_HOST: https://master.com.csssr.cloud
 
       - name: Import secrets
         id: secrets
@@ -57,6 +64,6 @@ jobs:
 
       - uses: ./actions/upload-static/v1beta1
         with:
-          project-id: csssr-blog-storybook
-          files: ./blog/storybook-static
+          project-id: csssr-new-blog
+          files: ./blog/out
           auth: 'aws:${{steps.secrets.outputs.AWS_ACCESS_KEY_ID}}:${{steps.secrets.outputs.AWS_SECRET_ACCESS_KEY}}:${{steps.secrets.outputs.AWS_SESSION_TOKEN}}'

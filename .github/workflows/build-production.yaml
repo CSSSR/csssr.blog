@@ -1,4 +1,4 @@
-name: Деплой блога на тестинг
+name: Build static production
 on:
   workflow_dispatch:
     inputs:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    name: Сборка тестинга
+    name: Build production
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -16,42 +16,39 @@ jobs:
       - uses: docker://quay.csssr.cloud/csssr/kuberta-init-workflow:v1
 
       - name: Download CSSSR actions
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: CSSSR/actions
           ssh-key: ${{ secrets.DOWNLOAD_ACTIONS_SSH_KEY }}
           path: actions
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
-          path: new_blog
-          ref: ${{ github.event.pull_request.head.sha }}
+          path: blog
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 16
           registry-url: 'https://npm.pkg.github.com'
           scope: '@csssr'
 
       - name: Install dependencies
-        working-directory: new_blog
+        working-directory: blog
         run: yarn install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_REGISTRY_TOKEN }}
 
-      - uses: docker://quay.csssr.cloud/csssr/github-info:v1
-        id: gh
-
-      - name: Build testing
-        working-directory: new_blog
+      - name: Build production
+        working-directory: blog
         run: yarn build
         env:
-          BLOG_HOST: https://${{ steps.gh.outputs.releaseID }}.csssr-new-blog.csssr.cloud
-          COM_HOST: https://master.com.csssr.cloud
+          IS_PRODUCTION: 'TRUE'
+          BLOG_HOST: https://blog.csssr.com
+          COM_HOST: https://csssr.com
 
       - name: Import secrets
         id: secrets
-        uses: hashicorp/vault-action@v2.4.0
+        uses: hashicorp/vault-action@v2
         with:
           url: https://vault.csssr.com:8200
           jwtGithubAudience: ${{secrets.VAULT_JWT_KEY}}
@@ -66,6 +63,5 @@ jobs:
       - uses: ./actions/upload-static/v1beta1
         with:
           project-id: csssr-new-blog
-          files: ./new_blog/out
-          no-previous-files: 'true'
+          files: ./blog/out
           auth: 'aws:${{steps.secrets.outputs.AWS_ACCESS_KEY_ID}}:${{steps.secrets.outputs.AWS_SECRET_ACCESS_KEY}}:${{steps.secrets.outputs.AWS_SESSION_TOKEN}}'
