@@ -2,7 +2,7 @@
 title: 'В этом выпуске: планы фреймворков на 2024, критика серверных компонентов в Next.js, узнаем, StyleX от Facebook и релиз Vue 3.4. Также мы обсудим релизы Firefox 121, Safari 17.2 и Deno 1.39. В конце: восходящие звёзды JS и обновлённый рейтинг баз данных.'
 soundcloudLink: 'https://soundcloud.com/csssr/firefox-121-safari-172-vue-34-deno-139-stylex-klonirovanie-voprosy-s-sobesov-kritika-rsc'
 date: '2024-01-15T00:00:00.000Z'
-episodeNumber: 247
+episodeNumber: 248
 tag: 'news'
 author: 'Ислам Виндижев'
 ---
