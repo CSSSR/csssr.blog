@@ -159,5 +159,3 @@ Default Virtual HUB in a case of omitting the HUB on the Username: csssrhub
 При помощи SoftEther VPN у меня очень быстро получилось поднять свой собственный VPN сервер. Помимо L2TP/IPSec также не составит труда настроить поддержку SSTP и OpenVPN. К сожалению, пока нет поддержки IKEv2, но я надеюсь, что в скором времени она появится.
 
 Желаю всем беззаботных путешествий! Ждём ваших комментариев в <a href="https://twitter.com/csssr_dev" rel="nofollow noopener" target="_blank">Твиттере</a>!
-
-

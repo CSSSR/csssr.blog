@@ -13,7 +13,7 @@ Yes, from time to time, employees become demotivated, and you have to find way
 
 <Img imageName="sherlock" alt="sherlock" withBigMargin/>
 
-##Know your enemy: what causes demotivation?
+## Know your enemy: what causes demotivation?
 
 There are multiple factors that cause workplace demotivation. The key reason so far is the relationship between managers and their teams. As seen from the suggested points below, this is the biggest root cause of this transformation driving the people’s morale down.
 
