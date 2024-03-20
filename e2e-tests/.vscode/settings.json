@@ -1,5 +1,6 @@
 // Этот файл сгенерирован автоматически, не редактируйте его вручную
 {
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "git.ignoreLimitWarning": true
 }
