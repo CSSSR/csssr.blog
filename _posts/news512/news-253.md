@@ -1,6 +1,6 @@
 ---
 title: 'В этом выпуске: релизы Chrome 124 и Firefox 125, новый тестовый фреймворк от Netflix SafeTest, выбор между Qwik и Next.js, создание CLI для библиотек, публикация пакетов, и немного про подводные камни опенсорса. В этом же выпуске и другие релизы прошедших недель, а в конце — немного юмора.'
-soundcloudLink: 'https://soundcloud.com/csssr/'
+soundcloudLink: 'https://soundcloud.com/csssr/chrome-124-firefox-125-netflix-safetest-sozdanie-cli-vnutri-htmx-opensors-grabli'
 date: '2024-04-20T00:00:00.000Z'
 episodeNumber: 253
 tag: 'news'
