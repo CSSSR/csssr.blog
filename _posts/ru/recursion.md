@@ -81,10 +81,10 @@ _Σ9_ гораздо проще для восприятия, компактне�
 
 <Note>
 <p>
-	— А что писать-то?
+ — А что писать-то?
 </p>
 <p>
-	— А что хочешь, то и пиши.
+ — А что хочешь, то и пиши.
 </p>
 </Note>
 
@@ -410,7 +410,7 @@ function range(_x, _x2, _x3) {
 
 > Any sufficiently interesting JavaScript library contains an ad hoc, informally-specified, <span style="white-space:nowrap">bug-ridden</span>, slow implementation of half of Haskell.
 >
-> — <cite>Douglas Crockford</cite>
+> — Douglas Crockford
 
 «Любая достаточно интересная библиотека JavaScript содержит забагованную, плохо документированную, медленную реализацию половины Haskell».
 
@@ -509,14 +509,16 @@ trampoline(range)(1, 4) // [1,2,3,4]
 
 ```js
 const sum = (array) => {
-  const loop = (array, result = 0) => () => {
-    // вместо выполнения этого кода мы возвращаем функцию, которая выполнит его позже
-    if (!array.length) {
-      return result
+  const loop =
+    (array, result = 0) =>
+    () => {
+      // вместо выполнения этого кода мы возвращаем функцию, которая выполнит его позже
+      if (!array.length) {
+        return result
+      }
+      const [first, ...rest] = array
+      return loop(rest, first + result)
     }
-    const [first, ...rest] = array
-    return loop(rest, first + result)
-  }
 
   let recursion = loop(array)
 

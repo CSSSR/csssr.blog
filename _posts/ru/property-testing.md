@@ -629,21 +629,13 @@ type nat = {v : number | 0 ≤ v }
 
 ### Полезные ссылки
 
-<ul>
-  <li><a target="_blank" href="http://fsharpforfunandprofit.com/posts/property-based-testing-2/">Choosing properties for property-based testing</a> <span> — подробно разбираются множество практических кейсов для property-based тестирования (с примерами и даже картинками). Обязательна к прочтению для тех, кто хочет использовать данный подход на практике.</span></li>
-
-  <li><a target="_blank" href="http://jsverify.github.io/">JSVerify</a> <span> — еще одна реализация данного подхода на чистом Javascript. По возможности рекомендую использовать именно ее, так как ее намного проще отлаживать, в отличии от&nbsp;`testcheck-js` (стектрейсы не уводят в бесконечность ClojureScript рантайма). Имеет большой набор встроенных генераторов и поддержку асинхронных свойств.</span></li>
-
-  <li><a target="_blank" href="https://github.com/prayerslayer/js.spec">JS.spec</a> <span> — биндинги к `clojure.spec` для JS. Пока очень сырые и не поддерживают из коробки генерацию по спецификациям, только валидацию.</span></li>
-
-  <li><a target="_blank" href="https://github.com/omcljs/om/wiki/Applying-Property-Based-Testing-to-User-Interfaces">Applying Property Based Testing to User Interfaces</a> <span> — хорошая статья о реальном применении property-based тестов для&nbsp;тестирования UI (на примере работы со стейтом пользователя). Пример описан для&nbsp;библиотеки Om, но в целом те же практики можно использовать и для тестирования Redux приложений.</span></li>
-
-  <li><a target="_blank" href="https://www.youtube.com/watch?v=E_at53wDH1w">Unikernel Full-Stack на Erlang</a> <span> — веселый доклад про верификацию программ. Отвечает на вопрос: «А зачем это нужно на практике?».</span></li>
-
-  <li><a target="_blank" href="https://arxiv.org/pdf/1604.02480v1.pdf">Refinement Types for TypeScript</a> <span> — интересный пейпер, в рамках которого создан <a target="_blank" href="https://github.com/UCSD-PL/refscript">верификатор программ на TypeScript</a> на основе refinement типов.</span></li>
-
-  <li><a target="_blank" href="https://www.youtube.com/watch?v=5lWIG3XQ2-A">LiquidHaskell: изящные типы.</a><span> — доклад, просто и понятно объясняющий refinement типы.</span></li>
-</ul>
+- <a target="_blank" href="http://fsharpforfunandprofit.com/posts/property-based-testing-2/">Choosing properties for property-based testing</a> <span> — подробно разбираются множество практических кейсов для property-based тестирования (с примерами и даже картинками). Обязательна к прочтению для тех, кто хочет использовать данный подход на практике.</span>
+- <a target="_blank" href="http://jsverify.github.io/">JSVerify</a> <span> — еще одна реализация данного подхода на чистом Javascript. По возможности рекомендую использовать именно ее, так как ее намного проще отлаживать, в отличии от&nbsp;`testcheck-js` (стектрейсы не уводят в бесконечность ClojureScript рантайма). Имеет большой набор встроенных генераторов и поддержку асинхронных свойств.</span>
+- <a target="_blank" href="https://github.com/prayerslayer/js.spec">JS.spec</a> <span> — биндинги к `clojure.spec` для JS. Пока очень сырые и не поддерживают из коробки генерацию по спецификациям, только валидацию.</span>
+- <a target="_blank" href="https://github.com/omcljs/om/wiki/Applying-Property-Based-Testing-to-User-Interfaces">Applying Property Based Testing to User Interfaces</a> <span> — хорошая статья о реальном применении property-based тестов для&nbsp;тестирования UI (на примере работы со стейтом пользователя). Пример описан для&nbsp;библиотеки Om, но в целом те же практики можно использовать и для тестирования Redux приложений.</span>
+- <a target="_blank" href="https://www.youtube.com/watch?v=E_at53wDH1w">Unikernel Full-Stack на Erlang</a> <span> — веселый доклад про верификацию программ. Отвечает на вопрос: «А зачем это нужно на практике?».</span>
+- <a target="_blank" href="https://arxiv.org/pdf/1604.02480v1.pdf">Refinement Types for TypeScript</a> <span> — интересный пейпер, в рамках которого создан <a target="_blank" href="https://github.com/UCSD-PL/refscript">верификатор программ на TypeScript</a> на основе refinement типов.</span>
+- <a target="_blank" href="https://www.youtube.com/watch?v=5lWIG3XQ2-A">LiquidHaskell: изящные типы.</a><span> — доклад, просто и понятно объясняющий refinement типы.</span>
 
 Напоследок хотелось бы сказать, что <span class="no-wrap">property-based</span> тестирование, как и любые другие методы контроля поведения программ (статические типы, любое другое тестирование, верификация), приносят пользу даже в сам момент начала их применения, так как разработчик начинает задумываться о том, как работает его код, какие свойства и гарантии он предоставляет, и уже это позволяет выявить многие проблемы или просто прийти к лучшему решению c точки зрения архитектуры и API. Не бойтесь пытаться использовать новые практики для анализа своих программ — даже если вам не удастся их внедрить по каким-то причинам, возможно, вы начнете лучше понимать свой код.
 
