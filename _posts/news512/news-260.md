@@ -1,5 +1,5 @@
 ---
-title: 'В этом выпуске мы поговорим об утечках памяти, новом пропозале для EcmaScript, Svelte 5, экспериментальной поддержке TypeScript в Node.js. Мы погрузимся в Svelte 5, покрутим алгоритмические деревья и поздравим Puppeteer с поддержкой Firefox. Также мы посмотрим на релизы Firefox 129, React Native 0.75 и другие.'
+title: 'В этом выпуске мы поговорим об утечках памяти, новом пропозале для ECMAScript, Svelte 5, экспериментальной поддержке TypeScript в Node.js. Мы погрузимся в Svelte 5, покрутим алгоритмические деревья и поздравим Puppeteer с поддержкой Firefox. Также мы посмотрим на релизы Firefox 129, React Native 0.75 и другие.'
 soundcloudLink: 'https://soundcloud.com/csssr/utechki-svelte-5-derevya-puppeteer-s-podderzhkoy-firefox-firefox-129-react-native-075'
 date: '2024-08-20T00:00:00.000Z'
 episodeNumber: 260
