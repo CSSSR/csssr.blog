@@ -31,7 +31,7 @@ author: 'Ислам Виндижев'
 
 Следующий материал посвящён [Telegram Mini App](https://habr.com/ru/companies/amvera/articles/838180/). Это относительно новый способ создания приложений прямо в интерфейсе Telegram на веб-технологиях. Они могут работать с авторизацией, платежами и данными пользователя, который открыл приложение. В этом гайде вы найдёте пример создания приложения с нуля, стилизации, деплоя. Всё без использования фреймворков, хотя это, в принципе, тоже возможно. Вдогонку к этой статье приложу [заметку](https://habr.com/ru/articles/839432/) о разных способах запуска таких приложений, например, для тестирования.
 
-В конце рубрики ещё несколько полезных материалов, только коротко. Это ещё один краткий [обзор новых фич ES2024](https://pawelgrzybek.com/whats-new-in-ecmascript-2024/), [гайд](https://habr.com/ru/articles/837692/) по работе с WASM для начинающих, условно-бесплатная книга «[50 ошибок в TypeScript](https://leanpub.com/50-ts», инструмент для анализа утечек [fuite](https://github.com/nolanlawson/fuite) и [создание игры 2048 на JavaScript](https://www.youtube.com/watch?v=RC_SglXG4Y8).
+В конце рубрики ещё несколько полезных материалов, только коротко. Это ещё один краткий [обзор новых фич ES2024](https://pawelgrzybek.com/whats-new-in-ecmascript-2024/), [гайд](https://habr.com/ru/articles/837692/) по работе с WASM для начинающих, условно-бесплатная книга «[50 ошибок в TypeScript](https://leanpub.com/50-ts)», инструмент для анализа утечек [fuite](https://github.com/nolanlawson/fuite) и [создание игры 2048 на JavaScript](https://www.youtube.com/watch?v=RC_SglXG4Y8).
 
 <ParagraphWithImage imageName="manWithLaptop">
   ### Новости релизов
