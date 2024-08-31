@@ -1,7 +1,7 @@
 ---
 title: 'В этом выпуске: Chrome 128, создание  npm-пакетов в 2024 году, пропозал Temporal, история регулярных выражений, Telegram Mini App и другие интересные материалы. Мы поговорим о старте опроса State of CSS 2024, немного о новых санкциях и об уходе Notion.'
 soundcloudLink: 'https://soundcloud.com/csssr/chrome-128-npm-pakety-2024-temporal-telegram-mini-app-state-of-css-2024-ukhod-notion'
-date: '2024-09-31T00:00:00.000Z'
+date: '2024-08-31T00:00:00.000Z'
 episodeNumber: 261
 tag: 'news'
 author: 'Ислам Виндижев'
