@@ -1,7 +1,7 @@
 ---
 title: 'В этом выпуске мы поговорим о функциональном программировании в JS, работе с AbortController и об управлении памятью. Также мы коснёмся глоссария по system design и других подборок, истории бандлинга и решения Райана Дала отойти от Node.js и начать заниматься Deno. В этом выпуске, кстати, будет небольшой обзор релиза-кандидата Deno 2.0, релизы Express 5 и Firefox 131, анонс старта разработки тулчейна void(0) и основания одноимённой компании Эваном Ю, а также старт Hacktoberfest 2024.'
 soundcloudLink: 'https://soundcloud.com/csssr/deno-20-rc-express-5-firefox-131-void0-ot-evana-yu-fp-v-js-hacktoberfest-2024'
-date: '2024-08-10T00:00:00.000Z'
+date: '2024-10-08T00:00:00.000Z'
 episodeNumber: 263
 tag: 'news'
 author: 'Ислам Виндижев'
