@@ -42,7 +42,7 @@ author: 'Ислам Виндижев'
 <ParagraphWithImage imageName="manWithLaptop">
   ### Новости релизов
 
-Доступен Chrome 131. В этой версии доработали возможности стилизации тегов <details> и <summary>, а для правила `@page` добавили отступы, которые можно применять при печати или экспорте в PDF. Также добавили поддержку внешних источников SVG для 'clip-path', 'fill', 'stroke' и 'marker'. В DevTools появилась экспериментальная возможность использовать AI Gemini для отладки CSS, а для AI-расширений появилась отдельная вкладка в настройках. Больше подробностей о релизе — в официальных обзорах [Chrome](https://developer.chrome.com/blog/new-in-chrome-131) и [DevTools](https://developer.chrome.com/blog/new-in-devtools-131) от Google.
+Доступен Chrome 131. В этой версии доработали возможности стилизации тегов `<details>` и `<summary>`, а для правила `@page` добавили отступы, которые можно применять при печати или экспорте в PDF. Также добавили поддержку внешних источников SVG для `clip-path`, `fill`, `stroke` и `marker`. В DevTools появилась экспериментальная возможность использовать AI Gemini для отладки CSS, а для AI-расширений появилась отдельная вкладка в настройках. Больше подробностей о релизе — в официальных обзорах [Chrome](https://developer.chrome.com/blog/new-in-chrome-131) и [DevTools](https://developer.chrome.com/blog/new-in-devtools-131) от Google.
 </ParagraphWithImage>
 
 Вышел [Firefox 132](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/132). Свойство text-emphasis-position теперь поддерживает значение auto, для того чтобы расположение совпадало с text-underline-position. Был исправлен баг с правилами вложенных CSS-объявлений — теперь они будут парситься в правильном порядке.
