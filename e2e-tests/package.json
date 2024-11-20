@@ -2,10 +2,11 @@
   "private": true,
   "prettier": "@csssr/e2e-tools/prettier",
   "devDependencies": {
-    "@csssr/e2e-tools": "~1.6.6",
-    "@csssr/e2e-tools-nightwatch": "~1.15.14"
+    "@csssr/e2e-tools": "~1.6.15",
+    "@csssr/e2e-tools-nightwatch": "1.15.23"
   },
   "resolutions": {
-    "netmask": ">=2.0.1"
+    "netmask": ">=2.0.1",
+    "canvas": "^2.11.2"
   }
 }
