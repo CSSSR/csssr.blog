@@ -1,7 +1,7 @@
 ---
 title: 'В этом выпуске: Chrome 132 и Firefox 134, type-level программирование, углубление в Vue 3, Feature-Sliced Design и Domain-Driven Development, оптимизации, отказ от Next.js и немного обучающих материалов. Также в этом выпуске результаты State of JS 2024 и другие итоги года.'
 soundcloudLink: 'https://soundcloud.com/csssr/chrome-132-firefox-134-net-nextjs-tonkosti-vue-3-state-of-js-2024'
-date: '2024-01-21T00:00:00.000Z'
+date: '2025-01-21T00:00:00.000Z'
 episodeNumber: 268
 tag: 'news'
 author: 'Ислам Виндижев'
