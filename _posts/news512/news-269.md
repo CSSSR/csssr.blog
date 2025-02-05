@@ -1,7 +1,7 @@
 ---
 title: 'В этом выпуске: архитектура масштабируемых систем, System Design, объект Temporal, security-релизы января, NestJS 11, Vitest 3, а также стратегии развития Angular в 2025 году.'
 soundcloudLink: 'https://soundcloud.com/csssr/arkhitektura-system-design-temporal-nestjs-11-vitest-3-angular-v-2025-godu'
-date: '2025-02-04T00:00:00.000Z'
+date: '2025-02-05T00:00:00.000Z'
 episodeNumber: 269
 tag: 'news'
 author: 'Ислам Виндижев'
@@ -30,9 +30,13 @@ author: 'Ислам Виндижев'
 В конце рубрики я перечислю ещё 5 материалов, которые могут быть вам интересны, а ссылки на них будут в описании выпуска.
 
 [Создание генеративной картинки с Three.js](https://tympanus.net/codrops/2025/01/15/creating-generative-artwork-with-three-js/).
+
 [Интервью](https://www.smashingmagazine.com/2025/01/svelte-5-future-frameworks-chat-rich-harris/) с Ричем Харрисом о Svelte 5 и будущем фреймворков.
+
 [Дополненная реальность в вебе и актуальные библиотеки в этой области в 2025 году](https://habr.com/ru/companies/kts/articles/874464/).
+
 [Подборка ИИ-инструментов](https://habr.com/ru/companies/timeweb/articles/873430/), которые могут быть полезны веб-разработчикам.
+
 Электронная книга «[Рефакторь как супергерой](https://refactor-like-a-superhero.vercel.app/en)».
 
 <ParagraphWithImage imageName="manWithLaptop">
