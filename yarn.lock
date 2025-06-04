@@ -1570,10 +1570,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@csssr/core-design@^7.2.5":
-  version "7.2.5"
-  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-7.2.5.tgz#9c8847a06b140988d903bd8a5c2fdb7fc86ae01e"
-  integrity sha512-Enq5orx75RDLoZx0YX+tTEAbMQZ5vbQu9/Zil/jiCG2b8y95/HmMHjBbgywkG0WFbQSmtFw1bPgbHTnGwdnDAQ==
+"@csssr/core-design@^7.4.3":
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-7.4.3.tgz#f39d4640a14e6132116c44d16b2498d60d564b53"
+  integrity sha512-i+BF62mYsZCJtZfepEEdZTuJhMvPSpBjZ7Nv347MPNIXzU+iTXx6SPFRaDAyPlcmCkCvsTxKZWpmIM+sgASSRw==
   dependencies:
     classnames "^2.2.6"
     react-reveal "^1.2.2"
