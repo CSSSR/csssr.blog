@@ -25,6 +25,11 @@ browserCredentials = basicAuths
     )
   } as List
 
+defaultCredentials = [
+  usernamePassword(credentialsId: "browserstack", usernameVariable: "BROWSERSTACK_USER", passwordVariable: "BROWSERSTACK_KEY"),
+  usernamePassword(credentialsId: "selenium", usernameVariable: "SELENIUM_USERNAME", passwordVariable: "SELENIUM_PASSWORD")
+]
+
 filesCheckboxes = getTestFiles()
   .collect {
     booleanParam(defaultValue: true, name: it)
@@ -137,7 +142,7 @@ pipeline {
 
       steps {
         script {
-          withCredentials(browserCredentials + [usernamePassword(credentialsId: "browserstack", usernameVariable: "BROWSERSTACK_USER", passwordVariable: "BROWSERSTACK_KEY")]) {
+          withCredentials(browserCredentials + defaultCredentials) {
             sh """
               pwd
               cd e2e-tests
